@@ -10,6 +10,11 @@ const nextConfig = {
     config.resolve.alias['@/*'] = path.join(__dirname, './src/*');
     return config;
   },
+  i18n: {
+    locales: ['en', 'es'],
+    defaultLocale: 'es',
+    localeDetection: false
+  }
 }
 
 // Merge MDX config with Next.js config
