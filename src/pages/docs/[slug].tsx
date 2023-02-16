@@ -18,7 +18,7 @@ const components = { Card }
 export default function Slug({ source }: Props) {
     const { t } = useTranslation()
     return (
-        <main>
+        <main className="max-w-7xl mx-auto">
             <MDXRemote {...source} components={components} scope={{ t }} />
         </main>
     )

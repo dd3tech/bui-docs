@@ -1,2 +1,6 @@
-export * from './Switch'
-export { default as Navbar } from './Navbar'
+export * from './Layout'
+export { default as Switch } from './Switch'
+export { default as OpenGraph } from './OpenGraph'
+export { default as BannerDashboard } from './BannerDashboard'
+export { default as WindowEditor } from './WindowEditor'
+export { default as TestimonialsBanner } from './TestimonialsBanner'

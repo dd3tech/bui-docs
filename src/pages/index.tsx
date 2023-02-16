@@ -1,8 +1,7 @@
 import { Card, Text } from 'dd360-ds'
 import { getAllPaths } from '../utils/readFile'
 import Link from 'next/link'
-import { Navbar } from '@/components'
-import WindowEditor from '@/components/WindowEditor'
+import { BannerDashboard, OpenGraph, TestimonialsBanner, WindowEditor } from '@/components'
 
 type Props = {
     paths: string[]
@@ -11,7 +10,7 @@ type Props = {
 export default function Home({ paths }: Props) {
     return (
         <>
-            <Navbar />
+            <OpenGraph title="DD360 UI: cree rápidamente sitios web modernos sin tener que abandonar su HTML" />
             <main className="max-w-7xl mx-auto">
                 <Text variant="h1" className="mb-6">
                     Pages
@@ -23,16 +22,12 @@ export default function Home({ paths }: Props) {
                         </Link>
                     ))}
                 </div>
-                <Card height={373} className="bg-blue-800 rounded-2xl my-11">
-                    <div>
-                        <Text>Star now</Text>
-                        <Text>See our demo Dashboard</Text>
-                    </div>
-                </Card>
+                <BannerDashboard />
                 <div className="grid grid-cols-9">
                     <WindowEditor className="col-span-5" />
                 </div>
             </main>
+            <TestimonialsBanner />
         </>
     )
 }
