@@ -1,6 +1,5 @@
 import { Button, Card, Text } from 'dd360-ds'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
-import React from 'react'
 
 function BannerDashboard() {
     return (

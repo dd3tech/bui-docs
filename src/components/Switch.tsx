@@ -1,4 +1,3 @@
-import React from 'react'
 import { useState } from 'react'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 import { Circle } from 'dd360-ds'

@@ -1,8 +1,7 @@
-import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useTranslation } from 'next-i18next'
 import { Button, Divider, Input, Text } from 'dd360-ds'
-import { useTranslation } from 'react-i18next'
 
 const footerMenu = [
     {
@@ -21,8 +20,8 @@ const footerMenu = [
         link: '/examples'
     },
     {
-        key: 3,
-        label: 'Figma',
+        key: 4,
+        label: 'figma',
         blank: true,
         link: 'www.figma.com'
     }
@@ -32,7 +31,7 @@ function Footer() {
     const { t } = useTranslation()
     return (
         <footer className="bg-white">
-            <div className="max-w-7xl py-12 mx-auto">
+            <div className="py-12 px-4 max-w-7xl mx-auto lg:px-8 xl:px-0">
                 <Link href="/">
                     <Image src="/dd360-black.png" width={130} height={28.5} alt="logo" />
                 </Link>

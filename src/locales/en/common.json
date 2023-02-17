@@ -2,5 +2,6 @@
     "hello": "Hello world",
     "components": "Components",
     "docs": "Docs",
-    "examples": "Examples"
+    "examples": "Examples",
+    "figma": "figma"
 }

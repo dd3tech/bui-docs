@@ -1,10 +1,9 @@
-import React from 'react'
-import { Input, Text } from 'dd360-ds'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Switch } from '@/components'
+import { useTranslation } from 'next-i18next'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
-import { useTranslation } from 'react-i18next'
+import { Input, Text } from 'dd360-ds'
+import { Switch } from '@/components'
 
 const menu = [
     {
@@ -25,10 +24,10 @@ const menu = [
 ]
 
 function Navbar() {
-    const { t } = useTranslation()
+    const { t } = useTranslation('common')
     return (
         <nav className="bg-white">
-            <div className="flex justify-between items-center max-w-7xl py-6 mx-auto">
+            <div className="flex justify-between items-center py-6 mx-auto max-w-7xl px-4 lg:p-8 xl:px-0">
                 <Link href="/">
                     <Image src="/dd360-black.png" width={130} height={28.5} alt="logo" />
                 </Link>

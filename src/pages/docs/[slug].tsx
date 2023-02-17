@@ -1,9 +1,10 @@
-import { useTranslation } from 'next-i18next'
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
 import { Card } from 'dd360-ds'
-import { GetStaticProps } from 'next'
+import { GetStaticPaths, GetStaticProps } from 'next'
 import { getAllPaths, getDocBySlug } from '@/utils/readFile'
+import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 type Props = {
     slug: string
@@ -16,26 +17,32 @@ type Props = {
 const components = { Card }
 
 export default function Slug({ source }: Props) {
-    const { t } = useTranslation()
+    const { t, i18n } = useTranslation('common')
+    console.log({
+        t,
+        i18n,
+        source
+    })
+
     return (
-        <main className="max-w-7xl mx-auto">
-            <MDXRemote {...source} components={components} scope={{ t }} />
+        <main className="max-w-7xl mx-auto lg:px-8 xl:px-0">
+            <MDXRemote {...source} components={components} />
         </main>
     )
 }
 
 /** Next.js Server functions */
-export function getStaticPaths() {
-    const { paths } = getAllPaths()
+export const getStaticPaths: GetStaticPaths = () => {
+    const { paths } = getAllPaths(['es', 'en'])
 
     return {
         paths,
-        fallback: false
+        fallback: true
     }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-    const { slug = '' } = params as { slug: string }
+export const getStaticProps: GetStaticProps = async ({ params, locale = 'en' }) => {
+    const { slug = '' } = params as { slug: string; locale: string }
     const { content, meta } = getDocBySlug(slug)
     const mdxSource = await serialize(content)
 
@@ -43,7 +50,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         props: {
             slug,
             meta,
-            source: mdxSource
+            source: mdxSource,
+            locale,
+            ...(await serverSideTranslations(locale))
         }
     }
 }

@@ -10,7 +10,7 @@ function TestimonialsBanner() {
                 backgroundPosition: 'left bottom, right top'
             }}
         >
-            <div className="max-w-7xl py-20 mx-auto text-white">
+            <div className="py-20 px-4 lg:px-8 xl:px-0 max-w-7xl mx-auto text-white">
                 <Text className="text-center mb-14" variant="h4">
                     Loved by product people like you
                 </Text>
@@ -28,7 +28,7 @@ function TestimonialsBanner() {
                             <Card
                                 rounded="xl"
                                 className="bg-blue-900 pt-12 px-6 flex flex-col gap-6 border-none mb-14"
-                                style={{ boxShadow: '0px 20px 25px -5px rgba(17, 24, 39, 0.1);' }}
+                                style={{ boxShadow: '0px 20px 25px -5px rgba(17, 24, 39, 0.1)' }}
                             >
                                 <Text variant="p" className="text-justify">
                                     Lorem ipsum dolor sit amet consectetur. Nec euismod nisi pharetra ipsum morbi. Mauris pulvinar mauris malesuada vitae
