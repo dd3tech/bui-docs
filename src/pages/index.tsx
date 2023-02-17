@@ -28,7 +28,7 @@ export default function Home({ paths }: Props) {
                 </div>
                 <BannerDashboard />
                 <div className="grid grid-cols-9">
-                    <WindowEditor className="col-span-5" />
+                    <WindowEditor className="col-span-5" codeString='' />
                 </div>
             </main>
             <TestimonialsBanner />
