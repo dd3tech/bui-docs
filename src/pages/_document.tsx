@@ -1,5 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { DocumentContext, DocumentInitialProps } from 'next/document'
+import type { DocumentContext, DocumentInitialProps } from 'next/document'
 
 interface MyDocumentProps extends DocumentInitialProps {
     locale?: string

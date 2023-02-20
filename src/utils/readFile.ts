@@ -2,6 +2,11 @@ import matter from 'gray-matter'
 import { join } from 'path'
 import { readdirSync, readFileSync } from 'fs'
 
+interface Paths {
+    params: { [key: string]: string }
+    locale?: string
+}
+
 export const docsDirectory = join(process.cwd(), 'docs')
 
 export function getDocBySlug(slug: string) {
@@ -13,14 +18,21 @@ export function getDocBySlug(slug: string) {
     return { slug: realSlug, meta: data, content }
 }
 
-export function getAllPaths() {
+export function getAllPaths(allowedLocales?: string[]) {
+    const locales = allowedLocales ?? ['es']
     const filenames = readdirSync(docsDirectory)
     const slugs: string[] = []
+    const paths: Paths[] = []
 
-    const paths = filenames.map((filename) => {
+    filenames.forEach((filename) => {
         const slug = filename.replace('.mdx', '')
         slugs.push(slug)
-        return { params: { slug } }
+        locales.forEach((locale) => {
+            paths.push({
+                params: { slug },
+                locale
+            })
+        })
     })
 
     return {
