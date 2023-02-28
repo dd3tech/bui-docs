@@ -11,7 +11,7 @@ const footerMenu = [
     },
     {
         key: 2,
-        label: 'docs',
+        label: 'doc',
         link: '/docs'
     },
     {
@@ -31,7 +31,7 @@ function Footer() {
     const { t } = useTranslation()
     return (
         <footer className="bg-white">
-            <div className="py-12 px-4 max-w-7xl mx-auto lg:px-8 xl:px-0">
+            <div className="py-12 px-4 mx-auto lg:px-8 2xl:px-0" style={{ maxWidth: '1400px' }}>
                 <Link href="/">
                     <Image src="/dd360-black.png" width={130} height={28.5} alt="logo" />
                 </Link>

@@ -1,7 +1,16 @@
 {
     "hello": "Hola Mundo!",
     "components": "Componentes",
-    "doc": "Documentación",
+    "docs": "Doc",
+    "documentation": "Documentación",
     "examples": "Ejemplos",
-    "figma": "figma"
+    "figma": "figma",
+    "buttons": "Botones",
+    "navigation": "Navegación",
+    "layout": "Layout",
+    "form": "Formulario",
+    "images": "Imágenes",
+    "modals": "Modales",
+    "typography": "Tipografía",
+    "controls": "Controles"
 }
