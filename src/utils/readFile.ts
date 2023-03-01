@@ -9,9 +9,9 @@ interface Paths {
 
 export const docsDirectory = join(process.cwd(), 'docs')
 
-export function getDocBySlug(slug: string) {
+export function getDocBySlug(folder: string, slug: string) {
     const realSlug = slug.replace(/\.mdx$/, '')
-    const fullPath = join(docsDirectory, `${realSlug}.mdx`)
+    const fullPath = join(`${docsDirectory}/${folder}`, `${realSlug}.mdx`)
     const fileContents = readFileSync(fullPath, 'utf8')
     const { data, content } = matter(fileContents)
 
@@ -20,23 +20,33 @@ export function getDocBySlug(slug: string) {
 
 export function getAllPaths(allowedLocales?: string[]) {
     const locales = allowedLocales ?? ['es']
-    const filenames = readdirSync(docsDirectory)
-    const slugs: string[] = []
     const paths: Paths[] = []
 
-    filenames.forEach((filename) => {
-        const slug = filename.replace('.mdx', '')
-        slugs.push(slug)
-        locales.forEach((locale) => {
-            paths.push({
-                params: { slug },
-                locale
-            })
-        })
-    })
+    const entries = readdirSync(docsDirectory, { withFileTypes: true })
 
-    return {
-        paths,
-        slugs
+    function addPathForFile(filename: string, folder: string) {
+        for (const locale of locales) {
+            if (filename.endsWith('.mdx')) {
+                const slug = filename.replace('.mdx', '')
+
+                paths.push({
+                    params: { folder, slug },
+                    locale
+                })
+            }
+        }
     }
+
+    for (const entry of entries) {
+        if (entry.isDirectory()) {
+            const folderPath = join(docsDirectory, entry.name)
+            const files = readdirSync(folderPath, 'utf-8')
+
+            for (const filename of files) {
+                addPathForFile(filename, entry.name)
+            }
+        }
+    }
+
+    return paths
 }
