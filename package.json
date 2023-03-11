@@ -1,37 +1,37 @@
 {
-  "name": "landing-dd360-ds",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "format": "prettier --write ./src",
-    "prepare": "husky install",
-    "pre-commit": "npm run format",
-    "pre-push": "npm run build"
-  },
-  "dependencies": {
-    "dd360-ds": "^4.7.0",
-    "gray-matter": "^4.0.3",
-    "i18next": "^22.4.9",
-    "next": "^13.1.6",
-    "next-i18next": "^13.1.5",
-    "next-mdx-remote": "^4.3.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-syntax-highlighter": "^15.5.0",
-    "typescript": "4.9.5"
-  },
-  "devDependencies": {
-    "@types/node": "18.13.0",
-    "@types/react": "18.0.28",
-    "@types/react-dom": "18.0.10",
-    "@types/react-syntax-highlighter": "^15.5.6",
-    "eslint": "8.34.0",
-    "eslint-config-next": "13.1.6",
-    "husky": "^8.0.0",
-    "prettier": "^2.8.4"
-  }
+    "name": "landing-dd360-ds",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "format": "prettier --write ./src",
+        "prepare": "husky install",
+        "pre-commit": "npm run format",
+        "pre-push": "npm run build"
+    },
+    "dependencies": {
+        "dd360-ds": "^4.12.0",
+        "gray-matter": "^4.0.3",
+        "i18next": "^22.4.9",
+        "next": "^13.1.6",
+        "next-i18next": "^13.1.5",
+        "next-mdx-remote": "^4.3.0",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "react-syntax-highlighter": "^15.5.0",
+        "typescript": "4.9.5"
+    },
+    "devDependencies": {
+        "@types/node": "18.13.0",
+        "@types/react": "18.0.28",
+        "@types/react-dom": "18.0.10",
+        "@types/react-syntax-highlighter": "^15.5.6",
+        "eslint": "8.34.0",
+        "eslint-config-next": "13.1.6",
+        "husky": "^8.0.0",
+        "prettier": "^2.8.4"
+    }
 }

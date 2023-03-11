@@ -4,8 +4,12 @@ import 'dd360-ds/dd360.css'
 import { Layout } from '@/components'
 import { appWithTranslation } from 'next-i18next'
 import '@/theme/global.css'
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 
 function App({ Component, pageProps }: AppProps) {
+    const router = useRouter()
+
     return (
         <>
             <Head>

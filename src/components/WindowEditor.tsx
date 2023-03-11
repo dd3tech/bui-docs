@@ -22,11 +22,12 @@ interface EditorProps {
     codeString?: string
     language?: 'tsx' | 'jsx' | 'md' | 'mdx'
     className?: string
+    style?: React.CSSProperties
 }
 
-function WindowEditor({ codeString = cardMetricsString, language = 'tsx', className }: EditorProps) {
+function WindowEditor({ codeString = cardMetricsString, language = 'tsx', className, style }: EditorProps) {
     return (
-        <div className={composeClasses('h-auto w-full bg-gray-900 rounded-lg overflow-hidden', className)}>
+        <div className={composeClasses('h-auto bg-gray-900 rounded-lg overflow-hidden', className)}>
             <nav className="flex items-center px-3 pt-2 gap-3 bg-gray-800">
                 <div className="flex items-center gap-2">
                     <button className="h-3 w-3 bg-red-400 rounded-full"></button>
@@ -37,7 +38,7 @@ function WindowEditor({ codeString = cardMetricsString, language = 'tsx', classN
                     <h3 className="text-white font-medium">Design System</h3>
                 </div>
             </nav>
-            <SyntaxHighlighter language={language} style={nightOwl} customStyle={{ margin: 0 }} showLineNumbers>
+            <SyntaxHighlighter language={language} style={{ ...nightOwl }} customStyle={{ margin: 0, ...style }} showLineNumbers>
                 {codeString}
             </SyntaxHighlighter>
         </div>
