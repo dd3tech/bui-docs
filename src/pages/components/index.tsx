@@ -1,152 +1,152 @@
-import { OpenGraph } from '@/components'
-import Badge from '@/components/Badge'
-import { Card, Select, Text } from 'dd360-ds'
 import { GetStaticProps } from 'next'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Image from 'next/image'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+
+import { Card, Select, Text } from 'dd360-ds'
+import { OpenGraph, Badge } from '@/components'
+
+const cards = [
+    {
+        title: 'Buttons',
+        img: '/buttons.svg',
+        badge: {
+            label: 'NEW',
+            color: 'green'
+        }
+    },
+    {
+        title: 'Logos',
+        img: '/logos.svg',
+        badge: {
+            label: 'BETA',
+            color: 'blue'
+        }
+    },
+    {
+        title: 'Input fields',
+        img: '/input-fields.svg',
+        badge: {
+            label: 'CAUTION',
+            color: 'yellow'
+        }
+    },
+    {
+        title: 'Input fields',
+        img: '/input-fields.svg',
+        badge: {
+            label: 'DEPRECATED',
+            color: 'red'
+        }
+    },
+    {
+        title: 'Buttons',
+        img: '/buttons.svg',
+        badge: {
+            label: 'NEW',
+            color: 'green'
+        }
+    },
+    {
+        title: 'Logos',
+        img: '/logos.svg',
+        badge: {
+            label: 'BETA',
+            color: 'blue'
+        }
+    },
+    {
+        title: 'Input fields',
+        img: '/input-fields.svg',
+        badge: {
+            label: 'CAUTION',
+            color: 'yellow'
+        }
+    },
+    {
+        title: 'Input fields',
+        img: '/input-fields.svg',
+        badge: {
+            label: 'DEPRECATED',
+            color: 'red'
+        }
+    },
+    {
+        title: 'Buttons',
+        img: '/buttons.svg',
+        badge: {
+            label: 'NEW',
+            color: 'green'
+        }
+    },
+    {
+        title: 'Logos',
+        img: '/logos.svg',
+        badge: {
+            label: 'BETA',
+            color: 'blue'
+        }
+    },
+    {
+        title: 'Input fields',
+        img: '/input-fields.svg',
+        badge: {
+            label: 'CAUTION',
+            color: 'yellow'
+        }
+    },
+    {
+        title: 'Input fields',
+        img: '/input-fields.svg',
+        badge: {
+            label: 'DEPRECATED',
+            color: 'red'
+        }
+    },
+    {
+        title: 'Buttons',
+        img: '/buttons.svg',
+        badge: {
+            label: 'NEW',
+            color: 'green'
+        }
+    },
+    {
+        title: 'Logos',
+        img: '/logos.svg',
+        badge: {
+            label: 'BETA',
+            color: 'blue'
+        }
+    },
+    {
+        title: 'Input fields',
+        img: '/input-fields.svg',
+        badge: {
+            label: 'CAUTION',
+            color: 'yellow'
+        }
+    },
+    {
+        title: 'Input fields',
+        img: '/input-fields.svg',
+        badge: {
+            label: 'DEPRECATED',
+            color: 'red'
+        }
+    }
+]
+
+const builds = {
+    '1.2.9': { label: 'build 129' },
+    '1.3.9': { label: 'build 139' },
+    '1.4.9': { label: 'build 149' }
+}
 
 export default function Docs() {
-    const cards = [
-        {
-            title: 'Buttons',
-            img: '/buttons.svg',
-            badge: {
-                label: 'NEW',
-                color: 'green'
-            }
-        },
-        {
-            title: 'Logos',
-            img: '/logos.svg',
-            badge: {
-                label: 'BETA',
-                color: 'blue'
-            }
-        },
-        {
-            title: 'Input fields',
-            img: '/input-fields.svg',
-            badge: {
-                label: 'CAUTION',
-                color: 'yellow'
-            }
-        },
-        {
-            title: 'Input fields',
-            img: '/input-fields.svg',
-            badge: {
-                label: 'DEPRECATED',
-                color: 'red'
-            }
-        },
-        {
-            title: 'Buttons',
-            img: '/buttons.svg',
-            badge: {
-                label: 'NEW',
-                color: 'green'
-            }
-        },
-        {
-            title: 'Logos',
-            img: '/logos.svg',
-            badge: {
-                label: 'BETA',
-                color: 'blue'
-            }
-        },
-        {
-            title: 'Input fields',
-            img: '/input-fields.svg',
-            badge: {
-                label: 'CAUTION',
-                color: 'yellow'
-            }
-        },
-        {
-            title: 'Input fields',
-            img: '/input-fields.svg',
-            badge: {
-                label: 'DEPRECATED',
-                color: 'red'
-            }
-        },
-        {
-            title: 'Buttons',
-            img: '/buttons.svg',
-            badge: {
-                label: 'NEW',
-                color: 'green'
-            }
-        },
-        {
-            title: 'Logos',
-            img: '/logos.svg',
-            badge: {
-                label: 'BETA',
-                color: 'blue'
-            }
-        },
-        {
-            title: 'Input fields',
-            img: '/input-fields.svg',
-            badge: {
-                label: 'CAUTION',
-                color: 'yellow'
-            }
-        },
-        {
-            title: 'Input fields',
-            img: '/input-fields.svg',
-            badge: {
-                label: 'DEPRECATED',
-                color: 'red'
-            }
-        },
-        {
-            title: 'Buttons',
-            img: '/buttons.svg',
-            badge: {
-                label: 'NEW',
-                color: 'green'
-            }
-        },
-        {
-            title: 'Logos',
-            img: '/logos.svg',
-            badge: {
-                label: 'BETA',
-                color: 'blue'
-            }
-        },
-        {
-            title: 'Input fields',
-            img: '/input-fields.svg',
-            badge: {
-                label: 'CAUTION',
-                color: 'yellow'
-            }
-        },
-        {
-            title: 'Input fields',
-            img: '/input-fields.svg',
-            badge: {
-                label: 'DEPRECATED',
-                color: 'red'
-            }
-        }
-    ]
-
-    const builds = {
-        '1.2.9': { label: 'build 129' },
-        '1.3.9': { label: 'build 139' },
-        '1.4.9': { label: 'build 149' }
-    }
-
     return (
         <>
-            <Image alt="flare-left" src="/flare-left.svg" className="absolute -top-8" style={{ zIndex: '-10' }} />
-            <Image alt="flare-right" src="/flare-right.svg" className="absolute right-0 -top-8" style={{ zIndex: '-10' }} />
+            <Image alt="flare-left" width={486} height={981} src="/flare-left.svg" className="absolute -top-8" style={{ zIndex: -10 }} />
+            <Image alt="flare-right" width={618} height={778} src="/flare-right.svg" className="absolute right-0 -top-8" style={{ zIndex: '-10' }} />
             <OpenGraph title="DD360 UI: cree rápidamente sitios web modernos sin tener que abandonar su HTML" />
             <main className="max-w-5xl mx-auto py-16 px-8 lg:px-16 xl:px-0">
                 <div className="flex justify-between items-center mb-7">
