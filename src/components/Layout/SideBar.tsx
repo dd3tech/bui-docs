@@ -1,8 +1,10 @@
-import { Text } from 'dd360-ds'
+import Image from 'next/image'
+import { Select, Text } from 'dd360-ds'
 import { IconName } from 'dd360-ds/DynamicHeroIcon'
 import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import Badge from '../Badge'
 import ShowMore from '../ShowMore'
 
 interface ComponentObjectProps {
@@ -11,6 +13,10 @@ interface ComponentObjectProps {
         items: {
             label: string
             pathname: string
+            badge?: {
+                label: string
+                color: string
+            }
         }[]
     }
 }
@@ -20,19 +26,35 @@ const components: ComponentObjectProps = {
         items: [
             {
                 label: 'button',
-                pathname: 'button'
+                pathname: 'button',
+                badge: {
+                    label: 'NEW',
+                    color: 'green'
+                }
             },
             {
                 label: 'Button Group',
-                pathname: 'button-group'
+                pathname: 'button-group',
+                badge: {
+                    label: 'BETA',
+                    color: 'blue'
+                }
             },
             {
                 label: 'Circle Button',
-                pathname: 'button-circle'
+                pathname: 'button-circle',
+                badge: {
+                    label: 'CAUTION',
+                    color: 'yellow'
+                }
             },
             {
                 label: 'Radio',
-                pathname: 'button-radio'
+                pathname: 'button-radio',
+                badge: {
+                    label: 'DEPRECATED',
+                    color: 'red'
+                }
             },
             {
                 label: 'Radio Group',
@@ -258,27 +280,43 @@ const components: ComponentObjectProps = {
     }
 }
 
+const builds = {
+    '1.2.9': { label: 'build 129' },
+    '1.3.9': { label: 'build 139' },
+    '1.4.9': { label: 'build 149' }
+}
+
 export default function SideBar() {
     const { t } = useTranslation('common')
     const router = useRouter()
     return (
-        <aside className="col-span-3">
-            <div className="fixed" style={{ height: 'calc(100vh - 136px)', top: 112 }}>
-                <div className="h-full overflow-y-auto pb-2 sidebar-list">
-                    <Text variant="h4" className="mb-3">
-                        {t('documentation')}
-                    </Text>
-                    <div className="flex flex-col gap-6">
-                        {Object.entries(components).map(([key, value]) => (
-                            <ShowMore icon={value?.icon} title={t(key)} key={key}>
-                                {value.items.map((item) => (
-                                    <Link key={item.label} href={`/docs/${key}/${item.pathname}`} locale={router?.locale}>
-                                        <li>{item.label}</li>
-                                    </Link>
-                                ))}
-                            </ShowMore>
-                        ))}
-                    </div>
+        <aside
+            className="bg-blue-50 -translate-x-full transform p-2 transition-transform duration-150 ease-in lg:translate-x-0 border-r border-gray-300"
+            style={{ minWidth: 200 }}
+        >
+            <Link href="/" className="block my-7 mx-auto">
+                <Image className="m-auto" src="/dd360-black.png" width={130} height={28.5} alt="logo" />
+            </Link>
+            <div className="my-4">
+                <div className="m-auto w-full" style={{ height: 34 }}>
+                    <Select optionsList={builds} rounded="xl" padding="2" fontSize="sm" className="bg-white" style={{ borderColor: '#D1D5DB' }} />
+                </div>
+                <div className="flex flex-col gap-6 mt-6">
+                    {Object.entries(components).map(([key, value]) => (
+                        <ShowMore basePath={key} icon={value?.icon} title={t(key)} key={key}>
+                            {value.items.map((item) => (
+                                <Link
+                                    key={item.label}
+                                    href={`/docs/${key}/${item.pathname}`}
+                                    locale={router?.locale}
+                                    className="flex justify-between items-center py-2"
+                                >
+                                    <Text className="text-gray-600">{item.label}</Text>
+                                    {item.badge && <Badge color={item.badge.color} label={item.badge.label} />}
+                                </Link>
+                            ))}
+                        </ShowMore>
+                    ))}
                 </div>
             </div>
         </aside>

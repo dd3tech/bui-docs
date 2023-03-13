@@ -1,15 +1,14 @@
-import { GetStaticProps } from 'next'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { GetServerSideProps } from 'next'
 
 export default function Docs() {
-    return <div>index</div>
+    return null
 }
 
-export const getStaticProps: GetStaticProps = async ({ locale = 'en' }) => {
+export const getServerSideProps: GetServerSideProps = async () => {
     return {
-        props: {
-            locale,
-            ...(await serverSideTranslations(locale))
+        redirect: {
+            destination: '/docs/navigation/tabs',
+            permanent: false
         }
     }
 }

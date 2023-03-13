@@ -1,9 +1,9 @@
 import type { AppProps } from 'next/app'
+import { appWithTranslation } from 'next-i18next'
+import '@/theme/global.css'
 import Head from 'next/head'
 import 'dd360-ds/dd360.css'
 import { Layout } from '@/components'
-import { appWithTranslation } from 'next-i18next'
-import '@/theme/global.css'
 
 function App({ Component, pageProps }: AppProps) {
     return (

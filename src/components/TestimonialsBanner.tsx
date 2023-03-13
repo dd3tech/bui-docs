@@ -1,4 +1,5 @@
-import { Card, Circle, Text, Image, ProgressBar, Divider } from 'dd360-ds'
+import Image from 'next/image'
+import { Card, Circle, Text, ProgressBar, Divider } from 'dd360-ds'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 
 function TestimonialsBanner() {

@@ -9,7 +9,7 @@ function BannerDashboard() {
                 backgroundBlendMode: 'normal',
                 backgroundPositionX: 86
             }}
-            className="bg-blue-800 rounded-2xl my-20 flex py-16 px-24 relative"
+            className="bg-blue-800 rounded-2xl mt-52 mb-40 flex py-16 px-24 relative mx-8"
         >
             <div className="max-w-md my-1.5">
                 <Text variant="h3" size="xl" className="text-blue-300 font-semibold mb-1">
