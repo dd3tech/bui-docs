@@ -25,7 +25,7 @@ const WindowEditorSection = () => (
                 components to lift the tedious front-end work from your shoulders. Get ahead with our simple API approach in no time.
             </Text>
         </div>
-        <Image alt="looper-variant-3" src="/looper-variant-3.svg" className="absolute right-0" style={{ zIndex: -20, bottom: -197 }} />
+        <Image alt="looper-variant-3" src="/looper-variant-3.svg" width={590} height={616} className="absolute right-0" style={{ zIndex: -20, bottom: -197 }} />
     </section>
 )
 

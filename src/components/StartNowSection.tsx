@@ -75,7 +75,7 @@ const StartNowSection = () => (
                 pretium libero.
             </Text>
         </article>
-        <Image alt="looper-variant-4" src="/looper-variant-4.svg" className="absolute right-0 bottom-0" style={{ zIndex: '-10' }} />
+        <Image alt="looper-variant-4" src="/looper-variant-4.svg" width={897} height={442} className="absolute right-0 bottom-0" style={{ zIndex: '-10' }} />
     </section>
 )
 
