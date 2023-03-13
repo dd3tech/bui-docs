@@ -1,4 +1,4 @@
-image: registry.gitlab.com/dd3tech/devops-aux/image-serverless
+image: node:16.15.1
 
 stages:
     - build
