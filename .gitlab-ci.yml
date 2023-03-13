@@ -1,26 +1,11 @@
 image: registry.gitlab.com/dd3tech/devops-aux/image-serverless
 
 stages:
-    - install
     - build
     - sonarcloud-check
 
 variables:
     SONAR_USER_HOME: '${CI_PROJECT_DIR}/.sonar' # Defines the location of the analysis task cache
-
-###############################################################################
-#     Install                                                         #
-###############################################################################
-
-install:
-    stage: install
-    only:
-        - main
-        - merge_requests
-    before_script:
-        - echo -e 'Warming up the cache'
-    script:
-        - npm i
 
 ###############################################################################
 #     Build                                                         #
@@ -31,6 +16,8 @@ build:
     only:
         - main
         - merge_requests
+    before_script:
+        - npm i
     script:
         - npm run build
 
