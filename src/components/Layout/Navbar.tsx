@@ -1,9 +1,10 @@
+import { useRouter } from 'next/router'
+import { useTranslation } from 'next-i18next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useTranslation } from 'next-i18next'
-import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
+
 import { Input, Text, Circle, ImageIcon } from 'dd360-ds'
-import { useRouter } from 'next/router'
+import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 import { composeClasses } from 'dd360-ds/lib'
 
 const menu = [
@@ -27,7 +28,7 @@ const menu = [
 function Navbar({ isSticky, hideLogo }: { isSticky?: boolean; hideLogo?: boolean }) {
     const { t } = useTranslation('common')
     const router = useRouter()
-    console.log(router.pathname)
+
     return (
         <nav className={composeClasses('bg-white w-full', isSticky && 'sticky top-0 z-10')}>
             <div className="flex justify-between items-center h-20 py-6 mx-auto px-4 lg:px-16" style={{ maxWidth: '1400px' }}>

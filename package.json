@@ -6,6 +6,7 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
+        "preview": "npm run build && npm run start",
         "lint": "next lint",
         "format": "prettier --write ./src",
         "prepare": "husky install",

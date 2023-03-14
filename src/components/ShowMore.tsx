@@ -1,8 +1,8 @@
 import { Text } from 'dd360-ds'
 import DynamicHeroIcon, { IconName } from 'dd360-ds/DynamicHeroIcon'
 import { composeClasses } from 'dd360-ds/lib'
+import { ReactNode, useState } from 'react'
 import { useRouter } from 'next/router'
-import React, { ReactNode, useState } from 'react'
 
 type ShowMoreProps = {
     title: string
@@ -24,12 +24,10 @@ function ShowMore({ title = 'Guide', children, basePath }: ShowMoreProps) {
             >
                 <div className="flex justify-between items-center">
                     {isActive && <span className="bg-blue-500 h-4 mr-2" style={{ width: 3 }} />}
-
                     <Text size="sm" className="text-gray-700 font-semibold">
                         {title}
                     </Text>
                 </div>
-
                 <button onClick={() => setIsOpen(!isOpen)}>
                     <DynamicHeroIcon className="w-4 h-4" icon={isOpen ? 'ChevronDownIcon' : 'ChevronRightIcon'} />
                 </button>

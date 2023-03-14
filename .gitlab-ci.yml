@@ -1,0 +1,40 @@
+image: node:16.15.1
+
+stages:
+    - build
+    - sonarcloud-check
+
+variables:
+    SONAR_USER_HOME: '${CI_PROJECT_DIR}/.sonar' # Defines the location of the analysis task cache
+
+###############################################################################
+#     Build                                                         #
+###############################################################################
+
+build:
+    stage: build
+    only:
+        - main
+        - merge_requests
+    before_script:
+        - npm i
+    script:
+        - npm run build
+
+###############################################################################
+#     SONAR CLOUD CHECKING                                                          #
+###############################################################################
+
+sonarcloud-check:
+    stage: sonarcloud-check
+    image:
+        name: sonarsource/sonar-scanner-cli:latest
+        entrypoint: ['']
+    cache:
+        key: '${CI_JOB_NAME}'
+        paths:
+            - .sonar/cache
+    script:
+        - sonar-scanner
+    only:
+        - merge_requests
