@@ -22,15 +22,15 @@ const ComponentsSection = () => {
 
     return (
         <section className="m-auto section-components flex flex-col items-center mt-12 ">
-            <Text size="xl" className="font-medium text-gray-700" variant="h2">
+            <Text size="xl" className="font-medium text-gray-700 px-4" variant="h2">
                 The React library to build
             </Text>
 
-            <Text size="4xl" className="font-bold text-blue-600 mb-7" variant="h1">
+            <Text size="4xl" className="font-bold text-blue-600 mb-7 px-9 text-center" variant="h1">
                 Back office platforms like DD360
             </Text>
 
-            <section className="relative section-goup-components" style={{ width: 677, height: 369 }}>
+            <section className="relative section-goup-components hidden sm:block" style={{ width: 677, height: 369 }}>
                 <Badge
                     className="px-4 py-1 w-max absolute floating"
                     classNameIcon="w-4 text-green-600"
@@ -44,7 +44,7 @@ const ComponentsSection = () => {
                 </div>
 
                 <FilterRangeSlider
-                    className="floating"
+                    className="floating hidden sm:block"
                     onApply={() => {}}
                     position={{
                         show: true,
@@ -102,11 +102,11 @@ const ComponentsSection = () => {
                 </div>
             </section>
 
-            <div className="flex gap-6">
-                <Button paddingX="11" paddingY="2">
+            <div className="flex gap-6 px-10 flex-col sm:flex-row">
+                <Button paddingX="11" paddingY="2" rounded="lg">
                     Get started
                 </Button>
-                <Button paddingX="11" paddingY="2" variant="secondary" className="border-blue-400 bg-white" fontWeight="normal">
+                <Button paddingX="11" paddingY="2" variant="secondary" className="border-blue-400 bg-white" fontWeight="normal" rounded="lg">
                     npm i dd360-ds@latest
                 </Button>
             </div>

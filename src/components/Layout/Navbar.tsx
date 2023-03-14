@@ -54,7 +54,7 @@ function Navbar({ isSticky, hideLogo }: { isSticky?: boolean; hideLogo?: boolean
                 </ul>
                 <Input
                     inputBlank
-                    rounded="2xl"
+                    rounded="3xl"
                     className="py-3 h-10 lg:mt-0 bg-gray-100"
                     startAdornment={<DynamicHeroIcon icon="SearchIcon" className="w-4 h-4 mr-2 text-gray-500" />}
                     endAdornment={

@@ -38,7 +38,7 @@ function WindowEditor({ codeString = cardMetricsString, language = 'tsx', classN
                     <h3 className="text-white font-medium">Design System</h3>
                 </div>
             </nav>
-            <SyntaxHighlighter language={language} style={{ ...nightOwl }} customStyle={{ margin: 0, ...style }} showLineNumbers>
+            <SyntaxHighlighter wrapLines language={language} style={{ ...nightOwl }} customStyle={{ margin: 0, ...style }} showLineNumbers>
                 {codeString}
             </SyntaxHighlighter>
         </div>

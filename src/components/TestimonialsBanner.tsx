@@ -69,7 +69,7 @@ function TestimonialsBanner() {
                         </div>
                     </div>
                     <Divider variant="full" vertical className=" border-blue-500" />
-                    <div className="flex flex-col gap-12 justify-center">
+                    <div className="flex-col gap-12 justify-center hidden sm:flex">
                         <div className="flex items-center gap-4">
                             <svg xmlns="http://www.w3.org/2000/svg" width="21.52" height="19.21" viewBox="0 0 15 14" fill="none">
                                 <path

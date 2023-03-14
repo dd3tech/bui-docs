@@ -1,5 +1,6 @@
 import { Text } from 'dd360-ds'
 import DynamicHeroIcon, { IconName } from 'dd360-ds/DynamicHeroIcon'
+import { composeClasses } from 'dd360-ds/lib'
 import { useRouter } from 'next/router'
 import React, { ReactNode, useState } from 'react'
 
@@ -17,7 +18,10 @@ function ShowMore({ title = 'Guide', children, basePath }: ShowMoreProps) {
 
     return (
         <div>
-            <div className="flex w-full gap-2.5 justify-between items-center bg-gray-50" style={{ height: 30, paddingLeft: 6, paddingRight: 10 }}>
+            <div
+                className={composeClasses('flex w-full gap-2.5 justify-between items-center', isActive && 'bg-gray-50')}
+                style={{ height: 30, paddingLeft: 6, paddingRight: 10 }}
+            >
                 <div className="flex justify-between items-center">
                     {isActive && <span className="bg-blue-500 h-4 mr-2" style={{ width: 3 }} />}
 

@@ -145,8 +145,8 @@ export default function Docs() {
 
     return (
         <>
-            <Image alt="flare-left" src="/flare-left.svg" className="absolute -top-8" style={{ zIndex: '-10' }} />
-            <Image alt="flare-right" src="/flare-right.svg" className="absolute right-0 -top-8" style={{ zIndex: '-10' }} />
+            <Image alt="flare-left" src="/flare-left.svg" width={486} height={981} className="absolute -top-8" style={{ zIndex: '-10' }} />
+            <Image alt="flare-right" src="/flare-right.svg" width={618} height={778} className="absolute right-0 -top-8" style={{ zIndex: '-10' }} />
             <OpenGraph title="DD360 UI: cree rápidamente sitios web modernos sin tener que abandonar su HTML" />
             <main className="max-w-5xl mx-auto py-16 px-8 lg:px-16 xl:px-0">
                 <div className="flex justify-between items-center mb-7">
