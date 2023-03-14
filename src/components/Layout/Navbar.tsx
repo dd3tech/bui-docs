@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { Input, Text, Circle, ImageIcon } from 'dd360-ds'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 import { composeClasses } from 'dd360-ds/lib'
+import Switch from '../Switch'
 
 const menu = [
     {
@@ -66,6 +67,8 @@ function Navbar({ isSticky, hideLogo }: { isSticky?: boolean; hideLogo?: boolean
                     variant="active"
                     placeholder="Search the docs   (Ctrl + k)"
                 />
+
+                <Switch />
 
                 <Circle width="36px" height="36px" backgroundColor="transparent" border="1px solid #D1D5DB">
                     <ImageIcon src="/gitlab.svg" style={{ width: 16 }} />

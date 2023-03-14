@@ -1,5 +1,6 @@
 import { Badge, Breadcrumbs, Button, Checkbox, Circle, FilterRangeSlider, Pagination, ProgressCircle, Radio, Switch, Text } from 'dd360-ds'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
+import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import CardExample from './CardExample'
 import DropdownExample from './DropdownExample'
@@ -34,7 +35,7 @@ const ComponentsSection = () => {
                 <Badge
                     className="px-4 py-1 w-max absolute floating"
                     classNameIcon="w-4 text-green-600"
-                    text="Im a Badge"
+                    text="Approved"
                     variant="success"
                     style={{ top: 82, left: 447, animationDelay: '0.19s' }}
                 />
@@ -51,9 +52,13 @@ const ComponentsSection = () => {
                         left: sectionPos.left + 22,
                         top: sectionPos.top + 121
                     }}
+                    min={0}
+                    max={500}
+                    initMinValue={100}
+                    initMaxValue={400}
                 />
 
-                <div style={{ position: 'absolute', top: 235, left: 143, animationDelay: '0.5s' }} className="floating">
+                <div style={{ position: 'absolute', top: 235, left: 128, animationDelay: '0.5s' }} className="floating">
                     <Radio checked color="primary" value="a" />
                 </div>
 
@@ -81,7 +86,7 @@ const ComponentsSection = () => {
                     style={{ position: 'absolute', top: 289, left: -78, animationDelay: '1s' }}
                 />
 
-                <CardExample style={{ position: 'absolute', top: 3, left: 176, animationDelay: '0.7s' }} className="bg-white floating" />
+                <CardExample style={{ position: 'absolute', top: 3, left: 161, animationDelay: '0.7s' }} className="bg-white floating" />
 
                 <DropdownExample style={{ position: 'absolute', top: 150, left: 360, animationDelay: '0.3s' }} className="bg-white floating" />
 
@@ -106,8 +111,16 @@ const ComponentsSection = () => {
                 <Button paddingX="11" paddingY="2" rounded="lg">
                     Get started
                 </Button>
-                <Button paddingX="11" paddingY="2" variant="secondary" className="border-blue-400 bg-white" fontWeight="normal" rounded="lg">
+                <Button
+                    paddingX="6"
+                    paddingY="2"
+                    variant="secondary"
+                    className="border-blue-400 bg-white flex justify-center items-center"
+                    fontWeight="normal"
+                    rounded="lg"
+                >
                     npm i dd360-ds@latest
+                    <Image alt="copy-icon" src="/copy-icon.svg" width={12} height={15} className="ml-3" />
                 </Button>
             </div>
         </section>

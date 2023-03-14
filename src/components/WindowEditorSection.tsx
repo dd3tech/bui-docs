@@ -6,11 +6,11 @@ import WindowEditor from './WindowEditor'
 const WindowEditorSection = () => (
     <section className="components-window-editor relative flex flex-wrap items-center justify-center" style={{ paddingBottom: 371 }}>
         <div className="relative" style={{ maxWidth: 544, width: '100%' }}>
-            <WindowEditor className="w-full rounded-2xl py-3" style={{ overflow: 'auto' }} />
-            <div style={{ position: 'absolute', top: 262, left: 562, animationDelay: '2s' }} className="switch absolute min-w-min">
-                <Switch setToggle={function noRefCheck() { }} toggle />
+            <WindowEditor className="w-full rounded-2xl py-3" style={{ overflow: 'hidden' }} />
+            <div style={{ position: 'absolute', top: 262, left: 579, animationDelay: '2s' }} className="switch absolute min-w-min hidden sm:block">
+                <Switch setToggle={function noRefCheck() {}} toggle />
             </div>
-            <Card rounded="lg" padding={6} className="absolute bg-white card-example" style={{ bottom: -250, right: -77 }}>
+            <Card rounded="lg" padding={6} className="absolute bg-white card-example" style={{ bottom: -225, right: -77 }}>
                 <Container className="flex w-full pb-4">
                     <Text size="base" className="w-full" fontBold="medium">
                         Active Loans
@@ -50,7 +50,7 @@ const WindowEditorSection = () => (
                     </div>
                 </div>
 
-                <div className="flex items-center p-6">
+                <div className="flex items-center p-6 pb-0">
                     <ProgressCircle classNamePercentage="w-full text-center text-grey-700 text-sm font-bold" value={5} width={56}>
                         {null}
                     </ProgressCircle>
@@ -85,7 +85,14 @@ const WindowEditorSection = () => (
                 components to lift the tedious front-end work from your shoulders. Get ahead with our simple API approach in no time.
             </Text>
         </div>
-        <Image alt="looper-variant-3" src="/looper-variant-3.svg" width={590} height={616} className="absolute right-0" style={{ zIndex: -20, bottom: -197 }} />
+        <Image
+            alt="looper-variant-3"
+            src="/looper-variant-3.svg"
+            width={590}
+            height={616}
+            className="absolute right-0"
+            style={{ zIndex: -20, bottom: -197, right: 0 }}
+        />
     </section>
 )
 

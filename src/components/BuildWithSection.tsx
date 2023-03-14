@@ -1,7 +1,7 @@
 import { ImageIcon, Text } from 'dd360-ds'
 
 const BuildWithSection = () => (
-    <section className="flex flex-col items-center justify-center w-full mt-36">
+    <section className="flex flex-col items-center justify-center w-full" style={{ marginTop: 122 }}>
         <Text size="xl" className="font-semibold mb-9">
             Built with:
         </Text>
