@@ -49,7 +49,7 @@ function Footer() {
                                 Subscribe to our newsletter
                             </label>
                             <div className="flex gap-3">
-                                <Input id="newsletter" className="lg:mt-0 w-64" placeholder="hello@dd360.mx" style={{ background: 'inherit' }} />
+                                <Input id="newsletter" className="lg:mt-0 w-64 mb-4" placeholder="hello@dd360.mx" style={{ background: 'inherit' }} />
                                 <Button className="leading-none" rounded="lg" paddingX="8" paddingY="4">
                                     Suscribe
                                 </Button>
@@ -71,9 +71,7 @@ function Footer() {
                         </ol>
                     </div>
                 </div>
-
                 <Divider variant="full" className="border-gray-100 my-8" />
-
                 <div className="flex justify-between items-center text-gray-500">
                     <Text variant="p">© 2023 DD360. All rights reserved.</Text>
                     <Text>Privacy</Text>
