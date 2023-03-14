@@ -15,10 +15,10 @@ const StartNowSection = () => (
                 Find out why DD360 tools are trusted by thousand of open source developers and teams around the world
             </Text>
             <div className="flex gap-6">
-                <Button paddingX="11" paddingY="2" className="text-xs">
+                <Button paddingX="11" paddingY="2" className="text-xs" rounded="lg">
                     Get started
                 </Button>
-                <Button paddingX="3" paddingY="2" variant="secondary" className="border-blue-400 text-xs bg-white" fontWeight="normal">
+                <Button paddingX="3" paddingY="2" variant="secondary" className="border-blue-400 text-xs bg-white" fontWeight="normal" rounded="lg">
                     npm i dd360-ds@latest
                 </Button>
             </div>

@@ -20,3 +20,36 @@
         transform: translate(0, -0px);
     }
 }
+
+@media (max-width: 1002px) {
+    .banner-dashboard-component {
+        background-color: blue;
+        justify-content: center;
+    }
+
+    .banner-dashboard-component .description .img-bottom {
+        display: block;
+    }
+    .banner-dashboard-component .description {
+        justify-content: center;
+    }
+    .banner-dashboard-component .description .group-btns {
+        justify-content: center;
+    }
+
+    .banner-dashboard-component .img-right {
+        display: none;
+    }
+    .components-window-editor .switch {
+        top: auto !important;
+        left: 0 !important;
+        bottom: -70px !important;
+    }
+}
+
+@media (max-width: 730px) {
+    .components-window-editor .card-example {
+        right: 0 !important;
+    }
+    
+}

@@ -7,11 +7,15 @@ function BannerDashboard() {
             style={{
                 backgroundImage: 'url(/dashboard-poly.svg)',
                 backgroundBlendMode: 'normal',
-                backgroundPositionX: 86
+                backgroundPositionX: 86,
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',
+                height: 'fit-content',
+                backgroundSize: 'cover'
             }}
-            className="bg-blue-800 rounded-2xl mt-52 mb-40 flex py-16 px-24 relative mx-8"
+            className="banner-dashboard-component bg-blue-800 rounded-2xl mt-52 mb-40 flex py-16 px-12 sm:px-24 relative mx-10 md:mx-32"
         >
-            <div className="max-w-md my-1.5">
+            <div className="max-w-md my-1.5 description">
                 <Text variant="h3" size="xl" className="text-blue-300 font-semibold mb-1">
                     Star now
                 </Text>
@@ -22,7 +26,7 @@ function BannerDashboard() {
                     Get a live preview of a demo dashboard built with DD360 components or lear how to rebuild it
                 </Text>
 
-                <div className="flex gap-12">
+                <div className="flex gap-12 group-btns">
                     <Button paddingX="4" paddingY="2.5" className="flex gap-2.5 items-center bg-white text-blue-700" variant="tertiary">
                         <Text>Live preview</Text>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-4 h-4">
@@ -38,12 +42,22 @@ function BannerDashboard() {
                         <DynamicHeroIcon icon="ChevronRightIcon" className="w-4 h-4" strokeWidth={3.5} />
                     </Button>
                 </div>
+                <img src="/demo-dashboard.png" alt="demo-dashboard" className="mt-10 -mb-10 img-bottom hidden" />
             </div>
 
-            <div
-                className="absolute right-0 transform scale-150 bg-cover top-20"
-                style={{ backgroundImage: 'url(/demo-dashboard.png)', width: 505.6, height: 310.97 }}
-            />
+            <div className="img-right" style={{ width: 535 }}>
+                <img
+                    src="/demo-dashboard.png"
+                    alt="demo-dashboard"
+                    style={{
+                        position: 'absolute',
+                        maxWidth: 705,
+                        bottom: -79,
+                        right: -125,
+                        width: '64%'
+                    }}
+                />
+            </div>
         </Card>
     )
 }
