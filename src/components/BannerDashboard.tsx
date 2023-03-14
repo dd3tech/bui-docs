@@ -1,5 +1,6 @@
 import { Button, Card, Text } from 'dd360-ds'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
+import Image from 'next/image'
 
 function BannerDashboard() {
     return (
@@ -11,9 +12,10 @@ function BannerDashboard() {
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center',
                 height: 'fit-content',
-                backgroundSize: 'cover'
+                backgroundSize: 'cover',
+                marginTop: 140
             }}
-            className="banner-dashboard-component bg-blue-800 rounded-2xl mt-52 mb-40 flex py-16 px-12 sm:px-24 relative mx-10 md:mx-32"
+            className="banner-dashboard-component bg-blue-800 rounded-2xl mb-40 flex py-16 px-12 sm:px-24 relative mx-10 md:mx-32"
         >
             <div className="max-w-md my-1.5 description">
                 <Text variant="h3" size="xl" className="text-blue-300 font-semibold mb-1">
@@ -42,11 +44,11 @@ function BannerDashboard() {
                         <DynamicHeroIcon icon="ChevronRightIcon" className="w-4 h-4" strokeWidth={3.5} />
                     </Button>
                 </div>
-                <img src="/demo-dashboard.png" alt="demo-dashboard" className="mt-10 -mb-10 img-bottom hidden" />
+                <Image src="/demo-dashboard.png" alt="demo-dashboard" className="mt-10 -mb-10 img-bottom hidden" width={681} height={424} />
             </div>
 
             <div className="img-right" style={{ width: 535 }}>
-                <img
+                <Image
                     src="/demo-dashboard.png"
                     alt="demo-dashboard"
                     style={{
@@ -56,6 +58,8 @@ function BannerDashboard() {
                         right: -125,
                         width: '64%'
                     }}
+                    width={705}
+                    height={438.94}
                 />
             </div>
         </Card>

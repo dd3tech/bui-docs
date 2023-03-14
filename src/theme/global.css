@@ -49,7 +49,6 @@
 
 @media (max-width: 730px) {
     .components-window-editor .card-example {
-        right: 0 !important;
+        right: 15px !important;
     }
-    
 }
