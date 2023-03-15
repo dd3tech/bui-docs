@@ -45,7 +45,7 @@ const StartNowSection = () => (
         >
             <div className="flex items-center mb-6">
                 <Text className="font-semibold ml-2" size={14}>
-                    Accessibility
+                    Showcase
                 </Text>
             </div>
             <Text variant="p" size="xs">
@@ -74,7 +74,7 @@ const StartNowSection = () => (
         >
             <div className="flex items-center mb-6">
                 <Text className="font-semibold ml-2" size={14}>
-                    Accessibility
+                    Blog
                 </Text>
             </div>
             <Text variant="p" size="xs">
