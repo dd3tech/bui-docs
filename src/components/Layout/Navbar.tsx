@@ -8,6 +8,8 @@ import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 import { composeClasses } from 'dd360-ds/lib'
 import Switch from '../Switch'
 
+import { openWindow, GITHUB_URL } from '@/utils'
+
 const menu = [
     {
         key: 1,
@@ -38,7 +40,6 @@ function Navbar({ isSticky, hideLogo }: { isSticky?: boolean; hideLogo?: boolean
                         <Image src="/dd360-black.png" width={130} height={28.5} alt="logo" />
                     </Link>
                 )}
-
                 <ul className="hidden items-center gap-8 h-12 md:flex">
                     {menu.map(({ key, label, link }) => (
                         <Link
@@ -67,11 +68,16 @@ function Navbar({ isSticky, hideLogo }: { isSticky?: boolean; hideLogo?: boolean
                     variant="active"
                     placeholder="Search the docs   (Ctrl + k)"
                 />
-
                 <Switch />
-
-                <Circle width="36px" height="36px" backgroundColor="transparent" border="1px solid #D1D5DB">
-                    <ImageIcon src="/gitlab.svg" style={{ width: 16 }} />
+                <Circle
+                    className="cursor-pointer"
+                    width="36px"
+                    height="36px"
+                    backgroundColor="transparent"
+                    border="1px solid #D1D5DB"
+                    onClick={() => openWindow(GITHUB_URL)}
+                >
+                    <ImageIcon src="/github-mark.svg" style={{ width: 36 }} />
                 </Circle>
             </div>
         </nav>
