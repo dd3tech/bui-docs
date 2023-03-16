@@ -2,7 +2,7 @@ import { Badge, Breadcrumbs, Button, Checkbox, Circle, FilterRangeSlider, Pagina
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import CardExample from './CardExample'
+import CardExample from '@/modules/landing/CardExample'
 import DropdownExample from './DropdownExample'
 
 const ComponentsSection = () => {

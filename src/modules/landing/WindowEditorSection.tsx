@@ -1,7 +1,7 @@
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 import { Card, Container, Divider, Text, ProgressCircle, Switch } from 'dd360-ds'
 import Image from 'next/image'
-import WindowEditor from './WindowEditor'
+import { WindowEditor } from '@/components'
 
 const WindowEditorSection = () => (
     <section className="components-window-editor relative flex flex-wrap items-center justify-center" style={{ paddingBottom: 371 }}>

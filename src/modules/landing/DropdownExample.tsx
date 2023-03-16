@@ -1,6 +1,5 @@
 import { Button, Card, Divider } from 'dd360-ds'
 import { composeClasses, StyleObject } from 'dd360-ds/lib'
-import React from 'react'
 
 const DropdownExample = ({ style, className }: { style: StyleObject; className: string }) => (
     <Card padding={0} rounded="md" width={170} style={style} className={composeClasses('p-2', className)}>

@@ -1,7 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
-import { Button, Divider, Input, Text } from 'dd360-ds'
+import { Divider, Text } from 'dd360-ds'
+import Newsletter from '../Newsletter'
 
 const footerMenu = [
     {
@@ -48,12 +49,7 @@ function Footer() {
                             <label className="cursor-pointer text-sm font-medium" htmlFor="newsletter">
                                 Subscribe to our newsletter
                             </label>
-                            <div className="flex gap-3">
-                                <Input id="newsletter" className="lg:mt-0 w-64 mb-4" placeholder="hello@dd360.mx" style={{ background: 'inherit' }} />
-                                <Button className="leading-none" rounded="lg" paddingX="8" paddingY="4">
-                                    Suscribe
-                                </Button>
-                            </div>
+                            <Newsletter />
                         </div>
                     </div>
                     <div className="flex gap-28">
@@ -73,7 +69,7 @@ function Footer() {
                 </div>
                 <Divider variant="full" className="border-gray-100 my-8" />
                 <div className="flex justify-between items-center text-gray-500">
-                    <Text variant="p">© 2023 DD360. All rights reserved.</Text>
+                    <Text variant="p">© {new Date().getFullYear()} DD360. All rights reserved.</Text>
                     <Text>Privacy</Text>
                 </div>
             </div>
