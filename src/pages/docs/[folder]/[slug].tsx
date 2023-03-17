@@ -1,12 +1,10 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { useTranslation } from 'next-i18next'
+import { MDXRemote } from 'next-mdx-remote'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { serialize } from 'next-mdx-remote/serialize'
-import { MDXRemote } from 'next-mdx-remote'
-
-import * as Components from 'dd360-ds'
 import { getAllPaths, getDocBySlug } from '@/utils/readFile'
-import { WindowEditor } from '@/components'
+import { getComponents } from '@/utils'
 
 type Props = {
     slug: string
@@ -16,11 +14,9 @@ type Props = {
     source: any
 }
 
-const components = { ...Components, WindowEditor }
-
 export default function Slug({ source }: Props) {
     const { t } = useTranslation('common')
-    return <MDXRemote {...source} components={components} scope={{ t }} />
+    return <MDXRemote {...source} components={{ ...getComponents() }} scope={{ t }} />
 }
 
 /** Next.js Server functions */
