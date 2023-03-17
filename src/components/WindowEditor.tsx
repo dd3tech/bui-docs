@@ -23,13 +23,13 @@ interface EditorProps {
     language?: 'tsx' | 'jsx' | 'md' | 'mdx'
     className?: string
     style?: React.CSSProperties
-    withHeader?: boolean
+    header?: { show?: boolean; title?: string }
 }
 
-function WindowEditor({ codeString = cardMetricsString, language = 'tsx', className, withHeader, style }: EditorProps) {
+function WindowEditor({ codeString = cardMetricsString, language = 'tsx', className, header, style }: EditorProps) {
     return (
         <div className={composeClasses('h-auto bg-gray-900 rounded-lg overflow-hidden', className)}>
-            {withHeader && (
+            {header?.show && (
                 <nav className="flex items-center px-3 pt-2 gap-3 bg-gray-800">
                     <div className="flex items-center gap-2">
                         <button className="h-3 w-3 bg-red-400 rounded-full"></button>
@@ -37,7 +37,7 @@ function WindowEditor({ codeString = cardMetricsString, language = 'tsx', classN
                         <button className="h-3 w-3 bg-green-400 rounded-full"></button>
                     </div>
                     <div className="bg-gray-900 rounded-t-xl h-full px-3 py-1">
-                        <h3 className="text-white font-medium">Design System</h3>
+                        <h3 className="text-white font-medium">{header?.title}</h3>
                     </div>
                 </nav>
             )}
