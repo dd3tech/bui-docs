@@ -163,8 +163,8 @@ export default function Docs() {
                 </Text>
 
                 <section className="grid gap-x-4 gap-y-5" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(228px, 1fr))' }}>
-                    {cards.map((card, index) => (
-                        <article key={index}>
+                    {cards.map((card) => (
+                        <article key={card.title}>
                             <Card
                                 height={128}
                                 padding={0}

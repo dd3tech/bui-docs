@@ -10,12 +10,11 @@ interface Paths {
 export const docsDirectory = join(process.cwd(), 'docs')
 
 export function getDocBySlug(folder: string, slug: string) {
-    const realSlug = slug.replace(/\.mdx$/, '')
-    const fullPath = join(`${docsDirectory}/${folder}`, `${realSlug}.mdx`)
+    const fullPath = join(`${docsDirectory}/${folder}`, `${slug}.mdx`)
     const fileContents = readFileSync(fullPath, 'utf8')
     const { data, content } = matter(fileContents)
 
-    return { slug: realSlug, meta: data, content }
+    return { meta: data, content }
 }
 
 export function getAllPaths(allowedLocales?: string[]) {

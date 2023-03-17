@@ -1,7 +1,10 @@
 import { useRouter } from 'next/router'
 import FloatingNav from './FloatingNav'
+import Footer from './Footer'
 import Navbar from './Navbar'
 import SideBar from './SideBar'
+
+const routesWithoutFooter = ['/components']
 
 function Layout({ children }: { children: JSX.Element }) {
     const router = useRouter()
@@ -11,7 +14,7 @@ function Layout({ children }: { children: JSX.Element }) {
         return (
             <div className="flex min-h-screen flex-row bg-gray-50 text-gray-800">
                 <SideBar />
-                <main className={`relative -ml-52 flex flex-grow flex-col transition-all duration-150 ease-in lg:ml-0`}>
+                <main className="relative -ml-52 flex flex-grow flex-col transition-all duration-150 ease-in lg:ml-0">
                     <Navbar isSticky hideLogo />
                     <div className="flex h-full  px-8 lg:px-16">
                         <article className="w-full">{children}</article>
@@ -24,10 +27,20 @@ function Layout({ children }: { children: JSX.Element }) {
         )
     }
 
+    if (routesWithoutFooter.includes(router.pathname)) {
+        return (
+            <>
+                <Navbar />
+                {children}
+            </>
+        )
+    }
+
     return (
         <>
             <Navbar />
             {children}
+            <Footer />
         </>
     )
 }

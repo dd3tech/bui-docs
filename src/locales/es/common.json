@@ -12,5 +12,9 @@
     "images": "Imágenes",
     "modals": "Modales",
     "typography": "Tipografía",
-    "controls": "Controles"
+    "controls": "Controles",
+    "subscribe": "Suscribirse",
+    "metadata": {
+        "home": "DD360 UI - La biblioteca React para construir plataformas de back office"
+    }
 }
