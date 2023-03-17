@@ -23,7 +23,7 @@ interface EditorProps {
     language?: 'tsx' | 'jsx' | 'md' | 'mdx'
     className?: string
     style?: React.CSSProperties
-    header?: { show?: boolean; title?: string }
+    header?: { show: boolean; title: string }
 }
 
 function WindowEditor({ codeString = cardMetricsString, language = 'tsx', className, header, style }: EditorProps) {
