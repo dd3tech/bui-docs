@@ -8,7 +8,7 @@ const WindowEditorSection = () => (
         <div className="relative" style={{ maxWidth: 544, width: '100%' }}>
             <WindowEditor header={{ show: true, title: 'Design System' }} className="w-full rounded-2xl pb-3" style={{ overflow: 'hidden' }} />
             <div style={{ position: 'absolute', top: 262, left: 579, animationDelay: '2s' }} className="switch absolute min-w-min hidden sm:block">
-                <Switch setToggle={function noRefCheck() { }} toggle />
+                <Switch setToggle={function noRefCheck() {}} toggle />
             </div>
             <Card rounded="lg" padding={6} className="absolute bg-white card-example" style={{ bottom: -225, right: -77 }}>
                 <Container className="flex w-full pb-4">
