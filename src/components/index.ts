@@ -7,3 +7,4 @@ export { default as TestimonialsBanner } from '../modules/landing/TestimonialsBa
 export { default as ShowMore } from './ShowMore'
 export { default as DropdownExample } from '../modules/landing/DropdownExample'
 export { default as Badge } from './Badge'
+export { default as CustomTableDocs } from './CustomTableDocs'
