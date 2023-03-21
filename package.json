@@ -14,7 +14,7 @@
         "pre-push": "npm run build"
     },
     "dependencies": {
-        "dd360-ds": "^4.12.1",
+        "dd360-ds": "^4.15.1",
         "gray-matter": "^4.0.3",
         "i18next": "^22.4.9",
         "next": "^13.1.6",

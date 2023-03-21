@@ -15,11 +15,9 @@ components: TextArea
 
 ### Usage
 
-```tsx
 <ContainerComponentDoc className="gap-y-2">
     <TextArea />
 </ContainerComponentDoc>
-```
 
 <WindowEditor codeString="import { TextArea } from 'dd360-ds'
 
@@ -29,7 +27,6 @@ components: TextArea
 
 You can use the following variants: "default", "active", "success", "warning", "error" and "disabled". By default "active" is used.
 
-```tsx
 <ContainerComponentDoc className="gap-y-2">
     <Text>Default</Text>
     <TextArea className="mb-2" variant="default" />
@@ -44,7 +41,6 @@ You can use the following variants: "default", "active", "success", "warning", "
     <Text>Disabled</Text>
     <TextArea className="mb-2" variant="disabled" />
 </ContainerComponentDoc>
-```
 
 <WindowEditor codeString="import { TextArea } from 'dd360-ds'
 
@@ -59,30 +55,38 @@ You can use the following variants: "default", "active", "success", "warning", "
 
 Use the prop "placeholder" to indicate a help to the user about what information to enter in your TextArea component.
 
-```tsx
 <ContainerComponentDoc className="gap-y-2">
     <TextArea placeholder="I'm a placeholder!" />
 </ContainerComponentDoc>
-```
 
 <WindowEditor codeString="import { TextArea } from 'dd360-ds'
 
 <TextArea placeholder='I am a placeholder!' />" />
 
+#### Label
+
+Use the prop "label" to indicate a help to the user about what information to enter in your TextArea component.
+
+<ContainerComponentDoc className="gap-y-2">
+    <TextArea label="I'm a label!" />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { TextArea } from 'dd360-ds'
+
+<TextArea label='I am a label!' />" />
+
 #### TextArea With Icon
 
 You can add an icon to the TextArea component by passing the prop startAdornment that receives a react component.
 
-```tsx
 <ContainerComponentDoc className="gap-y-2">
-    <TextArea startAdornment={<DynamicHeroIcon icon="AcademicCapIcon" className="text-blue-700 w-6" />} />
+    <TextArea endAdornment={<DynamicHeroIcon icon="AcademicCapIcon" className="text-blue-700 w-6" />} />
 </ContainerComponentDoc>
-```
 
 <WindowEditor codeString="import { TextArea } from 'dd360-ds'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 
-<TextArea startAdornment={<DynamicHeroIcon icon='AcademicCapIcon' className='text-blue-700 w-6' />}" />
+<TextArea endAdornment={<DynamicHeroIcon icon='AcademicCapIcon' className='text-blue-700 w-6' />} />" />
 
 ### API Reference
 

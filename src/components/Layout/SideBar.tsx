@@ -299,7 +299,7 @@ export default function SideBar() {
             </Link>
             <div className="my-4">
                 <div className="m-auto w-full" style={{ height: 34 }}>
-                    <Select optionsList={builds} rounded="xl" padding="2" fontSize="sm" className="bg-white" style={{ borderColor: '#D1D5DB' }} />
+                    <Select optionsList={builds} rounded="xl" padding="2" className="bg-white" style={{ borderColor: '#D1D5DB' }} />
                 </div>
                 <div className="flex flex-col gap-6 mt-6">
                     {Object.entries(components).map(([key, value]) => (
