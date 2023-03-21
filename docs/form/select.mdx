@@ -17,9 +17,9 @@ components: Select
 
 To customize the options we must pass it an object in the prop optionsList with the structure of the example.
 
-<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+<ContainerComponentDoc className="gap-y-2">
     <Select optionsList={{ 0: {label: 'Select option', disabled: true}, A: { label: 'Option A' }, B: { label: 'Option B' } }} />
-</Container>
+</ContainerComponentDoc>
 
 <WindowEditor codeString="import { Select } from 'dd360-ds'
 
@@ -30,7 +30,7 @@ To customize the options we must pass it an object in the prop optionsList with 
 To customize the styles of the Select using the prop "variant", which contains the following options: "outline", "standard", and "none". 
 By default it uses "outlined".
 
-<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+<ContainerComponentDoc className="gap-y-2">
     <Text className="block mb-1 mt-2">Standard</Text>
     <Select
         className="mb-3"
@@ -45,7 +45,7 @@ By default it uses "outlined".
     />
     <Text className="block mb-1 mt-2">None</Text>
     <Select className="mb-3" variant="none" optionsList={{ 0: {label: 'Select option', disabled: true}, A: { label: 'Option A' }, B: { label: 'Option B' } }} />
-</Container>
+</ContainerComponentDoc>
 
 <WindowEditor codeString="import { Select } from 'dd360-ds'
 
@@ -58,7 +58,7 @@ By default it uses "outlined".
 Select has the following states: "active", "success", "warning", "error" and "disabled".
 By default it uses "active".
 
-<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+<ContainerComponentDoc className="gap-y-2">
     <Text className="block mb-2 mt-1">Active</Text>
     <Select active optionsList={{ 0: {label: 'Select option', disabled: true}, A: { label: 'Option A' }, B: { label: 'Option B' } }} />
     <Text className="block mb-2 mt-1">Success</Text>
@@ -69,7 +69,7 @@ By default it uses "active".
     <Select error optionsList={{ 0: {label: 'Select option', disabled: true}, A: { label: 'Option A' }, B: { label: 'Option B' } }} />
     <Text className="block mb-2 mt-1">Disabled</Text>
     <Select disabled optionsList={{ 0: {label: 'Select option', disabled: true}, A: { label: 'Option A' }, B: { label: 'Option B' } }} />
-</Container>
+</ContainerComponentDoc>
 
 <WindowEditor codeString="import { Select } from 'dd360-ds'
 
@@ -84,12 +84,12 @@ By default it uses "active".
 
 Use Select with an icon.
 
-<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+<ContainerComponentDoc className="gap-y-2">
     <Select
         startAdornment={<DynamicHeroIcon icon="AcademicCapIcon" className="text-blue-700 w-6" />}
         optionsList={{ 0: {label: 'Select option', disabled: true}, A: { label: 'Option A' }, B: { label: 'Option B' } }}
     />
-</Container>
+</ContainerComponentDoc>
 
 <WindowEditor codeString="import { Select } from 'dd360-ds'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'

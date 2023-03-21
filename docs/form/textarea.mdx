@@ -16,9 +16,9 @@ components: TextArea
 ### Usage
 
 ```tsx
-<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+<ContainerComponentDoc className="gap-y-2">
     <TextArea />
-</Container>
+</ContainerComponentDoc>
 ```
 
 <WindowEditor codeString="import { TextArea } from 'dd360-ds'
@@ -30,7 +30,7 @@ components: TextArea
 You can use the following variants: "default", "active", "success", "warning", "error" and "disabled". By default "active" is used.
 
 ```tsx
-<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+<ContainerComponentDoc className="gap-y-2">
     <Text>Default</Text>
     <TextArea className="mb-2" variant="default" />
     <Text>Active</Text>
@@ -43,7 +43,7 @@ You can use the following variants: "default", "active", "success", "warning", "
     <TextArea className="mb-2" variant="error" />
     <Text>Disabled</Text>
     <TextArea className="mb-2" variant="disabled" />
-</Container>
+</ContainerComponentDoc>
 ```
 
 <WindowEditor codeString="import { TextArea } from 'dd360-ds'
@@ -60,9 +60,9 @@ You can use the following variants: "default", "active", "success", "warning", "
 Use the prop "placeholder" to indicate a help to the user about what information to enter in your TextArea component.
 
 ```tsx
-<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+<ContainerComponentDoc className="gap-y-2">
     <TextArea placeholder="I'm a placeholder!" />
-</Container>
+</ContainerComponentDoc>
 ```
 
 <WindowEditor codeString="import { TextArea } from 'dd360-ds'
@@ -74,9 +74,9 @@ Use the prop "placeholder" to indicate a help to the user about what information
 You can add an icon to the TextArea component by passing the prop startAdornment that receives a react component.
 
 ```tsx
-<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+<ContainerComponentDoc className="gap-y-2">
     <TextArea startAdornment={<DynamicHeroIcon icon="AcademicCapIcon" className="text-blue-700 w-6" />} />
-</Container>
+</ContainerComponentDoc>
 ```
 
 <WindowEditor codeString="import { TextArea } from 'dd360-ds'

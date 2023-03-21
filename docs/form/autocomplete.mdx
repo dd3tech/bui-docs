@@ -18,9 +18,9 @@ components: AutoComplete
 It is mandatory to pass a prop called "items". 
 The prop item, contains the data for each item in the drop-down list. Each array object must have a format similar to of following example:
 
-<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+<ContainerComponentDoc className="gap-y-2">
     <AutoComplete items={[{name: 'Item name', id: '1'}]} />
-</Container>
+</ContainerComponentDoc>
 
 <WindowEditor codeString="import { Checkbox } from 'dd360-ds'
 
@@ -30,7 +30,7 @@ The prop item, contains the data for each item in the drop-down list. Each array
 
 Sets the appearance of the component. Available options are: default, active, disabled, warning, success, and error. Default uses: "default".
 
-<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+<ContainerComponentDoc className="gap-y-2">
     <Text className="mb-1">Default</Text>
     <AutoComplete variant="default" items={[]} />
     <Text className="mb-1">Active</Text>
@@ -43,7 +43,7 @@ Sets the appearance of the component. Available options are: default, active, di
     <AutoComplete variant="error" items={[]} />
     <Text className="mb-1">Disabled</Text>
     <AutoComplete variant="disabled" items={[]} />
-</Container>
+</ContainerComponentDoc>
 
 <WindowEditor codeString="import { Checkbox } from 'dd360-ds'
 
@@ -58,7 +58,7 @@ Sets the appearance of the component. Available options are: default, active, di
 
 Sets the input type of the component. Available options are: text, number, email, currency, date, date, password, year, month, and percentage. By default it uses "text".
 
-<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+<ContainerComponentDoc className="gap-y-2">
     <Text>Text</Text>
     <AutoComplete type="text" items={[]} />
     <Text>Number</Text>
@@ -69,7 +69,7 @@ Sets the input type of the component. Available options are: text, number, email
     <AutoComplete type="password" items={[]} />
     <Text>Percentage</Text>
     <AutoComplete type="percentage" items={[]} />
-</Container>
+</ContainerComponentDoc>
 
 <WindowEditor codeString="import { Checkbox } from 'dd360-ds'
 
@@ -82,9 +82,9 @@ Sets the input type of the component. Available options are: text, number, email
 
 A message that is displayed when no items matching the user's search string are found.
 
-<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+<ContainerComponentDoc className="gap-y-2">
     <AutoComplete canFindText="No matches in your search" items={[]} />
-</Container>
+</ContainerComponentDoc>
 
 <WindowEditor codeString="import { Checkbox } from 'dd360-ds'
 
@@ -94,9 +94,9 @@ A message that is displayed when no items matching the user's search string are 
 
 A boolean that indicates whether the drop-down list will be closed when the user clicks out of it.
 
-<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+<ContainerComponentDoc className="gap-y-2">
     <AutoComplete isCloseOnBlur={false} items={[]} />
-</Container>
+</ContainerComponentDoc>
 
 <WindowEditor codeString="import { Checkbox } from 'dd360-ds'
 
@@ -106,9 +106,9 @@ A boolean that indicates whether the drop-down list will be closed when the user
 
 A boolean indicating whether the drop-down list is loading.
 
-<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+<ContainerComponentDoc className="gap-y-2">
     <AutoComplete isLoading items={[]} />
-</Container>
+</ContainerComponentDoc>
 
 <WindowEditor codeString="import { Checkbox } from 'dd360-ds'
 
@@ -118,9 +118,9 @@ A boolean indicating whether the drop-down list is loading.
 
 A message displayed while loading the drop-down list.
 
-<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+<ContainerComponentDoc className="gap-y-2">
     <AutoComplete isLoading loadingText="Searching..." items={[]} />
-</Container>
+</ContainerComponentDoc>
 
 <WindowEditor codeString="import { Checkbox } from 'dd360-ds'
 
@@ -130,9 +130,9 @@ A message displayed while loading the drop-down list.
 
 Text that is displayed as a placeholder in the text box before something is typed.
 
-<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+<ContainerComponentDoc className="gap-y-2">
     <AutoComplete placeholder="Search items" items={[]} />
-</Container>
+</ContainerComponentDoc>
 
 <WindowEditor codeString="import { Checkbox } from 'dd360-ds'
 

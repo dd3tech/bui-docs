@@ -16,9 +16,9 @@ components: Input File
 
 ### Usage
 
-<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+<ContainerComponentDoc className="gap-y-2">
     <InputFile />
-</Container>
+</ContainerComponentDoc>
 
 <WindowEditor codeString="import { InputFile } from 'dd360-ds'
 
@@ -29,9 +29,9 @@ components: Input File
 Used to provide additional information to users about the type of file they are expected to upload. 
 By default, this attribute is "Upload in PDF format and signed by all parties (if applicable)."
 
-<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+<ContainerComponentDoc className="gap-y-2">
     <InputFile hintText='Upload in PDF' />
-</Container>
+</ContainerComponentDoc>
 
 <WindowEditor codeString="import { InputFile } from 'dd360-ds'
 
@@ -42,9 +42,9 @@ By default, this attribute is "Upload in PDF format and signed by all parties (i
 This prop is used to provide additional information to users about file upload requirements, such as the maximum weight allowed for a file. 
 By default, this attribute is "PDF Maximum weight per file 20 MB".
 
-<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+<ContainerComponentDoc className="gap-y-2">
     <InputFile boxMessage='PDF Maximum weight per file 3 MB' />
-</Container>
+</ContainerComponentDoc>
 
 <WindowEditor codeString="import { InputFile } from 'dd360-ds'
 
@@ -55,9 +55,9 @@ By default, this attribute is "PDF Maximum weight per file 20 MB".
 This prop is used to provide information to users on how they can upload files, i.e. dragging and dropping.
 By default, this attribute is "Drop here".
 
-<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+<ContainerComponentDoc className="gap-y-2">
     <InputFile dragMessage='Drop here' />
-</Container>
+</ContainerComponentDoc>
 
 <WindowEditor codeString="import { InputFile } from 'dd360-ds'
 
@@ -68,9 +68,9 @@ By default, this attribute is "Drop here".
  This prop is used to provide a label to the InputFile component. 
  By default, this attribute is "Drag & Drop your files or".
 
-<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+<ContainerComponentDoc className="gap-y-2">
     <InputFile label='Drag & Drop your files or' />
-</Container>
+</ContainerComponentDoc>
 
 <WindowEditor codeString="import { InputFile } from 'dd360-ds'
 
@@ -81,9 +81,9 @@ By default, this attribute is "Drop here".
  This prop is used to provide a text that tells the user that he can click on the InputFile component to select a file.
  By default, this attribute is "browse from your device".
 
-<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+<ContainerComponentDoc className="gap-y-2">
     <InputFile labelAction='browse from your device' />
-</Container>
+</ContainerComponentDoc>
 
 <WindowEditor codeString="import { InputFile } from 'dd360-ds'
 
@@ -94,9 +94,9 @@ By default, this attribute is "Drop here".
 This prop is used to show the progress of a file upload. 
 The default value is 0.
 
-<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+<ContainerComponentDoc className="gap-y-2">
     <InputFile progressIndicator={50} />
-</Container>
+</ContainerComponentDoc>
 
 <WindowEditor codeString="import { InputFile } from 'dd360-ds'
 
@@ -107,14 +107,14 @@ The default value is 0.
 This prop is used to display an error message to the user in case an error occurs when loading a file.
 The default value is a object of equal type what of the example
 
-<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+<ContainerComponentDoc className="gap-y-2">
     <InputFile
         error={{
             show: false,
             message: <span>File type not allowed or exceeds the maximum weight</span>
         }}
     />
-</Container>
+</ContainerComponentDoc>
 
 <WindowEditor codeString="import { InputFile } from 'dd360-ds'
 
