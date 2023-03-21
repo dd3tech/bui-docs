@@ -1,341 +1,159 @@
-# Button
-## heading2
-### heading3
-#### heading4
-##### heading5
+---
+product: dd360-ds
+title: React Button component
+components: Button
+---
 
 # Button
 
-A demo component for DD360 products.
+     button indicates a distinct action and executes a function. Text, icon, or a combination of the two express the action and are supported by the variant and occasionally a tooltip.
 
-A button indicates a distinct action and executes a function. Text, icon, or a combination of the two express the action and are supported by the variant and occasionally a tooltip.
+## Imports
 
-## Import
+    <WindowEditor codeString="import { Button } from 'dd360-ds' " />
+    <WindowEditor codeString="import Button from 'dd360-ds/Buttons'" />
 
-<WindowEditor className="mb-4" language="tsx" codeString={`import React from "react"
-import { Button } from "dd360-ds"`} />
+### Usage
 
-## Usage example
+<Container className="py-5 px-3 rounded-md my-6 bg-gray-100 w-fit">
+    <Button>Click Me</Button>
+</Container>
 
-<WindowEditor className="mb-4" language="tsx" codeString={`import React from "react"
-import { Button } from "dd360-ds"
+<WindowEditor
+    codeString="import { Button } from 'dd360-ds'
 
-<Button 
-  onClick={function noRefCheck(){}} 
-  variant="primary">
-  Comprar
-</Button>`} />
+    <Button>Click me</Button>"
+/>
 
-## API Reference
+##### Variants
 
-<Table>
-    <Table.Header>
-        <Table.HeaderRow>
-            <Table.HeaderCell style={{ minWidth: 150 }}>Name</Table.HeaderCell>
-            <Table.HeaderCell style={{ minWidth: 150 }}>Description</Table.HeaderCell>
-            <Table.HeaderCell style={{ minWidth: 150 }}>Default</Table.HeaderCell>
-            <Table.HeaderCell style={{ minWidth: 150 }}>
-                <div className="flex justify-between items-center">
-                    <span>Control</span>
-                    <Button varian="outline">Reset</Button>
-                </div>
-            </Table.HeaderCell>
-        </Table.HeaderRow>
-    </Table.Header>
-    <Table.Body>
-        <Table.Row >
-            <Table.Cell className="py-4">variant</Table.Cell>
-            <Table.Cell className="py-4">
-                <div className="grid grid-cols-3 gap-2" style={{ width: 'fit-content' }}>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"disabled"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"primary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"secondary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"tertiary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"outline"</div>
-                </div>
-            </Table.Cell>
-            <Table.Cell className="py-4">
-                <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"disabled"</div>
-            </Table.Cell>
-            <Table.Cell className="py-4">
-                <Select
-                        variant="outlined"
-                        rounded="lg"
-                        optionsList={{
-                            disabled: {
-                                label: 'elige una opcion',
-                                disabled: true
-                            },
-                            primary: {
-                                label: 'Primary'
-                            },
-                            secondary: {
-                                label: 'Secondary'
-                            },
-                            tertiary: {
-                                label: 'tertiary',
-                            }
-                        }}
-                    />
-            </Table.Cell>
-        </Table.Row>
-        <Table.Row >
-            <Table.Cell className="py-4">Children</Table.Cell>
-            <Table.Cell className="py-4">
-                <div className="grid grid-cols-3 gap-2" style={{ width: 'fit-content' }}>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"disabled"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"primary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"secondary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"tertiary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"outline"</div>
-                </div>
-            </Table.Cell>
-            <Table.Cell className="py-4">
-                <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"disabled"</div>
-            </Table.Cell>
-            <Table.Cell className="py-4">
-                <Select
-                        variant="outlined"
-                        rounded="lg"
-                        optionsList={{
-                            disabled: {
-                                label: 'elige una opcion',
-                                disabled: true
-                            },
-                            primary: {
-                                label: 'Primary'
-                            },
-                            secondary: {
-                                label: 'Secondary'
-                            },
-                            tertiary: {
-                                label: 'tertiary',
-                            }
-                        }}
-                    />
-            </Table.Cell>
-        </Table.Row>
-        <Table.Row >
-            <Table.Cell className="py-4">onClick</Table.Cell>
-            <Table.Cell className="py-4">
-                <div className="grid grid-cols-3 gap-2" style={{ width: 'fit-content' }}>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"disabled"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"primary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"secondary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"tertiary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"outline"</div>
-                </div>
-            </Table.Cell>
-            <Table.Cell className="py-4">
-                <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"disabled"</div>
-            </Table.Cell>
-            <Table.Cell className="py-4">
-                <Select
-                        variant="outlined"
-                        rounded="lg"
-                        optionsList={{
-                            disabled: {
-                                label: 'elige una opcion',
-                                disabled: true
-                            },
-                            primary: {
-                                label: 'Primary'
-                            },
-                            secondary: {
-                                label: 'Secondary'
-                            },
-                            tertiary: {
-                                label: 'tertiary',
-                            }
-                        }}
-                    />
-            </Table.Cell>
-        </Table.Row>
-        <Table.Row >
-            <Table.Cell className="py-4">Size</Table.Cell>
-            <Table.Cell className="py-4">
-                <div className="grid grid-cols-3 gap-2" style={{ width: 'fit-content' }}>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"disabled"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"primary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"secondary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"tertiary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"outline"</div>
-                </div>
-            </Table.Cell>
-            <Table.Cell className="py-4">
-                <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"disabled"</div>
-            </Table.Cell>
-            <Table.Cell className="py-4">
-                <Select
-                        variant="outlined"
-                        rounded="lg"
-                        optionsList={{
-                            disabled: {
-                                label: 'elige una opcion',
-                                disabled: true
-                            },
-                            primary: {
-                                label: 'Primary'
-                            },
-                            secondary: {
-                                label: 'Secondary'
-                            },
-                            tertiary: {
-                                label: 'tertiary',
-                            }
-                        }}
-                    />
-            </Table.Cell>
-        </Table.Row>
-        <Table.Row >
-            <Table.Cell className="py-4">Disabled</Table.Cell>
-            <Table.Cell className="py-4">
-                <div className="grid grid-cols-3 gap-2" style={{ width: 'fit-content' }}>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"disabled"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"primary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"secondary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"tertiary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"outline"</div>
-                </div>
-            </Table.Cell>
-            <Table.Cell className="py-4">
-                <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"disabled"</div>
-            </Table.Cell>
-            <Table.Cell className="py-4">
-                <Select
-                        variant="outlined"
-                        rounded="lg"
-                        optionsList={{
-                            disabled: {
-                                label: 'elige una opcion',
-                                disabled: true
-                            },
-                            primary: {
-                                label: 'Primary'
-                            },
-                            secondary: {
-                                label: 'Secondary'
-                            },
-                            tertiary: {
-                                label: 'tertiary',
-                            }
-                        }}
-                    />
-            </Table.Cell>
-        </Table.Row>
-        <Table.Row >
-            <Table.Cell className="py-4">isLoading</Table.Cell>
-            <Table.Cell className="py-4">
-                <div className="grid grid-cols-3 gap-2" style={{ width: 'fit-content' }}>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"disabled"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"primary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"secondary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"tertiary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"outline"</div>
-                </div>
-            </Table.Cell>
-            <Table.Cell className="py-4">
-                <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"disabled"</div>
-            </Table.Cell>
-            <Table.Cell className="py-4">
-                <div className="flex gap-4 items-center">
-                    <Switch setToggle={() => {}} toggle />
-                    <Text bold size="base">True</Text>
-                </div>
-            </Table.Cell>
-        </Table.Row>
-        <Table.Row >
-            <Table.Cell className="py-4">ClassName</Table.Cell>
-            <Table.Cell className="py-4">
-                <div className="grid grid-cols-3 gap-2" style={{ width: 'fit-content' }}>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"disabled"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"primary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"secondary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"tertiary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"outline"</div>
-                </div>
-            </Table.Cell>
-            <Table.Cell className="py-4">
-                <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"disabled"</div>
-            </Table.Cell>
-            <Table.Cell className="py-4">
-                <div className="flex gap-4 items-center">
-                    <Switch setToggle={() => {}} />
-                    <Text bold size="base">False</Text>
-                </div>
-            </Table.Cell>
-        </Table.Row>
-        <Table.Row>
-            <Table.Cell className="py-4">Padding</Table.Cell>
-            <Table.Cell className="py-4">
-                <div className="grid grid-cols-3 gap-2" style={{ width: 'fit-content' }}>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"disabled"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"primary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"secondary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"tertiary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"outline"</div>
-                </div>
-            </Table.Cell>
-            <Table.Cell className="py-4">
-                <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"disabled"</div>
-            </Table.Cell>
-            <Table.Cell className="py-4">
-                <Select
-                        variant="outlined"
-                        rounded="lg"
-                        optionsList={{
-                            disabled: {
-                                label: 'Choose option...',
-                                disabled: true
-                            },
-                            primary: {
-                                label: 'Primary'
-                            },
-                            secondary: {
-                                label: 'Secondary'
-                            },
-                            tertiary: {
-                                label: 'tertiary',
-                            }
-                        }}
-                    />
-            </Table.Cell>
-        </Table.Row>
-        <Table.Row>
-            <Table.Cell className="py-4">fontWeight</Table.Cell>
-            <Table.Cell className="py-4">
-                <div className="grid grid-cols-3 gap-2" style={{ width: 'fit-content' }}>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"disabled"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"primary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"secondary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"tertiary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"outline"</div>
-                </div>
-            </Table.Cell>
-            <Table.Cell className="py-4">
-                <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"disabled"</div>
-            </Table.Cell>
-            <Table.Cell className="py-4">
-                <Select
-                        variant="outlined"
-                        rounded="lg"
-                        optionsList={{
-                            disabled: {
-                                label: 'elige una opcion',
-                                disabled: true
-                            },
-                            primary: {
-                                label: 'Primary'
-                            },
-                            secondary: {
-                                label: 'Secondary'
-                            },
-                            tertiary: {
-                                label: 'tertiary',
-                            }
-                        }}
-                    />
-            </Table.Cell>
-        </Table.Row>
-    </Table.Body>
-</Table>
+The Button component comes with several variant options, by default it uses the "primary" variant, but you can also use these: "disabled", "success", "primary", "secondary", "link",
+"ghost", "cancel", "danger", "outline", "outlineBlue", "outlineWhite", "outlineWhiteRed".
+
+<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+    <ButtonGroup orientation="horizontal" gap={10} align="center">
+        <Button variant="primary">Primary</Button>
+        <Button variant="secondary">Secondary</Button>
+        <Button variant="success">Success</Button>
+        <Button variant="disabled">Disabled</Button>
+        <Button variant="danger">Danger</Button>
+        <Button variant="cancel">Cancel</Button>
+        <Button variant="ghost">Ghost</Button>
+        <Button variant="link">Link</Button>
+        <Button variant="outline">Outline</Button>
+        <Button variant="outlineBlue">OutlineBlue</Button>
+        <Button variant="outlineWhite">OutlineWhite</Button>
+        <Button variant="outlineWhiteRed">OutlineWhiteRed</Button>
+    </ButtonGroup>
+</Container>
+
+<WindowEditor
+    codeString="import { Button, ButtonGroup } from 'dd360-ds'
+
+    <ButtonGroup orientation='horizontal' gap={10} align='center'>
+    &nbsp;&nbsp;<Button variant='primary'>Primary</Button>
+    &nbsp;&nbsp;<Button variant='secondary'>Secondary</Button>
+    &nbsp;&nbsp;<Button variant='success'>Success</Button>
+    &nbsp;&nbsp;<Button variant='disabled'>Disabled</Button>
+    &nbsp;&nbsp;<Button variant='danger'>Danger</Button>
+    &nbsp;&nbsp;<Button variant='cancel'>Cancel</Button>
+    &nbsp;&nbsp;<Button variant='ghost'>Ghost</Button>
+    &nbsp;&nbsp;<Button variant='link'>Link</Button>
+    &nbsp;&nbsp;<Button variant='outline'>Outline</Button>
+    &nbsp;&nbsp;<Button variant='outlineBlue'>OutlineBlue</Button>
+    &nbsp;&nbsp;<Button variant='outlineWhite'>OutlineWhite</Button>
+    &nbsp;&nbsp;<Button variant='outlineWhiteRed'>OutlineWhiteRed</Button>
+    </ButtonGroup>"
+
+/>
+
+#### Loading
+
+To display the loading status, use the property isLoading.
+
+<Container className="py-5 px-3 rounded-md my-6 bg-gray-100 w-fit">
+    <Button isLoading>Click Me</Button>
+</Container>
+
+<WindowEditor
+    codeString="import { Button } from 'dd360-ds'
+
+    <Button isLoading>Click me</Button>"
+
+/>
+
+#### Disabled
+
+To disable a button, use the property disabled.
+
+<Container className="py-5 px-3 rounded-md my-6 bg-gray-100 w-fit">
+    <Button disabled>Click Me</Button>
+</Container>
+
+<WindowEditor
+    codeString="import { Button } from 'dd360-ds'
+
+    <Button disabled>Click me</Button>"
+
+/>
+
+#### Sizes
+
+Use the size property to change the size of the button. You can set the value to `small`, `medium`, `large`, or `extraLarge`.
+
+<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+    <ButtonGroup orientation="horizontal" gap={10}>
+        <Button size="small">Small</Button>
+        <Button size="medium">Medium</Button>
+        <Button size="large">Large</Button>
+        <Button size="extraLarge">ExtraLarge</Button>
+    </ButtonGroup>
+</Container>
+
+<WindowEditor
+    codeString="import { Button, ButtonGroup } from 'dd360-ds'
+
+    <ButtonGroup orientation='horizontal' gap={10}>
+    &nbsp;&nbsp;<Button size='small'>Small</Button>
+    &nbsp;&nbsp;<Button size='medium'>Medium</Button>
+    &nbsp;&nbsp;<Button size='large'>Large</Button>
+    &nbsp;&nbsp;<Button size='extraLarge'>ExtraLarge</Button>
+    </ButtonGroup>"
+
+/>
+
+### API Reference
+
+<CustomTableDocs
+    dataTable={[
+        {
+            title: 'variant',
+            default: 'primary',
+            types: [
+                'disabled',
+                'success',
+                'primary',
+                'secondary',
+                'link',
+                'ghost',
+                'cancel',
+                'danger',
+                'outline',
+                'outlineBlue',
+                'outlineWhite',
+                'outlineWhiteRed'
+            ]
+        },
+        { title: 'disabled', default: 'false', types: ['boolean'] },
+        { title: 'isLoading', default: 'false', types: ['boolean'] },
+        { title: 'size', default: 'medium', types: ['small', 'medium', 'large', 'extraLarge'] },
+        { title: 'padding', default: null, types: ['string', 'number'] },
+        { title: 'paddingX', default: null, types: ['string', 'number'] },
+        { title: 'paddingY', default: null, types: ['string', 'number'] },
+        { title: 'rounded', default: null, types: ['string', 'number'] },
+        { title: 'className', default: null, types: ['string'] },
+        { title: 'role', default: null, types: ['string'] },
+        { title: 'renderLoading', default: null, types: ['object'] },
+        { title: '...', default: null, types: ['ButtonHTMLAttributes'] }
+    ]}
+/>

@@ -1,1 +1,141 @@
-Button radio
+---
+product: dd360-ds
+title: React Radio component
+components: Radio
+---
+
+# Radio
+
+The Radio Button component is a type of button that allows the user to select a single option from a set of predefined options.
+
+### Import
+
+To import the Radio Button component, use the following syntax:
+
+<WindowEditor codeString="import { Radio } from 'dd360-ds'" />
+<WindowEditor codeString="import Radio from 'dd360-ds/Radio'" />
+
+### Usage
+
+The prop value is mandatory and is used to indicate the value of the selected option
+
+<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+    <Radio onChange={() => {}} value="one" className="cursor-pointer -mb-0" />
+</Container>
+
+<WindowEditor
+    codeString="import { Radio } from 'dd360-ds'
+
+    <Radio value='one' />"
+/>
+
+#### Label
+
+To add a label to the radio button, you can use the prop label:
+
+<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+    <Radio onChange={() => {}} value="one" label="Click here" className="cursor-pointer -mb-0" />
+</Container>
+
+<WindowEditor
+    codeString="import { Radio } from 'dd360-ds'
+
+    <Radio value='one' label='Click here' />"
+
+/>
+
+#### Checked
+
+To display the selected state of the radio button, the checked prop can be used:
+
+<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+    <Radio onChange={() => {}} value="one" label='Click here' checked className="cursor-pointer -mb-0" />
+</Container>
+
+<WindowEditor
+    codeString="import { Radio } from 'dd360-ds'
+
+    <Radio value='one' checked label='Click here' />"
+
+/>
+
+#### Disabled
+
+To disable the radio button, the disabled prop can be used:
+
+<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+    <Radio onChange={() => {}} value="one" label='Click here' disabled className="-mb-0" />
+</Container>
+
+<WindowEditor
+    codeString="import { Radio } from 'dd360-ds'
+
+    <Radio value='one' disabled label='Click here' />"
+
+/>
+
+#### Error
+
+To display a radio button with error status, the prop error can be used:
+
+<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+    <Radio onChange={() => {}} value="one" checked label='Click here' error className="cursor-pointer -mb-0" />
+</Container>
+
+<WindowEditor
+    codeString="import { Radio } from 'dd360-ds'
+
+    <Radio value='one' error label='Click here' checked />"
+
+/>
+
+#### Colors
+
+The Radio Button component comes with predefined colors. By default, it uses the primary variant, but the following colors can also be used: success, danger and
+primary:
+
+<Container className="py-5 px-3 rounded-md my-6 bg-gray-100 flex align-center gap-x-4">
+    <Radio onChange={() => {}} value="one" label='Click here' color="primary" checked className="cursor-pointer -mb-0" />
+    <Radio onChange={() => {}} value="two" label='Click here' color="success" checked className="cursor-pointer -mb-0" />
+    <Radio onChange={() => {}} value="three" label='Click here' color="danger" checked className="cursor-pointer -mb-0" />
+</Container>
+
+<WindowEditor
+    codeString="import { Radio, RadioGroup } from 'dd360-ds'
+      <RadioGroup name='radio-buttons-group' title='Radio Group' row >
+      &nbsp;&nbsp;<Radio value='one' label='Click here' color='primary' checked />
+      &nbsp;&nbsp;<Radio value='two' label='Click here' color='success' checked />
+      &nbsp;&nbsp;<Radio value='three' label='Click here' color='danger' checked />
+      </RadioGroup>"
+/>
+
+#### InputProps
+
+The inputProps property allows passing additional InputHTMLAttributes to the Radio component:
+
+<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+    <Radio value='one' label="Click here" inputProps={{ 'aria-label': 'one'}} onChange={() => {}}  className="cursor-pointer -mb-0" />
+</Container>
+
+<WindowEditor
+    codeString="import { Radio } from 'dd360-ds'
+    <Radio value='one' inputProps={{ 'aria-label': 'one'}} label='Click here' />"
+/>
+
+### API Reference
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'value', default: null, types: ['string'], required: true },
+        { title: 'label', default: null, types: ['string'] },
+        { title: 'name', default: null, types: ['string'] },
+        { title: 'color', default: 'primary', types: ['primary', 'success', 'danger'] },
+        { title: 'disabled', default: 'false', types: ['boolean'] },
+        { title: 'checked', default: 'false', types: ['boolean'] },
+        { title: 'error', default: 'false', types: ['boolean'] },
+        { title: 'className', default: null, types: ['string'] },
+        { title: 'onChange', default: null, types: ['((event: ChangeEvent<HTMLInputElement>) => void)'] },
+        { title: 'inputProps', default: null, types: ['InputHTMLAttributes'] },
+        { title: 'style', default: null, types: ['CSSProperties'] }
+    ]}
+/>

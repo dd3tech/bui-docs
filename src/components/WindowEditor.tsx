@@ -28,7 +28,7 @@ interface EditorProps {
 
 function WindowEditor({ codeString = cardMetricsString, language = 'tsx', className, header, style }: EditorProps) {
     return (
-        <div className={composeClasses('h-auto bg-gray-900 rounded-lg overflow-hidden', className)}>
+        <div className={composeClasses('h-auto bg-gray-900 rounded-lg overflow-hidden mt-2 mb-10', className)}>
             {header?.show && (
                 <nav className="flex items-center px-3 pt-2 gap-3 bg-gray-800">
                     <div className="flex items-center gap-2">
