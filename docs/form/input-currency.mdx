@@ -1,1 +1,120 @@
-input currency page
+---
+product: dd360-ds
+title: React Input Currency component
+components: InputCurrency
+---
+
+# InputCurrency
+
+    It is a text input component that allows the user to enter monetary values into a form.
+
+### Import
+
+<WindowEditor codeString="import { InputCurrency } from 'dd360-ds'" />
+<WindowEditor codeString="import InputCurrency from 'dd360-ds/InputCurrency'" />
+
+### Usage
+
+<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+    <InputCurrency defaultValue='0.00' />
+</Container>
+
+<WindowEditor codeString="import { InputCurrency } from 'dd360-ds'
+
+<InputCurrency defaultValue='0.00' />" />
+
+#### placeholder
+
+<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+    <InputCurrency placeholder="100" />
+</Container>
+
+<WindowEditor codeString="import { InputCurrency } from 'dd360-ds'
+
+<InputCurrency placeholder='100' />" />
+
+#### value
+
+The current value of the InputCurrency component. This value can be updated in real time based on user input.
+
+<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+    <InputCurrency value={10.3} />
+</Container>
+
+<WindowEditor codeString="import { InputCurrency } from 'dd360-ds'
+
+<InputCurrency value={10.3} />" />
+
+#### defaultValue
+
+The default value of the InputCurrency component when the page loads.
+
+<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+    <InputCurrency defaultValue={10.3} />
+</Container>
+
+<WindowEditor codeString="import { InputCurrency } from 'dd360-ds'
+
+<InputCurrency defaultValue={10.3} />" />
+
+#### decimalsLimit
+
+The maximum number of decimals allowed in the input value. The default value is 2.
+
+<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+    <InputCurrency decimalsLimit={1} defaultValue='0.0' />
+</Container>
+
+<WindowEditor codeString="import { InputCurrency } from 'dd360-ds'
+
+<InputCurrency decimalsLimit={1} defaultValue='0.0' />" />
+
+#### decimalScale
+
+The number of decimal places to display in the output value. If set to null, decimalsLimit will be used. If decimalsLimit is also null, 2 decimals will be displayed.
+
+<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+    <InputCurrency decimalScale={3} defaultValue='0.00' />
+</Container>
+
+<WindowEditor codeString="import { InputCurrency } from 'dd360-ds'
+
+<InputCurrency decimalScale={3} defaultValue='0.00' />" />
+
+#### Prefix
+
+The prefix to be displayed in the output value.
+
+<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+    <InputCurrency prefix="$" defaultValue='0.00' />
+</Container>
+
+<WindowEditor codeString="import { InputCurrency } from 'dd360-ds'
+
+<InputCurrency prefix='$' defaultValue='0.00' />" />
+
+### API Reference
+
+<CustomTableDocs
+    dataTable={[
+        {
+            title: 'value',
+            default: null,
+            types: ['string', 'number']
+        },
+        { title: 'defaultValue', default: null, types: ['number'] },
+        { title: 'decimalsLimit', default: '2', types: ['number'] },
+        { title: 'decimalScale', default: null, types: ['number'] },
+        { title: 'onBlurInput', default: null, types: ['(() => void)'] },
+        { title: 'onFocus', default: null, types: ['((e: FocusEvent<HTMLInputElement>) => void)'] },
+        { title: 'onChange', default: null, types: ['((value: string, name: string) => void)'] },
+        { title: 'onPaste', default: null, types: ['ClipboardEventHandler<HTMLInputElement>'] },
+        { title: 'prefix', default: null, types: ['string'] },
+        { title: 'suffix', default: null, types: ['string'] },
+        { title: 'disabled', default: 'false', types: ['boolean'] },
+        { title: 'name', default: null, types: ['string'] },
+        { title: 'placeholder', default: null, types: ['string'] },
+        { title: 'className', default: null, types: ['string'] },
+        { title: 'role', default: null, types: ['string'] }
+    ]}
+/>

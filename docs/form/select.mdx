@@ -1,1 +1,127 @@
-select page
+---
+product: dd360-ds
+title: React Select component
+components: Select
+---
+
+# Select
+
+   The component Select that renders a dropdown menu. The dropdown menu has several variants
+
+### Import
+
+<WindowEditor codeString="import { Select } from 'dd360-ds'" />
+<WindowEditor codeString="import Select from 'dd360-ds/Select'" />
+
+### Usage
+
+To customize the options we must pass it an object in the prop optionsList with the structure of the example.
+
+<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+    <Select optionsList={{ 0: {label: 'Select option', disabled: true}, A: { label: 'Option A' }, B: { label: 'Option B' } }} />
+</Container>
+
+<WindowEditor codeString="import { Select } from 'dd360-ds'
+
+<Select optionsList={{ 0: {label: 'Select option', disabled: true}, A: { label: 'Option A' }, B: { label: 'Option B' } }} />" />
+
+#### Variants
+
+To customize the styles of the Select using the prop "variant", which contains the following options: "outline", "standard", and "none". 
+By default it uses "outlined".
+
+<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+    <Text className="block mb-1 mt-2">Standard</Text>
+    <Select
+        className="mb-3"
+        variant="standard"
+        optionsList={{ 0: {label: 'Select option', disabled: true}, A: { label: 'Option A' }, B: { label: 'Option B' } }}
+    />
+    <Text className="block mb-1 mt-2">Outlined</Text>
+    <Select
+        className="mb-3"
+        variant="outlined"
+        optionsList={{ 0: {label: 'Select option', disabled: true}, A: { label: 'Option A' }, B: { label: 'Option B' } }}
+    />
+    <Text className="block mb-1 mt-2">None</Text>
+    <Select className="mb-3" variant="none" optionsList={{ 0: {label: 'Select option', disabled: true}, A: { label: 'Option A' }, B: { label: 'Option B' } }} />
+</Container>
+
+<WindowEditor codeString="import { Select } from 'dd360-ds'
+
+<Select variant='standard' optionsList={{ 0: {label: 'Select option', disabled: true}, A: { label: 'Option A' }, B: { label: 'Option B' } }} />
+<Select variant='outlined' optionsList={{ 0: {label: 'Select option', disabled: true}, A: { label: 'Option A' }, B: { label: 'Option B' } }} />
+<Select variant='none' optionsList={{ 0: {label: 'Select option', disabled: true}, A: { label: 'Option A' }, B: { label: 'Option B' } }} />" />
+
+#### Status
+
+Select has the following states: "active", "success", "warning", "error" and "disabled".
+By default it uses "active".
+
+<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+    <Text className="block mb-2 mt-1">Active</Text>
+    <Select active optionsList={{ 0: {label: 'Select option', disabled: true}, A: { label: 'Option A' }, B: { label: 'Option B' } }} />
+    <Text className="block mb-2 mt-1">Success</Text>
+    <Select success optionsList={{ 0: {label: 'Select option', disabled: true}, A: { label: 'Option A' }, B: { label: 'Option B' } }} />
+    <Text className="block mb-2 mt-1">Warning</Text>
+    <Select warning optionsList={{ 0: {label: 'Select option', disabled: true}, A: { label: 'Option A' }, B: { label: 'Option B' } }} />
+    <Text className="block mb-2 mt-1">Error</Text>
+    <Select error optionsList={{ 0: {label: 'Select option', disabled: true}, A: { label: 'Option A' }, B: { label: 'Option B' } }} />
+    <Text className="block mb-2 mt-1">Disabled</Text>
+    <Select disabled optionsList={{ 0: {label: 'Select option', disabled: true}, A: { label: 'Option A' }, B: { label: 'Option B' } }} />
+</Container>
+
+<WindowEditor codeString="import { Select } from 'dd360-ds'
+
+ <Select active optionsList={{ 0: {label: 'Select option', disabled: true}, A: { label: 'Option A' }, B: { label: 'Option B' } }} />
+ <Select success optionsList={{ 0: {label: 'Select option', disabled: true}, A: { label: 'Option A' }, B: { label: 'Option B' } }} />
+ <Select warning optionsList={{ 0: {label: 'Select option', disabled: true}, A: { label: 'Option A' }, B: { label: 'Option B' } }} />
+ <Select error optionsList={{ 0: {label: 'Select option', disabled: true}, A: { label: 'Option A' }, B: { label: 'Option B' } }} />
+ <Select disabled optionsList={{ 0: {label: 'Select option', disabled: true}, A: { label: 'Option A' }, B: { label: 'Option B' } }} />
+" />
+
+#### Select With Icon
+
+Use Select with an icon.
+
+<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+    <Select
+        startAdornment={<DynamicHeroIcon icon="AcademicCapIcon" className="text-blue-700 w-6" />}
+        optionsList={{ 0: {label: 'Select option', disabled: true}, A: { label: 'Option A' }, B: { label: 'Option B' } }}
+    />
+</Container>
+
+<WindowEditor codeString="import { Select } from 'dd360-ds'
+import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
+
+<Select
+    startAdornment={<DynamicHeroIcon icon='AcademicCapIcon' className='text-blue-700 w-6' />}
+    optionsList={{ 0: {label: 'Select option', disabled: true}, A: { label: 'Option A' }, B: { label: 'Option B' } }}
+/>
+" />
+
+### API Reference
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'optionsList', default: null, types: ['ISelectOptions'], required: true },
+        { title: 'variant', default: 'outlined', types: ['none', 'standard', 'outlined'] },
+        { title: 'onChange', default: null, types: ['function'] },
+        { title: 'onFocus', default: null, types: ['function'] },
+        { title: 'onBlur', default: null, types: ['function'] },
+        { title: 'disabled', default: 'false', types: ['boolean'] },
+        { title: 'active', default: 'false', types: ['boolean'] },
+        { title: 'success', default: 'false', types: ['boolean'] },
+        { title: 'warning', default: 'false', types: ['boolean'] },
+        { title: 'error', default: 'false', types: ['boolean'] },
+        { title: 'startAdornment', default: null, types: ['ReactNode'] },
+        { title: 'classNameAdornment', default: null, types: ['string'] },
+        { title: 'fontSize', default: 'outlined', types: ['sm', 'base', 'lg', 'xl', '2xl', '3xl', '4xl', 'xs'] },
+        { title: 'fontWeight', default: 'outlined', types: ['medium', 'light', 'normal', 'semibold', 'bold'] },
+        { title: 'width', default: 'full', types: ['string'] },
+        { title: 'message', default: null, types: ['string'] },
+        { title: 'rounded', default: 'none', types: ['none', 'sm', 'base', 'md', 'lg', 'xl', '2xl', '3xl', 'full'] },
+        { title: 'label', default: null, types: ['string'] },
+        { title: 'padding', default: '3', types: ['string'] }
+    ]}
+/>

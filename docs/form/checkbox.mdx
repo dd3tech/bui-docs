@@ -1,1 +1,86 @@
-checkbox page
+---
+product: dd360-ds
+title: React Checkbox component
+components: Checkbox
+---
+
+# Checkbox
+
+    This component is used to create a check box. The checkbox is a control that allows the user to select one or more options from a list.
+
+### Import
+
+<WindowEditor codeString="import { Checkbox } from 'dd360-ds'" />
+<WindowEditor codeString="import Checkbox from 'dd360-ds/Checkbox'" />
+
+### Usage
+
+<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+    <Checkbox />
+</Container>
+
+<WindowEditor codeString="import { Checkbox } from 'dd360-ds'
+
+<Checkbox />" />
+
+#### Checked
+
+ This prop is used to set the initial state of the checkbox. If set to true, the checkbox will be checked. If set to false or not provided, the checkbox will appear unchecked.
+
+<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+    <Checkbox checked />
+</Container>
+
+<WindowEditor codeString="import { Checkbox } from 'dd360-ds'
+
+<Checkbox checked />" />
+
+#### Indeterminate
+
+This property is used to set the indeterminate state of the checkbox. If set to true, the checkbox will appear in an intermediate state between checked and unchecked.
+
+<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+    <Checkbox indeterminate />
+</Container>
+
+<WindowEditor codeString="import { Checkbox } from 'dd360-ds'
+
+<Checkbox indeterminate />" />
+
+#### Color
+
+This prop is used to set the color of the checkbox. Any valid CSS color value can be set.
+
+<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+    <Checkbox color="#000" />
+</Container>
+
+<WindowEditor codeString="import { Checkbox } from 'dd360-ds'
+
+<Checkbox color='#000' />" />
+
+#### With control
+
+You can use the FormControlLabel component to add a label to the checkbox and control its status
+
+<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+    <FormControlLabel control={<Checkbox />} disabled label="Example" labelPlacement="top" />
+</Container>
+
+<WindowEditor codeString="import { FormControlLabel } from 'dd360-ds'
+
+<FormControlLabel control={<Checkbox />} label='Example' labelPlacement='top' />" />
+
+### API Reference
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'size', default: '2xl', types: ['sm', 'xl', '2xl', '3xl', '4xl'] },
+        { title: 'fontSize', default: '2xl', types: ['sm', 'xl', '2xl', '3xl', '4xl'] },
+        { title: 'color', default: '#3b82f6', types: ['#fff'] },
+        { title: 'checked', default: 'false', types: ['boolean'] },
+        { title: 'indeterminate', default: 'false', types: ['boolean'] },
+        { title: 'padding', default: null, types: ['string'] },
+        { title: 'classNameContainer', default: null, types: ['string'] },
+    ]}
+/>
