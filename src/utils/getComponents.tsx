@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import * as Components from 'dd360-ds'
 import { Text } from 'dd360-ds'
-import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon';
+import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 import { WindowEditor, CustomTableDocs } from '@/components'
 
 type Props = { children: ReactNode }
