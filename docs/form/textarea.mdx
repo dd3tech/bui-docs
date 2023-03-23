@@ -1,1 +1,110 @@
-textarea page
+---
+product: dd360-ds
+title: React Text Area component
+components: TextArea
+---
+
+# TextArea
+
+    The TextArea component is a React component that allows the user to input multiple lines of text
+
+### Import
+
+<WindowEditor codeString="import { TextArea } from 'dd360-ds'" />
+<WindowEditor codeString="import TextArea from 'dd360-ds/TextArea'" />
+
+### Usage
+
+<ContainerComponentDoc className="gap-y-2">
+    <TextArea />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { TextArea } from 'dd360-ds'
+
+<TextArea />" />
+
+#### Variants
+
+You can use the following variants: "default", "active", "success", "warning", "error" and "disabled". By default "active" is used.
+
+<ContainerComponentDoc className="gap-y-2">
+    <Text>Default</Text>
+    <TextArea className="mb-2" variant="default" />
+    <Text>Active</Text>
+    <TextArea className="mb-2" variant="active" />
+    <Text>Success</Text>
+    <TextArea className="mb-2" variant="success" />
+    <Text>Warning</Text>
+    <TextArea className="mb-2" variant="warning" />
+    <Text>Error</Text>
+    <TextArea className="mb-2" variant="error" />
+    <Text>Disabled</Text>
+    <TextArea className="mb-2" variant="disabled" />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { TextArea } from 'dd360-ds'
+
+<TextArea variant='default' />
+<TextArea variant='active' />
+<TextArea variant='success' />
+<TextArea variant='warning' />
+<TextArea variant='error' />
+<TextArea variant='disabled' />" />
+
+#### Placeholder
+
+Use the prop "placeholder" to indicate a help to the user about what information to enter in your TextArea component.
+
+<ContainerComponentDoc className="gap-y-2">
+    <TextArea placeholder="I'm a placeholder!" />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { TextArea } from 'dd360-ds'
+
+<TextArea placeholder='I am a placeholder!' />" />
+
+#### Label
+
+Use the prop "label" to indicate a help to the user about what information to enter in your TextArea component.
+
+<ContainerComponentDoc className="gap-y-2">
+    <TextArea label="I'm a label!" />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { TextArea } from 'dd360-ds'
+
+<TextArea label='I am a label!' />" />
+
+#### TextArea With Icon
+
+You can add an icon to the TextArea component by passing the prop startAdornment that receives a react component.
+
+<ContainerComponentDoc className="gap-y-2">
+    <TextArea endAdornment={<DynamicHeroIcon icon="AcademicCapIcon" className="text-blue-700 w-6" />} />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { TextArea } from 'dd360-ds'
+import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
+
+<TextArea endAdornment={<DynamicHeroIcon icon='AcademicCapIcon' className='text-blue-700 w-6' />} />" />
+
+### API Reference
+
+<CustomTableDocs dataTable={[
+    { title: 'variant', default: 'default', types: ['active', 'disabled', 'warning', 'success', 'error', 'default'] },
+    { title: 'inputBlank', default: 'false', types: ['boolean'] },
+    { title: 'disabled', default: 'false', types: ['boolean'] },
+    { title: 'endAdornment', default: null, types: ['ReactNode'] },
+    { title: 'classNameAdornment', default: null, types: ['string'] },
+    { title: 'message', default: null, types: ['string'] },
+    { title: 'label', default: null, types: ['string'] },
+    { title: 'placeholder', default: null, types: ['string'] },
+    { title: 'paddingX', default: null, types: ['string'] },
+    { title: 'paddingY', default: null, types: ['string'] },
+    { title: 'rounded', default: null, types: ['string'] },
+    { title: 'large', default: null, types: ['string'] },
+    { title: 'role', default: null, types: ['string'] },
+    { title: 'boxShadow', default: null, types: ['string'] },
+    { title: 'className', default: null, types: ['string'] },
+    ]}
+/>

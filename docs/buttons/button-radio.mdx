@@ -19,9 +19,9 @@ To import the Radio Button component, use the following syntax:
 
 The prop value is mandatory and is used to indicate the value of the selected option
 
-<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+<ContainerComponentDoc className="gap-y-2">
     <Radio onChange={() => {}} value="one" className="cursor-pointer -mb-0" />
-</Container>
+</ContainerComponentDoc>
 
 <WindowEditor
     codeString="import { Radio } from 'dd360-ds'
@@ -33,9 +33,9 @@ The prop value is mandatory and is used to indicate the value of the selected op
 
 To add a label to the radio button, you can use the prop label:
 
-<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+<ContainerComponentDoc className="gap-y-2">
     <Radio onChange={() => {}} value="one" label="Click here" className="cursor-pointer -mb-0" />
-</Container>
+</ContainerComponentDoc>
 
 <WindowEditor
     codeString="import { Radio } from 'dd360-ds'
@@ -48,9 +48,9 @@ To add a label to the radio button, you can use the prop label:
 
 To display the selected state of the radio button, the checked prop can be used:
 
-<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+<ContainerComponentDoc className="gap-y-2">
     <Radio onChange={() => {}} value="one" label='Click here' checked className="cursor-pointer -mb-0" />
-</Container>
+</ContainerComponentDoc>
 
 <WindowEditor
     codeString="import { Radio } from 'dd360-ds'
@@ -63,9 +63,9 @@ To display the selected state of the radio button, the checked prop can be used:
 
 To disable the radio button, the disabled prop can be used:
 
-<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+<ContainerComponentDoc className="gap-y-2">
     <Radio onChange={() => {}} value="one" label='Click here' disabled className="-mb-0" />
-</Container>
+</ContainerComponentDoc>
 
 <WindowEditor
     codeString="import { Radio } from 'dd360-ds'
@@ -78,9 +78,9 @@ To disable the radio button, the disabled prop can be used:
 
 To display a radio button with error status, the prop error can be used:
 
-<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+<ContainerComponentDoc className="gap-y-2">
     <Radio onChange={() => {}} value="one" checked label='Click here' error className="cursor-pointer -mb-0" />
-</Container>
+</ContainerComponentDoc>
 
 <WindowEditor
     codeString="import { Radio } from 'dd360-ds'
@@ -94,11 +94,11 @@ To display a radio button with error status, the prop error can be used:
 The Radio Button component comes with predefined colors. By default, it uses the primary variant, but the following colors can also be used: success, danger and
 primary:
 
-<Container className="py-5 px-3 rounded-md my-6 bg-gray-100 flex align-center gap-x-4">
+<ContainerComponentDoc className="gap-y-2">
     <Radio onChange={() => {}} value="one" label='Click here' color="primary" checked className="cursor-pointer -mb-0" />
     <Radio onChange={() => {}} value="two" label='Click here' color="success" checked className="cursor-pointer -mb-0" />
     <Radio onChange={() => {}} value="three" label='Click here' color="danger" checked className="cursor-pointer -mb-0" />
-</Container>
+</ContainerComponentDoc>
 
 <WindowEditor
     codeString="import { Radio, RadioGroup } from 'dd360-ds'
@@ -113,9 +113,9 @@ primary:
 
 The inputProps property allows passing additional InputHTMLAttributes to the Radio component:
 
-<Container className="py-5 px-3 rounded-md my-6 bg-gray-100">
+<ContainerComponentDoc className="gap-y-2">
     <Radio value='one' label="Click here" inputProps={{ 'aria-label': 'one'}} onChange={() => {}}  className="cursor-pointer -mb-0" />
-</Container>
+</ContainerComponentDoc>
 
 <WindowEditor
     codeString="import { Radio } from 'dd360-ds'

@@ -41,7 +41,7 @@ function WindowEditor({ codeString = cardMetricsString, language = 'tsx', classN
                     </div>
                 </nav>
             )}
-            <SyntaxHighlighter wrapLines language={language} style={{ ...nightOwl }} customStyle={{ margin: 0, ...style }} showLineNumbers>
+            <SyntaxHighlighter wrapLines language={language} style={{ ...nightOwl }} customStyle={{ margin: 0, ...style, maxHeight: '80%' }} showLineNumbers>
                 {codeString}
             </SyntaxHighlighter>
         </div>

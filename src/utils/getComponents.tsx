@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 import * as Components from 'dd360-ds'
 import { Text } from 'dd360-ds'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
-import { WindowEditor, CustomTableDocs } from '@/components'
+import { WindowEditor, CustomTableDocs, ContainerComponentDoc } from '@/components'
 
 type Props = { children: ReactNode }
 
@@ -41,6 +41,7 @@ export function getComponents() {
         WindowEditor,
         CustomTableDocs,
         DynamicHeroIcon,
+        ContainerComponentDoc,
         ...Components
         // Add other custom components here as needed ---| Here |---
     }

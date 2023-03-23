@@ -1,1 +1,164 @@
-input page
+---
+product: dd360-ds
+title: React Input component
+components: Input
+---
+
+# Input
+
+    Inputs on websites are interactive elements that allow users to perform specific actions, such as submitting a form, navigating to another page, or making
+    a purchase.
+
+### Import
+
+<WindowEditor codeString="import { Input } from 'dd360-ds'" />
+<WindowEditor codeString="import Input from 'dd360-ds/Input'" />
+
+### Usage
+
+<ContainerComponentDoc className="gap-y-2">
+    <Input />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Input } from 'dd360-ds'
+
+<Input />" />
+
+#### Variants
+
+The "Input" comes with variants, by default it uses the "default" variant, but you can also use these: "active", "disabled", "warning",
+"success","error","default".
+
+<ContainerComponentDoc className="gap-y-2">
+    <Text>Default</Text>
+    <Input className="mb-2" variant="default" />
+    <Text>Active</Text>
+    <Input className="mb-2" variant="active" />
+    <Text>Success</Text>
+    <Input className="mb-2" variant="success" />
+    <Text>Warning</Text>
+    <Input className="mb-2" variant="warning" />
+    <Text>Error</Text>
+    <Input className="mb-2" variant="error" />
+    <Text>Disabled</Text>
+    <Input className="mb-2" variant="disabled" />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Input } from 'dd360-ds'
+
+    <Input variant='default' />
+    <Input variant='active' />
+    <Input variant='success' />
+    <Input variant='warning' />
+    <Input variant='error' />
+    <Input variant='disabled' />" />
+
+#### Types
+
+The "Input" comes with types, by default it uses the "text" variant, but you can also use these: "number", "text", "email", "currency", "date", "password",
+"year", "month", "percentage", "file".
+
+<ContainerComponentDoc className="gap-y-2">
+    <Input type="text" />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Input } from 'dd360-ds'
+
+<Input type='text' />" />
+
+#### Disabled
+
+For disabled Inputs, use the "disabled" prop.
+
+<ContainerComponentDoc className="gap-y-2">
+    <Input disabled />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Input } from 'dd360-ds'
+
+<Input disabled />" />
+
+#### Label
+
+For label Inputs, use the "label" prop.
+
+<ContainerComponentDoc className="gap-y-2">
+    <Input label="Email" />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Input } from 'dd360-ds'
+
+<Input label='Email' />" />
+
+#### Not borders
+
+For hidde borders Inputs, use the "inputBlank" prop.
+
+<ContainerComponentDoc className="gap-y-2">
+    <Input inputBlank />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Input } from 'dd360-ds'
+
+<Input inputBlank />" />
+
+#### Large
+
+For expansive size inputs, use the "large" prop.
+
+<ContainerComponentDoc className="gap-y-2">
+    <Input large />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Input } from 'dd360-ds'
+
+<Input large />" />
+
+#### boxShadow
+
+Change boxShadow input, use the "boxShadow" prop with your variants: "sm", "base", "md", "lg", "xl", "2xl", "inner", "none".
+
+<ContainerComponentDoc className="gap-y-2">
+    <Input boxShadow="inner" />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Input } from 'dd360-ds'
+
+<Input boxShadow='inner' />" />
+
+#### Input with icon
+
+<ContainerComponentDoc className="gap-y-2">
+    <Input startAdornment={<DynamicHeroIcon icon="AcademicCapIcon" className="text-blue-700 w-6" />} />
+    <Input endAdornment={<DynamicHeroIcon icon="AcademicCapIcon" className="text-blue-700 w-6" />} />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Input } from 'dd360-ds'
+import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
+
+<Input startAdornment={<DynamicHeroIcon icon='AcademicCapIcon' className='text-blue-700 w-6' />} />
+<Input endAdornment={<DynamicHeroIcon icon='AcademicCapIcon' className='text-blue-700 w-6' />} />" />
+
+### API Reference
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'variant', default: 'default', types: ['active', 'disabled', 'warning', 'success', 'error', 'default'] },
+        { title: 'type', default: 'text', types: ['number', 'text', 'email', 'currency', 'date', 'password', 'year', 'month', 'percentage', 'file'] },
+        { title: 'disabled', default: 'false', types: ['boolean'] },
+        { title: 'inputBlank', default: 'false', types: ['boolean'] },
+        { title: 'large', default: 'false', types: ['boolean'] },
+        { title: 'controllers', default: 'false', types: ['boolean'] },
+        { title: 'startAdornment', default: null, types: ['ReactNode'] },
+        { title: 'endAdornment', default: null, types: ['ReactNode'] },
+        { title: 'classNameAdornment', default: null, types: ['string'] },
+        { title: 'language', default: 'es', types: ['es', 'en'] },
+        { title: 'boxShadow', default: null, types: ['none', 'sm', 'base', 'md', 'lg', 'xl', '2xl', 'inner'] },
+        { title: 'label', default: null, types: ['string'] },
+        { title: 'message', default: null, types: ['string'] },
+        { title: 'padding', default: null, types: ['string'] },
+        { title: 'paddingX', default: null, types: ['string'] },
+        { title: 'paddingY', default: null, types: ['string'] },
+        { title: '...', default: null, types: ['InputHTMLAttributes'] }
+    ]}
+/>
