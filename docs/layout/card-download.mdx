@@ -1,0 +1,98 @@
+---
+product: dd360-ds
+title: React DownloadCard component
+components: DownloadCard
+---
+
+# Download Card
+
+    It is a download card that allows the user to download a file. 
+
+### Import
+
+<WindowEditor codeString="import { DownloadCard } from 'dd360-ds'" />
+<WindowEditor codeString="import DownloadCard from 'dd360-ds/DownloadCard'" />
+
+### Usage
+
+The following 3 props are required to use the component
+
+- cancelText: Text to be displayed in the cancel button.
+- downloadText: Text displayed on the download button.
+- description: Description of the content to be downloaded.
+
+<ContainerComponentDoc>
+    <DownloadCard
+        cancelText="Do not remind me again"
+        downloadText="Download Template"
+        description="Download the excel template, fill in the necessary fields and re-upload the file to populate the table. You can also fill the table manually."
+    />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { DownloadCard } from 'dd360-ds'
+
+<DownloadCard 
+&nbsp;&nbsp;cancelText='Do not remind me again'
+&nbsp;&nbsp;downloadText='Download Template'
+&nbsp;&nbsp;description='Download the excel template, fill in the necessary fields and re-upload the file to populate the table. You can also fill the table manually.' 
+/>" />
+
+#### downloadURL
+
+URL of the file to download.
+
+<ContainerComponentDoc>
+    <DownloadCard
+        cancelText="Do not remind me again"
+        downloadText="Download Template"
+        description="Download the excel template, fill in the necessary fields and re-upload the file to populate the table. You can also fill the table manually."
+        downloadURL='URL'
+    />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { DownloadCard } from 'dd360-ds'
+
+<DownloadCard 
+&nbsp;&nbsp;cancelText='Do not remind me again'
+&nbsp;&nbsp;downloadText='Download Template'
+&nbsp;&nbsp;description='Download the excel template, fill in the necessary fields and re-upload the file to populate the table. You can also fill the table manually.' 
+&nbsp;&nbsp;downloadURL='URL'
+/>" />
+
+#### isActive
+
+If true, the card is shown; if false, the card is hidden. Default is true
+
+<ContainerComponentDoc>
+    <DownloadCard
+        cancelText="Do not remind me again"
+        downloadText="Download Template"
+        description="Download the excel template, fill in the necessary fields and re-upload the file to populate the table. You can also fill the table manually."
+        isActive={false}
+    />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { DownloadCard } from 'dd360-ds'
+
+<DownloadCard 
+&nbsp;&nbsp;cancelText='Do not remind me again'
+&nbsp;&nbsp;downloadText='Download Template'
+&nbsp;&nbsp;description='Download the excel template, fill in the necessary fields and re-upload the file to populate the table. You can also fill the table manually.' 
+&nbsp;&nbsp;isActive={false}
+/>" />
+
+### API Reference
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'cancelText', default: null, types: ['string'], required: true },
+        { title: 'downloadText', default: null, types: ['string'], required: true },
+        { title: 'description', default: null, types: ['string'], required: true },
+        { title: 'onClose', default: null, types: ['function'] },
+        { title: 'onDownload', default: null, types: ['function'] },
+        { title: 'downloadURL', default: null, types: ['string'] },
+        { title: 'LinkComponent', default: null, types: ['ReactNode'] },
+        { title: 'isActive', default: 'true', types: ['boolean'] },
+        { title: 'width', default: null, types: ['number'] }
+    ]}
+/>

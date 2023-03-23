@@ -1,1 +1,225 @@
-overflow page
+---
+product: dd360-ds
+title: React Overflow component
+components: Overflow
+---
+
+# Overflow
+
+   The Overflow component allows you to control the display of the content inside a container when it overflows the visible area.
+
+### Import
+
+<WindowEditor codeString="import { Overflow } from 'dd360-ds'" />
+<WindowEditor codeString="import Overflow from 'dd360-ds/Layout/Overflow'" />
+
+### Usage
+
+The prop "overflow" indicates how the overflow of the content inside the container is controlled. 
+Possible values are 'hidden', 'auto', 'visible', 'x-auto', 'x-hidden', 'x-visible', 'scroll', 'y-auto', 'y-hidden', 'y-visible', 'x-scroll' and 'y-scroll'.
+The default value is 'auto'.
+
+<ContainerComponentDoc>
+   <Overflow className='h-20'>
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   </Overflow>
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Overflow } from 'dd360-ds'
+
+<Overflow className='h-20'>
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+</Overflow>" />
+
+#### Scroll
+
+<ContainerComponentDoc>
+   <Overflow className='h-20' overflow="scroll">
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   </Overflow>
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Overflow } from 'dd360-ds'
+
+<Overflow className='h-20' overflow='scroll'>
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+</Overflow>" />
+
+#### Visible
+
+<ContainerComponentDoc>
+   <Overflow className='h-20' overflow="visible">
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   </Overflow>
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Overflow } from 'dd360-ds'
+
+<Overflow className='h-20' overflow='visible'>
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+</Overflow>" />
+
+#### Hidden
+
+<ContainerComponentDoc>
+   <Overflow className='h-20' overflow="hidden">
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   </Overflow>
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Overflow } from 'dd360-ds'
+
+<Overflow className='h-20' overflow='hidden'>
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+</Overflow>" />
+
+#### X-auto
+
+<ContainerComponentDoc>
+   <Overflow className='h-20' overflow="x-auto">
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   </Overflow>
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Overflow } from 'dd360-ds'
+
+<Overflow className='h-20' overflow='x-auto'>
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+</Overflow>" />
+
+#### Y-auto
+
+<ContainerComponentDoc>
+   <Overflow className='h-20' overflow="y-auto">
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   </Overflow>
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Overflow } from 'dd360-ds'
+
+<Overflow className='h-20' overflow='y-auto'>
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+</Overflow>" />
+
+#### Y-scroll
+
+<ContainerComponentDoc>
+   <Overflow className='h-20' overflow="y-scroll">
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   </Overflow>
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Overflow } from 'dd360-ds'
+
+<Overflow className='h-20' overflow='y-scroll'>
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+</Overflow>" />
+
+#### X-scroll
+
+<ContainerComponentDoc>
+   <Overflow className='h-20' overflow="x-scroll">
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+   </Overflow>
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Overflow } from 'dd360-ds'
+
+<Overflow className='h-20' overflow='x-scroll'>
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+&nbsp;&nbsp;lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum lorem itsum
+</Overflow>" />
+
+
+### API Reference
+
+<CustomTableDocs
+    dataTable={[
+        {
+            title: 'overflow',
+            default: 'auto',
+            types: ['hidden', 'auto', 'visible', 'x-auto', 'x-hidden', 'x-visible', 'scroll', 'y-auto', 'y-hidden', 'y-visible', 'x-scroll', 'y-scroll']
+        },
+        { title: 'children', default: null, types: ['ReactNode'] },
+        { title: 'className', default: null, types: ['string'] }
+    ]}
+/>

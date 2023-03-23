@@ -1,1 +1,77 @@
-row page
+---
+product: dd360-ds
+title: React Row component
+components: Row
+---
+
+# Row
+
+    The Row component is a flexible container for arranging items in a single row, using a grid system that allows you to configure the width of columns for different screen sizes.
+    It allows you to specify a number of columns and a spacing between them.
+
+### Import
+
+<WindowEditor codeString="import { Row } from 'dd360-ds'" />
+<WindowEditor codeString="import Row from 'dd360-ds/Layout/Row'" />
+
+### Usage
+
+<ContainerComponentDoc>
+    <Row>
+        <div>One div</div>
+        <div>Two div</div>
+        <div>Three div</div>
+        <div>Four div</div>
+    </Row>
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Row } from 'dd360-ds'
+
+<Row>
+    &nbsp;&nbsp;<div>One div</div>
+    &nbsp;&nbsp;<div>Two div</div>
+    &nbsp;&nbsp;<div>Three div</div>
+    &nbsp;&nbsp;<div>Four div</div>
+</Row>
+" />
+
+#### Custom Row
+
+You can customize the Row component with the following props:
+
+- -cols: number of columns to display in the row. Default is 4. Accepts values from 1 to 4. 
+- -md: number of columns to display in the row for medium sized screens. Default is 2. Accepts values from 1 to 4. 
+- -sm: number of columns to show in the row for small screens. Default is 1. Accepts values from 1 to 4. 
+- -gap: space between columns in the row. Default is 4. Accepts values from 1 to 5.
+
+<ContainerComponentDoc>
+    <Row cols={3} md={2} sm={1}>
+        <div>One div</div>
+        <div>Two div</div>
+        <div>Three div</div>
+        <div>Four div</div>
+    </Row>
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Row } from 'dd360-ds'
+
+<Row cols={3} md={2} sm={1}>
+    &nbsp;&nbsp;<div>One div</div>
+    &nbsp;&nbsp;<div>Two div</div>
+    &nbsp;&nbsp;<div>Three div</div>
+    &nbsp;&nbsp;<div>Four div</div>
+</Row>
+" />
+
+### API Reference
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'cols', default: '4', types: ['1', '2', '3', '4'] },
+        { title: 'md', default: '2', types: ['1', '2', '3', '4'] },
+        { title: 'sm', default: '1', types: ['1', '2', '3', '4'] },
+        { title: 'gap', default: '4', types: ['1', '2', '3', '4', '5'] },
+        { title: 'children', default: null, types: ['ReactNode'] },
+        { title: 'className', default: null, types: ['string'] }
+    ]}
+/>
