@@ -1,1 +1,83 @@
-divider page
+---
+product: dd360-ds
+title: React Divider component
+components: Divider
+---
+
+# Divider
+
+    It's component that renders a horizontal line to visually separate content.
+
+### Import
+
+<WindowEditor codeString="import { Divider } from 'dd360-ds'" />
+<WindowEditor codeString="import Divider from 'dd360-ds/Divider'" />
+
+### Usage
+
+<ContainerComponentDoc>
+    <Divider />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Divider } from 'dd360-ds'
+
+<Divider />" />
+
+#### Light
+
+A boolean that determines whether the Divider should be rendered in a lighter color. The default value is false.
+
+<ContainerComponentDoc>
+    <Divider light />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Divider } from 'dd360-ds'
+
+<Divider light />" />
+
+#### Variant
+
+ A string that determines the style of the Divider. It can be either 'full' or 'middle'. If not provided, the default value is null.
+
+<ContainerComponentDoc>
+    <Text>Middle</Text>
+    <Divider variant="middle" />
+    <Text className="flex mt-2">Full</Text>
+    <Divider variant="full" />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Divider } from 'dd360-ds'
+
+<Divider variant='middle' />
+<Divider variant='full' />" />
+
+#### Size
+
+ A string that determines the thickness of the Divider. It can be either 'large', 'medium', or 'small'. The default value is 'small'.
+
+<ContainerComponentDoc>
+    <Text>Small</Text>
+    <Divider size="small" />
+    <Text className="flex mt-2">Medium</Text>
+    <Divider size="medium" />
+    <Text className="flex mt-2">Large</Text>
+    <Divider size="large" />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Divider } from 'dd360-ds'
+
+<Divider size='small' />
+<Divider size='medium' />
+<Divider size='large' />" />
+
+### API Reference
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'variant', default: null, types: ['full', 'middle'] },
+        { title: 'size', default: 'small', types: ['large', 'medium', 'small'] },
+        { title: 'light', default: 'false', types: ['boolean'] },
+        { title: 'vertical', default: 'false', types: ['boolean'] },
+        { title: 'className', default: null, types: ['string'] }
+    ]}
+/>

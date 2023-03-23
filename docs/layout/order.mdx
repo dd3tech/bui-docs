@@ -1,1 +1,44 @@
-order page
+---
+product: dd360-ds
+title: React Order component
+components: Order
+---
+
+# Order
+
+The "Order" component allows you to set the order of the elements in a Flexbox layout using the "order" property.
+
+### Import
+
+<WindowEditor codeString="import { Order } from 'dd360-ds'" />
+<WindowEditor codeString="import Order from 'dd360-ds/Order'" />
+
+### Usage
+
+The "order" property accepts numeric values from 1 to 12, as well as the values "first", "last" and "none".
+The default value is "none", which means that the order of the element is not modified.
+
+<ContainerComponentDoc className="flex justify-between">
+    <Order order="2">Order 2</Order>
+    <Order order="1">Order 1</Order>
+    <Order order="last">Order last</Order>
+    <Order order="3">Order 3</Order>
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Order } from 'dd360-ds'
+
+<Container className='flex justify-between'>
+&nbsp;&nbsp;<Order order='2'>Order 2</Order>
+&nbsp;&nbsp;<Order order='1'>Order 1</Order>
+&nbsp;&nbsp;<Order order='last'>Order last</Order>
+&nbsp;&nbsp;<Order order='3'>Order 3</Order>
+</Container> "/>
+
+### API Reference
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'order', default: null, types: ['none', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'first', 'last'], required: true },
+        { title: 'children', default: null, types: ['ReactNode'] }
+    ]}
+/>

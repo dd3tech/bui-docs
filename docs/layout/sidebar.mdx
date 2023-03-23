@@ -1,1 +1,188 @@
-sidebar page
+---
+product: dd360-ds
+title: React SideBar component
+components: SideBar
+---
+
+# SideBar
+
+The "SideBar" component is a React component used to render a sidebar with different navigation options for the user.
+
+### Import
+
+<WindowEditor codeString="import { SideBar } from 'dd360-ds'" />
+<WindowEditor codeString="import SideBar from 'dd360-ds/SideBar'" />
+
+### Usage
+
+The prop sideBarName is required, it is a string that is rendered as the title of the SideBar component.
+
+<WindowEditor codeString="import { Sidebar } from 'dd360-ds'
+
+<SideBar sideBarName='Sidebar' />" />
+
+#### SideBarSubTitle
+
+A string that is rendered as the subtitle of the SideBar.
+
+<WindowEditor codeString="import { Sidebar } from 'dd360-ds'
+
+<SideBar sideBarName='Sidebar' sideBarSubTitle='Example SubTitle' />" />
+
+#### SideBarList
+
+A list of objects representing the sidebar options. Each object must have the same structure as shown in the following example:
+
+<WindowEditor codeString="import { Sidebar } from 'dd360-ds'
+import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
+
+<SideBar
+&nbsp;&nbsp;sideBarName='Sidebar'
+&nbsp;&nbsp;sideBarList={[ 
+&nbsp;&nbsp;&nbsp;{ 
+&nbsp;&nbsp;&nbsp;&nbsp; active: true,
+&nbsp;&nbsp;&nbsp;&nbsp; icon: <DynamicHeroIcon icon='HomeIcon' />, 
+&nbsp;&nbsp;&nbsp;&nbsp; title: 'List 1', 
+&nbsp;&nbsp;&nbsp;&nbsp; to: () => {}
+&nbsp;&nbsp;&nbsp;}, 
+&nbsp;&nbsp;&nbsp;{  
+&nbsp;&nbsp;&nbsp;&nbsp;active: false, 
+&nbsp;&nbsp;&nbsp;&nbsp;title: 'List 2', 
+&nbsp;&nbsp;&nbsp;&nbsp;to: () => {} 
+&nbsp;&nbsp;&nbsp;},
+&nbsp;&nbsp;&nbsp;{ 
+&nbsp;&nbsp;&nbsp;&nbsp;active: false, 
+&nbsp;&nbsp;&nbsp;&nbsp;disabled: true,
+&nbsp;&nbsp;&nbsp;&nbsp;title: 'List 3',
+&nbsp;&nbsp;&nbsp;&nbsp;to: () => {}
+&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;]} 
+/>
+" />
+
+#### DangerZone
+
+An object representing the danger zone of the SideBar. The object must have the same structure as shown in the following example:
+
+<WindowEditor codeString="import { Sidebar } from 'dd360-ds'
+
+<SideBar
+&nbsp;&nbsp;sideBarName='Sidebar'
+&nbsp;&nbsp;dangerZone={{
+&nbsp;&nbsp;&nbsp;&nbsp;active: false,
+&nbsp;&nbsp;&nbsp;&nbsp;show: true,
+&nbsp;&nbsp;&nbsp;&nbsp;text: 'Delete project'
+&nbsp;&nbsp;}} 
+/>
+" />
+
+#### DisabledOptionsTag
+
+A string representing the text to be displayed in the disabled options.
+
+<WindowEditor codeString="import { Sidebar } from 'dd360-ds'
+
+<SideBar sideBarName='Sidebar' disabledOptionsTag='Coming soon' />" />
+
+#### DefaultExpand
+
+A boolean representing whether the sidebar should be expanded by default.
+
+<WindowEditor codeString="import { Sidebar } from 'dd360-ds'
+
+<SideBar sideBarName='Sidebar' defaultExpand />" />
+
+#### Example
+
+<ContainerComponentDoc>
+    <Text>To the left of this text you can see the SideBar of the following example</Text>
+    <SideBar
+        sideBarName='Sidebar'
+        sideBarSubTitle='Example Subtitle'
+        defaultExpand={false}
+        flushSync={() => {}}
+        top={80}
+        left={260}
+        disabledOptionsTag='Coming soon'
+        sideBarList={[
+            {
+                active: true,
+                icon: <DynamicHeroIcon icon='HomeIcon' />,
+                title: 'List 1',
+                to: () => {}
+            },
+            {
+                active: false,
+                title: 'List 2',
+                to: () => {}
+            },
+            {
+                active: false,
+                disabled: true,
+                title: 'List 3',
+                to: () => {}
+            }
+        ]}
+        dangerZone={{
+            active: false,
+            show: true,
+            text: 'Delete project'
+        }}
+    />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Sidebar } from 'dd360-ds'
+
+<SideBar
+&nbsp;&nbsp;sideBarName='Sidebar' 
+&nbsp;&nbsp;sideBarSubTitle='Example Subtitle' 
+&nbsp;&nbsp;defaultExpand={false}
+&nbsp;&nbsp;flushSync={() => {}}
+&nbsp;&nbsp;top={80}
+&nbsp;&nbsp;left={260}
+&nbsp;&nbsp;disabledOptionsTag='Coming soon' 
+&nbsp;&nbsp;sideBarList={[ 
+&nbsp;&nbsp;&nbsp;{ 
+&nbsp;&nbsp;&nbsp;&nbsp; active: true,
+&nbsp;&nbsp;&nbsp;&nbsp; icon: <DynamicHeroIcon icon='HomeIcon' />, 
+&nbsp;&nbsp;&nbsp;&nbsp; title: 'List 1', 
+&nbsp;&nbsp;&nbsp;&nbsp; to: () => {}
+&nbsp;&nbsp;&nbsp;}, 
+&nbsp;&nbsp;&nbsp;{  
+&nbsp;&nbsp;&nbsp;&nbsp;active: false, 
+&nbsp;&nbsp;&nbsp;&nbsp;title: 'List 2', 
+&nbsp;&nbsp;&nbsp;&nbsp;to: () => {} 
+&nbsp;&nbsp;&nbsp;},
+&nbsp;&nbsp;&nbsp;{ 
+&nbsp;&nbsp;&nbsp;&nbsp;active: false, 
+&nbsp;&nbsp;&nbsp;&nbsp;disabled: true,
+&nbsp;&nbsp;&nbsp;&nbsp;title: 'List 3',
+&nbsp;&nbsp;&nbsp;&nbsp;to: () => {}
+&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;]} 
+&nbsp;&nbsp;dangerZone={{
+&nbsp;&nbsp;&nbsp;&nbsp;active: false,
+&nbsp;&nbsp;&nbsp;&nbsp;show: true,
+&nbsp;&nbsp;&nbsp;&nbsp;text: 'Delete project'
+&nbsp;&nbsp;}} 
+/>" />
+
+### API Reference
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'sideBarName', default: null, types: ['string'], required: true },
+        { title: 'sideBarSubTitle', default: null, types: ['string', 'ReactElement', 'JSXElementConstructor'] },
+        {
+            title: 'sideBarList',
+            default: null,
+            types: ['{ title: string, active: boolean, to: () => void, icon?: Element, disabled?: boolean, hidden?: boolean }']
+        },
+        { title: 'disabledOptionsTag', default: null, types: ['string'] },
+        { title: 'dangerZone', default: null, types: ['{ show: boolean, text: string, active: boolean, callBack?: (() => void), }'] },
+        { title: 'flushSync', default: null, types: ['(<R>(fn: () => R) => R)'] },
+        { title: 'defaultExpand', default: 'false', types: ['boolean'] },
+        { title: 'top', default: null, types: ['number'] },
+        { title: 'left', default: null, types: ['number'] }
+    ]}
+/>
