@@ -1,1 +1,69 @@
-card page
+---
+product: dd360-ds
+title: React Card component
+components: Card
+---
+
+# Card
+
+   This component is a container that can be used to display information and content in a user interface. 
+   The "Card" component has several props available that can be used to customize its appearance and behavior
+
+### Import
+
+<WindowEditor codeString="import { Card } from 'dd360-ds'" />
+<WindowEditor codeString="import Card from 'dd360-ds/Card'" />
+
+### Usage
+
+<ContainerComponentDoc>
+    <Card padding={0} width={250}>
+        <>
+            <div className="pt-4 px-4">
+                <Text bold className="mb-7" variant="h5">
+                    Hello World
+                </Text>
+                <Text className="text-sm">Information about the resume of the homes and value to project.</Text>
+            </div>
+            <div className="w-full border-t my-6" />
+            <div className="px-2 grid place-center">
+                <Button className="p-0 m-0" variant="secondary">
+                    Show detail
+                </Button>
+            </div>
+        </>
+    </Card>
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Card } from 'dd360-ds'
+
+<Card padding={0} width={250}>
+&nbsp;<>
+&nbsp;&nbsp;<div className='pt-4 px-4'>
+&nbsp;&nbsp;&nbsp;&nbsp;<Text bold className='mb-7' variant='h5'>Hello World</Text>
+&nbsp;&nbsp;&nbsp;&nbsp;<Text className='text-sm'>Information on the curriculum of the houses and value to be projected.</Text>
+&nbsp;&nbsp;</div>
+&nbsp;&nbsp;<div className='w-full border-t my-6' />
+&nbsp;&nbsp;<div className='px-2 grid place-center'>
+&nbsp;&nbsp;&nbsp;&nbsp;<Button className='p-0 m-0' variant='secondary'>Show detail</Button>
+&nbsp;&nbsp;</div>
+&nbsp;</>
+</Card>
+" />
+
+### API Reference
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'width', default: null, types: ['string', 'number'] },
+        { title: 'height', default: 'fit-content', types: ['number', 'auto', 'fit-content'] },
+        { title: 'children', default: null, types: ['ReactNode'] },
+        { title: 'rounded', default: 'none', types: ['none', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', 'full', '2x', '3x', '4xl', '5xl'] },
+        { title: 'paddingY', default: null, types: ['number'] },
+        { title: 'paddingX', default: null, types: ['number'] },
+        { title: 'padding', default: '4', types: ['number'] },
+        { title: 'className', default: null, types: ['string'] }
+    ]}
+/>
+
+

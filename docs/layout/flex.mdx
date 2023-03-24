@@ -1,1 +1,33 @@
-flex page
+---
+product: dd360-ds
+title: React Flex component
+components: Flex
+---
+
+# Flex
+
+    It is a flexible container that allows you to fit child elements in a single row or column, and to adjust their size and position.
+
+### Import
+
+<WindowEditor codeString="import { Flex } from 'dd360-ds'" />
+<WindowEditor codeString="import Flex from 'dd360-ds/Flex'" />
+
+### Usage
+
+<ContainerComponentDoc>
+   <Flex>I am a children</Flex>
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Flex } from 'dd360-ds'
+
+<Flex>I am a children</Flex>" />
+
+### API Reference
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'children', default: null, types: ['ReactNode'] },
+        { title: 'className', default: null, types: ['string'] }
+    ]}
+/>
