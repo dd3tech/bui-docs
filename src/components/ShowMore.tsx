@@ -32,7 +32,7 @@ function ShowMore({ title = 'Guide', children, basePath }: ShowMoreProps) {
                     <DynamicHeroIcon className="w-4 h-4" icon={isOpen ? 'ChevronDownIcon' : 'ChevronRightIcon'} />
                 </button>
             </div>
-            {isOpen && <div className="pl-5 list-disc flex flex-col gap-2 mt-4">{children}</div>}
+            {isOpen && <div className="list-disc flex flex-col gap-2 mt-4">{children}</div>}
         </div>
     )
 }

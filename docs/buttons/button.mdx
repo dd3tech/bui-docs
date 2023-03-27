@@ -1,32 +1,40 @@
 # Button
+
 ## heading2
+
 ### heading3
+
 #### heading4
+
 ##### heading5
 
-# Button
+# <span name="floating-nav">Button</span>
 
 A demo component for DD360 products.
 
-A button indicates a distinct action and executes a function. Text, icon, or a combination of the two express the action and are supported by the variant and occasionally a tooltip.
+A button indicates a distinct action and executes a function. Text, icon, or a combination of the two express the action and are supported by the variant and
+occasionally a tooltip.
 
-## Import
+## <span name="floating-nav">Import</span>
 
-<WindowEditor className="mb-4" language="tsx" codeString={`import React from "react"
-import { Button } from "dd360-ds"`} />
+<WindowEditor
+    className="mb-4"
+    language="tsx"
+    codeString={`import React from "react"
+import { Button } from "dd360-ds"`}
+/>
 
-## Usage example
+## <span name="floating-nav">Usage example</span>
 
 <WindowEditor className="mb-4" language="tsx" codeString={`import React from "react"
 import { Button } from "dd360-ds"
 
-<Button 
-  onClick={function noRefCheck(){}} 
-  variant="primary">
-  Comprar
-</Button>`} />
+<Button onClick={function noRefCheck() {}} variant="primary">
+    Comprar
+</Button>
+`} />
 
-## API Reference
+## <span name="floating-nav">API Reference</span>
 
 <Table>
     <Table.Header>
@@ -43,225 +51,313 @@ import { Button } from "dd360-ds"
         </Table.HeaderRow>
     </Table.Header>
     <Table.Body>
-        <Table.Row >
+        <Table.Row>
             <Table.Cell className="py-4">variant</Table.Cell>
             <Table.Cell className="py-4">
                 <div className="grid grid-cols-3 gap-2" style={{ width: 'fit-content' }}>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"disabled"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"primary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"secondary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"tertiary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"outline"</div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "disabled"
+                    </div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "primary"
+                    </div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "secondary"
+                    </div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "tertiary"
+                    </div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "outline"
+                    </div>
                 </div>
             </Table.Cell>
             <Table.Cell className="py-4">
-                <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"disabled"</div>
+                <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                    "disabled"
+                </div>
             </Table.Cell>
             <Table.Cell className="py-4">
                 <Select
-                        variant="outlined"
-                        rounded="lg"
-                        optionsList={{
-                            disabled: {
-                                label: 'elige una opcion',
-                                disabled: true
-                            },
-                            primary: {
-                                label: 'Primary'
-                            },
-                            secondary: {
-                                label: 'Secondary'
-                            },
-                            tertiary: {
-                                label: 'tertiary',
-                            }
-                        }}
-                    />
+                    variant="outlined"
+                    rounded="lg"
+                    optionsList={{
+                        disabled: {
+                            label: 'elige una opcion',
+                            disabled: true
+                        },
+                        primary: {
+                            label: 'Primary'
+                        },
+                        secondary: {
+                            label: 'Secondary'
+                        },
+                        tertiary: {
+                            label: 'tertiary'
+                        }
+                    }}
+                />
             </Table.Cell>
         </Table.Row>
-        <Table.Row >
+        <Table.Row>
             <Table.Cell className="py-4">Children</Table.Cell>
             <Table.Cell className="py-4">
                 <div className="grid grid-cols-3 gap-2" style={{ width: 'fit-content' }}>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"disabled"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"primary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"secondary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"tertiary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"outline"</div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "disabled"
+                    </div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "primary"
+                    </div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "secondary"
+                    </div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "tertiary"
+                    </div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "outline"
+                    </div>
                 </div>
             </Table.Cell>
             <Table.Cell className="py-4">
-                <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"disabled"</div>
+                <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                    "disabled"
+                </div>
             </Table.Cell>
             <Table.Cell className="py-4">
                 <Select
-                        variant="outlined"
-                        rounded="lg"
-                        optionsList={{
-                            disabled: {
-                                label: 'elige una opcion',
-                                disabled: true
-                            },
-                            primary: {
-                                label: 'Primary'
-                            },
-                            secondary: {
-                                label: 'Secondary'
-                            },
-                            tertiary: {
-                                label: 'tertiary',
-                            }
-                        }}
-                    />
+                    variant="outlined"
+                    rounded="lg"
+                    optionsList={{
+                        disabled: {
+                            label: 'elige una opcion',
+                            disabled: true
+                        },
+                        primary: {
+                            label: 'Primary'
+                        },
+                        secondary: {
+                            label: 'Secondary'
+                        },
+                        tertiary: {
+                            label: 'tertiary'
+                        }
+                    }}
+                />
             </Table.Cell>
         </Table.Row>
-        <Table.Row >
+        <Table.Row>
             <Table.Cell className="py-4">onClick</Table.Cell>
             <Table.Cell className="py-4">
                 <div className="grid grid-cols-3 gap-2" style={{ width: 'fit-content' }}>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"disabled"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"primary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"secondary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"tertiary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"outline"</div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "disabled"
+                    </div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "primary"
+                    </div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "secondary"
+                    </div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "tertiary"
+                    </div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "outline"
+                    </div>
                 </div>
             </Table.Cell>
             <Table.Cell className="py-4">
-                <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"disabled"</div>
+                <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                    "disabled"
+                </div>
             </Table.Cell>
             <Table.Cell className="py-4">
                 <Select
-                        variant="outlined"
-                        rounded="lg"
-                        optionsList={{
-                            disabled: {
-                                label: 'elige una opcion',
-                                disabled: true
-                            },
-                            primary: {
-                                label: 'Primary'
-                            },
-                            secondary: {
-                                label: 'Secondary'
-                            },
-                            tertiary: {
-                                label: 'tertiary',
-                            }
-                        }}
-                    />
+                    variant="outlined"
+                    rounded="lg"
+                    optionsList={{
+                        disabled: {
+                            label: 'elige una opcion',
+                            disabled: true
+                        },
+                        primary: {
+                            label: 'Primary'
+                        },
+                        secondary: {
+                            label: 'Secondary'
+                        },
+                        tertiary: {
+                            label: 'tertiary'
+                        }
+                    }}
+                />
             </Table.Cell>
         </Table.Row>
-        <Table.Row >
+        <Table.Row>
             <Table.Cell className="py-4">Size</Table.Cell>
             <Table.Cell className="py-4">
                 <div className="grid grid-cols-3 gap-2" style={{ width: 'fit-content' }}>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"disabled"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"primary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"secondary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"tertiary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"outline"</div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "disabled"
+                    </div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "primary"
+                    </div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "secondary"
+                    </div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "tertiary"
+                    </div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "outline"
+                    </div>
                 </div>
             </Table.Cell>
             <Table.Cell className="py-4">
-                <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"disabled"</div>
+                <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                    "disabled"
+                </div>
             </Table.Cell>
             <Table.Cell className="py-4">
                 <Select
-                        variant="outlined"
-                        rounded="lg"
-                        optionsList={{
-                            disabled: {
-                                label: 'elige una opcion',
-                                disabled: true
-                            },
-                            primary: {
-                                label: 'Primary'
-                            },
-                            secondary: {
-                                label: 'Secondary'
-                            },
-                            tertiary: {
-                                label: 'tertiary',
-                            }
-                        }}
-                    />
+                    variant="outlined"
+                    rounded="lg"
+                    optionsList={{
+                        disabled: {
+                            label: 'elige una opcion',
+                            disabled: true
+                        },
+                        primary: {
+                            label: 'Primary'
+                        },
+                        secondary: {
+                            label: 'Secondary'
+                        },
+                        tertiary: {
+                            label: 'tertiary'
+                        }
+                    }}
+                />
             </Table.Cell>
         </Table.Row>
-        <Table.Row >
+        <Table.Row>
             <Table.Cell className="py-4">Disabled</Table.Cell>
             <Table.Cell className="py-4">
                 <div className="grid grid-cols-3 gap-2" style={{ width: 'fit-content' }}>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"disabled"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"primary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"secondary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"tertiary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"outline"</div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "disabled"
+                    </div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "primary"
+                    </div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "secondary"
+                    </div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "tertiary"
+                    </div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "outline"
+                    </div>
                 </div>
             </Table.Cell>
             <Table.Cell className="py-4">
-                <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"disabled"</div>
+                <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                    "disabled"
+                </div>
             </Table.Cell>
             <Table.Cell className="py-4">
                 <Select
-                        variant="outlined"
-                        rounded="lg"
-                        optionsList={{
-                            disabled: {
-                                label: 'elige una opcion',
-                                disabled: true
-                            },
-                            primary: {
-                                label: 'Primary'
-                            },
-                            secondary: {
-                                label: 'Secondary'
-                            },
-                            tertiary: {
-                                label: 'tertiary',
-                            }
-                        }}
-                    />
+                    variant="outlined"
+                    rounded="lg"
+                    optionsList={{
+                        disabled: {
+                            label: 'elige una opcion',
+                            disabled: true
+                        },
+                        primary: {
+                            label: 'Primary'
+                        },
+                        secondary: {
+                            label: 'Secondary'
+                        },
+                        tertiary: {
+                            label: 'tertiary'
+                        }
+                    }}
+                />
             </Table.Cell>
         </Table.Row>
-        <Table.Row >
+        <Table.Row>
             <Table.Cell className="py-4">isLoading</Table.Cell>
             <Table.Cell className="py-4">
                 <div className="grid grid-cols-3 gap-2" style={{ width: 'fit-content' }}>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"disabled"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"primary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"secondary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"tertiary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"outline"</div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "disabled"
+                    </div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "primary"
+                    </div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "secondary"
+                    </div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "tertiary"
+                    </div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "outline"
+                    </div>
                 </div>
             </Table.Cell>
             <Table.Cell className="py-4">
-                <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"disabled"</div>
+                <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                    "disabled"
+                </div>
             </Table.Cell>
             <Table.Cell className="py-4">
                 <div className="flex gap-4 items-center">
                     <Switch setToggle={() => {}} toggle />
-                    <Text bold size="base">True</Text>
+                    <Text bold size="base">
+                        True
+                    </Text>
                 </div>
             </Table.Cell>
         </Table.Row>
-        <Table.Row >
+        <Table.Row>
             <Table.Cell className="py-4">ClassName</Table.Cell>
             <Table.Cell className="py-4">
                 <div className="grid grid-cols-3 gap-2" style={{ width: 'fit-content' }}>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"disabled"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"primary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"secondary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"tertiary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"outline"</div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "disabled"
+                    </div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "primary"
+                    </div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "secondary"
+                    </div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "tertiary"
+                    </div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "outline"
+                    </div>
                 </div>
             </Table.Cell>
             <Table.Cell className="py-4">
-                <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"disabled"</div>
+                <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                    "disabled"
+                </div>
             </Table.Cell>
             <Table.Cell className="py-4">
                 <div className="flex gap-4 items-center">
                     <Switch setToggle={() => {}} />
-                    <Text bold size="base">False</Text>
+                    <Text bold size="base">
+                        False
+                    </Text>
                 </div>
             </Table.Cell>
         </Table.Row>
@@ -269,72 +365,96 @@ import { Button } from "dd360-ds"
             <Table.Cell className="py-4">Padding</Table.Cell>
             <Table.Cell className="py-4">
                 <div className="grid grid-cols-3 gap-2" style={{ width: 'fit-content' }}>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"disabled"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"primary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"secondary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"tertiary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"outline"</div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "disabled"
+                    </div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "primary"
+                    </div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "secondary"
+                    </div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "tertiary"
+                    </div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "outline"
+                    </div>
                 </div>
             </Table.Cell>
             <Table.Cell className="py-4">
-                <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"disabled"</div>
+                <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                    "disabled"
+                </div>
             </Table.Cell>
             <Table.Cell className="py-4">
                 <Select
-                        variant="outlined"
-                        rounded="lg"
-                        optionsList={{
-                            disabled: {
-                                label: 'Choose option...',
-                                disabled: true
-                            },
-                            primary: {
-                                label: 'Primary'
-                            },
-                            secondary: {
-                                label: 'Secondary'
-                            },
-                            tertiary: {
-                                label: 'tertiary',
-                            }
-                        }}
-                    />
+                    variant="outlined"
+                    rounded="lg"
+                    optionsList={{
+                        disabled: {
+                            label: 'Choose option...',
+                            disabled: true
+                        },
+                        primary: {
+                            label: 'Primary'
+                        },
+                        secondary: {
+                            label: 'Secondary'
+                        },
+                        tertiary: {
+                            label: 'tertiary'
+                        }
+                    }}
+                />
             </Table.Cell>
         </Table.Row>
         <Table.Row>
             <Table.Cell className="py-4">fontWeight</Table.Cell>
             <Table.Cell className="py-4">
                 <div className="grid grid-cols-3 gap-2" style={{ width: 'fit-content' }}>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"disabled"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"primary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"secondary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"tertiary"</div>
-                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"outline"</div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "disabled"
+                    </div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "primary"
+                    </div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "secondary"
+                    </div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "tertiary"
+                    </div>
+                    <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                        "outline"
+                    </div>
                 </div>
             </Table.Cell>
             <Table.Cell className="py-4">
-                <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>"disabled"</div>
+                <div className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500" style={{ width: 'fit-content' }}>
+                    "disabled"
+                </div>
             </Table.Cell>
             <Table.Cell className="py-4">
                 <Select
-                        variant="outlined"
-                        rounded="lg"
-                        optionsList={{
-                            disabled: {
-                                label: 'elige una opcion',
-                                disabled: true
-                            },
-                            primary: {
-                                label: 'Primary'
-                            },
-                            secondary: {
-                                label: 'Secondary'
-                            },
-                            tertiary: {
-                                label: 'tertiary',
-                            }
-                        }}
-                    />
+                    variant="outlined"
+                    rounded="lg"
+                    optionsList={{
+                        disabled: {
+                            label: 'elige una opcion',
+                            disabled: true
+                        },
+                        primary: {
+                            label: 'Primary'
+                        },
+                        secondary: {
+                            label: 'Secondary'
+                        },
+                        tertiary: {
+                            label: 'tertiary'
+                        }
+                    }}
+                />
             </Table.Cell>
         </Table.Row>
     </Table.Body>

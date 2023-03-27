@@ -7,7 +7,7 @@ export default function Switch() {
     const [checked, setChecked] = useState<boolean>(false)
 
     return (
-        <label htmlFor="checkbox" onClick={() => setChecked(!checked)} className="cursor-pointer select-none">
+        <label htmlFor="checkbox" onClick={() => setChecked(!checked)} className="hidden md:block cursor-pointer select-none">
             <input type="checkbox" className="hidden" />
             <div className="flex bg-gray-300 rounded-3xl" style={{ width: '72px' }}>
                 <Circle style={{ transform: `translateX(${checked ? 0 : 36}px)` }} className="p-2 bg-white w-9 h-9 transition-all duration-200">

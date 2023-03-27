@@ -14,7 +14,7 @@ export default function Home() {
         <>
             <OpenGraph title={t('metadata.home')!} />
             <IllustrationsLayer />
-            <main>
+            <main className="mx-auto">
                 <ComponentsSection />
                 <FeaturesSection />
                 <BuildWithSection />

@@ -1,12 +1,16 @@
-import { Badge, Breadcrumbs, Button, Checkbox, Circle, FilterRangeSlider, Pagination, ProgressCircle, Radio, Switch, Text } from 'dd360-ds'
+import { Badge, Breadcrumbs, Button, Checkbox, Circle, FilterRangeSlider, Pagination, ProgressCircle, Radio, Switch, Text, ToolTipHover } from 'dd360-ds'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import CardExample from '@/modules/landing/CardExample'
 import DropdownExample from './DropdownExample'
+import Link from 'next/link'
+import { copyToClipBoard } from 'dd360-utils'
+import { composeClasses } from 'dd360-ds/lib'
 
 const ComponentsSection = () => {
     const [sectionPos, setSectionPos] = useState({ top: 0, left: 0 })
+    const [wasCopied, setWasCopied] = useState(false)
 
     useEffect(() => {
         function handleResize() {
@@ -21,6 +25,14 @@ const ComponentsSection = () => {
         return () => window.removeEventListener('resize', handleResize)
     }, [])
 
+    // useEffect(() => {
+    //     if (!wasCopied) return
+    //     const copiedTimer = setTimeout(() => {
+    //         setWasCopied(false)
+    //     }, 1000)
+    //     return () => clearTimeout(copiedTimer)
+    // }, [wasCopied])
+
     return (
         <section className="m-auto section-components flex flex-col items-center mt-12 ">
             <Text size="xl" className="font-medium text-gray-700 px-4" variant="h2">
@@ -31,7 +43,7 @@ const ComponentsSection = () => {
                 Back office platforms like DD360
             </Text>
 
-            <section className="relative section-goup-components hidden sm:block" style={{ width: 677, height: 369 }}>
+            <section className="relative mb-6 section-goup-components hidden sm:block" style={{ width: 677, height: 369 }}>
                 <Badge
                     className="px-4 py-1 w-max absolute floating"
                     classNameIcon="w-4 text-green-600"
@@ -108,18 +120,29 @@ const ComponentsSection = () => {
             </section>
 
             <div className="flex gap-6 px-10 flex-col sm:flex-row">
-                <Button paddingX="11" paddingY="2" rounded="lg">
-                    Get started
-                </Button>
+                <Link href="/docs/buttons/button">
+                    <Button className="w-full sm:w-40 sm:max-w-[150px]" paddingY="2" rounded="lg">
+                        Get started
+                    </Button>
+                </Link>
                 <Button
-                    paddingX="6"
                     paddingY="2"
                     variant="secondary"
-                    className="border-blue-400 bg-white flex justify-center items-center"
+                    className={composeClasses(
+                        wasCopied ? 'border-green-600 text-green-600' : 'border-blue-400 bg-white',
+                        'w-[202px] h-9 px-2 flex justify-between items-center'
+                    )}
                     fontWeight="normal"
                     rounded="lg"
+                    onClick={(event) => {
+                        copyToClipBoard(event.currentTarget.textContent || '')
+                        setWasCopied(true)
+                        const copiedTimer = setTimeout(() => {
+                            setWasCopied(false)
+                        }, 1000)
+                    }}
                 >
-                    npm i dd360-ds@latest
+                    {wasCopied ? 'Copied' : 'npm i dd360-ds@latest'}
                     <Image alt="copy-icon" src="/copy-icon.svg" width={12} height={15} className="ml-3" />
                 </Button>
             </div>

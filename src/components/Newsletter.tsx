@@ -6,7 +6,7 @@ function Newsletter() {
 
     return (
         <div className="flex flex-col sm:flex-row gap-3">
-            <Input placeholder="hello@dd360.mx" className="sm:mt-0 inline-block border-gray-500 w-full" style={{ maxWidth: 287 }} />
+            <Input placeholder="hello@dd360.mx" className="sm:mt-0 inline-block border-gray-500 w-full sm:max-w-[287px] " />
             <Button className="leading-none" rounded="lg" paddingX="8" paddingY="4">
                 {t('subscribe')}
             </Button>

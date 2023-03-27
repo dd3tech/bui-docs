@@ -1,10 +1,10 @@
-import { Circle, Text } from 'dd360-ds'
+import { Circle, ImageIcon, Text } from 'dd360-ds'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 
 const cardsInformation = [
     {
         title: 'Accessibility',
-        icon: <DynamicHeroIcon className="text-blue-700" icon="ClipboardCopyIcon" width={18} />,
+        icon: <ImageIcon src="/person-circle.svg" style={{ width: 18 }} />,
         description: undefined
     },
     {
@@ -29,19 +29,17 @@ const cardsInformation = [
     },
     {
         title: 'Solid API and Documentation',
-        icon: <DynamicHeroIcon className="text-blue-700" icon="CheckCircleIcon" width={18} />,
+        icon: <DynamicHeroIcon className="text-blue-700" icon="DatabaseIcon" width={18} />,
         description: undefined
     }
 ]
 
 const FeaturesSection = () => (
-    <section
-        className="grid gap-x-14 gap-y-12 pt-40 p-4 sm:px-8 m-auto"
-        style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(295px, 1fr))', maxWidth: 1061 }}
-    >
+    <section className="w-full max-w-8xl pt-40 p-4 sm:px-8 xl:px-40 2xl:px-0 m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-14 gap-y-12">
         {cardsInformation.map((item) => (
             <article
                 key={item.title}
+                className="w-full lg:w-[295px] 2xl:w-full h-[200px]"
                 style={{
                     background: 'rgba(255, 255, 255, 0.2)',
                     backdropFilter: 'blur(10px)',
@@ -55,11 +53,11 @@ const FeaturesSection = () => (
                     <Circle width="32px" height="32px" backgroundColor="#DBEAFE">
                         {item.icon}
                     </Circle>
-                    <Text className="font-semibold ml-2" size={10}>
+                    <Text className="font-semibold ml-2" size="sm">
                         {item.title}
                     </Text>
                 </div>
-                <Text variant="p">
+                <Text variant="p" size="xs">
                     Lorem ipsum dolor sit amet consectetur. Nec euismod nisi pharetra ipsum morbi. Mauris pulvinar mauris malesuada vitae tincidunt dis cras
                     faucibus pharetra. Ullamcorper dignissim nunc maecenas sagittis adipiscing amet mi justo. Maecenas accumsan aliquam nunc gravida lectus urna
                     pretium libero.

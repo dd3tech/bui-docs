@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
 import FloatingNav from './FloatingNav'
 import Footer from './Footer'
 import Navbar from './Navbar'
@@ -9,6 +10,23 @@ const routesWithoutFooter = ['/components']
 function Layout({ children }: { children: JSX.Element }) {
     const router = useRouter()
     const showSidebar = router.pathname.startsWith('/docs/')
+    const [entries, setEntries] = useState<{ label: string; isActive: boolean; position: number }[]>([])
+
+    useEffect(() => {
+        const headers = document.getElementsByName('floating-nav')
+        let entryList: { label: string; isActive: boolean; position: number }[] = []
+        headers.forEach((header) => {
+            entryList = [
+                ...entryList,
+                {
+                    label: header.textContent || '',
+                    isActive: false,
+                    position: header.offsetTop - 90
+                }
+            ]
+        })
+        setEntries(entryList)
+    }, [])
 
     if (showSidebar) {
         return (
@@ -19,7 +37,7 @@ function Layout({ children }: { children: JSX.Element }) {
                     <div className="flex h-full  px-8 lg:px-16">
                         <article className="w-full">{children}</article>
                         <article className="hidden w-32 mt-36 lg:block">
-                            <FloatingNav />
+                            <FloatingNav entries={entries} />
                         </article>
                     </div>
                 </main>
