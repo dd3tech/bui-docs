@@ -4,110 +4,110 @@ title: React SideBar component
 components: SideBar
 ---
 
-# SideBar
+# <span name="floating-nav">SideBar</span>
 
 The "SideBar" component is a React component used to render a sidebar with different navigation options for the user.
 
-### Import
+### <span name="floating-nav">Import</span>
 
 <WindowEditor codeString="import { SideBar } from 'dd360-ds'" />
 <WindowEditor codeString="import SideBar from 'dd360-ds/SideBar'" />
 
-### Usage
+### <span name="floating-nav">Usage</span>
 
 The prop sideBarName is required, it is a string that is rendered as the title of the SideBar component.
 
-<WindowEditor codeString="import { Sidebar } from 'dd360-ds'
+<WindowEditor codeString='import { Sidebar } from "dd360-ds"
 
-<SideBar sideBarName='Sidebar' />" />
+<SideBar sideBarName="Sidebar" />' />
 
-#### SideBarSubTitle
+#### <span name="floating-nav">SideBarSubTitle</span>
 
 A string that is rendered as the subtitle of the SideBar.
 
-<WindowEditor codeString="import { Sidebar } from 'dd360-ds'
+<WindowEditor codeString='import { Sidebar } from "dd360-ds"
 
-<SideBar sideBarName='Sidebar' sideBarSubTitle='Example SubTitle' />" />
+<SideBar sideBarName="Sidebar" sideBarSubTitle="Example SubTitle" />' />
 
-#### SideBarList
+#### <span name="floating-nav">SideBarList</span>
 
 A list of objects representing the sidebar options. Each object must have the same structure as shown in the following example:
 
-<WindowEditor codeString="import { Sidebar } from 'dd360-ds'
-import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
+<WindowEditor codeString='import { Sidebar } from "dd360-ds"
+import DynamicHeroIcon from "dd360-ds/DynamicHeroIcon"
 
 <SideBar
-&nbsp;&nbsp;sideBarName='Sidebar'
+&nbsp;&nbsp;sideBarName="Sidebar"
 &nbsp;&nbsp;sideBarList={[ 
 &nbsp;&nbsp;&nbsp;{ 
 &nbsp;&nbsp;&nbsp;&nbsp; active: true,
-&nbsp;&nbsp;&nbsp;&nbsp; icon: <DynamicHeroIcon icon='HomeIcon' />, 
-&nbsp;&nbsp;&nbsp;&nbsp; title: 'List 1', 
+&nbsp;&nbsp;&nbsp;&nbsp; icon: <DynamicHeroIcon icon="HomeIcon" />, 
+&nbsp;&nbsp;&nbsp;&nbsp; title: "List 1", 
 &nbsp;&nbsp;&nbsp;&nbsp; to: () => {}
 &nbsp;&nbsp;&nbsp;}, 
 &nbsp;&nbsp;&nbsp;{  
 &nbsp;&nbsp;&nbsp;&nbsp;active: false, 
-&nbsp;&nbsp;&nbsp;&nbsp;title: 'List 2', 
+&nbsp;&nbsp;&nbsp;&nbsp;title: "List 2", 
 &nbsp;&nbsp;&nbsp;&nbsp;to: () => {} 
 &nbsp;&nbsp;&nbsp;},
 &nbsp;&nbsp;&nbsp;{ 
 &nbsp;&nbsp;&nbsp;&nbsp;active: false, 
 &nbsp;&nbsp;&nbsp;&nbsp;disabled: true,
-&nbsp;&nbsp;&nbsp;&nbsp;title: 'List 3',
+&nbsp;&nbsp;&nbsp;&nbsp;title: "List 3",
 &nbsp;&nbsp;&nbsp;&nbsp;to: () => {}
 &nbsp;&nbsp;&nbsp;}
 &nbsp;&nbsp;]} 
 />
-" />
+' />
 
-#### DangerZone
+#### <span name="floating-nav">DangerZone</span>
 
 An object representing the danger zone of the SideBar. The object must have the same structure as shown in the following example:
 
-<WindowEditor codeString="import { Sidebar } from 'dd360-ds'
+<WindowEditor codeString='import { Sidebar } from "dd360-ds"
 
 <SideBar
-&nbsp;&nbsp;sideBarName='Sidebar'
+&nbsp;&nbsp;sideBarName="Sidebar"
 &nbsp;&nbsp;dangerZone={{
 &nbsp;&nbsp;&nbsp;&nbsp;active: false,
 &nbsp;&nbsp;&nbsp;&nbsp;show: true,
-&nbsp;&nbsp;&nbsp;&nbsp;text: 'Delete project'
+&nbsp;&nbsp;&nbsp;&nbsp;text: "Delete project"
 &nbsp;&nbsp;}} 
 />
-" />
+' />
 
-#### DisabledOptionsTag
+#### <span name="floating-nav">DisabledOptionsTag</span>
 
 A string representing the text to be displayed in the disabled options.
 
-<WindowEditor codeString="import { Sidebar } from 'dd360-ds'
+<WindowEditor codeString='import { Sidebar } from "dd360-ds"
 
-<SideBar sideBarName='Sidebar' disabledOptionsTag='Coming soon' />" />
+<SideBar sideBarName="Sidebar" disabledOptionsTag="Coming soon" />' />
 
-#### DefaultExpand
+#### <span name="floating-nav">DefaultExpand</span>
 
 A boolean representing whether the sidebar should be expanded by default.
 
-<WindowEditor codeString="import { Sidebar } from 'dd360-ds'
+<WindowEditor codeString='import { Sidebar } from "dd360-ds"
 
-<SideBar sideBarName='Sidebar' defaultExpand />" />
+<SideBar sideBarName="Sidebar" defaultExpand />' />
 
-#### Example
+#### <span name="floating-nav">Example</span>
 
 <ContainerComponentDoc>
     <Text>To the left of this text you can see the SideBar of the following example</Text>
     <SideBar
-        sideBarName='Sidebar'
-        sideBarSubTitle='Example Subtitle'
+        sideBarName="Sidebar"
+        sideBarSubTitle="Example Subtitle"
         defaultExpand={false}
         flushSync={() => {}}
         top={80}
-        left={260}
-        disabledOptionsTag='Coming soon'
+        left={210}
+        disabledOptionsTag="Coming soon"
         sideBarList={[
             {
                 active: true,
-                icon: <DynamicHeroIcon icon='HomeIcon' />,
+                icon: <DynamicHeroIcon icon="HomeIcon" />,
                 title: 'List 1',
                 to: () => {}
             },
@@ -131,43 +131,43 @@ A boolean representing whether the sidebar should be expanded by default.
     />
 </ContainerComponentDoc>
 
-<WindowEditor codeString="import { Sidebar } from 'dd360-ds'
+<WindowEditor codeString='import { Sidebar } from "dd360-ds"
 
 <SideBar
-&nbsp;&nbsp;sideBarName='Sidebar' 
-&nbsp;&nbsp;sideBarSubTitle='Example Subtitle' 
+&nbsp;&nbsp;sideBarName="Sidebar" 
+&nbsp;&nbsp;sideBarSubTitle="Example Subtitle" 
 &nbsp;&nbsp;defaultExpand={false}
 &nbsp;&nbsp;flushSync={() => {}}
 &nbsp;&nbsp;top={80}
 &nbsp;&nbsp;left={260}
-&nbsp;&nbsp;disabledOptionsTag='Coming soon' 
+&nbsp;&nbsp;disabledOptionsTag="Coming soon" 
 &nbsp;&nbsp;sideBarList={[ 
 &nbsp;&nbsp;&nbsp;{ 
 &nbsp;&nbsp;&nbsp;&nbsp; active: true,
-&nbsp;&nbsp;&nbsp;&nbsp; icon: <DynamicHeroIcon icon='HomeIcon' />, 
-&nbsp;&nbsp;&nbsp;&nbsp; title: 'List 1', 
+&nbsp;&nbsp;&nbsp;&nbsp; icon: <DynamicHeroIcon icon="HomeIcon" />, 
+&nbsp;&nbsp;&nbsp;&nbsp; title: "List 1", 
 &nbsp;&nbsp;&nbsp;&nbsp; to: () => {}
 &nbsp;&nbsp;&nbsp;}, 
 &nbsp;&nbsp;&nbsp;{  
 &nbsp;&nbsp;&nbsp;&nbsp;active: false, 
-&nbsp;&nbsp;&nbsp;&nbsp;title: 'List 2', 
+&nbsp;&nbsp;&nbsp;&nbsp;title: "List 2", 
 &nbsp;&nbsp;&nbsp;&nbsp;to: () => {} 
 &nbsp;&nbsp;&nbsp;},
 &nbsp;&nbsp;&nbsp;{ 
 &nbsp;&nbsp;&nbsp;&nbsp;active: false, 
 &nbsp;&nbsp;&nbsp;&nbsp;disabled: true,
-&nbsp;&nbsp;&nbsp;&nbsp;title: 'List 3',
+&nbsp;&nbsp;&nbsp;&nbsp;title: "List 3",
 &nbsp;&nbsp;&nbsp;&nbsp;to: () => {}
 &nbsp;&nbsp;&nbsp;}
 &nbsp;&nbsp;]} 
 &nbsp;&nbsp;dangerZone={{
 &nbsp;&nbsp;&nbsp;&nbsp;active: false,
 &nbsp;&nbsp;&nbsp;&nbsp;show: true,
-&nbsp;&nbsp;&nbsp;&nbsp;text: 'Delete project'
+&nbsp;&nbsp;&nbsp;&nbsp;text: "Delete project"
 &nbsp;&nbsp;}} 
-/>" />
+/>' />
 
-### API Reference
+### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
     dataTable={[

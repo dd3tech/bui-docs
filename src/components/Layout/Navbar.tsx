@@ -19,7 +19,7 @@ const menu = [
     {
         key: 2,
         label: 'docs',
-        link: '/docs/buttons/button'
+        link: '/docs/get-started/get-started'
     },
     {
         key: 3,

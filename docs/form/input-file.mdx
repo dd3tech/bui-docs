@@ -4,17 +4,17 @@ title: React Input File component
 components: Input File
 ---
 
-# InputFile
+# <span name="floating-nav">InputFile</span>
 
     It is a file input component designed to allow users to select one or more files and upload them to a website.
     This component is designed to be easy to use and customizable, and can be easily integrated into any website or application.
 
-### Import
+### <span name="floating-nav">Import</span>
 
 <WindowEditor codeString="import { InputFile } from 'dd360-ds'" />
 <WindowEditor codeString="import InputFile from 'dd360-ds/InputFile'" />
 
-### Usage
+### <span name="floating-nav">Usage</span>
 
 <ContainerComponentDoc className="gap-y-2">
     <InputFile />
@@ -24,7 +24,7 @@ components: Input File
 
 <InputFile />" />
 
-#### hintText
+#### <span name="floating-nav">hintText</span>
 
 Used to provide additional information to users about the type of file they are expected to upload. 
 By default, this attribute is "Upload in PDF format and signed by all parties (if applicable)."
@@ -37,7 +37,7 @@ By default, this attribute is "Upload in PDF format and signed by all parties (i
 
 <InputFile hintText='Upload in PDF' />" />
 
-#### boxMessage
+#### <span name="floating-nav">boxMessage</span>
 
 This prop is used to provide additional information to users about file upload requirements, such as the maximum weight allowed for a file. 
 By default, this attribute is "PDF Maximum weight per file 20 MB".
@@ -50,7 +50,7 @@ By default, this attribute is "PDF Maximum weight per file 20 MB".
 
 <InputFile boxMessage='PDF Maximum weight per file 3 MB' />" />
 
-#### dragMessage
+#### <span name="floating-nav">dragMessage</span>
 
 This prop is used to provide information to users on how they can upload files, i.e. dragging and dropping.
 By default, this attribute is "Drop here".
@@ -63,7 +63,7 @@ By default, this attribute is "Drop here".
 
 <InputFile dragMessage='Drop here' />" />
 
-#### label
+#### <span name="floating-nav">label</span>
 
  This prop is used to provide a label to the InputFile component. 
  By default, this attribute is "Drag & Drop your files or".
@@ -76,7 +76,7 @@ By default, this attribute is "Drop here".
 
 <InputFile label='Drag & Drop your files or' />" />
 
-#### labelAction
+#### <span name="floating-nav">labelAction</span>
 
  This prop is used to provide a text that tells the user that he can click on the InputFile component to select a file.
  By default, this attribute is "browse from your device".
@@ -89,7 +89,7 @@ By default, this attribute is "Drop here".
 
 <InputFile labelAction='browse from your device' />" />
 
-#### progressIndicator
+#### <span name="floating-nav">progressIndicator</span>
 
 This prop is used to show the progress of a file upload. 
 The default value is 0.
@@ -102,7 +102,7 @@ The default value is 0.
 
 <InputFile progressIndicator={50} />" />
 
-#### error
+#### <span name="floating-nav">error</span>
 
 This prop is used to display an error message to the user in case an error occurs when loading a file.
 The default value is a object of equal type what of the example
@@ -122,7 +122,7 @@ const newError = { show: false, message: <span>File type not allowed or exceeds 
 
 <InputFile error={newError} />" />
 
-### API Reference
+### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
     dataTable={[

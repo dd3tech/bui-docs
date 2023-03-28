@@ -32,11 +32,11 @@ function Layout({ children }: { children: JSX.Element }) {
         return (
             <div className="flex min-h-screen flex-row bg-gray-50 text-gray-800">
                 <SideBar />
-                <main className="relative -ml-52 flex flex-grow flex-col transition-all duration-150 ease-in lg:ml-0">
+                <main className="lg:max-w-[calc(100vw-200px)] relative -ml-52 flex flex-grow flex-col transition-all duration-150 ease-in lg:ml-0">
                     <Navbar isSticky hideLogo />
-                    <div className="flex h-full  px-8 lg:px-16">
-                        <article className="w-full">{children}</article>
-                        <article className="hidden w-32 mt-36 lg:block">
+                    <div className="flex lg:grid grid-cols-[minmax(0,1fr)_minmax(0,128px)] h-full px-8 lg:px-16">
+                        <article className="w-full max-w-full">{children}</article>
+                        <article className="hidden w-full max-w-[128px] mt-36 lg:block">
                             <FloatingNav entries={entries} />
                         </article>
                     </div>

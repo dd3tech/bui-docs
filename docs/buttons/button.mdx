@@ -8,13 +8,13 @@ components: Button
 
      button indicates a distinct action and executes a function. Text, icon, or a combination of the two express the action and are supported by the variant and occasionally a tooltip.
 
-## Imports
+## <span name="floating-nav">Imports</span>
 
     <WindowEditor codeString="import { Button } from 'dd360-ds' " />
     <WindowEditor codeString="import { Button } from 'dd360-ds/Buttons'" />
     <WindowEditor codeString="import Button from 'dd360-ds/Button'" />
 
-### Usage
+### <span name="floating-nav">Usage</span>
 
 <ContainerComponentDoc className="w-fit">
     <Button>Click Me</Button>
@@ -27,13 +27,13 @@ components: Button
 
 />
 
-##### Variants
+##### <span name="floating-nav">Variants</span>
 
 The Button component comes with several variant options, by default it uses the "primary" variant, but you can also use these: "disabled", "success", "primary",
 "secondary", "link", "ghost", "cancel", "danger", "outline", "outlineBlue", "outlineWhite", "outlineWhiteRed".
 
 <ContainerComponentDoc className="gap-y-2">
-    <ButtonGroup orientation="horizontal" gap={10} align="center">
+    <ButtonGroup className="flex flex-wrap" orientation="horizontal" gap={10} align="center">
         <Button variant="primary">Primary</Button>
         <Button variant="secondary">Secondary</Button>
         <Button variant="success">Success</Button>
@@ -69,7 +69,7 @@ The Button component comes with several variant options, by default it uses the 
 
 />
 
-#### Loading
+#### <span name="floating-nav">Loading</span>
 
 To display the loading status, use the property isLoading.
 
@@ -84,7 +84,7 @@ To display the loading status, use the property isLoading.
 
 />
 
-#### Disabled
+#### <span name="floating-nav">Disabled</span>
 
 To disable a button, use the property disabled.
 
@@ -99,7 +99,7 @@ To disable a button, use the property disabled.
 
 />
 
-#### Sizes
+#### <span name="floating-nav">Sizes</span>
 
 Use the size property to change the size of the button. You can set the value to `small`, `medium`, `large`, or `extraLarge`.
 
@@ -124,7 +124,7 @@ Use the size property to change the size of the button. You can set the value to
 
 />
 
-### API Reference
+### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
     dataTable={[

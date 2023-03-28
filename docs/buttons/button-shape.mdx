@@ -4,19 +4,19 @@ title: React Button Shape component
 components: ShapeButton
 ---
 
-# ShapeButton
+# <span name="floating-nav">ShapeButton</span>
 
-   The ShapeButton component is a button that can be customized with different variants and optionally with a custom icon.
+The ShapeButton component is a button that can be customized with different variants and optionally with a custom icon.
 
-### Import
+### <span name="floating-nav">Import</span>
 
 <WindowEditor codeString="import { ShapeButton } from 'dd360-ds'" />
 <WindowEditor codeString="import { ShapeButton } from 'dd360-ds/Buttons'" />
 <WindowEditor codeString="import ShapeButton from 'dd360-ds/ShapeButton'" />
 
-### Usage
+### <span name="floating-nav">Usage</span>
 
-#### BaseCircleButton
+#### <span name="floating-nav">BaseCircleButton</span>
 
 To use the BaseCircleButton follow this example:
 
@@ -28,29 +28,27 @@ To use the BaseCircleButton follow this example:
 
 <ShapeButton.BaseCircleButton />" />
 
+#### <span name="floating-nav">Variants BaseCircleButton</span>
 
-#### Variants BaseCircleButton
-
-The prop variant can only be used with the BaseCircleButton, it has 2 variants: "square" and "circle".
-By default it is "circle".
+The prop variant can only be used with the BaseCircleButton, it has 2 variants: "square" and "circle". By default it is "circle".
 
 <ContainerComponentDoc className="flex align-center items-center gap-x-3">
     <div className="flex flex-col align-center items-center">
-        <Text className='flex mb-1'>Square</Text>
-        <ShapeButton.BaseCircleButton variant='square' />
+        <Text className="flex mb-1">Square</Text>
+        <ShapeButton.BaseCircleButton variant="square" />
     </div>
     <div className="flex flex-col align-center items-center">
-        <Text className='flex mb-1'>Circle</Text>
-        <ShapeButton.BaseCircleButton variant='circle' />
+        <Text className="flex mb-1">Circle</Text>
+        <ShapeButton.BaseCircleButton variant="circle" />
     </div>
 </ContainerComponentDoc>
 
-<WindowEditor codeString="import { ShapeButton } from 'dd360-ds'
+<WindowEditor codeString='import { ShapeButton } from "dd360-ds"
 
-<ShapeButton.BaseCircleButton variant='square' />
-<ShapeButton.BaseCircleButton variant='circle' />" />
+<ShapeButton.BaseCircleButton variant="square" />
+<ShapeButton.BaseCircleButton variant="circle" />' />
 
-#### Square Button
+#### <span name="floating-nav">Square Button</span>
 
 To use the SquareButton follow this example:
 
@@ -62,7 +60,7 @@ To use the SquareButton follow this example:
 
 <ShapeButton.SquareButton />" />
 
-#### Circle Button
+#### <span name="floating-nav">Circle Button</span>
 
 To use the CircleButton follow this example:
 
@@ -73,30 +71,34 @@ To use the CircleButton follow this example:
 <WindowEditor
     codeString="import { ShapeButton } from 'dd360-ds'
 
- <ShapeButton.CircleButton />"
-/>
+<ShapeButton.CircleButton />" />
 
-#### ShapeButton with custom icon
+#### <span name="floating-nav">ShapeButton with custom icon</span>
 
 In addition, you can customize the buttons using custom icons:
 
 <ContainerComponentDoc>
-    <ShapeButton.BaseCircleButton icon={<DynamicHeroIcon icon="AcademicCapIcon" className="text-blue-700 w-6" />}/>
+    <ShapeButton.BaseCircleButton icon={<DynamicHeroIcon icon="AcademicCapIcon" className="text-blue-700 w-6" />} />
 </ContainerComponentDoc>
 
 <WindowEditor codeString="import { ShapeButton } from 'dd360-ds'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 
 <ShapeButton.BaseCircleButton 
-&nbsp;&nbsp;icon={<DynamicHeroIcon icon='AcademicCapIcon' className='text-blue-700 w-6' />} 
+&nbsp;&nbsp;icon={
+&nbsp;&nbsp;&nbsp;&nbsp;<DynamicHeroIcon 
+&nbsp;&nbsp;&nbsp;&nbsp;icon='AcademicCapIcon' 
+&nbsp;&nbsp;&nbsp;&nbsp;className='text-blue-700 w-6' 
+&nbsp;&nbsp;&nbsp;/>
+&nbsp;&nbsp;} 
 />" />
 
-### API Reference
+### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
     dataTable={[
         { title: 'height', default: '3rem', types: ['string'] },
         { title: 'icon', default: null, types: ['ReactNode'] },
-        { title: 'variant (BaseCircleButton exclusive prop)', default: 'circle', types: ['square', 'circle'] },
+        { title: 'variant (BaseCircleButton exclusive prop)', default: 'circle', types: ['square', 'circle'] }
     ]}
 />

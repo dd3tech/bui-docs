@@ -4,72 +4,93 @@ title: React Wrapper_ component
 components: Wrapper
 ---
 
-# Wrapper
+# <span name="floating-nav">Wrapper</span>
 
     The Wrapper component is a container used to wrap other components and provide them with a common set of styles.
 
-### Import
+### <span name="floating-nav">Import</span>
 
 <WindowEditor codeString="import { Wrapper } from 'dd360-ds'" />
 <WindowEditor codeString="import Wrapper from 'dd360-ds/Wrapper'" />
 
-### Usage
+### <span name="floating-nav">Usage</span>
 
 <ContainerComponentDoc>
-   <Wrapper className="bg-blue-500">I am a children</Wrapper>
+    <Wrapper className="bg-blue-500">I am a children</Wrapper>
 </ContainerComponentDoc>
 
-<WindowEditor codeString="import { Wrapper } from 'dd360-ds'
+<WindowEditor codeString='import { Wrapper } from "dd360-ds"
 
-<Wrapper className='bg-blue-500' >I am a children</Wrapper>" />
+<Wrapper className="bg-blue-500">I am a children</Wrapper>' />
 
-#### hasViewportHeight
+#### <span name="floating-nav">hasViewportHeight</span>
 
-Sets whether the component should have a viewport height. 
-The default value is "false".
+Sets whether the component should have a viewport height. The default value is "false".
 
 <ContainerComponentDoc>
-   <Wrapper className='bg-blue-500' hasViewportHeight >I am a children</Wrapper>
+    <Wrapper className="bg-blue-500" hasViewportHeight>
+        I am a children
+    </Wrapper>
 </ContainerComponentDoc>
 
-<WindowEditor codeString="import { Wrapper } from 'dd360-ds'
+<WindowEditor codeString='import { Wrapper } from "dd360-ds"
 
-<Wrapper hasViewportHeight className='bg-blue-500' >I am a children</Wrapper>" />
+<Wrapper hasViewportHeight className="bg-blue-500">
+    I am a children
+</Wrapper>
+' />
 
-#### maxWidth
+#### <span name="floating-nav">maxWidth</span>
 
-Defines the maximum width of the component, and can take one of the following values: "max", "min", "none", "0", "sm", "md", "lg", "xl", "2xl", "3xl", "full", "4xl", "5xl", "xs", "7xl", "6xl", "prose", "screen-sm", "screen-md", "screen-lg", "screen-xl", "screen-2xl". 
-By default, it is set to "screen-2xl".
+Defines the maximum width of the component, and can take one of the following values: "max", "min", "none", "0", "sm", "md", "lg", "xl", "2xl", "3xl", "full",
+"4xl", "5xl", "xs", "7xl", "6xl", "prose", "screen-sm", "screen-md", "screen-lg", "screen-xl", "screen-2xl". By default, it is set to "screen-2xl".
 
 <ContainerComponentDoc>
-   <Wrapper  maxWidth='none' className='bg-blue-500 mb-2'>none</Wrapper>
-   <Wrapper  maxWidth='sm' className='bg-blue-500 mb-2'>sm</Wrapper>
-   <Wrapper  maxWidth='md' className='bg-blue-500 mb-2'>md</Wrapper>
-   <Wrapper  maxWidth='full' className='bg-blue-500 mb-2'>full</Wrapper>
-   <Wrapper  maxWidth='min' className='bg-blue-500 mb-2'>min</Wrapper>
-   <Wrapper  maxWidth='max' className='bg-blue-500 mb-2'>max</Wrapper>
-   <Wrapper  maxWidth='screen-sm' className='bg-blue-500 mb-2'>screen-sm</Wrapper>
-   <Wrapper  maxWidth='screen-md' className='bg-blue-500 mb-2'>screen-md</Wrapper>
+    <Wrapper maxWidth="none" className="bg-blue-500 mb-2">
+        none
+    </Wrapper>
+    <Wrapper maxWidth="sm" className="bg-blue-500 mb-2">
+        sm
+    </Wrapper>
+    <Wrapper maxWidth="md" className="bg-blue-500 mb-2">
+        md
+    </Wrapper>
+    <Wrapper maxWidth="full" className="bg-blue-500 mb-2">
+        full
+    </Wrapper>
+    <Wrapper maxWidth="min" className="bg-blue-500 mb-2">
+        min
+    </Wrapper>
+    <Wrapper maxWidth="max" className="bg-blue-500 mb-2">
+        max
+    </Wrapper>
+    <Wrapper maxWidth="screen-sm" className="bg-blue-500 mb-2">
+        screen-sm
+    </Wrapper>
+    <Wrapper maxWidth="screen-md" className="bg-blue-500 mb-2">
+        screen-md
+    </Wrapper>
 </ContainerComponentDoc>
 
-<WindowEditor codeString="import { Wrapper } from 'dd360-ds'
+<WindowEditor codeString='import { Wrapper } from "dd360-ds"
 
-<Wrapper maxWidth='none'>none</Wrapper>
-<Wrapper maxWidth='sm'>sm</Wrapper>
-<Wrapper maxWidth='md'>md</Wrapper>
-<Wrapper maxWidth='full'>full</Wrapper>
-<Wrapper maxWidth='min'>min</Wrapper>
-<Wrapper maxWidth='max'>max</Wrapper>
-<Wrapper maxWidth='screen-sm'>screen-sm</Wrapper>
-<Wrapper maxWidth='screen-md'>screen-md</Wrapper>" />
+<Wrapper maxWidth="none">none</Wrapper>
+<Wrapper maxWidth="sm">sm</Wrapper>
+<Wrapper maxWidth="md">md</Wrapper>
+<Wrapper maxWidth="full">full</Wrapper>
+<Wrapper maxWidth="min">min</Wrapper>
+<Wrapper maxWidth="max">max</Wrapper>
+<Wrapper maxWidth="screen-sm">screen-sm</Wrapper>
+<Wrapper maxWidth="screen-md">screen-md</Wrapper>' />
 
-
-
-### API Reference
+### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
     dataTable={[
-        { title: 'maxWidth', default: 'screen-2xl', types: [
+        {
+            title: 'maxWidth',
+            default: 'screen-2xl',
+            types: [
                 'max',
                 'min',
                 'none',

@@ -4,19 +4,19 @@ title: React Order component
 components: Order
 ---
 
-# Order
+# <span name="floating-nav">Order</span>
 
 The "Order" component allows you to set the order of the elements in a Flexbox layout using the "order" property.
 
-### Import
+### <span name="floating-nav">Import</span>
 
 <WindowEditor codeString="import { Order } from 'dd360-ds'" />
 <WindowEditor codeString="import Order from 'dd360-ds/Order'" />
 
-### Usage
+### <span name="floating-nav">Usage</span>
 
-The "order" property accepts numeric values from 1 to 12, as well as the values "first", "last" and "none".
-The default value is "none", which means that the order of the element is not modified.
+The "order" property accepts numeric values from 1 to 12, as well as the values "first", "last" and "none". The default value is "none", which means that the
+order of the element is not modified.
 
 <ContainerComponentDoc className="flex justify-between">
     <Order order="2">Order 2</Order>
@@ -25,16 +25,16 @@ The default value is "none", which means that the order of the element is not mo
     <Order order="3">Order 3</Order>
 </ContainerComponentDoc>
 
-<WindowEditor codeString="import { Order } from 'dd360-ds'
+<WindowEditor codeString='import { Order } from "dd360-ds"
 
-<Container className='flex justify-between'>
-&nbsp;&nbsp;<Order order='2'>Order 2</Order>
-&nbsp;&nbsp;<Order order='1'>Order 1</Order>
-&nbsp;&nbsp;<Order order='last'>Order last</Order>
-&nbsp;&nbsp;<Order order='3'>Order 3</Order>
-</Container> "/>
+<Container className="flex justify-between">
+    &nbsp;&nbsp;<Order order="2">Order 2</Order>
+    &nbsp;&nbsp;<Order order="1">Order 1</Order>
+    &nbsp;&nbsp;<Order order="last">Order last</Order>
+    &nbsp;&nbsp;<Order order="3">Order 3</Order>
+</Container> '/>
 
-### API Reference
+### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
     dataTable={[

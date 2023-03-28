@@ -25,13 +25,13 @@ const ComponentsSection = () => {
         return () => window.removeEventListener('resize', handleResize)
     }, [])
 
-    // useEffect(() => {
-    //     if (!wasCopied) return
-    //     const copiedTimer = setTimeout(() => {
-    //         setWasCopied(false)
-    //     }, 1000)
-    //     return () => clearTimeout(copiedTimer)
-    // }, [wasCopied])
+    useEffect(() => {
+        if (!wasCopied) return
+        const copiedTimer = setTimeout(() => {
+            setWasCopied(false)
+        }, 1000)
+        return () => clearTimeout(copiedTimer)
+    }, [wasCopied])
 
     return (
         <section className="m-auto section-components flex flex-col items-center mt-12 ">
@@ -120,7 +120,7 @@ const ComponentsSection = () => {
             </section>
 
             <div className="flex gap-6 px-10 flex-col sm:flex-row">
-                <Link href="/docs/buttons/button">
+                <Link href="/docs/get-started/get-started">
                     <Button className="w-full sm:w-40 sm:max-w-[150px]" paddingY="2" rounded="lg">
                         Get started
                     </Button>
@@ -134,12 +134,9 @@ const ComponentsSection = () => {
                     )}
                     fontWeight="normal"
                     rounded="lg"
-                    onClick={(event) => {
-                        copyToClipBoard(event.currentTarget.textContent || '')
+                    onClick={() => {
+                        copyToClipBoard('npm i dd360-ds@latest')
                         setWasCopied(true)
-                        const copiedTimer = setTimeout(() => {
-                            setWasCopied(false)
-                        }, 1000)
                     }}
                 >
                     {wasCopied ? 'Copied' : 'npm i dd360-ds@latest'}
