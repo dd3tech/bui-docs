@@ -21,12 +21,12 @@ function Layout({ children }: { children: JSX.Element }) {
                 {
                     label: header.textContent || '',
                     isActive: false,
-                    position: header.offsetTop - 90
+                    position: header.offsetTop - 85
                 }
             ]
         })
         setEntries(entryList)
-    }, [])
+    }, [router])
 
     if (showSidebar) {
         return (
