@@ -1,1 +1,86 @@
-container page
+---
+product: dd360-ds
+title: React Container component
+components: Container
+---
+
+# Container
+
+    The Container component is used to wrap content and apply various styling options like shadows and rounded corners.
+
+### Import
+
+<WindowEditor codeString="import { Container } from 'dd360-ds'" />
+<WindowEditor codeString="import Container from 'dd360-ds/Layout/Container'" />
+
+### Usage
+
+<ContainerComponentDoc>
+    <Container>I am a children</Container>
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Container } from 'dd360-ds'
+
+<Container>I am a children</Container>" />
+
+#### Shadow
+
+Used to apply different shadow styles to the container. Options include none, sm, md, lg, xl, and inner.
+
+<ContainerComponentDoc>
+    <Container className='mb-2' shadow="none">none</Container>
+    <Container className='mb-2' shadow="sm">sm</Container>
+    <Container className='mb-2' shadow="md">md</Container>
+    <Container className='mb-2' shadow="lg">lg</Container>
+    <Container className='mb-2' shadow="xl">xl</Container>
+    <Container className='mb-2' shadow="inner">inner</Container>
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Container } from 'dd360-ds'
+
+<Container shadow='none'>none</Container>
+<Container shadow='sm'>sm</Container>
+<Container shadow='md'>md</Container>
+<Container shadow='lg'>lg</Container>
+<Container shadow='xl'>xl</Container>
+<Container shadow='inner'>inner</Container>" />
+
+#### Rounded
+
+Used to apply different rounded corner styles to the container. Options include rounded, none, sm, md, lg, xl, 2xl, 3xl, and full.
+
+<ContainerComponentDoc>
+    <Container className='mb-2 pl-2 border-blue-600 border-solid border-2' rounded="rounded">rounded</Container>
+    <Container className='mb-2 pl-2 border-blue-600 border-solid border-2' rounded="none">none</Container>
+    <Container className='mb-2 pl-2 border-blue-600 border-solid border-2' rounded="sm">sm</Container>
+    <Container className='mb-2 pl-2 border-blue-600 border-solid border-2' rounded="md">md</Container>
+    <Container className='mb-2 pl-2 border-blue-600 border-solid border-2' rounded="lg">lg</Container>
+    <Container className='mb-2 pl-2 border-blue-600 border-solid border-2' rounded="xl">xl</Container>
+    <Container className='mb-2 pl-2 border-blue-600 border-solid border-2' rounded="2xl">2xl</Container>
+    <Container className='mb-2 pl-2 border-blue-600 border-solid border-2' rounded="3xl">3xl</Container>
+    <Container className='mb-2 pl-2 border-blue-600 border-solid border-2' rounded="full">full</Container>
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Container } from 'dd360-ds'
+
+<Container rounded='rounded'>rounded</Container>
+<Container rounded='none'>none</Container>
+<Container rounded='sm'>sm</Container>
+<Container rounded='md'>md</Container>
+<Container rounded='lg'>lg</Container>
+<Container rounded='xl'>xl</Container>
+<Container rounded='2xl'>2xl</Container>
+<Container rounded='3xl'>3xl</Container>
+<Container rounded='full'>full</Container>" />
+
+
+### API Reference
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'children', default: null, types: ['ReactNode'] },
+        { title: 'shadow', default: null, types: ['none', 'sm', 'md', 'lg', 'xl', 'inner'] },
+        { title: 'rounded', default: null, types: ['rounded', 'none', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', 'full'] },
+        { title: 'className', default: null, types: ['string'] }
+    ]}
+/>

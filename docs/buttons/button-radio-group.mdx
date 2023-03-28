@@ -1,1 +1,50 @@
-Button radio group
+---
+product: dd360-ds
+title: React Radio Group component
+components: RadioGroup
+---
+
+# RadioGroup
+
+RadioGroup is a component that allows you to group multiple Radio components together.
+
+### Import
+
+To import the RadioGroup component, use the following syntax:
+
+<WindowEditor codeString="import { RadioGroup } from 'dd360-ds'" />
+<WindowEditor codeString="import RadioGroup from 'dd360-ds/RadioGroup'" />
+
+### Usage
+
+The RadioGroup component requires the "value" prop to be set. Here's an example of how to use the RadioGroup component:
+
+<ContainerComponentDoc className="gap-y-2">
+    <RadioGroup name="radio-buttons-group" onChange={() => {}} title="RadioGroup" value="A" className="gap-x-4" row>
+        <Radio label="Lorem A" value="A" className="cursor-pointer -mb-0" />
+        <Radio label="Lorem B" value="B" className="cursor-pointer -mb-0" />
+    </RadioGroup>
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString="import {RadioGroup, Radio} from 'dd360-ds'
+    
+<RadioGroup name='radio-buttons-group' title='RadioGroup' value='A' row>
+    &nbsp;&nbsp;<Radio label='Lorem A' value='A' />
+    &nbsp;&nbsp;<Radio label='Lorem B' value='B' />
+</RadioGroup>
+"
+/>
+
+### API Reference
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'value', default: null, types: ['string'], required: true },
+        { title: 'title', default: null, types: ['string'] },
+        { title: 'name', default: null, types: ['string'] },
+        { title: 'onChange', default: null, types: ['((event: ChangeEvent<HTMLInputElement>) => void)'] },
+        { title: 'row', default: 'false', types: ['boolean'] },
+        { title: 'className', default: null, types: ['string'] }
+    ]}
+/>

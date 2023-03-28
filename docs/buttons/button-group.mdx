@@ -1,1 +1,64 @@
-Button Group
+---
+product: dd360-ds
+title: React Button Group component
+components: ButtonGroup
+---
+
+# ButtonGroup
+
+    ButtonGroup is a component that groups multiple Button components together.
+
+## Imports
+
+<WindowEditor codeString="import { ButtonGroup } from 'dd360-ds'" />
+<WindowEditor codeString="import { ButtonGroup } from 'dd360-ds/Buttons'" />
+<WindowEditor codeString="import ButtonGroup from 'dd360-ds/ButtonGroup'" />
+
+### Usage
+
+<ContainerComponentDoc className="gap-y-2">
+    <ButtonGroup>
+        <Button>1st button</Button>
+        <Button>2nd button</Button>
+    </ButtonGroup>
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString="import { Button, ButtonGroup } from 'dd360-ds'
+
+    <ButtonGroup>
+    &nbsp;&nbsp;<Button>1st button</Button>
+    &nbsp;&nbsp;<Button>2nd button</Button>
+    </ButtonGroup>" />
+
+#### Props
+
+You can also customize the alignment, gap, and orientation of the buttons within the group using the props "orientation", "align", and "gap".
+
+<ContainerComponentDoc className="gap-y-2">
+    <ButtonGroup orientation="horizontal" align="start" gap={6}>
+        <Button variant="primary">1st button</Button>
+        <Button variant="secondary">2nd button</Button>
+        <Button variant="success">3rd button</Button>
+    </ButtonGroup>
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString="import { Button, ButtonGroup } from 'dd360-ds'
+
+    <ButtonGroup orientation='horizontal' align='start' gap={6}>
+    &nbsp;&nbsp;<Button variant='primary'>1st button</Button>
+    &nbsp;&nbsp;<Button variant='secondary'>2nd button</Button>
+    &nbsp;&nbsp;<Button variant='success'>3rd button</Button>
+    </ButtonGroup>" />
+
+### API Reference
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'orientation', default: 'vertical', types: ['vertical', 'horizontal'] },
+        { title: 'align', default: 'start', types: ['start', 'end', 'center', 'baseline', 'stretch'] },
+        { title: 'gap', default: '6', types: ['number'] },
+        { title: 'className', default: null, types: ['string'] }
+    ]}
+/>

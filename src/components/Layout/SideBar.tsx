@@ -26,7 +26,7 @@ const components: ComponentObjectProps = {
     buttons: {
         items: [
             {
-                label: 'button',
+                label: 'Button',
                 pathname: 'button',
                 badge: {
                     label: 'NEW',
@@ -42,8 +42,8 @@ const components: ComponentObjectProps = {
                 }
             },
             {
-                label: 'Circle Button',
-                pathname: 'button-circle',
+                label: 'Shape Button',
+                pathname: 'button-shape',
                 badge: {
                     label: 'CAUTION',
                     color: 'yellow'
@@ -94,8 +94,8 @@ const components: ComponentObjectProps = {
                 pathname: 'card'
             },
             {
-                label: 'Collapse',
-                pathname: 'collapse'
+                label: 'Download Card',
+                pathname: 'card-download'
             },
             {
                 label: 'Container',

@@ -1,1 +1,143 @@
-input-file page
+---
+product: dd360-ds
+title: React Input File component
+components: Input File
+---
+
+# InputFile
+
+    It is a file input component designed to allow users to select one or more files and upload them to a website.
+    This component is designed to be easy to use and customizable, and can be easily integrated into any website or application.
+
+### Import
+
+<WindowEditor codeString="import { InputFile } from 'dd360-ds'" />
+<WindowEditor codeString="import InputFile from 'dd360-ds/InputFile'" />
+
+### Usage
+
+<ContainerComponentDoc className="gap-y-2">
+    <InputFile />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { InputFile } from 'dd360-ds'
+
+<InputFile />" />
+
+#### hintText
+
+Used to provide additional information to users about the type of file they are expected to upload. 
+By default, this attribute is "Upload in PDF format and signed by all parties (if applicable)."
+
+<ContainerComponentDoc className="gap-y-2">
+    <InputFile hintText='Upload in PDF' />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { InputFile } from 'dd360-ds'
+
+<InputFile hintText='Upload in PDF' />" />
+
+#### boxMessage
+
+This prop is used to provide additional information to users about file upload requirements, such as the maximum weight allowed for a file. 
+By default, this attribute is "PDF Maximum weight per file 20 MB".
+
+<ContainerComponentDoc className="gap-y-2">
+    <InputFile boxMessage='PDF Maximum weight per file 3 MB' />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { InputFile } from 'dd360-ds'
+
+<InputFile boxMessage='PDF Maximum weight per file 3 MB' />" />
+
+#### dragMessage
+
+This prop is used to provide information to users on how they can upload files, i.e. dragging and dropping.
+By default, this attribute is "Drop here".
+
+<ContainerComponentDoc className="gap-y-2">
+    <InputFile dragMessage='Drop here' />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { InputFile } from 'dd360-ds'
+
+<InputFile dragMessage='Drop here' />" />
+
+#### label
+
+ This prop is used to provide a label to the InputFile component. 
+ By default, this attribute is "Drag & Drop your files or".
+
+<ContainerComponentDoc className="gap-y-2">
+    <InputFile label='Drag & Drop your files or' />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { InputFile } from 'dd360-ds'
+
+<InputFile label='Drag & Drop your files or' />" />
+
+#### labelAction
+
+ This prop is used to provide a text that tells the user that he can click on the InputFile component to select a file.
+ By default, this attribute is "browse from your device".
+
+<ContainerComponentDoc className="gap-y-2">
+    <InputFile labelAction='browse from your device' />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { InputFile } from 'dd360-ds'
+
+<InputFile labelAction='browse from your device' />" />
+
+#### progressIndicator
+
+This prop is used to show the progress of a file upload. 
+The default value is 0.
+
+<ContainerComponentDoc className="gap-y-2">
+    <InputFile progressIndicator={50} />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { InputFile } from 'dd360-ds'
+
+<InputFile progressIndicator={50} />" />
+
+#### error
+
+This prop is used to display an error message to the user in case an error occurs when loading a file.
+The default value is a object of equal type what of the example
+
+<ContainerComponentDoc className="gap-y-2">
+    <InputFile
+        error={{
+            show: false,
+            message: <span>File type not allowed or exceeds the maximum weight</span>
+        }}
+    />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { InputFile } from 'dd360-ds'
+
+const newError = { show: false, message: <span>File type not allowed or exceeds the maximum weight</span> }
+
+<InputFile error={newError} />" />
+
+### API Reference
+
+<CustomTableDocs
+    dataTable={[
+        {
+            title: 'hintText',
+            default: 'Upload in PDF format and signed by all parties (if applicable).',
+            types: ['string']
+        },
+        { title: 'progressIndicator', default: '0', types: ['number'] },
+        { title: 'boxMessage', default: 'PDF Maximum weight per file 20 MB', types: ['string'] },
+        { title: 'dragMessage', default: 'Drop here', types: ['string'] },
+        { title: 'label', default: 'Drag & Drop your files or', types: ['string'] },
+        { title: 'labelAction', default: 'browse from your device', types: ['string'] },
+        { title: 'error', default: '{ show: false, message: "File type not allowed or exceeds the maximum weight" }', types: ['object'] },
+        { title: 'id', default: null, types: ['string'] },
+        { title: 'roleContainer', default: null, types: ['string'] },
+    ]}
+/>

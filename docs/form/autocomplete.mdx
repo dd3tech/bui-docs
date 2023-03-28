@@ -1,1 +1,172 @@
-autocomplete page
+---
+product: dd360-ds
+title: React Autocomplete component
+components: AutoComplete
+---
+
+# AutoComplete
+
+    It is a useful component for creating a text input field that suggests auto-complete options to the user while typing.
+
+### Import
+
+<WindowEditor codeString="import { AutoComplete } from 'dd360-ds'" />
+<WindowEditor codeString="import AutoComplete from 'dd360-ds/AutoComplete'" />
+
+### Usage
+
+It is mandatory to pass a prop called "items". 
+The prop item, contains the data for each item in the drop-down list. Each array object must have a format similar to of following example:
+
+<ContainerComponentDoc className="gap-y-2">
+    <AutoComplete items={[{name: 'Item name', id: '1'}]} />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Checkbox } from 'dd360-ds'
+
+<AutoComplete items={[{name: 'Item name', id: '1'}]} />" />
+
+#### Variants
+
+Sets the appearance of the component. Available options are: default, active, disabled, warning, success, and error. Default uses: "default".
+
+<ContainerComponentDoc className="gap-y-2">
+    <Text className="mb-1">Default</Text>
+    <AutoComplete variant="default" items={[]} />
+    <Text className="mb-1">Active</Text>
+    <AutoComplete variant="active" items={[]} />
+    <Text className="mb-1">Warning</Text>
+    <AutoComplete variant="warning" items={[]} />
+    <Text className="mb-1">Success</Text>
+    <AutoComplete variant="success" items={[]} />
+    <Text className="mb-1">Error</Text>
+    <AutoComplete variant="error" items={[]} />
+    <Text className="mb-1">Disabled</Text>
+    <AutoComplete variant="disabled" items={[]} />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Checkbox } from 'dd360-ds'
+
+<AutoComplete variant='default' items={[]} />
+<AutoComplete variant='active' items={[]} />
+<AutoComplete variant='warning' items={[]} />
+<AutoComplete variant='success' items={[]} />
+<AutoComplete variant='error' items={[]} />
+<AutoComplete variant='disabled' items={[]} />" />
+
+#### Types
+
+Sets the input type of the component. Available options are: text, number, email, currency, date, date, password, year, month, and percentage. By default it uses "text".
+
+<ContainerComponentDoc className="gap-y-2">
+    <Text>Text</Text>
+    <AutoComplete type="text" items={[]} />
+    <Text>Number</Text>
+    <AutoComplete type="number" items={[]} />
+    <Text>Email</Text>
+    <AutoComplete type="date" items={[]} />
+    <Text>Password</Text>
+    <AutoComplete type="password" items={[]} />
+    <Text>Percentage</Text>
+    <AutoComplete type="percentage" items={[]} />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Checkbox } from 'dd360-ds'
+
+<AutoComplete type='text' items={[]} />
+<AutoComplete type='currency' items={[]} />
+<AutoComplete type='password' items={[]} />
+<AutoComplete type='percentage' items={[]} />" />
+
+#### Can find text
+
+A message that is displayed when no items matching the user's search string are found.
+
+<ContainerComponentDoc className="gap-y-2">
+    <AutoComplete canFindText="No matches in your search" items={[]} />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Checkbox } from 'dd360-ds'
+
+<AutoComplete canFindText='No matches in your search' items={[]} />" />
+
+#### isCloseOnBlur
+
+A boolean that indicates whether the drop-down list will be closed when the user clicks out of it.
+
+<ContainerComponentDoc className="gap-y-2">
+    <AutoComplete isCloseOnBlur={false} items={[]} />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Checkbox } from 'dd360-ds'
+
+<AutoComplete isCloseOnBlur={false} items={[]} />"/>
+
+#### isLoading
+
+A boolean indicating whether the drop-down list is loading.
+
+<ContainerComponentDoc className="gap-y-2">
+    <AutoComplete isLoading items={[]} />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Checkbox } from 'dd360-ds'
+
+<AutoComplete isLoading items={[]} />" />
+
+#### loadingText
+
+A message displayed while loading the drop-down list.
+
+<ContainerComponentDoc className="gap-y-2">
+    <AutoComplete isLoading loadingText="Searching..." items={[]} />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Checkbox } from 'dd360-ds'
+
+<AutoComplete isLoading loadingText='Searching...' items={[]} />" />
+
+#### Placeholder
+
+Text that is displayed as a placeholder in the text box before something is typed.
+
+<ContainerComponentDoc className="gap-y-2">
+    <AutoComplete placeholder="Search items" items={[]} />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Checkbox } from 'dd360-ds'
+
+<AutoComplete placeholder='Search items' items={[]} />" />
+
+### API Reference
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'items', default: null, types: ['[{name: string, id: string | number}]'], required: true },
+        { title: 'variant', default: 'default', types: ['active', 'disabled', 'warning', 'success', 'error', 'default'] },
+        { title: 'canFindText', default: 'no matches', types: ['string'] },
+        { title: 'type', default: 'text', types: ['number', 'text', 'email', 'currency', 'date', 'password', 'year', 'month', 'percentage', 'file'] },
+        { title: 'onSelectItem', default: null, types: ['((item: Partial<Item>) => void)'] },
+        { title: 'removeSelectedItem', default: null, types: ['((item: Partial<Item>) => void)'] },
+        { title: 'onChange', default: null, types: ['((event: ChangeEvent<HTMLInputElement>) => void)'] },
+        { title: 'isCloseOnBlur', default: 'true', types: ['boolean'] },
+        { title: 'disabled', default: 'false', types: ['boolean'] },
+        { title: 'isLoading', default: 'false', types: ['boolean'] },
+        { title: 'large', default: 'false', types: ['boolean'] },
+        { title: 'loadingText', default: 'Loading...', types: ['string'] },
+        { title: 'value', default: 'false', types: ['string'] },
+        { title: 'label', default: 'false', types: ['string'] },
+        { title: 'placeholder', default: 'false', types: ['string'] },
+        { title: 'startAdornment', default: null, types: ['ReactNode'] },
+        { title: 'endAdornment', default: null, types: ['ReactNode'] },
+        { title: 'classNameAdornment', default: null, types: ['string'] },
+        { title: 'language', default: 'es', types: ['es', 'en'] },
+        { title: 'padding', default: null, types: ['string'] },
+        { title: 'paddingX', default: null, types: ['string'] },
+        { title: 'paddingY', default: null, types: ['string'] },
+        { title: 'role', default: null, types: ['string'] },
+        { title: 'boxShadow', default: null, types: ['string'] },
+        { title: 'rounded', default: null, types: ['string'] },
+        { title: 'className', default: null, types: ['string'] }
+    ]}
+/>

@@ -1,1 +1,62 @@
-form-control page
+---
+product: dd360-ds
+title: React Form Control component
+components: FormControl
+---
+
+# FormControl
+
+    The FormControl component is used to provide a label to a form control, such as an input or checkbox.
+
+### Import
+
+<WindowEditor codeString="import { FormControlLabel } from 'dd360-ds'" />
+<WindowEditor codeString="import FormControlLabel from 'dd360-ds/FormControlLabel'" />
+
+### Usage
+
+The prop label is required and specifies the text to be displayed next to the form control. 
+The control property is also required and must contain the form control component.
+
+<ContainerComponentDoc className="align-center justify-center items-center">
+    <FormControlLabel label="form-control" control={<Checkbox checked size='2xl' />} />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { FormControlLabel } from 'dd360-ds'
+
+<FormControlLabel label='form-control' control={<Checkbox checked size='2xl' />} />" />
+
+#### FormControl labelPlacement
+
+You can use the labelPlacement property to specify the position of the label relative to the control
+
+<ContainerComponentDoc className="align-center">
+    <FormControlLabel labelPlacement="end" label="form-control" control={<Checkbox checked size='2xl' />} />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { FormControlLabel } from 'dd360-ds'
+
+<FormControlLabel labelPlacement='end' label='form-control' control={<Checkbox checked size='2xl' />} />" />
+
+#### FormControl disabled
+
+The disabled prop can be used to disable the form control
+
+<ContainerComponentDoc className="align-center">
+    <FormControlLabel label="form-control" control={<Checkbox checked size='2xl' />} />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { FormControlLabel } from 'dd360-ds'
+
+<FormControlLabel disabled label='form-control' control={<Checkbox checked size='2xl' />} />" />
+
+### API Reference
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'label', default: null, types: ['string'], required: true },
+        { title: 'control', default: null, types: ['ReactNode'], required: true },
+        { title: 'labelPlacement', default: 'start', types: ['start','end', 'top', 'bottom'] },
+        { title: 'disabled', default: 'false', types: ['boolean'] }
+    ]}
+/>
