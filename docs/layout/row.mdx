@@ -4,17 +4,17 @@ title: React Row component
 components: Row
 ---
 
-# Row
+# <span name="floating-nav">Row</span>
 
     The Row component is a flexible container for arranging items in a single row, using a grid system that allows you to configure the width of columns for different screen sizes.
     It allows you to specify a number of columns and a spacing between them.
 
-### Import
+### <span name="floating-nav">Import</span>
 
 <WindowEditor codeString="import { Row } from 'dd360-ds'" />
 <WindowEditor codeString="import Row from 'dd360-ds/Layout/Row'" />
 
-### Usage
+### <span name="floating-nav">Usage</span>
 
 <ContainerComponentDoc>
     <Row>
@@ -25,7 +25,7 @@ components: Row
     </Row>
 </ContainerComponentDoc>
 
-<WindowEditor codeString="import { Row } from 'dd360-ds'
+<WindowEditor codeString='import { Row } from "dd360-ds"
 
 <Row>
     &nbsp;&nbsp;<div>One div</div>
@@ -33,17 +33,16 @@ components: Row
     &nbsp;&nbsp;<div>Three div</div>
     &nbsp;&nbsp;<div>Four div</div>
 </Row>
-" />
+' />
 
-#### Custom Row
+#### <span name="floating-nav">Custom Row</span>
 
 You can customize the Row component with the following props:
 
-"cols": number of columns to display in the row. Default is 4. Accepts values from 1 to 4. 
-"md": number of columns to display in the row for medium sized screens. Default is 2. Accepts values from 1 to 4. 
-"sm": number of columns to show in the row for small screens. Default is 1. Accepts values from 1 to 4. 
+"cols": number of columns to display in the row. Default is 4. Accepts values from 1 to 4. "md": number of columns to display in the row for medium sized
+screens. Default is 2. Accepts values from 1 to 4. "sm": number of columns to show in the row for small screens. Default is 1. Accepts values from 1 to 4.
 "gap": space between columns in the row. Default is 4. Accepts values from 1 to 5.
-    
+
 <ContainerComponentDoc>
     <Row cols={3} md={2} sm={1}>
         <div>One div</div>
@@ -52,16 +51,16 @@ You can customize the Row component with the following props:
     </Row>
 </ContainerComponentDoc>
 
-<WindowEditor codeString="import { Row } from 'dd360-ds'
+<WindowEditor codeString='import { Row } from "dd360-ds"
 
 <Row cols={3} md={2} sm={1}>
     &nbsp;&nbsp;<div>One div</div>
     &nbsp;&nbsp;<div>Two div</div>
     &nbsp;&nbsp;<div>Three div</div>
 </Row>
-" />
+' />
 
-### API Reference
+### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
     dataTable={[

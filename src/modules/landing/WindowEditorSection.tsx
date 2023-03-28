@@ -1,24 +1,23 @@
-import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
-import { Card, Container, Divider, Text, ProgressCircle, Switch } from 'dd360-ds'
 import Image from 'next/image'
-import { WindowEditor } from '@/components'
+import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
+import { Card, Container, Divider, Text, ProgressCircle } from 'dd360-ds'
+import { Switch, WindowEditor } from '@/components'
 
 const WindowEditorSection = () => (
-    <section className="components-window-editor relative flex flex-wrap items-center justify-center" style={{ paddingBottom: 371 }}>
+    <section className="components-window-editor relative mx-4 xl:mx-0 flex flex-col lg:flex-row items-center justify-center" style={{ paddingBottom: 371 }}>
         <div className="relative" style={{ maxWidth: 544, width: '100%' }}>
-            <WindowEditor header={{ show: true, title: 'Design System' }} className="w-full rounded-2xl pb-3" style={{ overflow: 'hidden' }} />
+            <WindowEditor header={{ show: true, title: 'Design System' }} className="w-full rounded-2xl pb-3" style={{ overflow: 'hidden', height: '348px' }} />
             <div style={{ position: 'absolute', top: 262, left: 579, animationDelay: '2s' }} className="switch absolute min-w-min hidden sm:block">
-                <Switch setToggle={function noRefCheck() {}} toggle />
+                <Switch />
             </div>
-            <Card rounded="lg" padding={6} className="absolute bg-white card-example" style={{ bottom: -225, right: -77 }}>
+            <Card rounded="lg" padding={6} className="absolute bg-white card-example max-w-xs sm:max-w-none top-80 left-2 sm:left-60">
                 <Container className="flex w-full pb-4">
                     <Text size="base" className="w-full" fontBold="medium">
                         Active Loans
                     </Text>
                     <div className="flex w-full justify-end items-center">
                         <Text size="sm" bold className="text-blue-600">
-                            {' '}
-                            Este mes{' '}
+                            This month
                         </Text>
                         <DynamicHeroIcon className="w-4 h-4 ml-2" icon="ChevronDownIcon" />
                     </div>
@@ -26,16 +25,16 @@ const WindowEditorSection = () => (
 
                 <Divider className="border-gray-300" />
 
-                <div className="flex items-center p-6">
+                <div className="flex items-center p-2 sm:p-6">
                     <ProgressCircle classNamePercentage="w-full text-center text-grey-700 text-sm font-bold" value={80} width={56}>
                         {null}
                     </ProgressCircle>
-                    <div className="flex ml-10">
+                    <div className="flex flex-col md:flex-row ml-10">
                         <div className="flex flex-col pr-4">
                             <Text variant="span" size="xs" className="text-gray-700">
-                                Puente
+                                Construction
                             </Text>
-                            <Text variant="span" size="lg" bold className="text-blue-600">
+                            <Text variant="span" size="lg" bold className="text-blue-600 whitespace-nowrap">
                                 $ 800,400.300.00
                             </Text>
                         </div>
@@ -50,16 +49,16 @@ const WindowEditorSection = () => (
                     </div>
                 </div>
 
-                <div className="flex items-center p-6 pb-0">
+                <div className="flex items-center p-2 pb-0 sm:p-6 sm:pb-0">
                     <ProgressCircle classNamePercentage="w-full text-center text-grey-700 text-sm font-bold" value={5} width={56}>
                         {null}
                     </ProgressCircle>
-                    <div className="flex ml-10">
+                    <div className="flex flex-col md:flex-row ml-10">
                         <div className="flex flex-col pr-4">
                             <Text variant="span" size="xs" className="text-gray-700">
-                                Pre puente
+                                Mezzanine
                             </Text>
-                            <Text variant="span" size="lg" bold className="text-blue-600">
+                            <Text variant="span" size="lg" bold className="text-blue-600 whitespace-nowrap">
                                 $ 800,400.300.00
                             </Text>
                         </div>
@@ -76,7 +75,7 @@ const WindowEditorSection = () => (
             </Card>
         </div>
 
-        <div className="w-96 ml-36 mb-32 mt-80 lg:mt-32 mr-auto lg:mr-0">
+        <div className="w-full lg:w-96 mx-4 lg:ml-36 lg:mb-32 mt-80 lg:mt-32 mr-auto lg:mr-0">
             <Text size="xl" className="font-semibold">
                 Some examples of our components
             </Text>

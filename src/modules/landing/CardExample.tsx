@@ -17,11 +17,11 @@ const CardExample = ({ style, className }: { style: StyleObject; className: stri
             </div>
             <span>
                 <Text variant="p" style={{ fontSize: 8, lineHeight: '10px', letterSpacing: '0.02em' }}>
-                    Se completó la documentación de la garantía
+                    Documentation of the guarantee
                     <Text className="text-blue-500">{` {{guarantee_type}} `}</Text>
-                    para el crédito
+                    was completed for the loan
                     <Text className="text-blue-500">{` {{loan_type}} `}</Text>
-                    del proyecto
+                    of the project
                     <Text className="text-blue-500">{` {{proyect_type}}{{project_name}} `}</Text>
                 </Text>
                 <Anchor className="flex items-center text-blue-700">
@@ -33,7 +33,7 @@ const CardExample = ({ style, className }: { style: StyleObject; className: stri
                 <div className="flex justify-end text-gray-400 gap-1">
                     <DynamicHeroIcon icon="ClockIcon" width={10} />
 
-                    <Text style={{ fontSize: 8 }}>Hace dos días</Text>
+                    <Text style={{ fontSize: 8 }}>Two days ago</Text>
                 </div>
             </span>
             <div className="pl-4 mt-5">
@@ -47,11 +47,11 @@ const CardExample = ({ style, className }: { style: StyleObject; className: stri
             </div>
             <span>
                 <Text variant="p" style={{ fontSize: 8, lineHeight: '10px', letterSpacing: '0.02em' }}>
-                    Se completó la documentación de la garantía
+                    Documentation of the guarantee
                     <Text className="text-blue-500">{` {{guarantee_type}} `}</Text>
-                    para el crédito
+                    was completed for the loan
                     <Text className="text-blue-500">{` {{loan_type}} `}</Text>
-                    del proyecto
+                    of the project
                     <Text className="text-blue-500">{` {{proyect_type}}{{project_name}} `}</Text>
                 </Text>
                 <Anchor className="flex items-center text-blue-700">
@@ -63,7 +63,7 @@ const CardExample = ({ style, className }: { style: StyleObject; className: stri
                 <div className="flex justify-end text-gray-400 gap-1">
                     <DynamicHeroIcon icon="ClockIcon" width={10} />
 
-                    <Text style={{ fontSize: 8 }}>Hace dos días</Text>
+                    <Text style={{ fontSize: 8 }}>Two days ago</Text>
                 </div>
             </span>
             <div className="pl-4 mt-5">

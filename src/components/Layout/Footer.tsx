@@ -30,13 +30,14 @@ const footerMenu = [
 
 function Footer() {
     const { t } = useTranslation()
+
     return (
         <footer className="bg-white">
             <div className="py-12 px-4 mx-auto lg:px-8 2xl:px-0" style={{ maxWidth: '1400px' }}>
                 <Link href="/">
                     <Image src="/dd360-black.png" width={130} height={28.5} alt="logo" />
                 </Link>
-                <div className="flex justify-between mt-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-between mt-16">
                     <div>
                         <Text variant="p" className="mb-2" size="base" bold>
                             Keep up to date
@@ -52,7 +53,7 @@ function Footer() {
                             <Newsletter />
                         </div>
                     </div>
-                    <div className="flex gap-28">
+                    <div className="flex gap-28 lg:justify-self-end">
                         <ul className="flex flex-col gap-6 text-gray-500 font-normal">
                             {footerMenu.map(({ key, label, link, blank }) => (
                                 <Link key={key} href={link} target={blank ? '_blank' : '_self'}>

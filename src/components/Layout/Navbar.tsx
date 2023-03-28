@@ -19,7 +19,7 @@ const menu = [
     {
         key: 2,
         label: 'docs',
-        link: '/docs/buttons/button'
+        link: '/docs/get-started/get-started'
     },
     {
         key: 3,
@@ -34,7 +34,7 @@ function Navbar({ isSticky, hideLogo }: { isSticky?: boolean; hideLogo?: boolean
 
     return (
         <nav className={composeClasses('bg-white w-full', isSticky && 'sticky top-0 z-10')}>
-            <div className="flex justify-between items-center h-20 py-6 mx-auto px-4 lg:px-16" style={{ maxWidth: '1400px' }}>
+            <div className="flex justify-between items-center h-20 py-6 mx-auto px-4 lg:px-16 2xl:px-0 max-w-8xl">
                 {!hideLogo && (
                     <Link href="/">
                         <Image src="/dd360-black.png" width={130} height={28.5} alt="logo" />
@@ -58,7 +58,8 @@ function Navbar({ isSticky, hideLogo }: { isSticky?: boolean; hideLogo?: boolean
                 <Input
                     inputBlank
                     rounded="3xl"
-                    className="py-3 h-10 lg:mt-0 bg-gray-100"
+                    className="hidden md:flex lg:mt-0 bg-gray-100 text-sm"
+                    style={{ height: '40px' }}
                     startAdornment={<DynamicHeroIcon icon="SearchIcon" className="w-4 h-4 mr-2 text-gray-500" />}
                     endAdornment={
                         <Text size="xs" className="min-w-max border py-1 px-2 rounded-2xl text-gray-500 select-none" variant="p">
@@ -70,14 +71,16 @@ function Navbar({ isSticky, hideLogo }: { isSticky?: boolean; hideLogo?: boolean
                 />
                 <Switch />
                 <Circle
-                    className="cursor-pointer"
+                    className="hidden md:block cursor-pointer"
                     width="36px"
                     height="36px"
                     backgroundColor="transparent"
-                    border="1px solid #D1D5DB"
                     onClick={() => openWindow(GITHUB_URL)}
                 >
-                    <ImageIcon src="/github-mark.svg" style={{ width: 36 }} />
+                    <ImageIcon src="/github-mark.svg" style={{ width: 36, height: 36 }} />
+                </Circle>
+                <Circle className="block md:hidden cursor-pointer" width="36px" height="36px" backgroundColor="transparent">
+                    <DynamicHeroIcon icon="MenuIcon" className="text-blue-800" />
                 </Circle>
             </div>
         </nav>

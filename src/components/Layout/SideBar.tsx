@@ -1,11 +1,12 @@
 import Image from 'next/image'
 import { Select, Text } from 'dd360-ds'
-import { IconName } from 'dd360-ds/DynamicHeroIcon'
+import DynamicHeroIcon, { IconName } from 'dd360-ds/DynamicHeroIcon'
 import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Badge from '../Badge'
 import ShowMore from '../ShowMore'
+import { composeClasses } from 'dd360-ds/lib'
 
 interface ComponentObjectProps {
     [key: string]: {
@@ -289,35 +290,48 @@ const builds = {
 export default function SideBar() {
     const { t } = useTranslation('common')
     const router = useRouter()
+
     return (
         <aside
-            className="bg-blue-50 -translate-x-full transform p-2 transition-transform duration-150 ease-in lg:translate-x-0 border-r border-gray-300"
-            style={{ minWidth: 200 }}
+            className="sticky inset-0 w-full max-h-screen overflow-hidden flex flex-col bg-blue-50 -translate-x-full transform p-2 transition-transform duration-150 ease-in lg:translate-x-0 border-r border-gray-300"
+            style={{ minWidth: 200, maxWidth: 200 }}
         >
             <Link href="/" className="block my-7 mx-auto">
                 <Image className="m-auto" src="/dd360-black.png" width={130} height={28.5} alt="logo" />
             </Link>
-            <div className="my-4">
-                <div className="m-auto w-full" style={{ height: 34 }}>
-                    <Select optionsList={builds} rounded="xl" padding="2" className="bg-white" style={{ borderColor: '#D1D5DB' }} />
-                </div>
-                <div className="flex flex-col gap-6 mt-6">
-                    {Object.entries(components).map(([key, value]) => (
-                        <ShowMore basePath={key} icon={value?.icon} title={t(key)} key={key}>
-                            {value.items.map((item) => (
-                                <Link
-                                    key={item.label}
-                                    href={`/docs/${key}/${item.pathname}`}
-                                    locale={router?.locale}
-                                    className="flex justify-between items-center py-2"
-                                >
-                                    <Text className="text-gray-600">{item.label}</Text>
-                                    {item.badge && <Badge color={item.badge.color} label={item.badge.label} />}
-                                </Link>
-                            ))}
-                        </ShowMore>
-                    ))}
-                </div>
+            <div className="m-auto w-full" style={{ height: 34 }}>
+                <Select optionsList={builds} rounded="xl" padding="2" className="bg-white" style={{ borderColor: '#D1D5DB' }} />
+            </div>
+            <div className="hide-scroll flex flex-col gap-6 mt-6 overflow-y-auto overflow-x-hidden flex-grow">
+                <Link
+                    href={`/docs/get-started/get-started`}
+                    locale={router?.locale}
+                    className={composeClasses(
+                        'get-started' === router?.query?.slug ? 'bg-blue-100 border-blue-500' : 'border-gray-300',
+                        'py-2 pl-4 ml-1 mt-4 pr-1 border flex gap-3 items-center rounded-lg transition-all ease-in duration-300'
+                    )}
+                >
+                    <DynamicHeroIcon icon="FireIcon" className="w-4 h-4 text-red-500" />
+                    <Text className="text-gray-600">Get started</Text>
+                </Link>
+                {Object.entries(components).map(([key, value]) => (
+                    <ShowMore basePath={key} icon={value?.icon} title={t(key)} key={key}>
+                        {value.items.map((item) => (
+                            <Link
+                                key={item.label}
+                                href={`/docs/${key}/${item.pathname}`}
+                                locale={router?.locale}
+                                className={composeClasses(
+                                    item.pathname === router?.query?.slug && 'bg-blue-100',
+                                    'py-2 pl-4 ml-1 pr-1 flex justify-between items-center rounded-lg transition-all ease-in duration-300'
+                                )}
+                            >
+                                <Text className="text-gray-600">{item.label}</Text>
+                                {item.badge && <Badge color={item.badge.color} label={item.badge.label} />}
+                            </Link>
+                        ))}
+                    </ShowMore>
+                ))}
             </div>
         </aside>
     )

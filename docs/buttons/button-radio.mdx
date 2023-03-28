@@ -4,18 +4,18 @@ title: React Radio component
 components: Radio
 ---
 
-# Radio
+# <span name="floating-nav">Radio</span>
 
 The Radio Button component is a type of button that allows the user to select a single option from a set of predefined options.
 
-### Import
+### <span name="floating-nav">Import</span>
 
 To import the Radio Button component, use the following syntax:
 
 <WindowEditor codeString="import { Radio } from 'dd360-ds'" />
 <WindowEditor codeString="import Radio from 'dd360-ds/Radio'" />
 
-### Usage
+### <span name="floating-nav">Usage</span>
 
 The prop value is mandatory and is used to indicate the value of the selected option
 
@@ -27,9 +27,10 @@ The prop value is mandatory and is used to indicate the value of the selected op
     codeString="import { Radio } from 'dd360-ds'
 
     <Radio value='one' />"
+
 />
 
-#### Label
+#### <span name="floating-nav">Label</span>
 
 To add a label to the radio button, you can use the prop label:
 
@@ -44,12 +45,12 @@ To add a label to the radio button, you can use the prop label:
 
 />
 
-#### Checked
+#### <span name="floating-nav">Checked</span>
 
 To display the selected state of the radio button, the checked prop can be used:
 
 <ContainerComponentDoc className="gap-y-2">
-    <Radio onChange={() => {}} value="one" label='Click here' checked className="cursor-pointer -mb-0" />
+    <Radio onChange={() => {}} value="one" label="Click here" checked className="cursor-pointer -mb-0" />
 </ContainerComponentDoc>
 
 <WindowEditor
@@ -59,12 +60,12 @@ To display the selected state of the radio button, the checked prop can be used:
 
 />
 
-#### Disabled
+#### <span name="floating-nav">Disabled</span>
 
 To disable the radio button, the disabled prop can be used:
 
 <ContainerComponentDoc className="gap-y-2">
-    <Radio onChange={() => {}} value="one" label='Click here' disabled className="-mb-0" />
+    <Radio onChange={() => {}} value="one" label="Click here" disabled className="-mb-0" />
 </ContainerComponentDoc>
 
 <WindowEditor
@@ -74,12 +75,12 @@ To disable the radio button, the disabled prop can be used:
 
 />
 
-#### Error
+#### <span name="floating-nav">Error</span>
 
 To display a radio button with error status, the prop error can be used:
 
 <ContainerComponentDoc className="gap-y-2">
-    <Radio onChange={() => {}} value="one" checked label='Click here' error className="cursor-pointer -mb-0" />
+    <Radio onChange={() => {}} value="one" checked label="Click here" error className="cursor-pointer -mb-0" />
 </ContainerComponentDoc>
 
 <WindowEditor
@@ -89,15 +90,15 @@ To display a radio button with error status, the prop error can be used:
 
 />
 
-#### Colors
+#### <span name="floating-nav">Colors</span>
 
 The Radio Button component comes with predefined colors. By default, it uses the primary variant, but the following colors can also be used: success, danger and
 primary:
 
 <ContainerComponentDoc className="gap-y-2">
-    <Radio onChange={() => {}} value="one" label='Click here' color="primary" checked className="cursor-pointer -mb-0" />
-    <Radio onChange={() => {}} value="two" label='Click here' color="success" checked className="cursor-pointer -mb-0" />
-    <Radio onChange={() => {}} value="three" label='Click here' color="danger" checked className="cursor-pointer -mb-0" />
+    <Radio onChange={() => {}} value="one" label="Click here" color="primary" checked className="cursor-pointer -mb-0" />
+    <Radio onChange={() => {}} value="two" label="Click here" color="success" checked className="cursor-pointer -mb-0" />
+    <Radio onChange={() => {}} value="three" label="Click here" color="danger" checked className="cursor-pointer -mb-0" />
 </ContainerComponentDoc>
 
 <WindowEditor
@@ -109,12 +110,12 @@ primary:
       </RadioGroup>"
 />
 
-#### InputProps
+#### <span name="floating-nav">InputProps</span>
 
 The inputProps property allows passing additional InputHTMLAttributes to the Radio component:
 
 <ContainerComponentDoc className="gap-y-2">
-    <Radio value='one' label="Click here" inputProps={{ 'aria-label': 'one'}} onChange={() => {}}  className="cursor-pointer -mb-0" />
+    <Radio value="one" label="Click here" inputProps={{ 'aria-label': 'one' }} onChange={() => {}} className="cursor-pointer -mb-0" />
 </ContainerComponentDoc>
 
 <WindowEditor
@@ -122,7 +123,7 @@ The inputProps property allows passing additional InputHTMLAttributes to the Rad
     <Radio value='one' inputProps={{ 'aria-label': 'one'}} label='Click here' />"
 />
 
-### API Reference
+### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
     dataTable={[
