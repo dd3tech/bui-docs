@@ -35,8 +35,8 @@ const Search = () => {
                     {
                         sourceId: 'components-slug-api',
                         getItems: ({ query }) => {
-                            if (!!query) {
-                                return fetch(`/api/hello?search=${query.replaceAll(' ', '-').trim()}`)
+                            if (query) {
+                                return fetch(`/api/search-components?search=${query.replaceAll(' ', '-').trim()}`)
                                     .then((res) => res.json())
                                     .then((res) => res.data.map((item: string) => ({ path: item })))
                             }
