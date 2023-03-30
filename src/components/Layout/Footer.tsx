@@ -12,7 +12,7 @@ const footerMenu = [
     },
     {
         key: 2,
-        label: 'doc',
+        label: 'docs',
         link: '/docs'
     },
     {
