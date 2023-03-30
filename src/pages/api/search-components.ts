@@ -8,8 +8,8 @@ type Data = {
 }
 
 export default function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
-    const { search = ''} = req.query as any
-    const data = getAllPaths(['es'],true) as string[]
-    const newData = data.filter((path)=> path.includes(search))
+    const { search = '' } = req.query as any
+    const data = getAllPaths(['es'], true) as string[]
+    const newData = data.filter((path) => path.includes(search))
     res.status(200).json({ name: req.body, data: newData })
 }

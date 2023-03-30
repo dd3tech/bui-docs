@@ -28,11 +28,12 @@ export function getAllPaths(allowedLocales?: string[], getAsString?: boolean) {
         for (const locale of locales) {
             if (filename.endsWith('.mdx')) {
                 const slug = filename.replace('.mdx', '')
-                getAsString ? stringPaths.push(`${folder}/${slug}`):paths.push({
-                    params: { folder, slug },
-                    locale
-                })
-                
+                getAsString
+                    ? stringPaths.push(`${folder}/${slug}`)
+                    : paths.push({
+                          params: { folder, slug },
+                          locale
+                      })
             }
         }
     }
