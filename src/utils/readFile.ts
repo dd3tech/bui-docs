@@ -17,9 +17,10 @@ export function getDocBySlug(folder: string, slug: string) {
     return { meta: data, content }
 }
 
-export function getAllPaths(allowedLocales?: string[]) {
+export function getAllPaths(allowedLocales?: string[], getAsString?: boolean) {
     const locales = allowedLocales ?? ['es']
     const paths: Paths[] = []
+    const stringPaths: string[] = []
 
     const entries = readdirSync(docsDirectory, { withFileTypes: true })
 
@@ -27,11 +28,12 @@ export function getAllPaths(allowedLocales?: string[]) {
         for (const locale of locales) {
             if (filename.endsWith('.mdx')) {
                 const slug = filename.replace('.mdx', '')
-
-                paths.push({
-                    params: { folder, slug },
-                    locale
-                })
+                getAsString
+                    ? stringPaths.push(`${folder}/${slug}`)
+                    : paths.push({
+                          params: { folder, slug },
+                          locale
+                      })
             }
         }
     }
@@ -47,5 +49,5 @@ export function getAllPaths(allowedLocales?: string[]) {
         }
     }
 
-    return paths
+    return getAsString ? stringPaths : paths
 }

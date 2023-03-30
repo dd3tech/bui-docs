@@ -3,10 +3,11 @@ import { useTranslation } from 'next-i18next'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { Input, Text, Circle, ImageIcon } from 'dd360-ds'
+import { Circle, ImageIcon } from 'dd360-ds'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 import { composeClasses } from 'dd360-ds/lib'
 import Switch from '../Switch'
+import Search from './Search'
 
 import { openWindow, GITHUB_URL } from '@/utils'
 
@@ -55,20 +56,7 @@ function Navbar({ isSticky, hideLogo }: { isSticky?: boolean; hideLogo?: boolean
                         </Link>
                     ))}
                 </ul>
-                <Input
-                    inputBlank
-                    rounded="3xl"
-                    className="hidden md:flex lg:mt-0 bg-gray-100 text-sm"
-                    style={{ height: '40px' }}
-                    startAdornment={<DynamicHeroIcon icon="SearchIcon" className="w-4 h-4 mr-2 text-gray-500" />}
-                    endAdornment={
-                        <Text size="xs" className="min-w-max border py-1 px-2 rounded-2xl text-gray-500 select-none" variant="p">
-                            Ctrl + K
-                        </Text>
-                    }
-                    variant="active"
-                    placeholder="Search the docs   (Ctrl + k)"
-                />
+                <Search />
                 <Switch />
                 <Circle
                     className="hidden md:block cursor-pointer"
