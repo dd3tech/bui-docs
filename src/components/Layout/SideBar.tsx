@@ -35,27 +35,15 @@ const components: ComponentObjectProps = {
             },
             {
                 label: 'Button Group',
-                pathname: 'button-group',
-                badge: {
-                    label: 'BETA',
-                    color: 'blue'
-                }
+                pathname: 'button-group'
             },
             {
                 label: 'Shape Button',
-                pathname: 'button-shape',
-                badge: {
-                    label: 'CAUTION',
-                    color: 'yellow'
-                }
+                pathname: 'button-shape'
             },
             {
                 label: 'Radio',
-                pathname: 'button-radio',
-                badge: {
-                    label: 'DEPRECATED',
-                    color: 'red'
-                }
+                pathname: 'button-radio'
             },
             {
                 label: 'Radio Group',
