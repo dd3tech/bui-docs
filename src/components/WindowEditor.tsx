@@ -1,6 +1,23 @@
+import { useState } from 'react'
+import Image from 'next/image'
 import { composeClasses } from 'dd360-ds/lib'
+import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+import useCopy from '@/hooks/useCopy'
+
+import JSImg from 'public/javascript-logo.svg'
+import TSImg from 'public/typescript.svg'
+
+type Languages = 'tsx' | 'jsx' | 'md' | 'mdx' | 'bash' | 'javascript' | 'typescript' | 'css'
+
+interface EditorProps {
+    codeString?: string
+    language?: Languages
+    className?: string
+    style?: React.CSSProperties
+    header?: { show: boolean; title: string }
+}
 
 const cardMetricsString = `import React from 'react';
 import { Container, Card, Text, Divider } from 'dd360-ds'
@@ -18,30 +35,45 @@ const CardMetrics = () => {
 	)
 }`
 
-interface EditorProps {
-    codeString?: string
-    language?: 'tsx' | 'jsx' | 'md' | 'mdx'
-    className?: string
-    style?: React.CSSProperties
-    header?: { show: boolean; title: string }
+function getBrandingLanguage(lang: Languages) {
+    if (lang === 'javascript' || 'jsx') return JSImg
+    if (lang === 'typescript' || 'tsx') return TSImg
 }
 
 function WindowEditor({ codeString = cardMetricsString, language = 'tsx', className, header, style }: EditorProps) {
+    const { handleCopy, isCopied } = useCopy()
+    const [showCopyButton, setShowCopyButton] = useState(false)
+
     return (
-        <div className={composeClasses('h-auto bg-gray-900 rounded-lg overflow-hidden mt-2 mb-10', className)}>
+        <div
+            onMouseOver={() => setShowCopyButton(true)}
+            onMouseLeave={() => setShowCopyButton(false)}
+            className={composeClasses('h-auto rounded-md overflow-hidden mt-2 mb-10 py-4', className)}
+            style={{ background: 'rgb(40, 42, 54)' }}
+        >
+            {showCopyButton && (
+                <div className="relative">
+                    <div className="absolute rounded-lg right-4 top-0 bottom-0 border w-[35px] h-[35px] cursor-pointer" onClick={() => handleCopy(codeString)}>
+                        <div className="flex items-center text-gray-400 justify-center">
+                            <DynamicHeroIcon icon={isCopied ? 'ClipboardCheckIcon' : 'ClipboardIcon'} width={25} />
+                        </div>
+                    </div>
+                </div>
+            )}
             {header?.show && (
-                <nav className="flex items-center px-3 pt-2 gap-3 bg-gray-800">
+                <nav className="flex items-center px-3 pt-2 gap-3 bg-gray-700">
                     <div className="flex items-center gap-2">
                         <button className="h-3 w-3 bg-red-400 rounded-full"></button>
                         <button className="h-3 w-3 bg-yellow-400 rounded-full"></button>
                         <button className="h-3 w-3 bg-green-400 rounded-full"></button>
                     </div>
-                    <div className="bg-gray-900 rounded-t-xl h-full px-3 py-1">
+                    <div style={{ background: 'rgb(40, 42, 54)' }} className="flex items-center mr-auto rounded-t-xl h-full px-3 py-1">
+                        <Image src={getBrandingLanguage(language)} alt="lang" width={25} />
                         <h3 className="text-white font-medium">{header?.title}</h3>
                     </div>
                 </nav>
             )}
-            <SyntaxHighlighter wrapLines language={language} style={{ ...nightOwl }} customStyle={{ margin: 0, ...style, maxHeight: '80%' }} showLineNumbers>
+            <SyntaxHighlighter wrapLines language={language} style={{ ...dracula }} customStyle={{ margin: 0, ...style, maxHeight: '80%' }} showLineNumbers>
                 {codeString}
             </SyntaxHighlighter>
         </div>
