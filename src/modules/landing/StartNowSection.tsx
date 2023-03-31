@@ -1,22 +1,12 @@
-import { useEffect, useState } from 'react'
-import { useRouter } from 'next/router'
 import Image from 'next/image'
+import Link from 'next/link'
 import { composeClasses } from 'dd360-ds/lib'
-import { copyToClipBoard } from 'dd360-utils'
 import { Anchor, Button, Card, Text } from 'dd360-ds'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
-import Link from 'next/link'
+import useCopy from '@/hooks/useCopy'
 
 const StartNowSection = () => {
-    const router = useRouter()
-    const [wasCopied, setWasCopied] = useState<boolean>(false)
-
-    useEffect(() => {
-        const copiedTimer = setTimeout(() => {
-            setWasCopied(false)
-        }, 1000)
-        return () => clearTimeout(copiedTimer)
-    }, [wasCopied])
+    const { handleCopy, isCopied } = useCopy()
 
     return (
         <section className="relative">
@@ -32,7 +22,7 @@ const StartNowSection = () => {
                         Find out why DD360 tools are trusted by thousand of open source developers and teams around the world
                     </Text>
                     <div className="flex flex-col lg:flex-row gap-6">
-                        <Link href="/docs/get-started/get-started">
+                        <Link href="/docs/get-started/getting-started">
                             <Button paddingX="11" paddingY="2" className="text-xs min-w-max" rounded="lg">
                                 Get started
                             </Button>
@@ -42,18 +32,15 @@ const StartNowSection = () => {
                             paddingY="2"
                             variant="secondary"
                             className={composeClasses(
-                                wasCopied ? 'border-green-600 text-green-600' : 'border-blue-400',
-                                'text-xs bg-white w-full lg:w-32 2xl:w-full min-w-max flex justify-between shrink-0 items-center px-4'
+                                isCopied ? 'border-green-600 text-green-600' : 'border-blue-400',
+                                'flex gap-2 text-xs bg-white w-32 min-w-max justify-between shrink-0 items-center px-4'
                             )}
                             fontWeight="normal"
                             rounded="lg"
-                            onClick={() => {
-                                copyToClipBoard('npm i dd360-ds@latest')
-                                setWasCopied(true)
-                            }}
+                            onClick={() => handleCopy('npm i dd360-ds@latest')}
                         >
-                            {wasCopied ? 'Copied' : 'npm i dd360-ds@latest'}
-                            <Image alt="copy-icon" src="/copy-icon.svg" width={12} height={15} className="ml-3" />
+                            npm i dd360-ds@latest{' '}
+                            <DynamicHeroIcon className="text-gray-500" icon={isCopied ? 'ClipboardCheckIcon' : 'ClipboardIcon'} width={15} />
                         </Button>
                     </div>
                 </article>

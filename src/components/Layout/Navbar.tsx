@@ -6,7 +6,6 @@ import Link from 'next/link'
 import { Circle, ImageIcon } from 'dd360-ds'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 import { composeClasses } from 'dd360-ds/lib'
-import Switch from '../Switch'
 import Search from './Search'
 
 import { openWindow, GITHUB_URL } from '@/utils'
@@ -20,7 +19,7 @@ const menu = [
     {
         key: 2,
         label: 'docs',
-        link: '/docs/get-started/get-started'
+        link: '/docs/get-started/getting-started'
     },
     {
         key: 3,
@@ -57,7 +56,6 @@ function Navbar({ isSticky, hideLogo }: { isSticky?: boolean; hideLogo?: boolean
                     ))}
                 </ul>
                 <Search />
-                <Switch />
                 <Circle
                     className="hidden md:block cursor-pointer"
                     width="36px"

@@ -1,9 +1,9 @@
 {
     "hello": "Hola Mundo!",
-    "components": "Componentes",
+    "components": "Components",
     "docs": "Docs",
     "documentation": "Documentación",
-    "examples": "Ejemplos",
+    "examples": "Examples",
     "figma": "Figma",
     "buttons": "Botones",
     "navigation": "Navegación",
@@ -13,7 +13,7 @@
     "modals": "Modales",
     "typography": "Tipografía",
     "controls": "Controles",
-    "subscribe": "Suscribirse",
+    "subscribe": "Suscribe",
     "metadata": {
         "home": "DD360 UI - La biblioteca React para construir plataformas de back office"
     }

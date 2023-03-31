@@ -1,16 +1,18 @@
-import { Badge, Breadcrumbs, Button, Checkbox, Circle, FilterRangeSlider, Pagination, ProgressCircle, Radio, Switch, Text, ToolTipHover } from 'dd360-ds'
-import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
-import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import CardExample from '@/modules/landing/CardExample'
-import DropdownExample from './DropdownExample'
 import Link from 'next/link'
-import { copyToClipBoard } from 'dd360-utils'
+import { Badge, Breadcrumbs, Button, Checkbox, Circle, FilterRangeSlider, Pagination, ProgressCircle, Radio, Text, usePagination } from 'dd360-ds'
+import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 import { composeClasses } from 'dd360-ds/lib'
 
+import CustomSwitch from '@/components/CustomSwitch'
+import DropdownExample from './DropdownExample'
+import CardExample from './CardExample'
+import useCopy from '@/hooks/useCopy'
+
 const ComponentsSection = () => {
+    const { handleCopy, isCopied } = useCopy()
+    const paginationProps = usePagination()
     const [sectionPos, setSectionPos] = useState({ top: 0, left: 0 })
-    const [wasCopied, setWasCopied] = useState(false)
 
     useEffect(() => {
         function handleResize() {
@@ -24,14 +26,6 @@ const ComponentsSection = () => {
         handleResize()
         return () => window.removeEventListener('resize', handleResize)
     }, [])
-
-    useEffect(() => {
-        if (!wasCopied) return
-        const copiedTimer = setTimeout(() => {
-            setWasCopied(false)
-        }, 1000)
-        return () => clearTimeout(copiedTimer)
-    }, [wasCopied])
 
     return (
         <section className="m-auto section-components flex flex-col items-center mt-12 ">
@@ -75,7 +69,7 @@ const ComponentsSection = () => {
                 </div>
 
                 <div style={{ position: 'absolute', top: 128, left: 429, animationDelay: '1s' }} className="floating">
-                    <Pagination setSize={function noRefCheck() {}} currentPage={1} totalPages={10} />
+                    <Pagination {...paginationProps} currentPage={paginationProps.currentPage + 1} totalPages={10} />
                 </div>
 
                 <Breadcrumbs
@@ -99,12 +93,11 @@ const ComponentsSection = () => {
                 />
 
                 <CardExample style={{ position: 'absolute', top: 3, left: 161, animationDelay: '0.7s' }} className="bg-white floating" />
-
                 <DropdownExample style={{ position: 'absolute', top: 150, left: 360, animationDelay: '0.3s' }} className="bg-white floating" />
 
                 <div style={{ position: 'absolute', top: 291, left: 304 }} className="absolute floating">
                     <ProgressCircle classNamePercentage="w-full text-center text-blue-600 text-sm" value={30} width={50}>
-                        {null}
+                        {' '}
                     </ProgressCircle>
                 </div>
 
@@ -115,13 +108,13 @@ const ComponentsSection = () => {
                 </div>
 
                 <div style={{ position: 'absolute', top: 235, left: 562, animationDelay: '2s' }} className="absolute floating">
-                    <Switch setToggle={function noRefCheck() {}} toggle />
+                    <CustomSwitch />
                 </div>
             </section>
 
             <div className="flex gap-6 px-10 flex-col sm:flex-row">
-                <Link href="/docs/get-started/get-started">
-                    <Button className="w-full sm:w-40 sm:max-w-[150px]" paddingY="2" rounded="lg">
+                <Link href="/docs/get-started/getting-started">
+                    <Button className="w-full sm:w-40 sm:max-w-[150px] h-10" paddingY="2" rounded="lg">
                         Get started
                     </Button>
                 </Link>
@@ -129,18 +122,14 @@ const ComponentsSection = () => {
                     paddingY="2"
                     variant="secondary"
                     className={composeClasses(
-                        wasCopied ? 'border-green-600 text-green-600' : 'border-blue-400 bg-white',
-                        'w-[202px] h-9 px-2 flex justify-between items-center'
+                        isCopied ? 'border-green-600 text-green-600' : 'border-blue-400 bg-white',
+                        'w-[202px] h-10 px-2 flex justify-between items-center'
                     )}
                     fontWeight="normal"
                     rounded="lg"
-                    onClick={() => {
-                        copyToClipBoard('npm i dd360-ds@latest')
-                        setWasCopied(true)
-                    }}
+                    onClick={() => handleCopy('npm i dd360-ds@latest')}
                 >
-                    {wasCopied ? 'Copied' : 'npm i dd360-ds@latest'}
-                    <Image alt="copy-icon" src="/copy-icon.svg" width={12} height={15} className="ml-3" />
+                    npm i dd360-ds@latest <DynamicHeroIcon className="text-gray-500" icon={isCopied ? 'ClipboardCheckIcon' : 'ClipboardIcon'} width={20} />
                 </Button>
             </div>
         </section>
