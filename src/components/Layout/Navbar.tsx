@@ -20,7 +20,7 @@ const menu = [
     {
         key: 2,
         label: 'docs',
-        link: '/docs/get-started/get-started'
+        link: '/docs/get-started/getting-started'
     },
     {
         key: 3,
@@ -57,7 +57,7 @@ function Navbar({ isSticky, hideLogo }: { isSticky?: boolean; hideLogo?: boolean
                     ))}
                 </ul>
                 <Search />
-                <Switch />
+                {/* <Switch /> */}
                 <Circle
                     className="hidden md:block cursor-pointer"
                     width="36px"
