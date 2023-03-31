@@ -56,7 +56,7 @@ function WindowEditor({ codeString = cardMetricsString, language = 'tsx', classN
             {showCopyButton && (
                 <div className="relative">
                     <div className="absolute rounded-lg right-4 top-0 bottom-0 border w-[35px] h-[35px] cursor-pointer" onClick={() => handleCopy(codeString)}>
-                        <div className={composeClasses('flex items-center text-gray-400 justify-center transition-all duration-100', isCopied && 'rotate-45')}>
+                        <div className={composeClasses('flex items-center text-gray-400 justify-center transition-all duration-100', isCopied && 'rotate-12')}>
                             <DynamicHeroIcon icon={isCopied ? 'ClipboardCheckIcon' : 'ClipboardIcon'} width={25} />
                         </div>
                     </div>
