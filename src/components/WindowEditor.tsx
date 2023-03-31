@@ -35,9 +35,11 @@ const CardMetrics = () => {
 	)
 }`
 
-function getBrandingLanguage(lang: Languages) {
-    if (lang === 'javascript' || 'jsx') return JSImg
-    if (lang === 'typescript' || 'tsx') return TSImg
+function getBrandingLanguage(lang: Languages): { src: string; width: number; height: number } {
+    if (lang === 'javascript' || lang === 'jsx') return { src: JSImg, width: 20, height: 20 }
+    if (lang === 'typescript' || lang === 'tsx') return { src: TSImg, width: 17, height: 17 }
+
+    return { src: '', width: 20, height: 20 }
 }
 
 function WindowEditor({ codeString = cardMetricsString, language = 'tsx', className, header, style }: EditorProps) {
@@ -67,8 +69,8 @@ function WindowEditor({ codeString = cardMetricsString, language = 'tsx', classN
                         <button className="h-3 w-3 bg-yellow-400 rounded-full"></button>
                         <button className="h-3 w-3 bg-green-400 rounded-full"></button>
                     </div>
-                    <div style={{ background: 'rgb(40, 42, 54)' }} className="flex items-center mr-auto rounded-t-xl h-full px-3 py-1">
-                        <Image src={getBrandingLanguage(language)} alt="lang" width={25} />
+                    <div style={{ background: 'rgb(40, 42, 54)' }} className="flex items-center mr-auto rounded-t-xl h-full px-3 py-1 gap-1">
+                        <Image {...getBrandingLanguage(language)} alt="lang" />
                         <h3 className="text-white font-medium">{header?.title}</h3>
                     </div>
                 </nav>
