@@ -3,16 +3,23 @@ product: dd360-ds
 title: Getting started
 ---
 
+<br />
+<br />
+
 # <span name="floating-nav">Getting Started</span>
 
      Welcome to our DD360 ds library! This library is designed to help you create beautiful and engaging user interfaces quickly and easily. With our library, you can access a lot of components, tools, and resources to create stunning user interfaces for your web applications. Our library is designed to be easy to use and understand, so even those with minimal React experience can get up and running quickly. To get started, simply install the library, check out the documentation, and begin building your own user interfaces with DD360 ds. Happy coding!
 
+<br />
+<br />
 ## <span name="floating-nav">Installation</span>
 
 To get started, you need to install the DD360 ds library package from npm. You can do this by running the following command:
 
 <WindowEditor language="bash" codeString="npm install dd360-ds" />
 
+<br />
+<br />
 ## <span name="floating-nav">Add styles</span>
 
 Our library uses Tailwind CSS for styling. If your project uses Tailwind CSS you can skip this step. To add styles in your project you need to import the DD360
@@ -20,18 +27,20 @@ ds library style sheet in your entry point, in this example we use React (App.js
 
 <WindowEditor language="javascript" header={{ show: true, title: 'App.js' }} codeString="import 'dd360-ds/dd360.css'" />
 
+<br />
+<br />
 ## <span name="floating-nav">Start Using the Library</span>
 
 Now that you've added the library to your application, you can start using it by adding the components you want to use. To do this, simply add the component tag
 to the JSX of your application. For example, if you want to use a button, you can add the following:
 
 <ContainerComponentDoc className="gap-y-2">
-    <Button size="large">Click Me!</Button>
+    <Button onClick={() => alert('Clicked')}>Click Me!</Button>
 </ContainerComponentDoc>
 
 <WindowEditor
     codeString='import { Button } from "dd360-ds"
 
-    <Button size="large">Click Me!</Button>
+    <Button onClick={() => alert("Clicked")}>Click Me!</Button>
 
 '/>
