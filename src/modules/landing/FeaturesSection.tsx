@@ -45,14 +45,15 @@ const FeaturesSection = () => (
         {cardsInformation.map((item) => (
             <article
                 key={item.title}
-                className="w-full lg:w-[295px] 2xl:w-full h-[250px]"
+                className="w-full lg:w-[295px] 2xl:w-full"
                 style={{
                     background: 'rgba(255, 255, 255, 0.2)',
                     backdropFilter: 'blur(10px)',
                     border: '1px solid #EFF6FF',
                     boxShadow: '0px 10px 15px -3px rgba(17, 24, 39, 0.03)',
                     borderRadius: 16,
-                    padding: 16
+                    padding: 16,
+                    maxHeight: '250px'
                 }}
             >
                 <div className="flex items-center mb-6">
