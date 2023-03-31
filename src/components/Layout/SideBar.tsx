@@ -63,30 +63,6 @@ const components: ComponentObjectProps = {
             }
         ]
     },
-    navigation: {
-        items: [
-            {
-                label: 'Anchor',
-                pathname: 'anchor'
-            },
-            {
-                label: 'Breadcrumbs',
-                pathname: 'breadcrumbs'
-            },
-            {
-                label: 'Cell',
-                pathname: 'cell'
-            },
-            {
-                label: 'Pagination',
-                pathname: 'pagination'
-            },
-            {
-                label: 'Tabs',
-                pathname: 'tabs'
-            }
-        ]
-    },
     layout: {
         items: [
             {
@@ -168,6 +144,30 @@ const components: ComponentObjectProps = {
             {
                 label: 'Text Area',
                 pathname: 'textarea'
+            }
+        ]
+    },
+    navigation: {
+        items: [
+            {
+                label: 'Anchor',
+                pathname: 'anchor'
+            },
+            {
+                label: 'Breadcrumbs',
+                pathname: 'breadcrumbs'
+            },
+            {
+                label: 'Cell',
+                pathname: 'cell'
+            },
+            {
+                label: 'Pagination',
+                pathname: 'pagination'
+            },
+            {
+                label: 'Tabs',
+                pathname: 'tabs'
             }
         ]
     },
@@ -281,12 +281,6 @@ const components: ComponentObjectProps = {
     }
 }
 
-const builds = {
-    '1.2.9': { label: 'build 129' },
-    '1.3.9': { label: 'build 139' },
-    '1.4.9': { label: 'build 149' }
-}
-
 export default function SideBar() {
     const { t } = useTranslation('common')
     const router = useRouter()
@@ -299,20 +293,17 @@ export default function SideBar() {
             <Link href="/" className="block my-7 mx-auto">
                 <Image className="m-auto" src="/dd360-black.png" width={130} height={28.5} alt="logo" />
             </Link>
-            <div className="m-auto w-full" style={{ height: 34 }}>
-                <Select optionsList={builds} rounded="xl" padding="2" className="bg-white" style={{ borderColor: '#D1D5DB' }} />
-            </div>
             <div className="hide-scroll flex flex-col gap-6 mt-6 overflow-y-auto overflow-x-hidden flex-grow">
                 <Link
-                    href={`/docs/get-started/get-started`}
+                    href="/docs/get-started/getting-started"
                     locale={router?.locale}
                     className={composeClasses(
-                        'get-started' === router?.query?.slug ? 'bg-blue-100 border-blue-500' : 'border-gray-300',
+                        'getting-started' === router?.query?.slug ? 'bg-blue-100 border-blue-500' : 'border-gray-300',
                         'py-2 pl-4 ml-1 mt-4 pr-1 border flex gap-3 items-center rounded-lg transition-all ease-in duration-300'
                     )}
                 >
-                    <DynamicHeroIcon icon="FireIcon" className="w-4 h-4 text-red-500" />
-                    <Text className="text-gray-600">Get started</Text>
+                    <DynamicHeroIcon icon="BookOpenIcon" className="w-4 h-4 text-blue-700" />
+                    <Text className="text-gray-600">Getting Started</Text>
                 </Link>
                 {Object.entries(components).map(([key, value]) => (
                     <ShowMore basePath={key} icon={value?.icon} title={t(key)} key={key}>
