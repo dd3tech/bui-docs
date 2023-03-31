@@ -1,14 +1,19 @@
 import Image from 'next/image'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 import { Card, Container, Divider, Text, ProgressCircle } from 'dd360-ds'
-import { Switch, WindowEditor } from '@/components'
+import { WindowEditor, CustomSwitch } from '@/components'
 
 const WindowEditorSection = () => (
     <section className="components-window-editor relative mx-4 xl:mx-0 flex flex-col lg:flex-row items-center justify-center" style={{ paddingBottom: 371 }}>
         <div className="relative" style={{ maxWidth: 544, width: '100%' }}>
-            <WindowEditor header={{ show: true, title: 'Design System' }} className="w-full rounded-2xl pb-3" style={{ overflow: 'hidden', height: '348px' }} />
+            <WindowEditor
+                language="jsx"
+                header={{ show: true, title: 'CardMetrics.js' }}
+                className="w-full rounded-2xl pb-3"
+                style={{ overflow: 'hidden', height: '348px' }}
+            />
             <div style={{ position: 'absolute', top: 262, left: 579, animationDelay: '2s' }} className="switch absolute min-w-min hidden sm:block">
-                <Switch />
+                <CustomSwitch />
             </div>
             <Card rounded="lg" padding={6} className="absolute bg-white card-example max-w-xs sm:max-w-none top-80 left-2 sm:left-60">
                 <Container className="flex w-full pb-4">

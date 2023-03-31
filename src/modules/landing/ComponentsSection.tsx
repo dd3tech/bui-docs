@@ -1,15 +1,17 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { Badge, Breadcrumbs, Button, Checkbox, Circle, FilterRangeSlider, Pagination, ProgressCircle, Radio, Switch, Text } from 'dd360-ds'
+import { Badge, Breadcrumbs, Button, Checkbox, Circle, FilterRangeSlider, Pagination, ProgressCircle, Radio, Text, usePagination } from 'dd360-ds'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 import { composeClasses } from 'dd360-ds/lib'
 
+import CustomSwitch from '@/components/CustomSwitch'
 import DropdownExample from './DropdownExample'
-import CardExample from '@/modules/landing/CardExample'
+import CardExample from './CardExample'
 import useCopy from '@/hooks/useCopy'
 
 const ComponentsSection = () => {
     const { handleCopy, isCopied } = useCopy()
+    const paginationProps = usePagination()
     const [sectionPos, setSectionPos] = useState({ top: 0, left: 0 })
 
     useEffect(() => {
@@ -67,7 +69,7 @@ const ComponentsSection = () => {
                 </div>
 
                 <div style={{ position: 'absolute', top: 128, left: 429, animationDelay: '1s' }} className="floating">
-                    <Pagination setSize={function noRefCheck() {}} currentPage={1} totalPages={10} />
+                    <Pagination {...paginationProps} currentPage={paginationProps.currentPage + 1} totalPages={10} />
                 </div>
 
                 <Breadcrumbs
@@ -91,12 +93,11 @@ const ComponentsSection = () => {
                 />
 
                 <CardExample style={{ position: 'absolute', top: 3, left: 161, animationDelay: '0.7s' }} className="bg-white floating" />
-
                 <DropdownExample style={{ position: 'absolute', top: 150, left: 360, animationDelay: '0.3s' }} className="bg-white floating" />
 
                 <div style={{ position: 'absolute', top: 291, left: 304 }} className="absolute floating">
                     <ProgressCircle classNamePercentage="w-full text-center text-blue-600 text-sm" value={30} width={50}>
-                        {null}
+                        {' '}
                     </ProgressCircle>
                 </div>
 
@@ -107,7 +108,7 @@ const ComponentsSection = () => {
                 </div>
 
                 <div style={{ position: 'absolute', top: 235, left: 562, animationDelay: '2s' }} className="absolute floating">
-                    <Switch setToggle={function noRefCheck() {}} toggle />
+                    <CustomSwitch />
                 </div>
             </section>
 
