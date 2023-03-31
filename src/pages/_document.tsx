@@ -5,7 +5,7 @@ interface MyDocumentProps extends DocumentInitialProps {
     locale?: string
 }
 
-function MyDocument({ locale = 'es' }: MyDocumentProps) {
+function MyDocument({ locale = 'en' }: MyDocumentProps) {
     return (
         <Html lang={locale}>
             <Head />

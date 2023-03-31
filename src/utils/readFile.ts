@@ -18,7 +18,7 @@ export function getDocBySlug(folder: string, slug: string) {
 }
 
 export function getAllPaths(allowedLocales?: string[], getAsString?: boolean) {
-    const locales = allowedLocales ?? ['es']
+    const locales = allowedLocales || ['es', 'en']
     const paths: Paths[] = []
     const stringPaths: string[] = []
 
