@@ -1,4 +1,4 @@
-import React, { MutableRefObject, useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { MutableRefObject, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { createAutocomplete } from '@algolia/autocomplete-core'
@@ -36,7 +36,7 @@ const Search = () => {
                         sourceId: 'components-slug-api',
                         getItems: ({ query }) => {
                             if (query) {
-                                return fetch(`/api/search-components?search=${query.replaceAll(' ', '-').trim()}`)
+                                return fetch(`/api/search-components?search=${query.toLowerCase().replaceAll(' ', '-').trim()}`)
                                     .then((res) => res.json())
                                     .then((res) => res.data.map((item: string) => ({ path: item })))
                             }
@@ -89,14 +89,14 @@ const Search = () => {
                 router.replace(`/docs/${selectedComponent.path}`)
             }
         },
-        [selectedComponent, autocompleteState?.collections]
+        [selectedComponent.index, selectedComponent.path, autocompleteState?.collections, router]
     )
 
     useEffect(() => {
         autocomplete.setIsOpen(false)
         autocomplete.setQuery('')
         autocomplete.refresh()
-    }, [router.asPath])
+    }, [autocomplete, router.asPath])
 
     useEffect(() => {
         if (autocompleteState?.collections[0]?.items.length === 0) return
@@ -108,7 +108,7 @@ const Search = () => {
         return () => {
             window.removeEventListener('keydown', handleKeyDown)
         }
-    }, [autocompleteState, selectedComponent])
+    }, [autocompleteState, handleKeyDown, selectedComponent])
 
     return (
         <form className="relative hidden md:block" ref={formRef} {...formProps}>
