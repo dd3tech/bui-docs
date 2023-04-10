@@ -1,1 +1,82 @@
-anchor page
+---
+product: dd360-ds
+title: React Anchor component
+components: Anchor
+---
+
+<br />
+<br />
+
+# <span name="floating-nav">Anchor</span>
+
+With the Anchor component you can create links with customizable properties and support for custom components.
+
+<br />
+
+## <span name="floating-nav">Imports</span>
+
+<WindowEditor codeString="import { Anchor } from 'dd360-ds'" />
+
+## <span name="floating-nav">Usage</span>
+
+<ContainerComponentDoc className="flex items-center">
+    <Anchor to={'/docs/navigation/anchor'}>This is an example</Anchor>
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString="import { Button, ButtonGroup } from 'dd360-ds'
+
+        <Anchor>This is an example</Anchor> "
+
+/>
+
+<br />
+
+#### <span name="floating-nav">To</span>
+
+With the props to you can redirect to the url you need
+
+<ContainerComponentDoc className="flex items-center">
+    <Anchor to={'/docs/navigation/anchor'}>This is an example with the props to</Anchor>
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { Anchor } from 'dd360-ds'
+
+<Anchor to="/docs/navigation/anchor">This is an example with the props to</Anchor>
+`}/>
+
+<br />
+
+#### <span name="floating-nav">LinkComponent</span>
+
+With the LinkComponent prop you can add the Link of react router dom.
+
+<ContainerComponentDoc className="flex items-center">
+    <Anchor to={'/docs/navigation/anchor'}>This is an example with the props LinkComponent</Anchor>
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { Anchor } from 'dd360-ds'
+import { Link } from 'react-router-dom'
+    
+<Anchor LinkComponent={Link} to="/docs/navigation/anchor">
+    This is an example with the props LinkComponent
+</Anchor>
+`}
+/>
+
+<br />
+<br />
+
+## <span name="floating-nav">API Reference</span>
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'to', default: null, types: ['string'] },
+        { title: 'LinkComponent', default: null, types: ['React.ComponentType<LinkProps>'] },
+        { title: 'className', default: null, types: ['string'] },
+        { title: 'children', default: null, types: ['ReactNode'] },
+        { title: '...', default: null, types: ['HTMLAnchorElement'] }
+    ]}
+/>
