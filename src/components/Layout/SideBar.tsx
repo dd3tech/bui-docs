@@ -239,7 +239,7 @@ const components: ComponentObjectProps = {
         items: [
             {
                 label: 'Kbd',
-                pathname: 'kdb'
+                pathname: 'kbd'
             },
             {
                 label: 'Text',
