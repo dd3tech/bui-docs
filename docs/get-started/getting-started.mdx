@@ -36,7 +36,7 @@ Go to <span className="px-1 py-0.5 bg-pink-100 rounded-md">pages/_app.js</span> 
 
 ### Next.js
 
-<WindowEditor language="typescript" codeString={`import { ThemeProvider } from 'dd360-ds/theme'
+<WindowEditor language="tsx" codeString={`import { ThemeProvider } from 'dd360-ds/theme'
 import 'dd360-ds/dd360.css'
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -51,12 +51,12 @@ export default function App({ Component, pageProps }: AppProps) {
 
 Go to the root of your application and do this:
 
-<WindowEditor language="typescript" codeString={`import { ThemeProvider } from 'dd360-ds/theme'
+<WindowEditor language="tsx" codeString={`import { ThemeProvider } from 'dd360-ds/theme'
 import 'dd360-ds/dd360.css'
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <ThemeProvider theme={theme}>
+    <ThemeProvider>
       <App />
     </ThemeProvider>
   </StrictMode>
@@ -71,7 +71,7 @@ To extend or override a token in the default theme, import the <span className="
 
 For example, if you want to update your theme colors to include your brand colors, here's what to do:
 
-<WindowEditor language="typescript" codeString={`import { createTheme,  ThemeProvider, Text  } from "dd360-ds/theme" 
+<WindowEditor language="tsx" codeString={`import { createTheme,  ThemeProvider, Text  } from "dd360-ds/theme" 
 import { Button } from "dd360-ds
 
 const theme = createTheme({
