@@ -9,7 +9,8 @@ components: Cell
 
 # <span name="floating-nav">Cell</span>
 
-With the Cell component you can render a table cell with customizable style and behavior.
+With the Cell you can create an interactive cell that can have a button or an icon, along with some text. The cell can be enabled or disabled, selected or
+unselected, and may or may not have a border. Cell has a link that can be clicked.
 
 <br />
 
@@ -33,7 +34,7 @@ With the Cell component you can render a table cell with customizable style and 
 
 #### <span name="floating-nav">Size</span>
 
-With the size prop you can customize the size of the cell
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>size</span> you can customize the size of the cell
 
 <ContainerComponentDoc className="flex items-center gap-x-5">
     <Cell size="small">Cell Size Small Example</Cell>
@@ -55,7 +56,7 @@ With the size prop you can customize the size of the cell
 
 #### <span name="floating-nav">Icon</span>
 
-With the icon can add an icon prop
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>icon</span> you can add an icon
 
 <ContainerComponentDoc className="flex items-center gap-x-5">
     <Cell icon={<DynamicHeroIcon icon="CalendarIcon" />}>Cell Icon Example</Cell>
@@ -72,7 +73,7 @@ import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 
 #### <span name="floating-nav">Border</span>
 
-With the border prop you can choose whether the cell has a border
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>border</span> you can choose whether the cell has a border
 
 <ContainerComponentDoc className="flex items-center gap-x-5">
     <Cell border>Cell Border Example</Cell>
@@ -88,7 +89,7 @@ With the border prop you can choose whether the cell has a border
 
 #### <span name="floating-nav">Disabled</span>
 
-With the disabled prop you can disable the cell
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>disabled</span> you can disable the cell
 
 <ContainerComponentDoc className="flex items-center gap-x-5">
     <Cell disabled>Cell Disabled Example</Cell>
@@ -104,7 +105,7 @@ With the disabled prop you can disable the cell
 
 #### <span name="floating-nav">Selected</span>
 
-With the selected prop a style is added to the cell to know that it was selected
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>selected</span> a style is added to the cell to know that it was selected
 
 <ContainerComponentDoc className="flex items-center gap-x-5">
     <Cell selected>Cell Selected Example</Cell>

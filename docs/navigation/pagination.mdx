@@ -9,11 +9,14 @@ components: Pagination
 
 # <span name="floating-nav">Pagination</span>
 
-    The Pagination component can make it easier for the user to navigate through the different pages.
+    The Pagination component is a handy tool that facilitates user navigation through different pages, especially when used with tables. With a minimalist interface and clear controls for moving pages forward or backward, jumping to a specific page and adjusting the number of elements displayed per page, this component is highly customizable and complies with accessibility standards. It improves usability and efficiency when handling large data sets, making it a valuable addition.
 
 <br />
 ## <span name="floating-nav">Imports</span>
 
+The first alternative is recommended since they can reduce the application package.
+
+<WindowEditor codeString="import Pagination from 'dd360-ds/Pagination'" />
 <WindowEditor codeString="import { Pagination } from 'dd360-ds'" />
 
 ## <span name="floating-nav">Usage</span>
@@ -33,7 +36,7 @@ components: Pagination
 </ContainerComponentDoc>
 
 <WindowEditor
-    codeString={`import { Button, ButtonGroup } from 'dd360-ds'
+    codeString={`import Pagination from 'dd360-ds/Pagination'
 
      <Pagination
          totalPages={5}
@@ -65,7 +68,5 @@ components: Pagination
         { title: 'goToNextPage', default: null, types: ['function'] },
         { title: 'goToPage', default: null, types: ['function'] },
         { title: 'goToPage', default: null, types: ['function'] }
-
     ]}
-
 />

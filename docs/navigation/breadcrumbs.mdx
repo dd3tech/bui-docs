@@ -15,6 +15,9 @@ components: Breadcrumbs
 
 ## <span name="floating-nav">Imports</span>
 
+The first alternative is recommended since they can reduce the application package.
+
+<WindowEditor codeString="import Breadcrumbs from 'dd360-ds/Breadcrumbs'" />
 <WindowEditor codeString="import { Breadcrumbs } from 'dd360-ds'" />
 
 ## <span name="floating-nav">Usage</span>
@@ -24,7 +27,7 @@ components: Breadcrumbs
 </ContainerComponentDoc>
 
 <WindowEditor
-    codeString="import { Button, ButtonGroup } from 'dd360-ds'
+    codeString="import Breadcrumbs from 'dd360-ds/Breadcrumbs'
 
       <Breadcrumbs options={[{name: 'First Path'},{ name: 'Second Path'},{ name: 'Third Path'}]}/> "
 
@@ -60,8 +63,8 @@ of each route
 </ContainerComponentDoc>
 
 <WindowEditor
-    codeString={`import { Button, ButtonGroup } from 'dd360-ds'
-    import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
+    codeString={`import Breadcrumbs from 'dd360-ds/Breadcrumbs'
+import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 
 <Breadcrumbs
     options={[
@@ -84,14 +87,14 @@ of each route
 
 #### <span name="floating-nav">Separator</span>
 
-The separator prop allows you to change the default separator icon of the Breadcrumbs component
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>separator</span> you can to change the default separator icon between the options
 
 <ContainerComponentDoc className="flex items-center">
     <Breadcrumbs options={[{ name: 'First Path' }, { name: 'Second Path' }, { name: 'Third Path' }]} separator="|" />
 </ContainerComponentDoc>
 
 <WindowEditor
-    codeString={`import { Button, ButtonGroup } from 'dd360-ds'
+    codeString={`import Breadcrumbs from 'dd360-ds/Breadcrumbs'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 
 <Breadcrumbs options={[{ name: 'First Path' }, { name: 'Second Path' }, { name: 'Third Path' }]} separator="|" />

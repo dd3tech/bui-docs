@@ -15,16 +15,19 @@ With the Anchor component you can create links with customizable properties and 
 
 ## <span name="floating-nav">Imports</span>
 
+The first alternative is recommended since they can reduce the application package.
+
+<WindowEditor codeString="import Anchor from 'dd360-ds/Anchor'" />
 <WindowEditor codeString="import { Anchor } from 'dd360-ds'" />
 
 ## <span name="floating-nav">Usage</span>
 
 <ContainerComponentDoc className="flex items-center">
-    <Anchor to={'/docs/navigation/anchor'}>This is an example</Anchor>
+    <Anchor to="/docs/navigation/anchor">This is an example</Anchor>
 </ContainerComponentDoc>
 
 <WindowEditor
-    codeString="import { Button, ButtonGroup } from 'dd360-ds'
+    codeString="import Anchor from 'dd360-ds/Anchor''
 
         <Anchor>This is an example</Anchor> "
 
@@ -34,34 +37,34 @@ With the Anchor component you can create links with customizable properties and 
 
 #### <span name="floating-nav">To</span>
 
-With the props to you can redirect to the url you need
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>to</span> you can redirect to the url you need
 
 <ContainerComponentDoc className="flex items-center">
-    <Anchor to={'/docs/navigation/anchor'}>This is an example with the props to</Anchor>
+    <Anchor to="/docs/navigation/anchor">This is an example with the prop to</Anchor>
 </ContainerComponentDoc>
 
 <WindowEditor
-    codeString={`import { Anchor } from 'dd360-ds'
+    codeString={`import Anchor from 'dd360-ds/Anchor'
 
-<Anchor to="/docs/navigation/anchor">This is an example with the props to</Anchor>
+<Anchor to="/docs/navigation/anchor">This is an example with the prop to</Anchor>
 `}/>
 
 <br />
 
-#### <span name="floating-nav">LinkComponent</span>
+#### <span name="floating-nav">As</span>
 
-With the LinkComponent prop you can add the Link of react router dom.
+With the prop <span className='border border-gray-300 bg-gray-200  p-1'>as</span> you can add the Link of react router dom.
 
 <ContainerComponentDoc className="flex items-center">
-    <Anchor to={'/docs/navigation/anchor'}>This is an example with the props LinkComponent</Anchor>
+    <Anchor to="/docs/navigation/anchor">This is an example with the prop as</Anchor>
 </ContainerComponentDoc>
 
 <WindowEditor
-    codeString={`import { Anchor } from 'dd360-ds'
+    codeString={`import Anchor from 'dd360-ds/Anchor'
 import { Link } from 'react-router-dom'
     
-<Anchor LinkComponent={Link} to="/docs/navigation/anchor">
-    This is an example with the props LinkComponent
+<Anchor as={Link} to="/docs/navigation/anchor">
+    This is an example with the prop as
 </Anchor>
 `}
 />
@@ -73,8 +76,8 @@ import { Link } from 'react-router-dom'
 
 <CustomTableDocs
     dataTable={[
-        { title: 'to', default: null, types: ['string'] },
-        { title: 'LinkComponent', default: null, types: ['React.ComponentType<LinkProps>'] },
+        { title: 'as', default: null, types: ['ComponentType<any>'] },
+        { title: 'LinkComponent', default: null, types: ['React.ComponentType<LinkProp>'] },
         { title: 'className', default: null, types: ['string'] },
         { title: 'children', default: null, types: ['ReactNode'] },
         { title: '...', default: null, types: ['HTMLAnchorElement'] }
