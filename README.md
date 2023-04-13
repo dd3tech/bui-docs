@@ -1,4 +1,4 @@
-# ***DD360-DS Docs*** [![Netlify Status](https://api.netlify.com/api/v1/badges/0bf91d2d-9ba9-4c6c-b8e0-03955a9a711e/deploy-status)](https://app.netlify.com/sites/dd360-ds/deploys)
+# ***DD360-DS Docs*** 
 
 
 This is the documentation website of [DD360 Components](https://github.com/dd3tech/dd360-components)
