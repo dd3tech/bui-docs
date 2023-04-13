@@ -4,6 +4,7 @@ import { composeClasses } from 'dd360-ds/lib'
 interface Props {
     children: ReactNode
     className: string
+    isPagination: boolean
 }
 
 const ContainerComponentDoc: FC<Props> = ({ children, className }) => {

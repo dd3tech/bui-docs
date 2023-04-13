@@ -1,7 +1,7 @@
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { appWithTranslation } from 'next-i18next'
-
+import { ThemeProvider } from 'dd360-ds/theme'
 import NextNProgress from 'nextjs-progressbar'
 import { Layout } from '@/components'
 
@@ -18,7 +18,9 @@ function App({ Component, pageProps }: AppProps) {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
             </Head>
             <Layout>
-                <Component {...pageProps} />
+                <ThemeProvider>
+                    <Component {...pageProps} />
+                </ThemeProvider>
             </Layout>
         </>
     )

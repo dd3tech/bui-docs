@@ -1,1 +1,136 @@
-cell page
+---
+product: dd360-ds
+title: React Cell component
+components: Cell
+---
+
+<br />
+<br />
+
+# <span name="floating-nav">Cell</span>
+
+With the Cell you can create an interactive cell that can have a button or an icon, along with some text. The cell can be enabled or disabled, selected or
+unselected, and may or may not have a border. Cell has a link that can be clicked.
+
+<br />
+
+## <span name="floating-nav">Imports</span>
+
+<WindowEditor codeString="import { Cell} from 'dd360-ds'" />
+
+## <span name="floating-nav">Usage</span>
+
+<ContainerComponentDoc className="flex items-center">
+    <Cell>Example Cell</Cell>
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString="import { Cell } from 'dd360-ds'
+
+    <Cell>Example Cell</Cell>
+    "/>
+
+<br />
+
+#### <span name="floating-nav">Size</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>size</span> you can customize the size of the cell
+
+<ContainerComponentDoc className="flex items-center gap-x-5">
+    <Cell size="small">Cell Size Small Example</Cell>
+    <Cell size="medium">Cell Size Medium Example</Cell>
+    <Cell size="large">Cell Size Large Example</Cell>
+    <Cell size="extraLarge">Cell Size ExtraLarge Example</Cell>
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { Cell } from 'dd360-ds'
+
+<Cell size="small">Cell Size Small Example</Cell>
+<Cell size="medium">Cell Size Medium Example</Cell>
+<Cell size="large">Cell Size Large Example</Cell>
+<Cell size="extraLarge">Cell Size ExtraLarge Example</Cell>
+`} />
+
+<br />
+
+#### <span name="floating-nav">Icon</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>icon</span> you can add an icon
+
+<ContainerComponentDoc className="flex items-center gap-x-5">
+    <Cell icon={<DynamicHeroIcon icon="CalendarIcon" />}>Cell Icon Example</Cell>
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { Cell } from 'dd360-ds'
+import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
+
+<Cell icon={<DynamicHeroIcon icon="CalendarIcon" />}>Cell Icon Example</Cell>
+`}/>
+
+<br />
+
+#### <span name="floating-nav">Border</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>border</span> you can choose whether the cell has a border
+
+<ContainerComponentDoc className="flex items-center gap-x-5">
+    <Cell border>Cell Border Example</Cell>
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString="import { Cell } from 'dd360-ds'
+
+<Cell border>Cell Border Example</Cell>
+"/>
+
+<br />
+
+#### <span name="floating-nav">Disabled</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>disabled</span> you can disable the cell
+
+<ContainerComponentDoc className="flex items-center gap-x-5">
+    <Cell disabled>Cell Disabled Example</Cell>
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString="import { Cell } from 'dd360-ds'
+
+<Cell disabled>Cell Disabled Example</Cell>
+"/>
+
+<br />
+
+#### <span name="floating-nav">Selected</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>selected</span> a style is added to the cell to know that it was selected
+
+<ContainerComponentDoc className="flex items-center gap-x-5">
+    <Cell selected>Cell Selected Example</Cell>
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString="import { Cell } from 'dd360-ds'
+
+<Cell selected>Cell Selected Example</Cell>
+"/>
+
+<br />
+
+## <span name="floating-nav">API Reference</span>
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'size', default: 'medium', types: ['small','medium','large','extraLarge'] },
+        { title: 'border', default: 'false', types: ['boolean'] },
+        { title: 'disabled', default: 'false', types: ['boolean'] },
+        { title: 'selected', default: 'false', types: ['boolean'] },
+        { title: 'icon', default: null, types: ['ReactNode'] },
+        { title: 'onClick', default: null, types: ['function'] }, 
+        { title: 'children', default: null, types: ['ReactNode']  },
+        { title: 'className', default: null, types: ['string'] }
+    ]}
+
+/>

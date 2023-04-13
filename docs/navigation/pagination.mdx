@@ -1,1 +1,73 @@
-pagination page
+---
+product: dd360-ds
+title: React Pagination component
+components: Pagination
+---
+
+<br />
+<br />
+
+# <span name="floating-nav">Pagination</span>
+
+    The Pagination component is a handy tool that facilitates user navigation through different pages, especially when used with tables. With a minimalist interface and clear controls for moving pages forward or backward, jumping to a specific page and adjusting the number of elements displayed per page, this component is highly customizable and complies with accessibility standards. It improves usability and efficiency when handling large data sets, making it a valuable addition.
+
+<br />
+## <span name="floating-nav">Imports</span>
+
+The first alternative is recommended since they can reduce the application bundle.
+
+<WindowEditor codeString="import Pagination from 'dd360-ds/Pagination'" />
+<WindowEditor codeString="import { Pagination } from 'dd360-ds'" />
+
+## <span name="floating-nav">Usage</span>
+
+You can use it by importing the <span className='border border-gray-300 bg-gray-200 p-1'>usePagination</span> hook and use it like this
+
+<ContainerComponentDoc className="flex items-center gap-x-5">
+    <PaginationCustom />
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { Pagination, usePagination } from 'dd360-ds'
+
+const paginationProps = usePagination()
+
+<Pagination {...paginationProps} firstText="Show" secondText="of the 50 items" currentPage={paginationProps.currentPage + 1} totalPages={10} />
+
+`} />
+
+Or you can customize it your way with your functions and variables
+
+<WindowEditor
+    codeString={`import Pagination from 'dd360-ds/Pagination'
+
+<Pagination
+    totalPages={5}
+    currentPage={1}
+    sliceSize="10"
+    firstText="Show"
+    secondText="of the 65 items"
+    goToPreviousPage={() => alert('goToBackPage')}
+    goToNextPage={() => alert('goToNextPage')}
+    goToPage={() => alert('goPage')}
+    setSize={() => null}
+/>
+`} />
+<br />
+<br />
+
+## <span name="floating-nav">API Reference</span>
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'totalPages', default: null, types: ['number'] },
+        { title: 'currentPage', default: null, types: ['number'] },
+        { title: 'sliceSize', default: null, types: ['string'] },
+        { title: 'firstText', default: null, types: ['string'] },
+        { title: 'secondText', default: null, types: ['string'] },
+        { title: 'goToPreviousPage', default: null, types: ['function'] },
+        { title: 'goToNextPage', default: null, types: ['function'] },
+        { title: 'goToPage', default: null, types: ['function'] },
+        { title: 'goToPage', default: null, types: ['function'] }
+    ]}
+/>
