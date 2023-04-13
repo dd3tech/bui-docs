@@ -1,54 +1,189 @@
 ---
 product: dd360-ds
-title: React Tabs component
-components: Tabs, Tab, TabScrollButton, TabContext, TabList, TabPanel
-githubLabel: 'component: tabs'
-materialDesign: https://m2.material.io/components/tabs
-waiAria: https://www.w3.org/WAI/ARIA/apg/patterns/tabpanel/
-unstyled: /base/react-tabs/
+title: React Tabs , TabGroup component
+components: Tabs , TabGroup
 ---
 
-# <span name="floating-nav">Tabs</span>
+<br />
+<br />
+
+# <span name="floating-nav">TabGroup | Tabs </span>
 
 Tabs make it easy to explore and switch between different views.
 
 Tabs organize and allow navigation between groups of content that are related and at the same level of hierarchy.
 
-## <span name="floating-nav">Customization</span>
+<br />
+## <span name="floating-nav">Imports</span>
 
-Here is an example of customizing the component. You can learn more about this in the
+<WindowEditor codeString="import { Tabs,TabGroup } from 'dd360-ds'" />
 
-## <span name="floating-nav">Vertical tabs</span>
+## <span name="floating-nav">Usage</span>
 
-To make vertical tabs instead of default horizontal ones, there is `orientation="vertical"`: Note that you can restore the scrollbar with `visibleScrollbar`.
-
-### <span name="floating-nav">Keyboard navigation</span>
-
-The components implement keyboard navigation using the "manual activation" behavior. If you want to switch to the "selection automatically follows focus"
-behavior you have pass `selectionFollowsFocus` to the `Tabs` component. The WAI-ARIA authoring practices have a detailed guide on
-[how to decide when to make selection automatically follow focus](https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#x6-4-deciding-when-to-make-selection-automatically-follow-focus).
-
-#### Demo
-
-<TabGroup variant="primary" disabledText="Jasan">
-    <Tab label="Precio y absorción" />
-    <Tab label="Competencia" />
-    <Tab label="Insights de mercado históricos" />
-    <Tab label="Item four" disabled />
+<ContainerComponentDoc className="flex items-center">
+  <TabGroup variant="primary" >
+    <Tab label="Element First" />
+    <Tab label="Element Second" />
+    <Tab label="Element third" />
+    <Tab label="Element Disabled" disabled />
 </TabGroup>
 
-<div className="grid grid-cols-9">
-    <WindowEditor
-        className="col-span-5"
-        codeString={`TabGroup variant="primary" disabledText="Jasan">
-    <Tab label="Precio y absorción" />
-    <Tab label="Competencia" />
-    <Tab label="Insights de mercado históricos" />
-    <Tab label="Item four" disabled/>
-    <Tab label="Item five" />
-    <Tab label="Item six" />
-    <Tab label="Item eight" disabled />
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { Tabs,TabGroup } from 'dd360-ds'
+
+<TabGroup variant="primary">
+    <Tab label="Element First" />
+    <Tab label="Element Second" />
+    <Tab label="Element Third" />
+    <Tab label="Element Disabled" disabled />
 </TabGroup>
-     `}
-    />
-</div>
+
+`} />
+
+<br />
+
+### <span name="floating-nav">Variant</span>
+
+Con la prop variant puedes personalizar el estilo de las tabs
+
+<ContainerComponentDoc className="flex items-center">
+<TabsCustom option='isVariant'/>
+
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { Tabs,TabGroup } from 'dd360-ds'
+
+<TabGroup variant="primary">
+    <Tab label="Element First" />
+    <Tab label="Element Second" />
+    <Tab label="Element Third" />
+    <Tab label="Element Disabled" disabled />
+</TabGroup>
+
+`} />
+
+<br />
+
+### <span name="floating-nav">Orientation</span>
+
+Con la prop orientation puedes personalizar la orientacion de las tabs
+
+<ContainerComponentDoc className="flex items-center">
+ <TabsCustom option='isOrientation' />
+
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { Tabs,TabGroup } from 'dd360-ds'
+
+<TabGroup variant="secondary" orientation="vertical">
+    <Tab label="Element First" />
+    <Tab label="Element Second" />
+    <Tab label="Element Third" />
+    <Tab label="Element Disabled" disabled />
+</TabGroup>
+
+`} />
+
+### <span name="floating-nav">FontSize</span>
+
+Con la prop fontSize puedes personalizar el tamano de la fuente de las tabs
+
+<ContainerComponentDoc className="flex items-center">
+    <TabsCustom option="isFontSize" />
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { Tabs,TabGroup } from 'dd360-ds'
+
+<TabGroup variant="secondary" orientation="vertical">
+    <Tab label="Element First" />
+    <Tab label="Element Second" />
+    <Tab label="Element Third" />
+    <Tab label="Element Disabled" disabled />
+</TabGroup>
+
+`} />
+
+<br />
+
+#### <span>TextColor</span>
+
+Con la prop textColor puedes personalizar el color de la primer tab
+
+<ContainerComponentDoc className="flex items-center">
+  <TabGroup textColor="rgba(49, 87, 240, 1)"  variant="primary" >
+    <Tab label="Element First" />
+    <Tab label="Element Second" />
+    <Tab label="Element third" />
+    <Tab label="Element Disabled" disabled />
+</TabGroup>
+
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { Tabs,TabGroup } from 'dd360-ds'
+
+<TabGroup textColor="rgba(49, 87, 240, 1)" variant="primary">
+    <Tab label="Element First" />
+    <Tab label="Element Second" />
+    <Tab label="Element Third" />
+    <Tab label="Element Disabled" disabled />
+</TabGroup>
+
+`} />
+
+<br />
+
+#### <span>Witdh</span>
+
+Con la prop width puedes personalizar el tamaño del de la primer tabgroup
+
+<ContainerComponentDoc className="flex items-center">
+  <TabGroup width={400}  variant="primary" >
+    <Tab label="Element First" />
+    <Tab label="Element Second" />
+    <Tab label="Element third" />
+    <Tab label="Element Disabled" disabled />
+</TabGroup>
+
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { Tabs,TabGroup } from 'dd360-ds'
+
+<TabGroup width={400} variant="primary">
+    <Tab label="Element First" />
+    <Tab label="Element Second" />
+    <Tab label="Element Third" />
+    <Tab label="Element Disabled" disabled />
+</TabGroup>
+
+`} />
+
+<br />
+
+<br />
+
+## <span name="floating-nav">API Reference</span>
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'orientation', default: null, types: ['vertical', 'horizontal'] },
+        { title: 'indicatorColor', default: null, types: [''] },
+        { title: 'variant', default: null, types: ['primary', 'secondary'] },
+        { title: 'wideLine', default: null, types: ['number'] },
+        { title: 'textColor', default: null, types: ['string'] },
+        { title: 'onChange', default: null, types: ['function'] },
+        { title: 'value', default: null, types: ['number'] },
+        { title: 'role', default: null, types: ['string'] },
+        { title: 'disabledText', default: null, types: ['string'] },
+        { title: 'width', default: null, types: ['number'] },
+        { title: 'childClassName', default: null, types: ['string'] },
+        { title: 'className', default: null, types: ['string'] },
+        { title: 'fontSize', default: null, types: ['base', 'xs', 'sm', 'lg', 'xl'] }
+    ]}
+/>

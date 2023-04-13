@@ -21,34 +21,14 @@ The first alternative is recommended since they can reduce the application bundl
 
 ## <span name="floating-nav">Usage</span>
 
-<ContainerComponentDoc className="flex items-center">
-    <Pagination
-        totalPages={5}
-        currentPage={1}
-        sliceSize="10"
-        firstText="Show"
-        secondText="of the 65 items"
-        goToPreviousPage={() => alert('goToBackPage')}
-        goToNextPage={() => alert('goToNextPage')}
-        goToPage={() => alert('goPage')}
-        setSize={() => null}
-    />
+<ContainerComponentDoc className="flex items-center gap-x-5">
+    <PaginationCustom />
 </ContainerComponentDoc>
 
 <WindowEditor
     codeString={`import Pagination from 'dd360-ds/Pagination'
 
-     <Pagination
-         totalPages={5}
-         currentPage={1}
-         sliceSize='10'
-         firstText='Show'
-         secondText='of the 65 items'
-         goToPreviousPage={() => alert('goToBackPage')}
-         goToNextPage={() => alert('goToNextPage')}
-         goToPage={()=>alert('goPage')}
-         setSize={()=>null}
-    />
+    <Pagination {...paginationProps} firstText="Show" secondText="of the 50 items" currentPage={paginationProps.currentPage + 1} totalPages={10} />
 
 `} />
 

@@ -3,6 +3,8 @@ import * as Components from 'dd360-ds'
 import { Text } from 'dd360-ds'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 import { WindowEditor, CustomTableDocs, ContainerComponentDoc } from '@/components'
+import PaginationCustom from '@/components/docs/navigation/PaginationCustom'
+import TabsCustom from '@/components/docs/navigation/TabsCustom'
 
 type Props = { children: ReactNode }
 
@@ -42,6 +44,8 @@ export function getComponents() {
         CustomTableDocs,
         DynamicHeroIcon,
         ContainerComponentDoc,
+        PaginationCustom,
+        TabsCustom,
         ...Components
         // Add other custom components here as needed ---| Here |---
     }
