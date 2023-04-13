@@ -15,7 +15,7 @@ With the Anchor component you can create links with customizable properties and 
 
 ## <span name="floating-nav">Imports</span>
 
-The first alternative is recommended since they can reduce the application package.
+The first alternative is recommended since they can reduce the application bundle.
 
 <WindowEditor codeString="import Anchor from 'dd360-ds/Anchor'" />
 <WindowEditor codeString="import { Anchor } from 'dd360-ds'" />
@@ -76,8 +76,8 @@ import { Link } from 'react-router-dom'
 
 <CustomTableDocs
     dataTable={[
+        { title: 'to', default: null, types: ['string'] },
         { title: 'as', default: null, types: ['ComponentType<any>'] },
-        { title: 'LinkComponent', default: null, types: ['React.ComponentType<LinkProp>'] },
         { title: 'className', default: null, types: ['string'] },
         { title: 'children', default: null, types: ['ReactNode'] },
         { title: '...', default: null, types: ['HTMLAnchorElement'] }
