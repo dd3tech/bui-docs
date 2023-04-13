@@ -7,16 +7,18 @@ components: Tabs , TabGroup
 <br />
 <br />
 
-# <span name="floating-nav">TabGroup | Tabs </span>
+# <span name="floating-nav">Tabs </span>
 
 Tabs make it easy to explore and switch between different views.
 
 Tabs organize and allow navigation between groups of content that are related and at the same level of hierarchy.
 
+The TabGroup component must be used to wrap the tabs.
+
 <br />
 ## <span name="floating-nav">Imports</span>
 
-<WindowEditor codeString="import { Tabs,TabGroup } from 'dd360-ds'" />
+<WindowEditor codeString="import { TabGroup, Tabs } from 'dd360-ds'" />
 
 ## <span name="floating-nav">Usage</span>
 
@@ -24,14 +26,14 @@ Tabs organize and allow navigation between groups of content that are related an
   <TabGroup variant="primary" >
     <Tab label="Element First" />
     <Tab label="Element Second" />
-    <Tab label="Element third" />
+    <Tab label="Element Third" />
     <Tab label="Element Disabled" disabled />
 </TabGroup>
 
 </ContainerComponentDoc>
 
 <WindowEditor
-    codeString={`import { Tabs,TabGroup } from 'dd360-ds'
+    codeString={`import { TabGroup, Tabs } from 'dd360-ds'
 
 <TabGroup variant="primary">
     <Tab label="Element First" />
@@ -46,7 +48,7 @@ Tabs organize and allow navigation between groups of content that are related an
 
 ### <span name="floating-nav">Variant</span>
 
-Con la prop variant puedes personalizar el estilo de las tabs
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>variant</span> you can customize the style of the tabs
 
 <ContainerComponentDoc className="flex items-center">
 <TabsCustom option='isVariant'/>
@@ -54,7 +56,7 @@ Con la prop variant puedes personalizar el estilo de las tabs
 </ContainerComponentDoc>
 
 <WindowEditor
-    codeString={`import { Tabs,TabGroup } from 'dd360-ds'
+    codeString={`import { TabGroup, Tabs } from 'dd360-ds'
 
 <TabGroup variant="primary">
     <Tab label="Element First" />
@@ -69,7 +71,7 @@ Con la prop variant puedes personalizar el estilo de las tabs
 
 ### <span name="floating-nav">Orientation</span>
 
-Con la prop orientation puedes personalizar la orientacion de las tabs
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>orientation</span> you can customize the orientation of the tabs
 
 <ContainerComponentDoc className="flex items-center">
  <TabsCustom option='isOrientation' />
@@ -77,9 +79,9 @@ Con la prop orientation puedes personalizar la orientacion de las tabs
 </ContainerComponentDoc>
 
 <WindowEditor
-    codeString={`import { Tabs,TabGroup } from 'dd360-ds'
+    codeString={`import { TabGroup, Tabs } from 'dd360-ds'
 
-<TabGroup variant="secondary" orientation="vertical">
+<TabGroup orientation="horizontal">
     <Tab label="Element First" />
     <Tab label="Element Second" />
     <Tab label="Element Third" />
@@ -90,16 +92,16 @@ Con la prop orientation puedes personalizar la orientacion de las tabs
 
 ### <span name="floating-nav">FontSize</span>
 
-Con la prop fontSize puedes personalizar el tamano de la fuente de las tabs
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>fontSize</span> you can customize the font size of the tabs
 
 <ContainerComponentDoc className="flex items-center">
     <TabsCustom option="isFontSize" />
 </ContainerComponentDoc>
 
 <WindowEditor
-    codeString={`import { Tabs,TabGroup } from 'dd360-ds'
+    codeString={`import { TabGroup, Tabs } from 'dd360-ds'
 
-<TabGroup variant="secondary" orientation="vertical">
+<TabGroup fontSize="xs">
     <Tab label="Element First" />
     <Tab label="Element Second" />
     <Tab label="Element Third" />
@@ -112,22 +114,22 @@ Con la prop fontSize puedes personalizar el tamano de la fuente de las tabs
 
 #### <span>TextColor</span>
 
-Con la prop textColor puedes personalizar el color de la primer tab
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>textColor</span> you can customize the color of the first tab
 
 <ContainerComponentDoc className="flex items-center">
   <TabGroup textColor="rgba(49, 87, 240, 1)"  variant="primary" >
     <Tab label="Element First" />
     <Tab label="Element Second" />
-    <Tab label="Element third" />
+    <Tab label="Element Third" />
     <Tab label="Element Disabled" disabled />
 </TabGroup>
 
 </ContainerComponentDoc>
 
 <WindowEditor
-    codeString={`import { Tabs,TabGroup } from 'dd360-ds'
+    codeString={`import { TabGroup, Tabs } from 'dd360-ds'
 
-<TabGroup textColor="rgba(49, 87, 240, 1)" variant="primary">
+<TabGroup textColor="rgba(49, 87, 240, 1)">
     <Tab label="Element First" />
     <Tab label="Element Second" />
     <Tab label="Element Third" />
@@ -140,22 +142,106 @@ Con la prop textColor puedes personalizar el color de la primer tab
 
 #### <span>Witdh</span>
 
-Con la prop width puedes personalizar el tamaño del de la primer tabgroup
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>width</span> you can customize the size of the TabGroup
 
 <ContainerComponentDoc className="flex items-center">
-  <TabGroup width={400}  variant="primary" >
+  <TabGroup width={400}  >
     <Tab label="Element First" />
     <Tab label="Element Second" />
-    <Tab label="Element third" />
+    <Tab label="Element Third" />
     <Tab label="Element Disabled" disabled />
 </TabGroup>
 
 </ContainerComponentDoc>
 
 <WindowEditor
-    codeString={`import { Tabs,TabGroup } from 'dd360-ds'
+    codeString={`import { TabGroup, Tabs } from 'dd360-ds'
 
-<TabGroup width={400} variant="primary">
+<TabGroup width={400}>
+    <Tab label="Element First" />
+    <Tab label="Element Second" />
+    <Tab label="Element Third" />
+    <Tab label="Element Disabled" disabled />
+</TabGroup>
+
+`} />
+
+<br />
+
+#### <span>IndicatorColor</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>indicatorColor</span> you can customize the color of the line below the active tab
+
+<ContainerComponentDoc className="flex items-center">
+  <TabGroup indicatorColor='rgba(97, 39, 245, 0.8)' >
+    <Tab label="Element First" />
+    <Tab label="Element Second" />
+    <Tab label="Element Third" />
+    <Tab label="Element Disabled" disabled />
+</TabGroup>
+
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { TabGroup,Tabs } from 'dd360-ds'
+
+<TabGroup indicatorColor="rgba(97, 39, 245, 0.8)">
+    <Tab label="Element First" />
+    <Tab label="Element Second" />
+    <Tab label="Element Third" />
+    <Tab label="Element Disabled" disabled />
+</TabGroup>
+
+`} />
+
+<br />
+
+#### <span>WideLine</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>wideLine</span> you can customize the width of the line under the active tab
+
+<ContainerComponentDoc className="flex items-center">
+  <TabGroup wideLine={8} >
+    <Tab label="Element First" />
+    <Tab label="Element Second" />
+    <Tab label="Element Third" />
+    <Tab label="Element Disabled" disabled />
+</TabGroup>
+
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { TabGroup,Tabs } from 'dd360-ds'
+
+<TabGroup wideLine={8}>
+    <Tab label="Element First" />
+    <Tab label="Element Second" />
+    <Tab label="Element Third" />
+    <Tab label="Element Disabled" disabled />
+</TabGroup>
+
+`} />
+
+<br />
+
+#### <span>DisabledText</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>disabledText</span> you can customize a message for disabled tabs
+
+<ContainerComponentDoc className="flex items-center">
+  <TabGroup disabledText='Comming soon' >
+    <Tab label="Element First" />
+    <Tab label="Element Second" />
+    <Tab label="Element Third" />
+    <Tab label="Element Disabled" disabled />
+</TabGroup>
+
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { TabGroup,Tabs } from 'dd360-ds'
+
+<TabGroup disabledText="Comming soon">
     <Tab label="Element First" />
     <Tab label="Element Second" />
     <Tab label="Element Third" />
@@ -172,18 +258,18 @@ Con la prop width puedes personalizar el tamaño del de la primer tabgroup
 
 <CustomTableDocs
     dataTable={[
-        { title: 'orientation', default: null, types: ['vertical', 'horizontal'] },
-        { title: 'indicatorColor', default: null, types: [''] },
-        { title: 'variant', default: null, types: ['primary', 'secondary'] },
-        { title: 'wideLine', default: null, types: ['number'] },
-        { title: 'textColor', default: null, types: ['string'] },
-        { title: 'onChange', default: null, types: ['function'] },
-        { title: 'value', default: null, types: ['number'] },
-        { title: 'role', default: null, types: ['string'] },
+        { title: 'orientation', default: 'horizontal', types: ['vertical', 'horizontal'] },
+        { title: 'wideLine', default: 3.2, types: ['number'] },
+        { title: 'variant', default: 'primary', types: ['primary', 'secondary'] },
+        { title: 'value', default: 0, types: ['number'] },
         { title: 'disabledText', default: null, types: ['string'] },
+        { title: 'fontSize', default: null, types: ['base', 'xs', 'sm', 'lg', 'xl'] },
         { title: 'width', default: null, types: ['number'] },
-        { title: 'childClassName', default: null, types: ['string'] },
+        { title: 'textColor', default: null, types: ['string'] },
+        { title: 'indicatorColor', default: null, types: ['string'] },
         { title: 'className', default: null, types: ['string'] },
-        { title: 'fontSize', default: null, types: ['base', 'xs', 'sm', 'lg', 'xl'] }
+        { title: 'childClassName', default: null, types: ['string'] },
+        { title: 'onChange', default: null, types: ['function'] },
+        { title: 'role', default: null, types: ['string'] }
     ]}
 />

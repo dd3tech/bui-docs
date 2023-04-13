@@ -21,17 +21,38 @@ The first alternative is recommended since they can reduce the application bundl
 
 ## <span name="floating-nav">Usage</span>
 
+You can use it by importing the <span className='border border-gray-300 bg-gray-200 p-1'>usePagination</span> hook and use it like this
+
 <ContainerComponentDoc className="flex items-center gap-x-5">
     <PaginationCustom />
 </ContainerComponentDoc>
 
 <WindowEditor
-    codeString={`import Pagination from 'dd360-ds/Pagination'
+    codeString={`import { Pagination, usePagination } from 'dd360-ds'
 
-    <Pagination {...paginationProps} firstText="Show" secondText="of the 50 items" currentPage={paginationProps.currentPage + 1} totalPages={10} />
+const paginationProps = usePagination()
+
+<Pagination {...paginationProps} firstText="Show" secondText="of the 50 items" currentPage={paginationProps.currentPage + 1} totalPages={10} />
 
 `} />
 
+Or you can customize it your way with your functions and variables
+
+<WindowEditor
+    codeString={`import Pagination from 'dd360-ds/Pagination'
+
+<Pagination
+    totalPages={5}
+    currentPage={1}
+    sliceSize="10"
+    firstText="Show"
+    secondText="of the 65 items"
+    goToPreviousPage={() => alert('goToBackPage')}
+    goToNextPage={() => alert('goToNextPage')}
+    goToPage={() => alert('goPage')}
+    setSize={() => null}
+/>
+`} />
 <br />
 <br />
 
