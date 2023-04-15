@@ -1,1 +1,52 @@
-file-viewer page
+---
+product: dd360-ds
+title: React TabPanel component
+components: TabPanel
+---
+
+<br />
+<br />
+
+# <span name="floating-nav">TabPanel</span>
+
+<br />
+## <span name="floating-nav">Imports</span>
+
+The first alternative is recommended since they can reduce the application bundle.
+
+<WindowEditor codeString="import { TabPanel } from 'dd360-ds'" />
+
+## <span name="floating-nav">Usage</span>
+
+<ContainerComponentDoc className="flex items-center">
+    <TabPanel value={0} index={0} children={undefined}></TabPanel>
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { TabPanel } from 'dd360-ds'
+     <TabPanel value={0} index={0} children={undefined}></TabPanel>
+`}
+/>
+
+<br />
+<br />
+
+## <span name="floating-nav">API Reference</span>
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'orientation', default: null, types: ['vertical', 'horizontal'] },
+        { title: 'indicatorColor', default: null, types: [''] },
+        { title: 'variant', default: null, types: ['primary', 'secondary'] },
+        { title: 'wideLine', default: null, types: ['number'] },
+        { title: 'textColor', default: null, types: ['string'] },
+        { title: 'onChange', default: null, types: ['function'] },
+        { title: 'value', default: null, types: ['number'] },
+        { title: 'role', default: null, types: ['string'] },
+        { title: 'disabledText', default: null, types: ['string'] },
+        { title: 'width', default: null, types: ['number'] },
+        { title: 'childClassName', default: null, types: ['string'] },
+        { title: 'className', default: null, types: ['string'] },
+        { title: 'fontSize', default: null, types: ['base', 'xs', 'sm', 'lg', 'xl'] }
+    ]}
+/>

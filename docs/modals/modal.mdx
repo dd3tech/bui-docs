@@ -1,1 +1,114 @@
-modal page
+Modal
+
+---
+
+product: dd360-ds title: React Modal component components: Modal
+
+---
+
+<br />
+<br />
+
+# <span name="floating-nav">Modal</span>
+
+With the Modal component you can displays a dialog with a custom content that requires attention or provides additional information.
+
+<br />
+
+## <span name="floating-nav">Imports</span>
+
+<WindowEditor codeString="import { Modal } from 'dd360-ds'" />
+
+## <span name="floating-nav">Usage</span>
+
+<ContainerComponentDoc>
+    <ModalCustom hasAButton messageButtons={['Open Modal']} />
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { Modal } from 'dd360-ds''
+
+<Modal active={true} setCloseModal={() => alert('function to close the modal')}>
+    This is an example modal
+</Modal>
+
+    `}/>
+
+<br />
+
+#### <span name="floating-nav">Animation</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>animation</span> you can add an animation when opening the modal
+
+<ContainerComponentDoc>
+    <ModalCustom propsCustom={{ animation: true }} messageButtons={['Open Modal with animation', 'Open Modal whithout animation']} />
+</ContainerComponentDoc>
+
+<WindowEditor
+  codeString={`import { Modal } from 'dd360-ds''
+
+<Modal animation active={true} setCloseModal={() => alert('function to close the modal')}>
+    This is an example modal
+</Modal>
+
+    `}/>
+
+<br />
+#### <span name="floating-nav">Overlay</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>overlay</span> you can add a gray background to the screen
+
+<ContainerComponentDoc>
+    <ModalCustom propsCustom={{ overlay: true }} messageButtons={['Open Modal with overlay', 'Open Modal without overlay']} />
+</ContainerComponentDoc>
+
+<WindowEditor
+     codeString={`import { Modal } from 'dd360-ds''
+
+<Modal overlay active={true} setCloseModal={() => alert('function to close the modal')}>
+    This is an example modal
+</Modal>
+
+    `}/>
+
+<br />
+
+#### <span name="floating-nav">FullScreen</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>fullScreen</span> you can make the modal take up the whole screen
+
+<ContainerComponentDoc>
+    <ModalCustom propsCustom={{ fullScreen: true }} messageButtons={['Open Modal with fullScreen', 'Open Modal without fullScreen']} />
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { Modal } from 'dd360-ds''
+
+<Modal fullScreen active={true} setCloseModal={() => alert('function to close the modal')}>
+    This is an example modal
+</Modal>
+
+    `}/>
+
+<br />
+<br />
+
+## <span name="floating-nav">API Reference</span>
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'active', default: 'false', types: ['boolean'] },
+        { title: 'blur', default: 'false', types: ['boolean'] },
+        { title: 'overlay', default: 'true', types: ['boolean'] },
+        { title: 'fullScreen', default: 'false', types: ['boolean'] },
+        { title: 'animation', default: 'true', types: ['boolean'] },
+        { title: 'preventClose', default: 'false', types: ['boolean'] },
+        { title: 'children', default: null, types: ['ReactNode'] },
+        { title: 'height', default: null, types: ['string'] },
+        { title: 'setCloseModal', default: null, types: ['function'] },
+        { title: 'width', default: null, types: ['string'] },
+        { title: 'bgHeight', default: null, types: ['string'] },
+        { title: 'className', default: null, types: ['string'] },
+        { title: 'maxHeight', default: null, types: ['string'] }
+    ]}
+/>
