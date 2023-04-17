@@ -1,0 +1,120 @@
+---
+product: dd360-ds
+title: React AsideModal component
+components: AsideModal
+---
+
+<br />
+<br />
+
+# <span name="floating-nav">AsideModal</span>
+
+With the AsideModal component you can displays a dialog with a custom content that requires attention or provides additional information.
+
+<br />
+
+## <span name="floating-nav">Imports</span>
+
+The first alternative is recommended since they can reduce the application bundle.
+
+<WindowEditor codeString="import AsideModal from 'dd360-ds/AsideModal'" />
+
+<WindowEditor codeString="import { AsideModal } from 'dd360-ds'" />
+
+## <span name="floating-nav">Usage</span>
+
+<ContainerComponentDoc>
+    <AsideModalCustom />
+</ContainerComponentDoc>
+
+<WindowEditor
+  codeString={`import AsideModal from 'dd360-ds/AsideModal'
+
+<AsideModal title="Component Aside Modal" open={true} onClose={() => function('function to close the aside modal')} />
+
+    `}/>
+
+<br />
+
+## <span name="floating-nav">TitleVariant</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>titleVariant</span> you can customize the size of the title
+
+<ContainerComponentDoc>
+    <AsideModalCustom haveVariants={true} />
+</ContainerComponentDoc>
+
+<WindowEditor
+  codeString={`import AsideModal from 'dd360-ds/AsideModal'
+
+<AsideModal variant='h4' title="Component Aside Modal" open={true} onClose={() => function('function to close the aside modal')} />
+
+    `}/>
+
+<br />
+
+## <span name="floating-nav">Position</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>position</span> you can choose on which side of the screen to open the modal
+
+<br />
+##### Position Right
+
+<ContainerComponentDoc>
+    <AsideModalCustom positionAsideModal="right" />
+</ContainerComponentDoc>
+
+<WindowEditor
+  codeString={`import AsideModal from 'dd360-ds/AsideModal'
+
+<AsideModal position='right' title="Component Aside Modal" open={true} onClose={() => function('function to close the aside modal')} />
+
+    `}/>
+
+##### Position Left
+
+<ContainerComponentDoc>
+    <AsideModalCustom positionAsideModal="left" />
+</ContainerComponentDoc>
+
+<WindowEditor
+  codeString={`import AsideModal from 'dd360-ds/AsideModal'
+
+<AsideModal position='left' title="Component Aside Modal" open={true} onClose={() => function('function to close the aside modal')} />
+
+    `}/>
+
+<br />
+
+## <span name="floating-nav">DisableEscapeKeyDown</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>disableEscapeKeyDown</span> you can disable the closing of the modal with the esc key
+
+<ContainerComponentDoc>
+    <AsideModalCustom propsCustom={{ disableEscapeKeyDown: true }} />
+</ContainerComponentDoc>
+
+<WindowEditor
+  codeString={`import AsideModal from 'dd360-ds/AsideModal'
+
+<AsideModal disableEscapeKeyDown title="Component Aside Modal" open={true} onClose={() => function('function to close the aside modal')} />
+
+    `}/>
+
+<br />
+<br />
+
+## <span name="floating-nav">API Reference</span>
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'title', default: 'h4å', types: ['string'] },
+        { title: 'children', default: 'null', types: ['ReactNode'] },
+        { title: 'titleVariant', default: 'null', types: ['a', 'label', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'small', 'span', 'currency', 'anchorSmall'] },
+        { title: 'position', default: 'right', types: ['right', 'left'] },
+        { title: 'open', default: 'false', types: ['boolean'] },
+        { title: 'onClose', default: 'null', types: ['function'] },
+        { title: 'disableEscapeKeyDown', default: 'false', types: ['boolean'] },
+        { title: 'children', default: null, types: ['ReactNode'] }
+    ]}
+/>
