@@ -31,12 +31,93 @@ components: Flex
 <Flex>I am a children</Flex>" />
 
 <br />
+#### <span name="floating-nav">justifyContent</span>
+Determine the alignment of flex and grid items along the primary axis.
+
+<ContainerComponentDoc>
+    <Flex justifyContent="between" className="text-white">
+        <div className="bg-red-500 rounded-md p-2">1st element</div>
+        <div className="bg-blue-500 rounded-md p-2">2nd element</div>
+    </Flex>
+</ContainerComponentDoc>
+
+<WindowEditor codeString='import { Flex } from "dd360-ds"
+
+<Flex justifyContent="between">
+    &nbsp;&nbsp;&nbsp;&nbsp;<div className="bg-red-500 rounded-md p-2">1st element</div>
+    &nbsp;&nbsp;&nbsp;&nbsp;<div className="bg-blue-500 rounded-md p-2">2nd element</div>
+</Flex>
+' />
+
+<br />
+#### <span name="floating-nav">alignItems</span>
+Specify how flex and grid items are aligned along the cross axis.
+
+<ContainerComponentDoc>
+    <Flex justifyContent="center" alignItems="center" gap="2" className="text-white">
+        <div className="bg-purple-500 rounded-md p-2">1st element</div>
+        <div className="bg-green-500 rounded-md p-2">2nd element</div>
+    </Flex>
+</ContainerComponentDoc>
+
+<WindowEditor codeString='import { Flex } from "dd360-ds"
+
+<Flex justifyContent="center" alignItems="center" gap="2">
+    &nbsp;&nbsp;&nbsp;&nbsp;<div className="bg-purple-500 rounded-md p-2">1st element</div>
+    &nbsp;&nbsp;&nbsp;&nbsp;<div className="bg-green-500 rounded-md p-2">2nd element</div>
+</Flex>
+' />
+
+<br />
 <br />
 ## <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
     dataTable={[
         { title: 'children', default: null, types: ['ReactNode'] },
-        { title: 'className', default: null, types: ['string'] }
+        { title: 'className', default: null, types: ['string'] },
+        { title: 'alignItems', default: 'center', types: ['start', 'end', 'center', 'baseline', 'stretch'] },
+        { title: 'justifyContent', default: 'between', types: ['start', 'end', 'center', 'between', 'around', 'evenly'] },
+        {
+            title: 'gap',
+            default: null,
+            types: [
+                '0',
+                'px',
+                '0.5',
+                '1',
+                '1.5',
+                '2',
+                '2.5',
+                '3',
+                '3.5',
+                '4',
+                '5',
+                '6',
+                '7',
+                '8',
+                '9',
+                '10',
+                '11',
+                '12',
+                '14',
+                '16',
+                '20',
+                '24',
+                '28',
+                '32',
+                '36',
+                '40',
+                '44',
+                '48',
+                '52',
+                '56',
+                '60',
+                '64',
+                '72',
+                '80',
+                '96'
+            ]
+        }
     ]}
 />
