@@ -232,6 +232,10 @@ const components: ComponentObjectProps = {
             {
                 label: 'Modal',
                 pathname: 'modal'
+            },
+            {
+                label: 'AsideModal',
+                pathname: 'aside-modal'
             }
         ]
     },
