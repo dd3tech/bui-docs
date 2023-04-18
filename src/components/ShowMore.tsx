@@ -30,7 +30,7 @@ function ShowMore({ title = 'Guide', children, basePath, defaultOpen = false }: 
                         {title}
                     </Text>
                 </div>
-                <button>
+                <button onClick={() => setIsOpen(!isOpen)}>
                     <DynamicHeroIcon className="w-4 h-4" icon={isOpen ? 'ChevronDownIcon' : 'ChevronRightIcon'} />
                 </button>
             </div>

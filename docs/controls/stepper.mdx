@@ -9,8 +9,10 @@ components: Stepper
 
 # <span name="floating-nav">Stepper</span>
 
-With the Stepper component, you can display a circular progress bar indicating the status of a sequence of steps. You can also customize its appearance and it
-provides a clear interface for users to track the progress of a task.
+The Stepper component is an ideal tool for showing the progress of a sequence of steps in a task or process. With this component, you can customize the
+appearance of a circular progress bar, making it easy to see task progress. In addition, the Stepper offers a clear and accessible interface so that users can
+easily follow the steps of a task and understand where they are in the process. With this tool, you can significantly improve the user experience on your web or
+mobile applications and provide clear and easy progress tracking for any task.
 
 <br />
 <br />
@@ -24,9 +26,13 @@ The first alternative is recommended since they can reduce the application bundl
 <br />
 ## <span name="floating-nav">Usage</span>
 
+Use the Stepper component as shown below:
+
 <ContainerComponentDoc className="gap-y-2">
     <Stepper phase={1} totalPhases={4} width="5rem" />
 </ContainerComponentDoc>
+
+The code snippet below shows how to use the Stepper component:
 
 <WindowEditor
     codeString={`import  Stepper from 'dd360-ds/Stepper'
@@ -136,14 +142,16 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>text</spa
         { title: 'strokeWidth', default: '1', types: ['number'] },
         { title: 'textColor', default: '#1D4ED8', types: ['string'] },
         { title: 'strokeColor', default: '#1D4ED8', types: ['string'] },
-        { title: 'phase', default: 'null', types: ['number'] },
-        { title: 'totalPhases', default: 'null', types: ['number'] },
-        { title: 'width', default: 'null', types: ['string'] },
-        { title: 'height', default: 'null', types: ['string'] },
-        { title: 'fontSize', default: 'null', types: ['string'] },
-        { title: 'text', default: 'null', types: ['string'] },
-        { title: 'classNameContainer', default: 'null', types: ['string'] },
-        { title: 'classNameCircularProgress', default: 'null', types: ['string'] }
+        { title: 'phase', default: null, types: ['number'] },
+        { title: 'totalPhases', default: null, types: ['number'] },
+        { title: 'width', default: null, types: ['string'] },
+        { title: 'height', default: null, types: ['string'] },
+        { title: 'fontSize', default: null, types: ['string'] },
+        { title: 'text', default: null, types: ['string'] },
+        { title: 'classNameContainer', default: null, types: ['string'] },
+        { title: 'classNameCircularProgress', default: null, types: ['string'] }
     ]}
 
 />
+
+Note: This documentation assumes that the audience has basic knowledge of React and how to use components in React applications.

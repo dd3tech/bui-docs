@@ -9,7 +9,10 @@ components: Progressbar
 
 # <span name="floating-nav">Progressbar</span>
 
-With the Progressbar component, you can display the progress of a task or process in real time.
+The ProgressBar component allows you to display the progress of a task or process in real time. The progress bar is a visual tool that indicates the percentage
+of completion of a task, giving the user instant feedback on the progress of the process. The ProgressBar component is highly customizable, allowing you to
+tailor it to the specific needs of your application. In addition, it is easy to use and its implementation significantly improves the user experience in your
+web or mobile applications. With the ProgressBar component, you can make tracking the progress of a task simple and clear to users.
 
 <br />
 <br />
@@ -23,15 +26,19 @@ The first alternative is recommended since they can reduce the application bundl
 <br />
 ## <span name="floating-nav">Usage</span>
 
+Use the Progressbar component as shown below:
+
 <ContainerComponentDoc className="gap-y-2">
     <ProgressBar value={20} height="10px" />
 </ContainerComponentDoc>
 
+The code snippet below shows how to use the Progressbar component:
+
 <WindowEditor
     codeString={`import  Progressbar from 'dd360-ds/Progressbar'
   
-<ProgressBar value={20} height="10px" />`}
-
+<ProgressBar value={20} height="10px" />
+`}
 />
 
 <br />
@@ -47,7 +54,8 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>backgroun
 <WindowEditor
     codeString={`import  Progressbar from 'dd360-ds/Progressbar'
     
-<ProgressBar backgroundColor="#93e78e" value={40} height="10px" />`}
+<ProgressBar backgroundColor="#93e78e" value={40} height="10px" />
+`}
 />
 <br />
 #### <span name="floating-nav">Label</span>
@@ -79,7 +87,6 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>animated<
   codeString={`import  Progressbar from 'dd360-ds/Progressbar'
 
 <ProgressBar animated value={80} height="10px" />
-
 `} />
 
 <br />
@@ -95,7 +102,6 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>animated<
  codeString={`import  Progressbar from 'dd360-ds/Progressbar'
 
 <ProgressBar backgroundColor="#ff4e4e" bgColorContainer="#fff" value={50} height="10px" />
-
 `} />
 
 <br />
@@ -115,3 +121,5 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>animated<
     ]}
 
 />
+
+Note: This documentation assumes that the audience has basic knowledge of React and how to use components in React applications.

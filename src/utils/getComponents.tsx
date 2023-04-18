@@ -46,6 +46,10 @@ export function getComponents() {
         ContainerComponentDoc,
         PaginationCustom,
         TabsCustom,
+        SwitchCustom,
+        ModalCustom,
+        FileViewerCustom,
+        AsideModalCustom,
         ...Components
         // Add other custom components here as needed ---| Here |---
     }
