@@ -44,10 +44,12 @@ const ModalCustom = ({ propsCustom, messageButtons, hasAButton }: ModalCustomPro
                 )}
             </div>
             <Modal
-                className={composeClasses(isFullScreen ? 'mb-0' : 'mb-52', 'flex w-64 p-4 h-64 justify-end items-center')}
+                className={composeClasses(isFullScreen ? 'mb-0' : 'mb-52', 'flex  p-4 justify-end items-center')}
                 {...propCustomValue}
                 active={activeModal}
                 setCloseModal={() => setActiveModal(false)}
+                width="500px"
+                height="500px"
             >
                 This is an example modal
             </Modal>
