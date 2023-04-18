@@ -1,1 +1,87 @@
-switch page
+---
+product: dd360-ds
+title: React Switch component
+components: Switch
+---
+
+<br />
+<br />
+
+# <span name="floating-nav">Switch</span>
+
+With the Switch component, you can allow users to enable or disable options or settings.
+
+<br />
+<br />
+## <span name="floating-nav">Imports</span>
+
+The first alternative is recommended since they can reduce the application bundle
+
+<WindowEditor codeString="import Switch from 'dd360-ds/Switch'" />
+<WindowEditor codeString="import { Switch } from 'dd360-ds'" />
+
+<br />
+## <span name="floating-nav">Usage</span>
+
+<ContainerComponentDoc className="gap-y-2">
+    <SwitchCustom />
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import  Switch from 'dd360-ds/Switch'
+
+<Switch />
+`}
+
+/>
+
+<br />
+
+#### <span name="floating-nav">Text</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>text</span> you can add text next to the switch
+
+<ContainerComponentDoc className="gap-y-2">
+    <SwitchCustom text="Active option" />
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import  Switch from 'dd360-ds/Switch'
+
+<Switch text="Active option" />
+`}
+
+/>
+
+<br />
+
+#### <span name="floating-nav">CustomIcon</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>customIcon</span> you can add icon on switch disabled
+
+<ContainerComponentDoc className="gap-y-2">
+    <SwitchCustom customIcon={<DynamicHeroIcon icon="XIcon" className="text-blue-700 w-5" />} />
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import  Switch from 'dd360-ds/Switch'
+
+<Switch customIcon={<DynamicHeroIcon icon="XIcon" className="text-blue-700 w-5" />} />
+`}
+
+/>
+
+<br />
+
+<br />
+### <span name="floating-nav">API Reference</span>
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'toogle', default: 'false', types: ['boolean'] },
+        { title: 'customIcon', default: 'false', types: ['boolean'] },
+        { title: 'setToogle', default: null, types: ['function'] },
+        { title: 'className', default: null, types: ['string'] }
+    ]}
+
+/>

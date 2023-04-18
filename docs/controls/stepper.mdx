@@ -1,1 +1,149 @@
-stepper page
+---
+product: dd360-ds
+title: React Stepper component
+components: Stepper
+---
+
+<br />
+<br />
+
+# <span name="floating-nav">Stepper</span>
+
+With the Stepper component, you can display a circular progress bar indicating the status of a sequence of steps. You can also customize its appearance and it
+provides a clear interface for users to track the progress of a task.
+
+<br />
+<br />
+## <span name="floating-nav">Imports</span>
+
+The first alternative is recommended since they can reduce the application bundle
+
+<WindowEditor codeString="import Stepper from 'dd360-ds/Stepper'" />
+<WindowEditor codeString="import { Stepper } from 'dd360-ds'" />
+
+<br />
+## <span name="floating-nav">Usage</span>
+
+<ContainerComponentDoc className="gap-y-2">
+    <Stepper phase={1} totalPhases={4} width="5rem" />
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import  Stepper from 'dd360-ds/Stepper'
+
+<Stepper phase={1} totalPhases={4} width="5rem" />
+`}
+
+/>
+
+<br />
+
+#### <span name="floating-nav">FontSize</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>fontSize</span> you can customize the size of the text
+
+<ContainerComponentDoc className="gap-y-2">
+    <Stepper phase={1} totalPhases={4} width="5rem" fontSize="2rem" />
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import  Switch from 'dd360-ds/Switch'
+
+<Stepper phase={1} totalPhases={4} width="5rem" fontSize="2rem" />
+`}
+
+/>
+
+<br />
+
+#### <span name="floating-nav">TextColor</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>textColor</span> you can customize the color of the text
+
+<ContainerComponentDoc className="gap-y-2">
+    <Stepper phase={1} totalPhases={4} width="5rem" textColor="#d62c2c" />
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import  Switch from 'dd360-ds/Switch'
+
+<Stepper phase={1} totalPhases={4} width="5rem" textColor="#d62c2c" />
+`}
+
+/>
+
+<br />
+
+#### <span name="floating-nav">StrokeWidth</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>strokeWidth</span> you can customize the thickness of the stepper
+
+<ContainerComponentDoc className="gap-y-2">
+    <Stepper phase={1} totalPhases={4} width="5rem" strokeWidth={15} />
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import  Switch from 'dd360-ds/Switch'
+
+<Stepper phase={1} totalPhases={4} width="5rem" strokeWidth={15} />
+`}
+
+/>
+
+<br />
+
+#### <span name="floating-nav">StrokeColor</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>strokeColor</span> you can customize the color of the stepper
+
+<ContainerComponentDoc className="gap-y-2">
+    <Stepper phase={1} totalPhases={4} width="5rem" strokeColor="#2ac948" />
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import  Switch from 'dd360-ds/Switch'
+
+<Stepper phase={1} totalPhases={4} width="5rem" strokeColor="#2ac948" />
+`}
+
+/>
+
+<br />
+
+#### <span name="floating-nav">Text</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>text</span> you can add a custom text in case you don't need to show the steps
+
+<ContainerComponentDoc className="gap-y-2">
+    <Stepper phase={1} totalPhases={4} width="5rem" text="25%" />
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import  Switch from 'dd360-ds/Switch'
+
+<Stepper phase={1} totalPhases={4} width="5rem" text="25%" />
+`}
+
+/>
+
+<br />
+
+<br />
+### <span name="floating-nav">API Reference</span>
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'strokeWidth', default: '1', types: ['number'] },
+        { title: 'textColor', default: '#1D4ED8', types: ['string'] },
+        { title: 'strokeColor', default: '#1D4ED8', types: ['string'] },
+        { title: 'phase', default: 'null', types: ['number'] },
+        { title: 'totalPhases', default: 'null', types: ['number'] },
+        { title: 'width', default: 'null', types: ['string'] },
+        { title: 'height', default: 'null', types: ['string'] },
+        { title: 'fontSize', default: 'null', types: ['string'] },
+        { title: 'text', default: 'null', types: ['string'] },
+        { title: 'classNameContainer', default: 'null', types: ['string'] },
+        { title: 'classNameCircularProgress', default: 'null', types: ['string'] }
+    ]}
+
+/>
