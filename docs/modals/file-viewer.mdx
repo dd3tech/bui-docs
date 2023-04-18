@@ -1,6 +1,6 @@
 ---
 product: dd360-ds
-title: React FileViewer component
+title: React FileViewer Component
 components: FileViewer
 ---
 
@@ -9,20 +9,24 @@ components: FileViewer
 
 # <span name="floating-nav">FileViewer</span>
 
-With the FileViewer component you can preview a variety of file types. It also includes the ability to download the previewed file, making it ideal for web
+The FileViewer component allows you to preview a variety of file types and provides the ability to download the previewed file, making it ideal for web
 applications that require file downloads.
 
-<br />
-
 ## <span name="floating-nav">Imports</span>
+
+To use the FileViewer component, import it as follows:
 
 <WindowEditor codeString="import { FileViewer } from 'dd360-ds'" />
 
 ## <span name="floating-nav">Usage</span>
 
+Use the FileViewer component as shown below:
+
 <ContainerComponentDoc className="flex items-center">
     <FileViewerCustom />
 </ContainerComponentDoc>
+
+The code snippet below shows how to use the FileViewer component:
 
 <WindowEditor
     codeString={`import {FileViewer} from 'dd360-ds''
@@ -41,8 +45,9 @@ import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 
 <br />
 <br />
-
 ## <span name="floating-nav">API Reference</span>
+
+The FileViewer component supports the following props:
 
 <CustomTableDocs
     dataTable={[
@@ -52,3 +57,5 @@ import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
         { title: 'className', default: null, types: ['string'] }
     ]}
 />
+
+Note: This documentation assumes that the audience has basic knowledge of React and how to use components in React applications.

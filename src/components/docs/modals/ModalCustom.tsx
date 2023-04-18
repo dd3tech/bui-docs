@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Modal, Button } from 'dd360-ds'
+import { composeClasses } from 'dd360-ds/lib'
 
 interface ModalCustomProps {
     propsCustom: Record<string, boolean>
@@ -11,6 +12,8 @@ const ModalCustom = ({ propsCustom, messageButtons, hasAButton }: ModalCustomPro
     const [activeModal, setActiveModal] = useState<boolean>(false)
 
     const [propCustomValue, setPropCustomValue] = useState<any>()
+
+    const isFullScreen = propCustomValue?.fullScreen === true
 
     const selectedFirstOption = () => {
         if (propsCustom) {
@@ -40,9 +43,8 @@ const ModalCustom = ({ propsCustom, messageButtons, hasAButton }: ModalCustomPro
                     </Button>
                 )}
             </div>
-
             <Modal
-                className="flex w-64 p-4 h-64 justify-end items-center"
+                className={composeClasses(isFullScreen ? 'mb-0' : 'mb-52', 'flex w-64 p-4 h-64 justify-end items-center')}
                 {...propCustomValue}
                 active={activeModal}
                 setCloseModal={() => setActiveModal(false)}
