@@ -9,18 +9,20 @@ type ShowMoreProps = {
     children: ReactNode | ReactNode[]
     icon?: IconName
     basePath: string
+    defaultOpen?: boolean
 }
 
-function ShowMore({ title = 'Guide', children, basePath }: ShowMoreProps) {
-    const [isOpen, setIsOpen] = useState(true)
+function ShowMore({ title = 'Guide', children, basePath, defaultOpen = false }: ShowMoreProps) {
+    const [isOpen, setIsOpen] = useState(defaultOpen)
     const router = useRouter()
     const isActive = router.asPath.includes(basePath)
 
     return (
         <div>
             <div
-                className={composeClasses('flex w-full gap-2.5 justify-between items-center', isActive && 'bg-gray-50')}
+                className={composeClasses('flex w-full gap-2.5 justify-between items-center cursor-pointer', isActive && 'bg-gray-50')}
                 style={{ height: 30, paddingLeft: 6, paddingRight: 10 }}
+                onClick={() => setIsOpen(!isOpen)}
             >
                 <div className="flex justify-between items-center">
                     {isActive && <span className="bg-blue-500 h-4 mr-2" style={{ width: 3 }} />}
@@ -28,7 +30,7 @@ function ShowMore({ title = 'Guide', children, basePath }: ShowMoreProps) {
                         {title}
                     </Text>
                 </div>
-                <button onClick={() => setIsOpen(!isOpen)}>
+                <button>
                     <DynamicHeroIcon className="w-4 h-4" icon={isOpen ? 'ChevronDownIcon' : 'ChevronRightIcon'} />
                 </button>
             </div>

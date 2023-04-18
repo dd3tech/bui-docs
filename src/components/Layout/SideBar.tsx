@@ -1,12 +1,14 @@
 import Image from 'next/image'
-import { Select, Text } from 'dd360-ds'
-import DynamicHeroIcon, { IconName } from 'dd360-ds/DynamicHeroIcon'
 import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+
+import { Divider, Text } from 'dd360-ds'
+import { composeClasses } from 'dd360-ds/lib'
+import DynamicHeroIcon, { IconName } from 'dd360-ds/DynamicHeroIcon'
+
 import Badge from '../Badge'
 import ShowMore from '../ShowMore'
-import { composeClasses } from 'dd360-ds/lib'
 
 interface ComponentObjectProps {
     [key: string]: {
@@ -297,7 +299,8 @@ export default function SideBar() {
                     <DynamicHeroIcon icon="BookOpenIcon" className="w-4 h-4 text-blue-700" />
                     <Text className="text-gray-600">Getting Started</Text>
                 </Link>
-                {Object.entries(components).map(([key, value]) => (
+                <Divider light />
+                {Object.entries(components).map(([key, value], index) => (
                     <ShowMore basePath={key} icon={value?.icon} title={t(key)} key={key}>
                         {value.items.map((item) => (
                             <Link
@@ -306,10 +309,10 @@ export default function SideBar() {
                                 locale={router?.locale}
                                 className={composeClasses(
                                     item.pathname === router?.query?.slug && 'bg-blue-100',
-                                    'py-2 pl-4 ml-1 pr-1 flex justify-between items-center rounded-lg transition-all ease-in duration-300'
+                                    'cursor-pointer py-2 pl-4 ml-1 pr-1 flex justify-between items-center rounded-lg transition-all ease-in duration-300'
                                 )}
                             >
-                                <Text className="text-gray-600">{item.label}</Text>
+                                <Text className="text-gray-600 cursor-pointer">{item.label}</Text>
                                 {item.badge && <Badge color={item.badge.color} label={item.badge.label} />}
                             </Link>
                         ))}

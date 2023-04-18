@@ -6,6 +6,8 @@ import { serialize } from 'next-mdx-remote/serialize'
 import { getAllPaths, getDocBySlug } from '@/utils/readFile'
 import { getComponents } from '@/utils'
 
+import { Container } from 'dd360-ds'
+
 type Props = {
     slug: string
     meta: {
@@ -16,7 +18,11 @@ type Props = {
 
 export default function Slug({ source }: Props) {
     const { t } = useTranslation('common')
-    return <MDXRemote {...source} components={{ ...getComponents() }} scope={{ t }} />
+    return (
+        <Container>
+            <MDXRemote {...source} components={{ ...getComponents() }} scope={{ t }} />
+        </Container>
+    )
 }
 
 /** Next.js Server functions */
