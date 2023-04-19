@@ -196,6 +196,10 @@ const components: ComponentObjectProps = {
                 pathname: 'progressbar'
             },
             {
+                label: 'ProgressCircle',
+                pathname: 'progress-circle'
+            },
+            {
                 label: 'Spinner',
                 pathname: 'spinner'
             },
