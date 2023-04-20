@@ -3,8 +3,9 @@ import * as Components from 'dd360-ds'
 import { Text } from 'dd360-ds'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 import { WindowEditor, CustomTableDocs, ContainerComponentDoc } from '@/components'
-import { PaginationCustom, TabsCustom, SwitchCustom } from '@/components/docs/navigation'
+import { PaginationCustom, TabsCustom } from '@/components/docs/navigation'
 import { ModalCustom, FileViewerCustom, AsideModalCustom } from '@/components/docs/modals'
+import SwitchCustom from '@/components/docs/controls/SwitchCustom'
 
 type Props = { children: ReactNode }
 
