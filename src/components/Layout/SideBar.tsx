@@ -161,6 +161,58 @@ const components: ComponentObjectProps = {
             }
         ]
     },
+    modals: {
+        items: [
+            {
+                label: 'FileViewer',
+                pathname: 'file-viewer'
+            },
+            {
+                label: 'Modal',
+                pathname: 'modal'
+            },
+            {
+                label: 'AsideModal',
+                pathname: 'aside-modal'
+            }
+        ]
+    },
+    typography: {
+        items: [
+            {
+                label: 'Kbd',
+                pathname: 'kbd'
+            },
+            {
+                label: 'Text',
+                pathname: 'text'
+            }
+        ]
+    },
+    controls: {
+        items: [
+            {
+                label: 'Progressbar',
+                pathname: 'progressbar'
+            },
+            {
+                label: 'ProgressCircle',
+                pathname: 'progress-circle'
+            },
+            {
+                label: 'Spinner',
+                pathname: 'spinner'
+            },
+            {
+                label: 'Stepper',
+                pathname: 'stepper'
+            },
+            {
+                label: 'Switch',
+                pathname: 'switch'
+            }
+        ]
+    },
     images: {
         items: [
             {
@@ -222,54 +274,6 @@ const components: ComponentObjectProps = {
             {
                 label: 'Skeleton',
                 pathname: 'skeleton'
-            }
-        ]
-    },
-    modals: {
-        items: [
-            {
-                label: 'FileViewer',
-                pathname: 'file-viewer'
-            },
-            {
-                label: 'Modal',
-                pathname: 'modal'
-            },
-            {
-                label: 'AsideModal',
-                pathname: 'aside-modal'
-            }
-        ]
-    },
-    typography: {
-        items: [
-            {
-                label: 'Kbd',
-                pathname: 'kbd'
-            },
-            {
-                label: 'Text',
-                pathname: 'text'
-            }
-        ]
-    },
-    controls: {
-        items: [
-            {
-                label: 'Progressbar',
-                pathname: 'progressbar'
-            },
-            {
-                label: 'Spinner',
-                pathname: 'spinner'
-            },
-            {
-                label: 'Stepper',
-                pathname: 'stepper'
-            },
-            {
-                label: 'Switch',
-                pathname: 'switch'
             }
         ]
     }

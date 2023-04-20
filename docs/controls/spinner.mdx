@@ -1,1 +1,132 @@
-spinner page
+---
+product: dd360-ds
+title: React Spinner component
+components: Spinner
+---
+
+<br />
+<br />
+
+# <span name="floating-nav">Spinner</span>
+
+The Spinner component allows you to display the progress of a task or process in real time. It is visually appealing and provides instant feedback to the user
+on the progress of the task, which improves the user experience on web or mobile applications. Plus, it's easy to use and customize.
+
+<br />
+<br />
+## <span name="floating-nav">Imports</span>
+
+The first alternative is recommended since they can reduce the application bundle
+
+<WindowEditor codeString="import Spinner from 'dd360-ds/Spinner'" />
+<WindowEditor codeString="import { Spinner } from 'dd360-ds'" />
+
+<br />
+## <span name="floating-nav">Usage</span>
+
+Use the Spinner component as shown below:
+
+<ContainerComponentDoc className="gap-y-2">
+    <Spinner />
+</ContainerComponentDoc>
+
+The code snippet below shows how to use the Spinner component:
+
+<WindowEditor
+    codeString={`import  Progressbar from 'dd360-ds/Progressbar'
+
+<Spinner />
+`}
+
+/>
+
+<br />
+
+#### <span name="floating-nav">Color</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>color</span> you can customize the color of the spinner
+
+<ContainerComponentDoc className="gap-y-2">
+    <Spinner color="#44ce41" />
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import  Progressbar from 'dd360-ds/Progressbar'
+
+<Spinner color="#44ce41" />
+`}
+
+/>
+
+<br />
+
+#### <span name="floating-nav">Border</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>border</span> you can customize the width of the spinner border
+
+<ContainerComponentDoc className="gap-y-2">
+    <Spinner border={8} />
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import  Progressbar from 'dd360-ds/Progressbar'
+
+<Spinner border={8} />
+`}
+
+/>
+
+<br />
+
+#### <span name="floating-nav">PageLoader</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>pageLoader</span> you can add a proper spineer for page load
+
+<ContainerComponentDoc className="gap-y-2">
+    <Spinner pageLoader />
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import  Progressbar from 'dd360-ds/Progressbar'
+
+<Spinner pageLoader />
+`}
+
+/>
+
+<br />
+
+#### <span name="floating-nav">Width and Height</span>
+
+With the props <span className='border border-gray-300 bg-gray-200 p-1'>width</span> and <span className='border border-gray-300 bg-gray-200 p-1'>height</span>
+you can customize the size of the spinner
+
+<ContainerComponentDoc className="gap-y-2">
+    <Spinner border={8} width="6rem" border={8} height="6rem" />
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import  Progressbar from 'dd360-ds/Progressbar'
+
+<Spinner width="6rem" border={8} height="6rem" />
+`}
+
+/>
+
+<br />
+<br />
+### <span name="floating-nav">API Reference</span>
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'color', default: '#1D4ED8', types: ['string'] },
+        { title: 'width', default: '2rem', types: ['string'] },
+        { title: 'height', default: '2rem', types: ['string'] },
+        { title: 'border', default: '4', types: ['string'] },
+        { title: 'pageLoader', default: 'false', types: ['boolean'] },
+        { title: 'className', default: null, types: ['ReactNode'] }
+    ]}
+
+/>
+
+Note: This documentation assumes that the audience has basic knowledge of React and how to use components in React applications.

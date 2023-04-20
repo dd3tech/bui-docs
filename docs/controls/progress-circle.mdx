@@ -1,0 +1,152 @@
+---
+product: dd360-ds
+title: React ProgressCircle component
+components: ProgressCircle
+---
+
+<br />
+<br />
+
+# <span name="floating-nav">ProgressCircle</span>
+
+The ProgressCircle component is a useful tool for visually displaying the progress of a task or process. This component creates a circular animation indicating
+the percentage completion of a task, providing clear visual feedback to the user. The appearance of the ProgressCircle component is easily customizable,
+allowing you to tailor it to the needs of your application. In addition, its integration is simple and significantly improves the user experience in your web or
+mobile applications. With the ProgressCircle component, you can make tracking the progress of a task simple and intuitive for users.
+
+<br />
+<br />
+## <span name="floating-nav">Imports</span>
+
+<WindowEditor codeString="import { ProgressCircle } from 'dd360-ds'" />
+
+<br />
+## <span name="floating-nav">Usage</span>
+
+Use the ProgressCircle component as shown below:
+
+<ContainerComponentDoc className="gap-y-2">
+    <ProgressCircle value={20} width={90} classNamePercentage="w-full text-center text-sm" children={<Text variant="small">Complete</Text>} />
+</ContainerComponentDoc>
+
+The code snippet below shows how to use the ProgressCircle component:
+
+<WindowEditor
+    codeString={`import { ProgressCircle, Text } from 'dd360-ds'
+  
+<ProgressCircle value={20} width={90} classNamePercentage="w-full text-center text-sm" children={<Text variant="small">Complete</Text>}  />
+`}
+/>
+
+<br />
+
+#### <span name="floating-nav">ColorComplete</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>colorComplete</span> you can customize the color when the progress is complete
+
+<ContainerComponentDoc className="gap-y-2">
+    <ProgressCircle
+        value={100}
+        width={90}
+        colorComplete="#7400ff"
+        classNamePercentage="w-full text-center text-sm"
+        children={<Text variant="small">Complete</Text>}
+    />
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { ProgressCircle, Text} from 'dd360-ds'
+    
+  <ProgressCircle value={100} width={90} colorComplete="#7400ff" classNamePercentage="w-full text-center text-sm" children={<Text variant="small">Complete</Text>} />
+`}
+/>
+<br />
+#### <span name="floating-nav">ColorProgress</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>colorProgress</span> you can customize the progress color
+
+<ContainerComponentDoc className="gap-y-2">
+    <ProgressCircle
+        value={50}
+        width={90}
+        colorProgress="#ffba2b"
+        classNamePercentage="w-full text-center text-sm"
+        children={<Text variant="small">Complete</Text>}
+    />
+</ContainerComponentDoc>
+
+<WindowEditor
+ codeString={`import { ProgressCircle, Text } from 'dd360-ds'
+
+<ProgressCircle
+    value={50}
+    width={90}
+    colorProgress="#ffba2b"
+    classNamePercentage="w-full text-center text-sm"
+    children={<Text variant="small">Complete</Text>}
+/>
+`}
+
+/>
+
+<br />
+#### <span name="floating-nav">ColorBackground</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>colorBackground</span> you can customize the color of the progress that is not complete
+
+<ContainerComponentDoc className="gap-y-2">
+    <ProgressCircle
+        value={50}
+        width={90}
+        colorBackground="#aabfda"
+        classNamePercentage="w-full text-center text-sm"
+        children={<Text variant="small">Complete</Text>}
+    />
+</ContainerComponentDoc>
+
+<WindowEditor
+  codeString={`import { ProgressCircle } from 'dd360-ds'
+
+<ProgressCircle
+    value={50}
+    width={90}
+    colorBackground="#aabfda"
+    classNamePercentage="w-full text-center text-sm"
+    children={<Text variant="small">Complete</Text>}
+/>
+`} />
+
+<br />
+#### <span name="floating-nav">StrokeWidth</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>strokeWidth</span> you can customize the thickness of the progress
+
+<ContainerComponentDoc className="gap-y-2">
+    <ProgressCircle value={50} width={90} strokeWidth={5} classNamePercentage="w-full text-center text-sm" children={<Text variant="small">Complete</Text>} />
+</ContainerComponentDoc>
+
+<WindowEditor
+ codeString={`import { ProgressCircle, Text } from 'dd360-ds'
+
+<ProgressCircle value={50} width={90} strokeWidth={5} classNamePercentage="w-full text-center text-sm" children={<Text variant="small">Complete</Text>} />
+`} />
+
+<br />
+<br />
+### <span name="floating-nav">API Reference</span>
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'value', default: '100', types: ['number'] },
+        { title: 'colorComplete', default: '#34D399', types: ['string'] },
+        { title: 'colorProgress', default: '#1D4ED8', types: ['string'] },
+        { title: 'colorBackground', default: '#DBEAFE', types: ['string'] },
+        { title: 'strokeWidth', default: '11', types: ['number'] },
+        { title: 'classNamePercentage', default: 'w-full text-center text-3xl', types: ['string'] },
+        { title: 'width', default:'200', types: ['number'] },
+        { title: 'children', default: "<p>Completado</p>", types: ['ReactNode'] }
+    ]}
+
+/>
+
+Note: This documentation assumes that the audience has basic knowledge of React and how to use components in React applications.

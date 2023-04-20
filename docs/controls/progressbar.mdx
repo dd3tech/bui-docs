@@ -1,1 +1,125 @@
-progressbar page
+---
+product: dd360-ds
+title: React Progressbar component
+components: Progressbar
+---
+
+<br />
+<br />
+
+# <span name="floating-nav">Progressbar</span>
+
+The ProgressBar component allows you to display the progress of a task or process in real time. The progress bar is a visual tool that indicates the percentage
+of completion of a task, giving the user instant feedback on the progress of the process. The ProgressBar component is highly customizable, allowing you to
+tailor it to the specific needs of your application. In addition, it is easy to use and its implementation significantly improves the user experience in your
+web or mobile applications. With the ProgressBar component, you can make tracking the progress of a task simple and clear to users.
+
+<br />
+<br />
+## <span name="floating-nav">Imports</span>
+
+The first alternative is recommended since they can reduce the application bundle
+
+<WindowEditor codeString="import Progressbar from 'dd360-ds/Progressbar'" />
+<WindowEditor codeString="import { Progressbar } from 'dd360-ds'" />
+
+<br />
+## <span name="floating-nav">Usage</span>
+
+Use the Progressbar component as shown below:
+
+<ContainerComponentDoc className="gap-y-2">
+    <ProgressBar value={20} height="10px" />
+</ContainerComponentDoc>
+
+The code snippet below shows how to use the Progressbar component:
+
+<WindowEditor
+    codeString={`import  Progressbar from 'dd360-ds/Progressbar'
+  
+<ProgressBar value={20} height="10px" />
+`}
+/>
+
+<br />
+
+#### <span name="floating-nav">BackgroundColor</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>backgroundColor</span> you can customize the color of the bar
+
+<ContainerComponentDoc className="gap-y-2">
+    <ProgressBar backgroundColor="#93e78e" value={40} height="10px" />
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import  Progressbar from 'dd360-ds/Progressbar'
+    
+<ProgressBar backgroundColor="#93e78e" value={40} height="10px" />
+`}
+/>
+<br />
+#### <span name="floating-nav">Label</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>label</span> you can add a text bar
+
+<ContainerComponentDoc className="gap-y-2">
+    <ProgressBar label="Loading..." value={60} height="20px" />
+</ContainerComponentDoc>
+
+<WindowEditor
+ codeString={`import  Progressbar from 'dd360-ds/Progressbar'
+
+<ProgressBar label="Loading..." value={60} height="20px" />
+`}
+
+/>
+
+<br />
+#### <span name="floating-nav">Animated</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>animated</span> you can add an animation to the bar
+
+<ContainerComponentDoc className="gap-y-2">
+    <ProgressBar animated value={80} height="10px" />
+</ContainerComponentDoc>
+
+<WindowEditor
+  codeString={`import  Progressbar from 'dd360-ds/Progressbar'
+
+<ProgressBar animated value={80} height="10px" />
+`} />
+
+<br />
+#### <span name="floating-nav">BgColorContainer</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>animated</span> you can modify the color of the container of the bar
+
+<ContainerComponentDoc className="gap-y-2">
+    <ProgressBar backgroundColor="#ff4e4e" bgColorContainer="#fff" value={50} height="10px" />
+</ContainerComponentDoc>
+
+<WindowEditor
+ codeString={`import  Progressbar from 'dd360-ds/Progressbar'
+
+<ProgressBar backgroundColor="#ff4e4e" bgColorContainer="#fff" value={50} height="10px" />
+`} />
+
+<br />
+<br />
+### <span name="floating-nav">API Reference</span>
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'value', default: '50', types: ['number'] },
+        { title: 'max', default: '100', types: ['number'] },
+        { title: 'backgroundColor', default: '#1D4ED8', types: ['string'] },
+        { title: 'animated', default: 'false', types: ['boolean'] },
+        { title: 'height', default: '1rem', types: ['string'] },
+        { title: 'label', default: null, types: ['string'] },
+        { title: 'bgColorContainer', default:null, types: ['string'] },
+        { title: 'className', default: null, types: ['string'] }
+    ]}
+
+/>
+
+Note: This documentation assumes that the audience has basic knowledge of React and how to use components in React applications.
