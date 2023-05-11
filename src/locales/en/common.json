@@ -1,20 +1,20 @@
 {
-    "hello": "Hello world",
-    "components": "Components",
-    "docs": "Docs",
-    "documentation": "Documentation",
-    "examples": "Examples",
-    "figma": "Figma",
-    "buttons": "Buttons",
-    "navigation": "Navigation",
-    "layout": "Layout",
-    "form": "Form",
-    "images": "Images",
-    "modals": "Modals",
-    "typography": "Typography",
-    "controls": "Controls",
-    "subscribe": "To subscribe",
-    "metadata": {
-        "home": "DD360 UI - The React library to build back office platforms"
-    }
+  "hello": "Hello world",
+  "components": "Components",
+  "docs": "Docs",
+  "documentation": "Documentation",
+  "examples": "Examples",
+  "figma": "Figma",
+  "buttons": "Buttons",
+  "navigation": "Navigation",
+  "layout": "Layout",
+  "form": "Form",
+  "images": "Images",
+  "modals": "Modals",
+  "typography": "Typography",
+  "controls": "Controls",
+  "subscribe": "To subscribe",
+  "metadata": {
+    "home": "DD360 UI - The React library to build back office platforms"
+  }
 }

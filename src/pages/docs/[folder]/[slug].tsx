@@ -9,43 +9,50 @@ import { getComponents } from '@/utils'
 import { Container } from 'dd360-ds'
 
 type Props = {
-    slug: string
-    meta: {
-        [key: string]: any
-    }
-    source: any
+  slug: string
+  meta: {
+    [key: string]: any
+  }
+  source: any
 }
 
 export default function Slug({ source }: Props) {
-    const { t } = useTranslation('common')
-    return (
-        <Container>
-            <MDXRemote {...source} components={{ ...getComponents() }} scope={{ t }} />
-        </Container>
-    )
+  const { t } = useTranslation('common')
+  return (
+    <Container>
+      <MDXRemote
+        {...source}
+        components={{ ...getComponents() }}
+        scope={{ t }}
+      />
+    </Container>
+  )
 }
 
 /** Next.js Server functions */
 export const getStaticPaths: GetStaticPaths = () => {
-    const paths = getAllPaths(['es', 'en'])
-    return {
-        paths,
-        fallback: false
-    }
+  const paths = getAllPaths(['es', 'en'])
+  return {
+    paths,
+    fallback: false
+  }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params, locale = 'en' }) => {
-    const { slug = '', folder = '' } = params as { slug: string; folder: string }
-    const { content, meta } = getDocBySlug(folder, slug)
-    const mdxSource = await serialize(content)
+export const getStaticProps: GetStaticProps = async ({
+  params,
+  locale = 'en'
+}) => {
+  const { slug = '', folder = '' } = params as { slug: string; folder: string }
+  const { content, meta } = getDocBySlug(folder, slug)
+  const mdxSource = await serialize(content)
 
-    return {
-        props: {
-            slug,
-            meta,
-            source: mdxSource,
-            locale,
-            ...(await serverSideTranslations(locale))
-        }
+  return {
+    props: {
+      slug,
+      meta,
+      source: mdxSource,
+      locale,
+      ...(await serverSideTranslations(locale))
     }
+  }
 }
