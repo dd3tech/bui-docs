@@ -1,0 +1,138 @@
+---
+product: dd360-ds
+title: React Callout component
+components: Callout
+---
+
+<br />
+<br />
+
+# <span name="floating-nav">Callout</span>
+
+The Callout component is a user interface component that is used to display important information prominently in the user interface. Generally, it is used to
+draw the user's attention to critical information, such as errors, warnings or important messages.
+
+<br />
+<br />
+## <span name="floating-nav">Imports</span>
+
+The first alternative is recommended since they can reduce the application bundle
+
+<WindowEditor codeString="import Callout from 'dd360-ds/Callout'" />
+<WindowEditor codeString="import { Callout } from 'dd360-ds'" />
+
+<br />
+## <span name="floating-nav">Usage</span>
+
+Use the Callout component as shown below:
+
+<ContainerComponentDoc className="gap-y-2">
+    <CustomCallout title="All systems are operational" description="All systems are operational" icon="check" />
+</ContainerComponentDoc>
+
+The code snippet below shows how to use the Callout component:
+
+<WindowEditor
+    codeString={`import { Callout } from 'dd360-ds'
+import { CheckCircleIcon } from '@heroicons/react/solid'
+  
+<Callout title="All systems are operational" description="All systems are operational" icon={CheckCircleIcon} />`}
+/>
+
+<br />
+
+#### <span name="floating-nav">Variant</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>variant</span> you can customize the color of the callout
+
+<ContainerComponentDoc className="gap-y-2">
+    <Flex gap="4">
+        <CustomCallout title="Success!" description="The requested action has been completed successfully." icon="check" />
+        <CustomCallout title="System Status" description="Information about the system status" icon="info" variant="info" />
+        <CustomCallout title="Attention!" description="User attention is required in relation to an action or problem." icon="warn" variant="warning" />
+        <CustomCallout title="Error!" description="An error has occurred in the requested action that needs to be resolved." icon="x" variant="error" />
+    </Flex>
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { Callout, Flex } from 'dd360-ds'
+import {  CheckCircleIcon, XCircleIcon, InformationCircleIcon } from '@heroicons/react/solid'
+
+export default function App() {
+    return (
+        <Flex gap="4">
+            <Callout title="Success!" description="The requested action has been completed successfully." icon={CheckCircleIcon} />
+            <Callout title="System Status" description="Information about the system status" icon={InformationCircleIcon} variant="info" />
+            <Callout title="Attention!" description="User attention is required in relation to an action or problem." icon={InformationCircleIcon} variant="warning" />
+            <Callout title="Error!" description="An error has occurred in the requested action that needs to be resolved." icon={XCircleIcon} variant="error" />
+        </Flex>
+    )
+}`} />
+
+<br />
+
+#### <span name="floating-nav">Icon</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>icon</span> you can render a custom icon in the callout before the title, is a optional
+prop
+
+<ContainerComponentDoc className="gap-y-2">
+    <Flex gap="4">
+        <CustomCallout title="System Status" description="Information about the system status" icon="info" variant="info" />
+        <CustomCallout title="System Status" description="Information about the system status" variant="info" />
+    </Flex>
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { Callout, Flex } from 'dd360-ds'
+import {  InformationCircleIcon } from '@heroicons/react/solid'
+
+export default function App() {
+    return (
+        <Flex gap="4">
+            <Callout title="System Status" description="Information about the system status" icon={InformationCircleIcon} variant="info" />
+			<Callout title="System Status" description="Information about the system status" variant="info" />
+        </Flex>
+    )
+}`} />
+
+<br />
+
+#### <span name="floating-nav">Title</span>
+
+With the props <span className='border border-gray-300 bg-gray-200 p-1'>title</span> you can provide a title of the callout and this prop is the only required
+of the component
+
+<ContainerComponentDoc className="gap-y-2">
+    <Flex gap="4">
+        <CustomCallout title="Oops, Error!" icon="x" variant="error" />
+    </Flex>
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { Callout, Flex } from 'dd360-ds'
+import {  XCircleIcon } from '@heroicons/react/solid'
+
+export default function App() {
+    return (
+        <Flex gap="4">
+            <Callout title="Oops, Error!" icon={XCircleIcon} variant="error" />
+        </Flex>
+    )
+}`} />
+
+<br />
+<br />
+### <span name="floating-nav">API Reference</span>
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'icon', types: ['React.ElementType'] },
+				{ title: 'description', types: ['string'] },
+				{ title: 'variant', default: 'success', types: ['info', 'warning', 'error', 'success'] },
+				{ title: 'title', types: ['string'], required: true },
+    ]}
+
+/>
+
+Note: This documentation assumes that the audience has basic knowledge of React and how to use components in React applications.
