@@ -1,4 +1,4 @@
-import { Callout, CalloutProps } from 'dd360-ds'
+import Callout, { CalloutProps } from 'dd360-ds/Callout'
 import {
   CheckCircleIcon,
   XCircleIcon,
