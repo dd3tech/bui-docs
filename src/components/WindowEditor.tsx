@@ -9,14 +9,22 @@ import useCopy from '@/hooks/useCopy'
 import JSImg from 'public/javascript-logo.svg'
 import TSImg from 'public/typescript.svg'
 
-type Languages = 'tsx' | 'jsx' | 'md' | 'mdx' | 'bash' | 'javascript' | 'typescript' | 'css'
+type Languages =
+  | 'tsx'
+  | 'jsx'
+  | 'md'
+  | 'mdx'
+  | 'bash'
+  | 'javascript'
+  | 'typescript'
+  | 'css'
 
 interface EditorProps {
-    codeString?: string
-    language?: Languages
-    className?: string
-    style?: React.CSSProperties
-    header?: { show: boolean; title: string }
+  codeString?: string
+  language?: Languages
+  className?: string
+  style?: React.CSSProperties
+  header?: { show: boolean; title: string }
 }
 
 const cardMetricsString = `import React from 'react';
@@ -35,51 +43,86 @@ const CardMetrics = () => {
 	)
 }`
 
-function getBrandingLanguage(lang: Languages): { src: string; width: number; height: number } {
-    if (lang === 'javascript' || lang === 'jsx') return { src: JSImg, width: 20, height: 20 }
-    if (lang === 'typescript' || lang === 'tsx') return { src: TSImg, width: 17, height: 17 }
+function getBrandingLanguage(lang: Languages): {
+  src: string
+  width: number
+  height: number
+} {
+  if (lang === 'javascript' || lang === 'jsx')
+    return { src: JSImg, width: 20, height: 20 }
+  if (lang === 'typescript' || lang === 'tsx')
+    return { src: TSImg, width: 17, height: 17 }
 
-    return { src: '', width: 20, height: 20 }
+  return { src: '', width: 20, height: 20 }
 }
 
-function WindowEditor({ codeString = cardMetricsString, language = 'tsx', className, header, style }: EditorProps) {
-    const { handleCopy, isCopied } = useCopy()
-    const [showCopyButton, setShowCopyButton] = useState(false)
+function WindowEditor({
+  codeString = cardMetricsString,
+  language = 'tsx',
+  className,
+  header,
+  style
+}: EditorProps) {
+  const { handleCopy, isCopied } = useCopy()
+  const [showCopyButton, setShowCopyButton] = useState(false)
 
-    return (
-        <div
-            onMouseOver={() => setShowCopyButton(true)}
-            onMouseLeave={() => setShowCopyButton(false)}
-            className={composeClasses('h-auto rounded-md overflow-hidden mt-2 mb-10 py-4', className)}
-            style={{ background: 'rgb(40, 42, 54)' }}
-        >
-            {showCopyButton && (
-                <div className="relative">
-                    <div className="absolute rounded-lg right-4 top-0 bottom-0 border w-[35px] h-[35px] cursor-pointer" onClick={() => handleCopy(codeString)}>
-                        <div className={composeClasses('flex items-center text-gray-400 justify-center transition-all duration-100', isCopied && 'rotate-12')}>
-                            <DynamicHeroIcon icon={isCopied ? 'ClipboardCheckIcon' : 'ClipboardIcon'} width={25} />
-                        </div>
-                    </div>
-                </div>
-            )}
-            {header?.show && (
-                <nav className="flex items-center px-3 pt-2 gap-3 bg-gray-700">
-                    <div className="flex items-center gap-2">
-                        <button className="h-3 w-3 bg-red-400 rounded-full"></button>
-                        <button className="h-3 w-3 bg-yellow-400 rounded-full"></button>
-                        <button className="h-3 w-3 bg-green-400 rounded-full"></button>
-                    </div>
-                    <div style={{ background: 'rgb(40, 42, 54)' }} className="flex items-center mr-auto rounded-t-xl h-full px-3 py-1 gap-1">
-                        <Image {...getBrandingLanguage(language)} alt="lang" />
-                        <h3 className="text-white font-medium">{header?.title}</h3>
-                    </div>
-                </nav>
-            )}
-            <SyntaxHighlighter wrapLines language={language} style={{ ...dracula }} customStyle={{ margin: 0, ...style, maxHeight: '80%' }} showLineNumbers>
-                {codeString}
-            </SyntaxHighlighter>
+  return (
+    <div
+      onMouseOver={() => setShowCopyButton(true)}
+      onMouseLeave={() => setShowCopyButton(false)}
+      className={composeClasses(
+        'h-auto rounded-md overflow-hidden mt-2 mb-10 py-4',
+        className
+      )}
+      style={{ background: 'rgb(40, 42, 54)' }}
+    >
+      {showCopyButton && (
+        <div className="relative">
+          <div
+            className="absolute rounded-lg right-4 top-0 bottom-0 border w-[35px] h-[35px] cursor-pointer"
+            onClick={() => handleCopy(codeString)}
+          >
+            <div
+              className={composeClasses(
+                'flex items-center text-gray-400 justify-center transition-all duration-100',
+                isCopied && 'rotate-12'
+              )}
+            >
+              <DynamicHeroIcon
+                icon={isCopied ? 'ClipboardCheckIcon' : 'ClipboardIcon'}
+                width={25}
+              />
+            </div>
+          </div>
         </div>
-    )
+      )}
+      {header?.show && (
+        <nav className="flex items-center px-3 pt-2 gap-3 bg-gray-700">
+          <div className="flex items-center gap-2">
+            <button className="h-3 w-3 bg-red-400 rounded-full"></button>
+            <button className="h-3 w-3 bg-yellow-400 rounded-full"></button>
+            <button className="h-3 w-3 bg-green-400 rounded-full"></button>
+          </div>
+          <div
+            style={{ background: 'rgb(40, 42, 54)' }}
+            className="flex items-center mr-auto rounded-t-xl h-full px-3 py-1 gap-1"
+          >
+            <Image {...getBrandingLanguage(language)} alt="lang" />
+            <h3 className="text-white font-medium">{header?.title}</h3>
+          </div>
+        </nav>
+      )}
+      <SyntaxHighlighter
+        wrapLines
+        language={language}
+        style={{ ...dracula }}
+        customStyle={{ margin: 0, ...style, maxHeight: '80%' }}
+        showLineNumbers
+      >
+        {codeString}
+      </SyntaxHighlighter>
+    </div>
+  )
 }
 
 export default WindowEditor
