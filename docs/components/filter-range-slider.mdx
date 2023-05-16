@@ -1,1 +1,220 @@
-filter range slider
+---
+product: dd360-ds
+title: React FilterRangeSlider component
+components: FilterRangeSlider
+---
+
+<br />
+<br />
+
+# <span name="floating-nav">Filter Range Slider</span>
+
+FilterRangeSlider is a customizable component that provides a 
+multi-range slider for filtering numeric values. The component displays 
+a dialog box that allows users to set a minimum and maximum value 
+range, and includes an "apply" and "reset" button to submit or clear 
+the values.
+
+<br />
+
+## <span name="floating-nav">Imports</span>
+
+<WindowEditor codeString="import { FilterRangeSlider } from 'dd360-ds'" />
+
+## <span name="floating-nav">Usage</span>
+
+To use the FilterRangeSlider component, import it into your React 
+application and include it in your JSX code. The component takes a 
+set of props to customize its behavior and appearance.
+
+<ContainerComponentDoc>
+  <FilterRangeSliderCustom />
+</ContainerComponentDoc>
+
+The code snippet below shows how to use the FilterRange component:
+
+<WindowEditor
+    codeString={`import { FilterRange } from 'dd360-ds''
+
+<FilterRangeSlider
+  title="Filter range slider name"
+  onApply={() => undefined}
+  onReset={() => undefined}
+  position={{
+      top: -160,
+      left: 0,
+      show: true
+  }}
+  max={100}
+  min={0}
+/>
+`}/>
+
+<br />
+
+#### <span name="floating-nav">Visibility & position</span>
+
+To manage the FilterRangeSlider component's visibility and position, you can use the
+useState hook in a functional component. Position stores the top and left
+coordinates, as well as a boolean indicating whether the component should be
+shown. The component listens for clicks on a button, which toggles the
+FilterRangeSlider's visibility and updates its position based on the click event's
+coordinates.
+
+<ContainerComponentDoc>
+  <FilterRangeSliderCustom onTop />
+</ContainerComponentDoc>
+
+The code snippet below shows how to handle the visibility and position:
+
+<WindowEditor
+    codeString={`import { FilterRangeSlider } from 'dd360-ds'
+
+const FilterComponent = () => {
+  const [domLoaded, setDomLoaded] = useState<boolean>(false)
+  const [position, setPosition] = useState<{
+    top: number
+    left: number
+    show: boolean
+  }>({
+    top: 0,
+    left: 0,
+    show: false
+  })
+
+useEffect(() => { setDomLoaded(true) }, [])
+
+return (
+    <>
+      {domLoaded && (
+        <div>
+          <button
+            className="flex items-center gap-1"
+            onClick={(event) => {
+              setPosition((position) => ({
+                top: event.pageY,
+                left: event.pageX,
+                show: !position.show
+              }))
+            }}
+          >
+            <Text size="lg" bold>
+              Filter range on top
+            </Text>
+            <DynamicHeroIcon icon="FilterIcon" className="w-4 h-4" />
+          </button>
+          <FilterRangeSlider
+            title="Filter range slider name"
+            onApply={() => undefined}
+            onReset={() => undefined}
+            max={100}
+            min={0}
+            position={{
+              top: position.top - 160,
+              left: position.left,
+              show: position.show
+            }}
+          />
+        </div>
+      )}
+    </>
+  )
+}
+
+export default FilterComponent
+ `}/>
+
+Note: The "domLoaded" state variable in the FilterComponent is used to ensure 
+that the component is fully rendered before displaying the FilterRangeSlider 
+component. This is important when using Next.js, as it performs server-side 
+rendering by default. By waiting for the client-side rendering to complete, 
+we can avoid any issues with the FilterRangeSlider component not being fully initialized.
+
+<br />
+
+#### <span name="floating-nav">Min & max</span>
+
+<span className='border border-gray-300 bg-gray-200 p-1'>min</span>
+Represents the minimum value that can be selected in the 
+range slider. It defaults to 0.
+
+<span className='border border-gray-300 bg-gray-200 p-1'>max</span>
+Represents the maximum value that can be selected in the 
+range slider. It defaults to 999999999.
+
+<span className='border border-gray-300 bg-gray-200 p-1'>initMinValue</span>
+Represents the initial minimum value that will be set 
+in the range slider. If it's not provided, then it will default to the min prop.
+
+<span className='border border-gray-300 bg-gray-200 p-1'>initMaxValue</span>
+Represents the initial maximum value that will be set 
+in the range slider. If it's not provided, then it will default to the max prop.
+
+<span className='border border-gray-300 bg-gray-200 p-1'>minValDisabled</span>
+Is a boolean value that determines whether the minimum 
+value input field will be disabled or not. If it's set to true, the minimum 
+input field will be disabled and the user will not be able to change its value. 
+It defaults to false.
+
+<span className='border border-gray-300 bg-gray-200 p-1'>maxValDisabled</span>
+Is a boolean value that determines whether the maximum 
+value input field will be disabled or not. If it's set to true, the maximum input 
+field will be disabled and the user will not be able to change its value. It 
+defaults to false.
+
+<ContainerComponentDoc>
+  <FilterRangeSliderCustom minMax />
+</ContainerComponentDoc>
+
+The code snippet below shows how to set a minimum and maximum value and disable the minimum value:
+
+<WindowEditor
+    codeString={`import { FilterRangeSlider } from 'dd360-ds'
+
+<FilterRangeSlider
+  title="Filter range slider name"
+  onApply={() => undefined}
+  onReset={() => undefined}
+  max={minMax ? 300 : 100}
+  min={minMax ? 150 : 0}
+  minValDisabled={true}
+  position={{
+    top: -160,
+    left: 0,
+    show: true
+  }}
+/>
+
+ `}/>
+
+<br />
+<br />
+
+## <span name="floating-nav">API Reference</span>
+
+<CustomTableDocs
+  dataTable={[
+    { title: 'title', default: null, types: ['string'] },
+    { title: 'min', default: '0', types: ['number'] },
+    { title: 'max', default: '999999999', types: ['number'] },
+    { title: 'initMinValue', default: null, types: ['number'] },
+    { title: 'initMaxValue', default: null, types: ['number'] },
+    { title: 'minValDisabled', default: null, types: ['boolean'] },
+    { title: 'maxValDisabled', default: null, types: ['boolean'] },
+    {
+      title: 'position',
+      default: '{ show: false, top: 0, left: 0 }',
+      types: ['{ show: boolean, top: number, left: number }']
+    },
+    { title: 'className', default: null, types: ['string'] },
+    { title: 'width', default: null, types: ['string'] },
+    { title: 'unitName', default: 'Km', types: ['string'] },
+    { title: 'textApplyBtn', default: 'Apply', types: ['string'] },
+    { title: 'textResetBtn', default: 'Reset', types: ['string'] },
+    { title: 'onApply', default: null, types: ['function'] },
+    { title: 'onReset', default: null, types: ['function'] }
+  ]}
+/>
+
+Note: This documentation assumes that the audience has basic knowledge of React
+and how to use components in React applications.

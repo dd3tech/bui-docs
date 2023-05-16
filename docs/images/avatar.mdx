@@ -1,1 +1,112 @@
-avatar page
+---
+product: dd360-ds
+title: React Avatar component
+components: Avatar
+---
+
+<br />
+<br />
+
+# <span name="floating-nav">Avatar</span>
+
+The Avatar component is a reusable component that can be used to render a full
+rounded image or a placeholder for an image. It provides the option to add
+children instead of an image for more flexibility. The component is particularly
+useful in scenarios where a user's profile picture needs to be displayed, or
+when an image needs to be used to represent an entity or an object.
+
+<br />
+
+## <span name="floating-nav">Imports</span>
+
+<WindowEditor codeString="import { Avatar } from 'dd360-ds'" />
+
+## <span name="floating-nav">Usage</span>
+
+The src and alt props are used to display an image inside the Avatar component.
+If these props are not provided, you can use the children prop to display custom
+content inside the Avatar, such as a text, an icon, or a combination of both.
+The children prop provides more flexibility than the src and alt props since it
+allows you to customize the Avatar's content further.
+
+Use the Avatar component as shown below:
+
+<ContainerComponentDoc>
+  <Avatar
+    alt="Avatar"
+    height="50px"
+    src="https://picsum.photos/50/50"
+    width="50px"
+  />
+</ContainerComponentDoc>
+
+The code snippet below shows how to use the Avatar component:
+
+<WindowEditor
+    codeString={`import { Avatar } from 'dd360-ds''
+
+<Avatar
+  alt="Avatar"
+  height="50px"
+  src="https://picsum.photos/50/50"
+  width="50px"
+/>
+`}/>
+
+<br />
+
+#### <span name="floating-nav">Without image</span>
+
+In this example, the Avatar component is used to display a custom text instead
+of an image. Instead of providing an image through the src prop, the children
+prop is used to provide the custom content.
+
+<ContainerComponentDoc>
+  <Avatar
+    style={{
+      backgroundColor: 'red',
+      color: 'white',
+      height: '50px',
+      width: '50px'
+    }}
+  >
+    <Text variant="span">TB</Text>
+  </Avatar>
+</ContainerComponentDoc>
+
+The code snippet below shows how to set a Avatar component without image:
+
+<WindowEditor
+    codeString={`import { Avatar } from 'dd360-ds''
+
+<Avatar
+  style={{
+    backgroundColor: 'red',
+    color: 'white',
+    height: '50px',
+    width: '50px'
+  }}
+>
+  <Text variant="span">TB</Text>
+</Avatar>
+`}/>
+
+<br />
+<br />
+
+## <span name="floating-nav">API Reference</span>
+
+<CustomTableDocs
+  dataTable={[
+    { title: 'children', default: null, types: ['ReactNode'] },
+    { title: 'src', default: null, types: ['string'] },
+    { title: 'alt', default: null, types: ['string'] },
+    { title: 'width', default: null, types: ['string'] },
+    { title: 'height', default: null, types: ['string'] },
+    { title: 'className', default: null, types: ['string'] },
+    { title: 'style', default: null, types: ['CSSProperties'] }
+  ]}
+/>
+
+Note: This documentation assumes that the audience has basic knowledge of React
+and how to use components in React applications.

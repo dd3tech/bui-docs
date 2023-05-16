@@ -16,7 +16,7 @@ import {
 } from '@/components/docs/modals'
 
 import SwitchCustom from '@/components/docs/controls/SwitchCustom'
-import CustomCallout from '@/components/docs/components/CustomCallout'
+import { CustomCallout, FilterRangeCustom, FilterRangeSliderCustom } from '@/components/docs/components'
 
 type Props = { children: ReactNode }
 
@@ -67,6 +67,8 @@ export function getComponents() {
     FileViewerCustom,
     AsideModalCustom,
     CustomCallout,
+    FilterRangeCustom,
+    FilterRangeSliderCustom,
     ...Components
     // Add other custom components here as needed ---| Here |---
   }
