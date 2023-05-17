@@ -2,7 +2,13 @@ import { useEffect, useState } from 'react'
 import { FilterRangeSlider, Text } from 'dd360-ds'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 
-const FilterRangeSliderCustom = ({ onTop, minMax }: { onTop: boolean, minMax: boolean }) => {
+const FilterRangeSliderCustom = ({
+  onTop,
+  minMax
+}: {
+  onTop: boolean
+  minMax: boolean
+}) => {
   const [domLoaded, setDomLoaded] = useState<boolean>(false)
   const [position, setPosition] = useState<{
     top: number

@@ -16,7 +16,11 @@ import {
 } from '@/components/docs/modals'
 
 import SwitchCustom from '@/components/docs/controls/SwitchCustom'
-import { CustomCallout, FilterRangeCustom, FilterRangeSliderCustom } from '@/components/docs/components'
+import {
+  CustomCallout,
+  FilterRangeCustom,
+  FilterRangeSliderCustom
+} from '@/components/docs/components'
 
 type Props = { children: ReactNode }
 
