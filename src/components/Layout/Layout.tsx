@@ -1,29 +1,38 @@
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
-import FloatingNav from './FloatingNav'
+
+import FloatingNav, { Entries } from './FloatingNav'
 import Footer from './Footer'
 import Navbar from './Navbar'
 import SideBar from './SideBar'
 
 const routesWithoutFooter = ['/components']
 
+function parseIdByName(name: string) {
+  return name
+    .toLowerCase()
+    .replace(/ /g, '-')
+    .replace(/[^\w-]+/g, '')
+}
+
 function Layout({ children }: { children: JSX.Element }) {
   const router = useRouter()
   const showSidebar = router.pathname.startsWith('/docs/')
-  const [entries, setEntries] = useState<
-    { label: string; isActive: boolean; position: number }[]
-  >([])
+  const [entries, setEntries] = useState<Entries[]>([])
 
   useEffect(() => {
     const headers = document.getElementsByName('floating-nav')
-    let entryList: { label: string; isActive: boolean; position: number }[] = []
-    headers.forEach((header) => {
+    let entryList: Entries[] = []
+    headers.forEach(({ textContent, offsetTop }) => {
+      const label = textContent || ''
+      const id = parseIdByName(label)
       entryList = [
         ...entryList,
         {
-          label: header.textContent || '',
-          isActive: false,
-          position: header.offsetTop - 85
+          id,
+          label,
+          isActive: id === router.asPath.split('#')[1],
+          position: offsetTop - 85
         }
       ]
     })

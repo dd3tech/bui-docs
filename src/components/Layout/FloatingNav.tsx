@@ -1,31 +1,46 @@
 import { Text } from 'dd360-ds'
 import { composeClasses } from 'dd360-ds/lib'
+import { useRouter } from 'next/router'
 
-interface IFloatingNav {
-  entries: { label: string; isActive: boolean; position: number }[]
+export type Entries = {
+  label: string
+  isActive: boolean
+  position: number
+  id: string
 }
 
-const FloatingNav = ({ entries }: IFloatingNav) => (
-  <div className="flex flex-col text-xs gap-y-2 border-l-2 border-gray-300 ml-4 pl-2 fixed">
-    {entries?.map((entry) => (
-      <Text
-        key={`floating-nav-${entry.label}`}
-        variant="span"
-        className={composeClasses(
-          entry.isActive && 'text-base font-medium',
-          'cursor-pointer'
-        )}
-        onClick={() =>
-          window.scrollTo({
-            top: entry.position,
-            behavior: 'smooth'
-          })
-        }
-      >
-        {entry.label}
-      </Text>
-    ))}
-  </div>
-)
+interface IFloatingNav {
+  entries: Entries[]
+}
+
+const FloatingNav = ({ entries }: IFloatingNav) => {
+  const router = useRouter()
+
+  const handleClick = (position: number, id: string) => {
+    window.scrollTo({
+      top: position,
+      behavior: 'smooth'
+    })
+    router.push(`${router.asPath.split('#')[0]}#${id}`)
+  }
+
+  return (
+    <div className="flex flex-col text-xs gap-y-2 border-l-2 border-gray-300 ml-4 pl-2 fixed">
+      {entries?.map((entry) => (
+        <Text
+          key={`floating-nav-${entry.label}`}
+          variant="span"
+          className={composeClasses(
+            entry.isActive && 'text-base font-bold',
+            'cursor-pointer'
+          )}
+          onClick={() => handleClick(entry.position, entry.id)}
+        >
+          {entry.label}
+        </Text>
+      ))}
+    </div>
+  )
+}
 
 export default FloatingNav
