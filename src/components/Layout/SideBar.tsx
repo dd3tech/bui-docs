@@ -124,8 +124,8 @@ const components: ComponentObjectProps = {
         pathname: 'input-file'
       },
       {
-        label: 'Multi Range Slider',
-        pathname: 'multi-range-slider'
+        label: 'Range Slider',
+        pathname: 'range-slider'
       },
       {
         label: 'Select',
