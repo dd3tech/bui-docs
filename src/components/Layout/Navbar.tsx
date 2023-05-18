@@ -42,7 +42,7 @@ function Navbar({
     <nav
       className={composeClasses(
         'bg-white w-full',
-        isSticky && 'sticky top-0 z-10'
+        isSticky && 'sticky top-0 z-50'
       )}
     >
       <div className="flex justify-between items-center h-20 py-6 mx-auto px-4 lg:px-16 2xl:px-0 max-w-8xl">
