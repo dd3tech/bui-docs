@@ -19,7 +19,8 @@ import SwitchCustom from '@/components/docs/controls/SwitchCustom'
 import {
   CustomCallout,
   FilterRangeCustom,
-  FilterRangeSliderCustom
+  FilterRangeSliderCustom,
+  PortalCustom
 } from '@/components/docs/components'
 
 type Props = { children: ReactNode }
@@ -73,6 +74,7 @@ export function getComponents() {
     CustomCallout,
     FilterRangeCustom,
     FilterRangeSliderCustom,
+    PortalCustom,
     ...Components
     // Add other custom components here as needed ---| Here |---
   }
