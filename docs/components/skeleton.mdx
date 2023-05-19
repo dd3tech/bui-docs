@@ -1,1 +1,164 @@
-skeleton page
+---
+product: dd360-ds
+title: React Skeleton component
+components: Skeleton
+---
+
+<br />
+<br />
+
+# <span name="floating-nav">Skeleton</span>
+
+The Skeleton component in React is a tool to display a skeleton while loading dynamic content. Provides a rough visual representation of the structure of the elements to be loaded, improving the user
+experience. It is commonly used in situations where slow loading of content is expected.
+
+<br />
+
+## <span name="floating-nav">Imports</span>
+
+The first alternative is recommended since they can reduce the application bundle
+
+<WindowEditor codeString="import Skeleton from 'dd360-ds/Skeleton'" />
+<WindowEditor codeString="import { Skeleton } from 'dd360-ds'" />
+
+## <span name="floating-nav">Usage</span>
+
+Use the Skeleton component as shown below:
+
+<ContainerComponentDoc>
+  <Skeleton color="#cfcfcf" height={30} width={200} />
+</ContainerComponentDoc>
+
+The code snippet below shows how to use the Skeleton component:
+
+<WindowEditor
+    codeString={`import  Skeleton  from 'dd360-ds/Skeleton'
+
+<Skeleton color="#cfcfcf" height={30} width={200} />
+`}/>
+
+#### <span name="floating-nav">Animation</span>
+
+With the prop <span className="border border-gray-300 bg-gray-200 p-1">animation</span> you can control the animation of Skeleton
+
+<ContainerComponentDoc>
+  <Flex gap="4">
+    <Skeleton color="#cfcfcf" animation="false" width={200} height={30} rounded="2xl" />
+    <Skeleton color="#cfcfcf" animation="pulse" width={200} height={30} rounded="2xl" />
+    <Skeleton color="#cfcfcf" animation="wave" width={200} height={30} rounded="2xl" />
+  </Flex>
+</ContainerComponentDoc>
+
+<WindowEditor
+  codeString={`import { Flex, Skeleton } from 'dd360-ds''
+
+<Flex gap="4">
+  <Skeleton animation="false" color="#cfcfcf" width={200} height={30} rounded="2xl" />
+  <Skeleton animation="pulse" color="#cfcfcf" width={200} height={30} rounded="2xl" />
+  <Skeleton animation="wave" color="#cfcfcf" width={200} height={30} rounded="2xl" />
+</Flex>
+`} />
+
+#### <span name="floating-nav">Rounded</span>
+
+With the prop <span className="border border-gray-300 bg-gray-200 p-1">rounded</span> you can customize the rounded edge of the skeleton
+
+<ContainerComponentDoc>
+  <Flex gap="4">
+    <Skeleton color="#cfcfcf" width={200} height={30} rounded="none" />
+    <Skeleton color="#cfcfcf" width={200} height={30} rounded="base" />
+    <Skeleton color="#cfcfcf" width={200} height={30} rounded="sm" />
+    <Skeleton color="#cfcfcf" width={200} height={30} rounded="md" />
+    <Skeleton color="#cfcfcf" width={200} height={30} rounded="lg" />
+    <Skeleton color="#cfcfcf" width={200} height={30} rounded="xl" />
+    <Skeleton color="#cfcfcf" width={200} height={30} rounded="2xl" />
+    <Skeleton color="#cfcfcf" width={200} height={30} rounded="3xl" />
+    <Skeleton color="#cfcfcf" width={200} height={30} rounded="full" />
+  </Flex>
+</ContainerComponentDoc>
+
+<WindowEditor
+  codeString={`import { Flex, Skeleton }from 'dd360-ds''
+
+<Flex gap="4">
+  <Skeleton color="#cfcfcf" width={200} height={30} rounded="none" />
+  <Skeleton color="#cfcfcf" width={200} height={30} rounded="base" />
+  <Skeleton color="#cfcfcf" width={200} height={30} rounded="sm" />
+  <Skeleton color="#cfcfcf" width={200} height={30} rounded="md" />
+  <Skeleton color="#cfcfcf" width={200} height={30} rounded="lg" />
+  <Skeleton color="#cfcfcf" width={200} height={30} rounded="xl" />
+  <Skeleton color="#cfcfcf" width={200} height={30} rounded="2xl" />
+  <Skeleton color="#cfcfcf" width={200} height={30} rounded="3xl" />
+  <Skeleton color="#cfcfcf" width={200} height={30} rounded="full" />
+</Flex>
+`} />
+
+#### <span name="floating-nav">Color</span>
+
+With the prop <span className="border border-gray-300 bg-gray-200 p-1">color</span> you can customize the color of the skeleton
+
+<ContainerComponentDoc>
+  <Skeleton color="#74a9e6" width={200} height={30} rounded="2xl" />
+</ContainerComponentDoc>
+
+<WindowEditor
+  codeString={`import Skeleton from 'dd360-ds/Skeleton''
+
+<Skeleton color="#74a9e6" width={200} height={30} rounded="2xl" />
+`} />
+
+#### <span name="floating-nav">Table Content Skeleton</span>
+
+With the component <span className="border border-gray-300 bg-gray-200 p-1"> TableContentSkeleton</span> you can display a skeleton table content with mock rows and columns to represent data in a
+tabular structure.
+
+<ContainerComponentDoc>
+  <Table>
+    <Table.Header>
+      <Table.HeaderRow>
+        <Table.HeaderCell className="bg-gray-100">Col 1</Table.HeaderCell>
+        <Table.HeaderCell className="bg-gray-100">Col 2</Table.HeaderCell>
+        <Table.HeaderCell className="bg-gray-100">Col 3</Table.HeaderCell>
+        <Table.HeaderCell className="bg-gray-100">Col 4</Table.HeaderCell>
+      </Table.HeaderRow>
+    </Table.Header>
+    <Table.Body>
+      <TableContentSkeleton rows={10} columns={4} rounded="full" skeletonHeight={10} classNameCell="px-4 border" skeletonWidth={[100, 100, 75, 40]} skeletonClass="m-auto" skeletonColor="#e5e7eb" />
+    </Table.Body>
+  </Table>
+</ContainerComponentDoc>
+
+<WindowEditor
+  codeString={`import { Table, TableContentSkeleton } from 'dd360-ds'
+
+<TableContentSkeleton
+  rows={10}
+  columns={7}
+  rounded="full"
+  skeletonHeight={10}
+  classNameCell="px-4 border"
+  skeletonWidth={[150, 150, 75, 40, 40, 100, 80]}
+  skeletonClass="m-auto"
+  skeletonColor="#e5e7eb"
+/>
+`} />
+
+## <span name="floating-nav">API Reference</span>
+
+<CustomTableDocs
+  dataTable={[
+    { title: 'animation', default: 'pulse', types: ['false', 'pulse', 'wave'] },
+    {
+      title: 'rounded',
+      default: 'lg',
+      types: ['none', 'base', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', 'full']
+    },
+    { title: 'height', default: null, types: ['string'] },
+    { title: 'width', default: null, types: ['string'] },
+    { title: 'className', default: null, types: ['string'] },
+    { title: 'style', default: null, types: ['CSSProperties'] },
+    { title: 'children', default: null, types: ['ReactNode'] }
+  ]}
+/>
+
+Note: This documentation assumes that the audience has basic knowledge of React and how to use components in React applications.
