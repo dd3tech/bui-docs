@@ -17,11 +17,9 @@
   0% {
     transform: translate(0, 0px);
   }
-
   50% {
     transform: translate(0, 15px);
   }
-
   100% {
     transform: translate(0, -0px);
   }
@@ -31,7 +29,6 @@
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
-
 .hide-scroll::-webkit-scrollbar {
   display: none;
 }
@@ -45,7 +42,6 @@
   .banner-dashboard-component .description .img-bottom {
     display: block;
   }
-
   .banner-dashboard-component .description {
     justify-content: center;
   }
