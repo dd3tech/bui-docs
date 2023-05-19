@@ -1,1 +1,88 @@
-portal
+---
+product: dd360-ds
+title: React Portal component
+components: Portal
+---
+
+<br />
+<br />
+
+# <span name="floating-nav">Portal</span>
+
+The Portal component allows you to render a children into a dedicated DOM node, 
+separate from the main component hierarchy. It provides a way to render 
+components outside their parent component and into a different part of the DOM 
+tree. This can be useful for scenarios, including the creation 
+of modals, tooltips, or any content that necessitates rendering in a distinct 
+location within the DOM. 
+
+<br />
+
+## <span name="floating-nav">Imports</span>
+
+<WindowEditor codeString="import { Portal } from 'dd360-ds/Portal'" />
+
+## <span name="floating-nav">Usage</span>
+
+Here's an example of how you can use the Portal component:
+
+<ContainerComponentDoc>
+  <PortalCustom />
+</ContainerComponentDoc>
+
+The code snippet below shows how to use the Portal component:
+
+<WindowEditor
+    codeString={`
+import React, { useEffect, useState } from 'react'
+import { Button, Text } from 'dd360-ds'
+import { Portal } from 'dd360-ds/Portal'
+
+const CustomComponent = () => {
+    const [isactive, setIsactive] = useState(false)
+    const [domLoaded, setDomLoaded] = useState(false)
+
+    useEffect(() => {
+        setDomLoaded(true)
+    }, [])
+
+  return (
+    <div className='relative flex items-center gap-4'>
+      <Text size='base' bold>Portal component</Text>
+      <Button onClick={()=> setIsactive((isactive) => !isactive)}>Toggle Portal</Button>
+      {domLoaded && isactive && (
+        <Portal>
+          <div className='fixed left-1/2 top-1/2 w-40 h-24 flex justify-center items-center border rounded-lg bg-white'>
+            <Text>Hey!!! I am a Portal</Text>
+          </div>
+        </Portal>
+      )}
+    </div>
+  )
+}
+
+export default CustomComponent
+`}/>
+
+The IdRoot property is the ID of the root element where the portal will be 
+appended. If not provided, it defaults to 'portal-root'.
+
+Note: When using the Portal component in Next.js may throw an error stating "document is not defined" during server-side 
+rendering (SSR) because the DOM is not accessible on the server. To handle this, 
+the useState hook is modified to conditionally create the container only if the 
+document object is defined. Otherwise, it returns null.
+
+<br />
+<br />
+
+## <span name="floating-nav">API Reference</span>
+
+<CustomTableDocs
+  dataTable={[
+    { title: 'children', default: null, types: ['ReactNode'] },
+    { title: 'idRoot', default: 'portal-root', types: ['string', 'undefined'] },
+  ]}
+/>
+
+Note: This documentation assumes that the audience has basic knowledge of React
+and how to use components in React applications.
