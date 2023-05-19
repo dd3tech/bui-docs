@@ -57,10 +57,10 @@
   }
 }
 
-.date-picker>ul>button.bg-primary {
+.date-picker > ul > button.bg-primary {
   background-color: #5c6ac4 !important;
 }
 
-.date-picker>ul>button.border-primary {
+.date-picker > ul > button.border-primary {
   border-color: #5c6ac4 !important;
 }
