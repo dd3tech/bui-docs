@@ -45,6 +45,7 @@
   .banner-dashboard-component .description {
     justify-content: center;
   }
+
   .banner-dashboard-component .description .group-btns {
     justify-content: center;
   }
@@ -54,4 +55,12 @@
     left: 0 !important;
     bottom: -70px !important;
   }
+}
+
+.date-picker > ul > button.bg-primary {
+  background-color: #5c6ac4 !important;
+}
+
+.date-picker > ul > button.border-primary {
+  border-color: #5c6ac4 !important;
 }
