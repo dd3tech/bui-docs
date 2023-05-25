@@ -1,1 +1,102 @@
-DynamicHeroIcon page
+---
+product: dd360-ds
+title: React DynamicHeroIcon component
+components: DynamicHeroIcon
+---
+
+<br />
+<br />
+
+# <span name="floating-nav">DynamicHeroIcon</span>
+
+The DynamicHeroIcon component allows you to display dynamic icons, adding an attractive and custom visual layer in a faster way.
+
+<br />
+<br />
+## <span name="floating-nav">Imports</span>
+
+<WindowEditor codeString="import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'" />
+
+<br />
+## <span name="floating-nav">Usage</span>
+
+Use the DynamicHeroIcon component as shown below:
+
+<ContainerComponentDoc className="gap-y-2">
+       <DynamicHeroIcon icon="HomeIcon" width={30} className="text-blue-700" />
+</ContainerComponentDoc>
+
+The code snippet below shows how to use the DynamicHeroIcon component:
+
+<WindowEditor
+    codeString={`import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
+  
+<DynamicHeroIcon icon="HomeIcon" width={30} className="text-blue-700" />`}
+/>
+
+## <span name="floating-nav">Icon</span>
+
+With the prop <span className="border border-gray-300 bg-gray-200 p-1">Icon</span>, you can choose the required icon in a fast and simple way
+
+<ContainerComponentDoc className="gap-y-2">
+       <DynamicHeroIcon icon="BellIcon" width={30} className="text-blue-700" />
+</ContainerComponentDoc>
+
+
+<WindowEditor
+    codeString={`import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
+  
+<DynamicHeroIcon icon="BellIcon" width={30} className="text-blue-700" />`}
+/>
+
+## <span name="floating-nav">Width</span>
+
+With the prop <span className="border border-gray-300 bg-gray-200 p-1">width</span>, you can choose the size of the chosen icon
+
+<ContainerComponentDoc className="gap-y-2">
+       <DynamicHeroIcon icon="BellIcon" width={50} className="text-blue-700" />
+</ContainerComponentDoc>
+
+
+<WindowEditor
+    codeString={`import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
+  
+<DynamicHeroIcon icon="BellIcon" width={50} className="text-blue-700" />`}
+/>
+
+## <span name="floating-nav">ClassName</span>
+
+With the prop <span className="border border-gray-300 bg-gray-200 p-1">className</span>, you can choose the color of the chosen icon, among many other things
+
+<ContainerComponentDoc className="gap-y-2">
+       <DynamicHeroIcon icon="CheckCircleIcon" width={30} className="text-green-400" />
+</ContainerComponentDoc>
+
+
+<WindowEditor
+    codeString={`import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
+  
+<DynamicHeroIcon icon="CheckCircleIcon" width={30} className="text-green-400" />`}
+/>
+
+
+
+<br />
+<br />
+### <span name="floating-nav">API Reference</span>
+
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'icon',default: null, types: ['IconName'] ,required: true },
+        { title: 'width', default: 30, types: ['number'] },
+        { title: 'className', default: null, types: ['string'] },
+    ]}
+
+/>
+
+You can import IconName like this <span className="text-xs border border-gray-300 bg-gray-200 p-1">
+`import {IconName} from 'dd360-ds/DynamicHeroIcon'`</span>
+
+
+Note: This documentation assumes that the audience has basic knowledge of React and how to use components in React applications.
