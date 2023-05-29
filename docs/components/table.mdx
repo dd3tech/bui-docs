@@ -1,0 +1,526 @@
+---
+product: dd360-ds
+title: React Table component
+components: Table
+---
+
+<br />
+<br />
+
+# <span name="floating-nav">Table</span>
+
+The Table component offers a flexible and easy-to-use solution for displaying and organizing data in table form, making it easy to present and manipulate information.
+
+<br />
+<br />
+## <span name="floating-nav">Imports</span>
+
+<WindowEditor codeString="import { Table } from 'dd360-ds'" />
+
+<br />
+## <span name="floating-nav">Usage</span>
+
+Use the Table component as shown below:
+
+<ContainerComponentDoc className="gap-y-2">
+    <Table className="w-96">
+        <Table.Header>
+          <Table.HeaderRow>
+            <Table.HeaderCell>Header 1</Table.HeaderCell>
+            <Table.HeaderCell>Header 2</Table.HeaderCell>
+            <Table.HeaderCell>Header 3</Table.HeaderCell>
+          </Table.HeaderRow>
+        </Table.Header>
+        <Table.Body>
+          <Table.HeaderRow>
+            <Table.Cell>Row 1</Table.Cell>
+            <Table.Cell>Row 1</Table.Cell>
+            <Table.Cell>Row 1</Table.Cell>
+          </Table.HeaderRow>
+          <Table.HeaderRow>
+            <Table.Cell>Row 2</Table.Cell>
+            <Table.Cell>Row 2</Table.Cell>
+            <Table.Cell>Row 2</Table.Cell>
+          </Table.HeaderRow>
+          <Table.HeaderRow>
+            <Table.Cell>Row 3</Table.Cell>
+            <Table.Cell>Row 3</Table.Cell>
+            <Table.Cell>Row 3</Table.Cell>
+          </Table.HeaderRow>
+        </Table.Body>
+      </Table>
+</ContainerComponentDoc>
+
+The code snippet below shows how to use the Table component:
+
+<WindowEditor
+    codeString={`import { Table } from 'dd360-ds
+  
+<Table className="w-96">
+    <Table.Header>
+      <Table.HeaderRow>
+        <Table.HeaderCell>Header 1</Table.HeaderCell>
+        <Table.HeaderCell>Header 2</Table.HeaderCell>
+        <Table.HeaderCell>Header 3</Table.HeaderCell>
+      </Table.HeaderRow>
+    </Table.Header>
+    <Table.Body>
+      <Table.HeaderRow>
+        <Table.Cell>Row 1</Table.Cell>
+        <Table.Cell>Row 1</Table.Cell>
+        <Table.Cell>Row 1</Table.Cell>
+      </Table.HeaderRow>
+      <Table.HeaderRow>
+        <Table.Cell>Row 2</Table.Cell>
+        <Table.Cell>Row 2</Table.Cell>
+        <Table.Cell>Row 2</Table.Cell>
+      </Table.HeaderRow>
+      <Table.HeaderRow>
+        <Table.Cell>Row 3</Table.Cell>
+        <Table.Cell>Row 3</Table.Cell>
+        <Table.Cell>Row 3</Table.Cell>
+      </Table.HeaderRow>
+    </Table.Body>
+</Table>
+    `}
+/>
+
+<br />
+
+#### <span name="floating-nav">StickyTop</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>stickyTop</span> you can fix the header with a sticky position at the top
+
+<ContainerComponentDoc className="gap-y-2">
+   <Table className="h-24 w-96">
+    <Table.Header>
+      <Table.HeaderRow>
+        <Table.HeaderCell stickyTop="0px">Header 1</Table.HeaderCell>
+        <Table.HeaderCell stickyTop="0px">Header 2</Table.HeaderCell>
+        <Table.HeaderCell stickyTop="0px">Header 3</Table.HeaderCell>
+      </Table.HeaderRow>
+    </Table.Header>
+    <Table.Body>
+      <Table.Row>
+        <Table.Cell>Row 1</Table.Cell>
+        <Table.Cell>Row 1</Table.Cell>
+        <Table.Cell>Row 1</Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Cell>Row 2</Table.Cell>
+        <Table.Cell>Row 2</Table.Cell>
+        <Table.Cell>Row 2</Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Cell>Row 3</Table.Cell>
+        <Table.Cell>Row 3</Table.Cell>
+        <Table.Cell>Row 3</Table.Cell>
+      </Table.Row>
+    </Table.Body>
+</Table>
+</ContainerComponentDoc>
+
+
+<WindowEditor
+    codeString={`import { Table } from 'dd360-ds
+  
+<Table className="w-96">
+    <Table.Header>
+      <Table.HeaderRow>
+        <Table.HeaderCell stickyTop="0px">Header 1</Table.HeaderCell>
+        <Table.HeaderCell stickyTop="0px">Header 2</Table.HeaderCell>
+        <Table.HeaderCell stickyTop="0px">Header 3</Table.HeaderCell>
+      </Table.HeaderRow>
+    </Table.Header>
+    <Table.Body>
+      <Table.Row>
+        <Table.Cell>Row 1</Table.Cell>
+        <Table.Cell>Row 1</Table.Cell>
+        <Table.Cell>Row 1</Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Cell>Row 2</Table.Cell>
+        <Table.Cell>Row 2</Table.Cell>
+        <Table.Cell>Row 2</Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Cell>Row 3</Table.Cell>
+        <Table.Cell>Row 3</Table.Cell>
+        <Table.Cell>Row 3</Table.Cell>
+      </Table.Row>
+    </Table.Body>
+</Table>
+    `}
+/>
+
+
+<br />
+
+#### <span name="floating-nav">StickyLeft</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>stickyLeft</span> you can fix the header with a sticky position at the left
+
+<ContainerComponentDoc className="gap-y-2">
+   <Table className="w-52">
+    <Table.Header>
+      <Table.HeaderRow>
+        <Table.HeaderCell style={{minWidth:"100px"}} stickyLeft="0px">Header 1</Table.HeaderCell>
+        <Table.HeaderCell style={{minWidth:"100px"}}>Header 2</Table.HeaderCell>
+        <Table.HeaderCell style={{minWidth:"100px"}}>Header 3</Table.HeaderCell>
+      </Table.HeaderRow>
+    </Table.Header>
+    <Table.Body>
+      <Table.Row>
+        <Table.Cell stickyLeft="0px">Row 1</Table.Cell>
+        <Table.Cell>Row 1</Table.Cell>
+        <Table.Cell>Row 1</Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Cell stickyLeft="0px">Row 2</Table.Cell>
+        <Table.Cell>Row 2</Table.Cell>
+        <Table.Cell>Row 2</Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Cell stickyLeft="0px">Row 3</Table.Cell>
+        <Table.Cell>Row 3</Table.Cell>
+        <Table.Cell>Row 3</Table.Cell>
+      </Table.Row>
+    </Table.Body>
+</Table>
+</ContainerComponentDoc>
+
+
+<WindowEditor
+    codeString={`import { Table } from 'dd360-ds
+  
+ <Table className="w-52">
+    <Table.Header>
+      <Table.HeaderRow>
+        <Table.HeaderCell stickyLeft="0px">Header 1</Table.HeaderCell>
+        <Table.HeaderCell>Header 2</Table.HeaderCell>
+        <Table.HeaderCell>Header 3</Table.HeaderCell>
+      </Table.HeaderRow>
+    </Table.Header>
+    <Table.Body>
+      <Table.Row>
+        <Table.Cell stickyLeft="0px">Row 1</Table.Cell>
+        <Table.Cell>Row 1</Table.Cell>
+        <Table.Cell>Row 1</Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Cell stickyLeft="0px">Row 2</Table.Cell>
+        <Table.Cell>Row 2</Table.Cell>
+        <Table.Cell>Row 2</Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Cell stickyLeft="0px">Row 3</Table.Cell>
+        <Table.Cell>Row 3</Table.Cell>
+        <Table.Cell>Row 3</Table.Cell>
+      </Table.Row>
+    </Table.Body>
+</Table>
+    `}
+/>
+
+
+<br />
+
+#### <span name="floating-nav">ColSpan</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>colSpan</span> you can set the number of columns that the cell will occupy
+
+<ContainerComponentDoc className="gap-y-2">
+   <Table className="w-52">
+    <Table.Header>
+      <Table.HeaderRow>
+        <Table.HeaderCell colSpan={3}>Header 1</Table.HeaderCell>
+      </Table.HeaderRow>
+    </Table.Header>
+    <Table.Body>
+      <Table.Row>
+        <Table.Cell>Row 1</Table.Cell>
+        <Table.Cell>Row 1</Table.Cell>
+        <Table.Cell>Row 1</Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Cell>Row 2</Table.Cell>
+        <Table.Cell>Row 2</Table.Cell>
+        <Table.Cell>Row 2</Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Cell>Row 3</Table.Cell>
+        <Table.Cell>Row 3</Table.Cell>
+        <Table.Cell>Row 3</Table.Cell>
+      </Table.Row>
+    </Table.Body>
+</Table>
+</ContainerComponentDoc>
+
+
+<WindowEditor
+    codeString={`import { Table } from 'dd360-ds
+  
+  <Table className="w-52">
+    <Table.Header>
+      <Table.HeaderRow>
+        <Table.HeaderCell colSpan={3}>Header 1</Table.HeaderCell>
+      </Table.HeaderRow>
+    </Table.Header>
+    <Table.Body>
+      <Table.Row>
+        <Table.Cell>Row 1</Table.Cell>
+        <Table.Cell>Row 1</Table.Cell>
+        <Table.Cell>Row 1</Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Cell>Row 2</Table.Cell>
+        <Table.Cell>Row 2</Table.Cell>
+        <Table.Cell>Row 2</Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Cell>Row 3</Table.Cell>
+        <Table.Cell>Row 3</Table.Cell>
+        <Table.Cell>Row 3</Table.Cell>
+      </Table.Row>
+    </Table.Body>
+</Table>
+    `}
+/>
+
+
+<br />
+
+#### <span name="floating-nav">RowSpan</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>rowSpan</span> you can set the number of rows that the cell will occupy
+
+<ContainerComponentDoc className="gap-y-2">
+   <Table className="w-96">
+    <Table.Header>
+      <Table.HeaderRow>
+    <Table.HeaderCell >Header 1</Table.HeaderCell>
+        <Table.HeaderCell>Header 2</Table.HeaderCell>
+        <Table.HeaderCell>Header 3</Table.HeaderCell>
+      </Table.HeaderRow>
+    </Table.Header>
+    <Table.Body>
+      <Table.Row>
+        <Table.Cell rowSpan={2}>Row Principal</Table.Cell>
+         <Table.Cell>Row 1</Table.Cell>
+          <Table.Cell>Row 1</Table.Cell>
+    </Table.Row>
+      <Table.Row>
+        <Table.Cell>Row 3</Table.Cell>
+        <Table.Cell>Row 3</Table.Cell>
+      </Table.Row>
+    </Table.Body>
+</Table>
+</ContainerComponentDoc>
+
+
+<WindowEditor
+    codeString={`import { Table } from 'dd360-ds
+  
+ <Table className="w-96">
+    <Table.Header>
+    <Table.HeaderCell >Header 1</Table.HeaderCell>
+      <Table.HeaderRow>
+        <Table.HeaderCell>Header 2</Table.HeaderCell>
+        <Table.HeaderCell>Header 3</Table.HeaderCell>
+      </Table.HeaderRow>
+    </Table.Header>
+    <Table.Body>
+      <Table.Row>
+        <Table.Cell rowSpan={2}>Row Principal</Table.Cell>
+         <Table.Cell>Row 1</Table.Cell>
+          <Table.Cell>Row 1</Table.Cell>
+    </Table.Row>
+      <Table.Row>
+        <Table.Cell>Row 3</Table.Cell>
+        <Table.Cell>Row 3</Table.Cell>
+      </Table.Row>
+    </Table.Body>
+</Table>
+    `}
+/>
+
+
+<br />
+#### <span name="floating-nav">Accordion</span>
+
+You can use <span className='border border-gray-300 bg-gray-200 p-1'>Table.Accordion</span> for dropdown rows
+
+<ContainerComponentDoc className="gap-y-2">
+    <Table className="w-96">
+        <Table.Header>
+          <Table.HeaderRow>
+            <Table.HeaderCell>Header 1</Table.HeaderCell>
+            <Table.HeaderCell>Header 2</Table.HeaderCell>
+            <Table.HeaderCell>Header 3</Table.HeaderCell>
+          </Table.HeaderRow>
+        </Table.Header>
+        <Table.Body>
+          <Table.Row>
+            <Table.Cell>Row 1</Table.Cell>
+            <Table.Cell>Row 1</Table.Cell>
+            <Table.Cell>Row 1</Table.Cell>
+          </Table.Row>
+            <Table.Accordion>
+             <Table.Row>
+            <Table.Cell>Row 2</Table.Cell>
+            <Table.Cell></Table.Cell>
+            <Table.Cell></Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>Sub Row 2</Table.Cell>
+            <Table.Cell>Sub Row 2</Table.Cell>
+            <Table.Cell>Sub Row 2</Table.Cell>
+          </Table.Row>
+            </Table.Accordion>
+          <Table.Row>
+            <Table.Cell>Row 3</Table.Cell>
+            <Table.Cell>Row 3</Table.Cell>
+            <Table.Cell>Row 3</Table.Cell>
+          </Table.Row>
+        </Table.Body>
+      </Table>
+</ContainerComponentDoc>
+
+
+<WindowEditor
+    codeString={`import { Table } from 'dd360-ds
+  
+  <Table className="w-96">
+        <Table.Header>
+          <Table.HeaderRow>
+            <Table.HeaderCell>Header 1</Table.HeaderCell>
+            <Table.HeaderCell>Header 2</Table.HeaderCell>
+            <Table.HeaderCell>Header 3</Table.HeaderCell>
+          </Table.HeaderRow>
+        </Table.Header>
+        <Table.Body>
+          <Table.Row>
+            <Table.Cell>Row 1</Table.Cell>
+            <Table.Cell>Row 1</Table.Cell>
+            <Table.Cell>Row 1</Table.Cell>
+          </Table.Row>
+            <Table.Accordion>
+             <Table.Row>
+            <Table.Cell>Row 2</Table.Cell>
+            <Table.Cell></Table.Cell>
+            <Table.Cell></Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>Sub Row 2</Table.Cell>
+            <Table.Cell>Sub Row 2</Table.Cell>
+            <Table.Cell>Sub Row 2</Table.Cell>
+          </Table.Row>
+            </Table.Accordion>
+          <Table.Row>
+            <Table.Cell>Row 3</Table.Cell>
+            <Table.Cell>Row 3</Table.Cell>
+            <Table.Cell>Row 3</Table.Cell>
+          </Table.Row>
+        </Table.Body>
+      </Table>
+    `}
+/>
+
+
+<br />
+<br />
+### <span name="floating-nav">API Reference</span>
+
+#### <span>Header</span>
+
+The Header component is used to render the header row of the table, which usually contains the column titles.
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'children', types: ['React.ReactNode'] },
+        { title: '...', types: ['React.HTMLAttributes<HTMLTableSectionElement>'] }
+    ]}
+/>
+
+#### <span>HeaderRow</span>
+The HeaderRow component is used to render a custom header row in the table, allowing more flexibility in the structure and appearance of the table header.
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'variant',default: 'primary', types: ['primary','secondary','tertiary'] },
+        { title: 'children', types:  ['React.ReactNode'] },
+        { title: '...', types: ['React.HTMLAttributes<HTMLTableRowElement>'] }
+    ]}
+/>
+
+#### <span>HeaderCell</span>
+The "HeaderCell" component is used to render a header cell within the header row. It is used to display information specific to each column in the table header, such as the title or any other relevant content.
+
+<CustomTableDocs
+    dataTable={[
+		  { title: 'stickyLeft', types: ['string'] },
+      { title: 'stickyTop', types: ['string'] },
+			{ title: 'stickyRight', types: ['string'] },
+			{ title: 'stickyBottom', types: ['string'] },
+      { title: 'children', types: ['React.ReactNode'] },
+      { title: '...', types: ['React.HTMLAttributes<HTMLTableHeaderCellElement>'] }
+    ]}
+
+/>
+
+#### <span>Body</span>
+
+The "Body" component is used to render the body of the table, which contains the rows of data. It is responsible for displaying the data in a structured way in the corresponding cells, allowing the visualization and manipulation of the information in the table.
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'children', types: ['React.ReactNode'] },
+        { title: '...', types: ['React.HTMLAttributes<HTMLTableSectionElement>'] }
+    ]}
+/>
+
+
+#### <span>Row</span>
+
+The "Row" component is used to render a row of data within the body of the table. Each instance of this component represents an individual row in the table and contains the corresponding cells that display the specific data for that row.
+
+<CustomTableDocs
+    dataTable={[
+		  { title: 'variant',default:'default', types: ['header','result','default'] },
+      { title: 'children', types: ['React.ReactNode'] },
+	    { title: '...', types: ['React.HTMLAttributes<HTMLTableRowElement>'] }
+    ]}
+/>
+
+#### <span>Cell</span>
+
+The "Cell" component is used to render a data cell within a row. Each instance of this component represents an individual cell in the table and displays the specific content of that cell, such as a numeric value, text, or other data type.
+
+<CustomTableDocs
+    dataTable={[
+     { title: 'disabled',default:'false', types: ['boolean'] },
+     { title: 'error',default:'false', types: ['boolean'] },
+		 { title: 'inputProps', types: ['{ controllers?: boolean }'] },
+     { title: 'stickyLeft', types: ['string'] },
+     { title: 'stickyTop', types: ['string'] },
+		 { title: 'stickyRight', types: ['string'] },
+		 { title: 'stickyBottom', types: ['string'] },
+     { title: 'children', types: ['React.ReactNode'] },
+     { title: '...', types: ['React.ThHTMLAttributes<HTMLTableCellElement>'] }
+    ]}
+
+/>
+
+#### <span>Accordion</span>
+
+The "Accordion" component is an interactive element that allows you to expand and collapse sections of content within the table, providing a way to organize and display information in a more structured and compact way.
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'iconPosition', default: '0', types: ['number'] },
+    		{ title: 'children', types: ['React.ReactNode[]'] }
+    ]}
+
+/>
+
+Note: This documentation assumes that the audience has basic knowledge of React and how to use components in React applications.
