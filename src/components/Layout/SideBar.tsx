@@ -282,6 +282,10 @@ const components: ComponentObjectProps = {
       {
         label: 'Table',
         pathname: 'table'
+      },
+      {
+        label: 'Transition',
+        pathname: 'transition'
       }
     ]
   }

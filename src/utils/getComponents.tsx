@@ -23,6 +23,8 @@ import {
   PortalCustom
 } from '@/components/docs/components'
 
+import { TransitionCustom } from '@/components/Layout'
+
 type Props = { children: ReactNode }
 
 export function getComponents() {
@@ -75,6 +77,7 @@ export function getComponents() {
     FilterRangeCustom,
     FilterRangeSliderCustom,
     PortalCustom,
+    TransitionCustom,
     ...Components
     // Add other custom components here as needed ---| Here |---
   }
