@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import {
+  AnimationsTypes,
   Button,
   Checkbox,
   FormControlLabel,
@@ -165,8 +166,8 @@ const AllAnimationsPanel = () => {
       <div className="w-1/2 h-44 flex items-center justify-center">
         <Transition
           show={isActive}
-          animationStart={animationStart}
-          animationEnd={animationEnd}
+          animationStart={animationStart as AnimationsTypes}
+          animationEnd={animationEnd as AnimationsTypes}
           alwaysRender={isAlwaysRender}
         >
           <div className="w-24 h-24 flex items-center justify-center text-center text-white bg-red-500 rounded-lg">
