@@ -1,0 +1,186 @@
+---
+product: dd360-ds
+title: React Transition component
+components: Transition
+---
+
+<br />
+<br />
+
+# <span name="floating-nav">Transition</span>
+
+The Transition component allows you to apply animated 
+transitions to its child elements. It provides configuration options to control 
+the animation, such as duration, delay, animation type, and more.
+
+<br />
+<br />
+## <span name="floating-nav">Import</span>
+
+<WindowEditor codeString="import { Transition } from 'dd360-ds'" />
+<WindowEditor codeString="import Transition from 'dd360-ds/Transition'" />
+
+Animation types:
+
+<WindowEditor codeString="import { AnimationsTypes } from 'dd360-ds'" />
+
+<br />
+<br />
+## <span name="floating-nav">Usage</span>
+
+Within your component's render method, place the Transition component, wrapping the elements you want to animate.
+
+<ContainerComponentDoc>
+<Transition animationStart="blink" duration={1000}>
+  <div className="w-24 h-24 flex items-center justify-center text-white bg-red-500 rounded-lg">Blink</div>
+</Transition>
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Transition } from 'dd360-ds'
+
+<Transition animationStart='blink' duration={1000}>
+  <div className='w-24 h-24 flex items-center justify-center text-white bg-red-500 rounded-lg'>Blink</div>
+</Transition>
+"/>
+
+The Transition component accepts the following props:
+
+<span className='border border-gray-300 bg-gray-200 p-1'>show</span> determines whether the transition is visible or hidden. Set it to true to show the transition or false to hide it.
+<br />
+<span className='border border-gray-300 bg-gray-200 p-1'>animationStart</span> specifies the starting animation type. It defaults to 'fadeIn'.
+<br />
+<span className='border border-gray-300 bg-gray-200 p-1'>animationEnd</span> specifies the ending animation type. It defaults to 'fadeOut'.
+<br />
+<span className='border border-gray-300 bg-gray-200 p-1'>duration</span> determines the duration of the animation in milliseconds. The default duration is set to 300 milliseconds.
+<br />
+<span className='border border-gray-300 bg-gray-200 p-1'>delay</span> specifies the delay before the animation starts in milliseconds. It defaults to 0 milliseconds.
+<br />
+<span className='border border-gray-300 bg-gray-200 p-1'>fillMode</span> determines how the animation styles are applied before and after the animation. It accepts the values 'none', 'forwards', 'backwards', or 'both'. The default value is 'both'.
+<br />
+<span className='border border-gray-300 bg-gray-200 p-1'>timingFunction</span> defines the timing function for the animation. It accepts the values 'linear', 'ease', 'ease-in', 'ease-out', or 'ease-in-out'. The default is set to 'linear'.
+<br />
+<span className='border border-gray-300 bg-gray-200 p-1'>alwaysRender</span> controls whether the transition should always render its child elements, even when not visible. By default, it is set to false.
+<br />
+
+<br />
+### <span name="floating-nav">Visibility</span>
+
+To control the visibility of the Transition component, you can utilize the show property, which accepts a boolean value. When set to true, the component becomes visible. This can be easily managed by employing the useState hook.
+
+<ContainerComponentDoc className='h-32 flex items-center gap-8'>
+    <TransitionCustom exampleType='visibility'/>
+</ContainerComponentDoc>
+
+<WindowEditor codeString={`import { useState } from "react"
+import { Button, Transition } from "dd360-ds"
+
+const TransitionCustom = () => {
+  const [isActive, setIsActive] = useState<boolean>(false)
+
+  return (
+    <>
+      <Button onClick={() => setIsActive(!isActive)}>Toggle animation</Button>
+      <Transition show={isActive}>
+        <div className="w-24 h-24 flex items-center text-center text-white bg-red-500 rounded-lg">
+          Fade animation
+        </div>
+      </Transition>
+    </>
+  )
+}`}/>
+
+<br />
+### <span name="floating-nav">Duration & delay</span>
+
+You can also customize the animation duration and delay using the duration and delay properties.
+
+The duration property determines how long the transition animation takes to complete, and it 
+accepts a value in milliseconds. For example, setting duration={500} would make the animation 
+last for 500 milliseconds.
+
+On the other hand, the delay property allows you to specify a delay before the transition 
+animation begins. It also accepts a value in milliseconds. If you set delay={200}, the transition 
+animation will start after a 200 millisecond delay.
+
+By adjusting the values of duration and delay and combining them with the show property controlled 
+by useState, you can create more dynamic and customized transition effects for your Transition component.
+
+<ContainerComponentDoc className='h-32 flex items-center gap-8'>
+    <TransitionCustom exampleType='duration-delay'/>
+</ContainerComponentDoc>
+
+<WindowEditor codeString={`import { useState } from "react"
+import { Button, Transition } from "dd360-ds"
+
+const DurationDelayExample = () => {
+  const [isActive, setIsActive] = useState<boolean>(false)
+  
+  return (
+    <>
+      <Button onClick={() => setIsActive(!isActive)}>Toggle animation</Button>
+      <Transition show={isActive} duration={500} delay={100}>
+        <div className="w-24 h-24 flex items-center text-center text-white bg-red-500 rounded-lg">
+          Duration & delay
+        </div>
+      </Transition>
+    </>
+  )
+}`}/>
+
+<br />
+### <span name="floating-nav">Animations</span>
+
+By utilizing the animationStart and animationEnd properties with appropriate animation names, 
+you can apply custom animations to enhance the visual effects during the transition process of 
+the Transition component.
+
+<ContainerComponentDoc className='h-32 flex items-center gap-8'>
+    <TransitionCustom exampleType='control-animation'/>
+</ContainerComponentDoc>
+
+<WindowEditor codeString={`import { useState } from "react"
+import { Button, Transition } from "dd360-ds"
+
+const ControlAnimationExample = () => {
+  const [isActive, setIsActive] = useState<boolean>(false)
+
+  return (
+    <>
+      <Button onClick={() => setIsActive(!isActive)}>Toggle animation</Button>
+      <Transition
+        show={isActive}
+        animationStart="fadeInRight"
+        animationEnd="flipOutY"
+      >
+        <div className="w-24 h-24 flex items-center text-center text-white bg-red-500 rounded-lg">
+          Hey!
+        </div>
+      </Transition>
+    </>
+  )
+}`}/>
+
+<br />
+#### <span name="floating-nav">All animations</span>
+
+<ContainerComponentDoc className='w-full h-min flex items-center gap-8'>
+    <TransitionCustom exampleType='all-animations'/>
+</ContainerComponentDoc>
+
+<br />
+<br />
+## <span name="floating-nav">API Reference</span>
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'children', default: null, types: ['ReactNode'] },
+        { title: 'show', default: 'true', types: ['boolean'] },
+        { title: 'animationStart', default: 'fadeIn', types: ['AnimationsTypes'] },
+        { title: 'animationEnd', default: 'fadeOut', types: ['AnimationsTypes'] },
+        { title: 'duration', default: '300', types: ['number'] },
+        { title: 'delay', default: '0', types: ['number'] },
+        { title: 'fillMode', default: 'both', types: ['none', 'forwards', 'backwards', 'both'] },
+        { title: 'timingFunction', default: 'linear', types: ['linear', 'ease', 'ease-in', 'ease-out', 'ease-in-out'] },
+        { title: 'alwaysRender', default: 'false', types: ['boolean'] },
+    ]}
+/>
