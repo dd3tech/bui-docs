@@ -15,7 +15,7 @@ function OpenGraph({
   keyword,
   url,
   image,
-  icon
+  icon = '/logo-dd360-white.png'
 }: OpenGraphProps) {
   return (
     <NextHead>
