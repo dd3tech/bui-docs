@@ -24,16 +24,31 @@ interface ComponentObjectProps {
   }
 }
 
+const BADGE_TYPES = {
+  new: {
+    label: 'NEW',
+    color: 'green'
+  },
+  updated: {
+    label: 'UPDATED',
+    color: 'blue'
+  },
+  cooming: {
+    label: 'COOMING',
+    color: 'yellow'
+  },
+  deprecated: {
+    label: 'DEPRECATED',
+    color: 'red'
+  }
+}
+
 const components: ComponentObjectProps = {
   buttons: {
     items: [
       {
         label: 'Button',
-        pathname: 'button',
-        badge: {
-          label: 'NEW',
-          color: 'green'
-        }
+        pathname: 'button'
       },
       {
         label: 'Button Group',
@@ -125,7 +140,8 @@ const components: ComponentObjectProps = {
       },
       {
         label: 'Range Slider',
-        pathname: 'range-slider'
+        pathname: 'range-slider',
+        badge: BADGE_TYPES.updated
       },
       {
         label: 'Select',
@@ -149,7 +165,8 @@ const components: ComponentObjectProps = {
       },
       {
         label: 'Cell',
-        pathname: 'cell'
+        pathname: 'cell',
+        badge: BADGE_TYPES.new
       },
       {
         label: 'Pagination',
@@ -173,7 +190,8 @@ const components: ComponentObjectProps = {
       },
       {
         label: 'AsideModal',
-        pathname: 'aside-modal'
+        pathname: 'aside-modal',
+        badge: BADGE_TYPES.new
       }
     ]
   },
@@ -233,7 +251,8 @@ const components: ComponentObjectProps = {
     items: [
       {
         label: 'Callout',
-        pathname: 'callout'
+        pathname: 'callout',
+        badge: BADGE_TYPES.new
       },
       {
         label: 'Date Picker',
@@ -244,12 +263,9 @@ const components: ComponentObjectProps = {
         pathname: 'dynamic-hero-icon'
       },
       {
-        label: 'FeedBackBox',
-        pathname: 'feed-back-box'
-      },
-      {
-        label: 'Filter Date',
-        pathname: 'filter-date'
+        label: 'Transition',
+        pathname: 'transition',
+        badge: BADGE_TYPES.new
       },
       {
         label: 'Filter Range',
@@ -260,32 +276,42 @@ const components: ComponentObjectProps = {
         pathname: 'filter-range-slider'
       },
       {
-        label: 'Filter Select',
-        pathname: 'filter-select'
+        label: 'Skeleton',
+        pathname: 'skeleton'
       },
       {
-        label: 'Select Multi',
-        pathname: 'select-multi'
-      },
-      {
-        label: 'Language',
-        pathname: 'language'
+        label: 'Table',
+        pathname: 'table',
+        badge: BADGE_TYPES.new
       },
       {
         label: 'Portal',
         pathname: 'portal'
       },
       {
-        label: 'Skeleton',
-        pathname: 'skeleton'
+        label: 'FeedBackBox',
+        pathname: 'feed-back-box',
+        badge: BADGE_TYPES.cooming
       },
       {
-        label: 'Table',
-        pathname: 'table'
+        label: 'Filter Date',
+        pathname: 'filter-date',
+        badge: BADGE_TYPES.cooming
       },
       {
-        label: 'Transition',
-        pathname: 'transition'
+        label: 'Filter Select',
+        pathname: 'filter-select',
+        badge: BADGE_TYPES.cooming
+      },
+      {
+        label: 'Select Multi',
+        pathname: 'select-multi',
+        badge: BADGE_TYPES.cooming
+      },
+      {
+        label: 'Language',
+        pathname: 'language',
+        badge: BADGE_TYPES.cooming
       }
     ]
   }
@@ -327,28 +353,59 @@ export default function SideBar() {
           <Text className="text-gray-600">Getting Started</Text>
         </Link>
         <Divider light />
-        {Object.entries(components).map(([key, value], index) => (
-          <ShowMore basePath={key} icon={value?.icon} title={t(key)} key={key}>
-            {value.items.map((item) => (
-              <Link
-                key={item.label}
-                href={`/docs/${key}/${item.pathname}`}
-                locale={router?.locale}
-                className={composeClasses(
+        {Object.entries(components).map(([key, value], index) => {
+          return (
+            <ShowMore
+              basePath={key}
+              icon={value?.icon}
+              title={t(key)}
+              key={key}
+            >
+              {value.items.map((item) => {
+                const isTabDisabled = item.badge === BADGE_TYPES.cooming
+                const childrenTab = (
+                  <>
+                    <Text
+                      className={composeClasses(
+                        'text-gray-600 cursor-pointer',
+                        isTabDisabled && 'cursor-not-allowed'
+                      )}
+                    >
+                      {item.label}
+                    </Text>
+                    {item.badge && (
+                      <Badge
+                        color={item.badge.color}
+                        label={item.badge.label}
+                      />
+                    )}
+                  </>
+                )
+
+                const classNameWrapper = composeClasses(
                   item.pathname === router?.query?.slug && 'bg-blue-100',
+                  isTabDisabled && 'opacity-50 cursor-not-allowed disabled',
                   'cursor-pointer py-2 pl-4 ml-1 pr-1 flex justify-between items-center rounded-lg transition-all ease-in duration-300'
-                )}
-              >
-                <Text className="text-gray-600 cursor-pointer">
-                  {item.label}
-                </Text>
-                {item.badge && (
-                  <Badge color={item.badge.color} label={item.badge.label} />
-                )}
-              </Link>
-            ))}
-          </ShowMore>
-        ))}
+                )
+
+                return isTabDisabled ? (
+                  <div key={item.label} className={classNameWrapper}>
+                    {childrenTab}
+                  </div>
+                ) : (
+                  <Link
+                    key={item.label}
+                    href={`/docs/${key}/${item.pathname}`}
+                    locale={router?.locale}
+                    className={classNameWrapper}
+                  >
+                    {childrenTab}
+                  </Link>
+                )
+              })}
+            </ShowMore>
+          )
+        })}
       </div>
     </aside>
   )
