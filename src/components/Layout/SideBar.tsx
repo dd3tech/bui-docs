@@ -264,16 +264,20 @@ const components: ComponentObjectProps = {
         pathname: 'filter-select'
       },
       {
-        label: 'Select Multi',
-        pathname: 'select-multi'
-      },
-      {
         label: 'Language',
         pathname: 'language'
       },
       {
+        label: 'List',
+        pathname: 'list'
+      },
+      {
         label: 'Portal',
         pathname: 'portal'
+      },
+      {
+        label: 'Select Multi',
+        pathname: 'select-multi'
       },
       {
         label: 'Skeleton',

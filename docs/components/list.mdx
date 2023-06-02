@@ -1,0 +1,274 @@
+---
+product: dd360-ds
+title: React List component
+components: List
+---
+
+<br />
+<br />
+
+# <span name="floating-nav">List</span>
+
+The List component is a customizable React component that allows you to create 
+ordered or unordered lists with various styling options. It also provides two 
+sub-components, List.Item and List.Icon, to enhance the functionality and appearance 
+of the list items.
+
+<br />
+
+## <span name="floating-nav">Imports</span>
+
+<WindowEditor codeString="import { List } from 'dd360-ds'" />
+<WindowEditor codeString="import List from 'dd360-ds/List'" />
+
+## <span name="floating-nav">Usage</span>
+
+The List component in React allows you to create and customize lists with ease. Whether 
+you need an ordered or unordered list, you can easily specify the type and customize the 
+appearance using various props. Adjust the gap between items, style the icons, and add 
+labels to enhance the list's visual appeal. You can even include custom icons for each 
+list item using the List.Icon component. Simply populate the list by using the List.Item 
+component as children. The List component offers a straightforward and flexible way to create 
+functional and visually appealing lists in your React applications.
+
+Here's an example of how you can use the List component to create a simple unordered list:
+
+<ContainerComponentDoc>
+  <List>
+    <List.Item>First item</List.Item>
+    <List.Item>Second item</List.Item>
+    <List.Item>Third item</List.Item>
+  </List>
+</ContainerComponentDoc>
+
+The code snippet below shows how to use the List component:
+
+<WindowEditor
+    codeString={`import { List } from 'dd360-ds''
+
+<List>
+    <List.Item>First item</List.Item>
+    <List.Item>Second item</List.Item>
+    <List.Item>Third item</List.Item>
+</List>
+`}/>
+
+<br />
+
+### <span name="floating-nav">Ordered list</span>
+
+The ordered list allows you to create a numbered list with a specified order. The List component 
+provides props to customize the appearance of the list items, the numbering format, and the suffix 
+and prefix label.
+
+To create an ordered list, set the "ordered" property of the component to true. By default, this 
+property is set to false.
+
+<ContainerComponentDoc>
+  <List ordered>
+    <List.Item>First item</List.Item>
+    <List.Item>Second item</List.Item>
+    <List.Item>Third item</List.Item>
+  </List>
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { List } from 'dd360-ds''
+
+<List ordered>
+    <List.Item>First item</List.Item>
+    <List.Item>Second item</List.Item>
+    <List.Item>Third item</List.Item>
+</List>
+`}/>
+
+In ordered lists, you can use the properties "prefixLabel" and "suffixLabel" to add a label before and 
+after the numeric list, respectively. The default value for "prefixLabel" is an empty string (''), and 
+the default value for "suffixLabel" is a period ('.').
+
+<ContainerComponentDoc>
+  <List ordered prefixLabel='°' suffixLabel=')'>
+    <List.Item>First item</List.Item>
+    <List.Item>Second item</List.Item>
+    <List.Item>Third item</List.Item>
+  </List>
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { List } from 'dd360-ds''
+
+<List ordered prefixLabel='°' suffixLabel=')'>
+    <List.Item>First item</List.Item>
+    <List.Item>Second item</List.Item>
+    <List.Item>Third item</List.Item>
+</List>
+`}/>
+
+<br />
+### <span name="floating-nav">Unordered list</span>
+
+You can obtain a simple unordered list using the List component without any props. To customize an unordered 
+list, you can use the properties "icon", "iconSize", "iconLineHeight", and "iconColor". By default, a bullet 
+point is used as the icon, but you can change it to a string, emoji, or even a custom icon.
+
+<ContainerComponentDoc>
+  <List iconColor='#46A9CB'>
+    <List.Item>First item</List.Item>
+    <List.Item>Second item</List.Item>
+    <List.Item>Third item</List.Item>
+  </List>
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { List } from 'dd360-ds''
+
+<List iconColor='#46A9CB'>
+    <List.Item>First item</List.Item>
+    <List.Item>Second item</List.Item>
+    <List.Item>Third item</List.Item>
+</List>
+`}/>
+
+<ContainerComponentDoc>
+  <List icon='🎸' iconSize={15} iconLineHeight={20}>
+    <List.Item>First item</List.Item>
+    <List.Item>Second item</List.Item>
+    <List.Item>Third item</List.Item>
+  </List>
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { List } from 'dd360-ds''
+
+<List icon='🎸' iconSize={15} iconLineHeight={20}>
+    <List.Item>First item</List.Item>
+    <List.Item>Second item</List.Item>
+    <List.Item>Third item</List.Item>
+</List>
+`}/>
+
+<br />
+### <span name="floating-nav">Space between items</span>
+
+You can manipulate the spacing between items using the "gap" prop, which takes the 
+number of pixels that will separate the items. On the other hand, the "gapItem" prop 
+receives the number of pixels that will separate the icon or numeric list from the 
+content of the item. The default values for "gap" and "gapItem" are 5px and 0px, 
+respectively.
+
+<ContainerComponentDoc>
+  <List gap={15} gapItem={15}>
+    <List.Item>First item</List.Item>
+    <List.Item>Second item</List.Item>
+    <List.Item>Third item</List.Item>
+  </List>
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { List } from 'dd360-ds''
+
+<List gap={15} gapItem={15}>
+    <List.Item>First item</List.Item>
+    <List.Item>Second item</List.Item>
+    <List.Item>Third item</List.Item>
+</List>
+`}/>
+
+<br />
+### <span name="floating-nav">Custom items</span>
+
+You can customize each item separately by adding props to the List.Item component and 
+overriding those that are inherited from the List component.
+
+<ContainerComponentDoc>
+  <List iconColor='#46A9CB'>
+    <List.Item iconSize={15} iconColor='#E765C4'>First item</List.Item>
+    <List.Item iconColor='#A2E533'>Second item</List.Item>
+    <List.Item iconSize={40}>Third item</List.Item>
+  </List>
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { List } from 'dd360-ds''
+
+<List iconColor='#46A9CB'>
+    <List.Item iconSize={15} iconColor='#E765C4'>First item</List.Item>
+    <List.Item iconColor='#A2E533'>Second item</List.Item>
+    <List.Item iconSize={40}>Third item</List.Item>
+</List>
+`}/>
+
+If you want to add a custom icon, you can use the List.Icon component within the 
+List.Item component and place it before the content of the item.
+
+<ContainerComponentDoc>
+  <List iconColor='#46A9CB' gapItem={10}>
+    <List.Item>
+      <List.Icon>
+        <DynamicHeroIcon icon="PhoneIcon" className="w-5 h-5" />
+      </List.Icon>
+      <Text textMuted500>555-825-14-55</Text>
+    </List.Item>
+    <List.Item>
+      <List.Icon>
+        <DynamicHeroIcon icon="MailIcon" className="w-5 h-5" />
+      </List.Icon>
+      <Text textMuted500>admin@dd360.mx</Text>
+    </List.Item>
+    <List.Item>
+      <List.Icon>
+        <DynamicHeroIcon icon="LocationMarkerIcon" className="w-5 h-5" />
+      </List.Icon>
+      <Text textMuted500>Av. Insurgentes Sur 762</Text>
+    </List.Item>
+  </List>
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { List, Text } from 'dd360-ds'
+import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
+
+<List iconColor='#46A9CB' gapItem={10}>
+    <List.Item>
+      <List.Icon>
+        <DynamicHeroIcon icon="PhoneIcon" className="w-5 h-5" />
+      </List.Icon>
+      <Text textMuted500>555-825-14-55</Text>
+    </List.Item>
+    <List.Item>
+      <List.Icon>
+        <DynamicHeroIcon icon="MailIcon" className="w-5 h-5" />
+      </List.Icon>
+      <Text textMuted500>admin@dd360.mx</Text>
+    </List.Item>
+    <List.Item>
+      <List.Icon>
+        <DynamicHeroIcon icon="LocationMarkerIcon" className="w-5 h-5" />
+      </List.Icon>
+      <Text textMuted500>Av. Insurgentes Sur 762</Text>
+    </List.Item>
+  </List>
+`}/>
+
+<br />
+<br />
+
+## <span name="floating-nav">API Reference</span>
+
+<CustomTableDocs
+  dataTable={[
+    { title: 'ordered', default: 'false', types: ['boolean'] },
+    { title: 'gap', default: '5', types: ['number'] },
+    { title: 'gapItem', default: '0', types: ['number'] },
+    { title: 'prefixLabel', default: '', types: ['string'] },
+    { title: 'suffixLabel', default: '.', types: ['string'] },
+    { title: 'iconColor', default: '#000', types: ['string'] },
+    { title: 'icon', default: '•', types: ['ReactNode'] },
+    { title: 'iconSize', default: '25', types: ['number'] },
+    { title: 'iconLineHeight', default: '25', types: ['number'] },
+    { title: 'children', default: 'null', types: ['ReactNode'] }
+  ]}
+/>
+
+Note: This documentation assumes that the audience has basic knowledge of React
+and how to use components in React applications.
