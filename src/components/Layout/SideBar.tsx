@@ -276,6 +276,11 @@ const components: ComponentObjectProps = {
         pathname: 'filter-range-slider'
       },
       {
+        label: 'List',
+        pathname: 'list',
+        badge: BADGE_TYPES.new
+      },
+      {
         label: 'Skeleton',
         pathname: 'skeleton'
       },
