@@ -91,6 +91,19 @@ import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 
 <TextArea endAdornment={<DynamicHeroIcon icon='AcademicCapIcon' className='text-blue-700 w-6' />} />" />
 
+#### <span name="floating-nav">isRequired</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>isRequired</span> you can mark an textArea as required. Setting isRequired to true will add an asterisk (*) next to the entry to indicate that its completion is required. This functionality is especially useful for highlighting the need to fill in certain fields on forms or user interfaces.
+
+<ContainerComponentDoc className="gap-y-2">
+    <TextArea isRequired label='This field is required' />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { TextArea } from 'dd360-ds'
+
+<TextArea isRequired label='This field is required' />" />
+
+
 ### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs dataTable={[
@@ -108,6 +121,7 @@ import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
     { title: 'large', default: null, types: ['string'] },
     { title: 'role', default: null, types: ['string'] },
     { title: 'boxShadow', default: null, types: ['string'] },
+    { title: 'isRequired', default: null, types: ['boolean'] },
     { title: 'className', default: null, types: ['string'] },
     ]}
 />
