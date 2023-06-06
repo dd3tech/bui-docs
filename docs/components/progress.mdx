@@ -1,0 +1,214 @@
+---
+product: dd360-ds
+title: React Progress component
+components: Progress
+---
+
+<br />
+<br />
+
+# <span name="floating-nav">Progress</span>
+
+The Progress component is a customizable progress indicator in React. It can be used to show 
+the progress of a task or process either in a circular or linear format.
+
+<br />
+
+## <span name="floating-nav">Imports</span>
+
+<WindowEditor codeString="import { Progress } from 'dd360-ds'" />
+<WindowEditor codeString="import Progress from 'dd360-ds/Progress'" />
+
+## <span name="floating-nav">Usage</span>
+
+The Progress component offers exceptional flexibility by providing options for both circular 
+and linear progress representations. This allows you to align the visual style of the component 
+with the overall design of your application seamlessly. By leveraging the value prop, you have 
+precise control over the progress percentage, enabling accurate and informative feedback for 
+users as they track the progress of a task or process.
+
+<ContainerComponentDoc>
+  <Progress value={60} />
+</ContainerComponentDoc>
+
+The code snippet below shows how to use the Progress component:
+
+<WindowEditor
+    codeString={`import { Progress } from 'dd360-ds''
+
+<Progress value={60} />
+`}/>
+
+<br />
+
+### <span name="floating-nav">Progress circle</span>
+
+The Progress Circle component is a circular representation of the progress indicator. It can be 
+implemented by specifying the type prop as 'circle' when using the Progress component. By 
+customizing properties such as circleSize, lineWidth, and lineCap, you can easily create visually 
+appealing circular progress indicators.
+
+<ContainerComponentDoc>
+  <Progress value={30} circleSize={100} lineWidth={4} lineCap='round' />
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { Progress } from 'dd360-ds''
+
+ <Progress 
+   value={30} 
+   circleSize={100} 
+   lineWidth={4} 
+   lineCap='round' 
+ />
+`}/>
+
+<br />
+### <span name="floating-nav">Progress linear</span>
+
+The Progress Linear component provides a linear representation of the progress indicator. It is 
+implemented by setting the type prop as 'linear' when using the Progress component. With adjustable 
+properties like width, height, and lineCap, you can seamlessly integrate the linear progress 
+indicator into different layouts and designs. 
+
+<ContainerComponentDoc>
+  <Progress type='linear' value={60} width='50%' height='15px' lineCap='round' className='mb-2'/>
+  <Progress type='linear' value={60} />
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { Progress } from 'dd360-ds''
+
+<Progress type='linear' value={60} width='50%' height='15px' lineCap='round' className='mb-2'/>
+<Progress type='linear' value={60} />
+`}/>
+
+<br />
+### <span name="floating-nav">Custom colors</span>
+
+The Progress component provides the flexibility to customize the colors of the progress indicators 
+to match the visual style of your application. By specifying properties such as progressLineColor 
+and backgroundLineColor, you can easily tailor the colors of the progress line or circle to create 
+a cohesive and visually appealing user interface.
+
+<ContainerComponentDoc>
+  <Progress value={60}  progressLineColor='#f0ed7e' backgroundLineColor='#e7f9c4' />
+  <Progress value={60}  progressLineColor='#7df0e4' backgroundLineColor='#d4fffb' type='linear' />
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { Progress } from 'dd360-ds''
+
+<Progress value={60}  progressLineColor='#f0ed7e' backgroundLineColor='#e7f9c4' />
+<Progress value={60}  progressLineColor='#7df0e4' backgroundLineColor='#d4fffb' type='linear' />
+`}/>
+
+<br />
+### <span name="floating-nav">Line cap</span>
+
+The Progress component provides the ability to customize the line cap style of the progress indicator. 
+By selecting from options such as 'round', 'square', or 'butt', you can refine the visual appearance of 
+the progress line. Note that when using the linear type, the 'square' and 'butt' line cap styles produce 
+the same result.
+
+<ContainerComponentDoc>
+  <Progress value={60}  progressLineColor='#61d934' backgroundLineColor='#d7ffd3' lineCap='round'/>
+  <Progress value={60} width='80%' height='12px'  progressLineColor='#ff7d40' backgroundLineColor='#ffdfd4' type='linear' lineCap='square' />
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { Progress } from 'dd360-ds''
+
+<Progress 
+  value={60}  
+  progressLineColor='#61d934' 
+  backgroundLineColor='#d7ffd3' 
+  lineCap='round'
+/>
+<Progress 
+  value={60} 
+  width='80%' 
+  height='12px'  
+  progressLineColor='#ff7d40' 
+  backgroundLineColor='#ffdfd4' 
+  type='linear' 
+  lineCap='square' 
+/>
+`}/>
+
+<br />
+### <span name="floating-nav">Indeterminate</span>
+
+The Progress component offers an indeterminate mode that provides an animated representation of 
+progress when the exact progress value is unknown or not applicable. This mode is useful in scenarios 
+where the progress cannot be measured linearly or when the task duration is uncertain.
+
+By setting the indeterminate prop to true, the Progress component displays an infinite animation, 
+indicating that progress is being made without providing a specific progress value. This animated 
+effect adds a visual cue to reassure users that the task is actively being worked on, even if the 
+precise completion status cannot be determined.
+
+<ContainerComponentDoc>
+  <Progress value={60}  progressLineColor='#f0ed7e' backgroundLineColor='#e7f9c4' indeterminate/>
+  <Progress value={60}  progressLineColor='#7df0e4' backgroundLineColor='#d4fffb' type='linear' indeterminate />
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { Progress } from 'dd360-ds''
+
+<Progress value={60}  progressLineColor='#f0ed7e' backgroundLineColor='#e7f9c4' indeterminate/>
+<Progress value={60}  progressLineColor='#7df0e4' backgroundLineColor='#d4fffb' type='linear' indeterminate />
+`}/>
+
+<br />
+### <span name="floating-nav">Custom content</span>
+
+The Progress component allows you to include custom content within the progress indicator using the children 
+prop. This feature enhances the visual presentation by allowing you to add text, icons, or other React 
+components alongside the progress indicator. 
+
+<ContainerComponentDoc>
+  <ProgressCustom/>
+</ContainerComponentDoc>
+
+<br />
+### <span name="floating-nav">Progress vs Spinner</span>
+
+Progress component and the Spinner component can serve as visual indicators, but they have distinct 
+functionalities and use cases.
+
+The Progress component is used to display specific progress with a percentage value, allowing users 
+to track task completion. It offers customization options and the ability to include custom content. 
+Additionally, it can simulate a spinner animation using the indeterminate prop when there is no 
+specific waiting time.
+
+The Spinner component, on the other hand, is a simpler and lightweight loading indicator that indicates 
+ongoing activity without providing precise progress information.
+
+Consider using the Spinner component when you need a straightforward loading indicator, and opt for the 
+Progress component for detailed progress feedback. Evaluate the requirements of your application to 
+determine the most suitable choice.
+
+<br />
+<br />
+
+## <span name="floating-nav">API Reference</span>
+
+<CustomTableDocs
+  dataTable={[
+    { title: 'type', default: 'circle', types: ['circle', 'linear'] },
+    { title: 'value', default: '0', types: ['number'] },
+    { title: 'width', default: '100%', types: ['number', 'string'] },
+    { title: 'height', default: '6px', types: ['number', 'string'] },
+    { title: 'circleSize', default: '80', types: ['number'] },
+    { title: 'lineWidth', default: '8', types: ['number'] },
+    { title: 'indeterminate', default: 'false', types: ['boolean'] },
+    { title: 'progressLineColor', default: '#1d4ed8', types: ['string'] },
+    { title: 'backgroundLineColor', default: '#e5e7eb', types: ['string'] },
+    { title: 'lineCap', default: 'butt', types: ['round', 'square', 'butt'] },
+    { title: 'children', default: 'null', types: ['ReactNode'] }
+  ]}
+/>
+
+Note: This documentation assumes that the audience has basic knowledge of React
+and how to use components in React applications.
