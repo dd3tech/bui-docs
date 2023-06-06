@@ -294,6 +294,11 @@ const components: ComponentObjectProps = {
         pathname: 'portal'
       },
       {
+        label: 'Progress',
+        pathname: 'progress',
+        badge: BADGE_TYPES.new
+      },
+      {
         label: 'FeedBackBox',
         pathname: 'feed-back-box',
         badge: BADGE_TYPES.cooming

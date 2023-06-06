@@ -20,7 +20,8 @@ import {
   CustomCallout,
   FilterRangeCustom,
   FilterRangeSliderCustom,
-  PortalCustom
+  PortalCustom,
+  ProgressCustom
 } from '@/components/docs/components'
 
 import { TransitionCustom } from '@/components/Layout'
@@ -78,6 +79,7 @@ export function getComponents() {
     FilterRangeSliderCustom,
     PortalCustom,
     TransitionCustom,
+    ProgressCustom,
     ...Components
     // Add other custom components here as needed ---| Here |---
   }
