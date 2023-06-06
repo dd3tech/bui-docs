@@ -91,6 +91,10 @@ const components: ComponentObjectProps = {
         pathname: 'flex'
       },
       {
+        label: 'Navbar',
+        pathname: 'navbar'
+      },
+      {
         label: 'Order',
         pathname: 'order'
       },
