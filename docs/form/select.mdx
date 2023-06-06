@@ -117,6 +117,19 @@ import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 />
 " />
 
+#### <span name="floating-nav">isRequired</span>
+
+With the prop <span className='border border-gray-300 bg-gray-200 p-1'>isRequired</span> you can mark an select as required. Setting isRequired to true will add an asterisk (*) next to the entry to indicate that its completion is required. This functionality is especially useful for highlighting the need to fill in certain fields on forms or user interfaces.
+
+<ContainerComponentDoc className="gap-y-2">
+    <Select optionsList={{ A: {label: 'First Option'} }} isRequired label='This field is required' />
+</ContainerComponentDoc>
+
+<WindowEditor codeString="import { Select } from 'dd360-ds'
+
+<Select optionsList={{ A: {label: 'First Option'} }} isRequired label='This field is required' />
+" />
+
 ### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
@@ -137,6 +150,7 @@ import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
         { title: 'label', default: null, types: ['string'] },
         { title: 'paddingX', default: null, types: ['string'] },
         { title: 'paddingY', default: null, types: ['string'] },
-        { title: 'padding', default: '3', types: ['string'] }
+        { title: 'padding', default: '3', types: ['string'] },
+        { title: 'isRequired', default: null, types: ['boolean'] }
     ]}
 />
