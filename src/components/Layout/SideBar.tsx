@@ -91,6 +91,11 @@ const components: ComponentObjectProps = {
         pathname: 'flex'
       },
       {
+        label: 'Navbar',
+        pathname: 'navbar',
+        badge: BADGE_TYPES.new
+      },
+      {
         label: 'Order',
         pathname: 'order'
       },

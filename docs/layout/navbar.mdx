@@ -1,0 +1,579 @@
+---
+product: dd360-ds
+title: React Navbar component
+components: Navbar
+---
+
+<br />
+<br />
+
+# <span name="floating-nav">Navbar</span>
+
+The Navbar component provides a navigation bar for your web application or website. It provides a flexible 
+and customizable navigation bar that you can integrate into your web application or website. With its various 
+sub-components and configurable props, you can easily create a navigation experience that suits your design 
+and functionality requirements.
+
+<br />
+
+## <span name="floating-nav">Imports</span>
+
+<WindowEditor codeString="import { Navbar } from 'dd360-ds'" />
+<WindowEditor codeString="import Navbar from 'dd360-ds/Navbar'" />
+
+## <span name="floating-nav">Usage</span>
+
+The Navbar component serves as the main container for your navigation bar. Inside the Navbar component, you 
+can place various sub-components, such as the brand logo, navigation links, dropdown menus, and additional 
+content. By customizing the props of the Navbar component, you can modify its appearance and behavior 
+according to your requirements. 
+
+<ContainerComponentDoc>
+    <Navbar>Navbar content goes here</Navbar>
+</ContainerComponentDoc>
+
+The code snippet below shows how to use the Navbar component:
+
+<WindowEditor
+    codeString={`import { Navbar } from 'dd360-ds'
+
+<Navbar>Navbar content goes here</Navbar>
+`}/>
+
+Props:
+
+<List>
+ <List.Item>paddingX (optional): Sets the horizontal padding of the Navbar.</List.Item>
+ <List.Item>paddingY (optional): Sets the vertical padding of the Navbar.</List.Item>
+ <List.Item>rounded (optional): Specifies the border radius of the Navbar.</List.Item>
+ <List.Item>variant (optional): Determines the variant of the Navbar. It can be one of: 'floating', 'sticky', or 'static'.</List.Item>
+ <List.Item>shadow (optional): Sets the shadow variant of the Navbar.</List.Item>
+</List>
+
+<br />
+
+### <span name="floating-nav">Brand</span>
+
+The NavbarBrand component represents the branding element within the Navbar. It displays a logo or brand name 
+to help users identify and navigate back to the main page of the application or website. The NavbarBrand 
+component provides a straightforward way to showcase your brand or logo within a navbar. You can set the image 
+source (imgSrc) to the URL of your logo image, which will be rendered alongside the optional name or text.
+
+Also, with the hiddenIn prop, you can specify a breakpoint at which the brand/logo section should be hidden. This 
+feature ensures that the navbar remains clean and responsive on smaller screens, optimizing the user experience.
+
+In addition to displaying a logo image, the component supports the inclusion of other React components or elements 
+through the children prop. This flexibility allows you to add additional branding elements, such as a tagline or 
+a clickable button, to enhance the visual representation of your brand.
+
+<ContainerComponentDoc>
+    <Navbar>
+      <Navbar.Brand>
+          <Image
+            src="/dd360-black.png"
+            width={130}
+            height={28.5}
+            alt="logo"
+          />
+      </Navbar.Brand>
+    </Navbar>
+    <br />
+    <Navbar>
+      <Navbar.Brand imgSrc='http://lendd3r-frontend-develop.s3-website-us-west-1.amazonaws.com/assets/lendder.53f51ab2.png'/>
+    </Navbar>
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { Navbar } from 'dd360-ds'
+
+<Navbar>
+  <Navbar.Brand>
+    <Image
+      src="/dd360-black.png"
+      width={130}
+      height={28.5}
+      alt="logo"
+    />
+  </Navbar.Brand>
+</Navbar>
+<br />
+<Navbar>
+    <Navbar.Brand imgSrc='http://lendd3r-frontend-develop.s3-website-us-west-1.amazonaws.com/assets/lendder.53f51ab2.png'/>
+</Navbar>
+`}/>
+
+Props:
+
+<List>
+ <List.Item>hiddenIn (optional): Specifies the breakpoint at which the NavbarBrand should be hidden. The component will be hidden when 
+   the specified breakpoint is active.</List.Item>
+ <List.Item>name (optional): Sets the brand name to be displayed alongside the logo image.</List.Item>
+ <List.Item>imgSrc (optional): Specifies the source URL of the logo image.</List.Item>
+ <List.Item>imgHeight (optional): Sets the height of the logo image. It accepts a number representing the height in pixels.</List.Item>
+ <List.Item>imgWidth (optional): Sets the width of the logo image. It accepts a number representing the width in pixels.</List.Item>
+ <List.Item>children (optional): Allows you to provide custom content as the brand element instead of an image and name combination.</List.Item>
+</List>
+
+
+<br />
+### <span name="floating-nav">Group</span>
+
+The NavbarGroup component provides a convenient way to group related navigation items within the Navbar. By 
+utilizing its props, you can control the visibility, content, and spacing of the group to enhance the navigation 
+and organization of your web application or website.
+
+With the hiddenIn prop, you can specify a breakpoint at which the group of items should be hidden. This feature 
+allows you to control the visibility of the group based on the screen size, ensuring a responsive design and optimal 
+user experience. The NavbarGroup component supports customizing the appearance and layout of the group. You can add 
+additional CSS classes through the className prop to apply custom styles. Additionally, the gap prop allows you to 
+specify the gap or spacing between the items in the group, enhancing the visual spacing and alignment.
+
+<ContainerComponentDoc>
+    <Navbar>
+      <Navbar.Group>
+          <Navbar.Brand>
+          <Image
+            src="/dd360-black.png"
+            width={130}
+            height={28.5}
+            alt="logo"
+          />
+      </Navbar.Brand>
+      </Navbar.Group>
+      <Navbar.Group gap='10'>
+          <Text>Item 1</Text>
+          <Text>Item 2</Text>
+          <Text>Item 3</Text>
+      </Navbar.Group>
+      <Navbar.Group gap='10'>
+        <Circle
+          backgroundColor="transparent"
+          border="1px solid #D1D5DB"
+          height="36px"
+          width="36px"
+        >
+          <button
+            className="p-1 rounded-full text-gray-400 hover:text-black focus:outline-none"
+            type="button"
+          >
+            <DynamicHeroIcon icon="BellIcon" className="w-5 h-5 text-blue-700" />
+          </button>
+        </Circle>
+      </Navbar.Group>
+    </Navbar>
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { Navbar, Circle } from 'dd360-ds'
+import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
+
+<Navbar>
+  <Navbar.Group>
+    <Navbar.Brand>
+      <Image
+        src="/dd360-black.png"
+        width={130}
+        height={28.5}
+        alt="logo"
+      />
+    </Navbar.Brand>
+  </Navbar.Group>
+  <Navbar.Group gap='10'>
+    <Text>Item 1</Text>
+    <Text>Item 2</Text>
+    <Text>Item 3</Text>
+  </Navbar.Group>
+  <Navbar.Group gap='10'>
+    <Circle
+      backgroundColor="transparent"
+      border="1px solid #D1D5DB"
+      height="36px"
+      width="36px"
+    >
+      <button
+        className="p-1 rounded-full text-gray-400 hover:text-black focus:outline-none"
+        type="button"
+      >
+        <DynamicHeroIcon icon="BellIcon" className="w-5 h-5 text-blue-700" />
+      </button>
+    </Circle>
+  </Navbar.Group>
+</Navbar>
+`}/>
+
+Props:
+
+<List>
+ <List.Item>hiddenIn (optional): Specifies the breakpoint at which the NavbarGroup should be hidden. The component will be hidden when 
+   the specified breakpoint is active.</List.Item>
+ <List.Item>children (optional): Allows you to provide the content for the NavbarGroup. This content typically consists of navigation items or other components.</List.Item>
+ <List.Item>gap (optional): Sets the gap between the navigation items within the NavbarGroup. It accepts a value from the Gap enum to control the spacing between the items.</List.Item>
+</List>
+
+
+<br />
+### <span name="floating-nav">Item</span>
+
+The NavbarItem component provides a flexible and customizable way to include navigation items within the Navbar. 
+By utilizing its props, you can customize the content and styling of the NavbarItem to create a visually appealing 
+and functional navigation bar for your web application or website.
+
+It integrates with the NavbarContent component by utilizing a context. This enables access to the 
+current context of the Navbar, including the active color and variant set by the NavbarContent component. This ensures 
+consistent styling and behavior throughout the navbar. You can easily highlight a specific NavbarItem as the currently 
+active item by setting the isActive prop to true. This feature is particularly useful for indicating the user's current 
+location within a navigation menu, providing a visual cue and enhancing the user experience. You can style the highlight
+from the activeColor and variant prop in the NavbarContent context.
+
+<ContainerComponentDoc>
+    <Navbar>
+      <Navbar.Group gap='10'>
+        <Navbar.Item isActive>Item 1</Navbar.Item>
+        <Navbar.Item>Item 2</Navbar.Item>
+        <Navbar.Item>Item 3</Navbar.Item>
+      </Navbar.Group>
+    </Navbar>
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { Navbar } from 'dd360-ds'
+
+<Navbar>
+  <Navbar.Group gap='10'>
+    <Navbar.Item isActive>Item 1</Navbar.Item>
+    <Navbar.Item>Item 2</Navbar.Item>
+    <Navbar.Item>Item 3</Navbar.Item>
+  </Navbar.Group>
+</Navbar>
+`}/>
+
+Props:
+
+<List>
+ <List.Item>children (optional): Allows you to provide the content for the NavbarItem. This content can include text, icons, or other components that represent the navigation item.</List.Item>
+ <List.Item>isActive (optional): Specifies whether the NavbarItem is currently active or selected. When set to true, the NavbarItem would be styled differently to indicate its active state.</List.Item>
+</List>
+
+
+<br />
+### <span name="floating-nav">Content</span>
+
+The NavbarContent component wraps its children with a context provider. It also provide a container for the content 
+items within the Navbar. It uses the context provider to pass the activeColor and variant values to its children 
+components. This allows child components, such as NavbarItem, to access and apply the appropriate styles based on 
+the active state and variant.
+
+The component supports customization through the activeColor and variant props. The activeColor prop allows you to 
+specify the color scheme for the active item within the Navbar. The variant prop enables you to choose different styling 
+variations, such as underline or highlight, for the Navbar content.
+
+<ContainerComponentDoc>
+    <Navbar>
+      <Navbar.Content variant='highlight' activeColor='success'>
+        <Navbar.Item isActive>Item 1</Navbar.Item>
+        <Navbar.Item>Item 2</Navbar.Item>
+        <Navbar.Item>Item 3</Navbar.Item>
+      </Navbar.Content>
+    </Navbar>
+    <br />
+    <Navbar>
+      <Navbar.Content variant='underline' activeColor='warning'>
+        <Navbar.Item isActive>Item 1</Navbar.Item>
+        <Navbar.Item>Item 2</Navbar.Item>
+        <Navbar.Item>Item 3</Navbar.Item>
+      </Navbar.Content>
+    </Navbar>
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { Navbar } from 'dd360-ds'
+
+<Navbar>
+  <Navbar.Content variant='highlight' activeColor='success'>
+    <Navbar.Item isActive>Item 1</Navbar.Item>
+    <Navbar.Item>Item 2</Navbar.Item>
+    <Navbar.Item>Item 3</Navbar.Item>
+  </Navbar.Content>
+</Navbar>
+<br />
+<Navbar>
+  <Navbar.Content variant='underline' activeColor='warning'>
+    <Navbar.Item isActive>Item 1</Navbar.Item>
+    <Navbar.Item>Item 2</Navbar.Item>
+    <Navbar.Item>Item 3</Navbar.Item>
+  </Navbar.Content>
+</Navbar>
+`}/>
+
+Props:
+
+<List>
+ <List.Item>activeColor (optional): Specifies the color variant to use when rendering active content items within the 
+   NavbarContent. It accepts the values 'primary', 'success', 'error', and 'warning'. This variant color helps to visually 
+   distinguish active content items.</List.Item>
+ <List.Item>variant (optional): Specifies the visual variant for the NavbarContent. It accepts the values 'default', 
+   'underline', and 'highlight'. The variant determines the styling applied to the content items within the NavbarContent.</List.Item>
+</List>
+
+
+<br />
+### <span name="floating-nav">Link</span>
+
+The NavbarLink component is used to create navigation links within the Navbar. By using its props and the context provided 
+by the NavbarContent component, you can easily create customizable and interactive navigation links for your web application 
+or website.
+
+The component utilizes the NavbarContent context to access the active color and variant values set within it. This integration 
+allows for consistent styling and behavior of the Navbar links based on the context values. By setting the isActive prop to true, 
+you can highlight a specific NavbarLink as the currently active link. This feature is useful for visually indicating the user's 
+current location within the navigation menu, improving the user experience.
+
+The NavbarLink component supports using a custom LinkComponent to render the underlying HTML anchor element. This allows 
+you to use routing libraries or custom link components that match your application's routing system.
+
+<ContainerComponentDoc>
+<Navbar>
+  <Navbar.Content variant='underline' activeColor='warning'>
+    <Navbar.Link to='#navbarlink'><Navbar.Item isActive>Item 1</Navbar.Item></Navbar.Link>
+    <Navbar.Link to='#navbarlink'><Navbar.Item>Item 2</Navbar.Item></Navbar.Link>
+    <Navbar.Link to='#navbarlink'><Navbar.Item>Item 3</Navbar.Item></Navbar.Link>
+  </Navbar.Content>
+</Navbar>
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { Navbar } from 'dd360-ds'
+
+<Navbar>
+  <Navbar.Content variant='underline' activeColor='warning'>
+    <Navbar.Link to='#navbarlink'><Navbar.Item isActive>Item 1</Navbar.Item></Navbar.Link>
+    <Navbar.Link to='#navbarlink'><Navbar.Item>Item 2</Navbar.Item></Navbar.Link>
+    <Navbar.Link to='#navbarlink'><Navbar.Item>Item 3</Navbar.Item></Navbar.Link>
+  </Navbar.Content>
+</Navbar>
+`}/>
+
+Props:
+
+<List>
+ <List.Item>to (required): Specifies the URL or path that the link should navigate to.</List.Item>
+ <List.Item>isActive (optional): Determines if the link is currently active. When set to true, the link will apply the active 
+   styling based on the context provided by the NavbarContent component.</List.Item>
+ <List.Item>LinkComponent (optional): Allows you to specify a custom component to be used as the link. By default, it uses an 
+   anchor element for regular links. You can provide a different component, such as a React Router Link, to handle navigation in
+   your application.</List.Item>
+</List>
+
+
+<br />
+### <span name="floating-nav">Collapse</span>
+
+#### <span>NavbarCollapse</span>
+
+The NavbarCollapse component provides a convenient way to create collapsible content sections. It is responsible 
+for managing the collapse and expansion of content within a navigation bar. The component accepts two child 
+elements: NavbarCollapseToggle and NavbarCollapseContent, representing the toggle control and the collapsible 
+content respectively.
+
+The NavbarCollapse component wraps the child elements in a context provider. This allows the child components 
+to access the collapse state and the function to control the collapse and expansion behavior.
+
+#### <span>NavbarCollapseToggle</span>
+
+The NavbarCollapseToggle component is used within the NavbarCollapse component to provide a toggle button for 
+expanding or collapsing the content of the Navbar. It wraps the content with a context provider and can be 
+customized with the provided props.
+
+The NavbarCollapseToggle component accepts additional props that can be used to customize its appearance and 
+behavior. You can provide your own className, styles, or children to customize the toggle button according to 
+your design requirements. If no children are provided to the NavbarCollapseToggle component, it renders the 
+SquareMenu component as the default toggle icon. Also, you can use the showIn prop to set in which breakpoints 
+the component should be hidden. 
+
+#### <span>NavbarCollapseContent</span>
+
+The NavbarCollapseContent component is used within the NavbarCollapse component to provide collapsible content 
+for the Navbar. It can contain any desired content, such as links, buttons, NavbarItem, NavbarGroup or other components.
+
+The component accepts various props that can be used to customize its appearance and behavior. You can provide a 
+title for the content, choose the active color and variant, control the alignment of the content items, and 
+specify the gap between them.
+
+The component includes a close button that allows the user to collapse the NavbarCollapse component. Clicking on 
+the button triggers a function from the NavbarCollapseContext, updating the collapse state.
+
+<ContainerComponentDoc>
+<Navbar>
+  <Navbar.Collapse>
+    <Navbar.CollapseToggle
+        className="cursor-pointer"
+    />
+    <Navbar.CollapseContent
+        activeColor="primary"
+        gap="8"
+        title="Menu"
+    >
+    <Navbar.Link to='#navbarlink'><Navbar.Item isActive>Item 1</Navbar.Item></Navbar.Link>
+    <Navbar.Link to='#navbarlink'><Navbar.Item>Item 2</Navbar.Item></Navbar.Link>
+    <Navbar.Link to='#navbarlink'><Navbar.Item>Item 3</Navbar.Item></Navbar.Link>
+    </Navbar.CollapseContent>
+  </Navbar.Collapse>
+</Navbar>
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { Navbar } from 'dd360-ds'
+
+<Navbar>
+  <Navbar.Collapse>
+    <Navbar.CollapseToggle
+        className="cursor-pointer"
+    />
+    <Navbar.CollapseContent
+        activeColor="primary"
+        gap="8"
+        title="Menu"
+    >
+    <Navbar.Link to='#navbarlink'><Navbar.Item isActive>Item 1</Navbar.Item></Navbar.Link>
+    <Navbar.Link to='#navbarlink'><Navbar.Item>Item 2</Navbar.Item></Navbar.Link>
+    <Navbar.Link to='#navbarlink'><Navbar.Item>Item 3</Navbar.Item></Navbar.Link>
+    </Navbar.CollapseContent>
+  </Navbar.Collapse>
+</Navbar>
+`}/>
+
+In the example above, the NavbarCollapse component is used within a Navbar component to create a collapsible section. 
+The NavbarCollapseToggle component represents the toggle button, and the NavbarCollapseContent component contains the 
+content to be displayed when the section is expanded. By placing these components within the NavbarCollapse component, 
+you can create a collapsible section in the Navbar.
+
+NavbarCollapse Props:
+
+<List>
+ <List.Item>children (required): An array of two elements representing the toggle element and the content element. 
+  The toggle element is responsible for triggering the collapse, and the content element holds the collapsible content.</List.Item>
+</List>
+
+NavbarCollapseToggle Props:
+
+<List>
+ <List.Item>showIn (required): Specifies the breakpoint at which the toggle element will be hidden or shown.</List.Item>
+ <List.Item>children (optional): The content of the toggle element. By default it display a SquareMenu component</List.Item>
+</List>
+
+NavbarCollapseContent Props:
+
+<List>
+ <List.Item>title (required): Displays a string to represent the title or heading of the collapsible content.</List.Item>
+ <List.Item>activeColor (optional): Specifies the active color variant for the collapsible content. It can be one of 'primary', 
+   'success', 'error', or 'warning'.</List.Item>
+ <List.Item>variant (optional): Specifies the variant of the collapsible content. It can be one of 'default', 'underline', 
+   or 'highlight'.</List.Item>
+ <List.Item>gap (optional): Specifies the gap between the elements inside the collapsible content.</List.Item>
+ <List.Item>align (optional): Specifies the alignment of the elements inside the collapsible content.</List.Item>
+</List>
+
+
+<br />
+<br />
+
+## <span name="floating-nav">API Reference</span>
+
+#### <span>Navbar</span>
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'children', default: 'null', types: ['ReactNode'] },
+        { title: 'paddingY', default: '0', types: ['Padding'] },
+        { title: 'paddingX', default: '10', types: ['Padding'] },
+        { title: 'rounded', default: 'none', types: ['Rounded'] },
+        { title: 'variant', default: 'sticky', types: ['floating', 'sticky', 'static'] },
+        { title: 'shadow', default: 'base', types: ['ShadowVariants'] },
+    ]}
+/>
+
+#### <span>Brand</span>
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'hiddenIn', default: 'null', types: ['string'] },
+        { title: 'imgSrc', default: 'null', types: ['string'] },
+        { title: 'imgHeight', default: '30', types: ['number'] },
+        { title: 'imgWidth', default: 'null', types: ['number'] },
+        { title: 'name', default: 'null', types: ['string'] },
+        { title: 'children', default: 'null', types: ['ReactNode'] },
+    ]}
+/>
+
+#### <span>Group</span>
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'hiddenIn', default: 'null', types: ['string'] },
+        { title: 'gap', default: 'null', types: ['Gap'] },
+        { title: 'children', default: 'null', types: ['ReactNode'] },
+    ]}
+/>
+
+#### <span>Item</span>
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'children', default: 'null', types: ['ReactNode'] },
+        { title: 'isActive', default: 'false', types: ['boolean'] },
+    ]}
+/>
+
+#### <span>Content</span>
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'hiddenIn', default: 'null', types: ['string'] },
+        { title: 'activeColor', default: 'primary', types: ['NavbarContentActiveColor'] },
+        { title: 'variant', default: 'default', types: ['NavbarContentVariants'] },
+        { title: 'children', default: 'null', types: ['ReactNode'] },
+    ]}
+/>
+
+#### <span>Link</span>
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'children', default: 'null', types: ['ReactNode'] },
+        { title: 'to', default: 'null', types: ['string'] },
+        { title: 'isActive', default: 'false', types: ['boolean'] },
+        { title: 'LinkComponent', default: 'null', types: ['ReactNode'] },
+    ]}
+/>
+
+#### <span>Collapse</span>
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'children', default: 'null', types: ['ReactNode'] },
+    ]}
+/>
+
+#### <span>CollapseToggle</span>
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'showIn', default: 'null', types: ['string'] },
+        { title: 'children', default: 'null', types: ['ReactNode'] },
+    ]}
+/>
+
+#### <span>CollapseContent</span>
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'title', default: 'null', types: ['string'] },
+        { title: 'activeColor', default: 'primary', types: ['NavbarContentActiveColor'] },
+        { title: 'variant', default: 'default', types: ['NavbarContentVariants'] },
+        { title: 'gap', default: '0', types: ['Gap'] },
+        { title: 'align', default: 'center', types: ['AlignItems'] },
+        { title: 'children', default: 'null', types: ['ReactNode'] },
+    ]}
+/>
+
+Note: This documentation assumes that the audience has basic knowledge of React and how to use components in React applications.
