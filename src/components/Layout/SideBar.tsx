@@ -92,7 +92,8 @@ const components: ComponentObjectProps = {
       },
       {
         label: 'Navbar',
-        pathname: 'navbar'
+        pathname: 'navbar',
+        badge: BADGE_TYPES.new
       },
       {
         label: 'Order',

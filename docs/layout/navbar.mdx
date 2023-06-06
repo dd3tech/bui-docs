@@ -54,8 +54,17 @@ Props:
 
 ### <span name="floating-nav">Brand</span>
 
-The NavbarBrand component represents the branding element within the Navbar. It displays a logo 
-or brand name to help users identify and navigate back to the main page of the application or website.
+The NavbarBrand component represents the branding element within the Navbar. It displays a logo or brand name 
+to help users identify and navigate back to the main page of the application or website. The NavbarBrand 
+component provides a straightforward way to showcase your brand or logo within a navbar. You can set the image 
+source (imgSrc) to the URL of your logo image, which will be rendered alongside the optional name or text.
+
+Also, with the hiddenIn prop, you can specify a breakpoint at which the brand/logo section should be hidden. This 
+feature ensures that the navbar remains clean and responsive on smaller screens, optimizing the user experience.
+
+In addition to displaying a logo image, the component supports the inclusion of other React components or elements 
+through the children prop. This flexibility allows you to add additional branding elements, such as a tagline or 
+a clickable button, to enhance the visual representation of your brand.
 
 <ContainerComponentDoc>
     <Navbar>
@@ -68,6 +77,10 @@ or brand name to help users identify and navigate back to the main page of the a
           />
       </Navbar.Brand>
     </Navbar>
+    <br />
+    <Navbar>
+      <Navbar.Brand imgSrc='http://lendd3r-frontend-develop.s3-website-us-west-1.amazonaws.com/assets/lendder.53f51ab2.png'/>
+    </Navbar>
 </ContainerComponentDoc>
 
 <WindowEditor
@@ -76,12 +89,16 @@ or brand name to help users identify and navigate back to the main page of the a
 <Navbar>
   <Navbar.Brand>
     <Image
-    src="/dd360-black.png"
-    width={130}
-    height={28.5}
-    alt="logo"
+      src="/dd360-black.png"
+      width={130}
+      height={28.5}
+      alt="logo"
     />
   </Navbar.Brand>
+</Navbar>
+<br />
+<Navbar>
+    <Navbar.Brand imgSrc='http://lendd3r-frontend-develop.s3-website-us-west-1.amazonaws.com/assets/lendder.53f51ab2.png'/>
 </Navbar>
 `}/>
 
@@ -104,6 +121,12 @@ Props:
 The NavbarGroup component provides a convenient way to group related navigation items within the Navbar. By 
 utilizing its props, you can control the visibility, content, and spacing of the group to enhance the navigation 
 and organization of your web application or website.
+
+With the hiddenIn prop, you can specify a breakpoint at which the group of items should be hidden. This feature 
+allows you to control the visibility of the group based on the screen size, ensuring a responsive design and optimal 
+user experience. The NavbarGroup component supports customizing the appearance and layout of the group. You can add 
+additional CSS classes through the className prop to apply custom styles. Additionally, the gap prop allows you to 
+specify the gap or spacing between the items in the group, enhancing the visual spacing and alignment.
 
 <ContainerComponentDoc>
     <Navbar>
@@ -195,6 +218,13 @@ The NavbarItem component provides a flexible and customizable way to include nav
 By utilizing its props, you can customize the content and styling of the NavbarItem to create a visually appealing 
 and functional navigation bar for your web application or website.
 
+It integrates with the NavbarContent component by utilizing a context. This enables access to the 
+current context of the Navbar, including the active color and variant set by the NavbarContent component. This ensures 
+consistent styling and behavior throughout the navbar. You can easily highlight a specific NavbarItem as the currently 
+active item by setting the isActive prop to true. This feature is particularly useful for indicating the user's current 
+location within a navigation menu, providing a visual cue and enhancing the user experience. You can style the highlight
+from the activeColor and variant prop in the NavbarContent context.
+
 <ContainerComponentDoc>
     <Navbar>
       <Navbar.Group gap='10'>
@@ -228,9 +258,14 @@ Props:
 <br />
 ### <span name="floating-nav">Content</span>
 
-The NavbarContent component provides a container for the content items within the Navbar. It uses the a context 
-provider to pass the activeColor and variant values to its children components. This allows child components, 
-such as NavbarItem, to access and apply the appropriate styles based on the active state and variant.
+The NavbarContent component wraps its children with a context provider. It also provide a container for the content 
+items within the Navbar. It uses the context provider to pass the activeColor and variant values to its children 
+components. This allows child components, such as NavbarItem, to access and apply the appropriate styles based on 
+the active state and variant.
+
+The component supports customization through the activeColor and variant props. The activeColor prop allows you to 
+specify the color scheme for the active item within the Navbar. The variant prop enables you to choose different styling 
+variations, such as underline or highlight, for the Navbar content.
 
 <ContainerComponentDoc>
     <Navbar>
@@ -288,6 +323,14 @@ The NavbarLink component is used to create navigation links within the Navbar. B
 by the NavbarContent component, you can easily create customizable and interactive navigation links for your web application 
 or website.
 
+The component utilizes the NavbarContent context to access the active color and variant values set within it. This integration 
+allows for consistent styling and behavior of the Navbar links based on the context values. By setting the isActive prop to true, 
+you can highlight a specific NavbarLink as the currently active link. This feature is useful for visually indicating the user's 
+current location within the navigation menu, improving the user experience.
+
+The NavbarLink component supports using a custom LinkComponent to render the underlying HTML anchor element. This allows 
+you to use routing libraries or custom link components that match your application's routing system.
+
 <ContainerComponentDoc>
 <Navbar>
   <Navbar.Content variant='underline' activeColor='warning'>
@@ -325,6 +368,8 @@ Props:
 <br />
 ### <span name="floating-nav">Collapse</span>
 
+#### <span>NavbarCollapse</span>
+
 The NavbarCollapse component provides a convenient way to create collapsible content sections. It is responsible 
 for managing the collapse and expansion of content within a navigation bar. The component accepts two child 
 elements: NavbarCollapseToggle and NavbarCollapseContent, representing the toggle control and the collapsible 
@@ -333,11 +378,29 @@ content respectively.
 The NavbarCollapse component wraps the child elements in a context provider. This allows the child components 
 to access the collapse state and the function to control the collapse and expansion behavior.
 
-The NavbarCollapseToggle component is used as the toggle element within the Collapse component. It can be clicked to 
-collapse or expand the content.
+#### <span>NavbarCollapseToggle</span>
 
-The NavbarCollapseContent component is used as the content element within the Collapse component. It holds the collapsible 
-content that will be shown or hidden.
+The NavbarCollapseToggle component is used within the NavbarCollapse component to provide a toggle button for 
+expanding or collapsing the content of the Navbar. It wraps the content with a context provider and can be 
+customized with the provided props.
+
+The NavbarCollapseToggle component accepts additional props that can be used to customize its appearance and 
+behavior. You can provide your own className, styles, or children to customize the toggle button according to 
+your design requirements. If no children are provided to the NavbarCollapseToggle component, it renders the 
+SquareMenu component as the default toggle icon. Also, you can use the showIn prop to set in which breakpoints 
+the component should be hidden. 
+
+#### <span>NavbarCollapseContent</span>
+
+The NavbarCollapseContent component is used within the NavbarCollapse component to provide collapsible content 
+for the Navbar. It can contain any desired content, such as links, buttons, NavbarItem, NavbarGroup or other components.
+
+The component accepts various props that can be used to customize its appearance and behavior. You can provide a 
+title for the content, choose the active color and variant, control the alignment of the content items, and 
+specify the gap between them.
+
+The component includes a close button that allows the user to collapse the NavbarCollapse component. Clicking on 
+the button triggers a function from the NavbarCollapseContext, updating the collapse state.
 
 <ContainerComponentDoc>
 <Navbar>
@@ -378,6 +441,11 @@ content that will be shown or hidden.
   </Navbar.Collapse>
 </Navbar>
 `}/>
+
+In the example above, the NavbarCollapse component is used within a Navbar component to create a collapsible section. 
+The NavbarCollapseToggle component represents the toggle button, and the NavbarCollapseContent component contains the 
+content to be displayed when the section is expanded. By placing these components within the NavbarCollapse component, 
+you can create a collapsible section in the Navbar.
 
 NavbarCollapse Props:
 
