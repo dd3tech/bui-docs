@@ -158,7 +158,7 @@ const Search = () => {
   }, [autocompleteState, handleKeyDown, selectedComponent])
 
   return (
-    <form className="relative hidden md:block" ref={formRef} {...formProps}>
+    <form className="relative md:block" ref={formRef} {...formProps}>
       <div
         className="relative w-80 lg:mt-0 flex items-center px-4 bg-gray-100 hover:bg-white text-sm rounded-3xl hover:shadow-lg hover:border-gray-500 duration-500 ease-out focus:ease-in z-20"
         style={{ height: '40px' }}

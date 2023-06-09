@@ -23,6 +23,9 @@ interface ComponentObjectProps {
     }[]
   }
 }
+interface SideBarProps {
+  setIsActiveButtonMobile?: (e: boolean) => void
+}
 
 const BADGE_TYPES = {
   new: {
@@ -332,14 +335,14 @@ const components: ComponentObjectProps = {
   }
 }
 
-export default function SideBar() {
+export default function SideBar({ setIsActiveButtonMobile }: SideBarProps) {
   const { t } = useTranslation('common')
   const router = useRouter()
 
   return (
     <aside
-      className="sticky inset-0 w-full max-h-screen overflow-hidden flex flex-col bg-blue-50 -translate-x-full transform p-2 transition-transform duration-150 ease-in lg:translate-x-0 border-r border-gray-300"
-      style={{ minWidth: 200, maxWidth: 200 }}
+      className="h-screen md:h-auto w-full border-r border-gray-300 sticky inset-0 max-h-screen overflow-hidden flex flex-col bg-blue-50 transform p-2 md:transition-transform duration-150 ease-in lg:translate-x-0"
+      style={{ minWidth: 200 }}
     >
       <Link href="/" className="block my-7 mx-auto">
         <Image
@@ -385,6 +388,7 @@ export default function SideBar() {
                         'text-gray-600 cursor-pointer',
                         isTabDisabled && 'cursor-not-allowed'
                       )}
+                      onClick={() => setIsActiveButtonMobile?.(false)}
                     >
                       {item.label}
                     </Text>
