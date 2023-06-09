@@ -1,0 +1,80 @@
+---
+product: dd360-ds
+title: React BarList component
+components: BarList
+---
+
+<br />
+<br />
+
+# <span name="floating-nav">BarList</span>
+
+The BarList component is a customizable React component that allows you to create 
+ordered or unordered lists with various styling options.
+
+<br />
+
+## <span name="floating-nav">Imports</span>
+
+<WindowEditor codeString="import { BarList } from 'dd360-ds'" />
+<WindowEditor codeString="import BarList from 'dd360-ds/BarList'" />
+
+## <span name="floating-nav">Usage</span>
+
+The BarList component in React allows you to create and customize lists with ease. Whether 
+you need an ordered or unordered list, you can easily specify the type and customize the 
+appearance using various props. Adjust the gap between items, style the icons, and add 
+labels to enhance the list's visual appeal. You can even include custom icons for each 
+list item using the BarList.Icon component. Simply populate the list by using the BarList.Item 
+component as children. The BarList component offers a straightforward and flexible way to create 
+functional and visually appealing lists in your React applications.
+
+Here's an example of how you can use the BarList component to create:
+
+<ContainerComponentDoc>
+  <BarList dataList={[{ label: 'Snapchat', value: 0 },
+    { label: 'Linkedin', value: 25 },
+    { label: 'Twitter', value: 50 },
+    { label: 'Facebook', value: 75 },
+    { label: 'Instagram', value: 100 }]} />
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { BarList } from 'dd360-ds'
+
+  const data = [
+    { label: 'Snapchat', value: 0 },
+    { label: 'Linkedin', value: 25 },
+    { label: 'Twitter', value: 50 },
+    { label: 'Facebook', value: 75 },
+    { label: 'Instagram', value: 100 }
+  ]
+
+  <BarList dataList={data} />
+
+`}/>
+
+<br />
+
+<br />
+<br />
+
+## <span name="floating-nav">API Reference</span>
+
+<CustomTableDocs
+  dataTable={[
+    { title: 'ordered', default: 'false', types: ['boolean'] },
+    { title: 'gap', default: '5', types: ['number'] },
+    { title: 'gapItem', default: '0', types: ['number'] },
+    { title: 'prefixLabel', default: '', types: ['string'] },
+    { title: 'suffixLabel', default: '.', types: ['string'] },
+    { title: 'iconColor', default: '#000', types: ['string'] },
+    { title: 'icon', default: '•', types: ['ReactNode'] },
+    { title: 'iconSize', default: '25', types: ['number'] },
+    { title: 'iconLineHeight', default: '25', types: ['number'] },
+    { title: 'children', default: 'null', types: ['ReactNode'] }
+  ]}
+/>
+
+Note: This documentation assumes that the audience has basic knowledge of React
+and how to use components in React applications.
