@@ -291,6 +291,11 @@ const components: ComponentObjectProps = {
         badge: BADGE_TYPES.new
       },
       {
+        label: 'BarList',
+        pathname: 'bar-list',
+        badge: BADGE_TYPES.new
+      },
+      {
         label: 'Skeleton',
         pathname: 'skeleton'
       },
