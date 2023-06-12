@@ -260,6 +260,11 @@ const components: ComponentObjectProps = {
         badge: BADGE_TYPES.new
       },
       {
+        label: 'Circle',
+        pathname: 'circle',
+        badge: BADGE_TYPES.new
+      },
+      {
         label: 'Date Picker',
         pathname: 'date-picker'
       },
