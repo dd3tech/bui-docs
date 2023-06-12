@@ -1,0 +1,177 @@
+---
+product: dd360-ds
+title: React Circle component
+components: Circle
+---
+
+<br />
+<br />
+
+# <span name="floating-nav">Circle</span>
+
+The Circle component provides an easy and customizable way to render circular div elements in React applications. 
+Its flexible properties allow you to adjust the appearance and behavior of the circle based on your specific 
+requirements. By using the Circle component, you can enhance the visual aesthetics and user experience of your application.
+
+<br />
+
+## <span name="floating-nav">Imports</span>
+
+<WindowEditor codeString="import { Circle } from 'dd360-ds'" />
+<WindowEditor codeString="import Circle from 'dd360-ds/Circle'" />
+
+## <span name="floating-nav">Usage</span>
+
+By adjusting the props of the Circle component, you have full control over its background color, dimensions, 
+border style, and more. Whether you need to display icons, profile pictures, or decorative elements, the Circle 
+component provides a simple and intuitive solution. 
+
+<ContainerComponentDoc>
+    <Circle>Hey!</Circle>
+</ContainerComponentDoc>
+
+The code snippet below shows how to use the Circle component:
+
+<WindowEditor
+    codeString={`import { Circle } from 'dd360-ds'
+
+<Circle>Hey!</Circle>
+`}/>
+
+Props:
+
+<List>
+ <List.Item>backgroundColor: Specifies the background color of the circle. Default value is #EFF6FF.</List.Item>
+ <List.Item>width: Specifies the width of the circle. Default value is 3rem.</List.Item>
+ <List.Item>height: Specifies the height of the circle. Default value is 3rem.</List.Item>
+ <List.Item>border: Specifies the border of the circle. No border is applied by default.</List.Item>
+ <List.Item>useBackground: Specifies whether to use the background color. Default value is true.</List.Item>
+ <List.Item>disabled: Specifies whether the component should be disabled. Default value is false.</List.Item>
+ <List.Item>children: Allows you to add child elements inside the Circle component. This can include text, images, or other React components</List.Item>
+</List>
+
+<br />
+### <span name="floating-nav">Colors</span>
+
+With the backgroundColor prop, you can easily specify the desired color for the Circle component. Simply provide a valid CSS 
+color value, such as a hex code, RGB value, or color name, to achieve the desired effect. This flexibility empowers you to 
+create circles that seamlessly blend with the overall color palette of your application.
+
+The Circle component provides the useBackground prop, which allows you to control whether the specified background color should 
+be applied to the circle or not. By default, the useBackground prop is set to true, indicating that the background color specified 
+by the backgroundColor prop will be applied to the circle. Also it offers the disabled prop, which allows you to indicate whether 
+the circular element should appear in a disabled state or not.
+
+<ContainerComponentDoc>
+    <Flex alignItems='center' gap='8'>
+      <Circle backgroundColor='#f0ed7e'>Hey!</Circle>
+      <Circle backgroundColor='#7df0e4'>Hey!</Circle>
+      <Circle backgroundColor='#61d934'>Hey!</Circle>
+      <Circle backgroundColor='#ff7d40'>Hey!</Circle>
+      <Circle backgroundColor='#ff7d40' useBackground={false}>Hey!</Circle>
+    </Flex>
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { Circle, Flex } from 'dd360-ds'
+
+<Flex alignItems='center' gap='8'>
+  <Circle backgroundColor='#f0ed7e'>Hey!</Circle>
+  <Circle backgroundColor='#7df0e4'>Hey!</Circle>
+  <Circle backgroundColor='#61d934'>Hey!</Circle>
+  <Circle backgroundColor='#ff7d40'>Hey!</Circle>
+  <Circle backgroundColor='#ff7d40' useBackground={false}>Hey!</Circle>
+</Flex>
+`}/>
+
+<br />
+### <span name="floating-nav">Size</span>
+
+The Circle component offers flexibility in defining its size, allowing you to create circles of different dimensions based 
+on your design needs. By adjusting the width and height props, you can easily customize the size of the Circle component to 
+achieve the desired visual effect.
+
+<ContainerComponentDoc>
+    <Flex alignItems='center' gap='8'>
+      <Circle backgroundColor='#7df0e4' width='100px' height='100px'>100px</Circle>
+      <Circle backgroundColor='#61d934' width='80px' height='80px'>80px</Circle>
+      <Circle backgroundColor='#f0ed7e' width='60px' height='60px'>60px</Circle>
+    </Flex>
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { Circle, Flex } from 'dd360-ds'
+
+<Flex alignItems='center' gap='8'>
+  <Circle backgroundColor='#7df0e4' width='100px' height='100px'>100px</Circle>
+  <Circle backgroundColor='#61d934' width='80px' height='80px'>80px</Circle>
+  <Circle backgroundColor='#f0ed7e' width='60px' height='60px'>60px</Circle>
+</Flex>
+`}/>
+
+<br />
+### <span name="floating-nav">Border</span>
+
+To specify the border style, provide a valid CSS border value to the border prop. This can include properties 
+such as border width, border color, and border style. With this flexibility, you can create circles with solid 
+borders, dashed borders, or even complex border patterns, adding a unique touch to your circular elements.
+
+<ContainerComponentDoc>
+    <Flex alignItems='center' gap='8'>
+      <Circle backgroundColor='#7df0e4' border='3px solid #aa1213'>Hey!</Circle>
+      <Circle backgroundColor='#61d934' border='2px dotted #ff7d40'>Hey!</Circle>
+      <Circle backgroundColor='#f0ed7e' border='1px dashed #b2b1e8'>Hey!</Circle>
+      <Circle backgroundColor='#ff7d40' border='1px solid #000'>Hey!</Circle>
+    </Flex>
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { Circle, Flex } from 'dd360-ds'
+
+<Flex alignItems='center' gap='8'>
+  <Circle backgroundColor='#7df0e4' border='3px solid #aa1213'>Hey!</Circle>
+  <Circle backgroundColor='#61d934' border='2px dotted #ff7d40'>Hey!</Circle>
+  <Circle backgroundColor='#f0ed7e' border='1px dashed #b2b1e8'>Hey!</Circle>
+  <Circle backgroundColor='#ff7d40' border='1px solid #000'>Hey!</Circle>
+</Flex>
+`}/>
+
+<br />
+### <span name="floating-nav">Custom Item</span>
+
+The Circle component offers the flexibility to add custom content as child elements inside the circle. This 
+feature allows you to personalize the circular element by including text, images, or other React components 
+within it.
+
+<ContainerComponentDoc>
+    <Circle backgroundColor='#ede4e3'>
+      <DynamicHeroIcon icon='PaperAirplaneIcon' className='w-5 h-5 text-blue-500' />
+    </Circle>
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import { Circle } from 'dd360-ds'
+
+<Circle backgroundColor='#ede4e3'>
+  <DynamicHeroIcon icon='PaperAirplaneIcon' className='w-5 h-5 text-blue-500' />
+</Circle>
+`}/>
+
+<br />
+<br />
+
+## <span name="floating-nav">API Reference</span>
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'children', default: 'null', types: ['ReactNode'] },
+        { title: 'backgroundColor', default: '#EFF6FF', types: ['string'] },
+        { title: 'width', default: '3rem', types: ['string'] },
+        { title: 'height', default: '3rem', types: ['string'] },
+        { title: 'border', default: 'null', types: ['string'] },
+        { title: 'disabled', default: 'false', types: ['boolean'] },
+        { title: 'useBackground', default: 'true', types: ['boolean'] },
+    ]}
+/>
+
+Note: This documentation assumes that the audience has basic knowledge of React and how to use components in React applications.
