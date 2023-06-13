@@ -21,7 +21,8 @@ import {
   FilterRangeCustom,
   FilterRangeSliderCustom,
   PortalCustom,
-  ProgressCustom
+  ProgressCustom,
+  FilterSelectCustom
 } from '@/components/docs/components'
 
 import { TransitionCustom } from '@/components/Layout'
@@ -80,6 +81,7 @@ export function getComponents() {
     PortalCustom,
     TransitionCustom,
     ProgressCustom,
+    FilterSelectCustom,
     ...Components
     // Add other custom components here as needed ---| Here |---
   }
