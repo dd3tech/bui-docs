@@ -18,6 +18,7 @@ import {
 
 import SwitchCustom from '@/components/docs/controls/SwitchCustom'
 import {
+  ConfirmDialogCustom,
   CustomCallout,
   FilterRangeCustom,
   FilterRangeSliderCustom,
@@ -85,6 +86,7 @@ export function getComponents() {
     PortalCustom,
     TransitionCustom,
     ProgressCustom,
+    ConfirmDialogCustom,
     ...Components,
     SideBar
     // Add other custom components here as needed ---| Here |---

@@ -338,6 +338,11 @@ const components: ComponentObjectProps = {
         label: 'Language',
         pathname: 'language',
         badge: BADGE_TYPES.cooming
+      },
+      {
+        label: 'Confirm Dialog',
+        pathname: 'confirm-dialog',
+        badge: BADGE_TYPES.new
       }
     ]
   }
