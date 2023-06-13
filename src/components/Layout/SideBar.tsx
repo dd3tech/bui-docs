@@ -109,7 +109,8 @@ const components: ComponentObjectProps = {
       },
       {
         label: 'SideBar',
-        pathname: 'sidebar'
+        pathname: 'sidebar',
+        badge: BADGE_TYPES.new
       },
       {
         label: 'Wrapper',
@@ -288,6 +289,11 @@ const components: ComponentObjectProps = {
       {
         label: 'List',
         pathname: 'list',
+        badge: BADGE_TYPES.new
+      },
+      {
+        label: 'BarList',
+        pathname: 'bar-list',
         badge: BADGE_TYPES.new
       },
       {

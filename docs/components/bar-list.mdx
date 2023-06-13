@@ -1,0 +1,718 @@
+---
+product: dd360-ds
+title: React BarList component
+components: BarList
+---
+
+<br />
+<br />
+
+# <span name="floating-nav">BarList</span>
+
+
+The BarList component is a customizable React component designed to display a list of bars representing different data points. 
+It provides a visually appealing way to present metrics, values, or progress indicators in a clear and intuitive manner.
+
+<br />
+
+## <span name="floating-nav">Imports</span>
+The first alternative is recommended since it can reduce the application bundle
+
+<WindowEditor codeString="import BarList from 'dd360-ds/BarList'" />
+<WindowEditor codeString="import { BarList } from 'dd360-ds'" />
+
+<br />
+
+## <span name="floating-nav">Usage</span>
+Use the BarList component as shown below:
+
+<ContainerComponentDoc>
+    <BarList
+        listData={[
+            { label: 'Item 1', value: 20 },
+            { label: 'Item 2', value: 40 },
+            { label: 'Item 3', value: 60 },
+            { label: 'Item 4', value: 80 },
+            { label: 'Item 5', value: 100 }
+        ]}
+    />
+</ContainerComponentDoc>
+
+The code snippet below shows how to use the BarList component:
+
+<WindowEditor
+codeString={`import BarList from 'dd360-ds/BarList'
+
+  <BarList
+        listData={[
+            { label: 'Item 1', value: 20 },
+            { label: 'Item 2', value: 40 },
+            { label: 'Item 3', value: 60 },
+            { label: 'Item 4', value: 80 },
+            { label: 'Item 5', value: 100 }
+        ]}
+    />
+`}
+/>
+
+<br />
+
+### <span name="floating-nav">Customization</span>
+
+The BarList component provides several customization options through props.
+
+##### `titleMetrics`
+Allows you to specify a text or a string to be displayed as a title for the metrics displayed in the bar list.
+
+<ContainerComponentDoc>
+    <BarList
+        listData={[
+            { label: 'Item 1', value: 20 },
+            { label: 'Item 2', value: 40 },
+            { label: 'Item 3', value: 60 },
+            { label: 'Item 4', value: 80 },
+            { label: 'Item 5', value: 100 }
+        ]}
+        titleMetrics="Items"
+    />
+</ContainerComponentDoc>
+
+<WindowEditor
+codeString={`import BarList from 'dd360-ds/BarList'
+
+  <BarList
+        listData={[
+            { label: 'Item 1', value: 20 },
+            { label: 'Item 2', value: 40 },
+            { label: 'Item 3', value: 60 },
+            { label: 'Item 4', value: 80 },
+            { label: 'Item 5', value: 100 }
+        ]}
+        titleMetrics="Items"
+    />
+`}
+/>
+
+##### `titleValues`
+Allows you to specify a text or a string to be displayed as a title for the values shown in the list of members. 
+
+<ContainerComponentDoc>
+    <BarList
+        listData={[
+            { label: 'Item 1', value: 20 },
+            { label: 'Item 2', value: 40 },
+            { label: 'Item 3', value: 60 },
+            { label: 'Item 4', value: 80 },
+            { label: 'Item 5', value: 100 }
+        ]}
+        titleMetrics="Items"
+        titleValues="Values"
+    />
+</ContainerComponentDoc>
+
+<WindowEditor
+codeString={`import BarList from 'dd360-ds/BarList'
+
+  <BarList
+        listData={[
+            { label: 'Item 1', value: 20 },
+            { label: 'Item 2', value: 40 },
+            { label: 'Item 3', value: 60 },
+            { label: 'Item 4', value: 80 },
+            { label: 'Item 5', value: 100 }
+        ]}
+        titleMetrics="Items"
+        titleValues="Values"
+    />
+`}
+/>
+
+
+##### `valuePrefix`
+Allows to specify a text or value to be displayed as a prefix next to the values in the bar list. 
+This prefix will be placed before each value.
+
+<ContainerComponentDoc>
+    <BarList
+        listData={[
+            { label: 'Item 1', value: 20 },
+            { label: 'Item 2', value: 40 },
+            { label: 'Item 3', value: 60 },
+            { label: 'Item 4', value: 80 },
+            { label: 'Item 5', value: 100 }
+        ]}
+        valuePrefix="$"
+    />
+</ContainerComponentDoc>
+<WindowEditor
+codeString={`import BarList from 'dd360-ds/BarList'
+
+  <BarList
+        listData={[
+            { label: 'Item 1', value: 20 },
+            { label: 'Item 2', value: 40 },
+            { label: 'Item 3', value: 60 },
+            { label: 'Item 4', value: 80 },
+            { label: 'Item 5', value: 100 }
+        ]}
+        valuePrefix="$"
+    />
+`}
+/>
+
+
+##### `valueSuffix`
+Allows to specify a text or value to be displayed as a suffix next to the values in the list of members. 
+This suffix will be placed after each value.
+
+<ContainerComponentDoc>
+    <BarList
+        listData={[
+            { label: 'Item 1', value: 20 },
+            { label: 'Item 2', value: 40 },
+            { label: 'Item 3', value: 60 },
+            { label: 'Item 4', value: 80 },
+            { label: 'Item 5', value: 100 }
+        ]}
+        valueSuffix="%"
+    />
+</ContainerComponentDoc>
+<WindowEditor
+codeString={`import BarList from 'dd360-ds/BarList'
+
+  <BarList
+        listData={[
+            { label: 'Item 1', value: 20 },
+            { label: 'Item 2', value: 40 },
+            { label: 'Item 3', value: 60 },
+            { label: 'Item 4', value: 80 },
+            { label: 'Item 5', value: 100 }
+        ]}
+        valueSuffix="%"
+    />
+`}
+/>
+
+##### `classNameBar`
+Allows passing a text string representing a custom CSS class for the background bar of each item in the list.
+
+<ContainerComponentDoc>
+    <BarList
+        listData={[
+            { label: 'Item 1', value: 20 },
+            { label: 'Item 2', value: 40 },
+            { label: 'Item 3', value: 60 },
+            { label: 'Item 4', value: 80 },
+            { label: 'Item 5', value: 100 }
+        ]}
+        classNameBar="border border-blue-800"
+    />
+</ContainerComponentDoc>
+<WindowEditor
+codeString={`import BarList from 'dd360-ds/BarList'
+
+  <BarList
+        listData={[
+            { label: 'Item 1', value: 20 },
+            { label: 'Item 2', value: 40 },
+            { label: 'Item 3', value: 60 },
+            { label: 'Item 4', value: 80 },
+            { label: 'Item 5', value: 100 }
+        ]}
+        classNameBar="border border-blue-800"
+    />
+`}
+/>
+
+##### `roundedBar`
+Allows you to specify the border radius of the bar elements in the list.
+
+<ContainerComponentDoc>
+    <BarList
+        listData={[
+            { label: 'Item 1', value: 20 },
+            { label: 'Item 2', value: 40 },
+            { label: 'Item 3', value: 60 },
+            { label: 'Item 4', value: 80 },
+            { label: 'Item 5', value: 100 }
+        ]}
+        roundedBar="full"
+    />
+</ContainerComponentDoc>
+<WindowEditor
+codeString={`import BarList from 'dd360-ds/BarList'
+
+  <BarList
+        listData={[
+            { label: 'Item 1', value: 20 },
+            { label: 'Item 2', value: 40 },
+            { label: 'Item 3', value: 60 },
+            { label: 'Item 4', value: 80 },
+            { label: 'Item 5', value: 100 }
+        ]}
+        roundedBar="full"
+    />
+`}
+/>
+
+##### `marginYItem`
+Allows to set the vertical spacing between each item in the bar list.
+
+<ContainerComponentDoc>
+    <BarList
+        listData={[
+            { label: 'Item 1', value: 20 },
+            { label: 'Item 2', value: 40 },
+            { label: 'Item 3', value: 60 },
+            { label: 'Item 4', value: 80 },
+            { label: 'Item 5', value: 100 }
+        ]}
+        marginYItem="4"
+    />
+</ContainerComponentDoc>
+<WindowEditor
+codeString={`import BarList from 'dd360-ds/BarList'
+
+  <BarList
+        listData={[
+            { label: 'Item 1', value: 20 },
+            { label: 'Item 2', value: 40 },
+            { label: 'Item 3', value: 60 },
+            { label: 'Item 4', value: 80 },
+            { label: 'Item 5', value: 100 }
+        ]}
+        marginYItem="4"
+    />
+`}
+/>
+
+
+##### `heightBar`
+Allows you to set the height of the bottom bar element of each item in the list.
+
+<ContainerComponentDoc>
+    <BarList
+        listData={[
+            { label: 'Item 1', value: 20 },
+            { label: 'Item 2', value: 40 },
+            { label: 'Item 3', value: 60 },
+            { label: 'Item 4', value: 80 },
+            { label: 'Item 5', value: 100 }
+        ]}
+        heightBar="14"
+        marginYItem="8"
+    />
+</ContainerComponentDoc>
+<WindowEditor
+codeString={`import BarList from 'dd360-ds/BarList'
+
+  <BarList
+        listData={[
+            { label: 'Item 1', value: 20 },
+            { label: 'Item 2', value: 40 },
+            { label: 'Item 3', value: 60 },
+            { label: 'Item 4', value: 80 },
+            { label: 'Item 5', value: 100 }
+        ]}
+        heightBar="14"
+        marginYItem="8"
+    />
+`}
+/>
+
+##### `fontSizeBar`
+Allows you to pass a value from the Size enumeration to set the font size of the text in the bar labels. The default value is base.
+
+<ContainerComponentDoc>
+    <BarList
+        listData={[
+            { label: 'Item 1', value: 20 },
+            { label: 'Item 2', value: 40 },
+            { label: 'Item 3', value: 60 },
+            { label: 'Item 4', value: 80 },
+            { label: 'Item 5', value: 100 }
+        ]}
+        fontSizeBar="lg"
+    />
+</ContainerComponentDoc>
+
+<WindowEditor
+codeString={`import BarList from 'dd360-ds/BarList'
+
+  <BarList
+        listData={[
+            { label: 'Item 1', value: 20 },
+            { label: 'Item 2', value: 40 },
+            { label: 'Item 3', value: 60 },
+            { label: 'Item 4', value: 80 },
+            { label: 'Item 5', value: 100 }
+        ]}
+        fontSizeBar="lg"
+    />
+`}
+/>
+
+##### `defaultBackgroundBarColor`
+
+Defines the default background color of the bar element if the backgroundBarColor property is not provided for a specific element in the listData property.
+
+<ContainerComponentDoc>
+    <BarList
+        listData={[
+            { label: 'Item 1', value: 20 },
+            { label: 'Item 2', value: 40 },
+            { label: 'Item 3', value: 60 },
+            { label: 'Item 4', value: 80 },
+            { label: 'Item 5', value: 100 }
+        ]}
+        defaultBackgroundBarColor="#aee8be"
+    />
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import BarList from 'dd360-ds/BarList'
+
+<BarList
+    listData={[
+        { label: 'Item 1', value: 20 },
+        { label: 'Item 2', value: 40 },
+        { label: 'Item 3', value: 60 },
+        { label: 'Item 4', value: 80 },
+        { label: 'Item 5', value: 100 }
+    ]}
+    defaultBackgroundBarColor="#aee8be"
+/>
+`}
+/>
+
+##### `defaultTextBarColor`
+
+Defines the default text color in the bar labels if the textBarColor property is not provided for a specific item in the listData property.
+
+<ContainerComponentDoc>
+    <BarList
+        listData={[
+            { label: 'Item 1', value: 20 },
+            { label: 'Item 2', value: 40 },
+            { label: 'Item 3', value: 60 },
+            { label: 'Item 4', value: 80 },
+            { label: 'Item 5', value: 100 }
+        ]}
+        defaultTextBarColor="#000"
+    />
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import BarList from 'dd360-ds/BarList'
+
+<BarList
+    listData={[
+        { label: 'Item 1', value: 20 },
+        { label: 'Item 2', value: 40 },
+        { label: 'Item 3', value: 60 },
+        { label: 'Item 4', value: 80 },
+        { label: 'Item 5', value: 100 }
+    ]}
+    defaultTextBarColor="#000"
+/>
+`}
+/>
+
+### <span name="floating-nav">Item Customization</span>
+
+In DataList items you can use the following properties to customize each item.
+
+##### `prefix`
+
+Allows you to specify a text or string to be displayed as a prefix before the numeric value in the bar label for a specific item in the listData property.
+
+<ContainerComponentDoc>
+    <BarList
+        listData={[
+            { label: 'Item 1', value: 20, prefix: "$" },
+            { label: 'Item 2', value: 40 },
+            { label: 'Item 3', value: 60 },
+            { label: 'Item 4', value: 80 },
+            { label: 'Item 5', value: 100 }
+        ]}
+    />
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import BarList from 'dd360-ds/BarList'
+
+<BarList
+    listData={[
+        { label: 'Item 1', value: 20, prefix: "$" },
+        { label: 'Item 2', value: 40 },
+        { label: 'Item 3', value: 60 },
+        { label: 'Item 4', value: 80 },
+        { label: 'Item 5', value: 100 }
+    ]}
+/>
+`}
+/>
+
+##### `suffix`
+
+Allows you to specify a text or a string to be displayed as a suffix after the numeric value in the bar label for a specific item in the listData property.
+
+<ContainerComponentDoc>
+    <BarList
+        listData={[
+            { label: 'Item 1', value: 20, suffix: "%" },
+            { label: 'Item 2', value: 40 },
+            { label: 'Item 3', value: 60 },
+            { label: 'Item 4', value: 80 },
+            { label: 'Item 5', value: 100 }
+        ]}
+    />
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import BarList from 'dd360-ds/BarList'
+
+<BarList
+    listData={[
+        { label: 'Item 1', value: 20, suffix: "%" },
+        { label: 'Item 2', value: 40 },
+        { label: 'Item 3', value: 60 },
+        { label: 'Item 4', value: 80 },
+        { label: 'Item 5', value: 100 }
+    ]}
+/>
+`}
+/>
+
+##### `backgroundBarColor`
+
+Defines the background color of the bar element for a specific element in the listData property. 
+Providing this property will override the default background color for the corresponding element.
+
+<ContainerComponentDoc>
+    <BarList
+        listData={[
+            { label: 'Item 1', value: 20, backgroundBarColor: "#aee8be" },
+            { label: 'Item 2', value: 40 },
+            { label: 'Item 3', value: 60 },
+            { label: 'Item 4', value: 80 },
+            { label: 'Item 5', value: 100 }
+        ]}
+    />
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import BarList from 'dd360-ds/BarList'
+
+<BarList
+    listData={[
+        { label: 'Item 1', value: 20, backgroundBarColor: "#aee8be" },
+        { label: 'Item 2', value: 40 },
+        { label: 'Item 3', value: 60 },
+        { label: 'Item 4', value: 80 },
+        { label: 'Item 5', value: 100 }
+    ]}
+/>
+`}
+/>
+
+##### `textBarColor`
+
+Defines the text color of the bar labels for a specific element in the listData property. 
+Providing this property will override the default text color for the corresponding element.
+
+<ContainerComponentDoc>
+    <BarList
+        listData={[
+            { label: 'Item 1', value: 20, textBarColor: "#083173" },
+            { label: 'Item 2', value: 40 },
+            { label: 'Item 3', value: 60 },
+            { label: 'Item 4', value: 80 },
+            { label: 'Item 5', value: 100 }
+        ]}
+    />
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import BarList from 'dd360-ds/BarList'
+
+<BarList
+    listData={[
+        { label: 'Item 1', value: 20, textBarColor: "#083173" },
+        { label: 'Item 2', value: 40 },
+        { label: 'Item 3', value: 60 },
+        { label: 'Item 4', value: 80 },
+        { label: 'Item 5', value: 100 }
+    ]}
+/>
+`}
+/>
+
+##### `href`
+
+Allows you to specify the destination URL for the generated links in the list items.
+The links will open in a new browser tab because they contain the target="_blank" attribute.
+
+<ContainerComponentDoc>
+    <BarList
+        listData={[
+            { label: 'Item 1', value: 20, href: "/" },
+            { label: 'Item 2', value: 40, href: "/" },
+            { label: 'Item 3', value: 60, href: "/" },
+            { label: 'Item 4', value: 80, href: "/"  },
+            { label: 'Item 5', value: 100, href: "/" }
+        ]}
+    />
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import BarList from 'dd360-ds/BarList'
+
+<BarList
+    listData={[
+        { label: 'Item 1', value: 20, href: "/" },
+        { label: 'Item 2', value: 40, href: "/" },
+        { label: 'Item 3', value: 60, href: "/" },
+        { label: 'Item 4', value: 80, href: "/" },
+        { label: 'Item 5', value: 100, href: "/" }
+    ]}
+/>
+`}
+/>
+
+##### `startIcon`
+
+Allows you to pass a React element as an icon to be displayed at the beginning of the bar label for a specific element in the listData property.
+
+<ContainerComponentDoc>
+    <BarList
+        listData={[
+            { label: 'Item 1', value: 20, startIcon: <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="fill-blue-500"
+          viewBox="0 0 24 24"
+          width="20"
+          height="20"
+        >
+          <path fill="none" d="M0 0h24v24H0z" />
+          <path d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z" />
+        </svg>},
+            { label: 'Item 2', value: 40 },
+            { label: 'Item 3', value: 60 },
+            { label: 'Item 4', value: 80 },
+            { label: 'Item 5', value: 100 }
+        ]}
+    />
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import BarList from 'dd360-ds/BarList'
+
+const IconTwitter = () => {
+  return (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="fill-blue-500"
+        viewBox="0 0 24 24"
+        width="20"
+        height="20"
+    >
+        <path fill="none" d="M0 0h24v24H0z" />
+        <path d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z" />
+    </svg>
+  )
+}
+
+<BarList
+    listData={[
+        { label: 'Item 1', value: 20, startIcon: <IconTwitter /> },
+        { label: 'Item 2', value: 40 },
+        { label: 'Item 3', value: 60 },
+        { label: 'Item 4', value: 80 },
+        { label: 'Item 5', value: 100 }
+    ]}
+/>
+`}
+/>
+
+##### `endIcon`
+
+Allows you to pass a React element as an icon to be displayed at the end of the bar label for a specific element in the listData property.
+
+<ContainerComponentDoc>
+    <BarList
+        listData={[
+            { label: 'Item 1', value: 20, endIcon: <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="fill-blue-500"
+          viewBox="0 0 24 24"
+          width="20"
+          height="20"
+        >
+          <path fill="none" d="M0 0h24v24H0z" />
+          <path d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z" />
+        </svg> },
+            { label: 'Item 2', value: 40 },
+            { label: 'Item 3', value: 60 },
+            { label: 'Item 4', value: 80 },
+            { label: 'Item 5', value: 100 }
+        ]}
+    />
+</ContainerComponentDoc>
+
+<WindowEditor
+    codeString={`import BarList from 'dd360-ds/BarList'
+
+const IconTwitter = () => {
+  return (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="fill-blue-500"
+        viewBox="0 0 24 24"
+        width="20"
+        height="20"
+    >
+        <path fill="none" d="M0 0h24v24H0z" />
+        <path d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z" />
+    </svg>
+  )
+}
+
+<BarList
+    listData={[
+        { label: 'Item 1', value: 20, endIcon: <IconTwitter /> },
+        { label: 'Item 2', value: 40 },
+        { label: 'Item 3', value: 60 },
+        { label: 'Item 4', value: 80 },
+        { label: 'Item 5', value: 100 }
+    ]}
+/>
+`}
+/>
+
+<br />
+
+## <span name="floating-nav">API Reference</span>
+
+<CustomTableDocs
+  dataTable={[
+  { title: 'listData', default: '[]', types: ['ListItem[]'], required: true },
+  { title: 'titleMetrics', default: null, types: ['string'] },
+  { title: 'titleValues', default: null, types: ['string'] },
+  { title: 'valuePrefix', default: null, types: ['string'] },
+  { title: 'valueSuffix', default: null, types: ['string'] },
+  { title: 'defaultTextBarColor', default: '#1D4ED8', types: ['CSSProperties[color]'] },
+  { title: 'defaultBackgroundBarColor', default: '#b5d4fc', types: ['CSSProperties[color]'] },
+  { title: 'fontSizeBar', default: 'base', types: ['xs', 'sm', 'base', 'lg', 'xl', '2xl', '3xl', '4xl'] },
+  { title: 'heightBar', default: 'h-full', types: ['string'] },
+  { title: 'marginYItem', default: '1', types: ['string'] },
+  { title: 'roundedBar', default: 'md', types: ['none', 'sm', 'base', 'md' , 'lg' , 'xl' , '2xl', '3xl', 'full'] },
+  { title: 'classNameBar', default: null, types: ['string'] },
+  { title: 'className', default: null, types: ['string'] }
+]}
+/>
+
+Note: This documentation assumes that the audience has basic knowledge of React
+and how to use components in React applications.
+
+ 
