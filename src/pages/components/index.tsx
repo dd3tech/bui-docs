@@ -2,7 +2,7 @@ import { GetStaticProps } from 'next'
 import Image from 'next/image'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-import { Card, Select, Text } from 'dd360-ds'
+import { Card, Flex, Select, Text } from 'dd360-ds'
 import { OpenGraph, Badge } from '@/components'
 
 const cards = [
@@ -163,18 +163,28 @@ export default function Docs() {
       />
       <OpenGraph title="DD360 UI: cree rápidamente sitios web modernos sin tener que abandonar su HTML" />
       <main className="max-w-5xl mx-auto py-16 px-8 lg:px-16 xl:px-0">
-        <div className="flex justify-between items-center mb-7">
-          <Text variant="h1" className="text-gray-900" size="5xl" bold>
-            Componets
+        <Flex
+          justifyContent="between"
+          alignItems="center"
+          className="mb-7 flex-wrap sm:flex-nowrap"
+          gap="8"
+        >
+          <Text
+            variant="h1"
+            className="text-gray-900 w-full sm:w-auto"
+            size="5xl"
+            bold
+          >
+            Components
           </Text>
-          <div style={{ width: '184px' }}>
+          <div className="w-full sm:w-48 sm:mt-0">
             <Select
               optionsList={builds}
               rounded="xl"
               className="border-gray-300 bg-white"
             />
           </div>
-        </div>
+        </Flex>
 
         <Text
           variant="p"
