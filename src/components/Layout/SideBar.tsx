@@ -330,7 +330,7 @@ const components: ComponentObjectProps = {
       {
         label: 'Filter Select',
         pathname: 'filter-select',
-        badge: BADGE_TYPES.cooming
+        badge: BADGE_TYPES.new
       },
       {
         label: 'Select Multi',
