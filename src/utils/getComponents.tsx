@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import dynamic from 'next/dynamic'
 import * as Components from 'dd360-ds'
 import { Text } from 'dd360-ds'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
@@ -25,6 +26,10 @@ import {
 } from '@/components/docs/components'
 
 import { TransitionCustom } from '@/components/Layout'
+
+const SideBar = dynamic(() => import('dd360-ds/SideBar'), {
+  ssr: false
+})
 
 type Props = { children: ReactNode }
 
@@ -80,7 +85,8 @@ export function getComponents() {
     PortalCustom,
     TransitionCustom,
     ProgressCustom,
-    ...Components
+    ...Components,
+    SideBar
     // Add other custom components here as needed ---| Here |---
   }
 }
