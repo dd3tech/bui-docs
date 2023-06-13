@@ -9,7 +9,13 @@ components: SideBar
 
 # <span name="floating-nav">SideBar</span>
 
-The "SideBar" component is a React component used to render a sidebar with different navigation options for the user.
+The SideBar component is a sidebar panel that displays a list of navigation items.
+It is useful for creating user interfaces with hierarchical navigation, where users can access different sections
+or pages within an application.
+
+The sidebar consists of a header, a list of sidebar items, and an optional danger zone.
+The header displays the name and subtitle of the sidebar. The sidebar items represent the navigation options
+and can have dropdown sub-items. The danger zone provides an additional option with a warning icon for high-risk actions.
 
 <br />
 <br />
@@ -22,6 +28,11 @@ The "SideBar" component is a React component used to render a sidebar with diffe
 <br />
 ## <span name="floating-nav">Usage</span>
 
+The SideBar component is highly customizable and adaptable to different use cases. It can show or hide items,
+expand or collapse the sidebar, and adjust the style and position as needed.
+
+<br />
+#### <span name="floating-nav">sideBarName</span>
 The prop sideBarName is required, it is a string that is rendered as the title of the SideBar component.
 
 <WindowEditor codeString='import { Sidebar } from "dd360-ds"
@@ -29,7 +40,7 @@ The prop sideBarName is required, it is a string that is rendered as the title o
 <SideBar sideBarName="Sidebar" />' />
 
 <br />
-#### <span name="floating-nav">SideBarSubTitle</span>
+#### <span name="floating-nav">sideBarSubTitle</span>
 
 A string that is rendered as the subtitle of the SideBar.
 
@@ -38,9 +49,27 @@ A string that is rendered as the subtitle of the SideBar.
 <SideBar sideBarName="Sidebar" sideBarSubTitle="Example SubTitle" />' />
 
 <br />
-#### <span name="floating-nav">SideBarList</span>
+#### <span name="floating-nav">sideBarList</span>
 
 A list of objects representing the sidebar options. Each object must have the same structure as shown in the following example:
+
+<ul style={{listStyle: 'revert', padding: 'revert'}}>
+    <li>title (string, required): The title of the sidebar item.</li>
+    <li>active (boolean, required): Indicates if the sidebar item is active.</li>
+    <li>isOpen (boolean): Indicates if the sub-menu of the sidebar item is open.</li>
+    <li>goTo (function): The callback function to be executed when the sidebar item is selected.</li>
+    <li>icon (JSX.Element): The icon to be displayed next to the title of the sidebar item.</li>
+    <li>disabled (boolean): Indicates if the sidebar item is disabled.</li>
+    <li>hidden (boolean): Indicates if the sidebar item is hidden.</li>
+    <li>subItems (SideBarSubItem): An object representing the sub-items of the sidebar item. Each property of the object should have a unique key and an object with the following properties:</li>
+    <ul style={{listStyle: 'revert', padding: 'revert'}}>
+        <li>title (string, required): The title of the sub-item.</li>
+        <li>active (boolean, required): Indicates if the sub-item is active.</li>
+        <li>goTo (function): The callback function to be executed when the sub-item is selected.</li>
+    </ul>
+</ul>
+
+Example:
 
 <WindowEditor codeString='import { Sidebar } from "dd360-ds"
 import DynamicHeroIcon from "dd360-ds/DynamicHeroIcon"
@@ -52,27 +81,58 @@ import DynamicHeroIcon from "dd360-ds/DynamicHeroIcon"
 &nbsp;&nbsp;&nbsp;&nbsp; active: true,
 &nbsp;&nbsp;&nbsp;&nbsp; icon: <DynamicHeroIcon icon="HomeIcon" />, 
 &nbsp;&nbsp;&nbsp;&nbsp; title: "List 1", 
-&nbsp;&nbsp;&nbsp;&nbsp; to: () => {}
+&nbsp;&nbsp;&nbsp;&nbsp; goTo: () => {}
 &nbsp;&nbsp;&nbsp;}, 
 &nbsp;&nbsp;&nbsp;{  
 &nbsp;&nbsp;&nbsp;&nbsp;active: false, 
-&nbsp;&nbsp;&nbsp;&nbsp;title: "List 2", 
-&nbsp;&nbsp;&nbsp;&nbsp;to: () => {} 
+&nbsp;&nbsp;&nbsp;&nbsp;title: "List 2",
+&nbsp;&nbsp;&nbsp;&nbsp;subItems: {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1: {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title: "SubItem 1",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;active: false,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;goTo: () => {}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2: {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title: "SubItem 2",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;active: false,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;goTo: () => {}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
 &nbsp;&nbsp;&nbsp;},
 &nbsp;&nbsp;&nbsp;{ 
 &nbsp;&nbsp;&nbsp;&nbsp;active: false, 
 &nbsp;&nbsp;&nbsp;&nbsp;disabled: true,
 &nbsp;&nbsp;&nbsp;&nbsp;title: "List 3",
-&nbsp;&nbsp;&nbsp;&nbsp;to: () => {}
+&nbsp;&nbsp;&nbsp;&nbsp;subItems: {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1: {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title: "SubItem 1",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;active: false,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;goTo: () => {}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2: {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title: "SubItem 2",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;active: false,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;goTo: () => {}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
 &nbsp;&nbsp;&nbsp;}
 &nbsp;&nbsp;]} 
 />
 ' />
 
 <br />
-#### <span name="floating-nav">DangerZone</span>
+#### <span name="floating-nav">dangerZone</span>
 
 An object representing the danger zone of the SideBar. The object must have the same structure as shown in the following example:
+
+<ul style={{listStyle: 'revert', padding: 'revert'}}>
+    <li>show (boolean): Indicates if the danger zone is shown.</li>
+    <li>text (string): The text to be displayed in the danger zone.</li>
+    <li>active (boolean): Indicates if the danger zone is active.</li>
+    <li>callBack (function): The callback function to be executed when the danger zone is selected.</li>
+</ul>
+
+Example:
 
 <WindowEditor codeString='import { Sidebar } from "dd360-ds"
 
@@ -82,12 +142,13 @@ An object representing the danger zone of the SideBar. The object must have the 
 &nbsp;&nbsp;&nbsp;&nbsp;active: false,
 &nbsp;&nbsp;&nbsp;&nbsp;show: true,
 &nbsp;&nbsp;&nbsp;&nbsp;text: "Delete project"
+&nbsp;&nbsp;&nbsp;&nbsp;callBack: () => {}
 &nbsp;&nbsp;}} 
 />
 ' />
 
 <br />
-#### <span name="floating-nav">DisabledOptionsTag</span>
+#### <span name="floating-nav">disabledOptionsTag</span>
 
 A string representing the text to be displayed in the disabled options.
 
@@ -96,7 +157,37 @@ A string representing the text to be displayed in the disabled options.
 <SideBar sideBarName="Sidebar" disabledOptionsTag="Coming soon" />' />
 
 <br />
-#### <span name="floating-nav">DefaultExpand</span>
+#### <span name="floating-nav">isLoadingHeaderInfo</span>
+
+A boolean which indicates when the header information is loading, while it is true Skeletons will be shown.
+
+<WindowEditor codeString='import { Sidebar } from "dd360-ds"
+
+<SideBar sideBarName="Sidebar" IsLoadingHeaderInfo={true} />' />
+
+<br />
+
+#### <span name="floating-nav">isLoadingSideBarList</span>
+
+A boolean indicating when the option listing information is being loaded, as long as it is true, the skeletons will be displayed.
+
+<WindowEditor codeString='import { Sidebar } from "dd360-ds"
+
+<SideBar sideBarName="Sidebar" isLoadingSideBarList={true} />' />
+
+<br />
+
+#### <span name="floating-nav">numSkeletons</span>
+
+Number of items of type skeletons to show when isLoadingSideBarList is true.
+
+<WindowEditor codeString='import { Sidebar } from "dd360-ds"
+
+<SideBar sideBarName="Sidebar" isLoadingSideBarList={true} numSkeletons={5} />' />
+
+
+<br />
+#### <span name="floating-nav">defaultExpand</span>
 
 A boolean representing whether the sidebar should be expanded by default.
 
@@ -104,44 +195,89 @@ A boolean representing whether the sidebar should be expanded by default.
 
 <SideBar sideBarName="Sidebar" defaultExpand />' />
 
+
+<br />
+
+#### <span name="floating-nav">top</span>
+
+Top position of the sidebar.
+
+<WindowEditor codeString='import { Sidebar } from "dd360-ds"
+
+<SideBar sideBarName="Sidebar" top={80} />' />
+
+<br />
+
+#### <span name="floating-nav">left</span>
+
+Left position of the sidebar.
+
+<WindowEditor codeString='import { Sidebar } from "dd360-ds"
+
+<SideBar sideBarName="Sidebar" left={80} />' />
+
 <br />
 #### <span name="floating-nav">Example</span>
 
 <ContainerComponentDoc>
-    <Text>To the left of this text you can see the SideBar of the following example</Text>
-    <SideBar
-        sideBarName="Sidebar"
-        sideBarSubTitle="Example Subtitle"
-        defaultExpand={false}
-        flushSync={() => {}}
-        top={80}
-        left={210}
-        disabledOptionsTag="Coming soon"
-        sideBarList={[
-            {
-                active: true,
-                icon: <DynamicHeroIcon icon="HomeIcon" />,
-                title: 'List 1',
-                to: () => {}
-            },
-            {
+    <div className='flex relative' style={{ height: '50vh' }}>
+      <div>
+        <SideBar
+            sideBarName="Sidebar"
+            sideBarSubTitle="Example Subtitle"
+            defaultExpand={false}
+            flushSync={() => {}}
+            disabledOptionsTag="Coming soon"
+            sideBarList={[
+                {
+                    active: true,
+                    icon: <DynamicHeroIcon icon="HomeIcon" />,
+                    title: 'List 1',
+                    to: () => {}
+                },
+                {
+                    active: false,
+                    title: 'List 2',
+                    to: () => {},
+                    subItems: {
+                        1: {
+                            title: 'SubItem 1',
+                            active: true,
+                            goTo: () => {}
+                        },
+                        2: {
+                            title: 'SubItem 2',
+                            active: false,
+                            goTo: () => {}
+                        },
+                        3: {
+                            title: 'SubItem 3',
+                            active: false,
+                            goTo: () => {}
+                        }
+                    }
+                },
+                {
+                    active: false,
+                    disabled: true,
+                    title: 'List 3',
+                    to: () => {}
+                }
+            ]}
+            dangerZone={{
                 active: false,
-                title: 'List 2',
-                to: () => {}
-            },
-            {
-                active: false,
-                disabled: true,
-                title: 'List 3',
-                to: () => {}
-            }
-        ]}
-        dangerZone={{
-            active: false,
-            show: true,
-            text: 'Delete project'
-        }}
-    />
+                show: true,
+                text: 'Delete project'
+            }}
+            style={{ maxHeight: '100%'}}
+        />
+      </div>
+      <div
+        className="flex justify-center items-center bg-blue-50 w-full"
+      >
+        Content
+      </div>
+    </div>
 </ContainerComponentDoc>
 
 <WindowEditor codeString='import { Sidebar } from "dd360-ds"
@@ -159,18 +295,18 @@ A boolean representing whether the sidebar should be expanded by default.
 &nbsp;&nbsp;&nbsp;&nbsp; active: true,
 &nbsp;&nbsp;&nbsp;&nbsp; icon: <DynamicHeroIcon icon="HomeIcon" />, 
 &nbsp;&nbsp;&nbsp;&nbsp; title: "List 1", 
-&nbsp;&nbsp;&nbsp;&nbsp; to: () => {}
+&nbsp;&nbsp;&nbsp;&nbsp; goTo: () => {}
 &nbsp;&nbsp;&nbsp;}, 
 &nbsp;&nbsp;&nbsp;{  
 &nbsp;&nbsp;&nbsp;&nbsp;active: false, 
 &nbsp;&nbsp;&nbsp;&nbsp;title: "List 2", 
-&nbsp;&nbsp;&nbsp;&nbsp;to: () => {} 
+&nbsp;&nbsp;&nbsp;&nbsp;goTo: () => {} 
 &nbsp;&nbsp;&nbsp;},
 &nbsp;&nbsp;&nbsp;{ 
 &nbsp;&nbsp;&nbsp;&nbsp;active: false, 
 &nbsp;&nbsp;&nbsp;&nbsp;disabled: true,
 &nbsp;&nbsp;&nbsp;&nbsp;title: "List 3",
-&nbsp;&nbsp;&nbsp;&nbsp;to: () => {}
+&nbsp;&nbsp;&nbsp;&nbsp;goTo: () => {}
 &nbsp;&nbsp;&nbsp;}
 &nbsp;&nbsp;]} 
 &nbsp;&nbsp;dangerZone={{
@@ -191,13 +327,22 @@ A boolean representing whether the sidebar should be expanded by default.
         {
             title: 'sideBarList',
             default: null,
-            types: ['{ title: string, active: boolean, to: () => void, icon?: Element, disabled?: boolean, hidden?: boolean }']
+            types: ['{ title: string, active: boolean, goTo: () => void, icon?: Element, disabled?: boolean, hidden?: boolean }']
+        },
+        {
+            title: 'subItems',
+            default: null,
+            types: ['{ title: string, active: boolean, goTo: () => void }']
         },
         { title: 'disabledOptionsTag', default: null, types: ['string'] },
         { title: 'dangerZone', default: null, types: ['{ show: boolean, text: string, active: boolean, callBack?: (() => void), }'] },
         { title: 'flushSync', default: null, types: ['(<R>(fn: () => R) => R)'] },
         { title: 'defaultExpand', default: 'false', types: ['boolean'] },
         { title: 'top', default: null, types: ['number'] },
-        { title: 'left', default: null, types: ['number'] }
+        { title: 'left', default: null, types: ['number'] },
+        { title: 'isLoadingHeaderInfo', default: 'false', types: ['boolean'] },
+        { title: 'isLoadingSideBarList', default: 'false', types: ['boolean'] },
+        { title: 'numSkeletons', default: '5', types: ['number'] },
+        { title: 'style', default: '5', types: ['CSSProperties'] }
     ]}
 />

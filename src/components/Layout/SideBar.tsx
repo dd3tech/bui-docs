@@ -112,7 +112,8 @@ const components: ComponentObjectProps = {
       },
       {
         label: 'SideBar',
-        pathname: 'sidebar'
+        pathname: 'sidebar',
+        badge: BADGE_TYPES.new
       },
       {
         label: 'Wrapper',
@@ -263,6 +264,11 @@ const components: ComponentObjectProps = {
         badge: BADGE_TYPES.new
       },
       {
+        label: 'Circle',
+        pathname: 'circle',
+        badge: BADGE_TYPES.new
+      },
+      {
         label: 'Date Picker',
         pathname: 'date-picker'
       },
@@ -286,6 +292,11 @@ const components: ComponentObjectProps = {
       {
         label: 'List',
         pathname: 'list',
+        badge: BADGE_TYPES.new
+      },
+      {
+        label: 'BarList',
+        pathname: 'bar-list',
         badge: BADGE_TYPES.new
       },
       {
