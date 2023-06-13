@@ -109,7 +109,8 @@ const components: ComponentObjectProps = {
       },
       {
         label: 'SideBar',
-        pathname: 'sidebar'
+        pathname: 'sidebar',
+        badge: BADGE_TYPES.new
       },
       {
         label: 'Wrapper',
