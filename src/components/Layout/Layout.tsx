@@ -42,12 +42,14 @@ function Layout({ children }: { children: JSX.Element }) {
   if (showSidebar) {
     return (
       <div className="flex min-h-screen flex-row bg-gray-50 text-gray-800">
-        <SideBar />
-        <main className="lg:max-w-[calc(100vw-200px)] relative -ml-52 flex flex-grow flex-col transition-all duration-150 ease-in lg:ml-0">
-          <Navbar isSticky hideLogo />
-          <div className="flex lg:grid grid-cols-[minmax(0,1fr)_minmax(0,128px)] h-full px-8 lg:px-16">
+        <div className="hidden md:flex">
+          <SideBar />
+        </div>
+        <main className="w-full md:max-w-[calc(100vw-200px)] relative flex flex-grow flex-col transition-all duration-150 ease-in md:ml-0">
+          <Navbar hideLogo />
+          <div className="flex md:grid grid-cols-[minmax(0,1fr)_minmax(0,128px)] h-full px-8 md:px-16">
             <article className="w-full max-w-full">{children}</article>
-            <article className="hidden w-full max-w-[128px] mt-36 lg:block">
+            <article className="hidden w-full max-w-[128px] mt-36 md:block">
               <FloatingNav entries={entries} />
             </article>
           </div>
