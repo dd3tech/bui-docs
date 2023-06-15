@@ -346,6 +346,11 @@ const components: ComponentObjectProps = {
         label: 'Confirm Dialog',
         pathname: 'confirm-dialog',
         badge: BADGE_TYPES.new
+      },
+      {
+        label: 'Filter Select Multi',
+        pathname: 'filter-select-multi',
+        badge: BADGE_TYPES.new
       }
     ]
   }
