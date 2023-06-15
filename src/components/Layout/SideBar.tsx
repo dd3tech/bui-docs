@@ -351,6 +351,11 @@ const components: ComponentObjectProps = {
         label: 'Filter Select Multi',
         pathname: 'filter-select-multi',
         badge: BADGE_TYPES.new
+      },
+      {
+        label: 'Tooltip',
+        pathname: 'tooltip',
+        badge: BADGE_TYPES.new
       }
     ]
   }
