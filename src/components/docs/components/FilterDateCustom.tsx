@@ -63,9 +63,9 @@ const FilterDateCustom = ({
             textResetBtn={textResetBtn}
           />
         </div>
-      ) :
+      ) : (
         <Skeleton className="mt-2 h-8 w-32" />
-      }
+      )}
     </>
   )
 }
