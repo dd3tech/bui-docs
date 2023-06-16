@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { FilterDate, Skeleton, Text } from 'dd360-ds'
-import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
+import { FilterIcon } from '@heroicons/react/solid'
 
 const FilterDateCustom = ({
   onTop,
@@ -47,7 +47,7 @@ const FilterDateCustom = ({
             <Text size="lg" bold>
               {onTop ? 'Filter date on top' : 'Filter date'}
             </Text>
-            <DynamicHeroIcon icon="FilterIcon" className="w-4 h-4" />
+            <FilterIcon className="w-4 h-4" />
           </button>
           <FilterDate
             onApply={() => undefined}
@@ -64,7 +64,7 @@ const FilterDateCustom = ({
           />
         </div>
       ) :
-        <Skeleton className="mt-3 h-8 w-32" />
+        <Skeleton className="mt-2 h-8 w-32" />
       }
     </>
   )
