@@ -318,6 +318,11 @@ const components: ComponentObjectProps = {
         badge: BADGE_TYPES.new
       },
       {
+        label: 'Timeline',
+        pathname: 'timeline',
+        badge: BADGE_TYPES.new
+      },
+      {
         label: 'FeedBackBox',
         pathname: 'feed-back-box',
         badge: BADGE_TYPES.cooming

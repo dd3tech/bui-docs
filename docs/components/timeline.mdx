@@ -1,0 +1,448 @@
+---
+product: dd360-ds
+title: React Timeline component
+components: Timeline
+---
+
+<br />
+<br />
+
+# <span name="floating-nav">Timeline</span>
+
+The Timeline component is a visual representation of a timeline where events or
+content can be displayed in chronological order. It allows displaying
+information sequentially and facilitates the visualization of the progression of
+events over time.
+
+<br />
+
+## <span name="floating-nav">Imports</span>
+
+You can import the Timeline component in the following ways. The first
+alternative is recommended since they can reduce the application bundle
+
+<WindowEditor codeString="import Timeline from 'dd360-ds/Timeline'" />
+<WindowEditor codeString="import { Timeline } from 'dd360-ds'" />
+
+## <span name="floating-nav">Usage</span>
+
+With the Timeline component, you can easily create a visually appealing timeline to showcase a series of events or steps in a user-friendly manner. Each timeline item can be customized with various content and styling options to suit your specific needs.
+
+### <span name="floating-nav">Basic timeline:</span>
+
+<ContainerComponentDoc>
+  <Timeline position="alternate">
+        <Timeline.Item>
+          <Timeline.Separator>
+            <Timeline.Dot />
+            <Timeline.Connector />
+          </Timeline.Separator>
+          <Timeline.Content>
+            <Text bold>JUNARY</Text>
+          </Timeline.Content>
+        </Timeline.Item>
+
+        <Timeline.Item>
+          <Timeline.Separator>
+            <Timeline.Dot color="success" variant="outlined" />
+            <Timeline.Connector />
+          </Timeline.Separator>
+          <Timeline.Content>
+            <Text bold> FEBRUARY </Text>
+          </Timeline.Content>
+        </Timeline.Item>
+
+        <Timeline.Item>
+          <Timeline.Separator>
+            <Timeline.Dot />
+          </Timeline.Separator>
+          <Timeline.Content>
+            <Text bold>MARCH</Text>
+          </Timeline.Content>
+        </Timeline.Item>
+    </Timeline>
+</ContainerComponentDoc>
+
+<WindowEditor
+  codeString={`import Timeline from 'dd360-ds/Timeline'
+
+<Timeline position="alternate">
+    <Timeline.Item>
+        <Timeline.Separator>
+        <Timeline.Dot />
+        <Timeline.Connector />
+        </Timeline.Separator>
+        <Timeline.Content>
+        <Text bold>JUNARY</Text>
+        </Timeline.Content>
+    </Timeline.Item>
+
+    <Timeline.Item>
+        <Timeline.Separator>
+        <Timeline.Dot color="success" variant="outlined" />
+        <Timeline.Connector />
+        </Timeline.Separator>
+        <Timeline.Content>
+        <Text bold> FEBRUARY </Text>
+        </Timeline.Content>
+    </Timeline.Item>
+
+    <Timeline.Item>
+        <Timeline.Separator>
+        <Timeline.Dot />
+        </Timeline.Separator>
+        <Timeline.Content>
+        <Text bold>MARCH</Text>
+        </Timeline.Content>
+    </Timeline.Item>
+</Timeline>
+`} />
+
+You can make use of the position property to position the main container called
+Content, of each element. Available options are left, right and alternate
+
+#### <span name="floating-nav">Left positioned:</span>
+
+<ContainerComponentDoc>
+    <Timeline position="left">
+        <Timeline.Item>
+            <Timeline.Separator>
+                <Timeline.Dot />
+                <Timeline.Connector />
+            </Timeline.Separator>
+            <Timeline.Content>
+                <Text bold>JUNARY</Text>
+            </Timeline.Content>
+        </Timeline.Item>
+
+        <Timeline.Item>
+            <Timeline.Separator>
+                <Timeline.Dot />
+                <Timeline.Connector />
+            </Timeline.Separator>
+            <Timeline.Content>
+                <Text bold> FEBRUARY </Text>
+            </Timeline.Content>
+        </Timeline.Item>
+
+        <Timeline.Item>
+            <Timeline.Separator>
+                <Timeline.Dot />
+            </Timeline.Separator>
+            <Timeline.Content>
+                <Text bold>MARCH</Text>
+            </Timeline.Content>
+        </Timeline.Item>
+    </Timeline>
+</ContainerComponentDoc>
+
+#### <span name="floating-nav">Right positioned:</span>
+
+<ContainerComponentDoc>
+  <Timeline position="right">
+        <Timeline.Item>
+            <Timeline.Separator>
+                <Timeline.Dot />
+                <Timeline.Connector />
+            </Timeline.Separator>
+            <Timeline.Content>
+                <Text bold>JUNARY</Text>
+            </Timeline.Content>
+        </Timeline.Item>
+
+        <Timeline.Item>
+            <Timeline.Separator>
+                <Timeline.Dot />
+                <Timeline.Connector />
+            </Timeline.Separator>
+            <Timeline.Content>
+                <Text bold> FEBRUARY </Text>
+            </Timeline.Content>
+        </Timeline.Item>
+
+        <Timeline.Item>
+            <Timeline.Separator>
+                <Timeline.Dot />
+            </Timeline.Separator>
+            <Timeline.Content>
+                <Text bold>MARCH</Text>
+            </Timeline.Content>
+        </Timeline.Item>
+    </Timeline>
+</ContainerComponentDoc>
+
+#### <span name="floating-nav">Opposite content:</span>
+
+<ContainerComponentDoc>
+    <Timeline position="alternate">
+        <Timeline.Item>
+            <Timeline.OppositeContent>
+            <Text size="sm">10:20</Text>
+          </Timeline.OppositeContent>
+          <Timeline.Separator>
+            <Timeline.Dot />
+            <Timeline.Connector />
+          </Timeline.Separator>
+          <Timeline.Content>
+            <Text bold>JUNARY</Text>
+          </Timeline.Content>
+        </Timeline.Item>
+
+        <Timeline.Item>
+            <Timeline.OppositeContent>
+            <Text size="sm">11:20</Text>
+          </Timeline.OppositeContent>
+          <Timeline.Separator>
+            <Timeline.Dot />
+            <Timeline.Connector />
+          </Timeline.Separator>
+          <Timeline.Content>
+            <Text bold>FEBRUARY</Text>
+          </Timeline.Content>
+        </Timeline.Item>
+
+        <Timeline.Item>
+            <Timeline.OppositeContent>
+            <Text size="sm">12:20</Text>
+          </Timeline.OppositeContent>
+          <Timeline.Separator>
+            <Timeline.Dot />
+            <Timeline.Connector />
+          </Timeline.Separator>
+          <Timeline.Content>
+            <Text bold>MARCH</Text>
+          </Timeline.Content>
+        </Timeline.Item>
+    </Timeline>
+</ContainerComponentDoc>
+
+#### <span name="floating-nav">Customization:</span>
+
+<ContainerComponentDoc>
+    <Timeline position="alternate">
+        <Timeline.Item>
+            <Timeline.OppositeContent className="m-auto">
+                <Text size="sm">10:20</Text>
+            </Timeline.OppositeContent>
+
+            <Timeline.Separator>
+                <Timeline.Connector />
+                    <Timeline.Dot
+                        variant="outlined"
+                        color="warning"
+                    >
+                        <DynamicHeroIcon icon="TagIcon" className="w-5 h-5" />
+                    </Timeline.Dot>
+                <Timeline.Connector />
+            </Timeline.Separator>
+
+            <Timeline.Content>
+                <Text bold>JUNARY</Text>
+                <p>Lorem ipsum dolor sit</p>
+            </Timeline.Content>
+        </Timeline.Item>
+
+        <Timeline.Item>
+            <Timeline.OppositeContent className="m-auto">
+                <Text size="sm">11:20</Text>
+            </Timeline.OppositeContent>
+
+             <Timeline.Separator>
+                <Timeline.Connector />
+                    <Timeline.Dot
+                        variant="outlined"
+                        color="success"
+                    >
+                        <DynamicHeroIcon icon="TagIcon" className="w-5 h-5" />
+                    </Timeline.Dot>
+                <Timeline.Connector />
+            </Timeline.Separator>
+
+            <Timeline.Content>
+                <Text bold>FEBRUARY</Text>
+                <p>Lorem ipsum dolor sit</p>
+            </Timeline.Content>
+        </Timeline.Item>
+
+        <Timeline.Item>
+            <Timeline.OppositeContent className="m-auto">
+                <Text size="sm">12:20</Text>
+            </Timeline.OppositeContent>
+
+            <Timeline.Separator>
+                <Timeline.Connector />
+                    <Timeline.Dot
+                        variant="outlined"
+                        color="error"
+                    >
+                        <DynamicHeroIcon icon="HomeIcon" className="w-5 h-5" />
+                    </Timeline.Dot>
+                <Timeline.Connector />
+            </Timeline.Separator>
+
+            <Timeline.Content>
+                <Text bold>MARCH</Text>
+                <p>Lorem ipsum dolor sit</p>
+            </Timeline.Content>
+        </Timeline.Item>
+    </Timeline>
+
+</ContainerComponentDoc>
+
+<WindowEditor
+  codeString={`import Timeline from 'dd360-ds/Timeline'
+
+<Timeline position="alternate">
+    <Timeline.Item>
+        <Timeline.OppositeContent className="m-auto">
+            <Text size="sm">10:20</Text>
+        </Timeline.OppositeContent>
+
+        <Timeline.Separator>
+            <Timeline.Connector />
+                <Timeline.Dot
+                    variant="outlined"
+                    color="warning"
+                >
+                    <DynamicHeroIcon icon="TagIcon" className="w-5 h-5" />
+                </Timeline.Dot>
+            <Timeline.Connector />
+        </Timeline.Separator>
+
+        <Timeline.Content>
+            <Text bold>JUNARY</Text>
+            <p>Lorem ipsum dolor sit</p>
+        </Timeline.Content>
+    </Timeline.Item>
+
+    <Timeline.Item>
+        <Timeline.OppositeContent className="m-auto">
+            <Text size="sm">11:20</Text>
+        </Timeline.OppositeContent>
+
+            <Timeline.Separator>
+            <Timeline.Connector />
+                <Timeline.Dot
+                    variant="outlined"
+                    color="success"
+                >
+                    <DynamicHeroIcon icon="TagIcon" className="w-5 h-5" />
+                </Timeline.Dot>
+            <Timeline.Connector />
+        </Timeline.Separator>
+
+        <Timeline.Content>
+            <Text bold>FEBRUARY</Text>
+            <p>Lorem ipsum dolor sit</p>
+        </Timeline.Content>
+    </Timeline.Item>
+
+    <Timeline.Item>
+        <Timeline.OppositeContent className="m-auto">
+            <Text size="sm">12:20</Text>
+        </Timeline.OppositeContent>
+
+        <Timeline.Separator>
+            <Timeline.Connector />
+                <Timeline.Dot
+                    variant="outlined"
+                    color="error"
+                >
+                    <DynamicHeroIcon icon="HomeIcon" className="w-5 h-5" />
+                </Timeline.Dot>
+            <Timeline.Connector />
+        </Timeline.Separator>
+
+        <Timeline.Content>
+            <Text bold>MARCH</Text>
+            <p>Lorem ipsum dolor sit</p>
+        </Timeline.Content>
+    </Timeline.Item>
+</Timeline>
+`} />
+
+#### Timeline
+
+The Timeline component is the container for all timeline items. It should wrap
+multiple Timeline.Item components.
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'children', types: ['React.ReactNode'] },
+        { title: 'position', types: ['left', 'right', 'alternate'], default: 'alternate' },
+        { title: 'className', types: ['string'] },
+        { title: 'style', types: ['React.CSSProperties'] },
+    ]}
+/>
+
+#### Item
+
+The Timeline.Item component represents an individual event or step on the
+timeline.
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'children', types: ['React.ReactNode'] },
+        { title: 'className', types: ['string'] },
+        { title: 'style', types: ['React.CSSProperties'] },
+        { title: 'position', types: ['left', 'right'] },
+    ]}
+/>
+
+#### OppositeContent
+
+The Timeline.OppositeContent component represents the content displayed on the
+opposite side of the timeline.
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'children', types: ['React.ReactNode'] },
+        { title: 'className', types: ['string'] },
+        { title: 'style', types: ['React.CSSProperties'] }
+    ]}
+/>
+
+#### Separator
+
+The Timeline.Separator component represents the separator line and connectors
+between the timeline items.
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'children', types: ['React.ReactNode'] },
+        { title: 'className', types: ['string'] },
+        { title: 'style', types: ['React.CSSProperties'] }
+    ]}
+/>
+
+#### Connector
+
+The Timeline.Connector component represents the connector line between timeline
+items.
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'className', types: ['string'] },
+        { title: 'style', types: ['React.CSSProperties'] }
+    ]}
+/>
+
+#### Dot
+
+The Timeline.Dot component represents the dot marker indicating the event or
+step on the timeline.
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'children', types: ['React.ReactNode'] },
+        { title: 'className', types: ['string'] },
+        { title: 'style', types: ['React.CSSProperties'] },
+        { title: 'color', types: ['primary', 'secondary', 'success', 'warning', 'error'], default: 'primary' },
+        { title: 'variant', types: ['filled', 'outlined'], default: 'filled' },
+        { title: 'width',  types: ['UnitCSS'] },
+        { title: 'height',  types: ['UnitCSS'] },
+    ]}
+/>
+
+Note: This documentation assumes that the audience has basic knowledge of React
+and how to use components in React applications.

@@ -64,3 +64,19 @@
 .date-picker > ul > button.border-primary {
   border-color: #5c6ac4 !important;
 }
+
+/* 
+.timeline-cmpnt.alternate li:not(:has(div[role='timeline-content']))::before {
+    content: '';
+    flex: 1;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+  
+.timeline-cmpnt.alternate
+    li:not(:has(div[role='timeline-opposite-content']))::before {
+    content: '';
+    flex: 1;
+    padding-left: 1rem;
+    padding-right: 1rem;
+} */
