@@ -1,1 +1,190 @@
-filter date
+---
+product: dd360-ds
+title: React FilterDate component
+components: FilterDate
+---
+
+<br />
+<br />
+
+# <span name="floating-nav">Filter Date</span>
+
+The Filter Date component allows users to filter and select dates intuitively in web and mobile applications.
+
+<br />
+
+## <span name="floating-nav">Imports</span>
+
+<WindowEditor codeString="import { FilterDate } from 'dd360-ds'" />
+
+## <span name="floating-nav">Usage</span>
+
+The prop onApply of type function is mandatory, this function returns an object containing the month and year values selected by the user.
+
+<ContainerComponentDoc>
+  <FilterDateCustom />
+</ContainerComponentDoc>
+
+The code snippet below shows how to use the FilterDate component:
+
+<WindowEditor
+    codeString={`import { FilterDate } from 'dd360-ds''
+
+<FilterDate
+  onApply={() => undefined}
+/>
+`}/>
+
+
+#### <span name="floating-nav">Customization</span>
+
+<span className="font-semibold" >The FilterDate component can be customized using the following props:</span>
+ - title: The title displayed when the component is opened.
+ - textApplyBtn: The text displayed on the apply button.
+ - textResetBtn: The text displayed on the reset button.
+ - language: The language used for the component. Accepts 'en' (English) or 'es' (Spanish) as values.
+
+Example customization:
+
+<ContainerComponentDoc>
+  <FilterDateCustom
+    title="Select date"
+    textApplyBtn="Apply date"
+    textResetBtn="Reset date"
+    language="en"
+  />
+</ContainerComponentDoc>
+
+The code snippet below shows how to customize the FilterDate component:
+
+<WindowEditor
+    codeString={`import { FilterDate } from 'dd360-ds'
+
+<FilterDate
+  onApply={() => undefined}
+  title="Select date"
+  textApplyBtn="Apply date"
+  textResetBtn="Reset date"
+  language="en"
+/>
+`}/>
+
+
+<br />
+
+#### <span name="floating-nav">Visibility & position</span>
+
+To manage the visibility and position of the FilterDate component, you can use the useState hook in a functional component. 
+The position state variable stores the top and left coordinates, as well as a boolean indicating whether the component should be shown. 
+The component listens for clicks on a button to toggle the visibility and updates its position based on the click event's coordinates.
+
+<ContainerComponentDoc>
+  <FilterDateCustom onTop />
+</ContainerComponentDoc>
+
+The code snippet below shows how to handle the visibility and position:
+
+<WindowEditor
+    codeString={`import { FilterDate } from 'dd360-ds'
+
+const FilterComponent = () => {
+  const [position, setPosition] = useState<{
+    top: number
+    left: number
+    show: boolean
+  }>({
+    top: 0,
+    left: 0,
+    show: false
+  })
+
+  return (
+    <div>
+      <button
+        className="flex items-center gap-1"
+        onClick={(event) => {
+          setPosition((position) => ({
+            top: event.pageY,
+            left: event.pageX,
+            show: !position.show
+          }))
+        }}
+      >
+        <Text size="lg" bold>
+          "Filter date on top"
+        </Text>
+        <DynamicHeroIcon icon="FilterIcon" className="w-4 h-4" />
+      </button>
+      <FilterDate
+        onApply={() => undefined}
+        position={{
+          top: position.top,
+          left: position.left,
+          show: position.show
+        }}
+      />
+    </div>
+  )
+}
+
+export default FilterComponent
+ `}/>
+
+#### <span name="floating-nav">Support Server Side Rendering</span>
+
+For applications that use server-side rendering, you can ensure that the FilterDate component is fully rendered before displaying it by using the domLoaded state variable. 
+This helps avoid any issues that may arise due to server-side rendering.
+
+Example usage:
+
+<WindowEditor
+    codeString={`import { FilterDate } from 'dd360-ds'
+
+const FilterComponent = () => {
+  const [domLoaded, setDomLoaded] = useState<boolean>(false)
+
+  useEffect(() => {
+    setDomLoaded(true)
+  }, [])
+
+  return (
+    <>
+      {domLoaded && (
+         <FilterDate
+            onApply={() => undefined}
+          />
+      )}
+    </>
+  )
+}
+
+export default FilterComponent
+ `}/>
+
+<br />
+
+
+<br />
+<br />
+
+## <span name="floating-nav">API Reference</span>
+
+<CustomTableDocs
+  dataTable={[
+    { title: 'onApply', default: null, types: ['function'], required: true },
+    { title: 'title', default: null, types: ['string'] },
+    { title: 'language', default: 'es', types: ['es', 'en'] },
+    { title: 'textApplyBtn', default: 'Apply', types: ['string'] },
+    { title: 'textResetBtn', default: 'Reset', types: ['string'] },
+    {
+      title: 'position',
+      default: '{ show: false, top: 0, left: 0 }',
+      types: ['{ show: boolean, top: number, left: number }']
+    },
+    { title: 'width', default: null, types: ['string', 'number'] },
+    { title: 'className', default: null, types: ['string'] }
+  ]}
+/>
+
+Note: This documentation assumes that the audience has basic knowledge of React
+and how to use components in React applications.
