@@ -330,7 +330,7 @@ const components: ComponentObjectProps = {
       {
         label: 'Filter Date',
         pathname: 'filter-date',
-        badge: BADGE_TYPES.cooming
+        badge: BADGE_TYPES.new
       },
       {
         label: 'Filter Select',
