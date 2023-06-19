@@ -1,0 +1,143 @@
+---
+product: dd360-ds
+title: React Dropdown component
+components: Dropdown
+---
+
+<br />
+<br />
+
+# <span name="floating-nav">Dropdown</span>
+
+The Dropdown component in React is a Dropdown that is used to make the user render content that we only want to show him if he clicks on the Dropdown component. 
+It is commonly used in web and mobile applications to show additional options or available actions.
+
+<br />
+
+## <span name="floating-nav">Imports</span>
+
+The first alternative is recommended since they can reduce the application bundle
+
+<WindowEditor codeString="import Dropdown from 'dd360-ds/Dropdown'" />
+<WindowEditor codeString="import { Dropdown } from 'dd360-ds'" />
+
+## <span name="floating-nav">Usage</span>
+
+<span className="font-semibold">To use the Dropdown correctly, make sure to use the Dropdown.Menu and Dropdown.Trigger:</span>
+- Dropdown.Trigger: the visible part of the Dropdown that the user can interact with to open or close the Dropdown menu.
+- Dropdown.Menu: This is the container that appears when the user interacts with the Dropdown.Trigger. It contains the list of options that the user can select.
+
+Here is an example of how the Dropdown works:
+
+<ContainerComponentDoc className="h-28">
+  <DropdownCustom />
+</ContainerComponentDoc>
+
+The code snippet below shows how to use the Dropdown component:
+
+<WindowEditor
+    codeString={`import { Dropdown } from 'dd360-ds''
+
+<Dropdown>
+  <Dropdown.Trigger>
+    <Button className="h-10 pt-2 pb-3" paddingX="3">
+      <Text size="xs" bold className="text-white">
+        Trigger
+      </Text>
+    </Button>
+  </Dropdown.Trigger>
+  <Dropdown.Menu> 
+    <Text className="px-5" size="base" bold>
+      Content
+    </Text>
+  </Dropdown.Menu>
+</Dropdown>
+`}/>
+
+<br />
+
+#### <span name="floating-nav">Disable Animation</span>
+
+The disableAnimation prop is used in the Dropdown to disable animations on the display. 
+By enabling this prop, the Dropdown menu will instantly display without any transition or animation effect.
+
+Here is an example of how the disableAnimation prop works in the Dropdown:
+
+<ContainerComponentDoc className="h-28">
+  <DropdownCustom disableAnimation />
+</ContainerComponentDoc>
+
+The code snippet below shows how to use the prop disableAnimation in the Dropdown:
+
+<WindowEditor
+    codeString={`import { Dropdown } from 'dd360-ds''
+
+<Dropdown disableAnimation>
+  <Dropdown.Trigger>
+    <Button className="h-10 pt-2 pb-3" paddingX="3">
+      <Text size="xs" bold className="text-white">
+        Trigger
+      </Text>
+    </Button>
+  </Dropdown.Trigger>
+  <Dropdown.Menu> 
+    <Text className="px-5" size="base" bold>
+      Content
+    </Text>
+  </Dropdown.Menu>
+</Dropdown>
+`}/>
+
+#### <span name="floating-nav">Support Server Side Rendering</span>
+
+For applications that use server-side rendering, you can ensure that the Dropdown component is fully rendered before displaying it by using the domLoaded state variable. 
+This helps avoid any issues that may arise due to server-side rendering.
+
+Example usage:
+
+<WindowEditor
+    codeString={`import { Dropdown } from 'dd360-ds'
+
+const DropdownComponent = () => {
+  const [domLoaded, setDomLoaded] = useState<boolean>(false)
+
+  useEffect(() => setDomLoaded(true), [])
+
+  return (
+    <>
+      {domLoaded && (
+        <Dropdown>
+          <Dropdown.Trigger>
+            <Button className="h-10 pt-2 pb-3" paddingX="3">
+              <Text size="xs" bold className="text-white">
+                Trigger
+              </Text>
+            </Button>
+          </Dropdown.Trigger>
+          <Dropdown.Menu> 
+            <Text className="px-5" size="base" bold>
+              Content
+            </Text>
+          </Dropdown.Menu>
+        </Dropdown>
+      )}
+    </>
+  )
+}
+
+export default DropdownComponent
+ `}/>
+
+<br />
+<br />
+
+## <span name="floating-nav">API Reference</span>
+
+<CustomTableDocs
+  dataTable={[
+    { title: 'disableAnimation', default: 'false', types: ['boolean'] },
+    { title: 'children', default: null, types: ['ReactNode'] }
+  ]}
+/>
+
+Note: This documentation assumes that the audience has basic knowledge of React and how to use components in React applications.

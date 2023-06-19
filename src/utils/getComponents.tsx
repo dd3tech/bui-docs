@@ -25,7 +25,8 @@ import {
   PortalCustom,
   ProgressCustom,
   FilterSelectCustom,
-  FilterDateCustom
+  FilterDateCustom,
+  DropdownCustom
 } from '@/components/docs/components'
 
 import { TransitionCustom } from '@/components/Layout'
@@ -91,6 +92,7 @@ export function getComponents() {
     ConfirmDialogCustom,
     FilterSelectCustom,
     FilterDateCustom,
+    DropdownCustom,
     ...Components,
     SideBar
     // Add other custom components here as needed ---| Here |---

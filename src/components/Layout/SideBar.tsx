@@ -273,6 +273,11 @@ const components: ComponentObjectProps = {
         pathname: 'date-picker'
       },
       {
+        label: 'Dropdown',
+        pathname: 'dropdown',
+        badge: BADGE_TYPES.new
+      },
+      {
         label: 'Dynamic Hero Icon',
         pathname: 'dynamic-hero-icon'
       },
