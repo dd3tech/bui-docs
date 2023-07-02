@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react'
 
 import FloatingNav, { Entries } from './FloatingNav'
 import Footer from './Footer'
-import Navbar from './Navbar'
+import Navbar from './Navbar/Navbar'
 import SideBar from './SideBar'
 
-const routesWithoutFooter = ['/components']
+// const routesWithoutFooter = ['/components']
 
 function parseIdByName(name: string) {
   return name
@@ -41,31 +41,39 @@ function Layout({ children }: { children: JSX.Element }) {
 
   if (showSidebar) {
     return (
-      <div className="flex min-h-screen flex-row bg-gray-50 text-gray-800">
-        <div className="hidden md:flex">
-          <SideBar />
-        </div>
-        <main className="w-full md:max-w-[calc(100vw-200px)] relative flex flex-grow flex-col transition-all duration-150 ease-in md:ml-0">
+      <div className="flex min-h-screen flex-row text-gray-800">
+        <main
+          className="w-full relative flex flex-grow flex-col transition-all duration-150 ease-in md:ml-0"
+          // className="flex min-h-screen flex-row text-gray-800"
+        >
           <Navbar hideLogo />
-          <div className="flex md:grid grid-cols-[minmax(0,1fr)_minmax(0,128px)] h-full px-8 md:px-16">
-            <article className="w-full max-w-full">{children}</article>
-            <article className="hidden w-full max-w-[128px] mt-36 md:block">
-              <FloatingNav entries={entries} />
-            </article>
+
+          <div className="flex">
+            <div className="hidden md:flex">
+              <SideBar />
+            </div>
+
+            <div className="layout-content grid h-full px-8 md:px-16">
+              <article className="w-full max-w-full">{children}</article>
+              <article className="hidden w-full max-w-[128px] mt-36 md:block">
+                <FloatingNav entries={entries} />
+              </article>
+            </div>
           </div>
+          <Footer />
         </main>
       </div>
     )
   }
 
-  if (routesWithoutFooter.includes(router.pathname)) {
-    return (
-      <>
-        <Navbar />
-        {children}
-      </>
-    )
-  }
+  //   if (routesWithoutFooter.includes(router.pathname)) {
+  //     return (
+  //       <>
+  //         <Navbar />
+  //         {children}
+  //       </>
+  //     )
+  //   }
 
   return (
     <>

@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background: var(--backgroundTheme);
+  font-family: var(--fontFamily);
+}
+
 .sidebar-list::-webkit-scrollbar {
   width: 0;
 }
@@ -63,4 +68,20 @@
 
 .date-picker > ul > button.border-primary {
   border-color: #5c6ac4 !important;
+}
+
+@media (max-width: 897px) {
+  .search-container {
+    display: none;
+  }
+}
+
+.layout-content {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 128px);
+}
+
+@media (max-width: 767px) {
+  .layout-content {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0);
+  }
 }

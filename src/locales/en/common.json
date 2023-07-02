@@ -3,6 +3,7 @@
   "components": "Components",
   "docs": "Docs",
   "documentation": "Documentation",
+  "get-started": "Getting Started",
   "examples": "Examples",
   "figma": "Figma",
   "buttons": "Buttons",
@@ -13,7 +14,7 @@
   "modals": "Modals",
   "typography": "Typography",
   "controls": "Controls",
-  "subscribe": "To subscribe",
+  "subscribe": "Subscribe",
   "metadata": {
     "home": "DD360 UI - The React library to build back office platforms"
   }

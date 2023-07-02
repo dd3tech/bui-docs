@@ -9,6 +9,7 @@ import DynamicHeroIcon, { IconName } from 'dd360-ds/DynamicHeroIcon'
 
 import Badge from '../Badge'
 import ShowMore from '../ShowMore'
+import { useTheme } from '@/pages/store/theme-store'
 
 interface ComponentObjectProps {
   [key: string]: {
@@ -47,6 +48,18 @@ const BADGE_TYPES = {
 }
 
 const components: ComponentObjectProps = {
+  'get-started': {
+    items: [
+      {
+        label: 'Installation',
+        pathname: 'getting-started#getting-started'
+      },
+      {
+        label: 'Theming',
+        pathname: 'getting-started#customize-theme-optional-'
+      }
+    ]
+  },
   buttons: {
     items: [
       {
@@ -369,40 +382,21 @@ const components: ComponentObjectProps = {
 export default function SideBar({ setIsActiveButtonMobile }: SideBarProps) {
   const { t } = useTranslation('common')
   const router = useRouter()
+  const {
+    themeObject: { extendedPalette }
+  } = useTheme()
 
   return (
     <aside
-      className="h-screen md:h-auto w-full border-r border-gray-300 sticky inset-0 max-h-screen overflow-hidden flex flex-col bg-blue-50 transform p-2 md:transition-transform duration-150 ease-in lg:translate-x-0"
+      className={composeClasses(
+        'h-screen md:h-auto w-full border-r sticky inset-0 max-h-screen overflow-hidden flex flex-col transform p-2 md:transition-transform duration-150 ease-in lg:translate-x-0',
+        extendedPalette.barBackground,
+        extendedPalette.sidebarBorder
+      )}
       style={{ minWidth: 200 }}
     >
-      <Link href="/" className="block my-7 mx-auto">
-        <Image
-          className="m-auto"
-          src="/dd360-black.png"
-          width={130}
-          height={28.5}
-          alt="logo"
-        />
-      </Link>
-      <div className="hide-scroll flex flex-col gap-6 mt-6 overflow-y-auto overflow-x-hidden flex-grow">
-        <Link
-          href="/docs/get-started/getting-started"
-          locale={router?.locale}
-          className={composeClasses(
-            'getting-started' === router?.query?.slug
-              ? 'bg-blue-100 border-blue-500'
-              : 'border-gray-300',
-            'py-2 pl-4 ml-1 mt-4 pr-1 border flex gap-3 items-center rounded-lg transition-all ease-in duration-300'
-          )}
-        >
-          <DynamicHeroIcon
-            icon="BookOpenIcon"
-            className="w-4 h-4 text-blue-700"
-          />
-          <Text className="text-gray-600">Getting Started</Text>
-        </Link>
-        <Divider light />
-        {Object.entries(components).map(([key, value], index) => {
+      <div className="hide-scroll flex flex-col gap-1 mt-1 overflow-y-auto overflow-x-hidden flex-grow">
+        {Object.entries(components).map(([key, value]) => {
           return (
             <ShowMore
               basePath={key}
@@ -415,8 +409,9 @@ export default function SideBar({ setIsActiveButtonMobile }: SideBarProps) {
                 const childrenTab = (
                   <>
                     <Text
+                      size="sm"
                       className={composeClasses(
-                        'text-gray-600 cursor-pointer',
+                        'cursor-pointer',
                         isTabDisabled && 'cursor-not-allowed'
                       )}
                       onClick={() => setIsActiveButtonMobile?.(false)}
@@ -432,10 +427,13 @@ export default function SideBar({ setIsActiveButtonMobile }: SideBarProps) {
                   </>
                 )
 
+                const keyPath = `/docs/${key}/${item.pathname}`
                 const classNameWrapper = composeClasses(
-                  item.pathname === router?.query?.slug && 'bg-blue-100',
                   isTabDisabled && 'opacity-50 cursor-not-allowed disabled',
-                  'cursor-pointer py-2 pl-4 ml-1 pr-1 flex justify-between items-center rounded-lg transition-all ease-in duration-300'
+                  'cursor-pointer py-1 pl-4 ml-1 pr-1 flex justify-between items-center rounded-lg transition-all ease-in duration-300',
+                  router?.asPath === keyPath
+                    ? `${extendedPalette.titleColor} font-semibold`
+                    : extendedPalette.sidebarOptionColor
                 )
 
                 return isTabDisabled ? (
@@ -445,7 +443,7 @@ export default function SideBar({ setIsActiveButtonMobile }: SideBarProps) {
                 ) : (
                   <Link
                     key={item.label}
-                    href={`/docs/${key}/${item.pathname}`}
+                    href={keyPath}
                     locale={router?.locale}
                     className={classNameWrapper}
                   >

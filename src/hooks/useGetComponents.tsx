@@ -6,7 +6,8 @@ import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 import {
   WindowEditor,
   CustomTableDocs,
-  ContainerComponentDoc
+  ContainerComponentDoc,
+  Tag
 } from '@/components'
 
 import { PaginationCustom, TabsCustom } from '@/components/docs/navigation'
@@ -30,6 +31,8 @@ import {
 } from '@/components/docs/components'
 
 import { TransitionCustom } from '@/components/Layout'
+import { composeClasses } from 'dd360-ds/lib'
+import { useTheme } from '@/pages/store/theme-store'
 
 const SideBar = dynamic(() => import('dd360-ds/SideBar'), {
   ssr: false
@@ -37,30 +40,54 @@ const SideBar = dynamic(() => import('dd360-ds/SideBar'), {
 
 type Props = { children: ReactNode }
 
-export function getComponents() {
+export function useGetComponents() {
+  const {
+    themeObject: { extendedPalette }
+  } = useTheme()
+
   return {
     h1: ({ children }: Props) => (
-      <Text variant="h1" className="mb-4 mt-2" bold>
+      <Text
+        variant="h1"
+        className={composeClasses('mb-4 mt-2', extendedPalette.primaryText)}
+        bold
+      >
         {children}
       </Text>
     ),
     h2: ({ children }: Props) => (
-      <Text variant="h2" className="mb-4 mt-2" bold>
+      <Text
+        variant="h2"
+        className={composeClasses('mb-4 mt-2', extendedPalette.primaryText)}
+        bold
+      >
         {children}
       </Text>
     ),
     h3: ({ children }: Props) => (
-      <Text variant="h3" className="mb-4 mt-2" bold>
+      <Text
+        variant="h3"
+        className={composeClasses('mb-4 mt-2', extendedPalette.primaryText)}
+        bold
+      >
         {children}
       </Text>
     ),
     h4: ({ children }: Props) => (
-      <Text variant="h4" className="mb-4 mt-2" bold>
+      <Text
+        variant="h4"
+        className={composeClasses('mb-4 mt-2', extendedPalette.primaryText)}
+        bold
+      >
         {children}
       </Text>
     ),
     h5: ({ children }: Props) => (
-      <Text variant="h5" className="mb-4 mt-2" bold>
+      <Text
+        variant="h5"
+        className={composeClasses('mb-4 mt-2', extendedPalette.primaryText)}
+        bold
+      >
         {children}
       </Text>
     ),
@@ -68,11 +95,15 @@ export function getComponents() {
       <Text
         variant="p"
         size="base"
-        className="mb-4 mt-2 text-gray-500 font-normal"
+        className={composeClasses(
+          'mb-4 mt-2 font-normal',
+          extendedPalette.secundaryText
+        )}
       >
         {children}
       </Text>
     ),
+    Tag,
     WindowEditor,
     CustomTableDocs,
     DynamicHeroIcon,

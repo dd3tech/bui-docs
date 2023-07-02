@@ -13,9 +13,10 @@ import {
   AutocompleteState,
   BaseItem
 } from '@algolia/autocomplete-core/dist/esm/types'
-import { Kbd, Text } from 'dd360-ds'
+import { Flex, Kbd, Text } from 'dd360-ds'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 import { composeClasses } from 'dd360-ds/lib'
+import { useTheme } from '@/pages/store/theme-store'
 
 const capitalizeFirstLetter = (strg: string) => {
   const split = strg.split('-')
@@ -25,7 +26,11 @@ const capitalizeFirstLetter = (strg: string) => {
   return capitalize.join(' ')
 }
 
-const Search = () => {
+interface SearchProps {
+  className?: string
+}
+
+const Search = ({ className }: SearchProps) => {
   const router = useRouter()
   const [selectedComponent, setSelectedComponent] = useState<{
     index: number
@@ -34,6 +39,9 @@ const Search = () => {
   const [autocompleteState, setAutocompleteState] =
     useState<AutocompleteState<BaseItem>>()
   const [isOpenSearchPanel, setIsOpenSearchPanel] = useState<boolean>(false)
+  const {
+    themeObject: { extendedPalette }
+  } = useTheme()
 
   const formRef: MutableRefObject<HTMLFormElement | null> =
     useRef<HTMLFormElement>(null)
@@ -158,10 +166,19 @@ const Search = () => {
   }, [autocompleteState, handleKeyDown, selectedComponent])
 
   return (
-    <form className="relative md:block" ref={formRef} {...formProps}>
-      <div
-        className="relative w-80 lg:mt-0 flex items-center px-4 bg-gray-100 hover:bg-white text-sm rounded-3xl hover:shadow-lg hover:border-gray-500 duration-500 ease-out focus:ease-in z-20"
-        style={{ height: '40px' }}
+    <form className="search-container relative " ref={formRef} {...formProps}>
+      <Flex
+        alignItems="center"
+        className={composeClasses(
+          'relative lg:mt-0 px-4 text-sm rounded-xl hover:shadow-lg duration-500 ease-out focus:ease-in z-20 border',
+          className
+        )}
+        style={{
+          background: extendedPalette.inputBackground,
+          borderColor: extendedPalette.inputBorder,
+          height: '40px',
+          width: 285
+        }}
       >
         <DynamicHeroIcon
           icon="SearchIcon"
@@ -172,24 +189,28 @@ const Search = () => {
           {...inputProps}
           type="text"
           className="w-full h-full mx-3.5 border-none font-medium bg-transparent transition duration-500 ease-out focus:ease-in placeholder-gray-400 outline-none"
-          placeholder="Search the docs   (Ctrl + k)"
+          placeholder="Search the docs"
         />
         <Text
           size="xs"
           fontBold="medium"
-          className="min-w-max justify-self-end border py-1 px-2 rounded-2xl text-gray-500 select-none"
+          className={composeClasses(
+            'min-w-max justify-self-end border py-1 px-2 rounded-lg text-gray-500 select-none',
+            extendedPalette.inputBorderSecondary
+          )}
           variant="p"
         >
           Ctrl + K
         </Text>
-      </div>
+      </Flex>
 
-      <div
+      <Flex
         ref={panelRef}
         className={composeClasses(
           isOpenSearchPanel ? 'h-96 shadow-2xl' : 'h-0 border-none',
-          'absolute top-1/2 left-0 w-full max-h-80 flex flex-col bg-white border border-gray-300 rounded-b-2xl z-10 transition-all duration-300 ease-out overflow-hidden'
+          'absolute top-1/2 left-0 w-full flex-col bg-white border border-gray-300 rounded-b-2xl z-10 transition-all duration-300 ease-out overflow-hidden'
         )}
+        style={{ maxWidth: 285 }}
         {...panelProps}
       >
         <div className="mt-8 border-b">
@@ -236,33 +257,37 @@ const Search = () => {
             </section>
           )
         })}
-        <div className="w-full h-12 px-4 shrink-0 mt-auto border-t flex justify-between items-center">
-          <div className="h-full flex items-center gap-1">
+        <Flex
+          justifyContent="between"
+          alignItems="center"
+          className="w-full h-12 px-4 shrink-0 mt-auto border-t"
+        >
+          {/* <Flex alignItems="center" gap="1" className="h-full">
             <Text textMuted500 size="xs">
               Up
             </Text>
             <Kbd kbds={['↑']} />
-          </div>
-          <div className="h-full flex items-center gap-1">
+          </Flex>
+          <Flex alignItems="center" gap="1" className="h-full">
             <Text textMuted500 size="xs">
               Down
             </Text>
             <Kbd kbds={['↓']} />
-          </div>
-          <div className="h-full flex items-center gap-1">
+          </Flex> */}
+          <Flex alignItems="center" gap="1" className="h-full">
             <Text textMuted500 size="xs">
               Submit
             </Text>
             <Kbd kbds={['Enter']} />
-          </div>
-          <div className="h-full flex items-center gap-1">
+          </Flex>
+          <Flex alignItems="center" gap="1" className="h-full">
             <Text textMuted500 size="xs">
               Close
             </Text>
             <Kbd kbds={['Esc']} />
-          </div>
-        </div>
-      </div>
+          </Flex>
+        </Flex>
+      </Flex>
     </form>
   )
 }
