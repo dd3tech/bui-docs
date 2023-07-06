@@ -7,6 +7,8 @@ components: List
 <br />
 <br />
 
+<Label>Components</Label>
+
 # <span name="floating-nav">List</span>
 
 The List component is a customizable React component that allows you to create 
@@ -16,12 +18,12 @@ of the list items.
 
 <br />
 
-## <span name="floating-nav">Imports</span>
+##### <span name="floating-nav">Imports</span>
 
 <WindowEditor codeString="import { List } from 'dd360-ds'" />
 <WindowEditor codeString="import List from 'dd360-ds/List'" />
 
-## <span name="floating-nav">Usage</span>
+##### <span name="floating-nav">Usage</span>
 
 The List component in React allows you to create and customize lists with ease. Whether 
 you need an ordered or unordered list, you can easily specify the type and customize the 
@@ -55,7 +57,7 @@ The code snippet below shows how to use the List component:
 
 <br />
 
-### <span name="floating-nav">Ordered list</span>
+##### <span name="floating-nav">Ordered list</span>
 
 The ordered list allows you to create a numbered list with a specified order. The List component 
 provides props to customize the appearance of the list items, the numbering format, and the suffix 
@@ -105,7 +107,7 @@ the default value for "suffixLabel" is a period ('.').
 `}/>
 
 <br />
-### <span name="floating-nav">Unordered list</span>
+##### <span name="floating-nav">Unordered list</span>
 
 You can obtain a simple unordered list using the List component without any props. To customize an unordered 
 list, you can use the properties "icon", "iconSize", "iconLineHeight", and "iconColor". By default, a bullet 
@@ -148,7 +150,7 @@ point is used as the icon, but you can change it to a string, emoji, or even a c
 `}/>
 
 <br />
-### <span name="floating-nav">Space between items</span>
+##### <span name="floating-nav">Space between items</span>
 
 You can manipulate the spacing between items using the "gap" prop, which takes the 
 number of pixels that will separate the items. On the other hand, the "gapItem" prop 
@@ -175,7 +177,7 @@ respectively.
 `}/>
 
 <br />
-### <span name="floating-nav">Custom items</span>
+##### <span name="floating-nav">Custom items</span>
 
 You can customize each item separately by adding props to the List.Item component and 
 overriding those that are inherited from the List component.
@@ -253,7 +255,7 @@ import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 <br />
 <br />
 
-## <span name="floating-nav">API Reference</span>
+##### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
   dataTable={[

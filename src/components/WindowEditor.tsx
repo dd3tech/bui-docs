@@ -84,7 +84,7 @@ function WindowEditor({
         'h-auto rounded-md overflow-hidden mt-2 mb-10 py-4',
         className
       )}
-      style={{ backgroundColor: extendedPalette.windowEditorBackground }}
+      style={{ backgroundColor: extendedPalette.windowEditorBackgroundHex }}
     >
       {showCopyButton && (
         <div className="relative">
@@ -109,7 +109,9 @@ function WindowEditor({
       {header?.show && (
         <nav
           className="flex items-center px-3 pt-2 gap-3"
-          style={{ backgroundColor: extendedPalette.windowEditorBackground }}
+          style={{
+            backgroundColor: extendedPalette.windowEditorPanelBackground
+          }}
         >
           <div className="flex items-center gap-2">
             <button className="h-3 w-3 bg-red-400 rounded-full"></button>
@@ -117,11 +119,20 @@ function WindowEditor({
             <button className="h-3 w-3 bg-green-400 rounded-full"></button>
           </div>
           <div
-            style={{ backgroundColor: extendedPalette.windowEditorBackground }}
+            style={{
+              backgroundColor: extendedPalette.windowEditorBackgroundHex
+            }}
             className="flex items-center mr-auto rounded-t-xl h-full px-3 py-1 gap-1"
           >
             <Image {...getBrandingLanguage(language)} alt="lang" />
-            <h3 className="text-white font-medium">{header?.title}</h3>
+            <h3
+              className={composeClasses(
+                'font-medium',
+                extendedPalette.primaryText
+              )}
+            >
+              {header?.title}
+            </h3>
           </div>
         </nav>
       )}
@@ -133,7 +144,7 @@ function WindowEditor({
           margin: 0,
           ...style,
           maxHeight: '80%',
-          backgroundColor: extendedPalette.windowEditorBackground
+          backgroundColor: extendedPalette.windowEditorBackgroundHex
         }}
         showLineNumbers
       >

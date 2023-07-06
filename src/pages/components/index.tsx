@@ -2,8 +2,8 @@ import { GetStaticProps } from 'next'
 import Image from 'next/image'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-import { Card, Divider, Flex, Select, Text } from 'dd360-ds'
-import { OpenGraph, Badge } from '@/components'
+import { Card, Divider, Text } from 'dd360-ds'
+import { Badge, OpenGraph } from '@/components'
 import { composeClasses } from 'dd360-ds/lib'
 import { useTheme } from '../store/theme-store'
 import Link from 'next/link'
@@ -140,12 +140,6 @@ const cards = [
   }
 ]
 
-const builds = {
-  '1.2.9': { label: 'build 129' },
-  '1.3.9': { label: 'build 139' },
-  '1.4.9': { label: 'build 149' }
-}
-
 export default function Docs() {
   const {
     themeObject: { extendedPalette }
@@ -179,18 +173,26 @@ export default function Docs() {
           variant="full"
           className={composeClasses(
             'mb-10 dark:opacity-50',
-            extendedPalette.inputBorder
+            extendedPalette.inputBorderHex
           )}
         />
 
-        <Text
-          variant="p"
-          className={composeClasses('mb-10', extendedPalette.secundaryText)}
-          fontBold="medium"
-          size="lg"
-        >
-          Components
-        </Text>
+        <div className="flex mb-10">
+          <Text
+            variant="p"
+            className={extendedPalette.secundaryText}
+            fontBold="medium"
+            size="lg"
+          >
+            Components
+          </Text>
+          <Badge
+            className="p-2 text-xs ml-2"
+            label={cards.length.toString()}
+            rounded="lg"
+            style={{ fontSize: 12, width: 23, minHeight: 26 }}
+          />
+        </div>
 
         <section
           className="grid gap-x-4 gap-y-5"
@@ -203,12 +205,6 @@ export default function Docs() {
               <Card
                 height={278}
                 padding={0}
-                // style={{
-                //   backgroundImage: `url(${card.img})`,
-                //   backgroundPosition: 'center',
-                //   backgroundRepeat: 'no-repeat',
-                //   backgroundSize: 'cover'
-                // }}
                 className={composeClasses(
                   'px-4 pt-6 pb-4 rounded-2xl shadow-lg',
                   extendedPalette.cardBackground,
@@ -221,22 +217,16 @@ export default function Docs() {
                     src="/calendar-component.png"
                     width={234}
                     height={201}
-                    // className="absolute right-0 -top-8"
                     className="m-auto"
-                    // style={{ zIndex: '-10' }}
                   />
                   <div
                     className="absolute w-full h-full top-0"
                     style={{
-                      background: extendedPalette.cardBorderFilter
+                      background: extendedPalette.cardBorderFilter,
+                      height: '101%'
                     }}
                   />
                 </div>
-                {/* <Text variant="h2" size="base" className="font-semibold">
-                  {card.title}
-                </Text> */}
-
-                {/* <div className="text-center"> */}
                 <Link
                   className={composeClasses(
                     'font-bold text-blue-400 ml-auto flex justify-center gap-2 pt-5',
@@ -250,16 +240,7 @@ export default function Docs() {
                   </Text>
                   <ArrowCircleRightIcon width={16} />
                 </Link>
-                {/* </div> */}
               </Card>
-              {/* <div className="flex justify-between items-center mt-2">
-                <Text variant="h2" size="base" className="font-semibold">
-                  {card.title}
-                </Text>
-                {card.badge && (
-                  <Badge color={card.badge.color} label={card.badge.label} />
-                )}
-              </div> */}
             </article>
           ))}
         </section>

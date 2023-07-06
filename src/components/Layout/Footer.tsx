@@ -41,7 +41,7 @@ function Footer() {
           <Dd360Icon
             width={130}
             height={28.5}
-            color={extendedPalette.logoColor}
+            color={extendedPalette.logoColorHex}
           />
         </Link>
         <Flex

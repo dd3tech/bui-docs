@@ -7,6 +7,8 @@ components: ProgressCircle
 <br />
 <br />
 
+<Label>Controls</Label>
+
 # <span name="floating-nav">ProgressCircle</span>
 
 The ProgressCircle component is a useful tool for visually displaying the progress of a task or process. This component creates a circular animation indicating
@@ -16,12 +18,12 @@ mobile applications. With the ProgressCircle component, you can make tracking th
 
 <br />
 <br />
-## <span name="floating-nav">Imports</span>
+##### <span name="floating-nav">Imports</span>
 
 <WindowEditor codeString="import { ProgressCircle } from 'dd360-ds'" />
 
 <br />
-## <span name="floating-nav">Usage</span>
+##### <span name="floating-nav">Usage</span>
 
 Use the ProgressCircle component as shown below:
 
@@ -40,9 +42,9 @@ The code snippet below shows how to use the ProgressCircle component:
 
 <br />
 
-#### <span name="floating-nav">ColorComplete</span>
+##### <span name="floating-nav">ColorComplete</span>
 
-With the prop <span className='border border-gray-300 bg-gray-200 p-1'>colorComplete</span> you can customize the color when the progress is complete
+With the prop <Tag text='colorComplete'/> you can customize the color when the progress is complete
 
 <ContainerComponentDoc className="gap-y-2">
     <ProgressCircle
@@ -61,9 +63,9 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>colorComp
 `}
 />
 <br />
-#### <span name="floating-nav">ColorProgress</span>
+##### <span name="floating-nav">ColorProgress</span>
 
-With the prop <span className='border border-gray-300 bg-gray-200 p-1'>colorProgress</span> you can customize the progress color
+With the prop <Tag text='colorProgress'/> you can customize the progress color
 
 <ContainerComponentDoc className="gap-y-2">
     <ProgressCircle
@@ -90,9 +92,9 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>colorProg
 />
 
 <br />
-#### <span name="floating-nav">ColorBackground</span>
+##### <span name="floating-nav">ColorBackground</span>
 
-With the prop <span className='border border-gray-300 bg-gray-200 p-1'>colorBackground</span> you can customize the color of the progress that is not complete
+With the prop <Tag text='colorBackground'/> you can customize the color of the progress that is not complete
 
 <ContainerComponentDoc className="gap-y-2">
     <ProgressCircle
@@ -117,9 +119,9 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>colorBack
 `} />
 
 <br />
-#### <span name="floating-nav">StrokeWidth</span>
+##### <span name="floating-nav">StrokeWidth</span>
 
-With the prop <span className='border border-gray-300 bg-gray-200 p-1'>strokeWidth</span> you can customize the thickness of the progress
+With the prop <Tag text='strokeWidth'/> you can customize the thickness of the progress
 
 <ContainerComponentDoc className="gap-y-2">
     <ProgressCircle value={50} width={90} strokeWidth={5} classNamePercentage="w-full text-center text-sm" children={<Text variant="small">Complete</Text>} />
@@ -133,7 +135,7 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>strokeWid
 
 <br />
 <br />
-### <span name="floating-nav">API Reference</span>
+##### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
     dataTable={[

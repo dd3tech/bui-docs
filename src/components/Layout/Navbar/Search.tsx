@@ -8,13 +8,13 @@ import {
 } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import { Flex, Kbd, Text } from 'dd360-ds'
+import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 import { createAutocomplete } from '@algolia/autocomplete-core'
 import {
   AutocompleteState,
   BaseItem
 } from '@algolia/autocomplete-core/dist/esm/types'
-import { Flex, Kbd, Text } from 'dd360-ds'
-import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 import { composeClasses } from 'dd360-ds/lib'
 import { useTheme } from '@/pages/store/theme-store'
 
@@ -175,28 +175,35 @@ const Search = ({ className }: SearchProps) => {
         )}
         style={{
           background: extendedPalette.inputBackground,
-          borderColor: extendedPalette.inputBorder,
+          borderColor: extendedPalette.inputBorderHex,
           height: '40px',
           width: 285
         }}
       >
         <DynamicHeroIcon
           icon="SearchIcon"
-          className="w-4 h-4 mr-2 shrink-0 text-gray-500 transition duration-500 ease-out focus:ease-in"
+          className={composeClasses(
+            'w-4 h-4 mr-2 shrink-0 transition duration-500 ease-out focus:ease-in',
+            extendedPalette.tertiaryText
+          )}
         />
         <input
           ref={inputRef}
           {...inputProps}
           type="text"
-          className="w-full h-full mx-3.5 border-none font-medium bg-transparent transition duration-500 ease-out focus:ease-in placeholder-gray-400 outline-none"
+          className={composeClasses(
+            'w-full h-full mx-3.5 border-none font-medium bg-transparent transition duration-500 ease-out focus:ease-in placeholder-gray-400 outline-none',
+            extendedPalette.primaryText
+          )}
           placeholder="Search the docs"
         />
         <Text
           size="xs"
           fontBold="medium"
           className={composeClasses(
-            'min-w-max justify-self-end border py-1 px-2 rounded-lg text-gray-500 select-none',
-            extendedPalette.inputBorderSecondary
+            'min-w-max justify-self-end border py-1 px-2 rounded-lg select-none',
+            extendedPalette.inputBorderSecondary,
+            extendedPalette.tertiaryText
           )}
           variant="p"
         >
@@ -208,16 +215,28 @@ const Search = ({ className }: SearchProps) => {
         ref={panelRef}
         className={composeClasses(
           isOpenSearchPanel ? 'h-96 shadow-2xl' : 'h-0 border-none',
-          'absolute top-1/2 left-0 w-full flex-col bg-white border border-gray-300 rounded-b-2xl z-10 transition-all duration-300 ease-out overflow-hidden'
+          'absolute top-1/2 left-0 w-full flex-col border rounded-b-2xl z-10 transition-all duration-300 ease-out overflow-hidden',
+          extendedPalette.sidebarBorder
         )}
-        style={{ maxWidth: 285 }}
+        style={{
+          maxWidth: 285,
+          backgroundColor: extendedPalette.inputBackground
+        }}
         {...panelProps}
       >
-        <div className="mt-8 border-b">
+        <div
+          className={composeClasses(
+            'mt-8 border-b',
+            extendedPalette.sidebarBorder
+          )}
+        >
           <Text
             size="xs"
             fontBold="medium"
-            className="py-2 px-2 text-gray-500"
+            className={composeClasses(
+              'py-2 px-2',
+              extendedPalette.tertiaryText
+            )}
             variant="p"
           >
             All results:
@@ -243,9 +262,11 @@ const Search = ({ className }: SearchProps) => {
                       <li
                         className={composeClasses(
                           selectedComponent.index === index
-                            ? 'bg-blue-50'
-                            : 'hover:bg-gray-100',
-                          'w-full h-12 pl-4 flex items-center border-b text-gray-800'
+                            ? `${extendedPalette.searchSelectedOption} ${extendedPalette.primaryText}`
+                            : 'hover:' + extendedPalette.searchSelectedOption,
+                          'w-full h-12 pl-4 flex items-center border-b',
+                          extendedPalette.sidebarBorder,
+                          extendedPalette.secundaryText
                         )}
                       >
                         {capitalizeFirstLetter(path.split('/')[1])}
@@ -260,28 +281,27 @@ const Search = ({ className }: SearchProps) => {
         <Flex
           justifyContent="between"
           alignItems="center"
-          className="w-full h-12 px-4 shrink-0 mt-auto border-t"
+          className={composeClasses(
+            'w-full h-12 px-4 shrink-0 mt-auto border-t',
+            extendedPalette.sidebarBorder
+          )}
         >
-          {/* <Flex alignItems="center" gap="1" className="h-full">
-            <Text textMuted500 size="xs">
-              Up
-            </Text>
-            <Kbd kbds={['↑']} />
-          </Flex>
           <Flex alignItems="center" gap="1" className="h-full">
-            <Text textMuted500 size="xs">
-              Down
-            </Text>
-            <Kbd kbds={['↓']} />
-          </Flex> */}
-          <Flex alignItems="center" gap="1" className="h-full">
-            <Text textMuted500 size="xs">
+            <Text
+              textMuted500
+              size="xs"
+              className={extendedPalette.tertiaryText}
+            >
               Submit
             </Text>
             <Kbd kbds={['Enter']} />
           </Flex>
           <Flex alignItems="center" gap="1" className="h-full">
-            <Text textMuted500 size="xs">
+            <Text
+              textMuted500
+              size="xs"
+              className={extendedPalette.tertiaryText}
+            >
               Close
             </Text>
             <Kbd kbds={['Esc']} />

@@ -16,7 +16,7 @@ import {
 import { useTranslation } from 'next-i18next'
 
 const ComponentsSection = dynamic(
-  () => import('@/modules/landing/ComponentsSection'),
+  () => import('@/modules/landing/home/ComponentsSection'),
   { ssr: false }
 )
 
@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <>
       <OpenGraph title={t('metadata.home')!} />
-      <IllustrationsLayer />
+      {/* <IllustrationsLayer /> */}
       <main className="mx-auto">
         <ComponentsSection />
         <FeaturesSection />

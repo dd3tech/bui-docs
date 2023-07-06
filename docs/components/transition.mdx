@@ -7,6 +7,8 @@ components: Transition
 <br />
 <br />
 
+<Label>Components</Label>
+
 # <span name="floating-nav">Transition</span>
 
 The Transition component allows you to apply animated 
@@ -15,7 +17,7 @@ the animation, such as duration, delay, animation type, and more.
 
 <br />
 <br />
-## <span name="floating-nav">Import</span>
+##### <span name="floating-nav">Import</span>
 
 <WindowEditor codeString="import { Transition } from 'dd360-ds'" />
 <WindowEditor codeString="import Transition from 'dd360-ds/Transition'" />
@@ -26,7 +28,7 @@ Animation types:
 
 <br />
 <br />
-## <span name="floating-nav">Usage</span>
+##### <span name="floating-nav">Usage</span>
 
 Within your component's render method, place the Transition component, wrapping the elements you want to animate.
 
@@ -45,25 +47,25 @@ Within your component's render method, place the Transition component, wrapping 
 
 The Transition component accepts the following props:
 
-<span className='border border-gray-300 bg-gray-200 p-1'>show</span> determines whether the transition is visible or hidden. Set it to true to show the transition or false to hide it.
+<Tag text='show' /> determines whether the transition is visible or hidden. Set it to true to show the transition or false to hide it.
 <br />
-<span className='border border-gray-300 bg-gray-200 p-1'>animationStart</span> specifies the starting animation type. It defaults to 'fadeIn'.
+<Tag text='animationStart' /> specifies the starting animation type. It defaults to 'fadeIn'.
 <br />
-<span className='border border-gray-300 bg-gray-200 p-1'>animationEnd</span> specifies the ending animation type. It defaults to 'fadeOut'.
+<Tag text='animationEnd' /> specifies the ending animation type. It defaults to 'fadeOut'.
 <br />
-<span className='border border-gray-300 bg-gray-200 p-1'>duration</span> determines the duration of the animation in milliseconds. The default duration is set to 300 milliseconds.
+<Tag text='duration' /> determines the duration of the animation in milliseconds. The default duration is set to 300 milliseconds.
 <br />
-<span className='border border-gray-300 bg-gray-200 p-1'>delay</span> specifies the delay before the animation starts in milliseconds. It defaults to 0 milliseconds.
+<Tag text='delay' /> specifies the delay before the animation starts in milliseconds. It defaults to 0 milliseconds.
 <br />
-<span className='border border-gray-300 bg-gray-200 p-1'>fillMode</span> determines how the animation styles are applied before and after the animation. It accepts the values 'none', 'forwards', 'backwards', or 'both'. The default value is 'both'.
+<Tag text='fillMode' /> determines how the animation styles are applied before and after the animation. It accepts the values 'none', 'forwards', 'backwards', or 'both'. The default value is 'both'.
 <br />
-<span className='border border-gray-300 bg-gray-200 p-1'>timingFunction</span> defines the timing function for the animation. It accepts the values 'linear', 'ease', 'ease-in', 'ease-out', or 'ease-in-out'. The default is set to 'linear'.
+<Tag text='timingFunction' /> defines the timing function for the animation. It accepts the values 'linear', 'ease', 'ease-in', 'ease-out', or 'ease-in-out'. The default is set to 'linear'.
 <br />
-<span className='border border-gray-300 bg-gray-200 p-1'>alwaysRender</span> controls whether the transition should always render its child elements, even when not visible. By default, it is set to false.
+<Tag text='alwaysRender' /> controls whether the transition should always render its child elements, even when not visible. By default, it is set to false.
 <br />
 
 <br />
-### <span name="floating-nav">Visibility</span>
+##### <span name="floating-nav">Visibility</span>
 
 To control the visibility of the Transition component, you can utilize the show property, which accepts a boolean value. When set to true, the component becomes visible. This can be easily managed by employing the useState hook.
 
@@ -90,7 +92,7 @@ const TransitionCustom = () => {
 }`}/>
 
 <br />
-### <span name="floating-nav">Duration & delay</span>
+##### <span name="floating-nav">Duration & delay</span>
 
 You can also customize the animation duration and delay using the duration and delay properties.
 
@@ -128,7 +130,7 @@ const DurationDelayExample = () => {
 }`}/>
 
 <br />
-### <span name="floating-nav">Animations</span>
+##### <span name="floating-nav">Animations</span>
 
 By utilizing the animationStart and animationEnd properties with appropriate animation names, 
 you can apply custom animations to enhance the visual effects during the transition process of 
@@ -161,7 +163,7 @@ const ControlAnimationExample = () => {
 }`}/>
 
 <br />
-#### <span name="floating-nav">All animations</span>
+##### <span name="floating-nav">All animations</span>
 
 <ContainerComponentDoc className='w-full h-min flex items-center gap-8'>
     <TransitionCustom exampleType='all-animations'/>
@@ -169,7 +171,7 @@ const ControlAnimationExample = () => {
 
 <br />
 <br />
-## <span name="floating-nav">API Reference</span>
+##### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
     dataTable={[

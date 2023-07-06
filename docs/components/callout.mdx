@@ -7,6 +7,8 @@ components: Callout
 <br />
 <br />
 
+<Label>Components</Label>
+
 # <span name="floating-nav">Callout</span>
 
 The Callout component is a user interface component that is used to display important information prominently in the user interface. Generally, it is used to
@@ -14,7 +16,7 @@ draw the user's attention to critical information, such as errors, warnings or i
 
 <br />
 <br />
-## <span name="floating-nav">Imports</span>
+##### <span name="floating-nav">Imports</span>
 
 The first alternative is recommended since they can reduce the application bundle
 
@@ -22,7 +24,7 @@ The first alternative is recommended since they can reduce the application bundl
 <WindowEditor codeString="import { Callout } from 'dd360-ds'" />
 
 <br />
-## <span name="floating-nav">Usage</span>
+##### <span name="floating-nav">Usage</span>
 
 Use the Callout component as shown below:
 
@@ -41,9 +43,9 @@ import { CheckCircleIcon } from '@heroicons/react/solid'
 
 <br />
 
-#### <span name="floating-nav">Variant</span>
+##### <span name="floating-nav">Variant</span>
 
-With the prop <span className='border border-gray-300 bg-gray-200 p-1'>variant</span> you can customize the color of the callout
+With the prop <Tag text='variant' /> you can customize the color of the callout
 
 <ContainerComponentDoc className="gap-y-2">
     <Flex gap="4">
@@ -71,9 +73,9 @@ export default function App() {
 
 <br />
 
-#### <span name="floating-nav">Icon</span>
+##### <span name="floating-nav">Icon</span>
 
-With the prop <span className='border border-gray-300 bg-gray-200 p-1'>icon</span> you can render a custom icon in the callout before the title, is a optional
+With the prop <Tag text='icon' /> you can render a custom icon in the callout before the title, is a optional
 prop
 
 <ContainerComponentDoc className="gap-y-2">
@@ -98,9 +100,9 @@ export default function App() {
 
 <br />
 
-#### <span name="floating-nav">Title</span>
+##### <span name="floating-nav">Title</span>
 
-With the props <span className='border border-gray-300 bg-gray-200 p-1'>title</span> you can provide a title of the callout and this prop is the only required
+With the props <Tag text='title' /> you can provide a title of the callout and this prop is the only required
 of the component
 
 <ContainerComponentDoc className="gap-y-2">
@@ -123,7 +125,7 @@ export default function App() {
 
 <br />
 <br />
-### <span name="floating-nav">API Reference</span>
+##### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
     dataTable={[

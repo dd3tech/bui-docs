@@ -38,11 +38,12 @@ const SideBar = dynamic(() => import('dd360-ds/SideBar'), {
   ssr: false
 })
 
-type Props = { children: ReactNode }
+type Props = { children: ReactNode; className?: string }
 
 export function useGetComponents() {
   const {
-    themeObject: { extendedPalette }
+    themeObject: { extendedPalette },
+    isLightTheme
   } = useTheme()
 
   return {
@@ -58,7 +59,7 @@ export function useGetComponents() {
     h2: ({ children }: Props) => (
       <Text
         variant="h2"
-        className={composeClasses('mb-4 mt-2', extendedPalette.primaryText)}
+        className={composeClasses('-mb-2 mt-2', extendedPalette.primaryText)}
         bold
       >
         {children}
@@ -85,9 +86,14 @@ export function useGetComponents() {
     h5: ({ children }: Props) => (
       <Text
         variant="h5"
-        className={composeClasses('mb-4 mt-2', extendedPalette.primaryText)}
+        className={composeClasses('-mt-2', extendedPalette.primaryText)}
         bold
       >
+        {children}
+      </Text>
+    ),
+    h6: ({ children }: Props) => (
+      <Text variant="h6" className={extendedPalette.secundaryText} bold>
         {children}
       </Text>
     ),
@@ -103,6 +109,25 @@ export function useGetComponents() {
         {children}
       </Text>
     ),
+    span: ({ children }: Props) => <span className="test">{children}</span>,
+    Label: ({ children }: Props) => (
+      <Text
+        variant="h5"
+        className={composeClasses(
+          'mb-4 mt-2 font-medium',
+          extendedPalette.titleColor
+        )}
+      >
+        {children}
+      </Text>
+    ),
+    ul: ({ children }: Props) => (
+      <ul className={extendedPalette.secundaryText}>{children}</ul>
+    ),
+    CustomTheme: ({ children }: Props) => (
+      <div className={isLightTheme ? 'light' : 'dark'}>{children}</div>
+    ),
+    extendedPalette,
     Tag,
     WindowEditor,
     CustomTableDocs,

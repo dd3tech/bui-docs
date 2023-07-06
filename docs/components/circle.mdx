@@ -7,6 +7,8 @@ components: Circle
 <br />
 <br />
 
+<Label>Components</Label>
+
 # <span name="floating-nav">Circle</span>
 
 The Circle component provides an easy and customizable way to render circular div elements in React applications. 
@@ -15,12 +17,12 @@ requirements. By using the Circle component, you can enhance the visual aestheti
 
 <br />
 
-## <span name="floating-nav">Imports</span>
+##### <span name="floating-nav">Imports</span>
 
 <WindowEditor codeString="import { Circle } from 'dd360-ds'" />
 <WindowEditor codeString="import Circle from 'dd360-ds/Circle'" />
 
-## <span name="floating-nav">Usage</span>
+##### <span name="floating-nav">Usage</span>
 
 By adjusting the props of the Circle component, you have full control over its background color, dimensions, 
 border style, and more. Whether you need to display icons, profile pictures, or decorative elements, the Circle 
@@ -40,18 +42,20 @@ The code snippet below shows how to use the Circle component:
 
 Props:
 
-<List>
- <List.Item>backgroundColor: Specifies the background color of the circle. Default value is #EFF6FF.</List.Item>
- <List.Item>width: Specifies the width of the circle. Default value is 3rem.</List.Item>
- <List.Item>height: Specifies the height of the circle. Default value is 3rem.</List.Item>
- <List.Item>border: Specifies the border of the circle. No border is applied by default.</List.Item>
- <List.Item>useBackground: Specifies whether to use the background color. Default value is true.</List.Item>
- <List.Item>disabled: Specifies whether the component should be disabled. Default value is false.</List.Item>
- <List.Item>children: Allows you to add child elements inside the Circle component. This can include text, images, or other React components</List.Item>
-</List>
+<CustomTheme>
+  <List>
+    <List.Item>backgroundColor: Specifies the background color of the circle. Default value is #EFF6FF.</List.Item>
+    <List.Item>width: Specifies the width of the circle. Default value is 3rem.</List.Item>
+    <List.Item>height: Specifies the height of the circle. Default value is 3rem.</List.Item>
+    <List.Item>border: Specifies the border of the circle. No border is applied by default.</List.Item>
+    <List.Item>useBackground: Specifies whether to use the background color. Default value is true.</List.Item>
+    <List.Item>disabled: Specifies whether the component should be disabled. Default value is false.</List.Item>
+    <List.Item>children: Allows you to add child elements inside the Circle component. This can include text, images, or other React components</List.Item>
+  </List>
+</CustomTheme>
 
 <br />
-### <span name="floating-nav">Colors</span>
+##### <span name="floating-nav">Colors</span>
 
 With the backgroundColor prop, you can easily specify the desired color for the Circle component. Simply provide a valid CSS 
 color value, such as a hex code, RGB value, or color name, to achieve the desired effect. This flexibility empowers you to 
@@ -85,7 +89,7 @@ the circular element should appear in a disabled state or not.
 `}/>
 
 <br />
-### <span name="floating-nav">Size</span>
+##### <span name="floating-nav">Size</span>
 
 The Circle component offers flexibility in defining its size, allowing you to create circles of different dimensions based 
 on your design needs. By adjusting the width and height props, you can easily customize the size of the Circle component to 
@@ -110,7 +114,7 @@ achieve the desired visual effect.
 `}/>
 
 <br />
-### <span name="floating-nav">Border</span>
+##### <span name="floating-nav">Border</span>
 
 To specify the border style, provide a valid CSS border value to the border prop. This can include properties 
 such as border width, border color, and border style. With this flexibility, you can create circles with solid 
@@ -137,7 +141,7 @@ borders, dashed borders, or even complex border patterns, adding a unique touch 
 `}/>
 
 <br />
-### <span name="floating-nav">Custom Item</span>
+##### <span name="floating-nav">Custom Item</span>
 
 The Circle component offers the flexibility to add custom content as child elements inside the circle. This 
 feature allows you to personalize the circular element by including text, images, or other React components 
@@ -160,7 +164,7 @@ within it.
 <br />
 <br />
 
-## <span name="floating-nav">API Reference</span>
+##### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
     dataTable={[

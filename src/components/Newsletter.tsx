@@ -19,7 +19,7 @@ function Newsletter() {
         )}
         style={{
           background: extendedPalette.inputBackground,
-          borderColor: extendedPalette.inputBorder
+          borderColor: extendedPalette.inputBorderHex
         }}
       />
       <Button

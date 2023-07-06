@@ -5,7 +5,7 @@ import { composeClasses } from 'dd360-ds/lib'
 
 interface CircleCustomProps {
   children?: ReactNode
-  onClick: () => void
+  onClick?: () => void
 }
 
 function CircleCustom({ children, onClick }: CircleCustomProps) {

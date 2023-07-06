@@ -5,7 +5,6 @@ import {
   ChangeEvent,
   ReactNode,
   createContext,
-  use,
   useCallback,
   useContext,
   useEffect,
@@ -23,7 +22,7 @@ export interface IThemeContext {
   onChangeTheme: (
     event: ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => void
-  onClickTheme: (newTheme: Theme) => void
+  onClickTheme: (newTheme: ThemeOptions) => void
   resetTheme: () => void
 }
 
@@ -65,7 +64,7 @@ export default function UIProvider({ children }: { children: ReactNode }) {
   )
 
   const onClickTheme = useCallback(
-    (newTheme: Theme) => {
+    (newTheme: ThemeOptions) => {
       handleThemeChange(newTheme)
     },
     [handleThemeChange]

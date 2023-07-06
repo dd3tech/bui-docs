@@ -17,5 +17,10 @@
   "subscribe": "Subscribe",
   "metadata": {
     "home": "DD360 UI - The React library to build back office platforms"
+  },
+  "navbar": {
+    "dark": "Dark mode",
+    "light": "Light mode",
+    "default": "System"
   }
 }

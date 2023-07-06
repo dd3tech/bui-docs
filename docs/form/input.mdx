@@ -7,17 +7,19 @@ components: Input
 <br />
 <br />
 
+<Label>Form</Label>
+
 # <span name="floating-nav">Input</span>
 
     Inputs on websites are interactive elements that allow users to perform specific actions, such as submitting a form, navigating to another page, or making
     a purchase.
 
-### <span name="floating-nav">Import</span>
+##### <span name="floating-nav">Import</span>
 
 <WindowEditor codeString="import { Input } from 'dd360-ds'" />
 <WindowEditor codeString="import Input from 'dd360-ds/Input'" />
 
-### <span name="floating-nav">Usage</span>
+##### <span name="floating-nav">Usage</span>
 
 <ContainerComponentDoc className="gap-y-2">
     <Input />
@@ -27,7 +29,7 @@ components: Input
 
 <Input />" />
 
-#### <span name="floating-nav">Variants</span>
+##### <span name="floating-nav">Variants</span>
 
 The "Input" comes with variants, by default it uses the "default" variant, but you can also use these: "active", "disabled", "warning",
 "success","error","default".
@@ -56,7 +58,7 @@ The "Input" comes with variants, by default it uses the "default" variant, but y
     <Input variant='error' />
     <Input variant='disabled' />" />
 
-#### <span name="floating-nav">Types</span>
+##### <span name="floating-nav">Types</span>
 
 The "Input" comes with types, by default it uses the "text" variant, but you can also use these: "number", "text", "email", "currency", "date", "password",
 "year", "month", "percentage", "file".
@@ -69,7 +71,7 @@ The "Input" comes with types, by default it uses the "text" variant, but you can
 
 <Input type='text' />" />
 
-#### <span name="floating-nav">Disabled</span>
+##### <span name="floating-nav">Disabled</span>
 
 For disabled Inputs, use the "disabled" prop.
 
@@ -81,7 +83,7 @@ For disabled Inputs, use the "disabled" prop.
 
 <Input disabled />" />
 
-#### <span name="floating-nav">Label</span>
+##### <span name="floating-nav">Label</span>
 
 For label Inputs, use the "label" prop.
 
@@ -93,7 +95,7 @@ For label Inputs, use the "label" prop.
 
 <Input label='Email' />" />
 
-#### <span name="floating-nav">Not borders</span>
+##### <span name="floating-nav">Not borders</span>
 
 For hidde borders Inputs, use the "inputBlank" prop.
 
@@ -105,7 +107,7 @@ For hidde borders Inputs, use the "inputBlank" prop.
 
 <Input inputBlank />" />
 
-#### <span name="floating-nav">Large</span>
+##### <span name="floating-nav">Large</span>
 
 For expansive size inputs, use the "large" prop.
 
@@ -117,7 +119,7 @@ For expansive size inputs, use the "large" prop.
 
 <Input large />" />
 
-#### <span name="floating-nav">boxShadow</span>
+##### <span name="floating-nav">boxShadow</span>
 
 Change boxShadow input, use the "boxShadow" prop with your variants: "sm", "base", "md", "lg", "xl", "2xl", "inner", "none".
 
@@ -129,7 +131,7 @@ Change boxShadow input, use the "boxShadow" prop with your variants: "sm", "base
 
 <Input boxShadow='inner' />" />
 
-#### <span name="floating-nav">Input with icon</span>
+##### <span name="floating-nav">Input with icon</span>
 
 <ContainerComponentDoc className="gap-y-2">
     <Input startAdornment={<DynamicHeroIcon icon="AcademicCapIcon" className="text-blue-700 w-6" />} />
@@ -142,9 +144,9 @@ import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 <Input startAdornment={<DynamicHeroIcon icon='AcademicCapIcon' className='text-blue-700 w-6' />} />
 <Input endAdornment={<DynamicHeroIcon icon='AcademicCapIcon' className='text-blue-700 w-6' />} />" />
 
-#### <span name="floating-nav">isRequired</span>
+##### <span name="floating-nav">isRequired</span>
 
-With the prop <span className='border border-gray-300 bg-gray-200 p-1'>isRequired</span> you can mark an input as required. Setting isRequired to true will add an asterisk (*) next to the entry to indicate that its completion is required. This functionality is especially useful for highlighting the need to fill in certain fields on forms or user interfaces.
+With the prop <Tag text='isRequired' /> you can mark an input as required. Setting isRequired to true will add an asterisk (*) next to the entry to indicate that its completion is required. This functionality is especially useful for highlighting the need to fill in certain fields on forms or user interfaces.
 
 <ContainerComponentDoc className="gap-y-2">
     <Input isRequired label='This field is required' />
@@ -155,7 +157,7 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>isRequire
 <Input isRequired label='This field is required' />" />
 
 
-### <span name="floating-nav">API Reference</span>
+##### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
     dataTable={[

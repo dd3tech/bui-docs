@@ -7,6 +7,8 @@ components: Switch
 <br />
 <br />
 
+<Label>Controls</Label>
+
 # <span name="floating-nav">Switch</span>
 
 With the Switch component, you'll be able to give users the option to enable or disable features and settings with ease. The Switch is a visually appealing and
@@ -15,7 +17,7 @@ usability and accessibility of your web or mobile application, giving users full
 
 <br />
 <br />
-## <span name="floating-nav">Imports</span>
+##### <span name="floating-nav">Imports</span>
 
 The first alternative is recommended since they can reduce the application bundle
 
@@ -23,7 +25,7 @@ The first alternative is recommended since they can reduce the application bundl
 <WindowEditor codeString="import { Switch } from 'dd360-ds'" />
 
 <br />
-## <span name="floating-nav">Usage</span>
+##### <span name="floating-nav">Usage</span>
 
 Use the Switch component as shown below:
 
@@ -43,9 +45,9 @@ The code snippet below shows how to use the Switch component:
 
 <br />
 
-#### <span name="floating-nav">Text</span>
+##### <span name="floating-nav">Text</span>
 
-With the prop <span className='border border-gray-300 bg-gray-200 p-1'>text</span> you can add text next to the switch
+With the prop <Tag text='text' /> you can add text next to the switch
 
 <ContainerComponentDoc className="gap-y-2">
     <SwitchCustom text="Active option" />
@@ -61,9 +63,9 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>text</spa
 
 <br />
 
-#### <span name="floating-nav">CustomIcon</span>
+##### <span name="floating-nav">CustomIcon</span>
 
-With the prop <span className='border border-gray-300 bg-gray-200 p-1'>customIcon</span> you can add icon on switch disabled
+With the prop <Tag text='customIcon' /> you can add icon on switch disabled
 
 <ContainerComponentDoc className="gap-y-2">
     <SwitchCustom customIcon={<DynamicHeroIcon icon="XIcon" className="text-blue-700 w-5" />} />
@@ -80,7 +82,7 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>customIco
 <br />
 
 <br />
-### <span name="floating-nav">API Reference</span>
+##### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
     dataTable={[

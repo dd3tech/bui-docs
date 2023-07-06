@@ -1,13 +1,12 @@
-import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-import { Divider, Text } from 'dd360-ds'
+import { Text } from 'dd360-ds'
 import { composeClasses } from 'dd360-ds/lib'
-import DynamicHeroIcon, { IconName } from 'dd360-ds/DynamicHeroIcon'
+import { IconName } from 'dd360-ds/DynamicHeroIcon'
 
-import Badge from '../Badge'
+import Badge, { BadgeVariant } from '../Badge'
 import ShowMore from '../ShowMore'
 import { useTheme } from '@/pages/store/theme-store'
 
@@ -19,7 +18,7 @@ interface ComponentObjectProps {
       pathname: string
       badge?: {
         label: string
-        color: string
+        variant: BadgeVariant
       }
     }[]
   }
@@ -28,22 +27,29 @@ interface SideBarProps {
   setIsActiveButtonMobile?: (e: boolean) => void
 }
 
-const BADGE_TYPES = {
+interface BadgeTypes {
+  [key: string]: {
+    label: string
+    variant: BadgeVariant
+  }
+}
+
+const BADGE_TYPES: BadgeTypes = {
   new: {
     label: 'NEW',
-    color: 'green'
+    variant: 'success'
   },
   updated: {
     label: 'UPDATED',
-    color: 'blue'
+    variant: 'info'
   },
   cooming: {
     label: 'COOMING',
-    color: 'yellow'
+    variant: 'warning'
   },
   deprecated: {
     label: 'DEPRECATED',
-    color: 'red'
+    variant: 'deprecated'
   }
 }
 
@@ -393,9 +399,12 @@ export default function SideBar({ setIsActiveButtonMobile }: SideBarProps) {
         extendedPalette.barBackground,
         extendedPalette.sidebarBorder
       )}
-      style={{ minWidth: 200 }}
+      style={{ minWidth: 240, height: 'calc(100vh - 57px)' }}
     >
-      <div className="hide-scroll flex flex-col gap-1 mt-1 overflow-y-auto overflow-x-hidden flex-grow">
+      <div
+        className="hide-scroll flex flex-col gap-1 mt-1 overflow-y-auto overflow-x-hidden flex-grow"
+        style={{ height: 'calc(100vh - 57px)' }}
+      >
         {Object.entries(components).map(([key, value]) => {
           return (
             <ShowMore
@@ -420,7 +429,7 @@ export default function SideBar({ setIsActiveButtonMobile }: SideBarProps) {
                     </Text>
                     {item.badge && (
                       <Badge
-                        color={item.badge.color}
+                        variant={item.badge.variant}
                         label={item.badge.label}
                       />
                     )}

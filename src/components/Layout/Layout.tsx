@@ -1,12 +1,14 @@
-import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 
+import { composeClasses } from 'dd360-ds/lib'
+import { Flex, Overflow } from 'dd360-ds'
+
+import { useTheme } from '@/pages/store/theme-store'
 import FloatingNav, { Entries } from './FloatingNav'
 import Footer from './Footer'
 import Navbar from './Navbar/Navbar'
 import SideBar from './SideBar'
-
-// const routesWithoutFooter = ['/components']
 
 function parseIdByName(name: string) {
   return name
@@ -19,6 +21,7 @@ function Layout({ children }: { children: JSX.Element }) {
   const router = useRouter()
   const showSidebar = router.pathname.startsWith('/docs/')
   const [entries, setEntries] = useState<Entries[]>([])
+  const { isLightTheme } = useTheme()
 
   useEffect(() => {
     const headers = document.getElementsByName('floating-nav')
@@ -41,46 +44,42 @@ function Layout({ children }: { children: JSX.Element }) {
 
   if (showSidebar) {
     return (
-      <div className="flex min-h-screen flex-row text-gray-800">
+      <Flex className="min-h-screen flex-row text-gray-800">
         <main
-          className="w-full relative flex flex-grow flex-col transition-all duration-150 ease-in md:ml-0"
-          // className="flex min-h-screen flex-row text-gray-800"
+          className={composeClasses(
+            'w-full relative flex flex-grow flex-col transition-all duration-150 ease-in md:ml-0',
+            isLightTheme ? 'light' : 'dark'
+          )}
         >
-          <Navbar hideLogo />
+          <Navbar />
 
-          <div className="flex">
+          <Flex>
             <div className="hidden md:flex">
               <SideBar />
             </div>
 
-            <div className="layout-content grid h-full px-8 md:px-16">
+            <Overflow
+              className="layout-content grid h-full px-8 md:px-16 m-auto"
+              style={{ height: 'calc(100vh - 57px)' }}
+            >
               <article className="w-full max-w-full">{children}</article>
-              <article className="hidden w-full max-w-[128px] mt-36 md:block">
+              <article className="hidden w-full max-w-[128px] mt-[76px] md:block">
                 <FloatingNav entries={entries} />
               </article>
-            </div>
-          </div>
+            </Overflow>
+          </Flex>
           <Footer />
         </main>
-      </div>
+      </Flex>
     )
   }
 
-  //   if (routesWithoutFooter.includes(router.pathname)) {
-  //     return (
-  //       <>
-  //         <Navbar />
-  //         {children}
-  //       </>
-  //     )
-  //   }
-
   return (
-    <>
+    <div className={isLightTheme ? 'light' : 'dark'}>
       <Navbar />
       {children}
       <Footer />
-    </>
+    </div>
   )
 }
 

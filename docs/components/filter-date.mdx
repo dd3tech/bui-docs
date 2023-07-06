@@ -7,20 +7,22 @@ components: FilterDate
 <br />
 <br />
 
+<Label>Components</Label>
+
 # <span name="floating-nav">Filter Date</span>
 
 The Filter Date component allows users to filter and select dates intuitively in web and mobile applications.
 
 <br />
 
-## <span name="floating-nav">Imports</span>
+##### <span name="floating-nav">Imports</span>
 
 The first alternative is recommended since they can reduce the application bundle
 
 <WindowEditor codeString="import FilterDate from 'dd360-ds/FilterDate'" />
 <WindowEditor codeString="import { FilterDate } from 'dd360-ds'" />
 
-## <span name="floating-nav">Usage</span>
+##### <span name="floating-nav">Usage</span>
 
 The prop onApply of type function is mandatory, this function returns an object containing the month and year values selected by the user.
 
@@ -39,7 +41,7 @@ The code snippet below shows how to use the FilterDate component:
 `}/>
 
 
-#### <span name="floating-nav">Customization</span>
+##### <span name="floating-nav">Customization</span>
 
 <span className="font-semibold" >The FilterDate component can be customized using the following props:</span>
  - title: The title displayed when the component is opened.
@@ -75,7 +77,7 @@ The code snippet below shows how to customize the FilterDate component:
 
 <br />
 
-#### <span name="floating-nav">Visibility & position</span>
+##### <span name="floating-nav">Visibility & position</span>
 
 To manage the visibility and position of the FilterDate component, you can use the useState hook in a functional component. 
 The position state variable stores the top and left coordinates, as well as a boolean indicating whether the component should be shown. 
@@ -133,7 +135,7 @@ const FilterComponent = () => {
 export default FilterComponent
  `}/>
 
-#### <span name="floating-nav">Support Server Side Rendering</span>
+##### <span name="floating-nav">Support Server Side Rendering</span>
 
 For applications that use server-side rendering, you can ensure that the FilterDate component is fully rendered before displaying it by using the domLoaded state variable. 
 This helps avoid any issues that may arise due to server-side rendering.
@@ -167,7 +169,7 @@ export default FilterComponent
 <br />
 <br />
 
-## <span name="floating-nav">API Reference</span>
+##### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
   dataTable={[
