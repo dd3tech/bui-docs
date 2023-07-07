@@ -24,7 +24,7 @@ const ComponentsSection = () => {
   const { handleCopy, isCopied } = useCopy()
   const paginationProps = usePagination()
   const [sectionPos, setSectionPos] = useState({ top: 0, left: 0 })
-  const [IsScreenXl, setIsScreenXl] = useState(false)
+  const [IsScreenXl, setIsScreenXl] = useState(22)
   const {
     themeObject: { extendedPalette },
     isLightTheme
@@ -36,7 +36,14 @@ const ComponentsSection = () => {
         '.section-goup-components'
       ) as HTMLElement
       if (sectionNode) {
-        setIsScreenXl(window.innerWidth >= 1280)
+        if (window.innerWidth <= 768) {
+          setIsScreenXl(68)
+        } else if (window.innerWidth <= 1280) {
+          setIsScreenXl(255)
+        } else {
+          setIsScreenXl(22)
+        }
+
         setSectionPos({
           top: sectionNode.offsetTop,
           left: sectionNode.offsetLeft
@@ -51,27 +58,31 @@ const ComponentsSection = () => {
 
   return (
     <section className="m-auto max-w-8xl section-components flex max-xl:flex-col items-center pt-[55px] xl:py-36">
-      <div className="xl:max-w-lg ml-10 2xl:ml-auto flex flex-col items-center xl:items-start">
+      <div className="xl:max-w-lg xl:ml-10 text-center xl:text-left 2xl:ml-auto flex flex-col items-center xl:items-start">
         <Text
-          size="4xl"
-          className={composeClasses('mb-2', extendedPalette.secundaryText)}
+          className={composeClasses(
+            'mb-2 text-2xl sm:text-4xl',
+            extendedPalette.secundaryText
+          )}
           variant="h2"
         >
           The React library to build
         </Text>
 
         <Text
-          size="5xl"
-          className={composeClasses('font-bold', extendedPalette.primaryText)}
+          className={composeClasses(
+            'font-bold text-2xl sm:text-5xl',
+            extendedPalette.primaryText
+          )}
           variant="h1"
         >
           Back office platforms like DD360
         </Text>
 
-        <Flex className="gap-3 flex-col sm:flex-row mt-10">
+        <Flex className="gap-3 flex-col sm:flex-row mt-9 w-full sm:w-auto">
           <Link href="/docs/get-started/getting-started">
             <Button
-              className="flex justify-center items-center w-full sm:w-40 sm:max-w-[150px] h-10 gap-2"
+              className="flex justify-center items-center w-full sm:min-w-[149px] sm:max-w-[150px] h-10 gap-2"
               paddingY="2"
               rounded="lg"
             >
@@ -83,7 +94,7 @@ const ComponentsSection = () => {
             paddingY="2"
             variant="secondary"
             className={composeClasses(
-              'w-[202px] h-10 px-2 flex justify-between items-center',
+              'w-full sm:min-w-[202px] h-10 px-2 flex justify-between items-center',
               extendedPalette.secundaryText
             )}
             style={{
@@ -107,18 +118,18 @@ const ComponentsSection = () => {
       </div>
 
       <section
-        className="relative mb-6 section-goup-components hidden sm:block max-w-2xl m-auto mt-[70px] xl:mt-0 xl:ml-auto"
-        style={{ width: 677, height: 369 }}
+        className="relative w-full mb-6 section-goup-components block max-w-2xl m-auto mt-[159px] sm:mt-[90px] md:mt-[70px] xl:mt-0 xl:ml-auto"
+        style={{ maxWidth: 677, height: 369 }}
       >
         <FilterRangeSlider
           className={composeClasses(
-            'demo-cmpnt floating hidden sm:block',
+            'demo-cmpnt floating block',
             isLightTheme ? 'light' : 'dark'
           )}
           onApply={() => {}}
           position={{
             show: true,
-            left: sectionPos.left + (IsScreenXl ? 22 : 255),
+            left: sectionPos.left + IsScreenXl,
             top: sectionPos.top + 288
           }}
           min={0}
@@ -132,7 +143,7 @@ const ComponentsSection = () => {
           style={{
             animationDelay: '1s'
           }}
-          className="floating absolute top-[-34px] left-[40px] xl:top-[-44px] xl:left-[185px]"
+          className="floating absolute top-[-68px] right-[26px] sm:top-[-52px] sm:left-[280px] md:top-[-34px] md:left-[40px] xl:top-[-44px] xl:left-[185px]"
         >
           <Pagination
             {...paginationProps}
@@ -143,13 +154,10 @@ const ComponentsSection = () => {
 
         <div
           style={{
-            position: 'absolute',
-            top: 0,
-            left: 179,
             animationDelay: '1s',
             zIndex: 1
           }}
-          className="floating"
+          className="floating absolute left-[15%] sm:top-0 sm:left-[179px]"
         >
           <DatePicker
             format="short"
@@ -167,7 +175,7 @@ const ComponentsSection = () => {
             animationDelay: '1s',
             zIndex: 2
           }}
-          className="floating absolute top-[-33px] left-[434px] xl:top-[163px] xl:left-[345px]"
+          className="floating absolute top-[59px] right-[15px] md:top-[-33px] md:left-[434px] xl:top-[163px] xl:left-[345px]"
         >
           <Input
             className="demo-cmpnt w-[265px] shadow-2xl"
@@ -187,6 +195,7 @@ const ComponentsSection = () => {
           />
         </div>
 
+        {/* will be used later */}
         {/* <CardExample
           style={{
             position: 'absolute',
@@ -202,12 +211,12 @@ const ComponentsSection = () => {
             animationDelay: '0.3s',
             zIndex: 2
           }}
-          className="demo-cmpnt absolute shadow-2xl floating top-[109px] left-[42px] xl:top-[-72px] xl:left-[82px]"
+          className="demo-cmpnt absolute shadow-2xl floating top-[-122px] left-[22px] sm:top-[-49px] ms:left-[96px] md:top-[109px] md:left-[42px] xl:top-[-72px] xl:left-[82px]"
         />
 
         <div
           style={{ animationDelay: '0.8s' }}
-          className="absolute floating w-[128px] xl:w-[136px] top-[185px] left-[512px] xl:top-[291px] xl:left-[406px] "
+          className="absolute z-[2] sm:z-0 floating w-[128px] xl:w-[136px] top-[232px] right-[48px] sm:top-[290px] sm:right-[92px] md:top-[185px] md:left-[512px] xl:top-[291px] xl:left-[406px] "
         >
           <ProgressCircle
             classNamePercentage={composeClasses(
@@ -223,10 +232,7 @@ const ComponentsSection = () => {
           </ProgressCircle>
         </div>
 
-        <div
-          style={{ position: 'absolute', top: 117, left: 503 }}
-          className="absolute floating"
-        >
+        <div className="absolute floating top-[-98px] left-[218px] sm:top-[240px] sm:left-[115px] md:top-[117px] md:left-[503px]">
           <Circle
             width="36px"
             height="36px"
@@ -248,7 +254,7 @@ const ComponentsSection = () => {
           style={{
             animationDelay: '2s'
           }}
-          className="absolute floating top-[299px] left-[144px] xl:top-[235px] xl:left-[87px] "
+          className="absolute floating top-[183px] right-[116px] md:top-[299px] md:left-[144px] xl:top-[235px] xl:left-[87px] "
         >
           <CustomSwitch className="demo-cmpnt switch" />
         </div>

@@ -7,6 +7,14 @@ body {
   font-family: var(--fontFamily);
 }
 
+body:has(.home-page.light) {
+  background: radial-gradient(
+    236.82% 131.34% at -16.84% -21.78%,
+    #f3f4f6 0%,
+    #f3f4f6 100%
+  ) !important;
+}
+
 .sidebar-list::-webkit-scrollbar {
   width: 0;
 }
@@ -39,11 +47,6 @@ body {
 }
 
 @media (max-width: 1023px) {
-  .banner-dashboard-component {
-    background-color: blue;
-    justify-content: center;
-  }
-
   .banner-dashboard-component .description .img-bottom {
     display: block;
   }
@@ -157,7 +160,9 @@ body {
 .dark.demo-cmpnt .text-black {
   color: #f3f4f6 !important;
 }
-
+.dark .demo-cmpnt.switch {
+  background-color: transparent !important;
+}
 .dark .demo-cmpnt.switch .cursor-pointer {
   background-color: #374151 !important;
 }

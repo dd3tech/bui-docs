@@ -1,6 +1,6 @@
 import { useTheme } from '@/pages/store/theme-store'
 import Image from 'next/image'
-import { Button, Card, Text } from 'dd360-ds'
+import { Button, Card, Flex, Text } from 'dd360-ds'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 import { composeClasses } from 'dd360-ds/lib'
 import { LocationBlur } from './LocationBlur'
@@ -12,10 +12,10 @@ function BannerDashboard() {
   } = useTheme()
 
   return (
-    <div className="w-full flex justify-center overflow-hidden my-[104px]">
+    <div className="w-full flex justify-center overflow-hidden mt-10 mb-14 lg:my-[104px]">
       <Card
         className={composeClasses(
-          'banner-dashboard-component border-0 overflow-hidden rounded-2xl flex relative mx-10 md:mx-32 lg:mx-10 2xl:mx-0 w-full max-w-[1333px] 2xl:max-w-8xl',
+          'banner-dashboard-component border-0 overflow-hidden rounded-2xl flex flex-col-reverse lg:flex-row relative mx-8 lg:mx-10 2xl:mx-0 w-full max-w-[1333px] 2xl:max-w-8xl',
           extendedPalette.cardBackground
         )}
       >
@@ -29,21 +29,22 @@ function BannerDashboard() {
         />
 
         <div
-          className="w-full shrink-0 description my-28 ml-12 xl:ml-[88px]"
-          style={{ maxWidth: 452 }}
+          className="w-fit text-center lg:text-left lg:w-full m-auto mt-8 lg:mt-0 shrink-0 description my-8 lg:my-28 lg:ml-12 xl:ml-[88px] max-w-[301px] lg:max-w-[452px]"
+          // style={{ maxWidth: 452 }}
         >
           <Text
             variant="h3"
-            size="3xl"
-            className={composeClasses('mb-1', extendedPalette.titleColor)}
+            className={composeClasses(
+              'mb-1 text-2xl md:text-3xl',
+              extendedPalette.titleColor
+            )}
           >
             Star now
           </Text>
           <Text
             variant="h2"
-            size="4xl"
             className={composeClasses(
-              'mb-6 tracking-wide',
+              'mb-6 tracking-wide text-2xl md:text-4xl',
               extendedPalette.primaryText
             )}
             bold
@@ -51,10 +52,9 @@ function BannerDashboard() {
             See our demo Dashboard
           </Text>
           <Text
-            size={18}
             variant="p"
             className={composeClasses(
-              'leading-6 mb-12',
+              'leading-6 mb-12 text-xs md:text-lg',
               extendedPalette.primaryText
             )}
           >
@@ -62,12 +62,15 @@ function BannerDashboard() {
             or lear how to rebuild it
           </Text>
 
-          <div className="flex flex-col sm:flex-row gap-12 group-btns">
+          <Flex
+            gap="6"
+            className="flex-col items-center sm:flex-row sm:gap-12 group-btns"
+          >
             <Button
               paddingX="4"
               paddingY="2.5"
               className={composeClasses(
-                'flex gap-2.5 items-center',
+                'flex gap-2.5 items-center justify-center w-full sm:w-auto',
                 extendedPalette.componentBgSecondary
               )}
               variant="tertiary"
@@ -102,35 +105,25 @@ function BannerDashboard() {
                 strokeWidth={3.5}
               />
             </Button>
-          </div>
-
-          <div className="relative">
-            <Image
-              src="/sales-v2-page-dark.jpg"
-              alt="demo-sales"
-              className="mt-10 -mb-10 img-bottom hidden"
-              width={681}
-              height={424}
-            />
-          </div>
+          </Flex>
         </div>
-        <div className="relative w-full">
-          <div
-            className="left-[76px] right-0 absolute w-[927px] h-[363px]"
-            style={{
-              top: '50%',
-              transform: 'translateY(-50%)'
-            }}
-          >
+        <div className="relative w-full h-[285px] lg:h-auto overflow-hidden ">
+          <div className="left-[76px] right-0 lg:absolute lg:w-[927px] h-[363px] lg:translate-y-[-50%] top-[50%]">
             <Image
               src={`/sales-v2-page-${isLightTheme ? 'light' : 'dark'}.png`}
               alt="demo-dashboard"
-              className="absolute"
+              className="absolute hidden lg:block"
+              fill
+            />
+            <Image
+              src={`/sales-v2-full-page-${isLightTheme ? 'light' : 'dark'}.png`}
+              alt="demo-dashboard"
+              className="absolute lg:hidden"
               fill
             />
             <div
-              className="absolute w-full h-full"
-              style={{ background: extendedPalette.cardBorderFilter }}
+              className="absolute w-full h-full z-[1]"
+              style={{ background: extendedPalette.cardFilter }}
             />
           </div>
           <LocationBlur

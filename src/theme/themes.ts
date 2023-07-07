@@ -12,7 +12,7 @@ export const darkTheme = createTheme({
       main: '#F9FAFB'
     },
     background:
-      'radial-gradient(236.82% 131.34% at -16.84% -57.78%, #374151 0%, #111827 100%)',
+      'radial-gradient(236.82% 111.34% at -16.84% -57.78%, #374151 0%, #111827 100%)',
     textColor: '#fff'
   },
   typography,
@@ -27,8 +27,10 @@ export const darkTheme = createTheme({
 
     cardBackground: 'bg-gray-900', //#111827
     cardBorderColor: 'border-gray-700', //#374151
-    cardBorderFilter:
+    cardFilter:
       'linear-gradient(0deg, #111827 0%, rgba(217, 217, 217, 0.00) 91.98%)',
+    cardFilterSecondary:
+      'linear-gradient(0deg, #111827 11%, rgba(217, 217, 217, 0.00) 91.98%)',
 
     titleColor: 'text-blue-300', //#93C5FD
     primaryText: 'text-white', //#FFFFFF
@@ -81,7 +83,9 @@ export const darkTheme = createTheme({
     componentBgPrimaryHex: '#1F2937', //bg-gray-800
     componentBgSecondary: 'bg-blue-600 text-gray-50', //#2563EB #F9FAFB
     componentText: 'text-gray-50', //#F9FAFB
-    componentBgTertiaryHex: '#374151' //bg-gray-700
+    componentBgTertiaryHex: '#374151', //bg-gray-700
+
+    iconColor: 'text-blue-200' //#BFDBFE
   }
 })
 
@@ -109,8 +113,10 @@ export const lightTheme = createTheme({
 
     cardBackground: 'bg-white', //#FFFFFF
     cardBorderColor: 'border-gray-300', //#D1D5DB
-    cardBorderFilter:
+    cardFilter:
       'linear-gradient(0deg, #FFF 0%, rgba(217, 217, 217, 0.00) 70.98%)',
+    cardFilterSecondary:
+      'linear-gradient(0deg, rgb(243 244 246) 11%, rgba(231, 233, 236, 0) 100%)',
 
     titleColor: 'text-blue-600', //#2563EB
     primaryText: 'text-gray-900', //#111827
@@ -161,6 +167,8 @@ export const lightTheme = createTheme({
     componentBgPrimaryHex: '#FFFFFF', //bg-white
     componentBgSecondary: 'bg-blue-700 text-gray-50', //#1D4ED8 #F9FAFB
     componentText: 'text-gray-700', //#1D4ED8
-    componentBgTertiaryHex: '#D1D5DB' //bg-gray-300
+    componentBgTertiaryHex: '#D1D5DB', //bg-gray-300
+
+    iconColor: 'text-gray-700' //#374151
   }
 })

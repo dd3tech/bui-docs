@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Card, Text } from 'dd360-ds'
+import { Card, Flex, Text } from 'dd360-ds'
 import { composeClasses } from 'dd360-ds/lib'
 import { ArrowCircleRightIcon } from '@heroicons/react/outline'
 import { useTheme } from '@/pages/store/theme-store'
@@ -43,11 +43,11 @@ const CardApp = ({ data }: CardAppsProps) => {
         <div
           className="absolute w-full h-full top-0"
           style={{
-            background: extendedPalette.cardBorderFilter
+            background: extendedPalette.cardFilter
           }}
         />
       </div>
-      <div className="flex flex-col justify-between">
+      <Flex justifyContent="between" className="flex flex-col justify-between">
         <Text size="xl" variant="p" className="lg:pt-9">
           {data.title}
         </Text>
@@ -71,7 +71,7 @@ const CardApp = ({ data }: CardAppsProps) => {
             <ArrowCircleRightIcon width={24} />
           </Link>
         </div>
-      </div>
+      </Flex>
     </Card>
   )
 }

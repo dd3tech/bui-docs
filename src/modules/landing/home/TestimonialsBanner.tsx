@@ -1,137 +1,137 @@
-import Image from 'next/image'
-
-import { Card, Circle, Text, ProgressBar, Divider, ImageIcon } from 'dd360-ds'
+import { Text, Flex, Button, Avatar } from 'dd360-ds'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
+import { composeClasses } from 'dd360-ds/lib'
 
 import { openWindow, GITHUB_URL, NPM_URL } from '@/utils'
+import { useTheme } from '@/pages/store/theme-store'
+import { GitHubIcon } from '@/components'
 
 function TestimonialsBanner() {
+  const {
+    themeObject: { extendedPalette }
+  } = useTheme()
+
   return (
-    <section
-      className="bg-blue-800 bg-no-repeat"
-      style={{
-        backgroundImage:
-          'url(/testimonial-bottom-adornment.svg), url(/testimonial-top-adornment.svg)',
-        backgroundPosition: 'left bottom, right top'
-      }}
-    >
-      <div className="py-20 px-4 lg:px-8 xl:px-0 max-w-8xl mx-auto text-white">
-        <Text className="text-center mb-14" variant="h4">
-          Loved by product people like you
-        </Text>
-        <div className="flex gap-28 mx-8 lg:mx-0 justify-center flex-wrap md:flex-nowrap">
-          <div>
-            <div className="flex gap-2 mb-10">
-              <Circle
-                className="bg-transparent border border-blue-300 w-9 h-9 cursor-pointer"
-                style={{}}
+    <section className="px-4 lg:px-8 xl:px-0 max-w-8xl mx-auto text-white mb-[188px]">
+      <Text
+        size="3xl"
+        className={composeClasses('text-center', extendedPalette.titleColor)}
+        variant="h4"
+      >
+        Loved by
+      </Text>
+      <Text
+        size="4xl"
+        className={composeClasses('text-center', extendedPalette.primaryText)}
+        variant="h4"
+      >
+        product people like you
+      </Text>
+      <div className="relative w-full max-w-8xl pt-[52px] p-4 sm:px-8 m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((key) => (
+          <div
+            key={key}
+            className={composeClasses(
+              'rounded-lg w-full h-full p-6',
+              extendedPalette.cardBackground
+            )}
+            style={{ backgroundColor: extendedPalette.componentBgPrimaryHex }}
+          >
+            <Flex alignItems="center" gap="2" className="mb-4">
+              <Avatar
+                className={composeClasses(
+                  'w-8 h-8',
+                  extendedPalette.componentBgSecondary
+                )}
               >
-                <DynamicHeroIcon icon="ChevronLeftIcon" className="w-5 h-5" />
-              </Circle>
-              <Circle
-                className="bg-transparent border border-blue-300 w-9 h-9 cursor-pointer"
-                style={{}}
-              >
-                <DynamicHeroIcon icon="ChevronRightIcon" className="w-5 h-5" />
-              </Circle>
-            </div>
-            <div>
-              <Card
-                rounded="xl"
-                className="max-w-[475px] 2xl:max-w-full bg-blue-900 pt-12 px-6 flex flex-col gap-6 border-none mb-14"
-                style={{
-                  boxShadow: '0px 20px 25px -5px rgba(17, 24, 39, 0.1)'
-                }}
-              >
-                <Text variant="p" className="text-justify">
-                  Lorem ipsum dolor sit amet consectetur. Nec euismod nisi
-                  pharetra ipsum morbi. Mauris pulvinar mauris malesuada vitae
-                  tincidunt dis cras faucibus pharetra. Ullamcorper dignissim
-                  nunc maecenas sagittis adipiscing amet mi justo. Maecenas
-                  accumsan aliquam nunc gravida lectus urna pretium libero.{' '}
-                </Text>
+                A
+              </Avatar>
+              <div>
                 <Text
-                  variant="p"
-                  className="ml-auto"
-                  style={{ width: 'fit-content' }}
+                  bold
+                  className={composeClasses(
+                    'block text-base',
+                    extendedPalette.primaryText
+                  )}
                 >
-                  Jan 30 ,2023
+                  Name person
                 </Text>
-                <div className="flex justify-between items-center">
-                  <div className="flex items-center gap-2">
-                    <div className="relative w-8 h-8">
-                      <Image
-                        className="rounded-full object-cover border-2 border-blue-300 box-border"
-                        src="/random-avatar.jpg"
-                        fill
-                        alt="avatar"
-                      />
-                    </div>
-                    <Text variant="h5" bold>
-                      Testimony
-                    </Text>
-                    <Text variant="p" className="text-blue-500">
-                      @acemarke
-                    </Text>
-                  </div>
-                  <ImageIcon
-                    src="/github-mark-white.svg"
-                    className="cursor-pointer"
-                    style={{ width: '18px', height: '18px' }}
-                    onClick={() => openWindow(GITHUB_URL)}
-                  />
-                </div>
-              </Card>
-              <div className="w-1/2 mx-auto">
-                <ProgressBar
-                  bgColorContainer="#1D4ED8"
-                  backgroundColor="white"
-                  value={30}
-                  height="4px"
-                />
+                <Text size="sm" className={extendedPalette.linkPrimary}>
+                  @acemarke
+                </Text>
               </div>
-            </div>
+            </Flex>
+            <Text className={extendedPalette.componentText}>
+              “Our library is designed with accessibility in mind, which means
+              that our components are easily usable by people with visual,
+              hearing or motor disabilities.”
+            </Text>
           </div>
-          <Divider
-            variant="full"
-            vertical
-            className="border-blue-500 hidden md:block"
-          />
-          <div className="flex-row md:flex-col gap-12 justify-center flex">
-            <div className="flex items-center gap-4">
-              <ImageIcon
-                src="/github-mark-white.svg"
-                className="cursor-pointer"
-                onClick={() => openWindow(GITHUB_URL)}
-                style={{ width: '18px', height: '18px' }}
-              />
-              <div className="flex flex-col justify-center">
-                <Text variant="h3" size={'4xl'} className="" bold>
-                  +80K
-                </Text>
-                <Text variant="p" className="min-w-max">
-                  Stars on github
-                </Text>
-              </div>
-            </div>
-            <div className="flex items-center gap-4">
-              <DynamicHeroIcon
-                icon="DownloadIcon"
-                className="cursor-pointer w-6 h-6"
-                onClick={() => openWindow(NPM_URL)}
-              />
-              <div className="flex flex-col justify-center">
-                <Text variant="h3" size={'4xl'} className="" bold>
-                  +1048
-                </Text>
-                <Text variant="p" className="min-w-max">
-                  Weekly Downloads
-                </Text>
-              </div>
-            </div>
-          </div>
-        </div>
+        ))}
+        <div
+          className="absolute w-full h-full z-[1]"
+          style={{ background: extendedPalette.cardFilterSecondary }}
+        />
       </div>
+      <Flex justifyContent="center" alignItems="center" className="mb-24">
+        <Button
+          className="flex justify-center items-center w-full sm:min-w-[149px] sm:max-w-[150px] h-10 gap-2"
+          paddingY="2"
+          rounded="lg"
+        >
+          Get started
+          <DynamicHeroIcon icon="ArrowRightIcon" width={16} />
+        </Button>
+      </Flex>
+      <Flex
+        justifyContent="center"
+        alignItems="center"
+        gap="12"
+        className="flex-col sm:flex-row"
+      >
+        <Flex alignItems="center" gap="4">
+          <GitHubIcon
+            className={composeClasses(
+              'cursor-pointer w-10 h-10',
+              extendedPalette.iconColor
+            )}
+            onClick={() => openWindow(GITHUB_URL)}
+          />
+          <Flex
+            justifyContent="center"
+            className={composeClasses('flex-col', extendedPalette.primaryText)}
+          >
+            <Text variant="h3" className="text-4xl sm:text-5xl" bold>
+              +80K
+            </Text>
+            <Text variant="p" className="min-w-max text-sm sm:text-base">
+              Stars on github
+            </Text>
+          </Flex>
+        </Flex>
+        <Flex
+          alignItems="center"
+          gap="4"
+          className={extendedPalette.primaryText}
+        >
+          <DynamicHeroIcon
+            icon="DownloadIcon"
+            className={composeClasses(
+              'cursor-pointer w-10 h-10',
+              extendedPalette.iconColor
+            )}
+            onClick={() => openWindow(NPM_URL)}
+          />
+          <Flex justifyContent="center" className={composeClasses('flex-col')}>
+            <Text variant="h3" className="text-4xl sm:text-5xl" bold>
+              +1048
+            </Text>
+            <Text variant="p" className="min-w-max text-sm sm:text-base">
+              Weekly Downloads
+            </Text>
+          </Flex>
+        </Flex>
+      </Flex>
     </section>
   )
 }

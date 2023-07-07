@@ -2,7 +2,7 @@ import { GetStaticProps } from 'next'
 import Image from 'next/image'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-import { Card, Divider, Text } from 'dd360-ds'
+import { Card, Divider, Flex, Text } from 'dd360-ds'
 import { Badge, OpenGraph } from '@/components'
 import { composeClasses } from 'dd360-ds/lib'
 import { useTheme } from '../store/theme-store'
@@ -139,6 +139,45 @@ const cards = [
     }
   }
 ]
+// TODO: implement by sections
+const sections = [
+  {
+    section: 'Components',
+    cards: []
+  },
+  {
+    section: 'Buttons',
+    cards: []
+  },
+  {
+    section: 'Layout',
+    cards: []
+  },
+  {
+    section: 'Forms',
+    cards: []
+  },
+  {
+    section: 'Navigation',
+    cards: []
+  },
+  {
+    section: 'Modals',
+    cards: []
+  },
+  {
+    section: 'Typography',
+    cards: []
+  },
+  {
+    section: 'Controls',
+    cards: []
+  },
+  {
+    section: 'Images',
+    cards: []
+  }
+]
 
 export default function Docs() {
   const {
@@ -177,7 +216,7 @@ export default function Docs() {
           )}
         />
 
-        <div className="flex mb-10">
+        <Flex className="mb-10">
           <Text
             variant="p"
             className={extendedPalette.secundaryText}
@@ -192,7 +231,7 @@ export default function Docs() {
             rounded="lg"
             style={{ fontSize: 12, width: 23, minHeight: 26 }}
           />
-        </div>
+        </Flex>
 
         <section
           className="grid gap-x-4 gap-y-5"
@@ -222,7 +261,7 @@ export default function Docs() {
                   <div
                     className="absolute w-full h-full top-0"
                     style={{
-                      background: extendedPalette.cardBorderFilter,
+                      background: extendedPalette.cardFilter,
                       height: '101%'
                     }}
                   />
