@@ -243,7 +243,7 @@ const ComponentsSection = () => {
             )}
           >
             <DynamicHeroIcon
-              icon="MailIcon"
+              icon="BellIcon"
               className={extendedPalette.badgeDefaultColor}
               width={20}
             />

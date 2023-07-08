@@ -6,9 +6,9 @@ import { Text } from 'dd360-ds'
 import { composeClasses } from 'dd360-ds/lib'
 import { IconName } from 'dd360-ds/DynamicHeroIcon'
 
+import { useTheme } from '@/pages/store/theme-store'
 import Badge, { BadgeVariant } from '../Badge'
 import ShowMore from '../ShowMore'
-import { useTheme } from '@/pages/store/theme-store'
 
 interface ComponentObjectProps {
   [key: string]: {
@@ -53,7 +53,7 @@ const BADGE_TYPES: BadgeTypes = {
   }
 }
 
-const components: ComponentObjectProps = {
+export const components: ComponentObjectProps = {
   'get-started': {
     items: [
       {

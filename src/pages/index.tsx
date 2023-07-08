@@ -1,18 +1,23 @@
 import { GetStaticProps } from 'next'
 import dynamic from 'next/dynamic'
+import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { BannerDashboard, OpenGraph, TestimonialsBanner } from '@/components'
+import { composeClasses } from 'dd360-ds/lib'
+import { BannerDashboard, IllustrationsLayer, OpenGraph } from '@/components'
 import {
   BuildWithSection,
   FeaturesSection,
   WindowEditorSection
 } from '@/modules'
-import { useTranslation } from 'next-i18next'
 import { useTheme } from './store/theme-store'
-import { composeClasses } from 'dd360-ds/lib'
 
 const ComponentsSection = dynamic(
   () => import('@/modules/landing/home/ComponentsSection'),
+  { ssr: false }
+)
+
+const TestimonialsBanner = dynamic(
+  () => import('@/modules/landing/home/TestimonialsBanner'),
   { ssr: false }
 )
 
@@ -23,8 +28,7 @@ export default function Home() {
   return (
     <>
       <OpenGraph title={t('metadata.home')!} />
-      {/* TODO: implement layers */}
-      {/* <IllustrationsLayer /> */}
+      <IllustrationsLayer />
       <main
         className={composeClasses(
           'home-page mx-auto',
