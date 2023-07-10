@@ -18,6 +18,8 @@ export const darkTheme = createTheme({
   typography,
   extendedPalette: {
     barBackground: 'bg-gray-800', //#1F2937
+    barMobileBackground: 'bg-gray-900', //#111827
+    barBackgroundHex: '#1F2937', //bg-gray-800
 
     navbarLink: 'text-white', //#FFFFFF
     navbarIconHex: '#93C5FD', //blue-300
@@ -31,6 +33,7 @@ export const darkTheme = createTheme({
       'linear-gradient(0deg, #111827 0%, rgba(217, 217, 217, 0.00) 91.98%)',
     cardFilterSecondary:
       'linear-gradient(0deg, #111827 11%, rgba(217, 217, 217, 0.00) 91.98%)',
+    componentBgOpacityHex: '#111827BF', //bg-gray-700 75%
 
     titleColor: 'text-blue-300', //#93C5FD
     primaryText: 'text-white', //#FFFFFF
@@ -104,6 +107,9 @@ export const lightTheme = createTheme({
   typography,
   extendedPalette: {
     barBackground: 'bg-gray-50', //#F9FAFB
+    barMobileBackground: 'bg-gray-50', //#F9FAFB
+
+    barBackgroundHex: '#F9FAFB', //bg-gray-50
 
     navbarLink: 'text-gray-700', //#374151
     navbarIconHex: '#1D4ED8', //blue-700
@@ -117,6 +123,7 @@ export const lightTheme = createTheme({
       'linear-gradient(0deg, #FFF 0%, rgba(217, 217, 217, 0.00) 70.98%)',
     cardFilterSecondary:
       'linear-gradient(0deg, rgb(243 244 246) 11%, rgba(231, 233, 236, 0) 100%)',
+    componentBgOpacityHex: '#111827BF', //bg-gray-700 75%
 
     titleColor: 'text-blue-600', //#2563EB
     primaryText: 'text-gray-900', //#111827

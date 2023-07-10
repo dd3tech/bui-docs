@@ -1,14 +1,21 @@
 import { ReactNode } from 'react'
-import { useTheme } from '@/pages/store/theme-store'
 import { Circle } from 'dd360-ds'
 import { composeClasses } from 'dd360-ds/lib'
+import { useTheme } from '@/pages/store/theme-store'
 
 interface CircleCustomProps {
+  size?: string
+  backgroundColor?: string
   children?: ReactNode
   onClick?: () => void
 }
 
-function CircleCustom({ children, onClick }: CircleCustomProps) {
+function CircleCustom({
+  size = '36px',
+  backgroundColor = 'transparent',
+  children,
+  onClick
+}: CircleCustomProps) {
   const {
     themeObject: { extendedPalette }
   } = useTheme()
@@ -19,9 +26,9 @@ function CircleCustom({ children, onClick }: CircleCustomProps) {
         'flex border cursor-pointer',
         extendedPalette.borderIcon
       )}
-      width="36px"
-      height="36px"
-      backgroundColor="transparent"
+      width={size}
+      height={size}
+      backgroundColor={backgroundColor}
       onClick={onClick}
     >
       {children}

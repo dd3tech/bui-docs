@@ -1,11 +1,8 @@
 import { useEffect, useState } from 'react'
-import Link from 'next/link'
 import {
-  Button,
   Circle,
   DatePicker,
   FilterRangeSlider,
-  Flex,
   Input,
   Pagination,
   ProgressCircle,
@@ -16,12 +13,11 @@ import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 import { composeClasses } from 'dd360-ds/lib'
 
 import CustomSwitch from '@/components/CustomSwitch'
-import useCopy from '@/hooks/useCopy'
 import { useTheme } from '@/pages/store/theme-store'
 import DropdownExample from './DropdownExample'
+import ButtonsGetStartted from './ButtonsGetStartted'
 
 const ComponentsSection = () => {
-  const { handleCopy, isCopied } = useCopy()
   const paginationProps = usePagination()
   const [sectionPos, setSectionPos] = useState({ top: 0, left: 0 })
   const [IsScreenXl, setIsScreenXl] = useState(22)
@@ -79,42 +75,7 @@ const ComponentsSection = () => {
           Back office platforms like DD360
         </Text>
 
-        <Flex className="gap-3 flex-col sm:flex-row mt-9 w-full sm:w-auto">
-          <Link href="/docs/get-started/getting-started">
-            <Button
-              className="flex justify-center items-center w-full sm:min-w-[149px] sm:max-w-[150px] h-10 gap-2"
-              paddingY="2"
-              rounded="lg"
-            >
-              Get started
-              <DynamicHeroIcon icon="ArrowRightIcon" width={16} />
-            </Button>
-          </Link>
-          <Button
-            paddingY="2"
-            variant="secondary"
-            className={composeClasses(
-              'w-full sm:min-w-[202px] h-10 px-2 flex justify-between items-center',
-              extendedPalette.secundaryText
-            )}
-            style={{
-              borderColor: isCopied
-                ? '#16a34a'
-                : extendedPalette.inputBorderHex,
-              background: extendedPalette.inputBackground
-            }}
-            fontWeight="normal"
-            rounded="lg"
-            onClick={() => handleCopy('npm i dd360-ds@latest')}
-          >
-            npm i dd360-ds@latest{' '}
-            <DynamicHeroIcon
-              className={composeClasses(isCopied && 'text-green-600')}
-              icon={isCopied ? 'ClipboardCheckIcon' : 'ClipboardIcon'}
-              width={20}
-            />
-          </Button>
-        </Flex>
+        <ButtonsGetStartted />
       </div>
 
       <section
@@ -194,17 +155,6 @@ const ComponentsSection = () => {
             }}
           />
         </div>
-
-        {/* will be used later */}
-        {/* <CardExample
-          style={{
-            position: 'absolute',
-            top: -38,
-            left: 409,
-            animationDelay: '0.7s'
-          }}
-          className="demo-cmpnt floating"
-        /> */}
 
         <DropdownExample
           style={{

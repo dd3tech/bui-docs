@@ -10,7 +10,7 @@ import { composeClasses } from 'dd360-ds/lib'
 import { Badge, OpenGraph } from '@/components'
 import { useTheme } from '../store/theme-store'
 import { useTranslation } from 'next-i18next'
-import { components } from '@/components/Layout/SideBar'
+import { components } from '@/components/Layout/SideBarDocs'
 
 interface Section {
   [key: string]: {
