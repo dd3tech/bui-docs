@@ -28,7 +28,7 @@ function BannerDashboard() {
           className="absolute"
           width={1082}
           height={799}
-          style={{ top: -199, right: -327 }}
+          style={{ top: -588, right: -327 }}
         />
 
         <div className="w-fit text-center lg:text-left lg:w-full pt-9 lg:pt-0 m-auto mt-8 md:mt-0 shrink-0 description my-8 lg:my-28 lg:ml-12 xl:ml-[88px] max-w-[301px] lg:max-w-[452px]">
@@ -141,7 +141,7 @@ function BannerDashboard() {
               style={{ background: extendedPalette.cardFilter }}
             />
             <LocationBlur
-              className="absolute xl:right-0 xl:bottom-[927px]"
+              className="absolute lg:hidden xl:right-0 xl:bottom-[927px]"
               style={{
                 position: 'absolute',
                 bottom: -67,
@@ -151,6 +151,15 @@ function BannerDashboard() {
             />
           </div>
         </div>
+        <LocationBlur
+          className="absolute hidden lg:block xl:right-0 xl:bottom-[927px] z-10"
+          style={{
+            position: 'absolute',
+            bottom: -67,
+            left: '84%',
+            color: isLightTheme ? '#93C5FD' : '#1F2937'
+          }}
+        />
       </Card>
     </Flex>
   )

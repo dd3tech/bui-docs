@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { MutableRefObject, useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
 import {
@@ -21,6 +21,7 @@ import SideBar from '../SideBar'
 import CircleCustom from './CircleCustom'
 import Search from './Search'
 import MainLinks from './MainLinks'
+import { useRouter } from 'next/router'
 
 const getThemeIcon = (theme: string, width = 12, color = 'currentColor') => {
   if (theme === 'light') return <SunIcon width={width} color={color} />
@@ -37,12 +38,36 @@ function Navbar() {
     onClickTheme
   } = useTheme()
   const [isActiveButtonMobile, setIsActiveButtonMobile] = useState(false)
+  const sidebarRef = useRef<HTMLDivElement | null>(null)
+  const router = useRouter()
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sidebarElement = sidebarRef.current
+      if (!sidebarElement) return
+
+      if (window.scrollY > 30) {
+        sidebarElement.classList.add('border-b')
+        sidebarElement.classList.remove('bg-transparent')
+      } else {
+        sidebarElement.classList.remove('border-b')
+        sidebarElement.classList.add('bg-transparent')
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [sidebarRef])
 
   return (
     <nav
+      ref={sidebarRef}
       className={composeClasses(
-        'w-full sticky top-0 z-10 border-b flex flex-col-reverse md:flex-row',
+        'w-full sticky top-0 z-10 flex flex-col-reverse md:flex-row',
         extendedPalette.sidebarBorder,
+        router.pathname.startsWith('/docs/') ? 'border-b' : 'bg-transparent',
         isActiveButtonMobile
           ? `${extendedPalette.barMobileBackground} sm:${extendedPalette.barBackground}`
           : extendedPalette.barBackground
