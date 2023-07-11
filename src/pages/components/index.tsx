@@ -1,230 +1,283 @@
 import { GetStaticProps } from 'next'
 import Image from 'next/image'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import Link from 'next/link'
+import { ArrowCircleRightIcon } from '@heroicons/react/outline'
 
-import { Card, Flex, Select, Text } from 'dd360-ds'
-import { OpenGraph, Badge } from '@/components'
+import { Card, Divider, Flex, Text } from 'dd360-ds'
+import { composeClasses } from 'dd360-ds/lib'
 
-const cards = [
-  {
-    title: 'Buttons',
-    img: '/buttons.svg',
-    badge: {
-      label: 'NEW',
-      color: 'green'
-    }
-  },
-  {
-    title: 'Logos',
-    img: '/logos.svg',
-    badge: {
-      label: 'BETA',
-      color: 'blue'
-    }
-  },
-  {
-    title: 'Input fields',
-    img: '/input-fields.svg',
-    badge: {
-      label: 'CAUTION',
-      color: 'yellow'
-    }
-  },
-  {
-    title: 'Input fields',
-    img: '/input-fields.svg',
-    badge: {
-      label: 'DEPRECATED',
-      color: 'red'
-    }
-  },
-  {
-    title: 'Buttons',
-    img: '/buttons.svg',
-    badge: {
-      label: 'NEW',
-      color: 'green'
-    }
-  },
-  {
-    title: 'Logos',
-    img: '/logos.svg',
-    badge: {
-      label: 'BETA',
-      color: 'blue'
-    }
-  },
-  {
-    title: 'Input fields',
-    img: '/input-fields.svg',
-    badge: {
-      label: 'CAUTION',
-      color: 'yellow'
-    }
-  },
-  {
-    title: 'Input fields',
-    img: '/input-fields.svg',
-    badge: {
-      label: 'DEPRECATED',
-      color: 'red'
-    }
-  },
-  {
-    title: 'Buttons',
-    img: '/buttons.svg',
-    badge: {
-      label: 'NEW',
-      color: 'green'
-    }
-  },
-  {
-    title: 'Logos',
-    img: '/logos.svg',
-    badge: {
-      label: 'BETA',
-      color: 'blue'
-    }
-  },
-  {
-    title: 'Input fields',
-    img: '/input-fields.svg',
-    badge: {
-      label: 'CAUTION',
-      color: 'yellow'
-    }
-  },
-  {
-    title: 'Input fields',
-    img: '/input-fields.svg',
-    badge: {
-      label: 'DEPRECATED',
-      color: 'red'
-    }
-  },
-  {
-    title: 'Buttons',
-    img: '/buttons.svg',
-    badge: {
-      label: 'NEW',
-      color: 'green'
-    }
-  },
-  {
-    title: 'Logos',
-    img: '/logos.svg',
-    badge: {
-      label: 'BETA',
-      color: 'blue'
-    }
-  },
-  {
-    title: 'Input fields',
-    img: '/input-fields.svg',
-    badge: {
-      label: 'CAUTION',
-      color: 'yellow'
-    }
-  },
-  {
-    title: 'Input fields',
-    img: '/input-fields.svg',
-    badge: {
-      label: 'DEPRECATED',
-      color: 'red'
-    }
+import { Badge, OpenGraph } from '@/components'
+import { useTheme } from '../store/theme-store'
+import { useTranslation } from 'next-i18next'
+import { components } from '@/components/Layout/SideBarDocs'
+
+interface Section {
+  [key: string]: {
+    cards: {
+      title: string
+      img: string
+      maxWith?: number
+    }[]
   }
-]
+}
 
-const builds = {
-  '1.2.9': { label: 'build 129' },
-  '1.3.9': { label: 'build 139' },
-  '1.4.9': { label: 'build 149' }
+const sections: Section = {
+  buttons: {
+    cards: [
+      {
+        title: 'Button group',
+        img: 'buttons-component-dark.png'
+      },
+      {
+        title: 'Shape Button',
+        img: 'shape-buttons-component-dark.png'
+      },
+      {
+        title: 'Radio buttons',
+        img: 'radio-buttons-component-dark.png'
+      }
+    ]
+  },
+  layout: {
+    cards: [
+      {
+        title: 'Navbar',
+        img: 'navbar-component-dark.png'
+      },
+      {
+        title: 'Card',
+        img: 'card-component-dark.png'
+      },
+      {
+        title: 'Sidebar',
+        img: 'side-bar-component-dark.png'
+      }
+    ]
+  },
+  form: {
+    cards: [
+      {
+        title: 'Input',
+        img: 'input-component-dark.png'
+      },
+      {
+        title: 'Textarea',
+        img: 'text-area-component-dark.png'
+      },
+      {
+        title: 'Slider',
+        img: 'slider-card-component-dark.png'
+      }
+    ]
+  },
+  navigation: {
+    cards: [
+      {
+        title: 'Pagination',
+        img: 'pagination-component-dark.png'
+      },
+      {
+        title: 'Breadcrumbs',
+        img: 'breadcrumbs-component-dark.png'
+      },
+      {
+        title: 'Tabs',
+        img: 'tabs-component-dark.png'
+      }
+    ]
+  },
+  modals: {
+    cards: [
+      {
+        title: 'Modal',
+        img: 'modal-component-dark.png'
+      },
+      {
+        title: 'Aside modal',
+        img: 'aside-modal-component-dark.png'
+      }
+    ]
+  },
+  typography: {
+    cards: [
+      {
+        title: 'Variants',
+        img: 'text-component-dark.png'
+      },
+      {
+        title: 'Align',
+        img: 'align-component-dark.png'
+      }
+    ]
+  },
+  controls: {
+    cards: [
+      {
+        title: 'CircularProgressBar',
+        img: 'progress-cycle-component-dark.png'
+      },
+      {
+        title: 'Stepper',
+        img: 'steps-component-dark.png'
+      },
+      {
+        title: 'Switch',
+        img: 'toggles-component-dark.png'
+      }
+    ]
+  },
+  images: {
+    cards: [
+      {
+        title: 'Image',
+        img: 'image-component-dark.png'
+      },
+      {
+        title: 'Avatar',
+        img: 'avatar-component-dark.png',
+        maxWith: 342
+      }
+    ]
+  },
+  components: {
+    cards: [
+      {
+        title: 'Filter range  slider',
+        img: 'slider-card-component-dark.png'
+      },
+      {
+        title: 'Dropdown',
+        img: 'dropdown-component-dark.png'
+      },
+      {
+        title: 'Date picker',
+        img: 'date-and-picker-component-dark.png'
+      }
+    ]
+  }
 }
 
 export default function Docs() {
+  const { t } = useTranslation('common')
+  const {
+    themeObject: { extendedPalette },
+    isLightTheme
+  } = useTheme()
+
   return (
     <>
-      <Image
-        alt="flare-left"
-        src="/flare-left.svg"
-        width={486}
-        height={981}
-        className="absolute -top-8"
-        style={{ zIndex: '-10' }}
-      />
-      <Image
-        alt="flare-right"
-        src="/flare-right.svg"
-        width={618}
-        height={778}
-        className="absolute right-0 -top-8"
-        style={{ zIndex: '-10' }}
-      />
       <OpenGraph title="DD360 UI: cree rápidamente sitios web modernos sin tener que abandonar su HTML" />
       <main className="max-w-5xl mx-auto py-16 px-8 lg:px-16 xl:px-0">
-        <Flex
-          justifyContent="between"
-          alignItems="center"
-          className="mb-7 flex-wrap sm:flex-nowrap"
-          gap="8"
+        <Text
+          variant="h1"
+          className={composeClasses(
+            'w-full sm:w-auto',
+            extendedPalette.textPrimary
+          )}
+          size="4xl"
+          bold
         >
-          <Text
-            variant="h1"
-            className="text-gray-900 w-full sm:w-auto"
-            size="5xl"
-            bold
-          >
-            Components
-          </Text>
-          <div className="w-full sm:w-48 sm:mt-0">
-            <Select
-              optionsList={builds}
-              rounded="xl"
-              className="border-gray-300 bg-white"
-            />
-          </div>
-        </Flex>
+          Components
+        </Text>
 
         <Text
           variant="p"
-          className="text-gray-500 mb-10"
+          className={composeClasses('mt-1 mb-2', extendedPalette.secundaryText)}
           fontBold="medium"
-          style={{ fontSize: '22px' }}
+          size="xl"
         >
           Components for building powerful interfaces.
         </Text>
+        <Divider
+          variant="full"
+          className={composeClasses(
+            'mb-10 dark:opacity-50',
+            extendedPalette.inputBorderHex
+          )}
+        />
 
-        <section
-          className="grid gap-x-4 gap-y-5"
-          style={{
-            gridTemplateColumns: 'repeat(auto-fit, minmax(228px, 1fr))'
-          }}
-        >
-          {cards.map((card) => (
-            <article key={card.title}>
-              <Card
-                height={128}
-                padding={0}
-                style={{
-                  backgroundImage: `url(${card.img})`,
-                  backgroundPosition: 'center',
-                  backgroundRepeat: 'no-repeat',
-                  backgroundSize: 'cover'
-                }}
-                className="rounded border-gray-300"
-              ></Card>
-              <div className="flex justify-between items-center mt-2">
-                <Text variant="h2" size="base" className="font-semibold">
-                  {card.title}
-                </Text>
-                {card.badge && (
-                  <Badge color={card.badge.color} label={card.badge.label} />
-                )}
-              </div>
-            </article>
-          ))}
-        </section>
+        {Object.entries(sections).map(([key, section]) => (
+          <>
+            <Flex className="mb-10 mt-8">
+              <Text
+                variant="p"
+                className={extendedPalette.secundaryText}
+                fontBold="medium"
+                size="lg"
+              >
+                {t(key)}
+              </Text>
+              <Badge
+                className="p-2 text-xs ml-2"
+                label={components[key].items.length.toString()}
+                rounded="lg"
+                style={{ fontSize: 12, width: 23, minHeight: 26 }}
+              />
+            </Flex>
+
+            <section
+              className={composeClasses(
+                'grid gap-x-4 gap-y-5 grid-cols-1',
+                section.cards.length === 3 && 'md:grid-cols-2 lg:grid-cols-3',
+                section.cards.length === 2 && 'md:grid-cols-2'
+              )}
+            >
+              {section.cards.map((card, index) => (
+                <article
+                  key={card.title}
+                  className={composeClasses(
+                    section.cards.length > 2 &&
+                      index === 2 &&
+                      'col-span-1 md:col-span-2 lg:col-span-1'
+                  )}
+                >
+                  <Card
+                    height={278}
+                    padding={0}
+                    className={composeClasses(
+                      'px-4 pt-6 pb-4 rounded-2xl shadow-lg',
+                      extendedPalette.cardBackground,
+                      extendedPalette.cardBorderColor
+                    )}
+                  >
+                    <div className="relative w-full h-full max-h-[204px]">
+                      <Image
+                        alt={card.img}
+                        src={`/components/${
+                          isLightTheme
+                            ? card.img.replace('dark', 'light')
+                            : card.img
+                        }`}
+                        fill
+                        className={composeClasses(
+                          'm-auto overflow-hidden',
+                          section.cards.length === 3
+                            ? 'max-w-[296px]'
+                            : 'max-w-[491px]'
+                        )}
+                        style={{ maxWidth: card.maxWith }}
+                      />
+                    </div>
+                    <Link
+                      className={composeClasses(
+                        'font-bold text-blue-400 ml-auto flex justify-center gap-2 pt-2',
+                        extendedPalette.linkPrimary
+                      )}
+                      href="/"
+                      target="_blank"
+                    >
+                      <Text size="xs" className="underline">
+                        {card.title}
+                      </Text>
+                      <ArrowCircleRightIcon width={16} />
+                    </Link>
+                  </Card>
+                </article>
+              ))}
+            </section>
+          </>
+        ))}
       </main>
     </>
   )

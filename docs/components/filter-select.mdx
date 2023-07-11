@@ -7,18 +7,20 @@ components: Filter Select
 <br />
 <br />
 
+<Label>Components</Label>
+
 # <span name="floating-nav">Filter Select</span>
 
 The FilterSelect component is used to create an interactive dropdown menu that allows the user to select an option from several predefined options in the application.
 
 <br />
 <br />
-## <span name="floating-nav">Imports</span>
+##### <span name="floating-nav">Imports</span>
 
 <WindowEditor codeString="import { FilterSelect } from 'dd360-ds'" />
 
 <br />
-## <span name="floating-nav">Usage</span>
+##### <span name="floating-nav">Usage</span>
 
 Use the FilterSelect component as shown below:
 
@@ -52,9 +54,9 @@ The code snippet below shows how to use the FilterSelect component:
 
 <br />
 
-## <span name="floating-nav">List Items</span>
+##### <span name="floating-nav">List Items</span>
 
-The prop <span className='border border-gray-300 bg-gray-200 p-1'>listItems</span> it is used to show the available options, there is also the possibility of disabling one of them
+The prop <Tag text='listItems' /> it is used to show the available options, there is also the possibility of disabling one of them
 <ContainerComponentDoc className="gap-y-2">
  <FilterSelectCustom disabled />
 </ContainerComponentDoc>
@@ -85,7 +87,7 @@ The prop <span className='border border-gray-300 bg-gray-200 p-1'>listItems</spa
 
 <br />
 
-#### <span name="floating-nav">Position</span>
+##### <span name="floating-nav">Position</span>
 
 To manage the FilterSelect component's visibility and position, you can use the useState hook in a functional component. Position stores the top and left coordinates, as well as a boolean indicating whether the component should be shown. The component listens for clicks on a button, which toggles the FilterSelect visibility and updates its position based on the click event's coordinates.
 
@@ -160,9 +162,9 @@ Note: The "domLoaded" state variable in the FilterSelectCustom is used to ensure
 
 <br/>
 
-## <span name="floating-nav">Title</span>
+##### <span name="floating-nav">Title</span>
 
-The prop <span className='border border-gray-300 bg-gray-200 p-1'>title</span> serves to provide a descriptive title or label
+The prop <Tag text='title' /> serves to provide a descriptive title or label
 
 <ContainerComponentDoc className="gap-y-2">
  <FilterSelectCustom title="Title Example" />
@@ -194,9 +196,9 @@ The prop <span className='border border-gray-300 bg-gray-200 p-1'>title</span> s
 
 <br />
 
-## <span name="floating-nav">Selected Value</span>
+##### <span name="floating-nav">Selected Value</span>
 
-The prop <span className='border border-gray-300 bg-gray-200 p-1'>selectedValue</span> is used to provide a default value
+The prop <Tag text='selectedValue' /> is used to provide a default value
 
 <ContainerComponentDoc className="gap-y-2">
  <FilterSelectCustom selectedValue="A"/>
@@ -228,9 +230,9 @@ The prop <span className='border border-gray-300 bg-gray-200 p-1'>selectedValue<
 
 <br />
 
-## <span name="floating-nav">Text Apply Btn</span>
+##### <span name="floating-nav">Text Apply Btn</span>
 
-The prop <span className='border border-gray-300 bg-gray-200 p-1'>textApplyBtn</span> it is used to customize the text of the apply button
+The prop <Tag text='textApplyBtn' /> it is used to customize the text of the apply button
 
 <ContainerComponentDoc className="gap-y-2">
  <FilterSelectCustom textApplyBtn="Apply Example"/>
@@ -262,9 +264,9 @@ The prop <span className='border border-gray-300 bg-gray-200 p-1'>textApplyBtn</
 
 <br />
 
-## <span name="floating-nav">Text Reset Btn</span>
+##### <span name="floating-nav">Text Reset Btn</span>
 
-The prop <span className='border border-gray-300 bg-gray-200 p-1'>textResetBtn</span> it is used to customize the text of the reset button
+The prop <Tag text='textResetBtn' /> it is used to customize the text of the reset button
 
 <ContainerComponentDoc className="gap-y-2">
  <FilterSelectCustom textResetBtn="Reset Example"/>
@@ -296,9 +298,9 @@ The prop <span className='border border-gray-300 bg-gray-200 p-1'>textResetBtn</
 
 <br />
 
-## <span name="floating-nav">Width</span>
+##### <span name="floating-nav">Width</span>
 
-The prop <span className='border border-gray-300 bg-gray-200 p-1'>width</span> used to customize the size
+The prop <Tag text='width' /> used to customize the size
 
 <ContainerComponentDoc className="gap-y-2">
  <FilterSelectCustom width={250}/>
@@ -331,7 +333,7 @@ The prop <span className='border border-gray-300 bg-gray-200 p-1'>width</span> u
 <br />
 <br />
 
-### <span name="floating-nav">API Reference</span>
+##### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
     dataTable={[

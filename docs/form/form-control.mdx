@@ -7,16 +7,18 @@ components: FormControl
 <br />
 <br />
 
+<Label>Form</Label>
+
 # <span name="floating-nav">FormControl</span>
 
     The FormControl component is used to provide a label to a form control, such as an input or checkbox.
 
-### <span name="floating-nav">Import</span>
+##### <span name="floating-nav">Import</span>
 
 <WindowEditor codeString="import { FormControlLabel } from 'dd360-ds'" />
 <WindowEditor codeString="import FormControlLabel from 'dd360-ds/FormControlLabel'" />
 
-### <span name="floating-nav">Usage</span>
+##### <span name="floating-nav">Usage</span>
 
 The prop label is required and specifies the text to be displayed next to the form control. 
 The control property is also required and must contain the form control component.
@@ -29,7 +31,7 @@ The control property is also required and must contain the form control componen
 
 <FormControlLabel label='form-control' control={<Checkbox checked size='2xl' />} />" />
 
-#### <span name="floating-nav">FormControl labelPlacement</span>
+##### <span name="floating-nav">FormControl labelPlacement</span>
 
 You can use the labelPlacement property to specify the position of the label relative to the control
 
@@ -41,7 +43,7 @@ You can use the labelPlacement property to specify the position of the label rel
 
 <FormControlLabel labelPlacement='end' label='form-control' control={<Checkbox checked size='2xl' />} />" />
 
-#### <span name="floating-nav">FormControl disabled</span>
+##### <span name="floating-nav">FormControl disabled</span>
 
 The disabled prop can be used to disable the form control
 
@@ -53,7 +55,7 @@ The disabled prop can be used to disable the form control
 
 <FormControlLabel disabled label='form-control' control={<Checkbox checked size='2xl' />} />" />
 
-### <span name="floating-nav">API Reference</span>
+##### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
     dataTable={[

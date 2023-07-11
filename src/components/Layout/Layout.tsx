@@ -1,12 +1,16 @@
-import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
+import { XIcon, MenuIcon } from '@heroicons/react/outline'
 
+import { composeClasses } from 'dd360-ds/lib'
+import { Flex, Overflow, Text } from 'dd360-ds'
+
+import { useTheme } from '@/pages/store/theme-store'
 import FloatingNav, { Entries } from './FloatingNav'
 import Footer from './Footer'
-import Navbar from './Navbar'
-import SideBar from './SideBar'
-
-const routesWithoutFooter = ['/components']
+import Navbar from './Navbar/Navbar'
+import SideBarDocs from './SideBarDocs'
+import CircleCustom from './Navbar/CircleCustom'
 
 function parseIdByName(name: string) {
   return name
@@ -19,6 +23,11 @@ function Layout({ children }: { children: JSX.Element }) {
   const router = useRouter()
   const showSidebar = router.pathname.startsWith('/docs/')
   const [entries, setEntries] = useState<Entries[]>([])
+  const {
+    isLightTheme,
+    themeObject: { extendedPalette }
+  } = useTheme()
+  const [isActiveButtonMobile, setIsActiveButtonMobile] = useState(false)
 
   useEffect(() => {
     const headers = document.getElementsByName('floating-nav')
@@ -41,38 +50,81 @@ function Layout({ children }: { children: JSX.Element }) {
 
   if (showSidebar) {
     return (
-      <div className="flex min-h-screen flex-row bg-gray-50 text-gray-800">
-        <div className="hidden md:flex">
-          <SideBar />
-        </div>
-        <main className="w-full md:max-w-[calc(100vw-200px)] relative flex flex-grow flex-col transition-all duration-150 ease-in md:ml-0">
-          <Navbar hideLogo />
-          <div className="flex md:grid grid-cols-[minmax(0,1fr)_minmax(0,128px)] h-full px-8 md:px-16">
-            <article className="w-full max-w-full">{children}</article>
-            <article className="hidden w-full max-w-[128px] mt-36 md:block">
-              <FloatingNav entries={entries} />
-            </article>
-          </div>
-        </main>
-      </div>
-    )
-  }
+      <Flex className="min-h-screen flex-row text-gray-800">
+        <main
+          className={composeClasses(
+            'w-full relative flex flex-grow flex-col transition-all duration-150 ease-in md:ml-0',
+            isLightTheme ? 'light' : 'dark'
+          )}
+        >
+          <Navbar />
 
-  if (routesWithoutFooter.includes(router.pathname)) {
-    return (
-      <>
-        <Navbar />
-        {children}
-      </>
+          <Flex
+            alignItems="center"
+            gap="2"
+            className={composeClasses(
+              'py-2 px-4 md:hidden',
+              extendedPalette.cardBackground
+            )}
+          >
+            <Text className={extendedPalette.primaryText}>Menu</Text>
+            <CircleCustom
+              size="32px"
+              backgroundColor={extendedPalette.componentBgPrimaryHex}
+              onClick={() =>
+                setIsActiveButtonMobile &&
+                setIsActiveButtonMobile((prev) => !prev)
+              }
+            >
+              {isActiveButtonMobile ? (
+                <XIcon
+                  className="cursor-pointer"
+                  style={{ color: extendedPalette.navbarIconHex }}
+                  width={16}
+                />
+              ) : (
+                <MenuIcon
+                  className="cursor-pointer"
+                  style={{ color: extendedPalette.navbarIconHex }}
+                  width={16}
+                />
+              )}
+            </CircleCustom>
+          </Flex>
+          <Flex className="relative">
+            <div
+              className={composeClasses(
+                isActiveButtonMobile ? 'flex' : 'hidden',
+                'md:flex'
+              )}
+            >
+              <SideBarDocs />
+            </div>
+
+            <div
+              className="layout-content grid h-full px-8 md:px-16 m-auto"
+              style={{ height: 'calc(100vh - 57px)' }}
+            >
+              <article className="w-full max-w-full overflow-auto">
+                {children}
+              </article>
+              <article className="hidden w-full max-w-[128px] mt-[76px] md:block">
+                <FloatingNav entries={entries} />
+              </article>
+            </div>
+          </Flex>
+          <Footer />
+        </main>
+      </Flex>
     )
   }
 
   return (
-    <>
+    <div className={isLightTheme ? 'light' : 'dark'}>
       <Navbar />
       {children}
       <Footer />
-    </>
+    </div>
   )
 }
 

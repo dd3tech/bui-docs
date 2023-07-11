@@ -7,6 +7,8 @@ components: Navbar
 <br />
 <br />
 
+<Label>Layout</Label>
+
 # <span name="floating-nav">Navbar</span>
 
 The Navbar component provides a navigation bar for your web application or website. It provides a flexible 
@@ -16,12 +18,12 @@ and functionality requirements.
 
 <br />
 
-## <span name="floating-nav">Imports</span>
+##### <span name="floating-nav">Imports</span>
 
 <WindowEditor codeString="import { Navbar } from 'dd360-ds'" />
 <WindowEditor codeString="import Navbar from 'dd360-ds/Navbar'" />
 
-## <span name="floating-nav">Usage</span>
+##### <span name="floating-nav">Usage</span>
 
 The Navbar component serves as the main container for your navigation bar. Inside the Navbar component, you 
 can place various sub-components, such as the brand logo, navigation links, dropdown menus, and additional 
@@ -42,17 +44,19 @@ The code snippet below shows how to use the Navbar component:
 
 Props:
 
-<List>
- <List.Item>paddingX (optional): Sets the horizontal padding of the Navbar.</List.Item>
- <List.Item>paddingY (optional): Sets the vertical padding of the Navbar.</List.Item>
- <List.Item>rounded (optional): Specifies the border radius of the Navbar.</List.Item>
- <List.Item>variant (optional): Determines the variant of the Navbar. It can be one of: 'floating', 'sticky', or 'static'.</List.Item>
- <List.Item>shadow (optional): Sets the shadow variant of the Navbar.</List.Item>
-</List>
+<CustomTheme>
+  <List>
+  <List.Item>paddingX (optional): Sets the horizontal padding of the Navbar.</List.Item>
+  <List.Item>paddingY (optional): Sets the vertical padding of the Navbar.</List.Item>
+  <List.Item>rounded (optional): Specifies the border radius of the Navbar.</List.Item>
+  <List.Item>variant (optional): Determines the variant of the Navbar. It can be one of: 'floating', 'sticky', or 'static'.</List.Item>
+  <List.Item>shadow (optional): Sets the shadow variant of the Navbar.</List.Item>
+  </List>
+</CustomTheme>
 
 <br />
 
-### <span name="floating-nav">Brand</span>
+##### <span name="floating-nav">Brand</span>
 
 The NavbarBrand component represents the branding element within the Navbar. It displays a logo or brand name 
 to help users identify and navigate back to the main page of the application or website. The NavbarBrand 
@@ -116,7 +120,7 @@ Props:
 
 
 <br />
-### <span name="floating-nav">Group</span>
+##### <span name="floating-nav">Group</span>
 
 The NavbarGroup component provides a convenient way to group related navigation items within the Navbar. By 
 utilizing its props, you can control the visibility, content, and spacing of the group to enhance the navigation 
@@ -212,7 +216,7 @@ Props:
 
 
 <br />
-### <span name="floating-nav">Item</span>
+##### <span name="floating-nav">Item</span>
 
 The NavbarItem component provides a flexible and customizable way to include navigation items within the Navbar. 
 By utilizing its props, you can customize the content and styling of the NavbarItem to create a visually appealing 
@@ -256,7 +260,7 @@ Props:
 
 
 <br />
-### <span name="floating-nav">Content</span>
+##### <span name="floating-nav">Content</span>
 
 The NavbarContent component wraps its children with a context provider. It also provide a container for the content 
 items within the Navbar. It uses the context provider to pass the activeColor and variant values to its children 
@@ -317,7 +321,7 @@ Props:
 
 
 <br />
-### <span name="floating-nav">Link</span>
+##### <span name="floating-nav">Link</span>
 
 The NavbarLink component is used to create navigation links within the Navbar. By using its props and the context provided 
 by the NavbarContent component, you can easily create customizable and interactive navigation links for your web application 
@@ -366,7 +370,7 @@ Props:
 
 
 <br />
-### <span name="floating-nav">Collapse</span>
+##### <span name="floating-nav">Collapse</span>
 
 #### <span>NavbarCollapse</span>
 
@@ -477,7 +481,7 @@ NavbarCollapseContent Props:
 <br />
 <br />
 
-## <span name="floating-nav">API Reference</span>
+##### <span name="floating-nav">API Reference</span>
 
 #### <span>Navbar</span>
 

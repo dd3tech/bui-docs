@@ -1,63 +1,89 @@
-import Image from 'next/image'
+import { useTheme } from '@/pages/store/theme-store'
 
-const IllustrationsLayer = () => (
-  <>
-    <Image
-      alt="flare-left"
-      src="/flare-left.svg"
-      width={486}
-      height={981}
-      className="absolute -top-8"
-      style={{ zIndex: -10 }}
-    />
-    <Image
-      alt="flare-right"
-      src="/flare-right.svg"
-      width={618}
-      height={778}
-      className="absolute right-0 -top-8"
-      style={{ zIndex: -10 }}
-    />
-    <Image
-      alt="looper-left"
-      src="/looper-left.svg"
-      width={918}
-      height={1635}
-      className="absolute top-8"
-      style={{ zIndex: -20 }}
-    />
-    <Image
-      alt="looper-right"
-      src="/looper-right.svg"
-      width={617}
-      height={1507}
-      className="absolute right-0 top-96"
-      style={{ zIndex: -20 }}
-    />
-    <Image
-      alt="blur-img-info"
-      src="/blur-img-info.png"
-      width={336}
-      height={368}
-      className="absolute left-0"
-      style={{ zIndex: -20, top: 637 }}
-    />
-    <Image
-      alt="blur-img-lupa"
-      src="/blur-img-lupa.png"
-      width={146}
-      height={146}
-      className="absolute right-0"
-      style={{ zIndex: -20, top: 1450, right: 171 }}
-    />
-    <Image
-      alt="blur-ellipse"
-      src="/blur-ellipse.svg"
-      width={922}
-      height={1385}
-      className="absolute left-0"
-      style={{ zIndex: -20, top: 663 }}
-    />
-  </>
-)
+const IllustrationsLayer = () => {
+  const { isLightTheme } = useTheme()
+
+  return (
+    <>
+      <svg
+        className="absolute hidden md:block top-[-608px] right-[208px]"
+        width="1390"
+        height="1177"
+        viewBox="0 0 1390 1177"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g opacity="0.2" filter="url(#filter0_f_36_24533)">
+          <ellipse cx="695" cy="588.5" rx="408" ry="301.5" fill="#60A5FA" />
+        </g>
+        <defs>
+          <filter
+            id="filter0_f_36_24533"
+            x="0"
+            y="0"
+            width="1390"
+            height="1177"
+            filterUnits="userSpaceOnUse"
+            colorInterpolationFilters="sRGB"
+          >
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="BackgroundImageFix"
+              result="shape"
+            />
+            <feGaussianBlur
+              stdDeviation="143.5"
+              result="effect1_foregroundBlur_36_24533"
+            />
+          </filter>
+        </defs>
+      </svg>
+
+      <svg
+        className="absolute hidden md:block top-[1668px] lg:top-[1580px] right-[50%]"
+        width="816"
+        height="603"
+        viewBox="0 0 1390 1177"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        style={{ zIndex: -10, transform: 'translateX(50%)' }}
+      >
+        <g opacity="0.2" filter="url(#filter0_f_710_26120)">
+          <ellipse
+            cx="695"
+            cy="588.5"
+            rx="408"
+            ry="301.5"
+            fill={isLightTheme ? '#93C5FD' : '#1D4ED8'}
+          />
+        </g>
+        <defs>
+          <filter
+            id="filter0_f_710_26120"
+            x="0"
+            y="0"
+            width="1390"
+            height="1177"
+            filterUnits="userSpaceOnUse"
+            colorInterpolationFilters="sRGB"
+          >
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="BackgroundImageFix"
+              result="shape"
+            />
+            <feGaussianBlur
+              stdDeviation="143.5"
+              result="effect1_foregroundBlur_710_26120"
+            />
+          </filter>
+        </defs>
+      </svg>
+    </>
+  )
+}
 export default IllustrationsLayer

@@ -3,11 +3,15 @@ import Image from 'next/image'
 import { composeClasses } from 'dd360-ds/lib'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+import {
+  dracula,
+  oneLight
+} from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import useCopy from '@/hooks/useCopy'
 
 import JSImg from 'public/javascript-logo.svg'
 import TSImg from 'public/typescript.svg'
+import { useTheme } from '@/pages/store/theme-store'
 
 type Languages =
   | 'tsx'
@@ -65,6 +69,12 @@ function WindowEditor({
 }: EditorProps) {
   const { handleCopy, isCopied } = useCopy()
   const [showCopyButton, setShowCopyButton] = useState(false)
+  const {
+    themeObject: { extendedPalette },
+    isLightTheme
+  } = useTheme()
+
+  const styleSyntax = isLightTheme ? oneLight : dracula
 
   return (
     <div
@@ -74,7 +84,7 @@ function WindowEditor({
         'h-auto rounded-md overflow-hidden mt-2 mb-10 py-4',
         className
       )}
-      style={{ background: 'rgb(40, 42, 54)' }}
+      style={{ backgroundColor: extendedPalette.windowEditorBackgroundHex }}
     >
       {showCopyButton && (
         <div className="relative">
@@ -97,26 +107,45 @@ function WindowEditor({
         </div>
       )}
       {header?.show && (
-        <nav className="flex items-center px-3 pt-2 gap-3 bg-gray-700">
+        <nav
+          className="flex items-center px-3 pt-2 gap-3"
+          style={{
+            backgroundColor: extendedPalette.windowEditorPanelBackground
+          }}
+        >
           <div className="flex items-center gap-2">
             <button className="h-3 w-3 bg-red-400 rounded-full"></button>
             <button className="h-3 w-3 bg-yellow-400 rounded-full"></button>
             <button className="h-3 w-3 bg-green-400 rounded-full"></button>
           </div>
           <div
-            style={{ background: 'rgb(40, 42, 54)' }}
+            style={{
+              backgroundColor: extendedPalette.windowEditorBackgroundHex
+            }}
             className="flex items-center mr-auto rounded-t-xl h-full px-3 py-1 gap-1"
           >
             <Image {...getBrandingLanguage(language)} alt="lang" />
-            <h3 className="text-white font-medium">{header?.title}</h3>
+            <h3
+              className={composeClasses(
+                'font-medium',
+                extendedPalette.primaryText
+              )}
+            >
+              {header?.title}
+            </h3>
           </div>
         </nav>
       )}
       <SyntaxHighlighter
         wrapLines
         language={language}
-        style={{ ...dracula }}
-        customStyle={{ margin: 0, ...style, maxHeight: '80%' }}
+        style={{ ...styleSyntax }}
+        customStyle={{
+          margin: 0,
+          ...style,
+          maxHeight: '80%',
+          backgroundColor: extendedPalette.windowEditorBackgroundHex
+        }}
         showLineNumbers
       >
         {codeString}

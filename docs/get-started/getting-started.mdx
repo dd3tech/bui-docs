@@ -6,13 +6,15 @@ title: Getting started
 <br />
 <br />
 
-# <span name="floating-nav">Getting Started</span>
+<Label>Getting Started</Label>
+
+# Introduction
 
      Welcome to our DD360 ds library! This library is designed to help you create beautiful and engaging user interfaces quickly and easily. With our library, you can access a lot of components, tools, and resources to create stunning user interfaces for your web applications. Our library is designed to be easy to use and understand, so even those with minimal React experience can get up and running quickly. To get started, simply install the library, check out the documentation, and begin building your own user interfaces with DD360 ds. Happy coding!
 
 <br />
 <br />
-## <span name="floating-nav">Installation</span>
+###### <span name="floating-nav">Installation</span>
 
 To get started, you need to install the DD360 ds library package from npm. You can do this by running the following command:
 
@@ -22,7 +24,7 @@ To get started, you need to install the DD360 ds library package from npm. You c
 
 <br />
 <br />
-## <span name="floating-nav">Add styles</span>
+###### <span name="floating-nav">Add styles</span>
 
 Our library uses Tailwind CSS for styling. If your project uses Tailwind CSS you can skip this step. To add styles in your project you need to import the DD360
 ds library style sheet in your entry point, in this example we use React (App.js as entry point).
@@ -31,10 +33,10 @@ ds library style sheet in your entry point, in this example we use React (App.js
 
 <br />
 
-## <span name="floating-nav">Setup</span>
+###### <span name="floating-nav">Setup</span>
 For our library to work properly, you will need to wrap your application inside our Provider.
 
-Go to <span className="px-1 py-0.5 bg-pink-100 rounded-md">pages/_app.js</span> or <span className="px-1 py-0.5 bg-pink-100 rounded-md">pages/_app.tsx</span> (create it if it doesn't exist) and add this:
+Go to <Tag text='pages/_app.js' /> or <Tag text='pages/_app.tsx' /> (create it if it doesn't exist) and add this:
 
 ### Next.js
 
@@ -65,11 +67,11 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 );`} />
 
 
-## <span name="floating-nav">Customize theme (optional) 🎨👨‍🎨</span>
+###### <span name="floating-nav">Customize theme (optional) 🎨👨‍🎨</span>
 
 ThemeProvider provides a simple way to customize the default themes, you can change the colors and fonts.
 
-To extend or override a token in the default theme, import the <span className="px-1 py-0.5 bg-pink-100 rounded-md">createTheme</span> function and add the keys you want to override. You can also add new values to the theme.
+To extend or override a token in the default theme, import the <Tag text='createTheme' /> function and add the keys you want to override. You can also add new values to the theme.
 
 For example, if you want to update your theme colors to include your brand colors, here's what to do:
 
@@ -128,7 +130,7 @@ const theme = createTheme({
 
 <br />
 <br />
-## <span name="floating-nav">Start Using the Library</span>
+###### <span name="floating-nav">Start Using the Library</span>
 
 Now that you've added the library to your application, you can start using it by adding the components you want to use. To do this, simply add the component tag
 to the JSX of your application. For example, if you want to use a button, you can add the following:

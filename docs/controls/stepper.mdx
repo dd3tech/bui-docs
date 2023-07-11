@@ -7,6 +7,8 @@ components: Stepper
 <br />
 <br />
 
+<Label>Controls</Label>
+
 # <span name="floating-nav">Stepper</span>
 
 The Stepper component is an ideal tool for showing the progress of a sequence of steps in a task or process. With this component, you can customize the
@@ -16,7 +18,7 @@ mobile applications and provide clear and easy progress tracking for any task.
 
 <br />
 <br />
-## <span name="floating-nav">Imports</span>
+##### <span name="floating-nav">Imports</span>
 
 The first alternative is recommended since they can reduce the application bundle
 
@@ -24,7 +26,7 @@ The first alternative is recommended since they can reduce the application bundl
 <WindowEditor codeString="import { Stepper } from 'dd360-ds'" />
 
 <br />
-## <span name="floating-nav">Usage</span>
+##### <span name="floating-nav">Usage</span>
 
 Use the Stepper component as shown below:
 
@@ -44,9 +46,9 @@ The code snippet below shows how to use the Stepper component:
 
 <br />
 
-#### <span name="floating-nav">FontSize</span>
+##### <span name="floating-nav">FontSize</span>
 
-With the prop <span className='border border-gray-300 bg-gray-200 p-1'>fontSize</span> you can customize the size of the text
+With the prop <Tag text='fontSize' /> you can customize the size of the text
 
 <ContainerComponentDoc className="gap-y-2">
     <Stepper phase={1} totalPhases={4} width="5rem" fontSize="2rem" />
@@ -62,9 +64,9 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>fontSize<
 
 <br />
 
-#### <span name="floating-nav">TextColor</span>
+##### <span name="floating-nav">TextColor</span>
 
-With the prop <span className='border border-gray-300 bg-gray-200 p-1'>textColor</span> you can customize the color of the text
+With the prop <Tag text='textColor' /> you can customize the color of the text
 
 <ContainerComponentDoc className="gap-y-2">
     <Stepper phase={1} totalPhases={4} width="5rem" textColor="#d62c2c" />
@@ -80,9 +82,9 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>textColor
 
 <br />
 
-#### <span name="floating-nav">StrokeWidth</span>
+##### <span name="floating-nav">StrokeWidth</span>
 
-With the prop <span className='border border-gray-300 bg-gray-200 p-1'>strokeWidth</span> you can customize the thickness of the stepper
+With the prop <Tag text='strokeWidth' /> you can customize the thickness of the stepper
 
 <ContainerComponentDoc className="gap-y-2">
     <Stepper phase={1} totalPhases={4} width="5rem" strokeWidth={15} />
@@ -98,9 +100,9 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>strokeWid
 
 <br />
 
-#### <span name="floating-nav">StrokeColor</span>
+##### <span name="floating-nav">StrokeColor</span>
 
-With the prop <span className='border border-gray-300 bg-gray-200 p-1'>strokeColor</span> you can customize the color of the stepper
+With the prop <Tag text='strokeColor' /> you can customize the color of the stepper
 
 <ContainerComponentDoc className="gap-y-2">
     <Stepper phase={1} totalPhases={4} width="5rem" strokeColor="#2ac948" />
@@ -116,9 +118,9 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>strokeCol
 
 <br />
 
-#### <span name="floating-nav">Text</span>
+##### <span name="floating-nav">Text</span>
 
-With the prop <span className='border border-gray-300 bg-gray-200 p-1'>text</span> you can add a custom text in case you don't need to show the steps
+With the prop <Tag text='text' /> you can add a custom text in case you don't need to show the steps
 
 <ContainerComponentDoc className="gap-y-2">
     <Stepper phase={1} totalPhases={4} width="5rem" text="25%" />
@@ -135,7 +137,7 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>text</spa
 <br />
 
 <br />
-### <span name="floating-nav">API Reference</span>
+##### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
     dataTable={[

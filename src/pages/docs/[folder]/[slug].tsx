@@ -4,9 +4,9 @@ import { MDXRemote } from 'next-mdx-remote'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { serialize } from 'next-mdx-remote/serialize'
 import { getAllPaths, getDocBySlug } from '@/utils/readFile'
-import { getComponents } from '@/utils'
 
 import { Container } from 'dd360-ds'
+import { useGetComponents } from '@/hooks/useGetComponents'
 
 type Props = {
   slug: string
@@ -22,7 +22,7 @@ export default function Slug({ source }: Props) {
     <Container>
       <MDXRemote
         {...source}
-        components={{ ...getComponents() }}
+        components={{ ...useGetComponents() }}
         scope={{ t }}
       />
     </Container>

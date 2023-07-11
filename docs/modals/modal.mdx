@@ -7,6 +7,8 @@ components: Modal
 <br />
 <br />
 
+<Label>Modals</Label>
+
 # <span name="floating-nav">Modal</span>
 
 The Modal component in React allows you to create custom dialogs that grab the user's attention or provide important information. By displaying content in a
@@ -16,11 +18,11 @@ application.
 
 <br />
 
-## <span name="floating-nav">Imports</span>
+##### <span name="floating-nav">Imports</span>
 
 <WindowEditor codeString="import { Modal } from 'dd360-ds'" />
 
-## <span name="floating-nav">Usage</span>
+##### <span name="floating-nav">Usage</span>
 
 Use the Modal component as shown below:
 
@@ -40,9 +42,9 @@ The code snippet below shows how to use the Modal component:
 
 <br />
 
-#### <span name="floating-nav">Animation</span>
+##### <span name="floating-nav">Animation</span>
 
-With the prop <span className='border border-gray-300 bg-gray-200 p-1'>animation</span> you can add an animation when opening the modal
+With the prop <Tag text='animation' /> you can add an animation when opening the modal
 
 <ContainerComponentDoc>
     <ModalCustom propsCustom={{ animation: true }} messageButtons={['Open Modal with animation', 'Open Modal whithout animation']} />
@@ -57,9 +59,9 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>animation
 `}/>
 
 <br />
-#### <span name="floating-nav">Overlay</span>
+##### <span name="floating-nav">Overlay</span>
 
-With the prop <span className='border border-gray-300 bg-gray-200 p-1'>overlay</span> you can add a gray background to the screen
+With the prop <Tag text='overlay' /> you can add a gray background to the screen
 
 <ContainerComponentDoc>
     <ModalCustom propsCustom={{ overlay: true }} messageButtons={['Open Modal with overlay', 'Open Modal without overlay']} />
@@ -75,9 +77,9 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>overlay</
 
 <br />
 
-#### <span name="floating-nav">FullScreen</span>
+##### <span name="floating-nav">FullScreen</span>
 
-With the prop <span className='border border-gray-300 bg-gray-200 p-1'>fullScreen</span> you can make the modal take up the whole screen
+With the prop <Tag text='fullScreen' /> you can make the modal take up the whole screen
 
 <ContainerComponentDoc>
     <ModalCustom propsCustom={{ fullScreen: true }} messageButtons={['Open Modal with fullScreen', 'Open Modal without fullScreen']} />
@@ -94,7 +96,7 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>fullScree
 <br />
 <br />
 
-## <span name="floating-nav">API Reference</span>
+##### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
     dataTable={[

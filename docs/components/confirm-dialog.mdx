@@ -7,6 +7,8 @@ components: ComfirmDialog
 <br />
 <br />
 
+<Label>Components</Label>
+
 # <span name="floating-nav">ComfirmDialog</span>
 
 The ConfirmDialog component is used to display a confirmation dialog before 
@@ -15,7 +17,7 @@ performing important actions, such as deleting items or applying changes, by
 
 <br />
 
-## <span name="floating-nav">Imports</span>
+##### <span name="floating-nav">Imports</span>
 The first alternative is recommended since it can reduce the application bundle
 
 <WindowEditor codeString="import ConfirmDialog from 'dd360-ds/ConfirmDialog'" />
@@ -23,7 +25,7 @@ The first alternative is recommended since it can reduce the application bundle
 
 <br />
 
-## <span name="floating-nav">Usage</span>
+##### <span name="floating-nav">Usage</span>
 
 Use the ConfirmDialog component as shown below:
 
@@ -49,7 +51,7 @@ The code snippet below shows how to use the ConfirmDialog component:
 
 <br />
 
-#### <span name="floating-nav">Position</span>
+##### <span name="floating-nav">Position</span>
 
 To manage the ConfirmDialog component's visibility and position, you can use the
 useState hook in a functional component. Position stores the top and left
@@ -126,9 +128,9 @@ we can avoid any issues with the ConfirmDialog component not being fully initial
 <br />
 
 
-## <span name="floating-nav">Title</span>
+##### <span name="floating-nav">Title</span>
 
-The prop <span className='border border-gray-300 bg-gray-200 p-1'>title</span> is used to display a descriptive title in the confirmation dialog
+The prop <Tag text='title' /> is used to display a descriptive title in the confirmation dialog
 
 <ContainerComponentDoc>
  <ConfirmDialogCustom title='Example title' />
@@ -151,9 +153,9 @@ The prop <span className='border border-gray-300 bg-gray-200 p-1'>title</span> i
 
 <br />
 
-## <span name="floating-nav">Text Confirm Btn</span>
+##### <span name="floating-nav">Text Confirm Btn</span>
 
-The prop <span className='border border-gray-300 bg-gray-200 p-1'>textConfirmBtn</span> is used to define the text of the confirmation button in the dialog box
+The prop <Tag text='textConfirmBtn' /> is used to define the text of the confirmation button in the dialog box
 
 <ContainerComponentDoc>
  <ConfirmDialogCustom textConfirmBtn='Example Confirm' />
@@ -176,9 +178,9 @@ The prop <span className='border border-gray-300 bg-gray-200 p-1'>textConfirmBtn
 
 <br />
 
-## <span name="floating-nav">On Cancel and Text Cancel Btn</span>
+##### <span name="floating-nav">On Cancel and Text Cancel Btn</span>
 
-The props <span className='border border-gray-300 bg-gray-200 p-1'>onCancel and textCancelBtn</span> they are used to cancel the confirmDialog, onCancel should carry the function that closes it and textCancelBtn the text that you want it to carry
+The props <Tag text='onCancel and textCancelBtn' /> they are used to cancel the confirmDialog, onCancel should carry the function that closes it and textCancelBtn the text that you want it to carry
 
 Note that it is recommended that the textCancelBtn and handleCancel props be defined together, as defining only textCancelBtn would not make much sense
 
@@ -204,9 +206,9 @@ Note that it is recommended that the textCancelBtn and handleCancel props be def
 
 <br />
 
-## <span name="floating-nav">Width</span>
+##### <span name="floating-nav">Width</span>
 
-The prop <span className='border border-gray-300 bg-gray-200 p-1'>width</span> is used to set the custom width of the confirmation dialog to
+The prop <Tag text='width' /> is used to set the custom width of the confirmation dialog to
 
 
 <ContainerComponentDoc>
@@ -231,7 +233,7 @@ The prop <span className='border border-gray-300 bg-gray-200 p-1'>width</span> i
 <br />
 <br />
 
-## <span name="floating-nav">API Reference</span>
+##### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
   dataTable={[
