@@ -1,6 +1,7 @@
-import { MutableRefObject, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import {
   XCircleIcon,
   MoonIcon,
@@ -8,7 +9,7 @@ import {
   DesktopComputerIcon
 } from '@heroicons/react/outline'
 
-import { Circle, Flex, Transition, Dropdown } from 'dd360-ds'
+import { Circle, Flex, Transition, Dropdown, useResize } from 'dd360-ds'
 import { composeClasses } from 'dd360-ds/lib'
 
 import { openWindow, GITHUB_URL } from '@/utils'
@@ -21,7 +22,6 @@ import SideBar from '../SideBar'
 import CircleCustom from './CircleCustom'
 import Search from './Search'
 import MainLinks from './MainLinks'
-import { useRouter } from 'next/router'
 
 const getThemeIcon = (theme: string, width = 12, color = 'currentColor') => {
   if (theme === 'light') return <SunIcon width={width} color={color} />
@@ -40,6 +40,7 @@ function Navbar() {
   const [isActiveButtonMobile, setIsActiveButtonMobile] = useState(false)
   const sidebarRef = useRef<HTMLDivElement | null>(null)
   const router = useRouter()
+  const { size } = useResize()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,7 +50,7 @@ function Navbar() {
       if (window.scrollY > 30) {
         sidebarElement.classList.add('border-b')
         sidebarElement.classList.remove('bg-transparent')
-      } else {
+      } else if (!isActiveButtonMobile) {
         sidebarElement.classList.remove('border-b')
         sidebarElement.classList.add('bg-transparent')
       }
@@ -59,7 +60,19 @@ function Navbar() {
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
-  }, [sidebarRef])
+  }, [sidebarRef, isActiveButtonMobile])
+
+  useEffect(() => {
+    if (size?.width && size.width >= 768) {
+      setIsActiveButtonMobile(false)
+    }
+  }, [size])
+
+  useEffect(() => {
+    if (isActiveButtonMobile) {
+      sidebarRef.current?.classList.remove('bg-transparent')
+    }
+  }, [isActiveButtonMobile])
 
   return (
     <nav
@@ -67,10 +80,13 @@ function Navbar() {
       className={composeClasses(
         'w-full sticky top-0 z-10 flex flex-col-reverse md:flex-row',
         extendedPalette.sidebarBorder,
-        router.pathname.startsWith('/docs/') ? 'border-b' : 'bg-transparent',
+        router.pathname.startsWith('/docs/') && 'border-b',
         isActiveButtonMobile
-          ? `${extendedPalette.barMobileBackground} sm:${extendedPalette.barBackground}`
-          : extendedPalette.barBackground
+          ? extendedPalette.barMobileBackground
+          : extendedPalette.barBackground,
+        !isActiveButtonMobile &&
+          !router.pathname.startsWith('/docs/') &&
+          `bg-transparent`
       )}
     >
       {isActiveButtonMobile && (
@@ -111,12 +127,13 @@ function Navbar() {
 
             <Dropdown.Menu
               className={composeClasses(
-                'p-2',
+                'p-4',
                 extendedPalette.componentText,
                 extendedPalette.cardBorderColor
               )}
               style={{
                 width: 155,
+                padding: 8,
                 backgroundColor: extendedPalette.componentBgPrimaryHex
               }}
             >

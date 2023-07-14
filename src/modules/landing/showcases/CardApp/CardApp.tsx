@@ -64,7 +64,7 @@ const CardApp = ({ data }: CardAppsProps) => {
               'font-bold text-blue-400 ml-auto flex justify-end gap-2 pb-2',
               extendedPalette.linkPrimary
             )}
-            href="/"
+            href={data.goTo}
             target="_blank"
           >
             <Text className="underline">Go to Site</Text>

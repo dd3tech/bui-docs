@@ -87,13 +87,14 @@ function TestimonialsBanner() {
 
     if (size.width >= 768) {
       setCards(splitArray(currentArray, 3))
-    } else if (size.width >= 640) {
-      currentArray.pop()
-      setCards(splitArray(currentArray, 2))
     } else {
-      currentArray.splice(2, 4)
-      setCards(splitArray(currentArray, 1))
+      currentArray.splice(2, 5)
+      setCards(splitArray(currentArray, 2))
     }
+    // else {
+    //   currentArray.splice(2, 4)
+    //   setCards(splitArray(currentArray, 1))
+    // }
   }, [size])
 
   return (
@@ -113,14 +114,14 @@ function TestimonialsBanner() {
         product people like you
       </Text>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 relative mt-12 sm:mt-[52px] px-4 md:px-10">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 relative mt-12 sm:mt-[52px] md:px-10">
         {cards.map((group, index) => (
-          <Flex gap="6" key={index} className="flex-col">
+          <Flex gap="4" key={index} className="flex-col sm:gap-6">
             {group.map((testimonial) => (
               <div
                 key={testimonial.id}
                 className={composeClasses(
-                  'rounded-lg h-fit lg:min-h-[184px] max-w-full p-6',
+                  'rounded-lg h-fit lg:min-h-[184px] max-w-full p-4 sm:p-6',
                   extendedPalette.cardBackground
                 )}
                 style={{
@@ -140,18 +141,29 @@ function TestimonialsBanner() {
                     <Text
                       bold
                       className={composeClasses(
-                        'block text-base',
+                        'block text-xs sm:text-base',
                         extendedPalette.primaryText
                       )}
                     >
                       {testimonial.name}
                     </Text>
-                    <Text size="sm" className={extendedPalette.linkPrimary}>
+                    <Text
+                      size="sm"
+                      className={composeClasses(
+                        'text-xs sm:text-base',
+                        extendedPalette.linkPrimary
+                      )}
+                    >
                       {testimonial.username}
                     </Text>
                   </div>
                 </Flex>
-                <Text className={extendedPalette.componentText}>
+                <Text
+                  className={composeClasses(
+                    'text-xs sm:text-base',
+                    extendedPalette.componentText
+                  )}
+                >
                   {testimonial.message}
                 </Text>
               </div>
