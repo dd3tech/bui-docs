@@ -17,6 +17,7 @@ interface Section {
     cards: {
       title: string
       img: string
+      pathname: string
       maxWith?: number
     }[]
   }
@@ -27,15 +28,18 @@ const sections: Section = {
     cards: [
       {
         title: 'Button group',
-        img: 'buttons-component-dark.png'
+        img: 'buttons-component-dark.png',
+        pathname: 'button-group'
       },
       {
         title: 'Shape Button',
-        img: 'shape-buttons-component-dark.png'
+        img: 'shape-buttons-component-dark.png',
+        pathname: 'button-shape'
       },
       {
         title: 'Radio buttons',
-        img: 'radio-buttons-component-dark.png'
+        img: 'radio-buttons-component-dark.png',
+        pathname: 'button-radio'
       }
     ]
   },
@@ -43,15 +47,18 @@ const sections: Section = {
     cards: [
       {
         title: 'Navbar',
-        img: 'navbar-component-dark.png'
+        img: 'navbar-component-dark.png',
+        pathname: 'navbar'
       },
       {
         title: 'Card',
-        img: 'card-component-dark.png'
+        img: 'card-component-dark.png',
+        pathname: 'card'
       },
       {
         title: 'Sidebar',
-        img: 'side-bar-component-dark.png'
+        img: 'side-bar-component-dark.png',
+        pathname: 'sidebar'
       }
     ]
   },
@@ -59,15 +66,18 @@ const sections: Section = {
     cards: [
       {
         title: 'Input',
-        img: 'input-component-dark.png'
+        img: 'input-component-dark.png',
+        pathname: 'input'
       },
       {
         title: 'Textarea',
-        img: 'text-area-component-dark.png'
+        img: 'text-area-component-dark.png',
+        pathname: 'textarea'
       },
       {
         title: 'Slider',
-        img: 'slider-card-component-dark.png'
+        img: 'slider-card-component-dark.png',
+        pathname: 'range-slider'
       }
     ]
   },
@@ -75,15 +85,18 @@ const sections: Section = {
     cards: [
       {
         title: 'Pagination',
-        img: 'pagination-component-dark.png'
+        img: 'pagination-component-dark.png',
+        pathname: 'pagination'
       },
       {
         title: 'Breadcrumbs',
-        img: 'breadcrumbs-component-dark.png'
+        img: 'breadcrumbs-component-dark.png',
+        pathname: 'breadcrumbs'
       },
       {
         title: 'Tabs',
-        img: 'tabs-component-dark.png'
+        img: 'tabs-component-dark.png',
+        pathname: 'tabs'
       }
     ]
   },
@@ -91,11 +104,13 @@ const sections: Section = {
     cards: [
       {
         title: 'Modal',
-        img: 'modal-component-dark.png'
+        img: 'modal-component-dark.png',
+        pathname: 'modal'
       },
       {
         title: 'Aside modal',
-        img: 'aside-modal-component-dark.png'
+        img: 'aside-modal-component-dark.png',
+        pathname: 'aside-modal'
       }
     ]
   },
@@ -103,11 +118,13 @@ const sections: Section = {
     cards: [
       {
         title: 'Variants',
-        img: 'text-component-dark.png'
+        img: 'text-component-dark.png',
+        pathname: 'text'
       },
       {
         title: 'Align',
-        img: 'align-component-dark.png'
+        img: 'align-component-dark.png',
+        pathname: 'kbd'
       }
     ]
   },
@@ -115,15 +132,18 @@ const sections: Section = {
     cards: [
       {
         title: 'CircularProgressBar',
-        img: 'progress-cycle-component-dark.png'
+        img: 'progress-cycle-component-dark.png',
+        pathname: 'progress-circle'
       },
       {
         title: 'Stepper',
-        img: 'steps-component-dark.png'
+        img: 'steps-component-dark.png',
+        pathname: 'stepper'
       },
       {
         title: 'Switch',
-        img: 'toggles-component-dark.png'
+        img: 'toggles-component-dark.png',
+        pathname: 'switch'
       }
     ]
   },
@@ -131,11 +151,13 @@ const sections: Section = {
     cards: [
       {
         title: 'Image',
-        img: 'image-component-dark.png'
+        img: 'image-component-dark.png',
+        pathname: 'image'
       },
       {
         title: 'Avatar',
         img: 'avatar-component-dark.png',
+        pathname: 'avatar',
         maxWith: 342
       }
     ]
@@ -144,15 +166,18 @@ const sections: Section = {
     cards: [
       {
         title: 'Filter range  slider',
-        img: 'slider-card-component-dark.png'
+        img: 'slider-card-component-dark.png',
+        pathname: 'filter-range-slider'
       },
       {
         title: 'Dropdown',
-        img: 'dropdown-component-dark.png'
+        img: 'dropdown-component-dark.png',
+        pathname: 'dropdown'
       },
       {
         title: 'Date picker',
-        img: 'date-and-picker-component-dark.png'
+        img: 'date-and-picker-component-dark.png',
+        pathname: 'date-picker'
       }
     ]
   }
@@ -264,7 +289,7 @@ export default function Docs() {
                         'font-bold text-blue-400 ml-auto flex justify-center gap-2 pt-2',
                         extendedPalette.linkPrimary
                       )}
-                      href="/"
+                      href={`/docs/${key}/${card.pathname}`}
                       target="_blank"
                     >
                       <Text size="xs" className="underline">

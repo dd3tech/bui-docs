@@ -13,7 +13,7 @@ const cardsData: AppCardInfo[] = [
     title: 'Simulador DD360',
     description:
       "This is a curated list of some of the best apps we've seen that show off what's possible with Material UI. Are you also using it? Show us what you're building! We'd love to see it.",
-    goTo: ''
+    goTo: 'https://onboarding.dd360.mx/'
   },
   {
     imgLight: '/page-landing-saas.jpg',
@@ -21,7 +21,7 @@ const cardsData: AppCardInfo[] = [
     title: 'Landing SaaS DD360',
     description:
       "This is a curated list of some of the best apps we've seen that show off what's possible with Material UI. Are you also using it? Show us what you're building! We'd love to see it.",
-    goTo: ''
+    goTo: 'https://dd360-universe-landing.vercel.app/'
   },
   {
     imgLight: '/page-dd360-saas-light.jpg',
@@ -29,7 +29,7 @@ const cardsData: AppCardInfo[] = [
     title: 'DD360 SaaS',
     description:
       "This is a curated list of some of the best apps we've seen that show off what's possible with Material UI. Are you also using it? Show us what you're building! We'd love to see it.",
-    goTo: ''
+    goTo: 'https://app.dd360.mx/'
   }
 ]
 

@@ -3,14 +3,16 @@ import { useRouter } from 'next/router'
 import { XIcon, MenuIcon } from '@heroicons/react/outline'
 
 import { composeClasses } from 'dd360-ds/lib'
-import { Flex, Overflow, Text } from 'dd360-ds'
+import { Flex, Text } from 'dd360-ds'
 
 import { useTheme } from '@/pages/store/theme-store'
 import FloatingNav, { Entries } from './FloatingNav'
 import Footer from './Footer'
-import Navbar from './Navbar/Navbar'
 import SideBarDocs from './SideBarDocs'
 import CircleCustom from './Navbar/CircleCustom'
+import dynamic from 'next/dynamic'
+
+const Navbar = dynamic(() => import('./Navbar/Navbar'), { ssr: false })
 
 function parseIdByName(name: string) {
   return name
@@ -105,7 +107,10 @@ function Layout({ children }: { children: JSX.Element }) {
               className="layout-content grid h-full px-8 md:px-16 m-auto"
               style={{ height: 'calc(100vh - 57px)' }}
             >
-              <article className="w-full max-w-full overflow-auto">
+              <article
+                id="container-doc"
+                className="w-full max-w-full overflow-auto"
+              >
                 {children}
               </article>
               <article className="hidden w-full max-w-[128px] mt-[76px] md:block">
@@ -120,7 +125,9 @@ function Layout({ children }: { children: JSX.Element }) {
   }
 
   return (
-    <div className={isLightTheme ? 'light' : 'dark'}>
+    <div
+      className={composeClasses('relative', isLightTheme ? 'light' : 'dark')}
+    >
       <Navbar />
       {children}
       <Footer />
