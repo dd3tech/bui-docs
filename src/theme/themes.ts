@@ -18,6 +18,7 @@ export const darkTheme = createTheme({
   typography,
   extendedPalette: {
     barBackground: 'bg-gray-800', //#1F2937
+    barHoverBackground: 'bg-gray-700', //#374151
     barMobileBackground: 'bg-gray-900', //#111827
     barBackgroundHex: '#1F2937', //bg-gray-800
 
@@ -107,6 +108,7 @@ export const lightTheme = createTheme({
   typography,
   extendedPalette: {
     barBackground: 'bg-gray-50', //#F9FAFB
+    barHoverBackground: 'bg-gray-100', //#F3F4F6
     barMobileBackground: 'bg-gray-50', //#F9FAFB
 
     barBackgroundHex: '#F9FAFB', //bg-gray-50

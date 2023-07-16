@@ -109,16 +109,15 @@ function Layout({ children }: { children: JSX.Element }) {
             >
               <article
                 id="container-doc"
-                className="w-full max-w-full overflow-auto"
+                className="w-full max-w-full overflow-auto pr-5"
               >
                 {children}
               </article>
-              <article className="hidden w-full max-w-[128px] mt-[76px] md:block">
+              <article className="hidden w-full max-w-[128px] mt-[60px] md:block">
                 <FloatingNav entries={entries} />
               </article>
             </div>
           </Flex>
-          <Footer />
         </main>
       </Flex>
     )

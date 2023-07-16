@@ -87,8 +87,7 @@ function WindowEditor({
       onMouseOver={() => setShowCopyButton(true)}
       onMouseLeave={() => setShowCopyButton(false)}
       className={composeClasses(
-        'h-auto rounded-md mt-2 mb-10 py-4',
-        height ? 'overflow-auto' : 'overflow-hidden',
+        'h-auto rounded-md mt-2 mb-10 py-4 overflow-hidden',
         className
       )}
       style={{

@@ -135,9 +135,9 @@ function BannerDashboard() {
               />
             </Circle>
 
-            <div className="overflow-hidden left-0 xl:left-auto xl:right-0 top-0 ml-0 lg:ml-12 relative lg:absolute lg:w-[705px] h-[130x] xs:h-[218px] sm:h-[314px] md:h-[354px] lg:translate-y-[-50%] lg:top-[50%]">
+            <div className="overflow-hidden min-[1350px]:right-0 left-0 min-[1350px]:left-auto top-0 ml-0 lg:ml-12 relative lg:absolute lg:w-[705px] h-[130px] xs:h-[218px] sm:h-[314px] md:h-[354px] lg:translate-y-[-50%] lg:top-[50%]">
               <Image
-                src={`/sales-v2-page-${isLightTheme ? 'light' : 'dark'}.png`}
+                src={`/sales-v2-page-${isLightTheme ? 'light' : 'dark'}_.png`}
                 alt="demo-dashboard"
                 className="absolute hidden lg:block"
                 fill
@@ -145,7 +145,7 @@ function BannerDashboard() {
               <Image
                 src={`/sales-v2-full-page-${
                   isLightTheme ? 'light' : 'dark'
-                }.png`}
+                }_.png`}
                 alt="demo-dashboard"
                 className="absolute lg:hidden"
                 fill

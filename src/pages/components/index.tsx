@@ -158,7 +158,7 @@ const sections: Section = {
         title: 'Avatar',
         img: 'avatar-component-dark.png',
         pathname: 'avatar',
-        maxWith: 342
+        maxWith: 302
       }
     ]
   },

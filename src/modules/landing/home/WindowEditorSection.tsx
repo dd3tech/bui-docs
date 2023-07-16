@@ -39,6 +39,7 @@ const WindowEditorSection = () => {
           className="ml-0 lg:ml-8 border"
           backgroundColor={isLightTheme ? '#FFFFFF' : '#050B1A'}
           height="405px"
+          style={{ overflow: 'hidden' }}
           styleContainer={{
             borderColor: '#93C5FD',
             marginBottom: 0,
@@ -46,7 +47,7 @@ const WindowEditorSection = () => {
           }}
         />
         <div
-          className="absolute w-full h-full z-[1] top-0 "
+          className="absolute w-full h-full z-[1] top-0 overflow-hidden"
           style={{
             background: isLightTheme
               ? 'linear-gradient(0deg, rgb(244 245 246) 0%, rgba(217, 217, 217, 0) 70.98%)'

@@ -31,7 +31,8 @@ function ShowMore({
       <div
         className={composeClasses(
           'flex w-full gap-2.5 justify-between items-center cursor-pointer rounded-md',
-          isActive && extendedPalette.sidebarOptionBackground
+          isActive && extendedPalette.sidebarOptionBackground,
+          `hover:${extendedPalette.barHoverBackground}`
         )}
         style={{ height: 30, paddingLeft: 6, paddingRight: 10 }}
         onClick={() => setIsOpen(!isOpen)}
