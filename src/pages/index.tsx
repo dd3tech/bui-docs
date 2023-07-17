@@ -27,7 +27,10 @@ export default function Home() {
 
   return (
     <>
-      <OpenGraph title={t('metadata.home')!} />
+      <OpenGraph
+        title={t('metadata.home')!}
+        icon={`buildd3rUI-${isLightTheme ? 'dark' : 'light'}.svg`}
+      />
       <IllustrationsLayer />
       <main
         className={composeClasses(

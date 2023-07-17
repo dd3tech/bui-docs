@@ -17,7 +17,7 @@ import { useTheme } from '@/pages/store/theme-store'
 import { MenuIcon } from '@/components/icons/MenuIcon'
 import { THEMES_WITH_DEFAULT } from '@/const/theme'
 import { ThemeOptions } from '@/interfaces'
-import { Dd360Icon, GitHubIcon } from '../../icons'
+import { Buildd3rIcon, GitHubIcon } from '../../icons'
 import SideBar from '../SideBar'
 import CircleCustom from './CircleCustom'
 import Search from './Search'
@@ -118,7 +118,7 @@ function Navbar({ className }: NavbarProps) {
         )}
       >
         <Link href="/">
-          <Dd360Icon color={extendedPalette.logoColorHex} />
+          <Buildd3rIcon color={extendedPalette.logoColorHex} />
         </Link>
 
         <ul className="hidden items-center gap-8 h-12 md:flex">

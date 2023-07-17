@@ -1,5 +1,5 @@
 export { GitHubIcon } from './GitHubIcon'
-export { Dd360Icon } from './Dd360Icon'
+export { Buildd3rIcon } from './Buildd3rIcon'
 export { AccessibilityIcon } from './AccessibilityIcon'
 export { ReactLogoName } from './ReactLogoName'
 export { TailwindLogoName } from './TailwindLogoName'
