@@ -74,6 +74,7 @@ const FilterSelectCustom = ({
                 }
               }}
               onApply={handleChange}
+              className="container-cmpnt-doc"
             />
           ) : (
             <FilterSelect

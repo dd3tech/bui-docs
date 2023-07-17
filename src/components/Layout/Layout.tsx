@@ -104,13 +104,11 @@ function Layout({ children }: { children: JSX.Element }) {
             </div>
 
             <div
-              className="layout-content grid h-full px-8 md:px-16 m-auto"
+              id="layout-content"
+              className="layout-content grid h-full px-8 md:px-16 m-auto w-full overflow-auto"
               style={{ height: 'calc(100vh - 57px)' }}
             >
-              <article
-                id="container-doc"
-                className="w-full max-w-full overflow-auto pr-5"
-              >
+              <article id="container-doc" className="w-full max-w-full  pr-5">
                 {children}
               </article>
               <article className="hidden w-full max-w-[128px] mt-[60px] md:block">
@@ -127,7 +125,7 @@ function Layout({ children }: { children: JSX.Element }) {
     <div
       className={composeClasses('relative', isLightTheme ? 'light' : 'dark')}
     >
-      <Navbar />
+      <Navbar className="max-w-[1400px] mx-auto" />
       {children}
       <Footer />
     </div>

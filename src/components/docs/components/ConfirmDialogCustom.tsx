@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { ConfirmDialog } from 'dd360-ds'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
+import useRelativePosition from '@/hooks/useRelativePosition'
 
 interface ConfirmDialogCustomProps {
   title: string
@@ -18,15 +19,7 @@ const ConfirmDialogCustom = ({
   width
 }: ConfirmDialogCustomProps) => {
   const [domLoaded, setDomLoaded] = useState<boolean>(false)
-  const [position, setPosition] = useState<{
-    top: number
-    left: number
-    show: boolean
-  }>({
-    top: 0,
-    left: 0,
-    show: false
-  })
+  const { position, setPosition, setTargetRef } = useRelativePosition({})
 
   useEffect(() => {
     setDomLoaded(true)
@@ -37,11 +30,11 @@ const ConfirmDialogCustom = ({
       {domLoaded && (
         <div>
           <button
+            ref={setTargetRef}
             className="flex items-center gap-1"
-            onClick={(event) => {
+            onClick={() => {
               setPosition((position) => ({
-                top: event.pageY + 20,
-                left: event.pageX,
+                ...position,
                 show: !position.show
               }))
             }}
@@ -65,6 +58,7 @@ const ConfirmDialogCustom = ({
               show: position.show
             }}
             onConfirm={() => alert('onConfirm')}
+            className="text-gray-900"
           >
             You want to confirm?
           </ConfirmDialog>

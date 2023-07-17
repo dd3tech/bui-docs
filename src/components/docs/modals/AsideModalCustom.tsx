@@ -75,6 +75,7 @@ const AsideModalCustom = ({
         )}
       </div>
       <AsideModal
+        style={{ marginTop: '56px' }}
         disableEscapeKeyDown={propCustomValue}
         position={positionAsideModal}
         titleVariant={variantAsideModal}

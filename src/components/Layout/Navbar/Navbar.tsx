@@ -30,7 +30,11 @@ const getThemeIcon = (theme: string, width = 12, color = 'currentColor') => {
     return <DesktopComputerIcon width={width} color={color} />
 }
 
-function Navbar() {
+interface NavbarProps {
+  className?: string
+}
+
+function Navbar({ className }: NavbarProps) {
   const { t } = useTranslation('common')
   const {
     themeObject: { extendedPalette },
@@ -50,7 +54,10 @@ function Navbar() {
       if (window.scrollY > 30) {
         sidebarElement.classList.add('border-b')
         sidebarElement.classList.remove('bg-transparent')
-      } else if (!isActiveButtonMobile) {
+      } else if (
+        !isActiveButtonMobile &&
+        !router.pathname.startsWith('/docs/')
+      ) {
         sidebarElement.classList.remove('border-b')
         sidebarElement.classList.add('bg-transparent')
       }
@@ -60,7 +67,7 @@ function Navbar() {
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
-  }, [sidebarRef, isActiveButtonMobile])
+  }, [sidebarRef, isActiveButtonMobile, router.pathname])
 
   useEffect(() => {
     if (size?.width && size.width >= 768) {
@@ -78,7 +85,7 @@ function Navbar() {
     <nav
       ref={sidebarRef}
       className={composeClasses(
-        'w-full sticky top-0 z-10 flex flex-col-reverse md:flex-row',
+        'w-full sticky top-0 z-50 flex flex-col-reverse md:flex-row',
         extendedPalette.sidebarBorder,
         router.pathname.startsWith('/docs/') && 'border-b',
         isActiveButtonMobile
@@ -105,7 +112,10 @@ function Navbar() {
         justifyContent="between"
         alignItems="center"
         gap="4"
-        className="w-full h-14 py-2 mx-auto px-4 flex-nowrap"
+        className={composeClasses(
+          'w-full h-14 py-2 mx-auto px-4 flex-nowrap',
+          className
+        )}
       >
         <Link href="/">
           <Dd360Icon color={extendedPalette.logoColorHex} />

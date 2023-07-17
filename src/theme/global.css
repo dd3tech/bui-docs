@@ -134,7 +134,19 @@ body:has(.home-page.light) {
 }
 
 .container-cmpnt-doc span:not(.text-primary) {
-  color: #111827;
+  color: #111827 !important;
+}
+
+.container-cmpnt-doc button.bg-primary span:not(.text-primary) {
+  color: white !important;
+}
+
+.container-cmpnt-doc .bg-blue-500 > span {
+  color: white !important;
+}
+
+.container-cmpnt-doc .text-white {
+  color: white !important;
 }
 
 /*
@@ -261,30 +273,31 @@ body:has(.home-page.light) {
   box-shadow: 27px 23px 27px -12px rgba(152, 152, 152, 0.5);
 }
 
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
+div ::-webkit-scrollbar {
+  width: 8px;
+}
 
-  ::-webkit-scrollbar-track {
-    background-color: #d1d1d1;
-  }
+div ::-webkit-scrollbar-button {
+  display: none;
+}
 
-  ::-webkit-scrollbar-thumb {
-    background-color: #00000045;
+div ::-webkit-scrollbar-track {
+  background-color: transparent;
+}
 
-    border-radius: 4px;
-  }
+div ::-webkit-scrollbar-thumb {
+  background-color: #0000008f;
+  border-radius: 4px;
+}
 
-  ::-webkit-scrollbar-thumb:hover {
-    background-color: #0000008f;
-  }
+div ::-webkit-scrollbar-corner {
+  background-color: #4b5563;
+}
 
-  ::-webkit-scrollbar-corner {
-    background-color: #f1f1f1;
-  }
+.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: #4b5563;
+}
 
-  ::-webkit-scrollbar-button {
-    display: none;
-  }
+.light ::-webkit-scrollbar-thumb:hover {
+  background-color: #000000b5;
 }

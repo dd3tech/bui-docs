@@ -33,10 +33,7 @@ function Footer() {
 
   return (
     <footer className={extendedPalette.footerBackground}>
-      <div
-        className="pt-8 pb-5 px-4 mx-auto lg:px-8 2xl:px-0"
-        style={{ maxWidth: '1242px' }}
-      >
+      <div className="pt-8 pb-5 px-4 mx-auto lg:px-8 2xl:px-0 max-w-[1400px]">
         <Link href="/" className="inline-flex">
           <Dd360Icon
             width={130}
@@ -74,7 +71,7 @@ function Footer() {
               )}
             >
               {footerMenu.map(({ key, label, link }) => (
-                <Link key={key} href={link}>
+                <Link key={key} href={link} className="capitalize">
                   {t(label)}
                 </Link>
               ))}

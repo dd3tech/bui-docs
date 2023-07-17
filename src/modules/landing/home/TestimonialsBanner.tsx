@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 import { Text, Flex, Button, Avatar, useResize } from 'dd360-ds'
 import { composeClasses } from 'dd360-ds/lib'
 import { ArrowRightIcon, DownloadIcon } from '@heroicons/react/solid'
@@ -176,14 +177,16 @@ function TestimonialsBanner() {
         />
       </div>
       <Flex justifyContent="center" alignItems="center" className="mb-24">
-        <Button
-          className="flex justify-center items-center w-full sm:min-w-[149px] sm:max-w-[150px] h-10 gap-2"
-          paddingY="2"
-          rounded="lg"
-        >
-          Get started
-          <ArrowRightIcon width={16} />
-        </Button>
+        <Link href="/docs/get-started/getting-started">
+          <Button
+            className="flex justify-center items-center w-full sm:min-w-[149px] sm:max-w-[150px] h-10 gap-2"
+            paddingY="2"
+            rounded="lg"
+          >
+            Get started
+            <ArrowRightIcon width={16} />
+          </Button>
+        </Link>
       </Flex>
       <Flex
         justifyContent="center"
@@ -206,7 +209,10 @@ function TestimonialsBanner() {
             <Text variant="h3" className="text-4xl sm:text-5xl" bold>
               +80K
             </Text>
-            <Text variant="p" className="min-w-max text-sm sm:text-base">
+            <Text
+              variant="p"
+              className="min-w-max text-center text-sm sm:text-base"
+            >
               Stars on github
             </Text>
           </Flex>
@@ -227,7 +233,10 @@ function TestimonialsBanner() {
             <Text variant="h3" className="text-4xl sm:text-5xl" bold>
               +1048
             </Text>
-            <Text variant="p" className="min-w-max text-sm sm:text-base">
+            <Text
+              variant="p"
+              className="min-w-max text-center text-sm sm:text-base"
+            >
               Weekly Downloads
             </Text>
           </Flex>

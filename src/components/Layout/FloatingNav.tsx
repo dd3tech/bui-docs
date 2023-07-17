@@ -21,9 +21,9 @@ const FloatingNav = ({ entries }: IFloatingNav) => {
   } = useTheme()
 
   const handleClick = (position: number, id: string) => {
-    window.scrollTo({
-      top: position,
-      behavior: 'smooth'
+    document.getElementById('layout-content')?.scrollTo({
+      behavior: 'smooth',
+      top: position
     })
     router.push(`${router.asPath.split('#')[0]}#${id}`)
   }

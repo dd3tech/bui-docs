@@ -12,7 +12,7 @@ const cardsData: AppCardInfo[] = [
     imgDark: '/page-simulator.jpg',
     title: 'Simulador DD360',
     description:
-      "This is a curated list of some of the best apps we've seen that show off what's possible with Material UI. Are you also using it? Show us what you're building! We'd love to see it.",
+      "This is a curated list of some of the best apps we've seen that show off what's possible with BUI. Are you also using it? Show us what you're building! We'd love to see it.",
     goTo: 'https://onboarding.dd360.mx/'
   },
   {
@@ -20,7 +20,7 @@ const cardsData: AppCardInfo[] = [
     imgDark: '/page-landing-saas.jpg',
     title: 'Landing SaaS DD360',
     description:
-      "This is a curated list of some of the best apps we've seen that show off what's possible with Material UI. Are you also using it? Show us what you're building! We'd love to see it.",
+      "This is a curated list of some of the best apps we've seen that show off what's possible with BUI. Are you also using it? Show us what you're building! We'd love to see it.",
     goTo: 'https://dd360-universe-landing.vercel.app/'
   },
   {
@@ -28,7 +28,7 @@ const cardsData: AppCardInfo[] = [
     imgDark: '/page-dd360-saas-dark.jpg',
     title: 'DD360 SaaS',
     description:
-      "This is a curated list of some of the best apps we've seen that show off what's possible with Material UI. Are you also using it? Show us what you're building! We'd love to see it.",
+      "This is a curated list of some of the best apps we've seen that show off what's possible with BUI. Are you also using it? Show us what you're building! We'd love to see it.",
     goTo: 'https://app.dd360.mx/'
   }
 ]
@@ -72,8 +72,8 @@ export default function Showcases() {
             className={extendedPalette.primaryText}
           >
             This is a curated list of some of the best apps we&apos;ve seen that
-            show off what&apos;s possible with Material UI. Are you also using
-            it? Show us what you&apos;re building! We&apos;d love to see it.
+            show off what&apos;s possible with BUI. Are you also using it? Show
+            us what you&apos;re building! We&apos;d love to see it.
           </Text>
         </section>
 
