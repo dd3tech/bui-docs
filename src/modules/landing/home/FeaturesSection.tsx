@@ -49,7 +49,7 @@ const FeaturesSection = () => {
   } = useTheme()
 
   return (
-    <section className="w-full max-w-8xl pt-24 p-4 sm:px-8 xl:px-40 2xl:px-0 m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-14 gap-y-12">
+    <section className="w-full max-w-[1040px] pt-24 p-8 m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
       {cardsInformation.map((item) => (
         <article
           key={item.title}

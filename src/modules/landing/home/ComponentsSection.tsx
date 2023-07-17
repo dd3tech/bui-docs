@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 import {
   Circle,
   DatePicker,
@@ -79,12 +80,12 @@ const ComponentsSection = () => {
       </div>
 
       <section
-        className="relative w-full mb-6 section-goup-components block max-w-2xl m-auto mt-[159px] sm:mt-[90px] md:mt-[70px] xl:mt-0 xl:ml-auto"
+        className="hidden sm:block relative w-full mb-6 section-goup-components max-w-2xl m-auto mt-[159px] sm:mt-[90px] md:mt-[70px] xl:mt-0 xl:ml-auto"
         style={{ maxWidth: 677, height: 369 }}
       >
         <FilterRangeSlider
           className={composeClasses(
-            'demo-cmpnt floating block',
+            'demo-cmpnt floating hidden sm:block',
             isLightTheme ? 'light' : 'dark'
           )}
           onApply={() => {}}
@@ -143,9 +144,7 @@ const ComponentsSection = () => {
             label="Search"
             onChange={function noRefCheck() {}}
             placeholder="Search"
-            endAdornment={
-              <DynamicHeroIcon icon="SearchCircleIcon" width={20} />
-            }
+            endAdornment={<DynamicHeroIcon icon="SearchIcon" width={20} />}
             value=""
             variant="default"
             style={{
@@ -208,6 +207,18 @@ const ComponentsSection = () => {
         >
           <CustomSwitch className="demo-cmpnt switch" />
         </div>
+      </section>
+
+      <section
+        className="block sm:hidden relative w-full section-goup-components max-w-2xl mb-auto mt-12"
+        style={{ maxWidth: 677, height: 369 }}
+      >
+        <Image
+          src={`/components-mobile-${isLightTheme ? 'light' : 'dark'}.png`}
+          alt="demo-dashboard"
+          className="pl-5 object-scale-down"
+          fill
+        />
       </section>
     </section>
   )

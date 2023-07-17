@@ -27,8 +27,11 @@ interface EditorProps {
   codeString?: string
   language?: Languages
   className?: string
+  styleContainer?: React.CSSProperties
   style?: React.CSSProperties
+  backgroundColor?: string
   header?: { show: boolean; title: string }
+  height?: string
 }
 
 const cardMetricsString = `import React from 'react';
@@ -65,7 +68,10 @@ function WindowEditor({
   language = 'tsx',
   className,
   header,
-  style
+  style,
+  backgroundColor,
+  styleContainer,
+  height
 }: EditorProps) {
   const { handleCopy, isCopied } = useCopy()
   const [showCopyButton, setShowCopyButton] = useState(false)
@@ -81,10 +87,15 @@ function WindowEditor({
       onMouseOver={() => setShowCopyButton(true)}
       onMouseLeave={() => setShowCopyButton(false)}
       className={composeClasses(
-        'h-auto rounded-md overflow-hidden mt-2 mb-10 py-4',
+        'h-auto rounded-md mt-2 mb-10 py-4 overflow-hidden',
         className
       )}
-      style={{ backgroundColor: extendedPalette.windowEditorBackgroundHex }}
+      style={{
+        backgroundColor:
+          backgroundColor ?? extendedPalette.windowEditorBackgroundHex,
+        height: height,
+        ...styleContainer
+      }}
     >
       {showCopyButton && (
         <div className="relative">
@@ -120,7 +131,8 @@ function WindowEditor({
           </div>
           <div
             style={{
-              backgroundColor: extendedPalette.windowEditorBackgroundHex
+              backgroundColor:
+                backgroundColor ?? extendedPalette.windowEditorBackgroundHex
             }}
             className="flex items-center mr-auto rounded-t-xl h-full px-3 py-1 gap-1"
           >
@@ -143,8 +155,9 @@ function WindowEditor({
         customStyle={{
           margin: 0,
           ...style,
-          maxHeight: '80%',
-          backgroundColor: extendedPalette.windowEditorBackgroundHex
+          maxHeight: height ?? '80%',
+          backgroundColor:
+            backgroundColor ?? extendedPalette.windowEditorBackgroundHex
         }}
         showLineNumbers
       >

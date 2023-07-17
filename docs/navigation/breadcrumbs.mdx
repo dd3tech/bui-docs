@@ -24,7 +24,7 @@ The first alternative is recommended since they can reduce the application bundl
 
 ##### <span name="floating-nav">Usage</span>
 
-<ContainerComponentDoc className="flex items-center">
+<ContainerComponentDoc className="flex items-center relative">
     <Breadcrumbs options={[{ name: 'First Path' }, { name: 'Second Path' }, { name: 'Third Path' }]} />
 </ContainerComponentDoc>
 
@@ -42,7 +42,7 @@ The first alternative is recommended since they can reduce the application bundl
 The prop option is an array of objects that contains information about the routes in the Breadcrumbs component, including the name, icon, and redirect function
 of each route
 
-<ContainerComponentDoc className="flex items-center">
+<ContainerComponentDoc className="flex items-center relative">
     <Breadcrumbs
         options={[
             {
@@ -91,7 +91,7 @@ import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 
 With the prop <Tag text='separator' /> you can to change the default separator icon between the options
 
-<ContainerComponentDoc className="flex items-center">
+<ContainerComponentDoc className="flex items-center relative">
     <Breadcrumbs options={[{ name: 'First Path' }, { name: 'Second Path' }, { name: 'Third Path' }]} separator="|" />
 </ContainerComponentDoc>
 
@@ -114,3 +114,5 @@ import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
         { title: 'className', default: null, types: ['string'] }
     ]}
 />
+
+<BackAndForwardController />

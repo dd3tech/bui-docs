@@ -43,7 +43,7 @@ const ButtonsGetStartted = () => {
         rounded="lg"
         onClick={() => handleCopy('npm i dd360-ds@latest')}
       >
-        npm i dd360-ds@latest{' '}
+        <div className="w-full m-auto">npm i dd360-ds@latest </div>
         {isCopied ? (
           <ClipboardCheckIcon width={20} className="text-green-600" />
         ) : (

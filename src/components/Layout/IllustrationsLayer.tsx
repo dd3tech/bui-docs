@@ -6,7 +6,7 @@ const IllustrationsLayer = () => {
   return (
     <>
       <svg
-        className="absolute hidden md:block top-[-608px] right-[208px]"
+        className="absolute hidden md:block top-[-608px] right-[208px] z-[-1]"
         width="1390"
         height="1177"
         viewBox="0 0 1390 1177"

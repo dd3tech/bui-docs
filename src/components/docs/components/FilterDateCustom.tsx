@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { FilterDate, Skeleton, Text } from 'dd360-ds'
 import { FilterIcon } from '@heroicons/react/solid'
+import useRelativePosition from '@/hooks/useRelativePosition'
 
 const FilterDateCustom = ({
   onTop,
@@ -16,15 +17,7 @@ const FilterDateCustom = ({
   language: 'es' | 'en'
 }) => {
   const [domLoaded, setDomLoaded] = useState<boolean>(false)
-  const [position, setPosition] = useState<{
-    top: number
-    left: number
-    show: boolean
-  }>({
-    top: 0,
-    left: 0,
-    show: false
-  })
+  const { position, setPosition, setTargetRef } = useRelativePosition({})
 
   useEffect(() => {
     setDomLoaded(true)
@@ -35,11 +28,11 @@ const FilterDateCustom = ({
       {domLoaded ? (
         <div>
           <button
+            ref={setTargetRef}
             className="flex items-center gap-1"
-            onClick={(event) => {
+            onClick={() => {
               setPosition((position) => ({
-                top: event.pageY,
-                left: event.pageX,
+                ...position,
                 show: !position.show
               }))
             }}
@@ -61,6 +54,7 @@ const FilterDateCustom = ({
             title={title}
             textApplyBtn={textApplyBtn}
             textResetBtn={textResetBtn}
+            className="container-cmpnt-doc"
           />
         </div>
       ) : (

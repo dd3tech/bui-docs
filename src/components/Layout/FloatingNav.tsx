@@ -21,9 +21,9 @@ const FloatingNav = ({ entries }: IFloatingNav) => {
   } = useTheme()
 
   const handleClick = (position: number, id: string) => {
-    window.scrollTo({
-      top: position,
-      behavior: 'smooth'
+    document.getElementById('layout-content')?.scrollTo({
+      behavior: 'smooth',
+      top: position
     })
     router.push(`${router.asPath.split('#')[0]}#${id}`)
   }
@@ -31,7 +31,7 @@ const FloatingNav = ({ entries }: IFloatingNav) => {
   return (
     <div
       className={composeClasses(
-        'flex flex-col text-xs gap-y-2 border-l-2 border-gray-300 ml-4 pl-2 fixed',
+        'flex flex-col text-xs gap-y-2 border-l-2 border-gray-300 pl-2 fixed pr-5',
         extendedPalette.cardBorderColor
       )}
     >

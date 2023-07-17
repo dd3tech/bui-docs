@@ -7,6 +7,7 @@ import {
   WindowEditor,
   CustomTableDocs,
   ContainerComponentDoc,
+  BackAndForwardController,
   Tag
 } from '@/components'
 
@@ -149,6 +150,7 @@ export function useGetComponents() {
     FilterSelectCustom,
     FilterDateCustom,
     DropdownCustom,
+    BackAndForwardController,
     ...Components,
     SideBar
     // Add other custom components here as needed ---| Here |---
