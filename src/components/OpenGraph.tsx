@@ -10,7 +10,7 @@ interface OpenGraphProps {
   description?: string
   url?: string
   image?: string
-  icon?: string
+  iconUrl?: string
   type?: string
 }
 
@@ -19,11 +19,11 @@ function OpenGraph({
   description = 'Tailwind based React component library to build back-office platforms like DD360',
   url,
   image = '/bui-default.png',
-  icon = '/buildd3rUI-light.svg',
+  iconUrl = '/buildd3rUI-light.svg',
   type = 'website'
 }: OpenGraphProps) {
   const router = useRouter()
-  const urlContent = url ? url : `https://${HOST}${router.asPath}`
+  const urlContent = url ? url : `${HOST}${router.asPath}`
 
   return (
     <NextHead>
@@ -37,7 +37,27 @@ function OpenGraph({
       <meta property="og:image" content={image} key="image" />
       <meta property="og:ttl" content="604800" />
       <meta name="keywords" content={KEYWORDS} />
-      <link rel="icon" href={icon} />
+      <link rel="icon" href={iconUrl} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'BUI',
+            url: HOST,
+            logo: `${HOST}${iconUrl}`,
+            sameAs: [
+              'https://github.com/dd3tech/bui',
+              'https://dd360.mx',
+              'https://buildd3r.dd360.mx',
+              'https://onboarding.dd360.mx',
+              'https://github.com/dd3tech/bui-docs',
+              'https://www.npmjs.com/package/dd360-ds'
+            ]
+          })
+        }}
+      />
     </NextHead>
   )
 }
