@@ -1,7 +1,7 @@
-import { useTheme } from '@/pages/store/theme-store'
+import { useTranslation } from 'next-i18next'
 import { Button, Flex, Input } from 'dd360-ds'
 import { composeClasses } from 'dd360-ds/lib'
-import { useTranslation } from 'next-i18next'
+import { useTheme } from '@/store/theme-store'
 
 function Newsletter() {
   const { t } = useTranslation('common')

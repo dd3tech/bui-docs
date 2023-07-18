@@ -1,9 +1,9 @@
 import { ReactNode, useState } from 'react'
 import { useRouter } from 'next/router'
-import { Text } from 'dd360-ds'
+import Text from 'dd360-ds/Text'
 import DynamicHeroIcon, { IconName } from 'dd360-ds/DynamicHeroIcon'
 import { composeClasses } from 'dd360-ds/lib'
-import { useTheme } from '@/pages/store/theme-store'
+import { useTheme } from '@/store/theme-store'
 
 type ShowMoreProps = {
   title: string

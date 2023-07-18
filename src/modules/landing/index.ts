@@ -1,6 +1,0 @@
-export { default as ComponentsSection } from './home/ComponentsSection'
-export { default as BuildWithSection } from './home/BuildWithSection'
-export { default as WindowEditorSection } from './home/WindowEditorSection'
-export { default as StartNowSection } from './home/StartNowSection'
-export { default as FeaturesSection } from './home/FeaturesSection'
-export { default as TestimonialsBanner } from './home/TestimonialsBanner'

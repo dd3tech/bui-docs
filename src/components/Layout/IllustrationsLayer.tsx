@@ -1,4 +1,4 @@
-import { useTheme } from '@/pages/store/theme-store'
+import { useTheme } from '@/store/theme-store'
 
 const IllustrationsLayer = () => {
   const { isLightTheme } = useTheme()

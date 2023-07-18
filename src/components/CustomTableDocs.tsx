@@ -1,7 +1,7 @@
 import { FC } from 'react'
-import { Table } from 'dd360-ds'
-import { useTheme } from '@/pages/store/theme-store'
+import Table from 'dd360-ds/Table'
 import { composeClasses } from 'dd360-ds/lib'
+import { useTheme } from '@/store/theme-store'
 
 interface Props {
   dataTable: [{ title: string; default: string; types: []; required?: boolean }]

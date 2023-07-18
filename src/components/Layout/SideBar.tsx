@@ -3,8 +3,8 @@ import { Dispatch, SetStateAction } from 'react'
 import { Divider } from 'dd360-ds'
 import { composeClasses } from 'dd360-ds/lib'
 
-import { useTheme } from '@/pages/store/theme-store'
-import ButtonsGetStartted from '@/modules/landing/home/ButtonsGetStartted'
+import { useTheme } from '@/store/theme-store'
+import ButtonsGetStartted from '@/modules/home/ButtonsGetStartted'
 import MainLinks from './Navbar/MainLinks'
 
 interface SideBarProps {

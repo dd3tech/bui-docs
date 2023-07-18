@@ -13,7 +13,7 @@ import { Circle, Flex, Transition, Dropdown, useResize } from 'dd360-ds'
 import { composeClasses } from 'dd360-ds/lib'
 
 import { openWindow, GITHUB_URL } from '@/utils'
-import { useTheme } from '@/pages/store/theme-store'
+import { useTheme } from '@/store/theme-store'
 import { MenuIcon } from '@/components/icons/MenuIcon'
 import { THEMES_WITH_DEFAULT } from '@/const/theme'
 import { ThemeOptions } from '@/interfaces'

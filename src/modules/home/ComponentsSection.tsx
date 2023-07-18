@@ -14,7 +14,7 @@ import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 import { composeClasses } from 'dd360-ds/lib'
 
 import CustomSwitch from '@/components/CustomSwitch'
-import { useTheme } from '@/pages/store/theme-store'
+import { useTheme } from '@/store/theme-store'
 import DropdownExample from './DropdownExample'
 import ButtonsGetStartted from './ButtonsGetStartted'
 

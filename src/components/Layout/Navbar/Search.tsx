@@ -16,7 +16,7 @@ import {
   BaseItem
 } from '@algolia/autocomplete-core/dist/esm/types'
 import { composeClasses } from 'dd360-ds/lib'
-import { useTheme } from '@/pages/store/theme-store'
+import { useTheme } from '@/store/theme-store'
 
 const capitalizeFirstLetter = (strg: string) => {
   const split = strg.split('-')

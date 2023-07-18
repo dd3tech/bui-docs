@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { Card, Flex, Text } from 'dd360-ds'
 import { composeClasses } from 'dd360-ds/lib'
 import { ArrowCircleRightIcon } from '@heroicons/react/outline'
-import { useTheme } from '@/pages/store/theme-store'
+import { useTheme } from '@/store/theme-store'
 import { AppCardInfo } from '@/interfaces/showcases'
 import styles from './CardApp.module.css'
 

@@ -5,7 +5,7 @@ import { composeClasses } from 'dd360-ds/lib'
 import { ArrowRightIcon, DownloadIcon } from '@heroicons/react/solid'
 
 import { openWindow, GITHUB_URL, NPM_URL } from '@/utils'
-import { useTheme } from '@/pages/store/theme-store'
+import { useTheme } from '@/store/theme-store'
 import { GitHubIcon } from '@/components'
 import { splitArray } from '@/utils/utils'
 

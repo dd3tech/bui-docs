@@ -1,10 +1,10 @@
-import { Card, Flex, Text } from 'dd360-ds'
+import { Flex, Text } from 'dd360-ds'
 import { GetStaticProps } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { composeClasses } from 'dd360-ds/lib'
 import { AppCardInfo } from '@/interfaces/showcases'
-import CardApp from '@/modules/landing/showcases/CardApp/CardApp'
-import { useTheme } from './store/theme-store'
+import { CardApp } from '@/modules/showcases'
+import { useTheme } from '@/store/theme-store'
 
 const cardsData: AppCardInfo[] = [
   {

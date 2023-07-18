@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
 import { Divider, Flex, Text } from 'dd360-ds'
 import { composeClasses } from 'dd360-ds/lib'
-import { useTheme } from '@/pages/store/theme-store'
+import { useTheme } from '@/store/theme-store'
 import Newsletter from '../Newsletter'
 import { Buildd3rIcon } from '../icons'
 

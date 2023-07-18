@@ -2,7 +2,7 @@ import type { AppProps } from 'next/app'
 import { appWithTranslation, useTranslation } from 'next-i18next'
 import NextNProgress from 'nextjs-progressbar'
 import { Layout, OpenGraph } from '@/components'
-import UIProvider from './store/theme-store'
+import UIProvider from '@/store/theme-store'
 import 'dd360-ds/dd360.css'
 import '@/theme/global.css'
 

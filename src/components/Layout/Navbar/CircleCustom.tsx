@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import { Circle } from 'dd360-ds'
 import { composeClasses } from 'dd360-ds/lib'
-import { useTheme } from '@/pages/store/theme-store'
+import { useTheme } from '@/store/theme-store'
 
 interface CircleCustomProps {
   size?: string

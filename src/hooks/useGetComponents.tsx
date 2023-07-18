@@ -33,7 +33,7 @@ import {
 
 import { TransitionCustom } from '@/components/Layout'
 import { composeClasses } from 'dd360-ds/lib'
-import { useTheme } from '@/pages/store/theme-store'
+import { useTheme } from '@/store/theme-store'
 
 const SideBar = dynamic(() => import('dd360-ds/SideBar'), {
   ssr: false

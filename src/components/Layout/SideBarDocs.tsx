@@ -3,11 +3,11 @@ import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-import { Text } from 'dd360-ds'
+import Text from 'dd360-ds/Text'
 import { composeClasses } from 'dd360-ds/lib'
 import { IconName } from 'dd360-ds/DynamicHeroIcon'
 
-import { useTheme } from '@/pages/store/theme-store'
+import { useTheme } from '@/store/theme-store'
 import Badge, { BadgeVariant } from '../Badge'
 import ShowMore from '../ShowMore'
 

@@ -1,4 +1,4 @@
-import { useTheme } from '@/pages/store/theme-store'
+import { useTheme } from '@/store/theme-store'
 
 export function AccessibilityIcon({ color = undefined, size = 24, ...props }) {
   const {

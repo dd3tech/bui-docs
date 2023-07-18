@@ -11,7 +11,7 @@ import useCopy from '@/hooks/useCopy'
 
 import JSImg from 'public/javascript-logo.svg'
 import TSImg from 'public/typescript.svg'
-import { useTheme } from '@/pages/store/theme-store'
+import { useTheme } from '@/store/theme-store'
 
 type Languages =
   | 'tsx'

@@ -8,16 +8,16 @@ import {
   BuildWithSection,
   FeaturesSection,
   WindowEditorSection
-} from '@/modules'
-import { useTheme } from './store/theme-store'
+} from '@/modules/home'
+import { useTheme } from '@/store/theme-store'
 
 const ComponentsSection = dynamic(
-  () => import('@/modules/landing/home/ComponentsSection'),
+  () => import('@/modules/home/ComponentsSection'),
   { ssr: false }
 )
 
 const TestimonialsBanner = dynamic(
-  () => import('@/modules/landing/home/TestimonialsBanner'),
+  () => import('@/modules/home/TestimonialsBanner'),
   { ssr: false }
 )
 

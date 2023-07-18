@@ -8,7 +8,7 @@ import { Card, Divider, Flex, Text } from 'dd360-ds'
 import { composeClasses } from 'dd360-ds/lib'
 
 import { Badge, OpenGraph } from '@/components'
-import { useTheme } from '../store/theme-store'
+import { useTheme } from '@/store/theme-store'
 import { useTranslation } from 'next-i18next'
 import { components } from '@/components/Layout/SideBarDocs'
 

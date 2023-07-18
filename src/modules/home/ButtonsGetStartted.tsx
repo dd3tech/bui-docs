@@ -6,7 +6,7 @@ import {
   ClipboardCheckIcon,
   ClipboardIcon
 } from '@heroicons/react/solid'
-import { useTheme } from '@/pages/store/theme-store'
+import { useTheme } from '@/store/theme-store'
 import useCopy from '@/hooks/useCopy'
 
 const ButtonsGetStartted = () => {

@@ -1,4 +1,4 @@
-import { useTheme } from '@/pages/store/theme-store'
+import { useTheme } from '@/store/theme-store'
 import Image from 'next/image'
 import { Button, Card, Circle, Flex, Text } from 'dd360-ds'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'

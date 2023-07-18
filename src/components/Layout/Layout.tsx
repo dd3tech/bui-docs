@@ -5,7 +5,7 @@ import { XIcon, MenuIcon } from '@heroicons/react/outline'
 import { composeClasses } from 'dd360-ds/lib'
 import { Flex, Text } from 'dd360-ds'
 
-import { useTheme } from '@/pages/store/theme-store'
+import { useTheme } from '@/store/theme-store'
 import FloatingNav, { Entries } from './FloatingNav'
 import Footer from './Footer'
 import SideBarDocs from './SideBarDocs'

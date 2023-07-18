@@ -1,7 +1,7 @@
-import { useTheme } from '@/pages/store/theme-store'
-import { Rounded } from 'dd360-ds'
-import { composeClasses } from 'dd360-ds/lib'
 import { HTMLAttributes } from 'react'
+import { composeClasses } from 'dd360-ds/lib'
+import type { Rounded } from 'dd360-ds'
+import { useTheme } from '@/store/theme-store'
 
 export type BadgeVariant =
   | 'success'

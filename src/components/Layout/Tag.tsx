@@ -1,5 +1,5 @@
-import { useTheme } from '@/pages/store/theme-store'
 import { composeClasses } from 'dd360-ds/lib'
+import { useTheme } from '@/store/theme-store'
 
 interface TagProps {
   text: string
