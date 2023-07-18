@@ -1,9 +1,8 @@
 import { GetStaticProps } from 'next'
 import dynamic from 'next/dynamic'
-import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { composeClasses } from 'dd360-ds/lib'
-import { BannerDashboard, IllustrationsLayer, OpenGraph } from '@/components'
+import { BannerDashboard, IllustrationsLayer } from '@/components'
 import {
   BuildWithSection,
   FeaturesSection,
@@ -22,15 +21,10 @@ const TestimonialsBanner = dynamic(
 )
 
 export default function Home() {
-  const { t } = useTranslation('common')
   const { isLightTheme } = useTheme()
 
   return (
     <>
-      <OpenGraph
-        title={t('metadata.home')!}
-        icon={`buildd3rUI-${isLightTheme ? 'dark' : 'light'}.svg`}
-      />
       <IllustrationsLayer />
       <main
         className={composeClasses(

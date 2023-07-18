@@ -192,7 +192,10 @@ export default function Docs() {
 
   return (
     <>
-      <OpenGraph title="DD360 UI: cree rápidamente sitios web modernos sin tener que abandonar su HTML" />
+      <OpenGraph
+        title="BUI - Components"
+        description="The differents components to use"
+      />
       <main className="max-w-5xl mx-auto py-16 px-8 lg:px-16 xl:px-0">
         <Text
           variant="h1"

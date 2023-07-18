@@ -1,5 +1,3 @@
-import DropdownExample from '@/modules/home/DropdownExample'
-
 export * from './Layout'
 export * from './icons'
 export { default as OpenGraph } from './OpenGraph'

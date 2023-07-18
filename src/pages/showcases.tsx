@@ -5,6 +5,7 @@ import { composeClasses } from 'dd360-ds/lib'
 import { AppCardInfo } from '@/interfaces/showcases'
 import { CardApp } from '@/modules/showcases'
 import { useTheme } from '@/store/theme-store'
+import { OpenGraph } from '@/components'
 
 const cardsData: AppCardInfo[] = [
   {
@@ -40,6 +41,10 @@ export default function Showcases() {
 
   return (
     <>
+      <OpenGraph
+        title="BUI - Showcases"
+        description="A curated list of some of the best apps with our Design System"
+      />
       <main
         className="mx-auto py-16 px-8 lg:px-16 xl:px-0"
         style={{ maxWidth: 1242 }}
@@ -76,7 +81,6 @@ export default function Showcases() {
             us what you&apos;re building! We&apos;d love to see it.
           </Text>
         </section>
-
         <Flex gap="6" className="flex-col lg:flex-row">
           {cardsData.map((cardData) => (
             <CardApp key={cardData.imgDark} data={cardData} />
