@@ -21,7 +21,7 @@ function OpenGraph({
   description = 'Tailwind based React component library to build back-office platforms like DD360',
   url,
   image = '/bui-default.png',
-  iconUrl = '/buildd3rUI-light.svg',
+  iconUrl = '/favicon.ico',
   type = 'website',
   children
 }: OpenGraphProps) {
