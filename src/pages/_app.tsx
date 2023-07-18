@@ -10,7 +10,28 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <NextNProgress color="#1d4ed8" />
-      <OpenGraph />
+      <OpenGraph>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'BUI',
+              url: 'https://bui.dd360.mx',
+              logo: 'https://bui.dd360.mx/buildd3rUI-light.svg',
+              sameAs: [
+                'https://github.com/dd3tech/bui',
+                'https://dd360.mx',
+                'https://buildd3r.dd360.mx',
+                'https://onboarding.dd360.mx',
+                'https://github.com/dd3tech/bui-docs',
+                'https://www.npmjs.com/package/dd360-ds'
+              ]
+            })
+          }}
+        />
+      </OpenGraph>
       <UIProvider>
         <Layout>
           <Component {...pageProps} />

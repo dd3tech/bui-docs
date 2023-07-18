@@ -1,5 +1,6 @@
 import NextHead from 'next/head'
 import { useRouter } from 'next/router'
+import { ReactNode } from 'react'
 
 const HOST = 'https://bui.dd360.mx'
 const KEYWORDS =
@@ -12,6 +13,7 @@ interface OpenGraphProps {
   image?: string
   iconUrl?: string
   type?: string
+  children?: ReactNode
 }
 
 function OpenGraph({
@@ -20,7 +22,8 @@ function OpenGraph({
   url,
   image = '/bui-default.png',
   iconUrl = '/buildd3rUI-light.svg',
-  type = 'website'
+  type = 'website',
+  children
 }: OpenGraphProps) {
   const router = useRouter()
   const urlContent = url ? url : `${HOST}${router.asPath}`
@@ -29,6 +32,8 @@ function OpenGraph({
     <NextHead>
       <title>{title}</title>
       <meta property="og:title" content={title} key="title" />
+      <meta name="robots" content="index, follow" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="description" content={description} />
       <meta name="author" content="BUI-DD360" />
       <meta property="og:description" content={description} key="description" />
@@ -37,27 +42,12 @@ function OpenGraph({
       <meta property="og:image" content={image} key="image" />
       <meta property="og:ttl" content="604800" />
       <meta name="keywords" content={KEYWORDS} />
+      <meta name="twitter:image" content={image} />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:site" content="@BUI" />
+
       <link rel="icon" href={iconUrl} />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Organization',
-            name: 'BUI',
-            url: HOST,
-            logo: `${HOST}${iconUrl}`,
-            sameAs: [
-              'https://github.com/dd3tech/bui',
-              'https://dd360.mx',
-              'https://buildd3r.dd360.mx',
-              'https://onboarding.dd360.mx',
-              'https://github.com/dd3tech/bui-docs',
-              'https://www.npmjs.com/package/dd360-ds'
-            ]
-          })
-        }}
-      />
+      {children}
     </NextHead>
   )
 }
