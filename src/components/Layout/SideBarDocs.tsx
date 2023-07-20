@@ -448,12 +448,6 @@ export default function SideBarDocs({
                     )}
                   </>
                 )
-                const handleClick = () => {
-                  const topElement = document.getElementById('top')
-                  if (topElement) {
-                    topElement.scrollIntoView({ behavior: 'smooth' })
-                  }
-                }
 
                 const keyPath = `/docs/${key}/${item.pathname}`
                 const classNameWrapper = composeClasses(
@@ -474,7 +468,6 @@ export default function SideBarDocs({
                     href={keyPath}
                     locale={router?.locale}
                     className={classNameWrapper}
-                    onClick={handleClick}
                   >
                     {childrenTab}
                   </Link>

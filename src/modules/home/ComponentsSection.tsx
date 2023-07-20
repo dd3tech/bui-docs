@@ -100,7 +100,6 @@ const ComponentsSection = () => {
           initMaxValue={40}
           width={268}
         />
-
         <div
           style={{
             animationDelay: '1s'
@@ -113,7 +112,6 @@ const ComponentsSection = () => {
             totalPages={3}
           />
         </div>
-
         <div
           style={{
             animationDelay: '1s',
@@ -131,7 +129,6 @@ const ComponentsSection = () => {
             className="demo-cmpnt date-picker"
           />
         </div>
-
         <div
           style={{
             animationDelay: '1s',
@@ -154,7 +151,6 @@ const ComponentsSection = () => {
             }}
           />
         </div>
-
         <DropdownExample
           style={{
             animationDelay: '0.3s',
@@ -162,7 +158,6 @@ const ComponentsSection = () => {
           }}
           className="demo-cmpnt absolute shadow-2xl floating top-[-122px] left-[22px] sm:top-[-49px] ms:left-[96px] md:top-[109px] md:left-[42px] xl:top-[-72px] xl:left-[82px]"
         />
-
         <div
           style={{ animationDelay: '0.8s' }}
           className="absolute z-[2] sm:z-0 floating w-[128px] xl:w-[136px] top-[232px] right-[48px] sm:top-[290px] sm:right-[92px] md:top-[185px] md:left-[512px] xl:top-[291px] xl:left-[406px] "
@@ -180,7 +175,6 @@ const ComponentsSection = () => {
             <Text size="xs">of efficiency</Text>
           </ProgressCircle>
         </div>
-
         <div className="absolute floating top-[-98px] left-[218px] sm:top-[240px] sm:left-[115px] md:top-[117px] md:left-[503px]">
           <Circle
             width="36px"
@@ -198,7 +192,6 @@ const ComponentsSection = () => {
             />
           </Circle>
         </div>
-
         <div
           style={{
             animationDelay: '2s'
