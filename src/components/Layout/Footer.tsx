@@ -93,8 +93,9 @@ function Footer() {
           <Flex
             className={composeClasses('gap-x-4', extendedPalette.linkSecondary)}
           >
-            <Text>Notice of Privacy</Text>
-            <Text>Terms and Conditions</Text>
+            <Link target="_blank" href="https://dd360.mx/bureau/privacyPolicy">
+              Notice of Privacy
+            </Link>
           </Flex>
         </Flex>
       </div>

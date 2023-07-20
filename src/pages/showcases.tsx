@@ -22,7 +22,7 @@ const cardsData: AppCardInfo[] = [
     title: 'Landing SaaS DD360',
     description:
       "This is a curated list of some of the best apps we've seen that show off what's possible with BUI. Are you also using it? Show us what you're building! We'd love to see it.",
-    goTo: 'https://dd360-universe-landing.vercel.app/'
+    goTo: 'https://buildd3r.dd360.mx/'
   },
   {
     imgLight: '/page-dd360-saas-light.jpg',
