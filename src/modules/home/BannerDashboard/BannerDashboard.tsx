@@ -50,7 +50,7 @@ function BannerDashboard() {
                 extendedPalette.titleColor
               )}
             >
-              Star now
+              Start now
             </Text>
             <Text
               variant="h2"

@@ -4,7 +4,7 @@ title: React BarList component
 components: BarList
 ---
 
-<br />
+<br id='top' />
 <br />
 
 <Label>Components</Label>
@@ -63,7 +63,7 @@ codeString={`import BarList from 'dd360-ds/BarList'
 
 The BarList component provides several customization options through props.
 
-##### `titleMetrics`
+##### `TitleMetrics`
 Allows you to specify a text or a string to be displayed as a title for the metrics displayed in the bar list.
 
 <ContainerComponentDoc>
@@ -95,7 +95,7 @@ codeString={`import BarList from 'dd360-ds/BarList'
 `}
 />
 
-##### `titleValues`
+##### `TitleValues`
 Allows you to specify a text or a string to be displayed as a title for the values shown in the list of members. 
 
 <ContainerComponentDoc>
@@ -130,7 +130,7 @@ codeString={`import BarList from 'dd360-ds/BarList'
 />
 
 
-##### `valuePrefix`
+##### `ValuePrefix`
 Allows to specify a text or value to be displayed as a prefix next to the values in the bar list. 
 This prefix will be placed before each value.
 
@@ -163,7 +163,7 @@ codeString={`import BarList from 'dd360-ds/BarList'
 />
 
 
-##### `valueSuffix`
+##### `ValueSuffix`
 Allows to specify a text or value to be displayed as a suffix next to the values in the list of members. 
 This suffix will be placed after each value.
 
@@ -195,7 +195,7 @@ codeString={`import BarList from 'dd360-ds/BarList'
 `}
 />
 
-##### `classNameBar`
+##### `ClassNameBar`
 Allows passing a text string representing a custom CSS class for the background bar of each item in the list.
 
 <ContainerComponentDoc>
@@ -226,7 +226,7 @@ codeString={`import BarList from 'dd360-ds/BarList'
 `}
 />
 
-##### `roundedBar`
+##### `RoundedBar`
 Allows you to specify the border radius of the bar elements in the list.
 
 <ContainerComponentDoc>
@@ -257,7 +257,7 @@ codeString={`import BarList from 'dd360-ds/BarList'
 `}
 />
 
-##### `marginYItem`
+##### `MarginYItem`
 Allows to set the vertical spacing between each item in the bar list.
 
 <ContainerComponentDoc>
@@ -289,7 +289,7 @@ codeString={`import BarList from 'dd360-ds/BarList'
 />
 
 
-##### `heightBar`
+##### `HeightBar`
 Allows you to set the height of the bottom bar element of each item in the list.
 
 <ContainerComponentDoc>
@@ -322,7 +322,7 @@ codeString={`import BarList from 'dd360-ds/BarList'
 `}
 />
 
-##### `fontSizeBar`
+##### `FontSizeBar`
 Allows you to pass a value from the Size enumeration to set the font size of the text in the bar labels. The default value is base.
 
 <ContainerComponentDoc>
@@ -354,7 +354,7 @@ codeString={`import BarList from 'dd360-ds/BarList'
 `}
 />
 
-##### `defaultBackgroundBarColor`
+##### `DefaultBackgroundBarColor`
 
 Defines the default background color of the bar element if the backgroundBarColor property is not provided for a specific element in the listData property.
 
@@ -387,7 +387,7 @@ Defines the default background color of the bar element if the backgroundBarColo
 `}
 />
 
-##### `defaultTextBarColor`
+##### `DefaultTextBarColor`
 
 Defines the default text color in the bar labels if the textBarColor property is not provided for a specific item in the listData property.
 
@@ -455,7 +455,7 @@ Allows you to specify a text or string to be displayed as a prefix before the nu
 `}
 />
 
-##### `suffix`
+##### `Suffix`
 
 Allows you to specify a text or a string to be displayed as a suffix after the numeric value in the bar label for a specific item in the listData property.
 
@@ -486,7 +486,7 @@ Allows you to specify a text or a string to be displayed as a suffix after the n
 `}
 />
 
-##### `backgroundBarColor`
+##### `BackgroundBarColor`
 
 Defines the background color of the bar element for a specific element in the listData property. 
 Providing this property will override the default background color for the corresponding element.
@@ -518,7 +518,7 @@ Providing this property will override the default background color for the corre
 `}
 />
 
-##### `textBarColor`
+##### `TextBarColor`
 
 Defines the text color of the bar labels for a specific element in the listData property. 
 Providing this property will override the default text color for the corresponding element.
@@ -550,7 +550,7 @@ Providing this property will override the default text color for the correspondi
 `}
 />
 
-##### `href`
+##### `Hsref`
 
 Allows you to specify the destination URL for the generated links in the list items.
 The links will open in a new browser tab because they contain the target="_blank" attribute.
@@ -582,7 +582,7 @@ The links will open in a new browser tab because they contain the target="_blank
 `}
 />
 
-##### `startIcon`
+##### `StartIcon`
 
 Allows you to pass a React element as an icon to be displayed at the beginning of the bar label for a specific element in the listData property.
 
@@ -637,7 +637,7 @@ const IconTwitter = () => {
 `}
 />
 
-##### `endIcon`
+##### `EndIcon`
 
 Allows you to pass a React element as an icon to be displayed at the end of the bar label for a specific element in the listData property.
 

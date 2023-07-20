@@ -13,7 +13,7 @@ const StartNowSection = () => {
       <div className="w-full max-w-8xl px-4 xl:px-0 py-20 mx-auto flex flex-col lg:flex-row justify-center 2xl:justify-between items-center gap-14">
         <article className="w-full flex flex-col max-w-[376px]">
           <Text size="xl" className="font-semibold text-gray-500">
-            Star now
+            Start now
           </Text>
           <Text size="4xl" className="font-bold text-gray-900">
             Ship your next <br /> project faster

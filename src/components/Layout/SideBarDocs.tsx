@@ -398,6 +398,8 @@ export default function SideBarDocs({
     themeObject: { extendedPalette }
   } = useTheme()
 
+  const isLight = useTheme().isLightTheme
+
   return (
     <aside
       className={composeClasses(
@@ -431,6 +433,7 @@ export default function SideBarDocs({
                       size="sm"
                       className={composeClasses(
                         'cursor-pointer',
+                        isLight ? 'hover:font-bold' : 'hover:text-white',
                         isTabDisabled && 'cursor-not-allowed'
                       )}
                       onClick={() => setIsActiveButtonMobile?.(false)}

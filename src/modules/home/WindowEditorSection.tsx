@@ -18,7 +18,7 @@ const WindowEditorSection = () => {
             extendedPalette.titleColor
           )}
         >
-          Star now
+          Start now
         </Text>
         <Text className="font-semibold text-2xl sm:text-4xl">
           Some examples of our components
