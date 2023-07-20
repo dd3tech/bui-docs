@@ -398,6 +398,8 @@ export default function SideBarDocs({
     themeObject: { extendedPalette }
   } = useTheme()
 
+  const isLight = useTheme().isLightTheme
+
   return (
     <aside
       className={composeClasses(
@@ -431,6 +433,7 @@ export default function SideBarDocs({
                       size="sm"
                       className={composeClasses(
                         'cursor-pointer',
+                        isLight ? 'hover:font-bold' : 'hover:text-white',
                         isTabDisabled && 'cursor-not-allowed'
                       )}
                       onClick={() => setIsActiveButtonMobile?.(false)}
@@ -445,6 +448,12 @@ export default function SideBarDocs({
                     )}
                   </>
                 )
+                const handleClick = () => {
+                  const topElement = document.getElementById('top')
+                  if (topElement) {
+                    topElement.scrollIntoView({ behavior: 'smooth' })
+                  }
+                }
 
                 const keyPath = `/docs/${key}/${item.pathname}`
                 const classNameWrapper = composeClasses(
@@ -465,6 +474,7 @@ export default function SideBarDocs({
                     href={keyPath}
                     locale={router?.locale}
                     className={classNameWrapper}
+                    onClick={handleClick}
                   >
                     {childrenTab}
                   </Link>
