@@ -4,7 +4,7 @@ import { ReactNode } from 'react'
 
 const HOST = 'https://bui.dd360.mx'
 const KEYWORDS =
-  'bui, buildd3r, buildd3r UI, dd360, react library, frontend, ui-kit, ui, react, tailwind, react components, npm package'
+  'bui, buildd3r, buildd3r UI, dd360, react library, frontend, ui-kit, ui, react, tailwind, react components, npm, npm package'
 
 interface OpenGraphProps {
   title?: string

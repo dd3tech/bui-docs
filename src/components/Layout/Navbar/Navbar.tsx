@@ -24,10 +24,14 @@ import Search from './Search'
 import MainLinks from './MainLinks'
 
 const getThemeIcon = (theme: string, width = 12, color = 'currentColor') => {
-  if (theme === 'light') return <SunIcon width={width} color={color} />
-  if (theme === 'dark') return <MoonIcon width={width} color={color} />
-  if (theme === 'default')
-    return <DesktopComputerIcon width={width} color={color} />
+  switch (theme) {
+    case 'light':
+      return <SunIcon width={width} color={color} />
+    case 'dark':
+      return <MoonIcon width={width} color={color} />
+    case 'default':
+      return <DesktopComputerIcon width={width} color={color} />
+  }
 }
 
 interface NavbarProps {
