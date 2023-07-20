@@ -53,7 +53,12 @@ const FloatingNav = ({ entries }: IFloatingNav) => {
             onClick={() => handleClick(entry.position, entry.id)}
           >
             {entry.isActive && (
-              <span className="-left-0.5 w-0.5 h-5 bg-white absolute"></span>
+              <span
+                className={composeClasses(
+                  isLight ? 'bg-black' : 'bg-white',
+                  '-left-0.5 w-0.5 h-5 absolute'
+                )}
+              ></span>
             )}
             {entry.label}
           </Text>
