@@ -1,10 +1,10 @@
-import { useTheme } from '@/store/theme-store'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Card, Circle, Flex, Text } from 'dd360-ds'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 import { composeClasses } from 'dd360-ds/lib'
-import { ChevronRightCircleIcon } from '@/components/Icon/ChevronRightCircleIcon'
+import { SIMULATOR_URL } from '@/utils/constants'
+import { useTheme } from '@/store/theme-store'
 import { LocationBlur } from './LocationBlur'
 
 function BannerDashboard() {
@@ -84,7 +84,7 @@ function BannerDashboard() {
                   'flex gap-2.5 px-4 py-2 items-center justify-center w-full sm:w-auto rounded-md',
                   extendedPalette.componentBgSecondary
                 )}
-                href="https://onboarding.dd360.mx/"
+                href={SIMULATOR_URL}
               >
                 <Text className="whitespace-nowrap">Live preview</Text>
                 <svg

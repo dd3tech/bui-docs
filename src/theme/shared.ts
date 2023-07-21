@@ -1,5 +1,5 @@
 import { Theme } from '@/interfaces'
-import { THEMES, THEMES_WITH_DEFAULT } from '@/const/theme'
+import { THEMES, THEMES_WITH_DEFAULT } from '@/utils/constants'
 
 export const detectSystemTheme = (): Theme => {
   if (

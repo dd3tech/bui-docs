@@ -5,7 +5,8 @@ import { composeClasses } from 'dd360-ds/lib'
 import { AppCardInfo } from '@/interfaces/showcases'
 import { CardApp } from '@/modules/showcases'
 import { useTheme } from '@/store/theme-store'
-import { OpenGraph } from '@/components'
+import OpenGraph from '@/components/OpenGraph'
+import { APP_DD360, BUILDD3R_LANDING, SIMULATOR_URL } from '@/utils/constants'
 
 const cardsData: AppCardInfo[] = [
   {
@@ -14,7 +15,7 @@ const cardsData: AppCardInfo[] = [
     title: 'Simulador DD360',
     description:
       "This is a curated list of some of the best apps we've seen that show off what's possible with BUI. Are you also using it? Show us what you're building! We'd love to see it.",
-    goTo: 'https://onboarding.dd360.mx/'
+    goTo: SIMULATOR_URL
   },
   {
     imgLight: '/page-landing-saas.jpg',
@@ -22,7 +23,7 @@ const cardsData: AppCardInfo[] = [
     title: 'Landing SaaS DD360',
     description:
       "This is a curated list of some of the best apps we've seen that show off what's possible with BUI. Are you also using it? Show us what you're building! We'd love to see it.",
-    goTo: 'https://buildd3r.dd360.mx/'
+    goTo: BUILDD3R_LANDING
   },
   {
     imgLight: '/page-dd360-saas-light.jpg',
@@ -30,7 +31,7 @@ const cardsData: AppCardInfo[] = [
     title: 'DD360 SaaS',
     description:
       "This is a curated list of some of the best apps we've seen that show off what's possible with BUI. Are you also using it? Show us what you're building! We'd love to see it.",
-    goTo: 'https://app.dd360.mx/'
+    goTo: APP_DD360
   }
 ]
 

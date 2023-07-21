@@ -12,7 +12,7 @@ import { ThemeProps, ThemeProvider } from 'dd360-ds/theme'
 import { darkTheme, lightTheme } from '@/theme'
 import { Theme, ThemeOptions } from '@/interfaces'
 import { detectSystemTheme, loadTheme } from '@/theme/shared'
-import { DEFAULT_THEME, THEMES_WITH_DEFAULT } from '@/const/theme'
+import { DEFAULT_THEME, THEMES_WITH_DEFAULT } from '@/utils/constants'
 
 export interface IThemeContext {
   theme: Theme
