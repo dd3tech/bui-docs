@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { composeClasses } from 'dd360-ds/lib'
 import Text from 'dd360-ds/Text'
 import { useTheme } from '@/store/theme-store'
-import { ChevronRightCircleIcon } from './icons'
+import { ChevronRightCircleIcon } from './Icon'
 import { components } from './Layout/SideBarDocs'
 
 const BackAndForwardController: FC = () => {

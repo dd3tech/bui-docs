@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { composeClasses } from 'dd360-ds/lib'
+import { Flex } from 'dd360-ds'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import {
@@ -103,9 +104,11 @@ function WindowEditor({
             className="absolute rounded-lg right-4 top-0 bottom-0 border w-[35px] h-[35px] cursor-pointer"
             onClick={() => handleCopy(codeString)}
           >
-            <div
+            <Flex
+              alignItems="center"
+              justifyContent="center"
               className={composeClasses(
-                'flex items-center text-gray-400 justify-center transition-all duration-100',
+                'text-gray-400 transition-all duration-100',
                 isCopied && 'rotate-12'
               )}
             >
@@ -113,7 +116,7 @@ function WindowEditor({
                 icon={isCopied ? 'ClipboardCheckIcon' : 'ClipboardIcon'}
                 width={25}
               />
-            </div>
+            </Flex>
           </div>
         </div>
       )}
@@ -124,17 +127,19 @@ function WindowEditor({
             backgroundColor: extendedPalette.windowEditorPanelBackground
           }}
         >
-          <div className="flex items-center gap-2">
+          <Flex alignItems="center" gap="2">
             <button className="h-3 w-3 bg-red-400 rounded-full"></button>
             <button className="h-3 w-3 bg-yellow-400 rounded-full"></button>
             <button className="h-3 w-3 bg-green-400 rounded-full"></button>
-          </div>
-          <div
+          </Flex>
+          <Flex
             style={{
               backgroundColor:
                 backgroundColor ?? extendedPalette.windowEditorBackgroundHex
             }}
-            className="flex items-center mr-auto rounded-t-xl h-full px-3 py-1 gap-1"
+            alignItems="center"
+            gap="1"
+            className="mr-auto rounded-t-xl h-full px-3 py-1"
           >
             <Image {...getBrandingLanguage(language)} alt="lang" />
             <h3
@@ -145,7 +150,7 @@ function WindowEditor({
             >
               {header?.title}
             </h3>
-          </div>
+          </Flex>
         </nav>
       )}
       <SyntaxHighlighter
@@ -160,6 +165,7 @@ function WindowEditor({
             backgroundColor ?? extendedPalette.windowEditorBackgroundHex
         }}
         showLineNumbers
+        wrapLongLines
       >
         {codeString}
       </SyntaxHighlighter>

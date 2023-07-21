@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Button, Card, Circle, Flex, Text } from 'dd360-ds'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 import { composeClasses } from 'dd360-ds/lib'
-import { ChevronRightCircleIcon } from '@/components/icons/ChevronRightCircleIcon'
+import { ChevronRightCircleIcon } from '@/components/Icon/ChevronRightCircleIcon'
 import { LocationBlur } from './LocationBlur'
 
 function BannerDashboard() {

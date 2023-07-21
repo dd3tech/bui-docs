@@ -1,5 +1,5 @@
 export * from './Layout'
-export * from './icons'
+export * from './Icon'
 export { default as OpenGraph } from './OpenGraph'
 export { default as BannerDashboard } from '../modules/home/BannerDashboard/BannerDashboard'
 export { default as WindowEditor } from './WindowEditor'

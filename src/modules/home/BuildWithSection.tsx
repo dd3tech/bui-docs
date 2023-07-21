@@ -1,6 +1,6 @@
 import { Text } from 'dd360-ds'
-import { ReactLogoName } from '@/components/icons/ReactLogoName'
-import { TailwindLogoName } from '@/components/icons/TailwindLogoName'
+import { ReactLogoName } from '@/components/Icon/ReactLogoName'
+import { TailwindLogoName } from '@/components/Icon/TailwindLogoName'
 import { useTheme } from '@/store/theme-store'
 
 const BuildWithSection = () => {

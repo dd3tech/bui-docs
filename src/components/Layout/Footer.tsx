@@ -4,7 +4,7 @@ import { Divider, Flex, Text } from 'dd360-ds'
 import { composeClasses } from 'dd360-ds/lib'
 import { useTheme } from '@/store/theme-store'
 import Newsletter from '../Newsletter'
-import { Buildd3rIcon } from '../icons'
+import { Buildd3rIcon } from '../Icon'
 
 const footerMenu = [
   {
