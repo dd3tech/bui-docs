@@ -7,6 +7,6 @@ export { default as TestimonialsBanner } from '../modules/home/TestimonialsBanne
 export { default as ShowMore } from './ShowMore'
 export { default as Badge } from './Badge'
 export { default as CustomTableDocs } from './CustomTableDocs'
-export { default as ContainerComponentDoc } from './ContainerComponentDoc'
+export { default as Playground } from './Playground'
 export { default as CustomSwitch } from './CustomSwitch'
 export { default as BackAndForwardController } from './BackAndForwardController'

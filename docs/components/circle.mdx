@@ -28,9 +28,9 @@ By adjusting the props of the Circle component, you have full control over its b
 border style, and more. Whether you need to display icons, profile pictures, or decorative elements, the Circle 
 component provides a simple and intuitive solution. 
 
-<ContainerComponentDoc>
+<Playground>
     <Circle>Hey!</Circle>
-</ContainerComponentDoc>
+</Playground>
 
 The code snippet below shows how to use the Circle component:
 
@@ -66,7 +66,7 @@ be applied to the circle or not. By default, the useBackground prop is set to tr
 by the backgroundColor prop will be applied to the circle. Also it offers the disabled prop, which allows you to indicate whether 
 the circular element should appear in a disabled state or not.
 
-<ContainerComponentDoc>
+<Playground>
     <Flex alignItems='center' gap='8'>
       <Circle backgroundColor='#f0ed7e'>Hey!</Circle>
       <Circle backgroundColor='#7df0e4'>Hey!</Circle>
@@ -74,7 +74,7 @@ the circular element should appear in a disabled state or not.
       <Circle backgroundColor='#ff7d40'>Hey!</Circle>
       <Circle backgroundColor='#ff7d40' useBackground={false}>Hey!</Circle>
     </Flex>
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import { Circle, Flex } from 'dd360-ds'
@@ -95,13 +95,13 @@ The Circle component offers flexibility in defining its size, allowing you to cr
 on your design needs. By adjusting the width and height props, you can easily customize the size of the Circle component to 
 achieve the desired visual effect.
 
-<ContainerComponentDoc>
+<Playground>
     <Flex alignItems='center' gap='8'>
       <Circle backgroundColor='#7df0e4' width='100px' height='100px'>100px</Circle>
       <Circle backgroundColor='#61d934' width='80px' height='80px'>80px</Circle>
       <Circle backgroundColor='#f0ed7e' width='60px' height='60px'>60px</Circle>
     </Flex>
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import { Circle, Flex } from 'dd360-ds'
@@ -120,14 +120,14 @@ To specify the border style, provide a valid CSS border value to the border prop
 such as border width, border color, and border style. With this flexibility, you can create circles with solid 
 borders, dashed borders, or even complex border patterns, adding a unique touch to your circular elements.
 
-<ContainerComponentDoc>
+<Playground>
     <Flex alignItems='center' gap='8'>
       <Circle backgroundColor='#7df0e4' border='3px solid #aa1213'>Hey!</Circle>
       <Circle backgroundColor='#61d934' border='2px dotted #ff7d40'>Hey!</Circle>
       <Circle backgroundColor='#f0ed7e' border='1px dashed #b2b1e8'>Hey!</Circle>
       <Circle backgroundColor='#ff7d40' border='1px solid #000'>Hey!</Circle>
     </Flex>
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import { Circle, Flex } from 'dd360-ds'
@@ -147,11 +147,11 @@ The Circle component offers the flexibility to add custom content as child eleme
 feature allows you to personalize the circular element by including text, images, or other React components 
 within it.
 
-<ContainerComponentDoc>
+<Playground>
     <Circle backgroundColor='#ede4e3'>
       <DynamicHeroIcon icon='PaperAirplaneIcon' className='w-5 h-5 text-blue-500' />
     </Circle>
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import { Circle } from 'dd360-ds'

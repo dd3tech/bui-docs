@@ -32,11 +32,11 @@ Animation types:
 
 Within your component's render method, place the Transition component, wrapping the elements you want to animate.
 
-<ContainerComponentDoc>
+<Playground>
 <Transition animationStart="blink" duration={1000}>
   <div className="w-24 h-24 flex items-center justify-center text-white bg-red-500 rounded-lg">Blink</div>
 </Transition>
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor codeString="import { Transition } from 'dd360-ds'
 
@@ -69,9 +69,9 @@ The Transition component accepts the following props:
 
 To control the visibility of the Transition component, you can utilize the show property, which accepts a boolean value. When set to true, the component becomes visible. This can be easily managed by employing the useState hook.
 
-<ContainerComponentDoc className='h-32 flex items-center gap-8'>
+<Playground className='h-32 flex items-center gap-8'>
     <TransitionCustom exampleType='visibility'/>
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor codeString={`import { useState } from "react"
 import { Button, Transition } from "dd360-ds"
@@ -107,9 +107,9 @@ animation will start after a 200 millisecond delay.
 By adjusting the values of duration and delay and combining them with the show property controlled 
 by useState, you can create more dynamic and customized transition effects for your Transition component.
 
-<ContainerComponentDoc className='h-32 flex items-center gap-8'>
+<Playground className='h-32 flex items-center gap-8'>
     <TransitionCustom exampleType='duration-delay'/>
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor codeString={`import { useState } from "react"
 import { Button, Transition } from "dd360-ds"
@@ -136,9 +136,9 @@ By utilizing the animationStart and animationEnd properties with appropriate ani
 you can apply custom animations to enhance the visual effects during the transition process of 
 the Transition component.
 
-<ContainerComponentDoc className='h-32 flex items-center gap-8'>
+<Playground className='h-32 flex items-center gap-8'>
     <TransitionCustom exampleType='control-animation'/>
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor codeString={`import { useState } from "react"
 import { Button, Transition } from "dd360-ds"
@@ -165,9 +165,9 @@ const ControlAnimationExample = () => {
 <br />
 ##### <span name="floating-nav">All animations</span>
 
-<ContainerComponentDoc className='w-full h-min flex items-center gap-8'>
+<Playground className='w-full h-min flex items-center gap-8'>
     <TransitionCustom exampleType='all-animations'/>
-</ContainerComponentDoc>
+</Playground>
 
 <br />
 <br />

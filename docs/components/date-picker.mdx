@@ -26,9 +26,9 @@ The first alternative is recommended since they can reduce the application bundl
 
 Use the DatePicker component as shown below:
 
-<ContainerComponentDoc>
+<Playground>
   <DatePicker className="date-picker" language="en" />
-</ContainerComponentDoc>
+</Playground>
 The code snippet below shows how to use the DatePicker component:
 
 <WindowEditor
@@ -41,13 +41,13 @@ The code snippet below shows how to use the DatePicker component:
 
 With the prop <Tag text='language' />, its variants <Tag text='es' /> and <Tag text='en' /> you can control the language
 
-<ContainerComponentDoc>
+<Playground>
 
 <Flex gap='12'>
   <DatePicker className="date-picker" language="en" />
   <DatePicker className="date-picker" language="es" />
 </Flex>
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
   codeString={`import { Flex, DatePicker } from 'dd360-ds''
@@ -63,12 +63,12 @@ With the prop <Tag text='language' />, its variants <Tag text='es' /> and <Tag t
 
 With the prop <Tag text='format' />, and its <Tag text='short' /> and <Tag text='long' /> variants, you can customize the display format of the date, either in its full or abbreviated form.
 
-<ContainerComponentDoc>
+<Playground>
 <Flex justifyContent='around'>
   <DatePicker className="date-picker" format="short" language='en' />
   <DatePicker className="date-picker" format="long"  language='en' />
 </Flex>
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
   codeString={`import  DatePicker from 'dd360-ds/DatePicker''
@@ -84,7 +84,7 @@ With the prop <Tag text='format' />, and its <Tag text='short' /> and <Tag text=
 
 With the prop <Tag text='onlyOf' />, its variants <Tag text='year' />, <Tag text='month' />, <Tag text='day' /> and <Tag text='month' />/span> you can control the format
 
-<ContainerComponentDoc>
+<Playground>
 
 <Flex gap="12" justifyContent="around">
   <DatePicker className="date-picker" language="en" onlyOf="year" />
@@ -93,7 +93,7 @@ With the prop <Tag text='onlyOf' />, its variants <Tag text='year' />, <Tag text
   <DatePicker className="date-picker" language="en" onlyOf="month-year" />
 </Flex>
 
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
   codeString={`import { Flex, DatePicker } from 'dd360-ds''
@@ -110,11 +110,11 @@ With the prop <Tag text='onlyOf' />, its variants <Tag text='year' />, <Tag text
 
 With the prop <Tag text='minDate' />, you can define the selectable minimum date
 
-<ContainerComponentDoc>
+<Playground>
 
 <DatePicker className="date-picker" language="en" value={new Date('2023-05-16T03:00:00.000Z')} minDate={new Date('2023-05-10T03:00:00.000Z')} />
 
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
   codeString={`import  DatePicker  from 'dd360-ds/DatePicker''
@@ -127,11 +127,11 @@ With the prop <Tag text='minDate' />, you can define the selectable minimum date
 
 With the prop <Tag text='maxDate' />, you can define the maximum selectable date
 
-<ContainerComponentDoc>
+<Playground>
 
 <DatePicker className="date-picker" language="en" value={new Date('2023-05-16T03:00:00.000Z')} maxDate={new Date('2023-05-22T03:00:00.000Z')} />
 
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
   codeString={`import  DatePicker  from 'dd360-ds/DatePicker''

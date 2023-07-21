@@ -28,9 +28,9 @@ The first alternative is recommended since they can reduce the application bundl
 
 Use the Callout component as shown below:
 
-<ContainerComponentDoc className="gap-y-2">
+<Playground className="gap-y-2">
     <CustomCallout title="All systems are operational" description="All systems are operational" icon="check" />
-</ContainerComponentDoc>
+</Playground>
 
 The code snippet below shows how to use the Callout component:
 
@@ -47,14 +47,14 @@ import { CheckCircleIcon } from '@heroicons/react/solid'
 
 With the prop <Tag text='variant' /> you can customize the color of the callout
 
-<ContainerComponentDoc className="gap-y-2">
+<Playground className="gap-y-2">
     <Flex gap="4">
         <CustomCallout title="Success!" description="The requested action has been completed successfully." icon="check" />
         <CustomCallout title="System Status" description="Information about the system status" icon="info" variant="info" />
         <CustomCallout title="Attention!" description="User attention is required in relation to an action or problem." icon="warn" variant="warning" />
         <CustomCallout title="Error!" description="An error has occurred in the requested action that needs to be resolved." icon="x" variant="error" />
     </Flex>
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import { Callout, Flex } from 'dd360-ds'
@@ -78,12 +78,12 @@ export default function App() {
 With the prop <Tag text='icon' /> you can render a custom icon in the callout before the title, is a optional
 prop
 
-<ContainerComponentDoc className="gap-y-2">
+<Playground className="gap-y-2">
     <Flex gap="4">
         <CustomCallout title="System Status" description="Information about the system status" icon="info" variant="info" />
         <CustomCallout title="System Status" description="Information about the system status" variant="info" />
     </Flex>
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import { Callout, Flex } from 'dd360-ds'
@@ -105,11 +105,11 @@ export default function App() {
 With the props <Tag text='title' /> you can provide a title of the callout and this prop is the only required
 of the component
 
-<ContainerComponentDoc className="gap-y-2">
+<Playground className="gap-y-2">
     <Flex gap="4">
         <CustomCallout title="Oops, Error!" icon="x" variant="error" />
     </Flex>
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import { Callout, Flex } from 'dd360-ds'

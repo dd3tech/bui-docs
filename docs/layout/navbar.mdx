@@ -30,9 +30,9 @@ can place various sub-components, such as the brand logo, navigation links, drop
 content. By customizing the props of the Navbar component, you can modify its appearance and behavior 
 according to your requirements. 
 
-<ContainerComponentDoc>
+<Playground>
     <Navbar>Navbar content goes here</Navbar>
-</ContainerComponentDoc>
+</Playground>
 
 The code snippet below shows how to use the Navbar component:
 
@@ -70,7 +70,7 @@ In addition to displaying a logo image, the component supports the inclusion of 
 through the children prop. This flexibility allows you to add additional branding elements, such as a tagline or 
 a clickable button, to enhance the visual representation of your brand.
 
-<ContainerComponentDoc>
+<Playground>
     <Navbar>
       <Navbar.Brand>
           <Image
@@ -85,7 +85,7 @@ a clickable button, to enhance the visual representation of your brand.
     <Navbar>
       <Navbar.Brand imgSrc='http://lendd3r-frontend-develop.s3-website-us-west-1.amazonaws.com/assets/lendder.53f51ab2.png'/>
     </Navbar>
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import { Navbar } from 'dd360-ds'
@@ -132,7 +132,7 @@ user experience. The NavbarGroup component supports customizing the appearance a
 additional CSS classes through the className prop to apply custom styles. Additionally, the gap prop allows you to 
 specify the gap or spacing between the items in the group, enhancing the visual spacing and alignment.
 
-<ContainerComponentDoc>
+<Playground>
     <Navbar>
       <Navbar.Group>
           <Navbar.Brand>
@@ -165,7 +165,7 @@ specify the gap or spacing between the items in the group, enhancing the visual 
         </Circle>
       </Navbar.Group>
     </Navbar>
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import { Navbar, Circle } from 'dd360-ds'
@@ -229,7 +229,7 @@ active item by setting the isActive prop to true. This feature is particularly u
 location within a navigation menu, providing a visual cue and enhancing the user experience. You can style the highlight
 from the activeColor and variant prop in the NavbarContent context.
 
-<ContainerComponentDoc>
+<Playground>
     <Navbar>
       <Navbar.Group gap='10'>
         <Navbar.Item isActive>Item 1</Navbar.Item>
@@ -237,7 +237,7 @@ from the activeColor and variant prop in the NavbarContent context.
         <Navbar.Item>Item 3</Navbar.Item>
       </Navbar.Group>
     </Navbar>
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import { Navbar } from 'dd360-ds'
@@ -271,7 +271,7 @@ The component supports customization through the activeColor and variant props. 
 specify the color scheme for the active item within the Navbar. The variant prop enables you to choose different styling 
 variations, such as underline or highlight, for the Navbar content.
 
-<ContainerComponentDoc>
+<Playground>
     <Navbar>
       <Navbar.Content variant='highlight' activeColor='success'>
         <Navbar.Item isActive>Item 1</Navbar.Item>
@@ -287,7 +287,7 @@ variations, such as underline or highlight, for the Navbar content.
         <Navbar.Item>Item 3</Navbar.Item>
       </Navbar.Content>
     </Navbar>
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import { Navbar } from 'dd360-ds'
@@ -335,7 +335,7 @@ current location within the navigation menu, improving the user experience.
 The NavbarLink component supports using a custom LinkComponent to render the underlying HTML anchor element. This allows 
 you to use routing libraries or custom link components that match your application's routing system.
 
-<ContainerComponentDoc>
+<Playground>
 <Navbar>
   <Navbar.Content variant='underline' activeColor='warning'>
     <Navbar.Link to='#navbarlink'><Navbar.Item isActive>Item 1</Navbar.Item></Navbar.Link>
@@ -343,7 +343,7 @@ you to use routing libraries or custom link components that match your applicati
     <Navbar.Link to='#navbarlink'><Navbar.Item>Item 3</Navbar.Item></Navbar.Link>
   </Navbar.Content>
 </Navbar>
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import { Navbar } from 'dd360-ds'
@@ -406,7 +406,7 @@ specify the gap between them.
 The component includes a close button that allows the user to collapse the NavbarCollapse component. Clicking on 
 the button triggers a function from the NavbarCollapseContext, updating the collapse state.
 
-<ContainerComponentDoc>
+<Playground>
 <Navbar>
   <Navbar.Collapse>
     <Navbar.CollapseToggle
@@ -423,7 +423,7 @@ the button triggers a function from the NavbarCollapseContext, updating the coll
     </Navbar.CollapseContent>
   </Navbar.Collapse>
 </Navbar>
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import { Navbar } from 'dd360-ds'

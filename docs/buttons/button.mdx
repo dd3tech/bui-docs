@@ -25,9 +25,9 @@ components: Button
 <br />
 ##### <span name="floating-nav">Usage</span>
 
-<ContainerComponentDoc className="w-fit">
+<Playground className="w-fit">
     <Button>Click Me</Button>
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString="import { Button } from 'dd360-ds'
@@ -42,7 +42,7 @@ components: Button
 The Button component comes with several variant options, by default it uses the "primary" variant, but you can also use these: "disabled", "success", "primary",
 "secondary", "link", "ghost", "cancel", "danger", "outline", "outlineBlue", "outlineWhite", "outlineWhiteRed".
 
-<ContainerComponentDoc className="gap-y-2">
+<Playground className="gap-y-2">
     <ButtonGroup className="flex flex-wrap" orientation="horizontal" gap={10} align="center">
         <Button variant="primary">Primary</Button>
         <Button variant="secondary">Secondary</Button>
@@ -57,7 +57,7 @@ The Button component comes with several variant options, by default it uses the 
         <Button variant="outlineWhite">OutlineWhite</Button>
         <Button variant="outlineWhiteRed">OutlineWhiteRed</Button>
     </ButtonGroup>
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString="import { Button, ButtonGroup } from 'dd360-ds'
@@ -84,9 +84,9 @@ The Button component comes with several variant options, by default it uses the 
 
 To display the loading status, use the property isLoading.
 
-<ContainerComponentDoc className="w-fit">
+<Playground className="w-fit">
     <Button isLoading>Click Me</Button>
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString="import { Button } from 'dd360-ds'
@@ -100,9 +100,9 @@ To display the loading status, use the property isLoading.
 
 To disable a button, use the property disabled.
 
-<ContainerComponentDoc className="w-fit">
+<Playground className="w-fit">
     <Button disabled>Click Me</Button>
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString="import { Button } from 'dd360-ds'
@@ -116,14 +116,14 @@ To disable a button, use the property disabled.
 
 Use the size property to change the size of the button. You can set the value to `small`, `medium`, `large`, or `extraLarge`.
 
-<ContainerComponentDoc className="gap-y-2">
+<Playground className="gap-y-2">
     <ButtonGroup orientation="horizontal" gap={10}>
         <Button size="small">Small</Button>
         <Button size="medium">Medium</Button>
         <Button size="large">Large</Button>
         <Button size="extraLarge">ExtraLarge</Button>
     </ButtonGroup>
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString="import { Button, ButtonGroup } from 'dd360-ds'

@@ -20,9 +20,9 @@ components: TextArea
 
 ##### <span name="floating-nav">Usage</span>
 
-<ContainerComponentDoc className="gap-y-2">
+<Playground className="gap-y-2">
     <TextArea />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor codeString="import { TextArea } from 'dd360-ds'
 
@@ -32,7 +32,7 @@ components: TextArea
 
 You can use the following variants: "default", "active", "success", "warning", "error" and "disabled". By default "active" is used.
 
-<ContainerComponentDoc className="gap-y-2">
+<Playground className="gap-y-2">
     <Text>Default</Text>
     <TextArea className="mb-2" variant="default" />
     <Text>Active</Text>
@@ -45,7 +45,7 @@ You can use the following variants: "default", "active", "success", "warning", "
     <TextArea className="mb-2" variant="error" />
     <Text>Disabled</Text>
     <TextArea className="mb-2" variant="disabled" />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor codeString="import { TextArea } from 'dd360-ds'
 
@@ -60,9 +60,9 @@ You can use the following variants: "default", "active", "success", "warning", "
 
 Use the prop "placeholder" to indicate a help to the user about what information to enter in your TextArea component.
 
-<ContainerComponentDoc className="gap-y-2">
+<Playground className="gap-y-2">
     <TextArea placeholder="I'm a placeholder!" />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor codeString="import { TextArea } from 'dd360-ds'
 
@@ -72,9 +72,9 @@ Use the prop "placeholder" to indicate a help to the user about what information
 
 Use the prop "label" to indicate a help to the user about what information to enter in your TextArea component.
 
-<ContainerComponentDoc className="gap-y-2">
+<Playground className="gap-y-2">
     <TextArea label="I'm a label!" />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor codeString="import { TextArea } from 'dd360-ds'
 
@@ -84,9 +84,9 @@ Use the prop "label" to indicate a help to the user about what information to en
 
 You can add an icon to the TextArea component by passing the prop startAdornment that receives a react component.
 
-<ContainerComponentDoc className="gap-y-2">
+<Playground className="gap-y-2">
     <TextArea endAdornment={<DynamicHeroIcon icon="AcademicCapIcon" className="text-blue-700 w-6" />} />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor codeString="import { TextArea } from 'dd360-ds'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
@@ -97,9 +97,9 @@ import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 
 With the prop <Tag text='isRequired' /> you can mark an textArea as required. Setting isRequired to true will add an asterisk (*) next to the entry to indicate that its completion is required. This functionality is especially useful for highlighting the need to fill in certain fields on forms or user interfaces.
 
-<ContainerComponentDoc className="gap-y-2">
+<Playground className="gap-y-2">
     <TextArea isRequired label='This field is required' />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor codeString="import { TextArea } from 'dd360-ds'
 

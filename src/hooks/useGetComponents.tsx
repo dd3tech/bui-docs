@@ -7,7 +7,7 @@ import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 import {
   WindowEditor,
   CustomTableDocs,
-  ContainerComponentDoc,
+  Playground,
   BackAndForwardController,
   Tag
 } from '@/components'
@@ -129,7 +129,7 @@ export function useGetComponents() {
     WindowEditor,
     CustomTableDocs,
     DynamicHeroIcon,
-    ContainerComponentDoc,
+    Playground,
     PaginationCustom,
     TabsCustom,
     SwitchCustom,

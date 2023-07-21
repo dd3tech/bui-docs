@@ -28,7 +28,7 @@ The first alternative is recommended since it can reduce the application bundle
 ##### <span name="floating-nav">Usage</span>
 Use the BarList component as shown below:
 
-<ContainerComponentDoc>
+<Playground>
     <BarList
         listData={[
             { label: 'Item 1', value: 20 },
@@ -38,7 +38,7 @@ Use the BarList component as shown below:
             { label: 'Item 5', value: 100 }
         ]}
     />
-</ContainerComponentDoc>
+</Playground>
 
 The code snippet below shows how to use the BarList component:
 
@@ -66,7 +66,7 @@ The BarList component provides several customization options through props.
 ##### `TitleMetrics`
 Allows you to specify a text or a string to be displayed as a title for the metrics displayed in the bar list.
 
-<ContainerComponentDoc>
+<Playground>
     <BarList
         listData={[
             { label: 'Item 1', value: 20 },
@@ -77,7 +77,7 @@ Allows you to specify a text or a string to be displayed as a title for the metr
         ]}
         titleMetrics="Items"
     />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
 codeString={`import BarList from 'dd360-ds/BarList'
@@ -98,7 +98,7 @@ codeString={`import BarList from 'dd360-ds/BarList'
 ##### `TitleValues`
 Allows you to specify a text or a string to be displayed as a title for the values shown in the list of members. 
 
-<ContainerComponentDoc>
+<Playground>
     <BarList
         listData={[
             { label: 'Item 1', value: 20 },
@@ -110,7 +110,7 @@ Allows you to specify a text or a string to be displayed as a title for the valu
         titleMetrics="Items"
         titleValues="Values"
     />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
 codeString={`import BarList from 'dd360-ds/BarList'
@@ -134,7 +134,7 @@ codeString={`import BarList from 'dd360-ds/BarList'
 Allows to specify a text or value to be displayed as a prefix next to the values in the bar list. 
 This prefix will be placed before each value.
 
-<ContainerComponentDoc>
+<Playground>
     <BarList
         listData={[
             { label: 'Item 1', value: 20 },
@@ -145,7 +145,7 @@ This prefix will be placed before each value.
         ]}
         valuePrefix="$"
     />
-</ContainerComponentDoc>
+</Playground>
 <WindowEditor
 codeString={`import BarList from 'dd360-ds/BarList'
 
@@ -167,7 +167,7 @@ codeString={`import BarList from 'dd360-ds/BarList'
 Allows to specify a text or value to be displayed as a suffix next to the values in the list of members. 
 This suffix will be placed after each value.
 
-<ContainerComponentDoc>
+<Playground>
     <BarList
         listData={[
             { label: 'Item 1', value: 20 },
@@ -178,7 +178,7 @@ This suffix will be placed after each value.
         ]}
         valueSuffix="%"
     />
-</ContainerComponentDoc>
+</Playground>
 <WindowEditor
 codeString={`import BarList from 'dd360-ds/BarList'
 
@@ -198,7 +198,7 @@ codeString={`import BarList from 'dd360-ds/BarList'
 ##### `ClassNameBar`
 Allows passing a text string representing a custom CSS class for the background bar of each item in the list.
 
-<ContainerComponentDoc>
+<Playground>
     <BarList
         listData={[
             { label: 'Item 1', value: 20 },
@@ -209,7 +209,7 @@ Allows passing a text string representing a custom CSS class for the background 
         ]}
         classNameBar="border border-blue-800"
     />
-</ContainerComponentDoc>
+</Playground>
 <WindowEditor
 codeString={`import BarList from 'dd360-ds/BarList'
 
@@ -229,7 +229,7 @@ codeString={`import BarList from 'dd360-ds/BarList'
 ##### `RoundedBar`
 Allows you to specify the border radius of the bar elements in the list.
 
-<ContainerComponentDoc>
+<Playground>
     <BarList
         listData={[
             { label: 'Item 1', value: 20 },
@@ -240,7 +240,7 @@ Allows you to specify the border radius of the bar elements in the list.
         ]}
         roundedBar="full"
     />
-</ContainerComponentDoc>
+</Playground>
 <WindowEditor
 codeString={`import BarList from 'dd360-ds/BarList'
 
@@ -260,7 +260,7 @@ codeString={`import BarList from 'dd360-ds/BarList'
 ##### `MarginYItem`
 Allows to set the vertical spacing between each item in the bar list.
 
-<ContainerComponentDoc>
+<Playground>
     <BarList
         listData={[
             { label: 'Item 1', value: 20 },
@@ -271,7 +271,7 @@ Allows to set the vertical spacing between each item in the bar list.
         ]}
         marginYItem="4"
     />
-</ContainerComponentDoc>
+</Playground>
 <WindowEditor
 codeString={`import BarList from 'dd360-ds/BarList'
 
@@ -292,7 +292,7 @@ codeString={`import BarList from 'dd360-ds/BarList'
 ##### `HeightBar`
 Allows you to set the height of the bottom bar element of each item in the list.
 
-<ContainerComponentDoc>
+<Playground>
     <BarList
         listData={[
             { label: 'Item 1', value: 20 },
@@ -304,7 +304,7 @@ Allows you to set the height of the bottom bar element of each item in the list.
         heightBar="14"
         marginYItem="8"
     />
-</ContainerComponentDoc>
+</Playground>
 <WindowEditor
 codeString={`import BarList from 'dd360-ds/BarList'
 
@@ -325,7 +325,7 @@ codeString={`import BarList from 'dd360-ds/BarList'
 ##### `FontSizeBar`
 Allows you to pass a value from the Size enumeration to set the font size of the text in the bar labels. The default value is base.
 
-<ContainerComponentDoc>
+<Playground>
     <BarList
         listData={[
             { label: 'Item 1', value: 20 },
@@ -336,7 +336,7 @@ Allows you to pass a value from the Size enumeration to set the font size of the
         ]}
         fontSizeBar="lg"
     />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
 codeString={`import BarList from 'dd360-ds/BarList'
@@ -358,7 +358,7 @@ codeString={`import BarList from 'dd360-ds/BarList'
 
 Defines the default background color of the bar element if the backgroundBarColor property is not provided for a specific element in the listData property.
 
-<ContainerComponentDoc>
+<Playground>
     <BarList
         listData={[
             { label: 'Item 1', value: 20 },
@@ -369,7 +369,7 @@ Defines the default background color of the bar element if the backgroundBarColo
         ]}
         defaultBackgroundBarColor="#aee8be"
     />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import BarList from 'dd360-ds/BarList'
@@ -391,7 +391,7 @@ Defines the default background color of the bar element if the backgroundBarColo
 
 Defines the default text color in the bar labels if the textBarColor property is not provided for a specific item in the listData property.
 
-<ContainerComponentDoc>
+<Playground>
     <BarList
         listData={[
             { label: 'Item 1', value: 20 },
@@ -402,7 +402,7 @@ Defines the default text color in the bar labels if the textBarColor property is
         ]}
         defaultTextBarColor="#000"
     />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import BarList from 'dd360-ds/BarList'
@@ -428,7 +428,7 @@ In DataList items you can use the following properties to customize each item.
 
 Allows you to specify a text or string to be displayed as a prefix before the numeric value in the bar label for a specific item in the listData property.
 
-<ContainerComponentDoc>
+<Playground>
     <BarList
         listData={[
             { label: 'Item 1', value: 20, prefix: "$" },
@@ -438,7 +438,7 @@ Allows you to specify a text or string to be displayed as a prefix before the nu
             { label: 'Item 5', value: 100 }
         ]}
     />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import BarList from 'dd360-ds/BarList'
@@ -459,7 +459,7 @@ Allows you to specify a text or string to be displayed as a prefix before the nu
 
 Allows you to specify a text or a string to be displayed as a suffix after the numeric value in the bar label for a specific item in the listData property.
 
-<ContainerComponentDoc>
+<Playground>
     <BarList
         listData={[
             { label: 'Item 1', value: 20, suffix: "%" },
@@ -469,7 +469,7 @@ Allows you to specify a text or a string to be displayed as a suffix after the n
             { label: 'Item 5', value: 100 }
         ]}
     />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import BarList from 'dd360-ds/BarList'
@@ -491,7 +491,7 @@ Allows you to specify a text or a string to be displayed as a suffix after the n
 Defines the background color of the bar element for a specific element in the listData property. 
 Providing this property will override the default background color for the corresponding element.
 
-<ContainerComponentDoc>
+<Playground>
     <BarList
         listData={[
             { label: 'Item 1', value: 20, backgroundBarColor: "#aee8be" },
@@ -501,7 +501,7 @@ Providing this property will override the default background color for the corre
             { label: 'Item 5', value: 100 }
         ]}
     />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import BarList from 'dd360-ds/BarList'
@@ -523,7 +523,7 @@ Providing this property will override the default background color for the corre
 Defines the text color of the bar labels for a specific element in the listData property. 
 Providing this property will override the default text color for the corresponding element.
 
-<ContainerComponentDoc>
+<Playground>
     <BarList
         listData={[
             { label: 'Item 1', value: 20, textBarColor: "#083173" },
@@ -533,7 +533,7 @@ Providing this property will override the default text color for the correspondi
             { label: 'Item 5', value: 100 }
         ]}
     />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import BarList from 'dd360-ds/BarList'
@@ -555,7 +555,7 @@ Providing this property will override the default text color for the correspondi
 Allows you to specify the destination URL for the generated links in the list items.
 The links will open in a new browser tab because they contain the target="_blank" attribute.
 
-<ContainerComponentDoc>
+<Playground>
     <BarList
         listData={[
             { label: 'Item 1', value: 20, href: "/" },
@@ -565,7 +565,7 @@ The links will open in a new browser tab because they contain the target="_blank
             { label: 'Item 5', value: 100, href: "/" }
         ]}
     />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import BarList from 'dd360-ds/BarList'
@@ -586,7 +586,7 @@ The links will open in a new browser tab because they contain the target="_blank
 
 Allows you to pass a React element as an icon to be displayed at the beginning of the bar label for a specific element in the listData property.
 
-<ContainerComponentDoc>
+<Playground>
     <BarList
         listData={[
             { label: 'Item 1', value: 20, startIcon: <svg
@@ -605,7 +605,7 @@ Allows you to pass a React element as an icon to be displayed at the beginning o
             { label: 'Item 5', value: 100 }
         ]}
     />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import BarList from 'dd360-ds/BarList'
@@ -641,7 +641,7 @@ const IconTwitter = () => {
 
 Allows you to pass a React element as an icon to be displayed at the end of the bar label for a specific element in the listData property.
 
-<ContainerComponentDoc>
+<Playground>
     <BarList
         listData={[
             { label: 'Item 1', value: 20, endIcon: <svg
@@ -660,7 +660,7 @@ Allows you to pass a React element as an icon to be displayed at the end of the 
             { label: 'Item 5', value: 100 }
         ]}
     />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import BarList from 'dd360-ds/BarList'

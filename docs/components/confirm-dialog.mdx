@@ -29,9 +29,9 @@ The first alternative is recommended since it can reduce the application bundle
 
 Use the ConfirmDialog component as shown below:
 
-<ContainerComponentDoc>
+<Playground>
  <ConfirmDialogCustom />
-</ContainerComponentDoc>
+</Playground>
 
 The code snippet below shows how to use the ConfirmDialog component:
 
@@ -60,9 +60,9 @@ shown. The component listens for clicks on a button, which toggles the
 ConfirmDialog visibility and updates its position based on the click event's
 coordinates
 
-<ContainerComponentDoc>
+<Playground>
   <ConfirmDialogCustom />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import { useEffect, useState } from 'react'
@@ -132,9 +132,9 @@ we can avoid any issues with the ConfirmDialog component not being fully initial
 
 The prop <Tag text='title' /> is used to display a descriptive title in the confirmation dialog
 
-<ContainerComponentDoc>
+<Playground>
  <ConfirmDialogCustom title='Example title' />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import ConfirmDialog from 'dd360-ds/ConfirmDialog'
@@ -157,9 +157,9 @@ The prop <Tag text='title' /> is used to display a descriptive title in the conf
 
 The prop <Tag text='textConfirmBtn' /> is used to define the text of the confirmation button in the dialog box
 
-<ContainerComponentDoc>
+<Playground>
  <ConfirmDialogCustom textConfirmBtn='Example Confirm' />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import ConfirmDialog from 'dd360-ds/ConfirmDialog'
@@ -184,9 +184,9 @@ The props <Tag text='onCancel and textCancelBtn' /> they are used to cancel the 
 
 Note that it is recommended that the textCancelBtn and handleCancel props be defined together, as defining only textCancelBtn would not make much sense
 
-<ContainerComponentDoc>
+<Playground>
  <ConfirmDialogCustom onCancel textCancelBtn='Example Cancel' />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import ConfirmDialog from 'dd360-ds/ConfirmDialog'
@@ -211,9 +211,9 @@ Note that it is recommended that the textCancelBtn and handleCancel props be def
 The prop <Tag text='width' /> is used to set the custom width of the confirmation dialog to
 
 
-<ContainerComponentDoc>
+<Playground>
  <ConfirmDialogCustom width={300} />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import ConfirmDialog from 'dd360-ds/ConfirmDialog'

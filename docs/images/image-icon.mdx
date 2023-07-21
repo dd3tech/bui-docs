@@ -25,9 +25,9 @@ standalone image or as a button with an onClick function.
 To use the ImageIcon component, you can import it into your app and render it
 with the desired props. Here's an example:
 
-<ContainerComponentDoc>
+<Playground>
   <ImageIcon src="https://picsum.photos/200/300?grayscale" />
-</ContainerComponentDoc>
+</Playground>
 
 The code snippet below shows how to use the ImageIcon component:
 
@@ -48,13 +48,13 @@ button is true, the ImageIcon is wrapped in a button element.
 The buttonOnClick property receives the function to be called when the button is
 clicked. This prop is only used when button is true.
 
-<ContainerComponentDoc className="flex gap-2">
+<Playground className="flex gap-2">
   <ImageIcon
     button
     buttonOnClick={() => {}}
     src="https://picsum.photos/200/300?grayscale"
   />
-</ContainerComponentDoc>
+</Playground>
 
 The code snippet below shows how to set a ImageIcon component as a button and
 how to call the function when the button is clicked:

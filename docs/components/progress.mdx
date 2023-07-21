@@ -29,9 +29,9 @@ with the overall design of your application seamlessly. By leveraging the value 
 precise control over the progress percentage, enabling accurate and informative feedback for 
 users as they track the progress of a task or process.
 
-<ContainerComponentDoc>
+<Playground>
   <Progress value={60} />
-</ContainerComponentDoc>
+</Playground>
 
 The code snippet below shows how to use the Progress component:
 
@@ -50,9 +50,9 @@ implemented by specifying the type prop as 'circle' when using the Progress comp
 customizing properties such as circleSize, lineWidth, and lineCap, you can easily create visually 
 appealing circular progress indicators.
 
-<ContainerComponentDoc>
+<Playground>
   <Progress value={30} circleSize={100} lineWidth={4} lineCap='round' />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import { Progress } from 'dd360-ds''
@@ -73,10 +73,10 @@ implemented by setting the type prop as 'linear' when using the Progress compone
 properties like width, height, and lineCap, you can seamlessly integrate the linear progress 
 indicator into different layouts and designs. 
 
-<ContainerComponentDoc>
+<Playground>
   <Progress type='linear' value={60} width='50%' height='15px' lineCap='round' className='mb-2'/>
   <Progress type='linear' value={60} />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import { Progress } from 'dd360-ds''
@@ -93,10 +93,10 @@ to match the visual style of your application. By specifying properties such as 
 and backgroundLineColor, you can easily tailor the colors of the progress line or circle to create 
 a cohesive and visually appealing user interface.
 
-<ContainerComponentDoc>
+<Playground>
   <Progress value={60}  progressLineColor='#f0ed7e' backgroundLineColor='#e7f9c4' />
   <Progress value={60}  progressLineColor='#7df0e4' backgroundLineColor='#d4fffb' type='linear' />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import { Progress } from 'dd360-ds''
@@ -113,10 +113,10 @@ By selecting from options such as 'round', 'square', or 'butt', you can refine t
 the progress line. Note that when using the linear type, the 'square' and 'butt' line cap styles produce 
 the same result.
 
-<ContainerComponentDoc>
+<Playground>
   <Progress value={60}  progressLineColor='#61d934' backgroundLineColor='#d7ffd3' lineCap='round'/>
   <Progress value={60} width='80%' height='12px'  progressLineColor='#ff7d40' backgroundLineColor='#ffdfd4' type='linear' lineCap='square' />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import { Progress } from 'dd360-ds''
@@ -150,10 +150,10 @@ indicating that progress is being made without providing a specific progress val
 effect adds a visual cue to reassure users that the task is actively being worked on, even if the 
 precise completion status cannot be determined.
 
-<ContainerComponentDoc>
+<Playground>
   <Progress value={60}  progressLineColor='#f0ed7e' backgroundLineColor='#e7f9c4' indeterminate/>
   <Progress value={60}  progressLineColor='#7df0e4' backgroundLineColor='#d4fffb' type='linear' indeterminate />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import { Progress } from 'dd360-ds''
@@ -169,9 +169,9 @@ The Progress component allows you to include custom content within the progress 
 prop. This feature enhances the visual presentation by allowing you to add text, icons, or other React 
 components alongside the progress indicator. 
 
-<ContainerComponentDoc>
+<Playground>
   <ProgressCustom/>
-</ContainerComponentDoc>
+</Playground>
 
 <br />
 ##### <span name="floating-nav">Progress vs Spinner</span>

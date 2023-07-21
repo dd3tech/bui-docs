@@ -35,13 +35,13 @@ functional and visually appealing lists in your React applications.
 
 Here's an example of how you can use the List component to create a simple unordered list:
 
-<ContainerComponentDoc>
+<Playground>
   <List>
     <List.Item>First item</List.Item>
     <List.Item>Second item</List.Item>
     <List.Item>Third item</List.Item>
   </List>
-</ContainerComponentDoc>
+</Playground>
 
 The code snippet below shows how to use the List component:
 
@@ -66,13 +66,13 @@ and prefix label.
 To create an ordered list, set the "ordered" property of the component to true. By default, this 
 property is set to false.
 
-<ContainerComponentDoc>
+<Playground>
   <List ordered>
     <List.Item>First item</List.Item>
     <List.Item>Second item</List.Item>
     <List.Item>Third item</List.Item>
   </List>
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import { List } from 'dd360-ds''
@@ -88,13 +88,13 @@ In ordered lists, you can use the properties "prefixLabel" and "suffixLabel" to 
 after the numeric list, respectively. The default value for "prefixLabel" is an empty string (''), and 
 the default value for "suffixLabel" is a period ('.').
 
-<ContainerComponentDoc>
+<Playground>
   <List ordered prefixLabel='°' suffixLabel=')'>
     <List.Item>First item</List.Item>
     <List.Item>Second item</List.Item>
     <List.Item>Third item</List.Item>
   </List>
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import { List } from 'dd360-ds''
@@ -113,13 +113,13 @@ You can obtain a simple unordered list using the List component without any prop
 list, you can use the properties "icon", "iconSize", "iconLineHeight", and "iconColor". By default, a bullet 
 point is used as the icon, but you can change it to a string, emoji, or even a custom icon.
 
-<ContainerComponentDoc>
+<Playground>
   <List iconColor='#46A9CB'>
     <List.Item>First item</List.Item>
     <List.Item>Second item</List.Item>
     <List.Item>Third item</List.Item>
   </List>
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import { List } from 'dd360-ds''
@@ -131,13 +131,13 @@ point is used as the icon, but you can change it to a string, emoji, or even a c
 </List>
 `}/>
 
-<ContainerComponentDoc>
+<Playground>
   <List icon='🎸' iconSize={15} iconLineHeight={20}>
     <List.Item>First item</List.Item>
     <List.Item>Second item</List.Item>
     <List.Item>Third item</List.Item>
   </List>
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import { List } from 'dd360-ds''
@@ -158,13 +158,13 @@ receives the number of pixels that will separate the icon or numeric list from t
 content of the item. The default values for "gap" and "gapItem" are 5px and 0px, 
 respectively.
 
-<ContainerComponentDoc>
+<Playground>
   <List gap={15} gapItem={15}>
     <List.Item>First item</List.Item>
     <List.Item>Second item</List.Item>
     <List.Item>Third item</List.Item>
   </List>
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import { List } from 'dd360-ds''
@@ -182,13 +182,13 @@ respectively.
 You can customize each item separately by adding props to the List.Item component and 
 overriding those that are inherited from the List component.
 
-<ContainerComponentDoc>
+<Playground>
   <List iconColor='#46A9CB'>
     <List.Item iconSize={15} iconColor='#E765C4'>First item</List.Item>
     <List.Item iconColor='#A2E533'>Second item</List.Item>
     <List.Item iconSize={40}>Third item</List.Item>
   </List>
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import { List } from 'dd360-ds''
@@ -203,7 +203,7 @@ overriding those that are inherited from the List component.
 If you want to add a custom icon, you can use the List.Icon component within the 
 List.Item component and place it before the content of the item.
 
-<ContainerComponentDoc>
+<Playground>
   <List iconColor='#46A9CB' gapItem={10}>
     <List.Item>
       <List.Icon>
@@ -224,7 +224,7 @@ List.Item component and place it before the content of the item.
       <Text textMuted500>Av. Insurgentes Sur 762</Text>
     </List.Item>
   </List>
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor
     codeString={`import { List, Text } from 'dd360-ds'

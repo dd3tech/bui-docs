@@ -27,11 +27,11 @@ It provides additional information or relevant context about the element it is a
 - content: The content of the tooltip. It can be any React node that you want to show as content of the tooltip.
 - children: The element/s children of the Tooltip component. These are the elements that will be shown the tooltip when interacting with them.
 
-<ContainerComponentDoc>
+<Playground>
   <Tooltip content="This is a tooltip">
     <Button>Hover me</Button>
   </Tooltip>
-</ContainerComponentDoc>
+</Playground>
 
 The code snippet below shows how to use the Tooltip component:
 
@@ -51,7 +51,7 @@ The prop variant allows specifying the style of the tooltip appearance.
 It can have two values: "primary" or "secondary". 
 By default, the value is "primary".
 
-<ContainerComponentDoc>
+<Playground>
 <Flex alignItems="center" gap="5">
   <Tooltip content="This is a primary tooltip" variant="primary">
     <Button>Primary</Button>
@@ -60,7 +60,7 @@ By default, the value is "primary".
     <Button>Secondary</Button>
   </Tooltip>
   </Flex>
-</ContainerComponentDoc>
+</Playground>
 
   <WindowEditor
     codeString={`import { Tooltip } from 'dd360-ds'
@@ -84,7 +84,7 @@ The prop position allows you to specify the position of the tooltip in relation 
 It can have four values: "top", "bottom", "left" and "right". 
 By default, the value is "top".
 
-<ContainerComponentDoc>
+<Playground>
 <Flex alignItems="center" gap="2">
   <Tooltip content="This is a left tooltip" position="left">
     <Button>Left</Button>
@@ -99,7 +99,7 @@ By default, the value is "top".
     <Button>Right</Button>
   </Tooltip>
 </Flex>
-</ContainerComponentDoc>
+</Playground>
 
   <WindowEditor
     codeString={`import { Tooltip } from 'dd360-ds'
@@ -126,7 +126,7 @@ By default, the value is "top".
 The Tooltip component allows you to add an icon to the tooltip using the startAdornment and endAdornment properties. 
 You can pass any React element as startAdornment or endAdornment to display it next to the tooltip text.
 
-<ContainerComponentDoc>
+<Playground>
 <Flex alignItems="center" gap="5">
   <Tooltip content="This is a tooltip with the Twitter icon at the start" startAdornment={<svg
           xmlns="http://www.w3.org/2000/svg"
@@ -151,7 +151,7 @@ You can pass any React element as startAdornment or endAdornment to display it n
     <Button>With icon at end</Button>
   </Tooltip>
   </Flex>
-</ContainerComponentDoc>
+</Playground>
 
   <WindowEditor
     codeString={`import { Tooltip } from 'dd360-ds'

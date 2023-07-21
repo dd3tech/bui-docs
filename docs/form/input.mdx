@@ -21,9 +21,9 @@ components: Input
 
 ##### <span name="floating-nav">Usage</span>
 
-<ContainerComponentDoc className="gap-y-2">
+<Playground className="gap-y-2">
     <Input />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor codeString="import { Input } from 'dd360-ds'
 
@@ -34,7 +34,7 @@ components: Input
 The "Input" comes with variants, by default it uses the "default" variant, but you can also use these: "active", "disabled", "warning",
 "success","error","default".
 
-<ContainerComponentDoc className="gap-y-2">
+<Playground className="gap-y-2">
     <Text>Default</Text>
     <Input className="mb-2" variant="default" />
     <Text>Active</Text>
@@ -47,7 +47,7 @@ The "Input" comes with variants, by default it uses the "default" variant, but y
     <Input className="mb-2" variant="error" />
     <Text>Disabled</Text>
     <Input className="mb-2" variant="disabled" />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor codeString="import { Input } from 'dd360-ds'
 
@@ -63,9 +63,9 @@ The "Input" comes with variants, by default it uses the "default" variant, but y
 The "Input" comes with types, by default it uses the "text" variant, but you can also use these: "number", "text", "email", "currency", "date", "password",
 "year", "month", "percentage", "file".
 
-<ContainerComponentDoc className="gap-y-2">
+<Playground className="gap-y-2">
     <Input type="text" />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor codeString="import { Input } from 'dd360-ds'
 
@@ -75,9 +75,9 @@ The "Input" comes with types, by default it uses the "text" variant, but you can
 
 For disabled Inputs, use the "disabled" prop.
 
-<ContainerComponentDoc className="gap-y-2">
+<Playground className="gap-y-2">
     <Input disabled />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor codeString="import { Input } from 'dd360-ds'
 
@@ -87,9 +87,9 @@ For disabled Inputs, use the "disabled" prop.
 
 For label Inputs, use the "label" prop.
 
-<ContainerComponentDoc className="gap-y-2">
+<Playground className="gap-y-2">
     <Input label="Email" />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor codeString="import { Input } from 'dd360-ds'
 
@@ -99,9 +99,9 @@ For label Inputs, use the "label" prop.
 
 For hidde borders Inputs, use the "inputBlank" prop.
 
-<ContainerComponentDoc className="gap-y-2">
+<Playground className="gap-y-2">
     <Input inputBlank />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor codeString="import { Input } from 'dd360-ds'
 
@@ -111,9 +111,9 @@ For hidde borders Inputs, use the "inputBlank" prop.
 
 For expansive size inputs, use the "large" prop.
 
-<ContainerComponentDoc className="gap-y-2">
+<Playground className="gap-y-2">
     <Input large />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor codeString="import { Input } from 'dd360-ds'
 
@@ -123,9 +123,9 @@ For expansive size inputs, use the "large" prop.
 
 Change boxShadow input, use the "boxShadow" prop with your variants: "sm", "base", "md", "lg", "xl", "2xl", "inner", "none".
 
-<ContainerComponentDoc className="gap-y-2">
+<Playground className="gap-y-2">
     <Input boxShadow="inner" />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor codeString="import { Input } from 'dd360-ds'
 
@@ -133,10 +133,10 @@ Change boxShadow input, use the "boxShadow" prop with your variants: "sm", "base
 
 ##### <span name="floating-nav">Input with icon</span>
 
-<ContainerComponentDoc className="gap-y-2">
+<Playground className="gap-y-2">
     <Input startAdornment={<DynamicHeroIcon icon="AcademicCapIcon" className="text-blue-700 w-6" />} />
     <Input endAdornment={<DynamicHeroIcon icon="AcademicCapIcon" className="text-blue-700 w-6" />} />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor codeString="import { Input } from 'dd360-ds'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
@@ -148,9 +148,9 @@ import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 
 With the prop <Tag text='isRequired' /> you can mark an input as required. Setting isRequired to true will add an asterisk (*) next to the entry to indicate that its completion is required. This functionality is especially useful for highlighting the need to fill in certain fields on forms or user interfaces.
 
-<ContainerComponentDoc className="gap-y-2">
+<Playground className="gap-y-2">
     <Input isRequired label='This field is required' />
-</ContainerComponentDoc>
+</Playground>
 
 <WindowEditor codeString="import { Input } from 'dd360-ds'
 
