@@ -123,7 +123,11 @@ function BannerDashboard() {
             </Circle>
             <div className="overflow-hidden min-[1350px]:right-0 left-0 min-[1350px]:left-auto top-0 ml-0 lg:ml-12 relative lg:absolute lg:w-[705px] h-[130px] xs:h-[218px] sm:h-[314px] md:h-[354px] lg:translate-y-[-50%] lg:top-[50%] rounded-l-lg">
               <Image
-                src={`/sales-v2-page-${isLightTheme ? 'light' : 'dark'}_.png`}
+                src={
+                  isLightTheme
+                    ? `/sales-v2-page-light_.png`
+                    : '/onboarding-dark.png'
+                }
                 alt="demo-dashboard"
                 className="absolute hidden lg:block border-l border-t rounded-l-lg"
                 fill
