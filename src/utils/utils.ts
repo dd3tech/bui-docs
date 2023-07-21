@@ -5,3 +5,6 @@ export const splitArray = (array: any[], chunkSize: number) => {
   }
   return partes
 }
+
+export const isProd = process.env.NODE_ENV === 'production'
+export const isDevelopment = process.env.NODE_ENV === 'development'
