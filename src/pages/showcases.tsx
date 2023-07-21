@@ -14,7 +14,7 @@ const cardsData: AppCardInfo[] = [
     imgDark: '/page-simulator.jpg',
     title: 'Simulador DD360',
     description:
-      "This is a curated list of some of the best apps we've seen that show off what's possible with BUI. Are you also using it? Show us what you're building! We'd love to see it.",
+      'We crafted a delightful onboarding experience, where in seconds we get insights for your next Real State project.',
     goTo: SIMULATOR_URL
   },
   {
@@ -22,7 +22,7 @@ const cardsData: AppCardInfo[] = [
     imgDark: '/page-landing-saas.jpg',
     title: 'Landing SaaS DD360',
     description:
-      "This is a curated list of some of the best apps we've seen that show off what's possible with BUI. Are you also using it? Show us what you're building! We'd love to see it.",
+      'A single-page storytelling landing page showcasing the features and listing the benefits of a software as a service, ready to get signups.',
     goTo: BUILDD3R_LANDING
   },
   {
@@ -30,7 +30,7 @@ const cardsData: AppCardInfo[] = [
     imgDark: '/page-dd360-saas-dark.jpg',
     title: 'DD360 SaaS',
     description:
-      "This is a curated list of some of the best apps we've seen that show off what's possible with BUI. Are you also using it? Show us what you're building! We'd love to see it.",
+      'A robust software to have a panoramic overview of Real State projects. With BUI we fulfilled its complex product needs.',
     goTo: APP_DD360
   }
 ]
@@ -68,8 +68,7 @@ export default function Showcases() {
               extendedPalette.primaryText
             )}
           >
-            Check out these public apps using DD360 <br /> to get inspired for
-            your next project.
+            Discover projects using BUI and get inspired for your next big idea
           </Text>
           <Text
             variant="p"
