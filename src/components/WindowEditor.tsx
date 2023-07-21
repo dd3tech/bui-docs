@@ -74,6 +74,7 @@ function WindowEditor({
   styleContainer,
   height
 }: EditorProps) {
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
   const { handleCopy, isCopied } = useCopy()
   const [showCopyButton, setShowCopyButton] = useState(false)
   const {
@@ -165,7 +166,7 @@ function WindowEditor({
             backgroundColor ?? extendedPalette.windowEditorBackgroundHex
         }}
         showLineNumbers
-        wrapLongLines
+        wrapLongLines={!isMobile}
       >
         {codeString}
       </SyntaxHighlighter>

@@ -1,8 +1,8 @@
 import NextHead from 'next/head'
 import { useRouter } from 'next/router'
 import { ReactNode } from 'react'
+import { BUI_URL } from '@/utils/constants'
 
-const HOST = 'https://bui.dd360.mx'
 const KEYWORDS =
   'bui, buildd3r, buildd3r UI, dd360, react library, frontend, ui-kit, ui, react, tailwind, react components, npm, npm package'
 
@@ -26,7 +26,10 @@ function OpenGraph({
   children
 }: OpenGraphProps) {
   const router = useRouter()
-  const urlContent = url ? url : `${HOST}${router.asPath}`
+  const urlContent = url ? url : `${BUI_URL}${router.asPath}`
+  const imagePreview = image.startsWith('https://')
+    ? image
+    : `${BUI_URL}${image}`
 
   return (
     <NextHead>
@@ -42,10 +45,10 @@ function OpenGraph({
       <meta property="og:description" content={description} key="description" />
       <meta property="og:type" content={type} />
       <meta property="og:url" content={urlContent} key="url" />
-      <meta property="og:image" content={image} key="image" />
+      <meta property="og:image" content={imagePreview} key="image" />
       <meta property="og:ttl" content="604800" />
 
-      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image" content={imagePreview} />
       <meta
         name="twitter:card"
         content={image ? 'summary_large_image' : 'summary'}

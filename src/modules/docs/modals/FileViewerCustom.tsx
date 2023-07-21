@@ -13,7 +13,7 @@ const FileViewerCustom = () => {
             onClick={() => setActiveFileViewer(true)}
           >
             <div>
-              <DynamicHeroIcon icon="EyeIcon" className="h-5 w-5" />
+              <DynamicHeroIcon icon="EyeIcon" className="h-5 w-5 text-white" />
             </div>
             View File
           </Button>
@@ -24,12 +24,20 @@ const FileViewerCustom = () => {
             <FileViewer.ViewerActions fileName={'Eloquent_JavaScript.pdf'}>
               <FileViewer.BtnAction
                 icon={
-                  <DynamicHeroIcon icon="DownloadIcon" className="h-5 w-5" />
+                  <DynamicHeroIcon
+                    icon="DownloadIcon"
+                    className="h-5 w-5 text-white"
+                  />
                 }
                 onClick={() => alert('Demo Download')}
               />
               <FileViewer.BtnAction
-                icon={<DynamicHeroIcon icon="XIcon" className="h-5 w-5" />}
+                icon={
+                  <DynamicHeroIcon
+                    icon="XIcon"
+                    className="h-5 w-5 text-white"
+                  />
+                }
                 onClick={() => setActiveFileViewer(false)}
               />
             </FileViewer.ViewerActions>

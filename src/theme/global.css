@@ -129,7 +129,11 @@ body:has(.home-page.light) {
   padding: 2px 8px;
 }
 
-.container-cmpnt-doc p:not(.text-primary) {
+svg.text-info {
+  color: #111827 !important;
+}
+
+.container-cmpnt-doc p:not(.text-primary, .text-secondary) {
   color: #111827 !important;
 }
 

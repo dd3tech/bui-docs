@@ -102,13 +102,15 @@ function Layout({ children }: { children: JSX.Element }) {
             >
               <SideBarDocs />
             </div>
-
             <div
               id="layout-content"
-              className="layout-content grid h-full px-8 md:px-16 m-auto w-full overflow-auto"
+              className="layout-content grid h-full px-4 md:px-8 m-auto w-full overflow-auto"
               style={{ height: 'calc(100vh - 57px)' }}
             >
-              <article id="container-doc" className="w-full max-w-full  pr-5">
+              <article
+                id="container-doc"
+                className="w-full max-w-full pr-0 md:pr-5"
+              >
                 {children}
               </article>
               <article className="hidden w-full max-w-[128px] mt-[60px] md:block">

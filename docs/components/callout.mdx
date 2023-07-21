@@ -48,7 +48,7 @@ import { CheckCircleIcon } from '@heroicons/react/solid'
 With the prop <Tag text='variant' /> you can customize the color of the callout
 
 <Playground className="gap-y-2">
-    <Flex gap="4">
+    <Flex className="flex-col" gap="4">
         <CustomCallout title="Success!" description="The requested action has been completed successfully." icon="check" />
         <CustomCallout title="System Status" description="Information about the system status" icon="info" variant="info" />
         <CustomCallout title="Attention!" description="User attention is required in relation to an action or problem." icon="warn" variant="warning" />
@@ -63,10 +63,10 @@ import {  CheckCircleIcon, XCircleIcon, InformationCircleIcon } from '@heroicons
 export default function App() {
     return (
         <Flex gap="4">
-            <Callout title="Success!" description="The requested action has been completed successfully." icon={CheckCircleIcon} />
-            <Callout title="System Status" description="Information about the system status" icon={InformationCircleIcon} variant="info" />
-            <Callout title="Attention!" description="User attention is required in relation to an action or problem." icon={InformationCircleIcon} variant="warning" />
-            <Callout title="Error!" description="An error has occurred in the requested action that needs to be resolved." icon={XCircleIcon} variant="error" />
+            <Callout icon={CheckCircleIcon} title="Success!" description="The requested action has been completed successfully." />
+            <Callout icon={InformationCircleIcon} variant="info" title="System Status" description="Information about the system status" />
+            <Callout icon={InformationCircleIcon} variant="warning" title="Attention!" description="User attention is required" />
+            <Callout icon={XCircleIcon} variant="error" title="Error!" description="An error has occurred" />
         </Flex>
     )
 }`} />

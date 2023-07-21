@@ -3,6 +3,7 @@ import { useTranslation } from 'next-i18next'
 import { Divider, Flex, Text } from 'dd360-ds'
 import { composeClasses } from 'dd360-ds/lib'
 import { useTheme } from '@/store/theme-store'
+import { LANDING_DD360 } from '@/utils/constants'
 import Newsletter from '../Newsletter'
 import { Buildd3rIcon } from '../Icon'
 
@@ -93,7 +94,10 @@ function Footer() {
           <Flex
             className={composeClasses('gap-x-4', extendedPalette.linkSecondary)}
           >
-            <Link target="_blank" href="https://dd360.mx/bureau/privacyPolicy">
+            <Link
+              target="_blank"
+              href={`${LANDING_DD360}/bureau/privacyPolicy`}
+            >
               Notice of Privacy
             </Link>
           </Flex>

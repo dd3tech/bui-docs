@@ -21,8 +21,8 @@ export function Buildd3rIcon({
         d="M74.0727 33.0637H66.5743V6.02521H74.0727V33.0637Z"
         fill={color}
       />
-      <g clip-path="url(#clip0_162_19469)">
-        <g clip-path="url(#clip1_162_19469)">
+      <g clipPath="url(#clip0_162_19469)">
+        <g clipPath="url(#clip1_162_19469)">
           <path
             d="M9.49999 0.953979H-7.62939e-06V38.954H9.49999V0.953979Z"
             fill="#60A5FA"
