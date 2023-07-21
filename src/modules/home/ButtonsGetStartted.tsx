@@ -1,4 +1,4 @@
-import { Button, Flex } from 'dd360-ds'
+import { Button, Flex, Tooltip } from 'dd360-ds'
 import { composeClasses } from 'dd360-ds/lib'
 import Link from 'next/link'
 import {
@@ -28,28 +28,34 @@ const ButtonsGetStartted = () => {
           <ArrowRightIcon width={16} />
         </Button>
       </Link>
-      <Button
-        paddingY="2"
-        variant="secondary"
-        className={composeClasses(
-          'w-full sm:min-w-[202px] h-10 px-2 flex justify-between items-center',
-          extendedPalette.secundaryText
-        )}
-        style={{
-          borderColor: isCopied ? '#16a34a' : extendedPalette.inputBorderHex,
-          background: extendedPalette.inputBackground
-        }}
-        fontWeight="normal"
-        rounded="lg"
-        onClick={() => handleCopy('npm i dd360-ds@latest')}
+      <Tooltip
+        position={'top-end' as any}
+        content={isCopied ? 'Copied' : 'Copy'}
       >
-        <div className="w-full m-auto">npm i dd360-ds@latest </div>
-        {isCopied ? (
-          <ClipboardCheckIcon width={20} className="text-green-600" />
-        ) : (
-          <ClipboardIcon width={20} />
-        )}
-      </Button>
+        <Button
+          paddingY="2"
+          variant="secondary"
+          className={composeClasses(
+            'w-full sm:min-w-[202px] h-10 px-2 flex justify-between items-center',
+            extendedPalette.secundaryText
+          )}
+          style={{
+            borderColor: isCopied ? '#3b82f6' : extendedPalette.inputBorderHex,
+            background: extendedPalette.inputBackground
+          }}
+          fontWeight="normal"
+          rounded="lg"
+          onClick={() => handleCopy('npm i dd360-ds@latest')}
+        >
+          <div className="w-full m-auto">npm i dd360-ds@latest </div>
+
+          {isCopied ? (
+            <ClipboardCheckIcon width={20} className="text-blue-100" />
+          ) : (
+            <ClipboardIcon width={20} />
+          )}
+        </Button>
+      </Tooltip>
     </Flex>
   )
 }

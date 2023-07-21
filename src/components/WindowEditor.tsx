@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { composeClasses } from 'dd360-ds/lib'
-import { Flex } from 'dd360-ds'
+import { Flex, Tooltip } from 'dd360-ds'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import {
@@ -100,26 +100,31 @@ function WindowEditor({
       }}
     >
       {showCopyButton && (
-        <div className="relative">
-          <div
-            className="absolute rounded-lg right-4 top-0 bottom-0 border w-[35px] h-[35px] cursor-pointer"
-            onClick={() => handleCopy(codeString)}
-          >
-            <Flex
-              alignItems="center"
-              justifyContent="center"
-              className={composeClasses(
-                'text-gray-400 transition-all duration-100',
-                isCopied && 'rotate-12'
-              )}
+        <Tooltip
+          position={'top-end' as any}
+          content={isCopied ? 'Copied' : 'Copy'}
+        >
+          <div className="relative">
+            <div
+              className="absolute rounded-lg right-4 top-0 bottom-0 border w-[35px] h-[35px] cursor-pointer"
+              onClick={() => handleCopy(codeString)}
             >
-              <DynamicHeroIcon
-                icon={isCopied ? 'ClipboardCheckIcon' : 'ClipboardIcon'}
-                width={25}
-              />
-            </Flex>
+              <Flex
+                alignItems="center"
+                justifyContent="center"
+                className={composeClasses(
+                  'text-gray-400 transition-all duration-100',
+                  isCopied && 'rotate-12'
+                )}
+              >
+                <DynamicHeroIcon
+                  icon={isCopied ? 'ClipboardCheckIcon' : 'ClipboardIcon'}
+                  width={25}
+                />
+              </Flex>
+            </div>
           </div>
-        </div>
+        </Tooltip>
       )}
       {header?.show && (
         <nav
