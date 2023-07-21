@@ -13,7 +13,7 @@ const initPosition = {
 
 export default function useRelativePosition({
   basePosition = initPosition,
-  containerId = 'container-doc'
+  containerId = 'layout-content'
 }: UseRelativePositionProps) {
   const [position, setPosition] = useState(basePosition)
   const [targetRef, setTargetRef] = useState<any>(null)
