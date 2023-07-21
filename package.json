@@ -1,7 +1,9 @@
 {
   "name": "bui-docs",
+  "description": "The BUI website",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://bui.dd360.mx",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
