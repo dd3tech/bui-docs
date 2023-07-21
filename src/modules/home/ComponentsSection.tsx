@@ -203,14 +203,18 @@ const ComponentsSection = () => {
       </section>
 
       <section
-        className="block sm:hidden relative w-full section-goup-components max-w-2xl mb-auto mt-12"
-        style={{ maxWidth: 677, height: 369 }}
+        className="sm:hidden relative w-full section-goup-components mb-auto mt-12 floating"
+        style={{
+          animationDelay: '0.3s',
+          zIndex: 2
+        }}
       >
         <Image
           src={`/components-mobile-${isLightTheme ? 'light' : 'dark'}.png`}
           alt="demo-dashboard"
           className="pl-5 object-scale-down"
-          fill
+          width={750}
+          height={10}
         />
       </section>
     </section>
