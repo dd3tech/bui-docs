@@ -100,7 +100,7 @@ function Layout({ children }: { children: JSX.Element }) {
                 'md:flex'
               )}
             >
-              <SideBarDocs />
+              <SideBarDocs setIsActiveButtonMobile={setIsActiveButtonMobile} />
             </div>
             <div
               id="layout-content"
