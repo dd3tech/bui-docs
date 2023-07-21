@@ -2,6 +2,7 @@ import { ReactNode } from 'react'
 import dynamic from 'next/dynamic'
 import * as Components from 'dd360-ds'
 import { Text } from 'dd360-ds'
+import { composeClasses } from 'dd360-ds/lib'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 import {
   WindowEditor,
@@ -10,15 +11,6 @@ import {
   BackAndForwardController,
   Tag
 } from '@/components'
-
-import { PaginationCustom, TabsCustom } from '@/components/docs/navigation'
-import {
-  ModalCustom,
-  FileViewerCustom,
-  AsideModalCustom
-} from '@/components/docs/modals'
-
-import SwitchCustom from '@/components/docs/controls/SwitchCustom'
 import {
   ConfirmDialogCustom,
   CustomCallout,
@@ -28,11 +20,15 @@ import {
   ProgressCustom,
   FilterSelectCustom,
   FilterDateCustom,
-  DropdownCustom
-} from '@/components/docs/components'
-
+  DropdownCustom,
+  ModalCustom,
+  FileViewerCustom,
+  AsideModalCustom,
+  PaginationCustom,
+  TabsCustom,
+  SwitchCustom
+} from '@/modules/docs'
 import { TransitionCustom } from '@/components/Layout'
-import { composeClasses } from 'dd360-ds/lib'
 import { useTheme } from '@/store/theme-store'
 
 const SideBar = dynamic(() => import('dd360-ds/SideBar'), {

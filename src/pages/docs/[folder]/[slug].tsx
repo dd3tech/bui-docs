@@ -2,10 +2,10 @@ import { useEffect } from 'react'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { useTranslation } from 'next-i18next'
 import { MDXRemote } from 'next-mdx-remote'
+import { Container } from 'dd360-ds'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { serialize } from 'next-mdx-remote/serialize'
 import { getAllPaths, getDocBySlug } from '@/utils/readFile'
-import { Container } from 'dd360-ds'
 import { useGetComponents } from '@/hooks/useGetComponents'
 
 type Props = {
