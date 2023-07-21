@@ -1,6 +1,7 @@
 import { useTheme } from '@/store/theme-store'
 import Image from 'next/image'
-import { Button, Card, Circle, Flex, Text } from 'dd360-ds'
+import Link from 'next/link'
+import { Card, Circle, Flex, Text } from 'dd360-ds'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 import { composeClasses } from 'dd360-ds/lib'
 import { ChevronRightCircleIcon } from '@/components/icons/ChevronRightCircleIcon'
@@ -60,7 +61,7 @@ function BannerDashboard() {
               )}
               bold
             >
-              See our demo Dashboard
+              See our simulator platform
             </Text>
             <Text
               variant="p"
@@ -69,22 +70,21 @@ function BannerDashboard() {
                 extendedPalette.primaryText
               )}
             >
-              Get a live preview of a demo dashboard built with DD360 components
-              or lear how to rebuild it
+              Get a live preview of a simulator platform build with BUI and
+              learn how to use our UI
             </Text>
 
             <Flex
               gap="6"
               className="flex-col items-center sm:flex-row sm:gap-12 group-btns"
             >
-              <Button
-                paddingX="4"
-                paddingY="2.5"
+              <Link
+                target="_blank"
                 className={composeClasses(
-                  'flex gap-2.5 items-center justify-center w-full sm:w-auto',
+                  'flex gap-2.5 px-4 py-2 items-center justify-center w-full sm:w-auto rounded-md',
                   extendedPalette.componentBgSecondary
                 )}
-                variant="tertiary"
+                href="https://onboarding.dd360.mx/"
               >
                 <Text className="whitespace-nowrap">Live preview</Text>
                 <svg
@@ -101,20 +101,7 @@ function BannerDashboard() {
                     d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
                   />
                 </svg>
-              </Button>
-              <Button
-                paddingX="0"
-                className={composeClasses(
-                  'flex items-center gap-2.5',
-                  extendedPalette.linkPrimary
-                )}
-                variant="link"
-              >
-                <Text className="underline whitespace-nowrap">
-                  Rebuild dashboard
-                </Text>
-                <ChevronRightCircleIcon />
-              </Button>
+              </Link>
             </Flex>
           </div>
 
@@ -134,7 +121,6 @@ function BannerDashboard() {
                 width={20}
               />
             </Circle>
-
             <div className="overflow-hidden min-[1350px]:right-0 left-0 min-[1350px]:left-auto top-0 ml-0 lg:ml-12 relative lg:absolute lg:w-[705px] h-[130px] xs:h-[218px] sm:h-[314px] md:h-[354px] lg:translate-y-[-50%] lg:top-[50%] rounded-l-lg">
               <Image
                 src={`/sales-v2-page-${isLightTheme ? 'light' : 'dark'}_.png`}
