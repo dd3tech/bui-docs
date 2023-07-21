@@ -336,6 +336,11 @@ export const components: ComponentObjectProps = {
         badge: BADGE_TYPES.new
       },
       {
+        label: 'Timeline',
+        pathname: 'timeline',
+        badge: BADGE_TYPES.new
+      },
+      {
         label: 'Portal',
         pathname: 'portal'
       },
