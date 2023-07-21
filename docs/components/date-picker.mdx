@@ -4,8 +4,10 @@ title: React DatePicker component
 components: DatePicker
 ---
 
+<br id='top' />
 <br />
-<br />
+
+<Label>Components</Label>
 
 # <span name="floating-nav">DatePicker</span>
 
@@ -13,14 +15,14 @@ With the DatePicker component, you can provide users with the ability to interac
 
 <br />
 
-## <span name="floating-nav">Imports</span>
+##### <span name="floating-nav">Imports</span>
 
 The first alternative is recommended since they can reduce the application bundle
 
 <WindowEditor codeString="import DatePicker from 'dd360-ds/DatePicker'" />
 <WindowEditor codeString="import { DatePicker } from 'dd360-ds'" />
 
-## <span name="floating-nav">Usage</span>
+##### <span name="floating-nav">Usage</span>
 
 Use the DatePicker component as shown below:
 
@@ -35,9 +37,9 @@ The code snippet below shows how to use the DatePicker component:
 <DatePicker />
 `}/>
 
-#### <span name="floating-nav">Language</span>
+##### <span name="floating-nav">Language</span>
 
-With the prop <span className="border border-gray-300 bg-gray-200 p-1">language</span>, its variants <span className="border border-gray-300 bg-gray-200 p-1">es</span> and <span className="border border-gray-300 bg-gray-200 p-1">en</span> you can control the language
+With the prop <Tag text='language' />, its variants <Tag text='es' /> and <Tag text='en' /> you can control the language
 
 <ContainerComponentDoc>
 
@@ -57,9 +59,9 @@ With the prop <span className="border border-gray-300 bg-gray-200 p-1">language<
 `}
 />
 
-#### <span name="floating-nav">Format</span>
+##### <span name="floating-nav">Format</span>
 
-With the prop <span className="border border-gray-300 bg-gray-200 p-1">format</span>, and its <span className="border border-gray-300 bg-gray-200 p-1">short</span> and <span className="border border-gray-300 bg-gray-200 p-1">long</span> variants, you can customize the display format of the date, either in its full or abbreviated form.
+With the prop <Tag text='format' />, and its <Tag text='short' /> and <Tag text='long' /> variants, you can customize the display format of the date, either in its full or abbreviated form.
 
 <ContainerComponentDoc>
 <Flex justifyContent='around'>
@@ -78,9 +80,9 @@ With the prop <span className="border border-gray-300 bg-gray-200 p-1">format</s
 `}
 />
 
-#### <span name="floating-nav">OnlyOf</span>
+##### <span name="floating-nav">OnlyOf</span>
 
-With the prop <span className="border border-gray-300 bg-gray-200 p-1">onlyOf</span>, its variants <span className="border border-gray-300 bg-gray-200 p-1">year</span>, <span className="border border-gray-300 bg-gray-200 p-1">month</span>, <span className="border border-gray-300 bg-gray-200 p-1">day</span> and <span className="border border-gray-300 bg-gray-200 p-1">month-year</span> you can control the format
+With the prop <Tag text='onlyOf' />, its variants <Tag text='year' />, <Tag text='month' />, <Tag text='day' /> and <Tag text='month' />/span> you can control the format
 
 <ContainerComponentDoc>
 
@@ -104,9 +106,9 @@ With the prop <span className="border border-gray-300 bg-gray-200 p-1">onlyOf</s
 </Flex>
 `} />
 
-#### <span name="floating-nav">MinDate</span>
+##### <span name="floating-nav">MinDate</span>
 
-With the prop <span className="border border-gray-300 bg-gray-200 p-1">minDate</span>, you can define the selectable minimum date
+With the prop <Tag text='minDate' />, you can define the selectable minimum date
 
 <ContainerComponentDoc>
 
@@ -121,9 +123,9 @@ With the prop <span className="border border-gray-300 bg-gray-200 p-1">minDate</
 `}
 />
 
-#### <span name="floating-nav">MaxDate</span>
+##### <span name="floating-nav">MaxDate</span>
 
-With the prop <span className="border border-gray-300 bg-gray-200 p-1">maxDate</span>, you can define the maximum selectable date
+With the prop <Tag text='maxDate' />, you can define the maximum selectable date
 
 <ContainerComponentDoc>
 
@@ -138,7 +140,7 @@ With the prop <span className="border border-gray-300 bg-gray-200 p-1">maxDate</
 `}
 />
 
-## <span name="floating-nav">API Reference</span>
+##### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
   dataTable={[
@@ -156,3 +158,5 @@ With the prop <span className="border border-gray-300 bg-gray-200 p-1">maxDate</
 />
 
 Note: This documentation assumes that the audience has basic knowledge of React and how to use components in React applications.
+
+<BackAndForwardController />

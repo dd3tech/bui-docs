@@ -1,19 +1,37 @@
-import { Button, Input } from 'dd360-ds'
 import { useTranslation } from 'next-i18next'
+import { Button, Flex, Input } from 'dd360-ds'
+import { composeClasses } from 'dd360-ds/lib'
+import { useTheme } from '@/store/theme-store'
 
 function Newsletter() {
   const { t } = useTranslation('common')
+  const {
+    themeObject: { extendedPalette }
+  } = useTheme()
 
   return (
-    <div className="flex flex-col sm:flex-row gap-3">
+    <Flex gap="3" className="flex-col sm:flex-row mt-8">
       <Input
         placeholder="hello@dd360.mx"
-        className="sm:mt-0 inline-block border-gray-500 w-full sm:max-w-[287px] "
+        className={composeClasses(
+          'sm:mt-0 inline-block border-gray-500 w-full sm:max-w-[287px]',
+          extendedPalette.primaryText
+        )}
+        style={{
+          background: extendedPalette.inputBackground,
+          borderColor: extendedPalette.inputBorderHex
+        }}
       />
-      <Button className="leading-none" rounded="lg" paddingX="8" paddingY="4">
+      <Button
+        className="leading-none text-gray-50 min-w-max"
+        rounded="lg"
+        paddingX="8"
+        paddingY="4"
+        style={{ maxWidth: 124 }}
+      >
         {t('subscribe')}
       </Button>
-    </div>
+    </Flex>
   )
 }
 

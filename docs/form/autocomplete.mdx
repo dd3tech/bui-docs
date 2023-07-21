@@ -4,19 +4,21 @@ title: React Autocomplete component
 components: AutoComplete
 ---
 
+<br id='top' />
 <br />
-<br />
+
+<Label>Form</Label>
 
 # <span name="floating-nav">AutoComplete</span>
 
     It is a useful component for creating a text input field that suggests auto-complete options to the user while typing.
 
-### <span name="floating-nav">Import</span>
+##### <span name="floating-nav">Import</span>
 
 <WindowEditor codeString="import { AutoComplete } from 'dd360-ds'" />
 <WindowEditor codeString="import AutoComplete from 'dd360-ds/AutoComplete'" />
 
-### <span name="floating-nav">Usage</span>
+##### <span name="floating-nav">Usage</span>
 
 It is mandatory to pass a prop called "items". 
 The prop item, contains the data for each item in the drop-down list. Each array object must have a format similar to of following example:
@@ -29,7 +31,7 @@ The prop item, contains the data for each item in the drop-down list. Each array
 
 <AutoComplete items={[{name: 'Item name', id: '1'}]} />" />
 
-#### <span name="floating-nav">Variants</span>
+##### <span name="floating-nav">Variants</span>
 
 Sets the appearance of the component. Available options are: default, active, disabled, warning, success, and error. Default uses: "default".
 
@@ -57,7 +59,7 @@ Sets the appearance of the component. Available options are: default, active, di
 <AutoComplete variant='error' items={[]} />
 <AutoComplete variant='disabled' items={[]} />" />
 
-#### <span name="floating-nav">Types</span>
+##### <span name="floating-nav">Types</span>
 
 Sets the input type of the component. Available options are: text, number, email, currency, date, date, password, year, month, and percentage. By default it uses "text".
 
@@ -81,7 +83,7 @@ Sets the input type of the component. Available options are: text, number, email
 <AutoComplete type='password' items={[]} />
 <AutoComplete type='percentage' items={[]} />" />
 
-#### <span name="floating-nav">Can find text</span>
+##### <span name="floating-nav">Can find text</span>
 
 A message that is displayed when no items matching the user's search string are found.
 
@@ -93,7 +95,7 @@ A message that is displayed when no items matching the user's search string are 
 
 <AutoComplete canFindText='No matches in your search' items={[]} />" />
 
-#### <span name="floating-nav">isCloseOnBlur</span>
+##### <span name="floating-nav">IsCloseOnBlur</span>
 
 A boolean that indicates whether the drop-down list will be closed when the user clicks out of it.
 
@@ -105,7 +107,7 @@ A boolean that indicates whether the drop-down list will be closed when the user
 
 <AutoComplete isCloseOnBlur={false} items={[]} />"/>
 
-#### <span name="floating-nav">isLoading</span>
+##### <span name="floating-nav">IsLoading</span>
 
 A boolean indicating whether the drop-down list is loading.
 
@@ -117,7 +119,7 @@ A boolean indicating whether the drop-down list is loading.
 
 <AutoComplete isLoading items={[]} />" />
 
-#### <span name="floating-nav">loadingText</span>
+##### <span name="floating-nav">LoadingText</span>
 
 A message displayed while loading the drop-down list.
 
@@ -129,7 +131,7 @@ A message displayed while loading the drop-down list.
 
 <AutoComplete isLoading loadingText='Searching...' items={[]} />" />
 
-#### <span name="floating-nav">Placeholder</span>
+##### <span name="floating-nav">Placeholder</span>
 
 Text that is displayed as a placeholder in the text box before something is typed.
 
@@ -141,7 +143,7 @@ Text that is displayed as a placeholder in the text box before something is type
 
 <AutoComplete placeholder='Search items' items={[]} />" />
 
-### <span name="floating-nav">API Reference</span>
+##### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
     dataTable={[
@@ -173,3 +175,5 @@ Text that is displayed as a placeholder in the text box before something is type
         { title: 'className', default: null, types: ['string'] }
     ]}
 />
+
+<BackAndForwardController />

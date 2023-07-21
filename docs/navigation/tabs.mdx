@@ -4,8 +4,10 @@ title: React Tabs , TabGroup component
 components: Tabs , TabGroup
 ---
 
+<br id='top' />
 <br />
-<br />
+
+<Label>Navigation</Label>
 
 # <span name="floating-nav">Tabs </span>
 
@@ -16,11 +18,11 @@ Tabs organize and allow navigation between groups of content that are related an
 The TabGroup component must be used to wrap the tabs.
 
 <br />
-## <span name="floating-nav">Imports</span>
+##### <span name="floating-nav">Imports</span>
 
 <WindowEditor codeString="import { TabGroup, Tabs } from 'dd360-ds'" />
 
-## <span name="floating-nav">Usage</span>
+##### <span name="floating-nav">Usage</span>
 
 <ContainerComponentDoc className="flex items-center">
   <TabGroup variant="primary" >
@@ -46,9 +48,9 @@ The TabGroup component must be used to wrap the tabs.
 
 <br />
 
-### <span name="floating-nav">Variant</span>
+##### <span name="floating-nav">Variant</span>
 
-With the prop <span className='border border-gray-300 bg-gray-200 p-1'>variant</span> you can customize the style of the tabs
+With the prop <Tag text='variant' /> you can customize the style of the tabs
 
 <ContainerComponentDoc className="flex items-center">
 <TabsCustom option='isVariant'/>
@@ -69,9 +71,9 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>variant</
 
 <br />
 
-### <span name="floating-nav">Orientation</span>
+##### <span name="floating-nav">Orientation</span>
 
-With the prop <span className='border border-gray-300 bg-gray-200 p-1'>orientation</span> you can customize the orientation of the tabs
+With the prop <Tag text='orientation' /> you can customize the orientation of the tabs
 
 <ContainerComponentDoc className="flex items-center">
  <TabsCustom option='isOrientation' />
@@ -90,9 +92,9 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>orientati
 
 `} />
 
-### <span name="floating-nav">FontSize</span>
+##### <span name="floating-nav">FontSize</span>
 
-With the prop <span className='border border-gray-300 bg-gray-200 p-1'>fontSize</span> you can customize the font size of the tabs
+With the prop <Tag text='fontSize' /> you can customize the font size of the tabs
 
 <ContainerComponentDoc className="flex items-center">
     <TabsCustom option="isFontSize" />
@@ -114,7 +116,7 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>fontSize<
 
 #### <span>TextColor</span>
 
-With the prop <span className='border border-gray-300 bg-gray-200 p-1'>textColor</span> you can customize the color of the first tab
+With the prop <Tag text='textColor' /> you can customize the color of the first tab
 
 <ContainerComponentDoc className="flex items-center">
   <TabGroup textColor="rgba(49, 87, 240, 1)"  variant="primary" >
@@ -142,7 +144,7 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>textColor
 
 #### <span>Witdh</span>
 
-With the prop <span className='border border-gray-300 bg-gray-200 p-1'>width</span> you can customize the size of the TabGroup
+With the prop <Tag text='width' /> you can customize the size of the TabGroup
 
 <ContainerComponentDoc className="flex items-center">
   <TabGroup width={400}  >
@@ -170,7 +172,7 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>width</sp
 
 #### <span>IndicatorColor</span>
 
-With the prop <span className='border border-gray-300 bg-gray-200 p-1'>indicatorColor</span> you can customize the color of the line below the active tab
+With the prop <Tag text='indicatorColor' /> you can customize the color of the line below the active tab
 
 <ContainerComponentDoc className="flex items-center">
   <TabGroup indicatorColor='rgba(97, 39, 245, 0.8)' >
@@ -198,7 +200,7 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>indicator
 
 #### <span>WideLine</span>
 
-With the prop <span className='border border-gray-300 bg-gray-200 p-1'>wideLine</span> you can customize the width of the line under the active tab
+With the prop <Tag text='wideLine' /> you can customize the width of the line under the active tab
 
 <ContainerComponentDoc className="flex items-center">
   <TabGroup wideLine={8} >
@@ -226,7 +228,7 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>wideLine<
 
 #### <span>DisabledText</span>
 
-With the prop <span className='border border-gray-300 bg-gray-200 p-1'>disabledText</span> you can customize a message for disabled tabs
+With the prop <Tag text='disabledText' /> you can customize a message for disabled tabs
 
 <ContainerComponentDoc className="flex items-center">
   <TabGroup disabledText='Comming soon' >
@@ -254,7 +256,7 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>disabledT
 
 <br />
 
-## <span name="floating-nav">API Reference</span>
+##### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
     dataTable={[
@@ -273,3 +275,5 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>disabledT
         { title: 'role', default: null, types: ['string'] }
     ]}
 />
+
+<BackAndForwardController />

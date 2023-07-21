@@ -4,24 +4,26 @@ title: React Pagination component
 components: Pagination
 ---
 
+<br id='top' />
 <br />
-<br />
+
+<Label>Navigation</Label>
 
 # <span name="floating-nav">Pagination</span>
 
     The Pagination component is a handy tool that facilitates user navigation through different pages, especially when used with tables. With a minimalist interface and clear controls for moving pages forward or backward, jumping to a specific page and adjusting the number of elements displayed per page, this component is highly customizable and complies with accessibility standards. It improves usability and efficiency when handling large data sets, making it a valuable addition.
 
 <br />
-## <span name="floating-nav">Imports</span>
+##### <span name="floating-nav">Imports</span>
 
 The first alternative is recommended since they can reduce the application bundle.
 
 <WindowEditor codeString="import Pagination from 'dd360-ds/Pagination'" />
 <WindowEditor codeString="import { Pagination } from 'dd360-ds'" />
 
-## <span name="floating-nav">Usage</span>
+##### <span name="floating-nav">Usage</span>
 
-You can use it by importing the <span className='border border-gray-300 bg-gray-200 p-1'>usePagination</span> hook and use it like this
+You can use it by importing the <Tag text='usePagination' /> hook and use it like this
 
 <ContainerComponentDoc className="flex items-center gap-x-5">
     <PaginationCustom />
@@ -56,7 +58,7 @@ Or you can customize it your way with your functions and variables
 <br />
 <br />
 
-## <span name="floating-nav">API Reference</span>
+##### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
     dataTable={[
@@ -71,3 +73,5 @@ Or you can customize it your way with your functions and variables
         { title: 'goToPage', default: null, types: ['function'] }
     ]}
 />
+
+<BackAndForwardController />

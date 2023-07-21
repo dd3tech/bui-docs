@@ -4,8 +4,10 @@ title: React AsideModal component
 components: AsideModal
 ---
 
+<br id='top' />
 <br />
-<br />
+
+<Label>Modals</Label>
 
 # <span name="floating-nav">AsideModal</span>
 
@@ -16,7 +18,7 @@ intuitive user experience that enhances the usability and effectiveness of your 
 
 <br />
 
-## <span name="floating-nav">Imports</span>
+##### <span name="floating-nav">Imports</span>
 
 The first alternative is recommended since they can reduce the application bundle.
 
@@ -24,7 +26,7 @@ The first alternative is recommended since they can reduce the application bundl
 
 <WindowEditor codeString="import { AsideModal } from 'dd360-ds'" />
 
-## <span name="floating-nav">Usage</span>
+##### <span name="floating-nav">Usage</span>
 
 Use the AsideModal component as shown below:
 
@@ -42,9 +44,9 @@ The code snippet below shows how to use the AsideModal component:
 
 <br />
 
-## <span name="floating-nav">TitleVariant</span>
+##### <span name="floating-nav">TitleVariant</span>
 
-With the prop <span className='border border-gray-300 bg-gray-200 p-1'>titleVariant</span> you can customize the size of the title
+With the prop <Tag text='titleVariant' /> you can customize the size of the title
 
 <ContainerComponentDoc>
     <AsideModalCustom haveVariants={true} />
@@ -58,9 +60,9 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>titleVari
 
 <br />
 
-## <span name="floating-nav">Position</span>
+##### <span name="floating-nav">Position</span>
 
-With the prop <span className='border border-gray-300 bg-gray-200 p-1'>position</span> you can choose on which side of the screen to open the modal
+With the prop <Tag text='position' /> you can choose on which side of the screen to open the modal
 
 <br />
 ##### Position Right
@@ -90,9 +92,9 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>position<
 
 <br />
 
-## <span name="floating-nav">DisableEscapeKeyDown</span>
+##### <span name="floating-nav">DisableEscapeKeyDown</span>
 
-With the prop <span className='border border-gray-300 bg-gray-200 p-1'>disableEscapeKeyDown</span> you can disable the closing of the modal with the esc key
+With the prop <Tag text='disableEscapeKeyDown' /> you can disable the closing of the modal with the esc key
 
 <ContainerComponentDoc>
     <AsideModalCustom propsCustom={{ disableEscapeKeyDown: true }} />
@@ -107,7 +109,7 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>disableEs
 <br />
 <br />
 
-## <span name="floating-nav">API Reference</span>
+##### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
     dataTable={[
@@ -122,3 +124,5 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>disableEs
 />
 
 Note: This documentation assumes that the audience has basic knowledge of React and how to use components in React applications.
+
+<BackAndForwardController />

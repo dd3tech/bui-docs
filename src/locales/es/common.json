@@ -3,6 +3,7 @@
   "components": "Components",
   "docs": "Docs",
   "documentation": "Documentación",
+  "get-started": "Empezando",
   "examples": "Examples",
   "figma": "Figma",
   "buttons": "Botones",
@@ -16,5 +17,10 @@
   "subscribe": "Suscribe",
   "metadata": {
     "home": "DD360 UI - La biblioteca React para construir plataformas de back office"
+  },
+  "navbar": {
+    "dark": "Modo dark",
+    "light": "Modo light",
+    "default": "System"
   }
 }

@@ -4,8 +4,10 @@ title: React DownloadCard component
 components: DownloadCard
 ---
 
+<br id='top' />
 <br />
-<br />
+
+<Label>Layout</Label>
 
 # <span name="floating-nav">Download Card</span>
 
@@ -13,16 +15,16 @@ components: DownloadCard
 
 <br />
 <br />
-## <span name="floating-nav">Import</span>
+##### <span name="floating-nav">Import</span>
 
 <WindowEditor codeString="import { DownloadCard } from 'dd360-ds'" />
 <WindowEditor codeString="import DownloadCard from 'dd360-ds/DownloadCard'" />
 
 <br />
 <br />
-## <span name="floating-nav">Usage</span>
+##### <span name="floating-nav">Usage</span>
 
-The following 3 props are required to use the component
+The following 3 props are required to use the component:
 
 -   cancelText: Text to be displayed in the cancel button.
 -   downloadText: Text displayed on the download button.
@@ -45,7 +47,7 @@ The following 3 props are required to use the component
 />" />
 
 <br />
-#### downloadURL<span name="floating-nav">downloadURL</span>
+#### <span name="floating-nav">DownloadURL</span>
 
 URL of the file to download.
 
@@ -68,7 +70,7 @@ URL of the file to download.
 />" />
 
 <br />
-#### <span name="floating-nav">isActive</span>
+##### <span name="floating-nav">isActive</span>
 
 If true, the card is shown; if false, the card is hidden. Default is true
 
@@ -92,7 +94,7 @@ If true, the card is shown; if false, the card is hidden. Default is true
 
 <br />
 <br />
-## <span name="floating-nav">API Reference</span>
+##### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
     dataTable={[
@@ -107,3 +109,5 @@ If true, the card is shown; if false, the card is hidden. Default is true
         { title: 'width', default: null, types: ['number'] }
     ]}
 />
+
+<BackAndForwardController />

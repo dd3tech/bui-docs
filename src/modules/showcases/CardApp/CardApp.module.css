@@ -1,0 +1,32 @@
+.cardApp {
+  max-width: 398px;
+  min-height: 506px;
+}
+
+.imageContainer {
+  max-width: 366px;
+  max-height: 206px;
+}
+
+@media (max-width: 1024px) {
+  .cardApp {
+    max-width: 100%;
+    min-height: 254px;
+  }
+  .imageContainer {
+    min-width: 350px;
+    max-height: 188px;
+  }
+}
+
+@media (max-width: 640px) {
+  .imageContainer {
+    max-width: inherit;
+  }
+}
+
+@media (max-width: 447px) {
+  .imageContainer {
+    min-width: inherit;
+  }
+}

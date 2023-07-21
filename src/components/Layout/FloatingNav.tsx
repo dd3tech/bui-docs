@@ -1,6 +1,7 @@
+import { useRouter } from 'next/router'
 import { Text } from 'dd360-ds'
 import { composeClasses } from 'dd360-ds/lib'
-import { useRouter } from 'next/router'
+import { useTheme } from '@/store/theme-store'
 
 export type Entries = {
   label: string
@@ -15,31 +16,54 @@ interface IFloatingNav {
 
 const FloatingNav = ({ entries }: IFloatingNav) => {
   const router = useRouter()
+  const {
+    themeObject: { extendedPalette }
+  } = useTheme()
+
+  const isLight = useTheme().isLightTheme
 
   const handleClick = (position: number, id: string) => {
-    window.scrollTo({
-      top: position,
-      behavior: 'smooth'
+    document.getElementById('layout-content')?.scrollTo({
+      behavior: 'smooth',
+      top: position
     })
     router.push(`${router.asPath.split('#')[0]}#${id}`)
   }
 
   return (
-    <div className="flex flex-col text-xs gap-y-2 border-l-2 border-gray-300 ml-4 pl-2 fixed">
-      {entries?.map((entry) => (
-        <Text
-          key={`floating-nav-${entry.label}`}
-          variant="span"
-          className={composeClasses(
-            entry.isActive && 'text-base font-bold',
-            'cursor-pointer'
-          )}
-          onClick={() => handleClick(entry.position, entry.id)}
-        >
-          {entry.label}
-        </Text>
-      ))}
-    </div>
+    <>
+      <div
+        className={composeClasses(
+          'flex flex-col text-xs gap-y-2 border-l-2 border-gray-300 pl-2 fixed pr-5',
+          extendedPalette.cardBorderColor
+        )}
+      >
+        {entries?.map((entry) => (
+          <Text
+            key={`floating-nav-${entry.label}`}
+            variant="span"
+            className={composeClasses(
+              entry.isActive
+                ? `font-bold ${extendedPalette.tertiaryTextActive}`
+                : extendedPalette.tertiaryText,
+              isLight ? 'hover:font-bold' : 'hover:text-white',
+              'cursor-pointer'
+            )}
+            onClick={() => handleClick(entry.position, entry.id)}
+          >
+            {entry.isActive && (
+              <span
+                className={composeClasses(
+                  isLight ? 'bg-black' : 'bg-white',
+                  '-left-0.5 w-0.5 h-5 absolute'
+                )}
+              ></span>
+            )}
+            {entry.label}
+          </Text>
+        ))}
+      </div>
+    </>
   )
 }
 

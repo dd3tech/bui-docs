@@ -1,40 +1,43 @@
 import { GetStaticProps } from 'next'
 import dynamic from 'next/dynamic'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import {
-  BannerDashboard,
-  IllustrationsLayer,
-  OpenGraph,
-  TestimonialsBanner
-} from '@/components'
+import { composeClasses } from 'dd360-ds/lib'
+import { BannerDashboard, IllustrationsLayer } from '@/components'
 import {
   BuildWithSection,
   FeaturesSection,
-  StartNowSection,
   WindowEditorSection
-} from '@/modules'
-import { useTranslation } from 'next-i18next'
+} from '@/modules/home'
+import { useTheme } from '@/store/theme-store'
 
 const ComponentsSection = dynamic(
-  () => import('@/modules/landing/ComponentsSection'),
+  () => import('@/modules/home/ComponentsSection'),
+  { ssr: false }
+)
+
+const TestimonialsBanner = dynamic(
+  () => import('@/modules/home/TestimonialsBanner'),
   { ssr: false }
 )
 
 export default function Home() {
-  const { t } = useTranslation('common')
+  const { isLightTheme } = useTheme()
 
   return (
     <>
-      <OpenGraph title={t('metadata.home')!} />
       <IllustrationsLayer />
-      <main className="mx-auto">
+      <main
+        className={composeClasses(
+          'home-page mx-auto',
+          isLightTheme ? 'light' : 'dark'
+        )}
+      >
         <ComponentsSection />
         <FeaturesSection />
         <BuildWithSection />
         <BannerDashboard />
         <WindowEditorSection />
         <TestimonialsBanner />
-        <StartNowSection />
       </main>
     </>
   )

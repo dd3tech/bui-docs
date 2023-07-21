@@ -4,8 +4,10 @@ title: React SideBar component
 components: SideBar
 ---
 
+<br id='top' />
 <br />
-<br />
+
+<Label>Layout</Label>
 
 # <span name="floating-nav">SideBar</span>
 
@@ -19,20 +21,20 @@ and can have dropdown sub-items. The danger zone provides an additional option w
 
 <br />
 <br />
-## <span name="floating-nav">Import</span>
+##### <span name="floating-nav">Import</span>
 
 <WindowEditor codeString="import { SideBar } from 'dd360-ds'" />
 <WindowEditor codeString="import SideBar from 'dd360-ds/SideBar'" />
 
 <br />
 <br />
-## <span name="floating-nav">Usage</span>
+##### <span name="floating-nav">Usage</span>
 
 The SideBar component is highly customizable and adaptable to different use cases. It can show or hide items,
 expand or collapse the sidebar, and adjust the style and position as needed.
 
 <br />
-#### <span name="floating-nav">sideBarName</span>
+##### <span name="floating-nav">SideBarName</span>
 The prop sideBarName is required, it is a string that is rendered as the title of the SideBar component.
 
 <WindowEditor codeString='import { Sidebar } from "dd360-ds"
@@ -40,7 +42,7 @@ The prop sideBarName is required, it is a string that is rendered as the title o
 <SideBar sideBarName="Sidebar" />' />
 
 <br />
-#### <span name="floating-nav">sideBarSubTitle</span>
+##### <span name="floating-nav">SideBarSubTitle</span>
 
 A string that is rendered as the subtitle of the SideBar.
 
@@ -49,7 +51,7 @@ A string that is rendered as the subtitle of the SideBar.
 <SideBar sideBarName="Sidebar" sideBarSubTitle="Example SubTitle" />' />
 
 <br />
-#### <span name="floating-nav">sideBarList</span>
+##### <span name="floating-nav">SideBarList</span>
 
 A list of objects representing the sidebar options. Each object must have the same structure as shown in the following example:
 
@@ -121,7 +123,7 @@ import DynamicHeroIcon from "dd360-ds/DynamicHeroIcon"
 ' />
 
 <br />
-#### <span name="floating-nav">dangerZone</span>
+##### <span name="floating-nav">DangerZone</span>
 
 An object representing the danger zone of the SideBar. The object must have the same structure as shown in the following example:
 
@@ -148,7 +150,7 @@ Example:
 ' />
 
 <br />
-#### <span name="floating-nav">disabledOptionsTag</span>
+##### <span name="floating-nav">DisabledOptionsTag</span>
 
 A string representing the text to be displayed in the disabled options.
 
@@ -157,7 +159,7 @@ A string representing the text to be displayed in the disabled options.
 <SideBar sideBarName="Sidebar" disabledOptionsTag="Coming soon" />' />
 
 <br />
-#### <span name="floating-nav">isLoadingHeaderInfo</span>
+##### <span name="floating-nav">IsLoadingHeaderInfo</span>
 
 A boolean which indicates when the header information is loading, while it is true Skeletons will be shown.
 
@@ -167,7 +169,7 @@ A boolean which indicates when the header information is loading, while it is tr
 
 <br />
 
-#### <span name="floating-nav">isLoadingSideBarList</span>
+##### <span name="floating-nav">IsLoadingSideBarList</span>
 
 A boolean indicating when the option listing information is being loaded, as long as it is true, the skeletons will be displayed.
 
@@ -177,7 +179,7 @@ A boolean indicating when the option listing information is being loaded, as lon
 
 <br />
 
-#### <span name="floating-nav">numSkeletons</span>
+##### <span name="floating-nav">NumSkeletons</span>
 
 Number of items of type skeletons to show when isLoadingSideBarList is true.
 
@@ -187,7 +189,7 @@ Number of items of type skeletons to show when isLoadingSideBarList is true.
 
 
 <br />
-#### <span name="floating-nav">defaultExpand</span>
+##### <span name="floating-nav">DefaultExpand</span>
 
 A boolean representing whether the sidebar should be expanded by default.
 
@@ -198,7 +200,7 @@ A boolean representing whether the sidebar should be expanded by default.
 
 <br />
 
-#### <span name="floating-nav">top</span>
+##### <span name="floating-nav">Top</span>
 
 Top position of the sidebar.
 
@@ -208,7 +210,7 @@ Top position of the sidebar.
 
 <br />
 
-#### <span name="floating-nav">left</span>
+##### <span name="floating-nav">Left</span>
 
 Left position of the sidebar.
 
@@ -217,7 +219,7 @@ Left position of the sidebar.
 <SideBar sideBarName="Sidebar" left={80} />' />
 
 <br />
-#### <span name="floating-nav">Example</span>
+##### <span name="floating-nav">Example</span>
 
 <ContainerComponentDoc>
     <div className='flex relative' style={{ height: '50vh' }}>
@@ -318,7 +320,7 @@ Left position of the sidebar.
 
 <br />
 <br />
-## <span name="floating-nav">API Reference</span>
+##### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
     dataTable={[
@@ -346,3 +348,5 @@ Left position of the sidebar.
         { title: 'style', default: '5', types: ['CSSProperties'] }
     ]}
 />
+
+<BackAndForwardController />

@@ -1,12 +1,12 @@
+import { useEffect } from 'react'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { useTranslation } from 'next-i18next'
 import { MDXRemote } from 'next-mdx-remote'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { serialize } from 'next-mdx-remote/serialize'
 import { getAllPaths, getDocBySlug } from '@/utils/readFile'
-import { getComponents } from '@/utils'
-
 import { Container } from 'dd360-ds'
+import { useGetComponents } from '@/hooks/useGetComponents'
 
 type Props = {
   slug: string
@@ -18,11 +18,19 @@ type Props = {
 
 export default function Slug({ source }: Props) {
   const { t } = useTranslation('common')
+
+  useEffect(() => {
+    const topElement = document.getElementById('top')
+    if (topElement) {
+      topElement.scrollIntoView({ behavior: 'smooth' })
+    }
+  }, [source])
+
   return (
     <Container>
       <MDXRemote
         {...source}
-        components={{ ...getComponents() }}
+        components={{ ...useGetComponents() }}
         scope={{ t }}
       />
     </Container>

@@ -4,19 +4,21 @@ title: React Input Currency component
 components: InputCurrency
 ---
 
+<br id='top' />
 <br />
-<br />
+
+<Label>Form</Label>
 
 # <span name="floating-nav">InputCurrency</span>
 
     It is a text input component that allows the user to enter monetary values into a form.
 
-### <span name="floating-nav">Import</span>
+##### <span name="floating-nav">Import</span>
 
 <WindowEditor codeString="import { InputCurrency } from 'dd360-ds'" />
 <WindowEditor codeString="import InputCurrency from 'dd360-ds/InputCurrency'" />
 
-### <span name="floating-nav">Usage</span>
+##### <span name="floating-nav">Usage</span>
 
 <ContainerComponentDoc className="gap-y-2">
     <InputCurrency defaultValue='0.00' />
@@ -26,7 +28,7 @@ components: InputCurrency
 
 <InputCurrency defaultValue='0.00' />" />
 
-#### <span name="floating-nav">placeholder</span>
+##### <span name="floating-nav">placeholder</span>
 
 <ContainerComponentDoc className="gap-y-2">
     <InputCurrency placeholder="100" />
@@ -36,7 +38,7 @@ components: InputCurrency
 
 <InputCurrency placeholder='100' />" />
 
-#### <span name="floating-nav">value</span>
+##### <span name="floating-nav">value</span>
 
 The current value of the InputCurrency component. This value can be updated in real time based on user input.
 
@@ -60,7 +62,7 @@ The default value of the InputCurrency component when the page loads.
 
 <InputCurrency defaultValue={10.3} />" />
 
-#### <span name="floating-nav">decimalsLimit</span>
+##### <span name="floating-nav">decimalsLimit</span>
 
 The maximum number of decimals allowed in the input value. The default value is 2.
 
@@ -72,7 +74,7 @@ The maximum number of decimals allowed in the input value. The default value is 
 
 <InputCurrency decimalsLimit={1} defaultValue='0.0' />" />
 
-#### <span name="floating-nav">decimalScale</span>
+##### <span name="floating-nav">decimalScale</span>
 
 The number of decimal places to display in the output value. If set to null, decimalsLimit will be used. If decimalsLimit is also null, 2 decimals will be displayed.
 
@@ -84,7 +86,7 @@ The number of decimal places to display in the output value. If set to null, dec
 
 <InputCurrency decimalScale={3} defaultValue='0.00' />" />
 
-#### <span name="floating-nav">Prefix</span>
+##### <span name="floating-nav">Prefix</span>
 
 The prefix to be displayed in the output value.
 
@@ -96,7 +98,7 @@ The prefix to be displayed in the output value.
 
 <InputCurrency prefix='$' defaultValue='0.00' />" />
 
-### <span name="floating-nav">API Reference</span>
+##### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
     dataTable={[
@@ -121,3 +123,5 @@ The prefix to be displayed in the output value.
         { title: 'role', default: null, types: ['string'] }
     ]}
 />
+
+<BackAndForwardController />

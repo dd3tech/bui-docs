@@ -4,8 +4,10 @@ title: React Breadcrumbs component
 components: Breadcrumbs
 ---
 
+<br id='top' />
 <br />
-<br />
+
+<Label>Navigation</Label>
 
 # <span name="floating-nav">Breadcrumbs</span>
 
@@ -13,16 +15,16 @@ components: Breadcrumbs
 
 <br />
 
-## <span name="floating-nav">Imports</span>
+##### <span name="floating-nav">Imports</span>
 
 The first alternative is recommended since they can reduce the application bundle.
 
 <WindowEditor codeString="import Breadcrumbs from 'dd360-ds/Breadcrumbs'" />
 <WindowEditor codeString="import { Breadcrumbs } from 'dd360-ds'" />
 
-## <span name="floating-nav">Usage</span>
+##### <span name="floating-nav">Usage</span>
 
-<ContainerComponentDoc className="flex items-center">
+<ContainerComponentDoc className="flex items-center relative">
     <Breadcrumbs options={[{ name: 'First Path' }, { name: 'Second Path' }, { name: 'Third Path' }]} />
 </ContainerComponentDoc>
 
@@ -35,12 +37,12 @@ The first alternative is recommended since they can reduce the application bundl
 
 <br />
 
-#### <span name="floating-nav">Options</span>
+##### <span name="floating-nav">Options</span>
 
 The prop option is an array of objects that contains information about the routes in the Breadcrumbs component, including the name, icon, and redirect function
 of each route
 
-<ContainerComponentDoc className="flex items-center">
+<ContainerComponentDoc className="flex items-center relative">
     <Breadcrumbs
         options={[
             {
@@ -85,11 +87,11 @@ import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 
 <br />
 
-#### <span name="floating-nav">Separator</span>
+##### <span name="floating-nav">Separator</span>
 
-With the prop <span className='border border-gray-300 bg-gray-200 p-1'>separator</span> you can to change the default separator icon between the options
+With the prop <Tag text='separator' /> you can to change the default separator icon between the options
 
-<ContainerComponentDoc className="flex items-center">
+<ContainerComponentDoc className="flex items-center relative">
     <Breadcrumbs options={[{ name: 'First Path' }, { name: 'Second Path' }, { name: 'Third Path' }]} separator="|" />
 </ContainerComponentDoc>
 
@@ -103,7 +105,7 @@ import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 <br />
 <br />
 
-## <span name="floating-nav">API Reference</span>
+##### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
     dataTable={[
@@ -112,3 +114,5 @@ import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
         { title: 'className', default: null, types: ['string'] }
     ]}
 />
+
+<BackAndForwardController />

@@ -3,13 +3,12 @@ import { composeClasses } from 'dd360-ds/lib'
 
 interface Props {
   children: ReactNode
-  className: string
-  isPagination: boolean
+  className?: string
 }
 
 const ContainerComponentDoc: FC<Props> = ({ children, className }) => {
   const classContainer = composeClasses(
-    'py-5 base:px-1 px-3 rounded-md my-6 mx-0 bg-gray-100 shadow-sm border overflow-auto',
+    'container-cmpnt-doc py-5 base:px-1 px-3 rounded-md my-6 mx-0 shadow-sm overflow-auto bg-white',
     className
   )
 

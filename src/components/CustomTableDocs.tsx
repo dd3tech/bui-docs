@@ -1,13 +1,24 @@
 import { FC } from 'react'
-import { Table } from 'dd360-ds'
+import Table from 'dd360-ds/Table'
+import { composeClasses } from 'dd360-ds/lib'
+import { useTheme } from '@/store/theme-store'
 
 interface Props {
   dataTable: [{ title: string; default: string; types: []; required?: boolean }]
 }
 
 const CustomTableDocs: FC<Props> = ({ dataTable }) => {
+  const { isLightTheme } = useTheme()
+
   return (
-    <Table className="my-5">
+    <Table
+      className={composeClasses(
+        'my-5 table-api',
+        isLightTheme ? 'table-light' : 'table-dark'
+      )}
+      verticalBorders={false}
+      horizontalBorders={false}
+    >
       <Table.Header>
         <Table.HeaderRow>
           <Table.HeaderCell style={{ minWidth: 150 }}>Name</Table.HeaderCell>
@@ -36,7 +47,7 @@ const CustomTableDocs: FC<Props> = ({ dataTable }) => {
                 {data.types?.map((type) => (
                   <div
                     key={type}
-                    className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500"
+                    className="table-tag"
                     style={{ width: 'fit-content' }}
                   >
                     {type}
@@ -45,10 +56,7 @@ const CustomTableDocs: FC<Props> = ({ dataTable }) => {
               </div>
             </Table.Cell>
             <Table.Cell className="py-4">
-              <div
-                className="rounded-sm p-1 bg-gray-50 border border-gray-200 text-gray-500"
-                style={{ width: 'fit-content' }}
-              >
+              <div className="table-tag" style={{ width: 'fit-content' }}>
                 {data.default ?? '-'}
               </div>
             </Table.Cell>

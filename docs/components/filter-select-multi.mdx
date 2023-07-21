@@ -4,8 +4,10 @@ title: Filter Select Multi component
 components: Filter Select Multi
 ---
 
+<br id='top' />
 <br />
-<br />
+
+<Label>Components</Label>
 
 # <span name="floating-nav">Filter Select Multi</span>
 
@@ -13,12 +15,12 @@ The FilterSelectMulti component allows users to select multiple options from a s
 
 <br />
 <br />
-## <span name="floating-nav">Imports</span>
+##### <span name="floating-nav">Imports</span>
 
 <WindowEditor codeString="import { FilterSelectMulti } from 'dd360-ds'" />
 
 <br />
-## <span name="floating-nav">Usage</span>
+##### <span name="floating-nav">Usage</span>
 
 Use the FilterSelectMulti component as shown below:
 
@@ -52,9 +54,9 @@ The code snippet below shows how to use the FilterSelectMulti component:
 
 <br />
 
-## <span name="floating-nav">Initial Item List</span>
+##### <span name="floating-nav">Initial Item List</span>
 
-The prop <span className='border border-gray-300 bg-gray-200 p-1'>initialItemList</span> it is used to show the available options, there is also the possibility of disabling one of them
+The prop <Tag text='initialItemList' /> it is used to show the available options, there is also the possibility of disabling one of them
 <ContainerComponentDoc className="gap-y-2">
  <FilterSelectCustom disabled isMulti />
 </ContainerComponentDoc>
@@ -85,7 +87,7 @@ The prop <span className='border border-gray-300 bg-gray-200 p-1'>initialItemLis
 
 <br />
 
-#### <span name="floating-nav">Position</span>
+##### <span name="floating-nav">Position</span>
 
 To manage the FilterSelectMulti component's visibility and position, you can use the useState hook in a functional component. Position stores the top and left coordinates, as well as a boolean indicating whether the component should be shown. The component listens for clicks on a button, which toggles the FilterSelectMulti visibility and updates its position based on the click event's coordinates.
 
@@ -160,9 +162,9 @@ Note: The "domLoaded" state variable in the FilterSelectMultiCustom is used to e
 
 <br/>
 
-## <span name="floating-nav">Title</span>
+##### <span name="floating-nav">Title</span>
 
-The prop <span className='border border-gray-300 bg-gray-200 p-1'>title</span> serves to provide a descriptive title or label
+The prop <Tag text='title' /> serves to provide a descriptive title or label
 
 <ContainerComponentDoc className="gap-y-2">
  <FilterSelectCustom isMulti title="Title Example" />
@@ -196,9 +198,9 @@ The prop <span className='border border-gray-300 bg-gray-200 p-1'>title</span> s
 
 <br />
 
-## <span name="floating-nav">Text Apply Btn</span>
+##### <span name="floating-nav">Text Apply Btn</span>
 
-The prop <span className='border border-gray-300 bg-gray-200 p-1'>textApplyBtn</span> it is used to customize the text of the apply button
+The prop <Tag text='textApplyBtn' /> it is used to customize the text of the apply button
 
 <ContainerComponentDoc className="gap-y-2">
  <FilterSelectCustom isMulti textApplyBtn="Apply Example"/>
@@ -230,9 +232,9 @@ The prop <span className='border border-gray-300 bg-gray-200 p-1'>textApplyBtn</
 
 <br />
 
-## <span name="floating-nav">Text Reset Btn</span>
+##### <span name="floating-nav">Text Reset Btn</span>
 
-The prop <span className='border border-gray-300 bg-gray-200 p-1'>textResetBtn</span> it is used to customize the text of the reset button
+The prop <Tag text='textResetBtn' /> it is used to customize the text of the reset button
 
 <ContainerComponentDoc className="gap-y-2">
  <FilterSelectCustom isMulti textResetBtn="Reset Example"/>
@@ -264,9 +266,9 @@ The prop <span className='border border-gray-300 bg-gray-200 p-1'>textResetBtn</
 
 <br />
 
-## <span name="floating-nav">Width</span>
+##### <span name="floating-nav">Width</span>
 
-The prop <span className='border border-gray-300 bg-gray-200 p-1'>width</span> used to customize the size
+The prop <Tag text='width' /> used to customize the size
 
 <ContainerComponentDoc className="gap-y-2">
  <FilterSelectCustom isMulti width={250}/>
@@ -299,7 +301,7 @@ The prop <span className='border border-gray-300 bg-gray-200 p-1'>width</span> u
 <br />
 <br />
 
-### <span name="floating-nav">API Reference</span>
+##### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
     dataTable={[
@@ -320,3 +322,5 @@ The prop <span className='border border-gray-300 bg-gray-200 p-1'>width</span> u
 />
 
 Note: This documentation assumes that the audience has basic knowledge of React and how to use components in React applications.
+
+<BackAndForwardController />

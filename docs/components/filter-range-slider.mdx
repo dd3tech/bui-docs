@@ -4,8 +4,10 @@ title: React FilterRangeSlider component
 components: FilterRangeSlider
 ---
 
+<br id='top' />
 <br />
-<br />
+
+<Label>Components</Label>
 
 # <span name="floating-nav">Filter Range Slider</span>
 
@@ -17,11 +19,11 @@ the values.
 
 <br />
 
-## <span name="floating-nav">Imports</span>
+##### <span name="floating-nav">Imports</span>
 
 <WindowEditor codeString="import { FilterRangeSlider } from 'dd360-ds'" />
 
-## <span name="floating-nav">Usage</span>
+##### <span name="floating-nav">Usage</span>
 
 To use the FilterRangeSlider component, import it into your React 
 application and include it in your JSX code. The component takes a 
@@ -52,7 +54,7 @@ The code snippet below shows how to use the FilterRange component:
 
 <br />
 
-#### <span name="floating-nav">Visibility & position</span>
+##### <span name="floating-nav">Visibility & position</span>
 
 To manage the FilterRangeSlider component's visibility and position, you can use the
 useState hook in a functional component. Position stores the top and left
@@ -132,31 +134,31 @@ we can avoid any issues with the FilterRangeSlider component not being fully ini
 
 <br />
 
-#### <span name="floating-nav">Min & max</span>
+##### <span name="floating-nav">Min & max</span>
 
-<span className='border border-gray-300 bg-gray-200 p-1'>min</span>
+<Tag text='min' />
 Represents the minimum value that can be selected in the 
 range slider. It defaults to 0.
 
-<span className='border border-gray-300 bg-gray-200 p-1'>max</span>
+<Tag text='max' />
 Represents the maximum value that can be selected in the 
 range slider. It defaults to 999999999.
 
-<span className='border border-gray-300 bg-gray-200 p-1'>initMinValue</span>
+<Tag text='initMinValue' />
 Represents the initial minimum value that will be set 
 in the range slider. If it's not provided, then it will default to the min prop.
 
-<span className='border border-gray-300 bg-gray-200 p-1'>initMaxValue</span>
+<Tag text='initMaxValue' />
 Represents the initial maximum value that will be set 
 in the range slider. If it's not provided, then it will default to the max prop.
 
-<span className='border border-gray-300 bg-gray-200 p-1'>minValDisabled</span>
+<Tag text='minValDisabled' />
 Is a boolean value that determines whether the minimum 
 value input field will be disabled or not. If it's set to true, the minimum 
 input field will be disabled and the user will not be able to change its value. 
 It defaults to false.
 
-<span className='border border-gray-300 bg-gray-200 p-1'>maxValDisabled</span>
+<Tag text='maxValDisabled' />
 Is a boolean value that determines whether the maximum 
 value input field will be disabled or not. If it's set to true, the maximum input 
 field will be disabled and the user will not be able to change its value. It 
@@ -190,7 +192,7 @@ The code snippet below shows how to set a minimum and maximum value and disable 
 <br />
 <br />
 
-## <span name="floating-nav">API Reference</span>
+##### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
   dataTable={[
@@ -218,3 +220,5 @@ The code snippet below shows how to set a minimum and maximum value and disable 
 
 Note: This documentation assumes that the audience has basic knowledge of React
 and how to use components in React applications.
+
+<BackAndForwardController />

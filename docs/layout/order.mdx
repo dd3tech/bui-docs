@@ -4,8 +4,10 @@ title: React Order component
 components: Order
 ---
 
+<br id='top' />
 <br />
-<br />
+
+<Label>Layout</Label>
 
 # <span name="floating-nav">Order</span>
 
@@ -13,14 +15,14 @@ The "Order" component allows you to set the order of the elements in a Flexbox l
 
 <br />
 <br />
-## <span name="floating-nav">Import</span>
+##### <span name="floating-nav">Import</span>
 
 <WindowEditor codeString="import { Order } from 'dd360-ds'" />
 <WindowEditor codeString="import Order from 'dd360-ds/Order'" />
 
 <br />
 <br />
-## <span name="floating-nav">Usage</span>
+##### <span name="floating-nav">Usage</span>
 
 The "order" property accepts numeric values from 1 to 12, as well as the values "first", "last" and "none". The default value is "none", which means that the
 order of the element is not modified.
@@ -43,7 +45,7 @@ order of the element is not modified.
 
 <br />
 <br />
-## <span name="floating-nav">API Reference</span>
+##### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
     dataTable={[
@@ -51,3 +53,5 @@ order of the element is not modified.
         { title: 'children', default: null, types: ['ReactNode'] }
     ]}
 />
+
+<BackAndForwardController />

@@ -4,20 +4,22 @@ title: React MultiRange Slider component
 components: RangeSlider
 ---
 
+<br id='top' />
 <br />
-<br />
+
+<Label>Form</Label>
 
 # <span name="floating-nav">RangeSlider</span>
 
     An interactive slider that is used to allow users to select a range of values in a given range. It can be used for a variety of purposes on a website, such as filtering results, setting prices or choosing dates.
 
 
-### <span name="floating-nav">Import</span>
+##### <span name="floating-nav">Import</span>
 
 <WindowEditor codeString="import { RangeSlider } from 'dd360-ds'" />
 <WindowEditor codeString="import RangeSlider from 'dd360-ds/RangeSlider'" />
 
-### <span name="floating-nav">Usage</span>
+##### <span name="floating-nav">Usage</span>
 
 To use RangeSlider you are required to define the following props:
 
@@ -33,7 +35,7 @@ To use RangeSlider you are required to define the following props:
 
 <RangeSlider min='0' max='100' onChange={() => {}} />" />
 
-#### <span name="floating-nav">Multi</span>
+##### <span name="floating-nav">Multi</span>
 
 You can have two points on the slider with a simple prop called "multi"
 
@@ -45,7 +47,7 @@ You can have two points on the slider with a simple prop called "multi"
 
 <RangeSlider multi min='0' max='100' onChange={() => {}} />" />
 
-#### <span name="floating-nav">Bar color</span>
+##### <span name="floating-nav">Bar color</span>
 
 Defines the color of the slider bar.
 The default value is #1E40AF.
@@ -58,7 +60,7 @@ The default value is #1E40AF.
 
 <RangeSlider barColor='#ff0000' min='0' max='100' onChange={() => {}} />" />
 
-#### <span name="floating-nav">Size</span>
+##### <span name="floating-nav">Size</span>
 
 Defines the size of the button that selects the ranges. Possible values are "small", "medium", and "large". Default is "small".
 
@@ -78,7 +80,7 @@ Defines the size of the button that selects the ranges. Possible values are "sma
 <RangeSlider size='large' min='0' max='100' onChange={() => {}} />" />
 
 
-#### <span name="floating-nav">Size Bar</span>
+##### <span name="floating-nav">Size Bar</span>
 
 Defines the size of the slider bar. Possible values are "small", "medium", and "large". Default is "small".
 
@@ -97,7 +99,7 @@ Defines the size of the slider bar. Possible values are "small", "medium", and "
 <RangeSlider sizeBar='medium' min='0' max='100' onChange={() => {}} />
 <RangeSlider sizeBar='large' min='0' max='100' onChange={() => {}} />" />
 
-### <span name="floating-nav">API Reference</span>
+##### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
     dataTable={[
@@ -116,3 +118,5 @@ Defines the size of the slider bar. Possible values are "small", "medium", and "
         { title: 'className', default: null, types: ['string'] }
     ]}
 />
+
+<BackAndForwardController />

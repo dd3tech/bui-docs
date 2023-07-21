@@ -1,8 +1,10 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
-import { Divider, Text } from 'dd360-ds'
+import { Divider, Flex, Text } from 'dd360-ds'
+import { composeClasses } from 'dd360-ds/lib'
+import { useTheme } from '@/store/theme-store'
 import Newsletter from '../Newsletter'
+import { Buildd3rIcon } from '../icons'
 
 const footerMenu = [
   {
@@ -17,70 +19,85 @@ const footerMenu = [
   },
   {
     key: 3,
-    label: 'examples',
-    link: '/examples'
-  },
-  {
-    key: 4,
-    label: 'figma',
-    blank: true,
-    link: 'www.figma.com'
+    label: 'showcases',
+    link: '/showcases'
   }
 ]
 
 function Footer() {
   const { t } = useTranslation()
 
-  return (
-    <footer className="bg-white">
-      <div
-        className="py-12 px-4 mx-auto lg:px-8 2xl:px-0"
-        style={{ maxWidth: '1400px' }}
-      >
-        <Link href="/">
-          <Image src="/dd360-black.png" width={130} height={28.5} alt="logo" />
-        </Link>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-between mt-16">
-          <div>
-            <Text variant="p" className="mb-2" size="base" bold>
-              Keep up to date
-            </Text>
-            <Text variant="p" className="font-semibold text-gray-500">
-              Join our newsletter for regular updates. No spam ever.
-            </Text>
+  const {
+    themeObject: { extendedPalette }
+  } = useTheme()
 
-            <div className="grid gap-2 mt-8">
-              <label
-                className="cursor-pointer text-sm font-medium"
-                htmlFor="newsletter"
-              >
-                Subscribe to our newsletter
-              </label>
-              <Newsletter />
-            </div>
-          </div>
-          <div className="flex gap-28 lg:justify-self-end">
-            <ul className="flex flex-col gap-6 text-gray-500 font-normal">
-              {footerMenu.map(({ key, label, link, blank }) => (
-                <Link key={key} href={link} target={blank ? '_blank' : '_self'}>
+  return (
+    <footer className={extendedPalette.footerBackground}>
+      <div className="pt-8 pb-5 px-4 mx-auto lg:px-8 2xl:px-0 max-w-[1400px]">
+        <div className="flex justify-between flex-col sm:flex-row">
+          <Link href="/" className="inline-flex">
+            <Buildd3rIcon color={extendedPalette.logoColorHex} />
+          </Link>
+
+          <Flex
+            gap="2"
+            className="lg:justify-self-end mt-8 mb-8 sm:mb-0 sm:mt-0"
+          >
+            <ul
+              className={composeClasses(
+                'flex flex-row gap-10 sm:gap-4 flex-wrap text-blue-200 font-medium',
+                extendedPalette.linkSecondary
+              )}
+            >
+              {footerMenu.map(({ key, label, link }) => (
+                <Link key={key} href={link} className="capitalize mt-auto">
                   {t(label)}
                 </Link>
               ))}
             </ul>
-            <ol className="text-gray-700">
-              <Link className="font-bold" href="/" target="_blank">
-                Company
-              </Link>
-            </ol>
-          </div>
+          </Flex>
         </div>
-        <Divider variant="full" className="border-gray-100 my-8" />
-        <div className="flex justify-between items-center text-gray-500">
+
+        <Flex
+          gap="8"
+          justifyContent="between"
+          className="flex-col-reverse sm:flex-row"
+        >
+          <div className="w-full">
+            <Text
+              variant="p"
+              className={composeClasses(
+                'mt-0 sm:mt-8',
+                extendedPalette.textPrimary
+              )}
+              size="base"
+              fontBold="medium"
+            >
+              Keep up to date
+            </Text>
+            <Text variant="p" className="font-semibold text-gray-600">
+              Join our newsletter for regular updates. No spam ever.
+            </Text>
+            <Newsletter />
+          </div>
+        </Flex>
+        <Divider variant="full" className="border-gray-100 mt-6 mb-8" />
+        <Flex
+          justifyContent="between"
+          alignItems="center"
+          className="text-gray-400"
+        >
           <Text variant="p">
             © {new Date().getFullYear()} DD360. All rights reserved.
           </Text>
-          <Text>Privacy</Text>
-        </div>
+          <Flex
+            className={composeClasses('gap-x-4', extendedPalette.linkSecondary)}
+          >
+            <Link target="_blank" href="https://dd360.mx/bureau/privacyPolicy">
+              Notice of Privacy
+            </Link>
+          </Flex>
+        </Flex>
       </div>
     </footer>
   )

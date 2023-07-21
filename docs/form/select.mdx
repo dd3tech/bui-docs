@@ -4,19 +4,21 @@ title: React Select component
 components: Select
 ---
 
+<br id='top' />
 <br />
-<br />
+
+<Label>Form</Label>
 
 # <span name="floating-nav">Select</span>
 
    The component Select that renders a dropdown menu. The dropdown menu has several variants
 
-### <span name="floating-nav">Import</span>
+##### <span name="floating-nav">Import</span>
 
 <WindowEditor codeString="import { Select } from 'dd360-ds'" />
 <WindowEditor codeString="import Select from 'dd360-ds/Select'" />
 
-### <span name="floating-nav">Usage</span>
+##### <span name="floating-nav">Usage</span>
 
 To customize the options we must pass it an object in the prop optionsList with the structure of the example.
 
@@ -28,7 +30,7 @@ To customize the options we must pass it an object in the prop optionsList with 
 
 <Select optionsList={{ A: {label: 'Select option', disabled: true}, B: { label: 'Option B' }, C: { label: 'Option C' } }} />" />
 
-#### <span name="floating-nav">Variants</span>
+##### <span name="floating-nav">Variants</span>
 
 Select has the following variants: "default", "active", "success", "warning", "error" and "disabled".
 By default it uses "default".
@@ -58,7 +60,7 @@ By default it uses "default".
  <Select variant='disabled' optionsList={{ A: {label: 'Select option', disabled: true}, B: { label: 'Option B' }, C: { label: 'Option C' } }} />
 " />
 
-#### <span name="floating-nav">Label</span>
+##### <span name="floating-nav">Label</span>
 
 The label prop is used to add a label to the Select component. When the prop is provided, the label will appear above the dropdown menu.
 
@@ -77,7 +79,7 @@ The label prop is used to add a label to the Select component. When the prop is 
 />
 " />
 
-#### <span name="floating-nav">noBorders</span>
+##### <span name="floating-nav">noBorders</span>
 
 The noBorders prop is used to remove the border styling of the Select component. When the prop is provided, the component will appear without borders. 
 
@@ -97,7 +99,7 @@ The noBorders prop is used to remove the border styling of the Select component.
 " />
 
 
-#### <span name="floating-nav">Select With Icon</span>
+##### <span name="floating-nav">Select With Icon</span>
 
 Use Select with an icon.
 
@@ -117,9 +119,9 @@ import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
 />
 " />
 
-#### <span name="floating-nav">isRequired</span>
+##### <span name="floating-nav">isRequired</span>
 
-With the prop <span className='border border-gray-300 bg-gray-200 p-1'>isRequired</span> you can mark an select as required. Setting isRequired to true will add an asterisk (*) next to the entry to indicate that its completion is required. This functionality is especially useful for highlighting the need to fill in certain fields on forms or user interfaces.
+With the prop <Tag text='isRequired' /> you can mark an select as required. Setting isRequired to true will add an asterisk (*) next to the entry to indicate that its completion is required. This functionality is especially useful for highlighting the need to fill in certain fields on forms or user interfaces.
 
 <ContainerComponentDoc className="gap-y-2">
     <Select optionsList={{ A: {label: 'First Option'} }} isRequired label='This field is required' />
@@ -130,7 +132,7 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>isRequire
 <Select optionsList={{ A: {label: 'First Option'} }} isRequired label='This field is required' />
 " />
 
-### <span name="floating-nav">API Reference</span>
+##### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
     dataTable={[
@@ -154,3 +156,5 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>isRequire
         { title: 'isRequired', default: null, types: ['boolean'] }
     ]}
 />
+
+<BackAndForwardController />

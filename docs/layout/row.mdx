@@ -4,8 +4,10 @@ title: React Row component
 components: Row
 ---
 
+<br id='top' />
 <br />
-<br />
+
+<Label>Layout</Label>
 
 # <span name="floating-nav">Row</span>
 
@@ -14,14 +16,14 @@ components: Row
 
 <br />
 <br />
-## <span name="floating-nav">Import</span>
+##### <span name="floating-nav">Import</span>
 
 <WindowEditor codeString="import { Row } from 'dd360-ds'" />
 <WindowEditor codeString="import Row from 'dd360-ds/Layout/Row'" />
 
 <br />
 <br />
-## <span name="floating-nav">Usage</span>
+##### <span name="floating-nav">Usage</span>
 
 <ContainerComponentDoc>
     <Row>
@@ -43,7 +45,7 @@ components: Row
 ' />
 
 <br />
-#### <span name="floating-nav">Custom Row</span>
+##### <span name="floating-nav">Custom Row</span>
 
 You can customize the Row component with the following props:
 
@@ -70,7 +72,7 @@ screens. Default is 2. Accepts values from 1 to 4. "sm": number of columns to sh
 
 <br />
 <br />
-## <span name="floating-nav">API Reference</span>
+##### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
     dataTable={[
@@ -82,3 +84,5 @@ screens. Default is 2. Accepts values from 1 to 4. "sm": number of columns to sh
         { title: 'className', default: null, types: ['string'] }
     ]}
 />
+
+<BackAndForwardController />

@@ -4,8 +4,10 @@ title: React Progress component
 components: Progress
 ---
 
+<br id='top' />
 <br />
-<br />
+
+<Label>Components</Label>
 
 # <span name="floating-nav">Progress</span>
 
@@ -14,12 +16,12 @@ the progress of a task or process either in a circular or linear format.
 
 <br />
 
-## <span name="floating-nav">Imports</span>
+##### <span name="floating-nav">Imports</span>
 
 <WindowEditor codeString="import { Progress } from 'dd360-ds'" />
 <WindowEditor codeString="import Progress from 'dd360-ds/Progress'" />
 
-## <span name="floating-nav">Usage</span>
+##### <span name="floating-nav">Usage</span>
 
 The Progress component offers exceptional flexibility by providing options for both circular 
 and linear progress representations. This allows you to align the visual style of the component 
@@ -41,7 +43,7 @@ The code snippet below shows how to use the Progress component:
 
 <br />
 
-### <span name="floating-nav">Progress circle</span>
+##### <span name="floating-nav">Progress circle</span>
 
 The Progress Circle component is a circular representation of the progress indicator. It can be 
 implemented by specifying the type prop as 'circle' when using the Progress component. By 
@@ -64,7 +66,7 @@ appealing circular progress indicators.
 `}/>
 
 <br />
-### <span name="floating-nav">Progress linear</span>
+##### <span name="floating-nav">Progress linear</span>
 
 The Progress Linear component provides a linear representation of the progress indicator. It is 
 implemented by setting the type prop as 'linear' when using the Progress component. With adjustable 
@@ -84,7 +86,7 @@ indicator into different layouts and designs.
 `}/>
 
 <br />
-### <span name="floating-nav">Custom colors</span>
+##### <span name="floating-nav">Custom colors</span>
 
 The Progress component provides the flexibility to customize the colors of the progress indicators 
 to match the visual style of your application. By specifying properties such as progressLineColor 
@@ -104,7 +106,7 @@ a cohesive and visually appealing user interface.
 `}/>
 
 <br />
-### <span name="floating-nav">Line cap</span>
+##### <span name="floating-nav">Line cap</span>
 
 The Progress component provides the ability to customize the line cap style of the progress indicator. 
 By selecting from options such as 'round', 'square', or 'butt', you can refine the visual appearance of 
@@ -137,7 +139,7 @@ the same result.
 `}/>
 
 <br />
-### <span name="floating-nav">Indeterminate</span>
+##### <span name="floating-nav">Indeterminate</span>
 
 The Progress component offers an indeterminate mode that provides an animated representation of 
 progress when the exact progress value is unknown or not applicable. This mode is useful in scenarios 
@@ -161,7 +163,7 @@ precise completion status cannot be determined.
 `}/>
 
 <br />
-### <span name="floating-nav">Custom content</span>
+##### <span name="floating-nav">Custom content</span>
 
 The Progress component allows you to include custom content within the progress indicator using the children 
 prop. This feature enhances the visual presentation by allowing you to add text, icons, or other React 
@@ -172,7 +174,7 @@ components alongside the progress indicator.
 </ContainerComponentDoc>
 
 <br />
-### <span name="floating-nav">Progress vs Spinner</span>
+##### <span name="floating-nav">Progress vs Spinner</span>
 
 Progress component and the Spinner component can serve as visual indicators, but they have distinct 
 functionalities and use cases.
@@ -192,7 +194,7 @@ determine the most suitable choice.
 <br />
 <br />
 
-## <span name="floating-nav">API Reference</span>
+##### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
   dataTable={[
@@ -212,3 +214,5 @@ determine the most suitable choice.
 
 Note: This documentation assumes that the audience has basic knowledge of React
 and how to use components in React applications.
+
+<BackAndForwardController />

@@ -4,8 +4,10 @@ title: React Spinner component
 components: Spinner
 ---
 
+<br id='top' />
 <br />
-<br />
+
+<Label>Controls</Label>
 
 # <span name="floating-nav">Spinner</span>
 
@@ -14,7 +16,7 @@ on the progress of the task, which improves the user experience on web or mobile
 
 <br />
 <br />
-## <span name="floating-nav">Imports</span>
+##### <span name="floating-nav">Imports</span>
 
 The first alternative is recommended since they can reduce the application bundle
 
@@ -22,7 +24,7 @@ The first alternative is recommended since they can reduce the application bundl
 <WindowEditor codeString="import { Spinner } from 'dd360-ds'" />
 
 <br />
-## <span name="floating-nav">Usage</span>
+##### <span name="floating-nav">Usage</span>
 
 Use the Spinner component as shown below:
 
@@ -42,9 +44,9 @@ The code snippet below shows how to use the Spinner component:
 
 <br />
 
-#### <span name="floating-nav">Color</span>
+##### <span name="floating-nav">Color</span>
 
-With the prop <span className='border border-gray-300 bg-gray-200 p-1'>color</span> you can customize the color of the spinner
+With the prop <Tag text='color' /> you can customize the color of the spinner
 
 <ContainerComponentDoc className="gap-y-2">
     <Spinner color="#44ce41" />
@@ -60,9 +62,9 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>color</sp
 
 <br />
 
-#### <span name="floating-nav">Border</span>
+##### <span name="floating-nav">Border</span>
 
-With the prop <span className='border border-gray-300 bg-gray-200 p-1'>border</span> you can customize the width of the spinner border
+With the prop <Tag text='border' /> you can customize the width of the spinner border
 
 <ContainerComponentDoc className="gap-y-2">
     <Spinner border={8} />
@@ -78,9 +80,9 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>border</s
 
 <br />
 
-#### <span name="floating-nav">PageLoader</span>
+##### <span name="floating-nav">PageLoader</span>
 
-With the prop <span className='border border-gray-300 bg-gray-200 p-1'>pageLoader</span> you can add a proper spineer for page load
+With the prop <Tag text='pageLoader' /> you can add a proper spineer for page load
 
 <ContainerComponentDoc className="gap-y-2">
     <Spinner pageLoader />
@@ -96,9 +98,9 @@ With the prop <span className='border border-gray-300 bg-gray-200 p-1'>pageLoade
 
 <br />
 
-#### <span name="floating-nav">Width and Height</span>
+##### <span name="floating-nav">Width and Height</span>
 
-With the props <span className='border border-gray-300 bg-gray-200 p-1'>width</span> and <span className='border border-gray-300 bg-gray-200 p-1'>height</span>
+With the props <Tag text='width' /> and <Tag text='height' />
 you can customize the size of the spinner
 
 <ContainerComponentDoc className="gap-y-2">
@@ -115,7 +117,7 @@ you can customize the size of the spinner
 
 <br />
 <br />
-### <span name="floating-nav">API Reference</span>
+##### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
     dataTable={[
@@ -130,3 +132,5 @@ you can customize the size of the spinner
 />
 
 Note: This documentation assumes that the audience has basic knowledge of React and how to use components in React applications.
+
+<BackAndForwardController />

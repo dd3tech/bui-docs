@@ -7,7 +7,7 @@ export default function Docs() {
 export const getServerSideProps: GetServerSideProps = async () => {
   return {
     redirect: {
-      destination: '/docs/navigation/tabs',
+      destination: '/docs/get-started/getting-started',
       permanent: false
     }
   }
