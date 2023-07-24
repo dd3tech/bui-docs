@@ -65,7 +65,7 @@ function Layout({ children }: { children: JSX.Element }) {
             alignItems="center"
             gap="2"
             className={composeClasses(
-              'py-2 px-4 md:hidden',
+              'py-2 px-4 sticky z-50 top-14 md:hidden',
               extendedPalette.cardBackground
             )}
           >
