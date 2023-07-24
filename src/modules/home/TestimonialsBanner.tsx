@@ -71,26 +71,17 @@ function TestimonialsBanner() {
   const {
     themeObject: { extendedPalette }
   } = useTheme()
-  const { size } = useResize()
+  const { isMobile } = useResize()
   const [cards, setCards] = useState<Testimonial[][]>(testimonials)
   const { weeklyDownloads, isLoading: isLoadingNpm } = useGetWeeklyDownloads()
   const { watchers, isLoading: isLoadingGithub = true } = useGetInfoRepository()
 
   useEffect(() => {
     const currentArray = [...testimonials[0]]
-    if (!size?.width) return
+    if (!isMobile) return setCards(splitArray(currentArray, 3))
 
-    if (size.width >= 768) {
-      setCards(splitArray(currentArray, 3))
-    } else {
-      currentArray.splice(2, 5)
-      setCards(splitArray(currentArray, 2))
-    }
-    // else {
-    //   currentArray.splice(2, 4)
-    //   setCards(splitArray(currentArray, 1))
-    // }
-  }, [size])
+    return setCards(splitArray(currentArray, 5))
+  }, [isMobile])
 
   return (
     <section className="px-4 lg:px-8 xl:px-0 max-w-8xl mx-auto text-white mb-[188px]">
@@ -109,14 +100,14 @@ function TestimonialsBanner() {
         product people like you
       </Text>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 relative mt-12 sm:mt-[52px] md:px-10">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 relative sm:gap-6 mt-12 sm:mt-[52px] md:px-10">
         {cards.map((group, index) => (
           <Flex gap="4" key={index} className="flex-col sm:gap-6">
             {group.map((testimonial, idx) => (
               <div
                 key={idx}
                 className={composeClasses(
-                  'rounded-lg h-fit lg:min-h-[184px] max-w-full p-4 sm:p-6',
+                  'rounded-lg sm:h-auto lg:min-h-[184px] max-w-full p-4 sm:p-6',
                   extendedPalette.cardBackground
                 )}
                 style={{
@@ -153,14 +144,17 @@ function TestimonialsBanner() {
                     </Text>
                   </div>
                 </Flex>
-                <Text
-                  className={composeClasses(
-                    'text-xs sm:text-base',
-                    extendedPalette.componentText
-                  )}
-                >
-                  {testimonial.message}
-                </Text>
+                <div className="h-full overflow-hidden">
+                  <Text
+                    className={composeClasses(
+                      'text-xs sm:text-base',
+                      isMobile && 'line-clamp-3',
+                      extendedPalette.componentText
+                    )}
+                  >
+                    {testimonial.message}
+                  </Text>
+                </div>
               </div>
             ))}
           </Flex>
