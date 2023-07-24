@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { Text, Flex, Button, Avatar, useResize, Skeleton } from 'dd360-ds'
 import { composeClasses } from 'dd360-ds/lib'
