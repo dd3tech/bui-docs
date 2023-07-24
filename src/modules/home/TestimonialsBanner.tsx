@@ -71,23 +71,17 @@ function TestimonialsBanner() {
   const {
     themeObject: { extendedPalette }
   } = useTheme()
-  const { size } = useResize()
+  const { isMobile } = useResize()
   const [cards, setCards] = useState<Testimonial[][]>(testimonials)
   const { weeklyDownloads, isLoading: isLoadingNpm } = useGetWeeklyDownloads()
   const { watchers, isLoading: isLoadingGithub = true } = useGetInfoRepository()
 
-  const isShort = useCallback((index: number, idx: number) => {
-    if (index === 0) return idx % 2 !== 0
-    return idx % 2 === 0
-  }, [])
-
   useEffect(() => {
     const currentArray = [...testimonials[0]]
-    if (!size?.width) return
-    if (size.width >= 768) return setCards(splitArray(currentArray, 3))
+    if (!isMobile) return setCards(splitArray(currentArray, 3))
 
     return setCards(splitArray(currentArray, 5))
-  }, [size])
+  }, [isMobile])
 
   return (
     <section className="px-4 lg:px-8 xl:px-0 max-w-8xl mx-auto text-white mb-[188px]">
@@ -113,7 +107,6 @@ function TestimonialsBanner() {
               <div
                 key={idx}
                 className={composeClasses(
-                  isShort(index, idx) ? 'h-32' : 'h-44',
                   'rounded-lg sm:h-auto lg:min-h-[184px] max-w-full p-4 sm:p-6',
                   extendedPalette.cardBackground
                 )}
@@ -151,24 +144,16 @@ function TestimonialsBanner() {
                     </Text>
                   </div>
                 </Flex>
-                <div>
-                  <div
-                    className={`${
-                      isShort(index, idx) ? 'h-12' : 'h-24'
-                    } h-12 overflow-hidden sm:h-auto`}
+                <div className="h-full overflow-hidden">
+                  <Text
+                    className={composeClasses(
+                      'text-xs sm:text-base',
+                      isMobile && 'line-clamp-3',
+                      extendedPalette.componentText
+                    )}
                   >
-                    <Text
-                      className={composeClasses(
-                        'text-xs sm:text-base',
-                        extendedPalette.componentText
-                      )}
-                    >
-                      {testimonial.message}
-                    </Text>
-                  </div>
-                  <Flex justifyContent="end" className="sm:hidden -mt-4">
-                    ...
-                  </Flex>
+                    {testimonial.message}
+                  </Text>
                 </div>
               </div>
             ))}
