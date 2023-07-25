@@ -163,7 +163,8 @@ export const components: ComponentObjectProps = {
       },
       {
         label: 'InputCurrency',
-        pathname: 'input-currency'
+        pathname: 'input-currency',
+        badge: BADGE_TYPES.deprecated
       },
       {
         label: 'InputFile',
