@@ -83,6 +83,18 @@ For disabled Inputs, use the "disabled" prop.
 
 <Input disabled />" />
 
+##### <span name="floating-nav">Currency</span>
+
+For currency Inputs, use the "type='currency'" prop.
+
+<Playground className="gap-y-2">
+    <Input type="currency" prefix="$" value='1000'/>
+</Playground>
+
+<WindowEditor codeString="import { Input } from 'dd360-ds'
+
+<Input type='currency' prefix='$' value='1000' /> //$1,000.00"/>
+
 ##### <span name="floating-nav">Label</span>
 
 For label Inputs, use the "label" prop.
@@ -179,6 +191,24 @@ With the prop <Tag text='isRequired' /> you can mark an input as required. Setti
         { title: 'paddingY', default: null, types: ['string'] },
         { title: 'isRequired', default: null, types: ['boolean'] },
         { title: '...', default: null, types: ['InputHTMLAttributes'] }
+    ]}
+/>
+
+
+##### <span name="floating-nav">Currency</span>
+
+When the <Tag text='type' /> prop is <Tag text='currency'/>.
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'prefix', default: '$', types: ['string'] },
+        { title: 'decimalSeparator', default: '.', types: ['string'] },
+        { title: 'groupSeparator', default: ',', types: ['string'] },
+        { title: 'decimalsLimit', default: 2, types: ['number'] },
+        { title: 'suffix', default: null, types: ['string'] },
+        { title: 'decimalScale', default: 2, types: ['number'] },
+        { title: '...', default: null, types: ['InputHTMLAttributes'] },
+        { title: '...', default: null, types: ['InputProps'] }
     ]}
 />
 
