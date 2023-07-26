@@ -55,6 +55,11 @@
   font-size: 16px;
 }
 
+.DocSearch-Input:focus,
+.DocSearch-Input:focus-visible {
+  outline: none;
+}
+
 .DocSearch-Hit-source {
   background: inherit;
 }
