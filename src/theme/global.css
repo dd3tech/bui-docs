@@ -299,29 +299,3 @@ div ::-webkit-scrollbar-corner {
 .light ::-webkit-scrollbar-thumb:hover {
   background-color: #000000b5;
 }
-
-.modal-algolia div[role='btn-close'] {
-  display: none;
-}
-
-.modal-algolia {
-  border-radius: 16px;
-}
-
-.modal-algolia div:nth-child(2) {
-  margin: 0;
-  height: calc(100% - 54px);
-}
-
-div[role='modal-custom'] > div:has(.modal-algolia) {
-  background: rgba(17, 24, 39, 0.75);
-  backdrop-filter: blur(2.5px);
-}
-
-.dark .modal-algolia {
-  background-color: #111827 !important;
-}
-
-.light .modal-algolia {
-  background-color: #f9fafb !important;
-}
