@@ -130,7 +130,7 @@ function Navbar({ className }: NavbarProps) {
         </ul>
 
         <Flex gap="2">
-          <Search className="mr-4" />
+          <Search className="md:mr-4" />
 
           <Dropdown>
             <Dropdown.Trigger>
