@@ -1,0 +1,301 @@
+/* General button styles */
+
+.DocSearch-Button {
+  border: 1px solid;
+  border-radius: 12px;
+}
+
+.DocSearch-Button:hover {
+  box-shadow: none;
+}
+
+.DocSearch-Button-Placeholder {
+  font-size: 14px;
+}
+
+.DocSearch-Button-Keys {
+  padding: 4px;
+  border-radius: 8px;
+  min-width: 47px;
+  border: 1px solid;
+}
+
+.DocSearch-Button-Key {
+  background: transparent;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  margin-right: 0;
+  top: auto;
+  font-size: 12px;
+  width: 18px;
+}
+
+/* General modal styles */
+
+.DocSearch-Modal {
+  border-radius: 16px;
+  box-shadow: none;
+  border: 1px solid;
+}
+
+.DocSearch-Form {
+  height: 54px;
+  border-radius: 12px;
+  box-shadow: none;
+  border: 2px solid;
+}
+
+.DocSearch-Search-Icon {
+  font-size: 20px;
+}
+
+.DocSearch-Input {
+  font-size: 16px;
+}
+
+.DocSearch-Input:focus,
+.DocSearch-Input:focus-visible {
+  outline: none;
+}
+
+.DocSearch-Hit-source {
+  background: inherit;
+}
+
+.DocSearch-Hit a {
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.DocSearch-Footer {
+  box-shadow: none;
+  border-top: 1px solid;
+  border-radius: 0 0 16px 16px;
+}
+
+.DocSearch-Hit-Select-Icon {
+  display: block !important;
+}
+
+.DocSearch-Container svg {
+  backdrop-filter: blur(2.5px);
+}
+
+.DocSearch-Screen-Icon {
+  margin: auto;
+}
+
+.DocSearch-Commands {
+  display: none;
+}
+
+/* Start Algolia Dark */
+
+.dark .DocSearch-Button {
+  border-color: #4b5563;
+  background: #374151;
+}
+
+.dark .DocSearch-Button:hover {
+  background: #374151;
+}
+
+.dark .DocSearch-Button-Placeholder {
+  color: #9ca3af;
+}
+
+.dark .DocSearch-Button-Keys {
+  background: #1f2937;
+  border-color: #6b7280;
+}
+
+.dark .DocSearch-Button-Key {
+  color: white;
+}
+
+/* Modal */
+
+.dark .DocSearch-Form {
+  border-color: #60a5fa;
+  background: #374151;
+}
+
+.dark .DocSearch-Search-Icon {
+  color: #9ca3af !important;
+}
+
+.dark .DocSearch-Input {
+  color: #f9fafb;
+}
+
+.dark .DocSearch-Modal {
+  background: #111827;
+  border-color: #374151;
+}
+
+.dark .DocSearch-Hit-source {
+  color: #93c5fd;
+}
+
+.dark .DocSearch-Hit a:hover {
+  background: #3b82f6;
+}
+
+.dark .DocSearch-Hit a {
+  background: #1f2937;
+}
+
+.dark .DocSearch-Footer {
+  background: #111827;
+  border-color: #374151;
+}
+
+.dark .DocSearch-Hit-icon,
+.dark .DocSearch-Hit-Tree,
+.dark .DocSearch-Hit-title,
+.dark .DocSearch-Hit-Select-Icon,
+.dark .DocSearch-Hit-path {
+  color: white !important;
+}
+
+.dark .DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-action,
+.dark .DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-icon,
+.dark .DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-path,
+.dark .DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-text,
+.dark .DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-title,
+.dark .DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-Tree,
+.dark .DocSearch-Hit[aria-selected='true'] mark {
+  color: white !important;
+}
+
+.dark .DocSearch-Hit-title mark,
+.dark .DocSearch-Hit-path mark {
+  color: #d3d3d3 !important;
+}
+
+.dark .DocSearch-Container {
+  background: rgba(17, 24, 39, 0.75);
+}
+
+.dark .DocSearch-Logo .DocSearch-Label {
+  color: #f9fafb;
+}
+
+.dark .DocSearch-Logo svg {
+  color: white !important;
+}
+
+/* End Algolia Dark */
+
+/* Start Algolia Light */
+
+.light .DocSearch-Button {
+  border-color: #d1d5db;
+  background: #f9fafb;
+}
+
+.light .DocSearch-Button:hover {
+  background: #f9fafb;
+}
+
+.light .DocSearch-Button-Placeholder {
+  color: #9ca3af;
+}
+
+.light .DocSearch-Button-Keys {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.light .DocSearch-Button-Key {
+  color: #6b7280;
+}
+
+/* Modal */
+
+.light .DocSearch-Form {
+  border-color: #bfdbfe;
+  background: white;
+}
+
+.light .DocSearch-Modal {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.light .DocSearch-Search-Icon {
+  color: #9ca3af !important;
+}
+
+.light .DocSearch-Input {
+  color: #111827;
+}
+
+.light .DocSearch-Hit-source {
+  color: #1f2937;
+}
+
+.light .DocSearch-Hit a:hover {
+  background: #1d4ed8;
+}
+
+.light .DocSearch-Hit a {
+  background: #e5e7eb;
+}
+
+.light .DocSearch-Footer {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.light .DocSearch-Hit-icon,
+.light .DocSearch-Hit-Tree,
+.light .DocSearch-Hit-title,
+.light .DocSearch-Hit-Select-Icon,
+.light .DocSearch-Hit-path {
+  color: #111827 !important;
+}
+
+.light .DocSearch-Hit a:hover .DocSearch-Hit-icon,
+.light .DocSearch-Hit a:hover .DocSearch-Hit-Tree,
+.light .DocSearch-Hit a:hover .DocSearch-Hit-title,
+.light .DocSearch-Hit a:hover .DocSearch-Hit-Select-Icon,
+.light .DocSearch-Hit a:hover .DocSearch-Hit-path {
+  color: white !important;
+}
+
+.light .DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-action,
+.light .DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-icon,
+.light .DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-path,
+.light .DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-text,
+.light .DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-title,
+.light .DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-Tree,
+.light .DocSearch-Hit[aria-selected='true'] mark {
+  color: #111827 !important;
+}
+
+.light .DocSearch-Hit-title mark,
+.light .DocSearch-Hit-path mark {
+  color: #1d4ed8 !important;
+}
+
+.light .DocSearch-Hit a:hover .DocSearch-Hit-title mark,
+.light .DocSearch-Hit a:hover .DocSearch-Hit-path mark {
+  color: #e7e7e7 !important;
+}
+
+.light .DocSearch-Container {
+  background: rgba(17, 24, 39, 0.75);
+}
+
+.light .DocSearch-Logo .DocSearch-Label {
+  color: #1f2937;
+}
+
+.light .DocSearch-Logo svg {
+  color: #111827 !important;
+}
+
+/* End Algolia Light */

@@ -50,15 +50,21 @@ function Layout({ children }: { children: JSX.Element }) {
     setEntries(entryList)
   }, [router])
 
+  useEffect(() => {
+    const body = document.querySelector('body')
+    if (isLightTheme) {
+      body?.classList.add('light')
+      body?.classList.remove('dark')
+    } else {
+      body?.classList.add('dark')
+      body?.classList.remove('light')
+    }
+  }, [isLightTheme])
+
   if (showSidebar) {
     return (
       <Flex className="min-h-screen flex-row text-gray-800">
-        <main
-          className={composeClasses(
-            'w-full relative flex flex-grow flex-col transition-all duration-150 ease-in md:ml-0',
-            isLightTheme ? 'light' : 'dark'
-          )}
-        >
+        <main className="w-full relative flex flex-grow flex-col transition-all duration-150 ease-in md:ml-0">
           <Navbar />
 
           <Flex
@@ -124,9 +130,7 @@ function Layout({ children }: { children: JSX.Element }) {
   }
 
   return (
-    <div
-      className={composeClasses('relative', isLightTheme ? 'light' : 'dark')}
-    >
+    <div className="relative">
       <Navbar className="max-w-[1400px] mx-auto" />
       {children}
       <Footer />

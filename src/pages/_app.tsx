@@ -15,6 +15,7 @@ import {
 import UIProvider from '@/store/theme-store'
 import 'dd360-ds/dd360.css'
 import '@/theme/global.css'
+import '@/theme/algolia.css'
 
 function App({ Component, pageProps }: AppProps) {
   return (

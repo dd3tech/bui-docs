@@ -73,12 +73,6 @@ body:has(.home-page.light) {
   border-color: #5c6ac4 !important;
 }
 
-@media (max-width: 897px) {
-  .search-container {
-    display: none;
-  }
-}
-
 .layout-content {
   grid-template-columns: minmax(0, 1fr) minmax(0, 128px);
 }

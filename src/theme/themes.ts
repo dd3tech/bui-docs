@@ -47,6 +47,7 @@ export const darkTheme = createTheme({
 
     inputBackground: '#374151', //bg-gray-700
     inputBorderHex: '#4B5563', //border-gray-600
+    inputBorder: 'border-gray-600', //#4B5563
     inputBorderSecondary: 'border-gray-500', //#6B7280
 
     borderIcon: 'border-gray-600', //#4B5563
@@ -89,7 +90,9 @@ export const darkTheme = createTheme({
     componentText: 'text-gray-50', //#F9FAFB
     componentBgTertiaryHex: '#374151', //bg-gray-700
 
-    iconColor: 'text-blue-200' //#BFDBFE
+    iconColor: 'text-blue-200', //#BFDBFE
+
+    modalBorder: 'border-gray-700' //#374151
   }
 })
 
@@ -138,6 +141,7 @@ export const lightTheme = createTheme({
 
     inputBackground: '#F9FAFB', //bg-gray-50
     inputBorderHex: '#D1D5DB', //border-gray-300
+    inputBorder: 'border-gray-300', //#D1D5DB
     inputBorderSecondary: 'border-gray-300', //#D1D5DB
 
     borderIcon: 'border-gray-300', //#D1D5DB
@@ -178,6 +182,8 @@ export const lightTheme = createTheme({
     componentText: 'text-gray-700', //#1D4ED8
     componentBgTertiaryHex: '#D1D5DB', //bg-gray-300
 
-    iconColor: 'text-gray-700' //#374151
+    iconColor: 'text-gray-700', //#374151
+
+    modalBorder: 'border-gray-400' //#9CA3AF
   }
 })

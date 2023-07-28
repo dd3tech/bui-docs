@@ -7,6 +7,7 @@ interface CircleCustomProps {
   size?: string
   backgroundColor?: string
   children?: ReactNode
+  className?: string
   onClick?: () => void
 }
 
@@ -14,6 +15,7 @@ function CircleCustom({
   size = '36px',
   backgroundColor = 'transparent',
   children,
+  className,
   onClick
 }: CircleCustomProps) {
   const {
@@ -24,7 +26,8 @@ function CircleCustom({
     <Circle
       className={composeClasses(
         'flex border cursor-pointer',
-        extendedPalette.borderIcon
+        extendedPalette.borderIcon,
+        className
       )}
       width={size}
       height={size}

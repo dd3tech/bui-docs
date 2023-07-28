@@ -27,7 +27,7 @@ export default function Slug({ source }: Props) {
   }, [source])
 
   return (
-    <Container>
+    <Container className="DocSearch-content">
       <MDXRemote
         {...source}
         components={{ ...useGetComponents() }}
