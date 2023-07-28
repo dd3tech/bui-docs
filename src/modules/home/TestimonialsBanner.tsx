@@ -144,7 +144,7 @@ function TestimonialsBanner() {
                     </Text>
                   </div>
                 </Flex>
-                <div className="h-full overflow-hidden">
+                <div className="overflow-hidden">
                   <Text
                     className={composeClasses(
                       'text-xs sm:text-base',
