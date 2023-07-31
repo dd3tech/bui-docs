@@ -1,4 +1,4 @@
-import { CustomCallout } from "@/modules/docs"
+import { CustomCallout } from '@/modules/docs'
 
 const AlertReactKnowledge = () => {
   return (
