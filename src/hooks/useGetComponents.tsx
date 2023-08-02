@@ -26,7 +26,8 @@ import {
   AsideModalCustom,
   PaginationCustom,
   TabsCustom,
-  SwitchCustom
+  SwitchCustom,
+  HeaderDocCustom
 } from '@/modules/docs'
 import { TransitionCustom } from '@/components/Layout'
 import { useTheme } from '@/store/theme-store'
@@ -147,6 +148,7 @@ export function useGetComponents() {
     FilterDateCustom,
     DropdownCustom,
     BackAndForwardController,
+    HeaderDocCustom,
     ...Components,
     SideBar
     // Add other custom components here as needed ---| Here |---
