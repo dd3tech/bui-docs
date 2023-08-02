@@ -1,10 +1,11 @@
+import { HTMLAttributes } from 'react';
 import { Anchor, Flex, Text } from 'dd360-ds'
 import {
   LinkIcon
 } from '@heroicons/react/solid'
 
 
-interface TitleProps extends React.HTMLAttributes<HTMLHeadingElement> {
+interface TitleProps extends HTMLAttributes<HTMLHeadingElement> {
   name: string;
 }
 
