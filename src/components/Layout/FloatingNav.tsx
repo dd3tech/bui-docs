@@ -23,7 +23,10 @@ const FloatingNav = ({ entries }: IFloatingNav) => {
 
   const isLight = useTheme().isLightTheme
 
-  const visibleElementIndex = useIntersectionObserver({ targetSearchElement: 'floating-nav', searchBy: 'name' });
+  const visibleElementIndex = useIntersectionObserver({
+    targetSearchElement: 'floating-nav',
+    searchBy: 'name'
+  })
 
   const handleClick = (position: number, id: string) => {
     document.getElementById('layout-content')?.scrollTo({
@@ -68,8 +71,7 @@ const FloatingNav = ({ entries }: IFloatingNav) => {
               {entry?.label}
             </Text>
           )
-        }
-        )}
+        })}
       </div>
     </>
   )

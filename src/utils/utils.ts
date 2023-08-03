@@ -8,13 +8,13 @@ export const splitArray = (array: any[], chunkSize: number) => {
 
 export const getElements = (
   targetSearchElement: string,
-  searchBy: "name" | "class" | "tag"
+  searchBy: 'name' | 'class' | 'tag'
 ): HTMLElement[] => {
   const assignedSearchMethod = {
     name: document?.getElementsByName(targetSearchElement),
     class: document?.getElementsByClassName(targetSearchElement),
-    tag: document?.getElementsByTagName(targetSearchElement),
-  };
+    tag: document?.getElementsByTagName(targetSearchElement)
+  }
 
   return Array.from(assignedSearchMethod[searchBy]) as HTMLElement[]
 }
