@@ -27,7 +27,8 @@ import {
   PaginationCustom,
   TabsCustom,
   SwitchCustom,
-  AlertReactKnowledge
+  AlertReactKnowledge,
+  HeaderDocCustom
 } from '@/modules/docs'
 import { TransitionCustom } from '@/components/Layout'
 import { useTheme } from '@/store/theme-store'
@@ -149,6 +150,7 @@ export function useGetComponents() {
     DropdownCustom,
     BackAndForwardController,
     AlertReactKnowledge,
+    HeaderDocCustom,
     ...Components,
     SideBar
     // Add other custom components here as needed ---| Here |---
