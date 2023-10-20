@@ -106,6 +106,19 @@ With the prop <Tag text='isRequired' /> you can mark an textArea as required. Se
 
 <TextArea isRequired label='This field is required' />" />
 
+##### <span name="floating-nav">classNameTextArea</span>
+
+With the prop <Tag text='classNameTextArea' /> you can customize the textArea, being able to enlarge it, shrink it and several other things according to your needs.
+
+<Playground className="gap-y-2">
+    <TextArea classNameTextArea='h-48' />
+</Playground>
+
+<WindowEditor codeString="import { TextArea } from 'dd360-ds'
+
+<TextArea classNameTextArea='h-48' />" />
+
+
 
 ##### <span name="floating-nav">API Reference</span>
 
@@ -126,6 +139,7 @@ With the prop <Tag text='isRequired' /> you can mark an textArea as required. Se
     { title: 'boxShadow', default: null, types: ['string'] },
     { title: 'isRequired', default: null, types: ['boolean'] },
     { title: 'className', default: null, types: ['string'] },
+    { title: 'classNameTextArea', default: null, types: ['string'] },
     ]}
 />
 
