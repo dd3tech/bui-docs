@@ -19,7 +19,7 @@
     "@algolia/autocomplete-core": "^1.8.3",
     "@docsearch/react": "^3.5.1",
     "@vercel/analytics": "^1.0.1",
-    "dd360-ds": "6.16.13",
+    "dd360-ds": "6.16.14",
     "dd360-utils": "18.1.0",
     "gray-matter": "^4.0.3",
     "i18next": "^22.4.9",

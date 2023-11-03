@@ -253,6 +253,34 @@ With the prop <Tag text='disabledText' /> you can customize a message for disabl
 
 `} />
 
+#### <span>Hidden</span>
+
+With the prop <Tag text='hidden' /> you can hide the tab
+
+<Playground className="flex items-center">
+  <TabGroup >
+    <Tab label="Element First" />
+    <Tab label="Element Second" hidden />
+    <Tab label="Element Third"  />
+    <Tab label="Element Disabled" disabled />
+</TabGroup>
+
+</Playground>
+
+<WindowEditor
+    codeString={`import { TabGroup,Tabs } from 'dd360-ds'
+
+<TabGroup>
+    <Tab label="Element First" />
+    <Tab label="Element Second" hidden />
+    <Tab label="Element Third" />
+    <Tab label="Element Disabled" disabled />
+</TabGroup>
+
+`} />
+
+<br />
+
 <br />
 
 <br />
@@ -273,7 +301,8 @@ With the prop <Tag text='disabledText' /> you can customize a message for disabl
         { title: 'className', default: null, types: ['string'] },
         { title: 'childClassName', default: null, types: ['string'] },
         { title: 'onChange', default: null, types: ['function'] },
-        { title: 'role', default: null, types: ['string'] }
+        { title: 'role', default: null, types: ['string'] },
+        { title: 'hidden', default: null, types: ['boolean'] }
     ]}
 />
 
