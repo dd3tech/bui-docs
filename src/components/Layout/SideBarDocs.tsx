@@ -46,8 +46,8 @@ const BADGE_TYPES: BadgeTypes = {
     label: 'UPDATED',
     variant: 'info'
   },
-  cooming: {
-    label: 'COOMING',
+  coming: {
+    label: 'COMING',
     variant: 'warning'
   },
   deprecated: {
@@ -353,7 +353,7 @@ export const components: ComponentObjectProps = {
       {
         label: 'FeedBackBox',
         pathname: 'feed-back-box',
-        badge: BADGE_TYPES.cooming
+        badge: BADGE_TYPES.coming
       },
       {
         label: 'Filter Date',
@@ -368,12 +368,12 @@ export const components: ComponentObjectProps = {
       {
         label: 'Select Multi',
         pathname: 'select-multi',
-        badge: BADGE_TYPES.cooming
+        badge: BADGE_TYPES.coming
       },
       {
         label: 'Language',
         pathname: 'language',
-        badge: BADGE_TYPES.cooming
+        badge: BADGE_TYPES.coming
       },
       {
         label: 'Confirm Dialog',
@@ -432,7 +432,7 @@ export default function SideBarDocs({
               key={key}
             >
               {value.items.map((item) => {
-                const isTabDisabled = item.badge === BADGE_TYPES.cooming
+                const isTabDisabled = item.badge === BADGE_TYPES.coming
                 const childrenTab = (
                   <>
                     <Text
