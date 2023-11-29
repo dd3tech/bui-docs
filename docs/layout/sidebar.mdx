@@ -151,6 +151,22 @@ Example:
 ' />
 
 <br />
+##### <span name="floating-nav">RenderBottomCmp</span>
+
+A render prop that allows you to use a fully custom element at the bottom of the SideBar. When using it alongside the <Tag text='dangerZone' /> prop, the Danger Zone will be displayed below.
+
+The expanded state of the SideBar is passed as an argument to the render prop, making it easy for you to adjust your component accordingly.
+
+Example:
+
+<WindowEditor codeString='import { Sidebar } from "dd360-ds"
+
+<SideBar
+&nbsp;&nbsp;sideBarName="Sidebar"
+&nbsp;&nbsp;renderBottomCmp={(isExpanded) => <CustomComponent isExpanded={isExpanded} />}
+/>' />
+
+<br />
 ##### <span name="floating-nav">DisabledOptionsTag</span>
 
 A string representing the text to be displayed in the disabled options.
@@ -339,6 +355,7 @@ Left position of the sidebar.
         },
         { title: 'disabledOptionsTag', default: null, types: ['string'] },
         { title: 'dangerZone', default: null, types: ['{ show: boolean, text: string, active: boolean, callBack?: (() => void), }'] },
+        { title: 'renderBottomCmp', default: null, types: ['(isExpanded: boolean) => ReactElement'] },
         { title: 'flushSync', default: null, types: ['(<R>(fn: () => R) => R)'] },
         { title: 'defaultExpand', default: 'false', types: ['boolean'] },
         { title: 'top', default: null, types: ['number'] },
