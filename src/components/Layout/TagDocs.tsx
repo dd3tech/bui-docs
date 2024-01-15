@@ -5,7 +5,7 @@ interface TagProps {
   text: string
 }
 
-export default function Tag({ text }: TagProps) {
+export default function TagDocs({ text }: TagProps) {
   const {
     themeObject: { extendedPalette }
   } = useTheme()

@@ -389,6 +389,11 @@ export const components: ComponentObjectProps = {
         label: 'Tooltip',
         pathname: 'tooltip',
         badge: BADGE_TYPES.new
+      },
+      {
+        label: 'Tag',
+        pathname: 'tag',
+        badge: BADGE_TYPES.new
       }
     ]
   }

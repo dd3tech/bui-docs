@@ -299,3 +299,31 @@ div ::-webkit-scrollbar-corner {
 .light ::-webkit-scrollbar-thumb:hover {
   background-color: #000000b5;
 }
+
+/*
+* Custom styles for tag component
+*/
+.container-cmpnt-doc span.primary-tag-class {
+  color: #1d4ed8 !important;
+}
+.container-cmpnt-doc span.warning-tag-class {
+  color: #eab308 !important;
+}
+.container-cmpnt-doc span.secondary-tag-class {
+  color: #374151 !important;
+}
+.container-cmpnt-doc span.success-tag-class {
+  color: #047857 !important;
+}
+.container-cmpnt-doc span.primary-filled-tag-class {
+  color: #eff6ff !important;
+}
+.container-cmpnt-doc span.warning-filled-tag-class {
+  color: #fffbeb !important;
+}
+.container-cmpnt-doc span.secondary-filled-tag-class {
+  color: #4b5563 !important;
+}
+.container-cmpnt-doc span.success-filled-tag-class{
+  color: #ecfdf5 !important;
+}

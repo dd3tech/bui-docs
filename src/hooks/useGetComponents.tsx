@@ -9,7 +9,7 @@ import {
   CustomTableDocs,
   Playground,
   BackAndForwardController,
-  Tag
+  TagDocs
 } from '@/components'
 import {
   ConfirmDialogCustom,
@@ -28,7 +28,8 @@ import {
   TabsCustom,
   SwitchCustom,
   AlertReactKnowledge,
-  HeaderDocCustom
+  HeaderDocCustom,
+  TagCustom
 } from '@/modules/docs'
 import { TransitionCustom } from '@/components/Layout'
 import { useTheme } from '@/store/theme-store'
@@ -127,7 +128,7 @@ export function useGetComponents() {
       <div className={isLightTheme ? 'light' : 'dark'}>{children}</div>
     ),
     extendedPalette,
-    Tag,
+    TagDocs,
     WindowEditor,
     CustomTableDocs,
     DynamicHeroIcon,
@@ -151,6 +152,7 @@ export function useGetComponents() {
     BackAndForwardController,
     AlertReactKnowledge,
     HeaderDocCustom,
+    TagCustom,
     ...Components,
     SideBar
     // Add other custom components here as needed ---| Here |---
