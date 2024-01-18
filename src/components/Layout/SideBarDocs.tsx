@@ -282,6 +282,11 @@ export const components: ComponentObjectProps = {
   components: {
     items: [
       {
+        label: 'BarList',
+        pathname: 'bar-list',
+        badge: BADGE_TYPES.new
+      },
+      {
         label: 'Callout',
         pathname: 'callout',
         badge: BADGE_TYPES.new
@@ -292,8 +297,17 @@ export const components: ComponentObjectProps = {
         badge: BADGE_TYPES.new
       },
       {
+        label: 'Confirm Dialog',
+        pathname: 'confirm-dialog',
+        badge: BADGE_TYPES.new
+      },
+      {
         label: 'Date Picker',
         pathname: 'date-picker'
+      },
+      {
+        label: 'Dynamic Hero Icon',
+        pathname: 'dynamic-hero-icon'
       },
       {
         label: 'Dropdown',
@@ -301,13 +315,9 @@ export const components: ComponentObjectProps = {
         badge: BADGE_TYPES.new
       },
       {
-        label: 'Dynamic Hero Icon',
-        pathname: 'dynamic-hero-icon'
-      },
-      {
-        label: 'Transition',
-        pathname: 'transition',
-        badge: BADGE_TYPES.new
+        label: 'FeedBackBox',
+        pathname: 'feed-back-box',
+        badge: BADGE_TYPES.coming
       },
       {
         label: 'Filter Range',
@@ -316,44 +326,6 @@ export const components: ComponentObjectProps = {
       {
         label: 'Filter Range Slider',
         pathname: 'filter-range-slider'
-      },
-      {
-        label: 'List',
-        pathname: 'list',
-        badge: BADGE_TYPES.new
-      },
-      {
-        label: 'BarList',
-        pathname: 'bar-list',
-        badge: BADGE_TYPES.new
-      },
-      {
-        label: 'Skeleton',
-        pathname: 'skeleton'
-      },
-      {
-        label: 'Table',
-        pathname: 'table',
-        badge: BADGE_TYPES.new
-      },
-      {
-        label: 'Timeline',
-        pathname: 'timeline',
-        badge: BADGE_TYPES.new
-      },
-      {
-        label: 'Portal',
-        pathname: 'portal'
-      },
-      {
-        label: 'Progress',
-        pathname: 'progress',
-        badge: BADGE_TYPES.new
-      },
-      {
-        label: 'FeedBackBox',
-        pathname: 'feed-back-box',
-        badge: BADGE_TYPES.coming
       },
       {
         label: 'Filter Date',
@@ -366,9 +338,9 @@ export const components: ComponentObjectProps = {
         badge: BADGE_TYPES.new
       },
       {
-        label: 'Select Multi',
-        pathname: 'select-multi',
-        badge: BADGE_TYPES.coming
+        label: 'Filter Select Multi',
+        pathname: 'filter-select-multi',
+        badge: BADGE_TYPES.new
       },
       {
         label: 'Language',
@@ -376,13 +348,41 @@ export const components: ComponentObjectProps = {
         badge: BADGE_TYPES.coming
       },
       {
-        label: 'Confirm Dialog',
-        pathname: 'confirm-dialog',
+        label: 'List',
+        pathname: 'list',
         badge: BADGE_TYPES.new
       },
       {
-        label: 'Filter Select Multi',
-        pathname: 'filter-select-multi',
+        label: 'Portal',
+        pathname: 'portal'
+      },
+      {
+        label: 'Progress',
+        pathname: 'progress',
+        badge: BADGE_TYPES.new
+      },
+      {
+        label: 'Select Multi',
+        pathname: 'select-multi',
+        badge: BADGE_TYPES.coming
+      },
+      {
+        label: 'Skeleton',
+        pathname: 'skeleton'
+      },
+      {
+        label: 'Table',
+        pathname: 'table',
+        badge: BADGE_TYPES.new
+      },
+      {
+        label: 'Tag',
+        pathname: 'tag',
+        badge: BADGE_TYPES.new
+      },
+      {
+        label: 'Timeline',
+        pathname: 'timeline',
         badge: BADGE_TYPES.new
       },
       {
@@ -391,8 +391,8 @@ export const components: ComponentObjectProps = {
         badge: BADGE_TYPES.new
       },
       {
-        label: 'Tag',
-        pathname: 'tag',
+        label: 'Transition',
+        pathname: 'transition',
         badge: BADGE_TYPES.new
       }
     ]
