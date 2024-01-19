@@ -327,3 +327,18 @@ div ::-webkit-scrollbar-corner {
 .container-cmpnt-doc span.success-filled-tag-class {
   color: #ecfdf5 !important;
 }
+div[role="container-phase"] .text-blue-50 {
+  color: #eff6ff !important;
+}
+div[role="container-phase"] .text-gray-600 {
+  color: #4b5563 !important;
+}
+div[role="container-phase"] .bg-green-500 {
+  color: #ecfdf5 !important;
+}
+div[role="container-phase"] .text-blue-700 {
+  color: #1d4ed8 !important;
+}
+div[role="container-phase"] hr {
+  border-color: #d1d5db !important;
+}
