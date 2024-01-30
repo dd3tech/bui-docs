@@ -357,6 +357,11 @@ export const components: ComponentObjectProps = {
         pathname: 'portal'
       },
       {
+        label: 'Phase',
+        pathname: 'phase',
+        badge: BADGE_TYPES.new
+      },
+      {
         label: 'Progress',
         pathname: 'progress',
         badge: BADGE_TYPES.new

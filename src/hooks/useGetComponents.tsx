@@ -29,7 +29,8 @@ import {
   SwitchCustom,
   AlertReactKnowledge,
   HeaderDocCustom,
-  TagCustom
+  TagCustom,
+  PhaseCustom
 } from '@/modules/docs'
 import { TransitionCustom } from '@/components/Layout'
 import { useTheme } from '@/store/theme-store'
@@ -153,6 +154,7 @@ export function useGetComponents() {
     AlertReactKnowledge,
     HeaderDocCustom,
     TagCustom,
+    PhaseCustom,
     ...Components,
     SideBar
     // Add other custom components here as needed ---| Here |---
