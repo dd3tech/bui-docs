@@ -1,0 +1,231 @@
+---
+product: dd360-ds
+title: React Tag component
+components: Tag
+---
+
+<br id='top' />
+<br />
+
+<Label>Components</Label>
+
+# <HeaderDocCustom title="Tag" pathUrl="components-tag--tag" />
+
+The Tag component serves to provide a visual and semantic way to label, categorize, or mark elements within a user interface. These tags are useful for organizing and highlighting specific information, allowing users to quickly identify the nature or purpose of an item.
+
+<br />
+<br />
+##### <span name="floating-nav">Imports</span>
+
+The first alternative is recommended since they can reduce the application bundle
+
+<WindowEditor codeString="import Tag from 'dd360-ds/Tag'" />
+<WindowEditor codeString="import { Tag } from 'dd360-ds'" />
+
+<br />
+##### <span name="floating-nav">Usage</span>
+
+Use the Tag component as shown below:
+
+<Playground className="gap-y-2">
+    <Tag text="Label tag" className="primary-tag-class" />
+</Playground>
+
+The code snippet below shows how to use the Tag component:
+
+<WindowEditor
+    codeString={`import { Tag } from 'dd360-ds'
+  
+<Tag text="Label tag" />`}
+/>
+
+<br />
+
+##### <span name="floating-nav">Variant</span>
+
+With the prop <TagDocs text='variant' /> you can customize the color of the Tag
+
+<Playground className="gap-y-2">
+    <Flex className="flex" gap="4">
+        <Tag text="Primary!" variant="primary"  className="primary-tag-class" />
+        <Tag text="Success!" variant="success" className="success-tag-class" />
+        <Tag text="Secondary!" variant="secondary" className="secondary-tag-class" />
+        <Tag text="Warning!" variant="warning" className="warning-tag-class" />
+    </Flex>
+</Playground>
+
+<WindowEditor
+    codeString={`import { Flex, Tag } from 'dd360-ds'
+
+export default function App() {
+    return (
+        <Flex gap="4">
+            <Tag text="Primary!" variant="primary" />
+            <Tag text="Success!" variant="success" />
+            <Tag text="Secondary!" variant="secondary" />
+            <Tag text="Warning!" variant="warning" />
+        </Flex>
+    )
+}`} />
+
+<br />
+
+##### <span name="floating-nav">Font size</span>
+
+With the prop <TagDocs text='fontSize' /> you can customize the size of the icon and the text on the Tag
+
+<Playground className="gap-y-2">
+    <Flex alignItems="center" gap="4">
+        <Tag text="Primary!" variant="primary" fontSize="small" className="primary-tag-class" />
+        <Tag text="Success!" variant="success" fontSize="medium" className="success-tag-class" />
+        <Tag text="Secondary!" variant="secondary" fontSize="large" className="secondary-tag-class" />
+        <Tag text="Warning!" variant="warning" fontSize="extraLarge" className="warning-tag-class" />
+    </Flex>
+</Playground>
+
+<WindowEditor
+    codeString={`import { Flex, Tag } from 'dd360-ds'
+
+export default function App() {
+    return (
+        <Flex alignItems="center" gap="4">
+            <Tag text="Primary!" variant="primary" fontSize="small" />
+            <Tag text="Success!" variant="success" fontSize="medium" />
+            <Tag text="Secondary!" variant="secondary" fontSize="large" />
+            <Tag text="Warning!" variant="warning" fontSize="extraLarge" />
+        </Flex>
+    )
+}`} />
+
+<br />
+
+##### <span name="floating-nav">Fill</span>
+
+With the prop <TagDocs text='fill' /> enables the fill of the tag according to the value of the variant prop
+
+<Playground className="gap-y-2">
+    <Flex alignItems="center" gap="4">
+        <Tag text="Primary!" variant="primary" fill={true} className="primary-filled-tag-class" />
+        <Tag text="Success!" variant="success" fill={true} className="success-filled-tag-class" />
+        <Tag text="Secondary!" variant="secondary" fill={true} className="secondary-filled-tag-class" />
+        <Tag text="Warning!" variant="warning" fill={true} className="warning-filled-tag-class" />
+    </Flex>
+</Playground>
+
+<WindowEditor
+    codeString={`import { Flex, Tag } from 'dd360-ds'
+
+export default function App() {
+    return (
+        <Flex alignItems="center" gap="4">
+            <Tag text="Primary!" variant="primary" fill={true} />
+            <Tag text="Success!" variant="success" fill={true} />
+            <Tag text="Secondary!" variant="secondary" fill={true} />
+            <Tag text="Warning!" variant="warning" fill={true} />
+        </Flex>
+    )
+}`} />
+
+<br />
+
+##### <span name="floating-nav">Rounded</span>
+
+With the prop <TagDocs text='rounded' /> you can customize the border radius in the tag
+
+<Playground className="gap-y-2">
+    <Flex alignItems="center" gap="4">
+        <Tag text="None!" variant="primary" fill={true} rounded="none" className="primary-filled-tag-class" />
+        <Tag text="Medium!" variant="success" fill={true} rounded="md" className="success-filled-tag-class" />
+        <Tag text="Large!" variant="secondary" fill={true} rounded="lg" className="secondary-filled-tag-class" />
+        <Tag text="Tag full!" variant="warning" fill={true} rounded="full" className="warning-filled-tag-class" />
+    </Flex>
+</Playground>
+
+<WindowEditor
+    codeString={`import { Flex, Tag } from 'dd360-ds'
+
+export default function App() {
+    return (
+        <Flex alignItems="center" gap="4">
+            <Tag text="None!" variant="primary" fill={true} rounded="none" />
+            <Tag text="Medium!" variant="success" fill={true} rounded="md" />
+            <Tag text="Large!" variant="secondary" fill={true} rounded="lg" />
+            <Tag text="Tag full!" variant="warning" fill={true} rounded="full" />
+        </Flex>
+    )
+}`} />
+
+<br />
+
+##### <span name="floating-nav">Icon</span>
+
+With the prop <TagDocs text='icon' /> you can render a custom icon in the Tag before the text, is a optional
+prop
+
+<Playground className="gap-y-2">
+    <Flex gap="4">
+        <TagCustom text="Primary" icon="info" variant="primary" className="primary-tag-class" />
+        <TagCustom text="Warning" icon="warn" variant="warning" className="warning-tag-class" />
+        <TagCustom text="Success" icon="check" variant="success" className="success-tag-class" />
+    </Flex>
+</Playground>
+
+<WindowEditor
+    codeString={`import { Flex, Tag } from 'dd360-ds'
+import {  InformationCircleIcon } from '@heroicons/react/solid'
+
+export default function App() {
+    return (
+        <Flex gap="4">
+            <Tag text="Primary" icon={InformationCircleIcon} variant="primary" />
+            <Tag text="Warning" icon={InformationCircleIcon} variant="warning" />
+            <Tag text="Success" icon={CheckCircleIcon} variant="success" />
+        </Flex>
+    )
+}`} />
+
+<br />
+
+##### <span name="floating-nav">Text</span>
+
+With the props <TagDocs text='text' /> you can provide a text to the Tag and this prop is the only required
+of the component
+
+<Playground className="gap-y-2">
+    <Flex gap="4">
+        <Tag text="Label tag!" variant="success" className="success-tag-class"/>
+    </Flex>
+</Playground>
+
+<WindowEditor
+    codeString={`import { Flex, Tag } from 'dd360-ds'
+
+export default function App() {
+    return (
+        <Flex gap="4">
+            <Tag text="Label tag!" variant="success" />
+        </Flex>
+    )
+}`} />
+
+<br />
+<br />
+##### <span name="floating-nav">API Reference</span>
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'text', types: ['string'], required: true },
+        { title: 'icon', types: ['React.ElementType'] },
+        { title: 'variant', default: 'primary', types: ['primary', 'warning', 'secondary', 'success'] },
+        { title: 'fontSize', default: 'medium', types: ['small', 'large', 'medium', 'extraLarge'] },
+        { title: 'rounded', default: 'md', types: ['base', 'none', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', 'full'] },
+        { title: 'fill', default: 'false', types: ['boolean'] },
+        { title: 'className', default: '-', types: ['string'] },
+        { title: 'classNameIcon', default: '-', types: ['string'] }
+    ]}
+
+/>
+
+<AlertReactKnowledge />
+
+<BackAndForwardController />
