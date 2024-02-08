@@ -2,7 +2,9 @@ import { Tab, TabGroup } from 'dd360-ds'
 import { useState } from 'react'
 
 const TabsCustom = ({ option }: { option: string }) => {
-  const [variant, setVariant] = useState<'primary' | 'secondary'>('primary')
+  const [variant, setVariant] = useState<'primary' | 'secondary' | 'tertiary'>(
+    'primary'
+  )
   const [orientation, setOrientation] = useState<'vertical' | 'horizontal'>(
     'horizontal'
   )
@@ -31,7 +33,7 @@ const TabsCustom = ({ option }: { option: string }) => {
               checked={variant === 'primary'}
               className="cursor-pointer"
               name="variant"
-              onClick={() => setVariant('primary')}
+              onChange={() => setVariant('primary')}
               type="radio"
             />
             <label>Primary</label>
@@ -39,10 +41,18 @@ const TabsCustom = ({ option }: { option: string }) => {
               checked={variant === 'secondary'}
               className="cursor-pointer"
               name="variant"
-              onClick={() => setVariant('secondary')}
+              onChange={() => setVariant('secondary')}
               type="radio"
             />
             <label>Secondary</label>
+            <input
+              checked={variant === 'tertiary'}
+              className="cursor-pointer"
+              name="variant"
+              onChange={() => setVariant('tertiary')}
+              type="radio"
+            />
+            <label>Tertiary</label>
           </>
         )}
 
@@ -52,7 +62,7 @@ const TabsCustom = ({ option }: { option: string }) => {
               checked={orientation === 'horizontal'}
               className="cursor-pointer"
               name="orientation"
-              onClick={() => setOrientation('horizontal')}
+              onChange={() => setOrientation('horizontal')}
               type="radio"
             />
             <label>Horizontal</label>
@@ -60,7 +70,7 @@ const TabsCustom = ({ option }: { option: string }) => {
               checked={orientation === 'vertical'}
               className="cursor-pointer"
               name="orientation"
-              onClick={() => setOrientation('vertical')}
+              onChange={() => setOrientation('vertical')}
               type="radio"
             />
             <label>Vertical</label>
@@ -73,7 +83,7 @@ const TabsCustom = ({ option }: { option: string }) => {
               checked={fontSize === 'xs'}
               className="cursor-pointer"
               name="size"
-              onClick={() => setFontSize('xs')}
+              onChange={() => setFontSize('xs')}
               type="radio"
             />
             <label>xs</label>
@@ -81,7 +91,7 @@ const TabsCustom = ({ option }: { option: string }) => {
               checked={fontSize === 'sm'}
               className="cursor-pointer"
               name="size"
-              onClick={() => setFontSize('sm')}
+              onChange={() => setFontSize('sm')}
               type="radio"
             />
             <label>sm</label>
@@ -89,7 +99,7 @@ const TabsCustom = ({ option }: { option: string }) => {
               checked={fontSize === 'base'}
               className="cursor-pointer"
               name="size"
-              onClick={() => setFontSize('base')}
+              onChange={() => setFontSize('base')}
               type="radio"
             />
             <label>base</label>
@@ -97,7 +107,7 @@ const TabsCustom = ({ option }: { option: string }) => {
               checked={fontSize === 'lg'}
               className="cursor-pointer"
               name="size"
-              onClick={() => setFontSize('lg')}
+              onChange={() => setFontSize('lg')}
               type="radio"
             />
             <label>lg</label>
@@ -105,7 +115,7 @@ const TabsCustom = ({ option }: { option: string }) => {
               checked={fontSize === 'xl'}
               className="cursor-pointer"
               name="size"
-              onClick={() => setFontSize('xl')}
+              onChange={() => setFontSize('xl')}
               type="radio"
             />
             <label>xl</label>
