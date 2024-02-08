@@ -2,7 +2,9 @@ import { Tab, TabGroup } from 'dd360-ds'
 import { useState } from 'react'
 
 const TabsCustom = ({ option }: { option: string }) => {
-  const [variant, setVariant] = useState<'primary' | 'secondary' | 'tertiary'>('primary')
+  const [variant, setVariant] = useState<'primary' | 'secondary' | 'tertiary'>(
+    'primary'
+  )
   const [orientation, setOrientation] = useState<'vertical' | 'horizontal'>(
     'horizontal'
   )
