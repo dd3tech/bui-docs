@@ -115,7 +115,7 @@ With the prop <TagDocs text='fontSize' /> you can customize the font size of the
 
 <br />
 
-#### <span>TextColor</span>
+#### <span name="floating-nav">TextColor</span>
 
 With the prop <TagDocs text='textColor' /> you can customize the color of the first tab
 
@@ -143,7 +143,7 @@ With the prop <TagDocs text='textColor' /> you can customize the color of the fi
 
 <br />
 
-#### <span>Witdh</span>
+#### <span name="floating-nav">Witdh</span>
 
 With the prop <TagDocs text='width' /> you can customize the size of the TabGroup
 
@@ -171,7 +171,7 @@ With the prop <TagDocs text='width' /> you can customize the size of the TabGrou
 
 <br />
 
-#### <span>IndicatorColor</span>
+#### <span name="floating-nav">IndicatorColor</span>
 
 With the prop <TagDocs text='indicatorColor' /> you can customize the color of the line below the active tab
 
@@ -199,7 +199,7 @@ With the prop <TagDocs text='indicatorColor' /> you can customize the color of t
 
 <br />
 
-#### <span>WideLine</span>
+#### <span name="floating-nav">WideLine</span>
 
 With the prop <TagDocs text='wideLine' /> you can customize the width of the line under the active tab
 
@@ -227,7 +227,7 @@ With the prop <TagDocs text='wideLine' /> you can customize the width of the lin
 
 <br />
 
-#### <span>DisabledText</span>
+#### <span name="floating-nav">DisabledText</span>
 
 With the prop <TagDocs text='disabledText' /> you can customize a message for disabled tabs
 
@@ -253,7 +253,7 @@ With the prop <TagDocs text='disabledText' /> you can customize a message for di
 
 `} />
 
-#### <span>Hidden</span>
+#### <span name="floating-nav">Hidden</span>
 
 With the prop <TagDocs text='hidden' /> you can hide the tab
 
@@ -281,6 +281,57 @@ With the prop <TagDocs text='hidden' /> you can hide the tab
 
 <br />
 
+##### <span name="floating-nav">Tab Custom</span>
+
+With the <TagDocs text='tertiary' /> variant you can customize the appearance of the tabs. you can do so using the props: child ClassName, className, tabWidth textDisabledColor and others.
+
+<Playground className="flex items-center">
+    <Flex className="bg-gray-900 py-2">
+        <TabGroup
+            fontSize="xs"
+            indicatorColor="#3b82f6"
+            className="border-b border-gray-500"
+            childClassName="text-gray-400 py-2 hover:bg-gray-800"
+            tabWidth={106}
+            textColor="#ffffff"
+            textDisabledColor="#4b5563"
+            variant="tertiary"
+            wideLine={3}
+            >
+            <Tab label="Element First" />
+            <Tab label="Element Second" />
+            <Tab label="Element Third" />
+            <Tab label="Element Fourth" disabled />
+        </TabGroup>
+    </Flex>
+</Playground>
+
+<WindowEditor
+    codeString={`import { Flex, TabGroup, Tabs } from 'dd360-ds'
+
+<Flex className="bg-gray-800 py-2">
+    <TabGroup
+        fontSize="xs"
+        indicatorColor="#3b82f6"
+        className="border-b border-gray-500"
+        childClassName="text-gray-400 py-2 hover:bg-gray-800"
+        tabWidth={106}
+        textColor="#ffffff"
+        textDisabledColor="#4b5563"
+        variant="tertiary"
+        wideLine={3}
+        >
+        <Tab label="Element First" />
+        <Tab label="Element Second" />
+        <Tab label="Element Third" />
+        <Tab label="Element Fourth" disabled />
+    </TabGroup>
+</Flex>
+
+`} />
+
+<br />
+
 <br />
 
 <br />
@@ -291,12 +342,15 @@ With the prop <TagDocs text='hidden' /> you can hide the tab
     dataTable={[
         { title: 'orientation', default: 'horizontal', types: ['vertical', 'horizontal'] },
         { title: 'wideLine', default: 3.2, types: ['number'] },
-        { title: 'variant', default: 'primary', types: ['primary', 'secondary'] },
+        { title: 'variant', default: 'primary', types: ['primary', 'secondary', 'tertiary'] },
         { title: 'value', default: 0, types: ['number'] },
         { title: 'disabledText', default: null, types: ['string'] },
         { title: 'fontSize', default: null, types: ['base', 'xs', 'sm', 'lg', 'xl'] },
         { title: 'width', default: null, types: ['number'] },
+        { title: 'tabWidth', default: null, types: ['number'] },
+        { title: 'tabMinWidth', default: null, types: ['number'] },
         { title: 'textColor', default: null, types: ['string'] },
+        { title: 'textDisabledColor', default: '#D1D5DB', types: ['string'] },
         { title: 'indicatorColor', default: null, types: ['string'] },
         { title: 'className', default: null, types: ['string'] },
         { title: 'childClassName', default: null, types: ['string'] },
