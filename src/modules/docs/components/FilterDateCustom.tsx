@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { FilterDate, Skeleton, Text } from 'dd360-ds'
 import { FilterIcon } from '@heroicons/react/solid'
-import useRelativePosition from '@/hooks/useRelativePosition'
 
 const FilterDateCustom = ({
   onTop,
@@ -17,7 +16,7 @@ const FilterDateCustom = ({
   language: 'es' | 'en'
 }) => {
   const [domLoaded, setDomLoaded] = useState<boolean>(false)
-  const { position, setPosition, setTargetRef } = useRelativePosition({})
+  const [active, setActive] = useState(false)
 
   useEffect(() => {
     setDomLoaded(true)
@@ -28,13 +27,9 @@ const FilterDateCustom = ({
       {domLoaded ? (
         <div>
           <button
-            ref={setTargetRef}
             className="flex items-center gap-1"
             onClick={() => {
-              setPosition((position) => ({
-                ...position,
-                show: !position.show
-              }))
+              setActive(!active)
             }}
           >
             <Text size="lg" bold>
@@ -42,20 +37,17 @@ const FilterDateCustom = ({
             </Text>
             <FilterIcon className="w-4 h-4" />
           </button>
-          <FilterDate
-            onApply={() => undefined}
-            onReset={() => undefined}
-            position={{
-              top: position.top + (onTop ? -260 : 40),
-              left: position.left,
-              show: position.show
-            }}
-            language={language}
-            title={title}
-            textApplyBtn={textApplyBtn}
-            textResetBtn={textResetBtn}
-            className="container-cmpnt-doc"
-          />
+          {active && (
+            <FilterDate
+              onApply={() => undefined}
+              onReset={() => undefined}
+              language={language}
+              title={title}
+              textApplyBtn={textApplyBtn}
+              textResetBtn={textResetBtn}
+              className="container-cmpnt-doc"
+            />
+          )}
         </div>
       ) : (
         <Skeleton className="mt-2 h-8 w-32" />
