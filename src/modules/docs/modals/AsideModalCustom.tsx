@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { ReactNode, useState } from 'react'
 import { Button, AsideModal } from 'dd360-ds'
 import { composeClasses } from 'dd360-ds/lib'
 
@@ -6,6 +6,8 @@ interface ModalCustomProps {
   propsCustom: Record<string, boolean>
   positionAsideModal: 'right' | 'left'
   haveVariants: boolean
+  isStickyTitle: boolean
+  children?: ReactNode
 }
 
 const variantsAsideModal = [
@@ -28,7 +30,9 @@ type TVariantAsideModal = (typeof variantsAsideModal)[number]
 const AsideModalCustom = ({
   propsCustom,
   positionAsideModal,
-  haveVariants
+  haveVariants,
+  isStickyTitle,
+  children
 }: ModalCustomProps) => {
   const [activeModal, setActiveModal] = useState<boolean>(false)
 
@@ -82,8 +86,9 @@ const AsideModalCustom = ({
         title="Component Aside Modal"
         open={activeModal}
         onClose={() => setActiveModal(false)}
+        isStickyTitle={isStickyTitle}
       >
-        Aside modal children
+        {children || 'Aside modal children'}
       </AsideModal>
     </>
   )

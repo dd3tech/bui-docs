@@ -242,6 +242,22 @@ You can customize the color
 />
 
 <br />
+
+##### <span name="floating-nav">Default value</span>
+
+You can customize the default value using the defaultValue prop and showDefaultValue to show the default value.
+
+<Playground className="flex gap-x-6 items-center">
+    <Text showDefaultValue defaultValue="---"></Text>
+</Playground>
+
+<WindowEditor
+    codeString='import { Text } from "dd360-ds"
+
+    <Text showDefaultValue defaultValue="---"></Text>'
+/>
+
+<br />
 <br />
 ##### <span name="floating-nav">API Reference</span>
 
@@ -262,6 +278,8 @@ You can customize the color
         { title: 'style', default: null, types: ['CSSProperties'] },
         { title: 'onClick', default: null, types: ['function'] },
         { title: 'onBlur', default: null, types: ['function'] },
+        { title: 'defaultValue', default: '-', types: ['string'] },
+        { title: 'showDefaultValue', default: 'true', types: ['boolean'] },
     ]}
 
 />

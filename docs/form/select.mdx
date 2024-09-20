@@ -133,10 +133,26 @@ With the prop <TagDocs text='isRequired' /> you can mark an select as required. 
 <Select optionsList={{ A: {label: 'First Option'} }} isRequired label='This field is required' />
 " />
 
+##### <span name="floating-nav">Select type</span>
+
+With the prop <TagDocs text='selectType' /> you can change the type of select. The default value is "primary".
+
+<Playground className="gap-y-2">
+    <Select optionsList={{ A: {label: 'First Option'} }} selectType='primary' />
+    <Select optionsList={{ A: {label: 'First Option'} }} selectType='secondary' />
+</Playground>
+
+<WindowEditor codeString="import { Select } from 'dd360-ds'
+
+<Select optionsList={{ A: {label: 'First Option'} }} selectType='primary' />
+<Select optionsList={{ A: {label: 'First Option'} }} selectType='secondary' />
+" />
+
 ##### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
     dataTable={[
+        { title: 'selectType', types: ['primary', 'secondary'], default: 'primary' },
         { title: 'optionsList', default: null, types: ['ISelectOptions'], required: true },
         { title: 'variant', default: 'outlined', types: ['default', 'active', 'success', 'warning', 'error', 'disabled'] },
         { title: 'onChange', default: null, types: ['function'] },

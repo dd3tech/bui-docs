@@ -1,0 +1,92 @@
+---
+product: dd360-ds
+title: React ActiveButton component
+components: Button
+---
+
+<br id='top' />
+<br />
+
+<Label>Buttons</Label>
+
+
+# <HeaderDocCustom title="ActiveButton" pathUrl="active-button--btn-primary" />
+
+The ActiveButton component in React provides a convenient way to display a button that is destined to be a redirect.
+
+<br />
+<br />
+##### <span name="floating-nav">Imports</span>
+
+    <WindowEditor codeString="import { ActiveButton } from 'dd360-ds' " />
+    <WindowEditor codeString="import { ActiveButton } from 'dd360-ds/ActiveButton'" />
+    <WindowEditor codeString="import ActiveButton from 'dd360-ds/ActiveButton'" />
+
+<br />
+<br />
+##### <span name="floating-nav">Usage</span>
+
+Use the properties <TagDocs text='active' /> and <TagDocs text='to' /> to make the button active and redirect to the URL specified in the to property.
+
+<Playground className="w-fit">
+    <ActiveButton
+        active
+        to={() => alert('Redirecting...')}
+    >
+        Active Button
+    </ActiveButton>
+</Playground>
+
+<WindowEditor
+    codeString="import { ActiveButton } from 'dd360-ds'
+
+    <ActiveButton
+        active
+        to={() => alert('Redirecting...')}
+    >
+        Active Button
+    </ActiveButton>"
+/>
+
+<br />
+
+##### <span name="floating-nav">Active</span>
+
+To make the button active, use the property active. When the button is active, it will redirect to the URL specified in the to property.
+If the to property is not specified, the button will not redirect and the style will be different.
+
+<Playground className="w-fit">
+    <ActiveButton
+        active={false}
+        to={() => alert('Redirecting...')}
+    >
+        Active Button
+    </ActiveButton>
+</Playground>
+
+<WindowEditor
+    codeString="import { ActiveButton } from 'dd360-ds'
+
+    <ActiveButton
+        active={false}
+        to={() => alert('Redirecting...')}
+    >
+        Active Button
+    </ActiveButton>"
+/>
+
+
+<br />
+<br />
+##### <span name="floating-nav">API Reference</span>
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'active', default: 'true', types: ['boolean'] },
+        { title: 'to', default: null, types: ['function'] },
+        { title: 'children', default: null, types: ['ReactNode'] },
+        { title: '...', default: null, types: ['ButtonHTMLAttributes'] }
+    ]}
+/>
+
+<BackAndForwardController />
