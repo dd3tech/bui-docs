@@ -78,64 +78,6 @@ The code snippet below shows how to customize the FilterDate component:
 
 <br />
 
-##### <span name="floating-nav">Visibility & position</span>
-
-To manage the visibility and position of the FilterDate component, you can use the useState hook in a functional component. 
-The position state variable stores the top and left coordinates, as well as a boolean indicating whether the component should be shown. 
-The component listens for clicks on a button to toggle the visibility and updates its position based on the click event's coordinates.
-
-<Playground>
-  <FilterDateCustom onTop />
-</Playground>
-
-The code snippet below shows how to handle the visibility and position:
-
-<WindowEditor
-    codeString={`import { FilterDate } from 'dd360-ds'
-
-const FilterComponent = () => {
-  const [position, setPosition] = useState<{
-    top: number
-    left: number
-    show: boolean
-  }>({
-    top: 0,
-    left: 0,
-    show: false
-  })
-
-  return (
-    <div>
-      <button
-        className="flex items-center gap-1"
-        onClick={(event) => {
-          setPosition((position) => ({
-            top: event.pageY,
-            left: event.pageX,
-            show: !position.show
-          }))
-        }}
-      >
-        <Text size="lg" bold>
-          "Filter date on top"
-        </Text>
-        <DynamicHeroIcon icon="FilterIcon" className="w-4 h-4" />
-      </button>
-      <FilterDate
-        onApply={() => undefined}
-        position={{
-          top: position.top,
-          left: position.left,
-          show: position.show
-        }}
-      />
-    </div>
-  )
-}
-
-export default FilterComponent
- `}/>
-
 ##### <span name="floating-nav">Support Server Side Rendering</span>
 
 For applications that use server-side rendering, you can ensure that the FilterDate component is fully rendered before displaying it by using the domLoaded state variable. 
@@ -179,11 +121,6 @@ export default FilterComponent
     { title: 'language', default: 'es', types: ['es', 'en'] },
     { title: 'textApplyBtn', default: 'Apply', types: ['string'] },
     { title: 'textResetBtn', default: 'Reset', types: ['string'] },
-    {
-      title: 'position',
-      default: '{ show: false, top: 0, left: 0 }',
-      types: ['{ show: boolean, top: number, left: number }']
-    },
     { title: 'width', default: null, types: ['string', 'number'] },
     { title: 'className', default: null, types: ['string'] }
   ]}

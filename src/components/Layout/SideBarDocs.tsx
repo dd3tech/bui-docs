@@ -72,6 +72,10 @@ export const components: ComponentObjectProps = {
   buttons: {
     items: [
       {
+        label: 'ActiveButton',
+        pathname: 'active-button'
+      },
+      {
         label: 'Button',
         pathname: 'button'
       },
@@ -117,8 +121,7 @@ export const components: ComponentObjectProps = {
       },
       {
         label: 'Navbar',
-        pathname: 'navbar',
-        badge: BADGE_TYPES.new
+        pathname: 'navbar'
       },
       {
         label: 'Order',
@@ -134,8 +137,7 @@ export const components: ComponentObjectProps = {
       },
       {
         label: 'SideBar',
-        pathname: 'sidebar',
-        badge: BADGE_TYPES.new
+        pathname: 'sidebar'
       },
       {
         label: 'Wrapper',
@@ -197,8 +199,7 @@ export const components: ComponentObjectProps = {
       },
       {
         label: 'Cell',
-        pathname: 'cell',
-        badge: BADGE_TYPES.new
+        pathname: 'cell'
       },
       {
         label: 'Pagination',
@@ -222,8 +223,7 @@ export const components: ComponentObjectProps = {
       },
       {
         label: 'AsideModal',
-        pathname: 'aside-modal',
-        badge: BADGE_TYPES.new
+        pathname: 'aside-modal'
       }
     ]
   },
@@ -282,28 +282,32 @@ export const components: ComponentObjectProps = {
   components: {
     items: [
       {
+        label: 'Badge',
+        pathname: 'badge'
+      },
+      {
         label: 'BarList',
-        pathname: 'bar-list',
-        badge: BADGE_TYPES.new
+        pathname: 'bar-list'
       },
       {
         label: 'Callout',
-        pathname: 'callout',
-        badge: BADGE_TYPES.new
+        pathname: 'callout'
       },
       {
         label: 'Circle',
-        pathname: 'circle',
-        badge: BADGE_TYPES.new
+        pathname: 'circle'
       },
       {
         label: 'Confirm Dialog',
-        pathname: 'confirm-dialog',
-        badge: BADGE_TYPES.new
+        pathname: 'confirm-dialog'
       },
       {
         label: 'Date Picker',
         pathname: 'date-picker'
+      },
+      {
+        label: 'Date Time Picker',
+        pathname: 'date-time-picker'
       },
       {
         label: 'Dynamic Hero Icon',
@@ -311,13 +315,11 @@ export const components: ComponentObjectProps = {
       },
       {
         label: 'Dropdown',
-        pathname: 'dropdown',
-        badge: BADGE_TYPES.new
+        pathname: 'dropdown'
       },
       {
         label: 'FeedBackBox',
-        pathname: 'feed-back-box',
-        badge: BADGE_TYPES.coming
+        pathname: 'feed-back-box'
       },
       {
         label: 'Filter Range',
@@ -329,18 +331,15 @@ export const components: ComponentObjectProps = {
       },
       {
         label: 'Filter Date',
-        pathname: 'filter-date',
-        badge: BADGE_TYPES.new
+        pathname: 'filter-date'
       },
       {
         label: 'Filter Select',
-        pathname: 'filter-select',
-        badge: BADGE_TYPES.new
+        pathname: 'filter-select'
       },
       {
         label: 'Filter Select Multi',
-        pathname: 'filter-select-multi',
-        badge: BADGE_TYPES.new
+        pathname: 'filter-select-multi'
       },
       {
         label: 'Language',
@@ -349,8 +348,7 @@ export const components: ComponentObjectProps = {
       },
       {
         label: 'List',
-        pathname: 'list',
-        badge: BADGE_TYPES.new
+        pathname: 'list'
       },
       {
         label: 'Portal',
@@ -358,8 +356,7 @@ export const components: ComponentObjectProps = {
       },
       {
         label: 'Progress',
-        pathname: 'progress',
-        badge: BADGE_TYPES.new
+        pathname: 'progress'
       },
       {
         label: 'Select Multi',
@@ -372,28 +369,23 @@ export const components: ComponentObjectProps = {
       },
       {
         label: 'Table',
-        pathname: 'table',
-        badge: BADGE_TYPES.new
+        pathname: 'table'
       },
       {
         label: 'Tag',
-        pathname: 'tag',
-        badge: BADGE_TYPES.new
+        pathname: 'tag'
       },
       {
         label: 'Timeline',
-        pathname: 'timeline',
-        badge: BADGE_TYPES.new
+        pathname: 'timeline'
       },
       {
         label: 'Tooltip',
-        pathname: 'tooltip',
-        badge: BADGE_TYPES.new
+        pathname: 'tooltip'
       },
       {
         label: 'Transition',
-        pathname: 'transition',
-        badge: BADGE_TYPES.new
+        pathname: 'transition'
       }
     ]
   }

@@ -1,0 +1,137 @@
+---
+product: dd360-ds
+title: React DateTimePicker component
+components: DateTimePicker
+---
+
+<br id='top' />
+<br />
+
+<Label>Components</Label>
+
+# <HeaderDocCustom title="DateTimePicker" pathUrl="components-datepicker--date--time-picker" />
+
+With the DateTimePicker component, you can provide users with the ability to interactively select dates and times in web applications. It allows easy entry and manipulation of temporal data, facilitating the selection and presentation of dates and times in a friendly and customizable format.
+
+<br />
+
+##### <span name="floating-nav">Imports</span>
+
+The first alternative is recommended since they can reduce the application bundle
+
+<WindowEditor codeString="import DateTimePicker from 'dd360-ds/DateTimePicker'" />
+<WindowEditor codeString="import { DateTimePicker } from 'dd360-ds'" />
+
+##### <span name="floating-nav">Usage</span>
+
+Use the DatePicker component as shown below:
+
+<Playground>
+  <DateTimePicker />
+</Playground>
+The code snippet below shows how to use the DateTimePicker component:
+
+<WindowEditor
+    codeString={`import  DateTimePicker  from 'dd360-ds/DateTimePicker'
+
+<DateTimePicker />
+`}/>
+
+##### <span name="floating-nav">Language</span>
+
+With the prop <TagDocs text='language' />, its variants <TagDocs text='es' /> and <TagDocs text='en' /> you can control the language
+
+<Playground>
+
+<Flex className='flex-col' gap={8}>
+  <DateTimePicker language="en" />
+  <DateTimePicker language="es" />
+</Flex>
+</Playground>
+
+<WindowEditor
+  codeString={`import { Flex, DateTimePicker } from 'dd360-ds''
+  
+<Flex className='flex-col' gap={8}>
+  <DateTimePicker language="en" />
+  <DateTimePicker language="es" />
+</Flex>
+`}
+/>
+
+##### <span name="floating-nav">Format</span>
+
+With the prop <TagDocs text='format' />, and its <TagDocs text='short' /> and <TagDocs text='long' /> variants, you can customize the display format of the date, either in its full or abbreviated form.
+
+<Playground>
+<Flex className='flex-col' gap={8}>
+  <DateTimePicker format="short" language='en' />
+  <DateTimePicker format="long"  language='en' />
+</Flex>
+</Playground>
+
+<WindowEditor
+  codeString={`import DateTimePicker from 'dd360-ds/DateTimePicker'
+  
+ <Flex className='flex-col' gap={8}>
+  <DateTimePicker format="short" language='en' />
+  <DateTimePicker format="long"  language='en' />
+</Flex>
+`}
+/>
+
+##### <span name="floating-nav">MinDate</span>
+
+With the prop <TagDocs text='minDate' />, you can define the selectable minimum date
+
+<Playground>
+
+<DateTimePicker language="en" value={new Date('2023-05-16T03:00:00.000Z')} minDate={new Date('2023-05-10T03:00:00.000Z')} />
+
+</Playground>
+
+<WindowEditor
+  codeString={`import  DateTimePicker  from 'dd360-ds/DateTimePicker''
+  
+<DateTimePicker language='en' value={new Date('2023-05-16T03:00:00.000Z')} minDate={new Date('2023-05-10T03:00:00.000Z')} />
+`}
+/>
+
+##### <span name="floating-nav">MaxDate</span>
+
+With the prop <TagDocs text='maxDate' />, you can define the maximum selectable date
+
+<Playground>
+
+<DateTimePicker language="en" value={new Date('2023-05-16T03:00:00.000Z')} maxDate={new Date('2023-05-22T03:00:00.000Z')} />
+
+</Playground>
+
+<WindowEditor
+  codeString={`import  DateTimePicker  from 'dd360-ds/DateTimePicker''
+  
+<DateTimePicker language='en' value={new Date('2023-05-16T03:00:00.000Z')} maxDate={new Date('2023-05-22T03:00:00.000Z')} />
+`}
+/>
+
+##### <span name="floating-nav">API Reference</span>
+
+<CustomTableDocs
+  dataTable={[
+    { title: 'format', default: 'short', types: ['long', 'short'] },
+    { title: 'language', default: 'en', types: ['en', 'es'] },
+    { title: 'value', default: '2023-02-27T03:00:00.000Z', types: ['Date'] },
+    { title: 'minDate', default: '2023-02-11T03:00:00.000Z', types: ['Date'] },
+    { title: 'onlyOf', default: 'month-year', types: ['year', 'month', 'day', 'month-year'] },
+    { title: 'maxDate', default: null, types: ['Date'] },
+    { title: 'handleDateChange', default: null, types: ['(date: string) => void'] },
+    { title: 'className', default: null, types: ['string'] },
+    { title: 'pickerClassName', default: null, types: ['string']},
+    { title: 'style', default: null, types: ['CSSProperties'] },
+    { title: '...', default: null, types: ['InputProps'] }
+  ]}
+/>
+
+<AlertReactKnowledge />
+
+<BackAndForwardController />
