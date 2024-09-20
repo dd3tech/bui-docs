@@ -28,7 +28,7 @@ const FilterSelectCustom = ({
   isMulti
 }: FilterSelectCustomProps) => {
   const [domLoaded, setDomLoaded] = useState<boolean>(false)
-  const { position, setPosition, setTargetRef } = useRelativePosition({})
+  const [active, setActive] = useState(false)
 
   useEffect(() => {
     setDomLoaded(true)
@@ -39,15 +39,7 @@ const FilterSelectCustom = ({
       {domLoaded && (
         <>
           <div className="h-8">
-            <button
-              onClick={() =>
-                setPosition((position) => ({
-                  ...position,
-                  show: !position.show
-                }))
-              }
-              ref={setTargetRef}
-            >
+            <button onClick={() => setActive(!active)}>
               <Flex gap="3" justifyContent="center" alignItems="center">
                 <Text className="mt-0.5 mr-1" bold>
                   {isMulti ? 'FilterSelectMulti' : 'FilterSelect'}
@@ -57,45 +49,44 @@ const FilterSelectCustom = ({
             </button>
           </div>
 
-          {isMulti ? (
-            <FilterSelectMulti
-              title={title}
-              textApplyBtn={textApplyBtn}
-              textResetBtn={textResetBtn}
-              position={position}
-              width={width}
-              initialItemList={{
-                A: {
-                  label: 'Option A'
-                },
-                B: {
-                  label: 'Option B',
-                  disabled
-                }
-              }}
-              onApply={handleChange}
-              className="container-cmpnt-doc"
-            />
-          ) : (
-            <FilterSelect
-              title={title}
-              selectedValue={selectedValue}
-              textApplyBtn={textApplyBtn}
-              textResetBtn={textResetBtn}
-              position={position}
-              width={width}
-              listItems={{
-                A: {
-                  label: 'Option A'
-                },
-                B: {
-                  label: 'Option B',
-                  disabled
-                }
-              }}
-              onApply={handleChange}
-            />
-          )}
+          {active &&
+            (isMulti ? (
+              <FilterSelectMulti
+                title={title}
+                width={width}
+                textApplyBtn={textApplyBtn}
+                textResetBtn={textResetBtn}
+                initialItemList={{
+                  A: {
+                    label: 'Option A'
+                  },
+                  B: {
+                    label: 'Option B',
+                    disabled
+                  }
+                }}
+                onApply={handleChange}
+                className="container-cmpnt-doc"
+              />
+            ) : (
+              <FilterSelect
+                title={title}
+                width={width}
+                textApplyBtn={textApplyBtn}
+                textResetBtn={textResetBtn}
+                selectedValue={selectedValue}
+                listItems={{
+                  A: {
+                    label: 'Option A'
+                  },
+                  B: {
+                    label: 'Option B',
+                    disabled
+                  }
+                }}
+                onApply={handleChange}
+              />
+            ))}
         </>
       )}
     </>

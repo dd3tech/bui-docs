@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { FilterRange, Text } from 'dd360-ds'
 import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
-import useRelativePosition from '@/hooks/useRelativePosition'
 
 const FilterRangeCustom = ({
   onTop,
@@ -11,7 +10,7 @@ const FilterRangeCustom = ({
   minMax: boolean
 }) => {
   const [domLoaded, setDomLoaded] = useState<boolean>(false)
-  const { position, setPosition, setTargetRef } = useRelativePosition({})
+  const [active, setActive] = useState(false)
 
   useEffect(() => {
     setDomLoaded(true)
@@ -22,13 +21,9 @@ const FilterRangeCustom = ({
       {domLoaded && (
         <div>
           <button
-            ref={setTargetRef}
             className="flex items-center gap-1"
             onClick={() => {
-              setPosition((position) => ({
-                ...position,
-                show: !position.show
-              }))
+              setActive(!active)
             }}
           >
             <Text size="lg" bold>
@@ -36,23 +31,20 @@ const FilterRangeCustom = ({
             </Text>
             <DynamicHeroIcon icon="FilterIcon" className="w-4 h-4" />
           </button>
-          <FilterRange
-            max={minMax ? 100 : 0}
-            min={minMax ? 30 : 0}
-            onApply={() => undefined}
-            onReset={() => undefined}
-            position={{
-              top: position.top,
-              left: position.left,
-              show: position.show
-            }}
-            title="Filter range name"
-            defaultMax={minMax ? 100 : 0}
-            defaultMin={minMax ? 30 : 0}
-            textMax={minMax ? 'Custom max text' : 'Maximum'}
-            textMin={minMax ? 'Custom min text' : 'Minimum'}
-            className="container-cmpnt-doc"
-          />
+          {active && (
+            <FilterRange
+              max={minMax ? 100 : 0}
+              min={minMax ? 30 : 0}
+              onApply={() => undefined}
+              onReset={() => undefined}
+              title="Filter range name"
+              defaultMax={minMax ? 100 : 0}
+              defaultMin={minMax ? 30 : 0}
+              textMax={minMax ? 'Custom max text' : 'Maximum'}
+              textMin={minMax ? 'Custom min text' : 'Minimum'}
+              className="container-cmpnt-doc"
+            />
+          )}
         </div>
       )}
     </>

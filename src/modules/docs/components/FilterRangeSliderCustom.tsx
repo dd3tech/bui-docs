@@ -11,7 +11,7 @@ const FilterRangeSliderCustom = ({
   minMax: boolean
 }) => {
   const [domLoaded, setDomLoaded] = useState<boolean>(false)
-  const { position, setPosition, setTargetRef } = useRelativePosition({})
+  const [active, setActive] = useState(false)
 
   useEffect(() => {
     setDomLoaded(true)
@@ -22,34 +22,25 @@ const FilterRangeSliderCustom = ({
       {domLoaded && (
         <div>
           <button
-            ref={setTargetRef}
             className="flex items-center gap-1"
-            onClick={() =>
-              setPosition((position) => ({
-                ...position,
-                show: !position.show
-              }))
-            }
+            onClick={() => setActive(!active)}
           >
             <Text size="lg" bold>
               {onTop ? 'Filter range on top' : 'Filter range'}
             </Text>
             <DynamicHeroIcon icon="FilterIcon" className="w-4 h-4" />
           </button>
-          <FilterRangeSlider
-            title="Filter range slider name"
-            onApply={() => undefined}
-            onReset={() => undefined}
-            position={{
-              top: position.top,
-              left: position.left,
-              show: position.show
-            }}
-            max={minMax ? 300 : 100}
-            min={minMax ? 150 : 0}
-            minValDisabled={minMax}
-            className="container-cmpnt-doc"
-          />
+          {active && (
+            <FilterRangeSlider
+              title="Filter range slider name"
+              onApply={() => undefined}
+              onReset={() => undefined}
+              max={minMax ? 300 : 100}
+              min={minMax ? 150 : 0}
+              minValDisabled={minMax}
+              className="container-cmpnt-doc"
+            />
+          )}
         </div>
       )}
     </>
