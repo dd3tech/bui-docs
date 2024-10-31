@@ -1,0 +1,254 @@
+---
+product: dd360-ds
+title: React TopPage component
+components: TopPage
+---
+
+<br id='top' />
+<br />
+
+<Label>Layout</Label>
+
+# <HeaderDocCustom title="TopPage" pathUrl="components-toppage" />
+
+The TopPage component is designed to create a hierarchical page structure with navigation elements, ideal for complex applications that require organized sections.
+
+This component is especially useful in management applications, dashboards, or any system that needs to organize multiple sections and important actions in a compact 
+ and easy-to-navigate interface.
+
+<br />
+<br />
+##### <span name="floating-nav">Import</span>
+
+<WindowEditor codeString="import { TopPage } from 'dd360-ds'" />
+
+<br />
+<br />
+##### <span name="floating-nav">Usage</span>
+
+The TopPage component is highly versatile and suited for a variety of applications. It allows for the display of breadcrumb navigation, configurable action buttons, 
+and a customizable header. 
+
+Users can easily adjust the layout, add tabs for organized sections, and include icons or last-update timestamps to enhance usability and structure.
+
+<br />
+##### <span name="floating-nav">Title</span>
+The prop title is required, it is a string that is rendered as the title of the TopPage component.
+
+<Playground className="gap-y-2">
+   <TopPage title="Title Top Page"/>
+</Playground>
+<br/>
+<WindowEditor codeString='import { TopPage } from "dd360-ds"
+
+<TopPage title="Title Top Page"  />' />
+
+<br />
+##### <span name="floating-nav">Children</span>
+
+The children prop is required; it represents the content rendered within the TopPage component,
+typically used for displaying the main content or sections beneath the header and navigation elements.
+
+<Playground className="gap-y-2">
+   <TopPage title="Title Top Page" children={<div>Children Example</div>}/>
+</Playground>
+<br/>
+<WindowEditor codeString='import { TopPage } from "dd360-ds"
+
+<TopPage title="Title Top Page" children={<div>Children Example</div>} />' />
+
+<br />
+##### <span name="floating-nav">Description</span>
+
+A string that is rendered as the description of the TopPage.
+
+<Playground className="gap-y-2">
+   <TopPage title="Title Top Page" children={<div>Children Example</div> } description="Description Top Page"/>
+</Playground>
+<br/>
+<WindowEditor codeString='import { TopPage } from "dd360-ds"
+
+<TopPage title="Title Top Page" children={<div>Children Example</div>}
+description="Description Top Page" />' />
+
+<br />
+
+##### <span name="floating-nav">OptionsBreadcrumbs</span>
+
+The optionsBreadcrumbs prop is an optional array that defines the breadcrumb navigation for the TopPage component,
+allowing users to see their navigation path and easily return to previous sections. Each breadcrumb item includes a label and link.
+
+<Playground className="gap-y-2">
+   <TopPage title="Title Top Page" children={<div>Children Example</div> } optionsBreadcrumbs={[{ name: "Home", to: () => alert("Action Home") },{ name: "Category", to: () => alert("Action Category") }]} />
+</Playground>
+<br/>
+<WindowEditor codeString='import { TopPage } from "dd360-ds"
+
+<TopPage title="Title Top Page" children={<div>Children Example</div>} 
+optionsBreadcrumbs={[{ name: "Home", to: () => alert("Action Home") },
+{ name: "Category", to: () => alert("Action Category") }]}  />' />
+
+<br />
+##### <span name="floating-nav">LastUpdate</span>
+
+The lastUpdate prop is an optional object that displays the date of the last update on the TopPage component. 
+It includes a translation key to set the language ("en" or "es") and a date key to specify the date, helping users stay informed about recent changes or updates.
+
+<Playground className="gap-y-2">
+   <TopPage title="Title Top Page" children={<div>Children Example</div> }  optionsBreadcrumbs={[{ name: "Home", to: () => alert("Action Home") },{ name: "Category", to: () => alert("Action Category") }]} lastUpdate={{ translation: "es", date: new Date()}} />
+</Playground>
+<br/>
+<WindowEditor codeString='import { TopPage } from "dd360-ds"
+
+<TopPage title="Title Top Page" children={<div>Children Example</div>} 
+optionsBreadcrumbs={[{ name: "Home", to: () => alert("Action Home") },
+{ name: "Category", to: () => alert("Action Category") }]} 
+lastUpdate={{translation: "es", date: new Date()}}
+ />' />
+
+
+
+<br />
+##### <span name="floating-nav">CallToActionsButtons</span>
+
+The callToActionsButtons prop is an optional array of action buttons displayed in the header of the TopPage component. 
+Each button object can include a label, icon, style variant, and click handler, providing quick access to key actions for the user. 
+Up to four buttons can be displayed.
+
+<Playground className="gap-y-2">
+   <TopPage title="Title Top Page" 
+   children={<div>Children Example</div> }  
+   optionsBreadcrumbs={[{ name: "Home", to: () => alert("Action Home") },{ name: "Category", to: () => alert("Action Category") }]} lastUpdate={{ translation: "es", date: new Date()}}
+   callToActionsButtons={  [
+    {
+      label: "Action 1",
+      onClick: () => alert("Action 1 clicked"),
+      variant: "primary",
+      isDisabled: true
+    }]}
+    />
+</Playground>
+<br/>
+<WindowEditor codeString='import { TopPage } from "dd360-ds"
+
+<TopPage title="Title Top Page" children={<div>Children Example</div>} 
+lastUpdate={{ translation: "es", date: new Date()}}
+optionsBreadcrumbs={[{ name: "Home", to: () => alert("Action Home") },
+{ name: "Category", to: () => alert("Action Category") }]} 
+callToActionsButtons={[
+    {
+      label: "Action 1",
+      onClick: () => alert("Action 1 clicked"),
+      icon: <XCircleIcon />,
+      variant: "primary",
+      isDisabled: true
+    }]} />' />
+
+<br />
+##### <span name="floating-nav">ActionIcon</span>
+
+The actionIcon prop is an optional object that represents a standalone icon button in the header of the TopPage component. 
+It includes properties for an icon, click handler, and states for selection and disabling, allowing users to perform a key action independently of the main action buttons.
+
+<WindowEditor codeString='import { TopPage } from "dd360-ds"
+
+<TopPage title="Title Top Page" children={<div>Children Example</div>} 
+actionIcon={
+    titleIcon: <CheckCircleIcon />,
+    onClick: () => alert("Icon clicked"),
+    isSelected: false,
+    isDisabled: true
+  } 
+  />' />
+
+<br />
+
+##### <span name="floating-nav">Tabs</span>
+
+The tabs prop is an optional object that configures tabbed navigation within the TopPage component.
+It includes properties for the current tab value, a setValue function to update the active tab, and an items array defining each tab with a label and optional disabled state.
+This allows users to switch between organized sections of content seamlessly.
+
+<Playground className="gap-y-2">
+   <TopPage title="Title Top Page"
+            children={<div>Children Example</div>}
+            tabs={{
+                  value: 0,
+                  setValue: (value) => alert("Tab changed to", value),
+                  items: [
+                      { label: "Tab 1" },{ label: "Tab 2", disabled:true }
+                  ]
+              }} 
+    />
+</Playground>
+<br/>
+<WindowEditor codeString='import { TopPage } from "dd360-ds"
+
+<TopPage title="Title Top Page" children={<div>Children Example</div>} 
+tabs={{
+    value: 0,
+    setValue: (value) => alert("Tab changed to", value),
+    items: [
+      { label: "Tab 1"},
+      { label: "Tab 2", disabled:true}
+    ]}} 
+  />' />
+
+##### <span name="floating-nav">API Reference</span>
+
+<CustomTableDocs
+   dataTable={[
+    { 
+        title: 'title', 
+        default: null, 
+        types: ['string'], 
+        required: true 
+    },
+     { 
+        title: 'children', 
+        default: null, 
+        types: ['ReactNode'], 
+        required: true 
+    },
+    { 
+        title: 'description', 
+        default: null, 
+        types: ['string'] 
+    },
+    { 
+        title: 'optionsBreadcrumbs', 
+        default: null, 
+        types: ["BreadcrumbsProps['options']"] 
+    },
+    { 
+        title: 'lastUpdate', 
+        default: null, 
+        types: [
+            '{ translation: "es" | "en", date: Date }'
+        ] 
+    },
+    { 
+        title: 'callToActionsButtons', 
+        default: null, 
+        types: [
+            '{ onClick: () => void, icon: ReactNode, variant: "primary" | "secondary" | "tertiary", label: string, isDisabled?: boolean }[]'
+        ] 
+    },
+    { 
+        title: 'actionIcon', 
+        default: null, 
+        types: [
+            '{ titleIcon?: ReactNode, onClick?: () => void, isSelected?: boolean, isDisabled?: boolean }'
+        ] 
+    },
+    { 
+        title: 'tabs', 
+        default: null, 
+        types: [
+            '{ value: number, setValue: React.Dispatch<React.SetStateAction<number>>, items: { label: string, disabled?: boolean }[] }'
+        ] 
+    }
+]}
+/>
+
+<BackAndForwardController />

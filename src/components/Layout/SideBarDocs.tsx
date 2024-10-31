@@ -133,6 +133,11 @@ export const components: ComponentObjectProps = {
         pathname: 'row'
       },
       {
+        label: 'TopPage',
+        pathname: 'top-page',
+        badge: BADGE_TYPES.new
+      },
+      {
         label: 'SideBar',
         pathname: 'sidebar',
         badge: BADGE_TYPES.new
