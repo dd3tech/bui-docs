@@ -124,15 +124,40 @@ export default function App() {
 }`} />
 
 <br />
+
+##### <span name="floating-nav">CallToAction</span>
+
+With the prop <TagDocs text='callToAction' /> you can render a custom component in the callout, is a optional prop.
+
+<Playground className="gap-y-2">
+    <Flex gap="4">
+        <CustomCallout title="All systems are operational" callToAction={<Button variant='secondary'>Click here</Button>} />
+    </Flex>
+</Playground>
+
+<WindowEditor
+    codeString={`import { Callout, Flex } from 'dd360-ds'
+import {  XCircleIcon } from '@heroicons/react/solid'
+
+export default function App() {
+    return (
+        <Flex gap="4">
+            <CustomCallout title="All systems are operational" callToAction={<Button variant='secondary'>Click here</Button>} />
+        </Flex>
+    )
+}`} />
+
+<br />
 <br />
 ##### <span name="floating-nav">API Reference</span>
 
 <CustomTableDocs
     dataTable={[
         { title: 'icon', types: ['React.ElementType'] },
-				{ title: 'description', types: ['string'] },
-				{ title: 'variant', default: 'success', types: ['info', 'warning', 'error', 'success'] },
-				{ title: 'title', types: ['string'], required: true },
+        { title: 'description', types: ['string'] },
+        { title: 'variant', default: 'success', types: ['info', 'warning', 'error', 'success'] },
+        { title: 'title', types: ['string'], required: true },
+        { title: 'callToAction', types: ['ReactNode'], default: null }
     ]}
 
 />

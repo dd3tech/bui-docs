@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import {
   Circle,
@@ -20,38 +19,10 @@ import ButtonsGetStartted from './ButtonsGetStartted'
 
 const ComponentsSection = () => {
   const paginationProps = usePagination()
-  const [sectionPos, setSectionPos] = useState({ top: 0, left: 0 })
-  const [IsScreenXl, setIsScreenXl] = useState(22)
   const {
     themeObject: { extendedPalette },
     isLightTheme
   } = useTheme()
-
-  useEffect(() => {
-    function handleResize() {
-      const sectionNode = document.querySelector(
-        '.section-goup-components'
-      ) as HTMLElement
-      if (sectionNode) {
-        if (window.innerWidth <= 768) {
-          setIsScreenXl(68)
-        } else if (window.innerWidth <= 1280) {
-          setIsScreenXl(255)
-        } else {
-          setIsScreenXl(22)
-        }
-
-        setSectionPos({
-          top: sectionNode.offsetTop,
-          left: sectionNode.offsetLeft
-        })
-      }
-    }
-
-    window.addEventListener('resize', handleResize)
-    handleResize()
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
 
   return (
     <section className="m-auto max-w-8xl section-components flex max-xl:flex-col items-center pt-[55px] xl:py-36">
@@ -89,11 +60,6 @@ const ComponentsSection = () => {
             isLightTheme ? 'light' : 'dark'
           )}
           onApply={() => {}}
-          position={{
-            show: true,
-            left: sectionPos.left + IsScreenXl,
-            top: sectionPos.top + 288
-          }}
           min={0}
           max={50}
           initMinValue={10}

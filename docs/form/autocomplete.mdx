@@ -22,15 +22,26 @@ components: AutoComplete
 ##### <span name="floating-nav">Usage</span>
 
 It is mandatory to pass a prop called "items". 
-The prop item, contains the data for each item in the drop-down list. Each array object must have a format similar to of following example:
+The prop item, contains the data for each item in the drop-down list.
+If you want to disable an item, you can add a disabled property to the object. Each array object must have a format similar to of following example:
 
 <Playground className="gap-y-2">
-    <AutoComplete items={[{name: 'Item name', id: '1'}]} />
+    <AutoComplete items={[
+  {
+    "id": 1,
+    "name": "Item name 1",
+    "disabled": true
+  },
+  {
+    "id": 2,
+    "name": "Item name 2"
+  }
+]} />
 </Playground>
 
-<WindowEditor codeString="import { Checkbox } from 'dd360-ds'
+<WindowEditor codeString="import { AutoComplete } from 'dd360-ds'
 
-<AutoComplete items={[{name: 'Item name', id: '1'}]} />" />
+<AutoComplete items={[{ id: 1, name: 'Item name 1', disabled: true }, { id: 2, name: 'Item name 2' }]} />" />
 
 ##### <span name="floating-nav">Variants</span>
 
@@ -51,7 +62,7 @@ Sets the appearance of the component. Available options are: default, active, di
     <AutoComplete variant="disabled" items={[]} />
 </Playground>
 
-<WindowEditor codeString="import { Checkbox } from 'dd360-ds'
+<WindowEditor codeString="import { AutoCompletex } from 'dd360-ds'
 
 <AutoComplete variant='default' items={[]} />
 <AutoComplete variant='active' items={[]} />
@@ -59,30 +70,6 @@ Sets the appearance of the component. Available options are: default, active, di
 <AutoComplete variant='success' items={[]} />
 <AutoComplete variant='error' items={[]} />
 <AutoComplete variant='disabled' items={[]} />" />
-
-##### <span name="floating-nav">Types</span>
-
-Sets the input type of the component. Available options are: text, number, email, currency, date, date, password, year, month, and percentage. By default it uses "text".
-
-<Playground className="gap-y-2">
-    <Text>Text</Text>
-    <AutoComplete type="text" items={[]} />
-    <Text>Number</Text>
-    <AutoComplete type="number" items={[]} />
-    <Text>Email</Text>
-    <AutoComplete type="date" items={[]} />
-    <Text>Password</Text>
-    <AutoComplete type="password" items={[]} />
-    <Text>Percentage</Text>
-    <AutoComplete type="percentage" items={[]} />
-</Playground>
-
-<WindowEditor codeString="import { Checkbox } from 'dd360-ds'
-
-<AutoComplete type='text' items={[]} />
-<AutoComplete type='currency' items={[]} />
-<AutoComplete type='password' items={[]} />
-<AutoComplete type='percentage' items={[]} />" />
 
 ##### <span name="floating-nav">Can find text</span>
 
@@ -92,19 +79,19 @@ A message that is displayed when no items matching the user's search string are 
     <AutoComplete canFindText="No matches in your search" items={[]} />
 </Playground>
 
-<WindowEditor codeString="import { Checkbox } from 'dd360-ds'
+<WindowEditor codeString="import { AutoComplete } from 'dd360-ds'
 
 <AutoComplete canFindText='No matches in your search' items={[]} />" />
 
 ##### <span name="floating-nav">IsCloseOnBlur</span>
 
-A boolean that indicates whether the drop-down list will be closed when the user clicks out of it.
+A boolean that indicates whether the drop-down list will be closed when the user clicks out of it. If the value is true and the property <TagDocs text='isSelect' /> is true, the drop-down list will be open automatically if the user clicks on the input and the input text is empty.
 
 <Playground className="gap-y-2">
     <AutoComplete isCloseOnBlur={false} items={[]} />
 </Playground>
 
-<WindowEditor codeString="import { Checkbox } from 'dd360-ds'
+<WindowEditor codeString="import { AutoComplete } from 'dd360-ds'
 
 <AutoComplete isCloseOnBlur={false} items={[]} />"/>
 
@@ -116,7 +103,7 @@ A boolean indicating whether the drop-down list is loading.
     <AutoComplete isLoading items={[]} />
 </Playground>
 
-<WindowEditor codeString="import { Checkbox } from 'dd360-ds'
+<WindowEditor codeString="import { AutoComplete } from 'dd360-ds'
 
 <AutoComplete isLoading items={[]} />" />
 
@@ -128,7 +115,7 @@ A message displayed while loading the drop-down list.
     <AutoComplete isLoading loadingText="Searching..." items={[]} />
 </Playground>
 
-<WindowEditor codeString="import { Checkbox } from 'dd360-ds'
+<WindowEditor codeString="import { AutoComplete } from 'dd360-ds'
 
 <AutoComplete isLoading loadingText='Searching...' items={[]} />" />
 
@@ -140,7 +127,7 @@ Text that is displayed as a placeholder in the text box before something is type
     <AutoComplete placeholder="Search items" items={[]} />
 </Playground>
 
-<WindowEditor codeString="import { Checkbox } from 'dd360-ds'
+<WindowEditor codeString="import { AutoComplete } from 'dd360-ds'
 
 <AutoComplete placeholder='Search items' items={[]} />" />
 
@@ -148,7 +135,7 @@ Text that is displayed as a placeholder in the text box before something is type
 
 <CustomTableDocs
     dataTable={[
-        { title: 'items', default: null, types: ['[{name: string, id: string | number}]'], required: true },
+        { title: 'items', default: null, types: ['[{name: string, id: string | number}, disabled?: boolean]'], required: true },
         { title: 'variant', default: 'default', types: ['active', 'disabled', 'warning', 'success', 'error', 'default'] },
         { title: 'canFindText', default: 'no matches', types: ['string'] },
         { title: 'type', default: 'text', types: ['number', 'text', 'email', 'currency', 'date', 'password', 'year', 'month', 'percentage', 'file'] },
@@ -173,7 +160,8 @@ Text that is displayed as a placeholder in the text box before something is type
         { title: 'role', default: null, types: ['string'] },
         { title: 'boxShadow', default: null, types: ['string'] },
         { title: 'rounded', default: null, types: ['string'] },
-        { title: 'className', default: null, types: ['string'] }
+        { title: 'className', default: null, types: ['string'] },
+        { title: 'isSelect', default: 'false', types: ['boolean'] }
     ]}
 />
 

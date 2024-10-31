@@ -39,94 +39,12 @@ The code snippet below shows how to use the ConfirmDialog component:
     codeString={`import ConfirmDialog from 'dd360-ds/ConfirmDialog'
 
 <ConfirmDialog
-    position={{
-      show: true,
-      left: 100,
-      top: 100
-    }}
     onConfirm={()=>alert('onConfirm')}>
     You want to confirm?
 </ConfirmDialog>
 `}/>
 
 <br />
-
-##### <span name="floating-nav">Position</span>
-
-To manage the ConfirmDialog component's visibility and position, you can use the
-useState hook in a functional component. Position stores the top and left
-coordinates, as well as a boolean indicating whether the component should be
-shown. The component listens for clicks on a button, which toggles the
-ConfirmDialog visibility and updates its position based on the click event's
-coordinates
-
-<Playground>
-  <ConfirmDialogCustom />
-</Playground>
-
-<WindowEditor
-    codeString={`import { useEffect, useState } from 'react'
-import { ConfirmDialog } from 'dd360-ds'
-import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
-
-const ConfirmDialogCustom = () => {
-  const [domLoaded, setDomLoaded] = useState<boolean>(false)
-  const [position, setPosition] = useState<{
-    top: number
-    left: number
-    show: boolean
-  }>({
-    top: 0,
-    left: 0,
-    show: false
-  })
-
-  useEffect(() => { setDomLoaded(true) }, [])
-
-  return (
-    <>
-      {domLoaded && (
-        <div>
-          <button
-            className="flex items-center gap-1"
-            onClick={(event) => {
-              setPosition((position) => ({
-                top: event.pageY,
-                left: event.pageX,
-                show: !position.show
-              }))
-            }}
-          >
-            Confirm Dialog
-            <DynamicHeroIcon icon="FilterIcon" className="w-4 h-4" />
-          </button>
-          <ConfirmDialog
-            position={{
-              top: position.top,
-              left: position.left,
-              show: position.show
-            }}
-            onConfirm={() => alert('onConfirm')}
-          >
-            You want to confirm?
-          </ConfirmDialog>
-        </div>
-      )}
-    </>
-  )
-}
-
-export default ConfirmDialogCustom
- `}/>
-
-Note: The "domLoaded" state variable in the ConfirmDialogCustom is used to ensure 
-that the component is fully rendered before displaying the ConfirmDialog 
-component. This is important when using Next.js, as it performs server-side 
-rendering by default. By waiting for the client-side rendering to complete, 
-we can avoid any issues with the ConfirmDialog component not being fully initialized
-
-<br />
-
 
 ##### <span name="floating-nav">Title</span>
 
@@ -141,11 +59,6 @@ The prop <TagDocs text='title' /> is used to display a descriptive title in the 
 
 <ConfirmDialog
     title='Example title'
-    position={{
-      show: true,
-      left: 100,
-      top: 100
-    }}
     onConfirm={()=>alert('onConfirm')}>
     You want to confirm?
 </ConfirmDialog>
@@ -166,11 +79,6 @@ The prop <TagDocs text='textConfirmBtn' /> is used to define the text of the con
 
 <ConfirmDialog
     textConfirmBtn='Example Confirm'
-    position={{
-      show: true,
-      left: 100,
-      top: 100
-    }}
     onConfirm={()=>alert('onConfirm')}>
     You want to confirm?
 </ConfirmDialog>
@@ -194,11 +102,6 @@ Note that it is recommended that the textCancelBtn and handleCancel props be def
 <ConfirmDialog
     onCancel={()=>alert('Cancel')} 
     textCancelBtn='Example Confirm'
-    position={{
-      show: true,
-      left: 100,
-      top: 100
-    }}
     onConfirm={()=>alert('onConfirm')}>
     You want to confirm?
 </ConfirmDialog>
@@ -220,11 +123,6 @@ The prop <TagDocs text='width' /> is used to set the custom width of the confirm
 
 <ConfirmDialog
     width={300} 
-    position={{
-      show: true,
-      left: 100,
-      top: 100
-    }}
     onConfirm={()=>alert('onConfirm')}>
     You want to confirm?
 </ConfirmDialog>
@@ -238,11 +136,6 @@ The prop <TagDocs text='width' /> is used to set the custom width of the confirm
 <CustomTableDocs
   dataTable={[
     { title: 'title', default: null, types: ['string'] },
-    {
-      title: 'position',
-      default: '{ show: false, top: 0, left: 0 }',
-      types: ['{ show: boolean, top: number, left: number }']
-    },
     { title: 'textConfirmBtn', default: 'Apply', types: ['string'] },
     { title: 'textCancelBtn', default: 'Reset', types: ['string'] },
     { title: 'children', default: 'Reset', types: ['ReactNode'],required:true },
@@ -250,7 +143,6 @@ The prop <TagDocs text='width' /> is used to set the custom width of the confirm
     { title: 'onCancel', default: null, types: ['function'] },
     { title: 'width', default: null, types: ['string','number'] },
     { title: 'className', default: null, types: ['string'] },
-    { title: 'idRoot', default: null, types: ['string'] }
   ]}
 />
 

@@ -1,1 +1,85 @@
-feedbackbox
+---
+product: dd360-ds
+title: React FeedBackBox component
+components: FeedBackBox
+---
+
+<br id='top' />
+<br />
+
+<Label>Components</Label>
+
+# <HeaderDocCustom title="FeedBackBox" pathUrl="feed-back-box" />
+
+The FeedBackBox component is used to display feedback messages to the user. It is a simple and customizable component that can be used to provide feedback to the user in a friendly and intuitive way.
+
+<br />
+<br />
+##### <span name="floating-nav">Imports</span>
+
+The first alternative is recommended since they can reduce the application bundle
+
+<WindowEditor codeString="import FeedBackBox from 'dd360-ds/FeedBackBox'" />
+<WindowEditor codeString="import { FeedBackBox } from 'dd360-ds'" />
+
+<br />
+##### <span name="floating-nav">Usage</span>
+
+Use the FeedBackBox component as shown below:
+
+<Playground className="gap-y-2">
+    <FeedBackBox description="Operation completed successfully" title="All systems are operational" txtCloseBtn="close" />
+</Playground>
+
+The code snippet below shows how to use the Callout component:
+
+<WindowEditor
+    codeString={`import { FeedBackBox } from 'dd360-ds'
+  
+ <FeedBackBox description="Operation completed successfully" title="All systems are operational" txtCloseBtn="close"/>`}
+/>
+
+<br />
+
+##### <span name="floating-nav">Type</span>
+
+With the prop <TagDocs text='type' /> you can customize the icon and color of the of the FeedBackBox
+
+<Playground className="gap-y-2">
+    <Flex className="flex-col" gap="4">
+        <FeedBackBox title="Success!" description="The requested action has been completed successfully." type="success" />
+        <FeedBackBox title="Error!" description="Information about the system status" type="error" />
+    </Flex>
+</Playground>
+
+<WindowEditor
+    codeString={`import { Callout, Flex } from 'dd360-ds'
+import {  CheckCircleIcon, XCircleIcon, InformationCircleIcon } from '@heroicons/react/solid'
+
+export default function App() {
+    return (
+        <Flex className="flex-col" gap="4">
+            <FeedBackBox title="Success!" description="The requested action has been completed successfully." type="success" />
+            <FeedBackBox title="Error!" description="Information about the system status" type="error" />
+        </Flex>
+    )
+}`} />
+
+<br />
+<br />
+##### <span name="floating-nav">API Reference</span>
+<CustomTableDocs
+    dataTable={[
+        { title: 'title', types: ['string'], default: null },
+        { title: 'description', types: ['string'], default: null },
+        { title: 'type', types: ['error', 'success'], default: 'success' },
+        { title: 'defaultIsClose', types: ['boolean'], default: 'true' },
+        { title: 'onClose', types: ['() => void'], default: null },
+        { title: 'txtCloseBtn', types: ['string'], default: 'close' },
+    ]}
+
+/>
+
+<AlertReactKnowledge />
+
+<BackAndForwardController />

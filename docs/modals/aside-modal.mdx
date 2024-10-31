@@ -40,8 +40,12 @@ The code snippet below shows how to use the AsideModal component:
 <WindowEditor
   codeString={`import AsideModal from 'dd360-ds/AsideModal'
 
-<AsideModal title="Component Aside Modal" open={true} onClose={() => function('function to close the aside modal')} />
-    `}/>
+<AsideModal 
+    title="Component Aside Modal" 
+    open
+    onClose={() => function('function to close the aside modal')} 
+/>
+`}/>
 
 <br />
 
@@ -56,8 +60,13 @@ With the prop <TagDocs text='titleVariant' /> you can customize the size of the 
 <WindowEditor
   codeString={`import AsideModal from 'dd360-ds/AsideModal'
 
-<AsideModal variant='h4' title="Component Aside Modal" open={true} onClose={() => function('function to close the aside modal')} />
-    `}/>
+<AsideModal 
+    variant='h4' 
+    title="Component Aside Modal" 
+    open
+    onClose={() => function('function to close the aside modal')} 
+/>
+`}/>
 
 <br />
 
@@ -75,9 +84,13 @@ With the prop <TagDocs text='position' /> you can choose on which side of the sc
 <WindowEditor
   codeString={`import AsideModal from 'dd360-ds/AsideModal'
 
-<AsideModal position='right' title="Component Aside Modal" open={true} onClose={() => function('function to close the aside modal')} />
-
-    `}/>
+<AsideModal 
+    position='right' 
+    title="Component Aside Modal" 
+    open
+    onClose={() => function('function to close the aside modal')}
+/>
+`}/>
 
 ##### Position Left
 
@@ -88,8 +101,13 @@ With the prop <TagDocs text='position' /> you can choose on which side of the sc
 <WindowEditor
   codeString={`import AsideModal from 'dd360-ds/AsideModal'
 
-<AsideModal position='left' title="Component Aside Modal" open={true} onClose={() => function('function to close the aside modal')} />
-    `}/>
+<AsideModal 
+    position='left' 
+    title="Component Aside Modal" 
+    open
+    onClose={() => function('function to close the aside modal')}
+/>
+`}/>
 
 <br />
 
@@ -104,8 +122,39 @@ With the prop <TagDocs text='disableEscapeKeyDown' /> you can disable the closin
 <WindowEditor
   codeString={`import AsideModal from 'dd360-ds/AsideModal'
 
-<AsideModal disableEscapeKeyDown title="Component Aside Modal" open={true} onClose={() => function('function to close the aside modal')} />
-    `}/>
+<AsideModal 
+    disableEscapeKeyDown 
+    title="Component Aside Modal" 
+    open
+    onClose={() => function('function to close the aside modal')}
+/>
+`}/>
+
+<br />
+
+##### <span name="floating-nav">isStickyTitle</span>
+
+With the prop <TagDocs text='IsStickyTitle' /> you can make the title sticky
+
+<Playground>
+    <AsideModalCustom title="Component Aside Modal" isStickyTitle>
+        <div style={{ padding: '20px', height: '1200px' }}>
+            <p>Content</p>
+        </div>
+    </AsideModalCustom>
+</Playground>
+
+<WindowEditor
+  codeString={`import AsideModal from 'dd360-ds/AsideModal'
+
+<AsideModal 
+    title="Component Aside Modal" 
+    open
+    isStickyTitle
+    onClose={() => function('function to close the aside modal')}
+/>
+`}/>
+
 
 <br />
 <br />
@@ -120,6 +169,7 @@ With the prop <TagDocs text='disableEscapeKeyDown' /> you can disable the closin
         { title: 'disableEscapeKeyDown', default: 'false', types: ['boolean'] },
         { title: 'title', default: null, types: ['string'] },
         { title: 'onClose', default: null, types: ['function'] },
+        { title: 'isStickyTitle', default: 'false', types: ['boolean'] },
         { title: 'children', default: null, types: ['ReactNode'] }
     ]}
 />
