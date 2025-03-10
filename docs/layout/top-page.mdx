@@ -1,0 +1,225 @@
+---
+product: dd360-ds
+title: React TopPage component
+components: TopPage
+---
+
+<br id='top' />
+<br />
+
+<Label>Layout</Label>
+
+# <HeaderDocCustom title="TopPage" pathUrl="layout-top-page--top-page" />
+
+
+The `TopPage` component is responsible for organizing and displaying key elements at the top of a page. It includes the page title, breadcrumbs for easy navigation, and a "last updated" date. Additionally, it can show action buttons with labels, icons, and click handlers for quick actions. It also supports a customizable icon button for additional actions and navigation tabs for section switching. This component helps in creating a clean, accessible, and user-friendly interface.
+
+<br />
+<br />
+##### <span name="floating-nav">Import</span>
+
+<WindowEditor codeString="import { TopPage } from 'dd360-ds'" />
+<WindowEditor codeString="import TopPage from 'dd360-ds/TopPage'" />
+
+<br />
+<br />
+##### <span name="floating-nav">Usage</span>
+
+<Playground >
+   <TopPage title={{label:'TopPage Component'}}/>
+</Playground>
+
+<WindowEditor codeString={`import { TopPage } from "dd360-ds"
+
+<TopPage title={{label:'TopPage Component'}}/>
+`} />
+
+<br />
+<br />
+
+##### <span name="floating-nav">Description</span>
+
+With the prop <TagDocs text='Description' /> allows you to display a brief text below the title on the TopPage component. It accepts a string value and is useful for providing additional context or information related to the page.
+
+
+<Playground >
+   <TopPage title={{label:'TopPage Component'}} description="TopPage Component Description"/>
+</Playground>
+
+<WindowEditor codeString={`import { TopPage } from "dd360-ds"
+
+  <TopPage
+    title={{label:'TopPage Component'}} description="TopPage Component Description" />
+`} />
+
+<br />
+<br />
+
+##### <span name="floating-nav">OptionsBreadcrumbs</span>
+
+With the prop <TagDocs text='OptionsBreadcrumbs' /> allows allows you to configure the breadcrumb navigation for the TopPage component. It accepts an object with an options array, where each breadcrumb can include a name (the display text) and a to function (which defines the redirect behavior when clicked). Additionally, this prop offers more customization options like separator and isLoading for more control over the breadcrumb rendering. You can check the full list of available options in the API Reference.
+
+
+<Playground >
+   <TopPage title={{label:'TopPage Component'}} optionsBreadcrumbs={{options:[{name:'Home',to:()=>console.log('redirect to Home')},{name:'Dashboard',to:()=>console.log('redirect to Dashboard')}]}}/>
+</Playground>
+
+<WindowEditor codeString={`import { TopPage } from "dd360-ds"
+
+  <TopPage
+    title={{label:'TopPage Component'}} 
+    optionsBreadcrumns={
+    {options:[
+    {name:'Home',to:()=>console.log('redirect to Home')},
+    {name:'Dashboard',to:()=>console.log('redirect to Dashboard')}
+    ]}
+    }/>
+`} />
+
+<br />
+<br />
+
+##### <span name="floating-nav">LastUpdate</span>
+
+With the prop <TagDocs text='LastUpdate' /> allows you to display the last update date on the TopPage component. It accepts an object with a translation value ('en' or 'es') to format the date accordingly, and a date value as a Date object. This helps provide users with clear information about the last update status.
+
+
+<Playground >
+   <TopPage title={{label:'TopPage Component'}} lastUpdate={{translation:'en',date:new Date()}}/>
+</Playground>
+
+<WindowEditor codeString={`import { TopPage } from "dd360-ds"
+
+  <TopPage
+    title={{label:'TopPage Component'}} lastUpdate={{tranlation:'en',date:new Date()}} />
+`} />
+
+<br />
+<br />
+
+##### <span name="floating-nav">CallToActionsButtons</span>
+
+With the prop <TagDocs text='CallToActionsButtons' /> allows you to display a list of action buttons on the TopPage component. Each button accepts a label (string) to define the button text, an onClick (function) to handle the button action, and a variant (string) to customize the button style. You can further customize the buttons. You can check the full list of available options in the API Reference.
+
+
+<Playground >
+   <TopPage title={{label:'TopPage Component'}} callToActionsButtons={[{
+      label: 'Save Changes',
+      onClick: () => console.log('Save changes action'),
+      variant: 'primary',
+    }]}/>
+</Playground>
+
+<WindowEditor codeString={`import { TopPage } from "dd360-ds" 
+
+  <TopPage
+    title={{label:'TopPage Component'}} 
+    callToActionsButtons={{
+      label: 'Save Changes',
+      onClick: () => console.log('Save changes action'),
+      variant: 'primary' ,
+    }} />
+`} />
+
+<br />
+<br />
+
+##### <span name="floating-nav">ActionIcon</span>
+
+With the prop <TagDocs text='ActionIcon' />, you can display a list of action icons on the **TopPage** component. Each icon accepts a `titleIcon` (ReactNode) to define the icon to display, an `onClick` (function) to handle the action when clicked, and an `isSelected` (boolean) to control the active state of the icon. You can further customize the icons and their behavior. You can check the full list of available options in the API Reference.
+
+
+
+<Playground >
+   <TopPage title={{label:'TopPage Component'}} actionIcon={[{
+    titleIcon: <DynamicHeroIcon icon="TagIcon" className="w-5 h-5" />,
+    onClick: () => console.log('prev state'),
+    isSelected: false
+    }]}/>
+</Playground>
+
+<WindowEditor codeString={`import { TopPage } from "dd360-ds" 
+import DynamicHeroIcon from 'dd360-ds/DynamicHeroIcon'
+
+  <TopPage
+    title={{label:'TopPage Component'}} 
+    actionIcon={[{
+     itleIcon: <DynamicHeroIcon icon="TagIcon" className="w-5 h-5" />,
+    onClick: () => console.log('prev state'),
+    isSelected: false
+    }]}/>
+`} />
+
+<br />
+<br />
+
+##### <span name="floating-nav">Tabs</span>
+
+With the prop <TagDocs text='Tabs' />, you can display a list of tabs on the **TopPage** component. The `tabs` prop accepts a `value` (number) to define the currently selected tab, a `setValue` (function) to handle tab selection changes, and an `items` array where each item includes a `label` (string) to define the tab name and `content` (ReactNode) to display the corresponding content. You can check the full list of available options in the API Reference.
+
+
+<Playground >
+   <TopPage title={{label:'TopPage Component'}} tabs={{
+    value: 0,
+    setValue: (value) => console.log('Tab changed to', value),
+    items: [
+      { label: 'Tab 1', content: <div>Content for Tab 1</div> },
+      { label: 'Tab 2', content: <div>Content for Tab 2</div>, disabled:true }
+    ]
+    }}/>
+</Playground>
+
+<WindowEditor codeString={`import { TopPage } from "dd360-ds" 
+
+  <TopPage
+    title={{label:'TopPage Component'}} 
+    tabs={{
+    value: 0,
+    setValue: (value) => console.log('Tab changed to', value),
+    items: [
+      { label: 'Tab 1', content: <div>Content for Tab 1</div> },
+      { label: 'Tab 2', content: <div>Content for Tab 2</div>, disabled:true }
+    ]
+    }}/>
+`} />
+
+<br />
+<br />
+
+##### <span name="floating-nav">ClassNameHeader</span>
+
+With the prop <TagDocs text='ClassNameHeader' />, you can customize the styling of the header in the **TopPage** component using a custom CSS class. This allows you to apply background colors, padding, margins, and other styling properties to match the design of your application.
+
+
+<Playground >
+   <TopPage title={{label:'TopPage Component'}} classNameHeader='bg-indigo-200'/>
+</Playground>
+
+<WindowEditor codeString={`import { TopPage } from "dd360-ds" 
+
+  <TopPage
+    title={{label:'TopPage Component'}} 
+    classNameHeader='bg-indigo-200'
+ />
+`} />
+
+<br />
+<br />
+
+##### <span name="floating-nav">API Reference</span>
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'title', default: null, types: ['{ label: string, isLoading: boolean}'],required:true },
+        { title: 'description', default: null, types: ['string'],},
+        { title: 'optionsBreadcrumbs', default: null, types: ['{ options: Array<BreadcrumbsProps["options"]>, separator?: BreadcrumbsProps["separator"], isLoading?: BreadcrumbsProps["isLoading"] }'],},
+        { title: 'lastUpdate', default: null, types: ['{ translation: "es"|"en", date: Date }'],},
+        { title: 'callToActionsButtons', default: null, types: ['Array<{ label: string, onClick: () => void, icon?: React.ReactNode, variant: "primary" | "secondary" | "tertiary", isDisabled?: boolean, isLoading?: boolean, role?: string }>'],},
+        { title: 'actionIcon', default: null, types: ['{ titleIcon?: React.ReactNode, onClick?: ((e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void, isSelected?: boolean, isDisabled?: boolean | "secondary" | "tertiary", isDisabled?: boolean, role?: string }'],},
+        { title: 'tabs', default: null, types: ['{ value: number, setValue: React.Dispatch<React.SetStateAction<number>>, items: Array<{label:string,disabled:boolean,hidden:boolean,toolTipProps:["TooltipProps"]}>}'],},
+        { title: 'classNameHeader', default: null, types: ['string'],},
+        
+    ]}
+/>
+
+<BackAndForwardController />

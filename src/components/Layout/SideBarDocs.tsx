@@ -104,16 +104,16 @@ export const components: ComponentObjectProps = {
         pathname: 'card'
       },
       {
-        label: 'Download Card',
-        pathname: 'card-download'
-      },
-      {
         label: 'Container',
         pathname: 'container'
       },
       {
         label: 'Divider',
         pathname: 'divider'
+      },
+      {
+        label: 'Download Card',
+        pathname: 'card-download'
       },
       {
         label: 'Flex',
@@ -132,12 +132,20 @@ export const components: ComponentObjectProps = {
         pathname: 'overflow'
       },
       {
+        label: 'PageTemplate',
+        pathname: 'page-template'
+      },
+      {
         label: 'Row',
         pathname: 'row'
       },
       {
         label: 'SideBar',
         pathname: 'sidebar'
+      },
+      {
+        label: 'TopPage',
+        pathname: 'top-page'
       },
       {
         label: 'Wrapper',
