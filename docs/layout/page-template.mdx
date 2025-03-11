@@ -1,0 +1,348 @@
+---
+product: dd360-ds
+title: React PageTemplate component
+components: PageTemplate
+---
+
+<br id='top' />
+<br />
+
+<Label>Layout</Label>
+
+# <HeaderDocCustom title="PageTemplate" pathUrl="layout-page-template--page-template" />
+
+
+The `PageTemplate` is a flexible layout component that structures a page's content, including search bars, filters, action buttons, and result displays. It allows easy customization of the header, footer, and interactive elements, ensuring a consistent and user-friendly interface.
+
+<br />
+<br />
+##### <span name="floating-nav">Import</span>
+
+<WindowEditor codeString="import { PageTemplate } from 'dd360-ds'" />
+<WindowEditor codeString="import PageTemplate from 'dd360-ds/PageTemplate'" />
+
+<br />
+<br />
+##### <span name="floating-nav">Usage</span>
+
+<Playground >
+   <PageTemplate title={{label:'PageTemplate Component'}}>Children</PageTemplate>
+</Playground>
+
+<WindowEditor codeString={`import { PageTemplate } from "dd360-ds"
+
+<PageTemplate title={{label:'PageTemplate Component'}}>Children</PageTemplate>
+`} />
+
+<br />
+<br />
+
+##### <span name="floating-nav">Children</span>
+
+With the prop <TagDocs text='Children' />, you can pass any valid React node to be rendered as the main content inside the `PageTemplate` component. This allows you to define custom content, such as text, components, or elements, within the layout.
+
+
+<Playground >
+     <PageTemplate title={{label:'PageTemplate Component'}}>Children</PageTemplate>
+</Playground>
+
+<WindowEditor codeString={`import { PageTemplate } from "dd360-ds"
+
+<PageTemplate title={{label:'PageTemplate Component'}}>Children</PageTemplate>
+`} />
+
+<br />
+<br />
+
+
+
+##### <span name="floating-nav">Search</span>
+
+With the prop <TagDocs text='Search' />, you can pass an object with properties like `value`, `onChange`, `placeholder`, and `disabled` to render a search bar within the `PageTemplate` component. This allows users to search and filter content directly from the header.
+
+<Playground>
+     <PageTemplate title={{label:'PageTemplate Component'}} 
+     search={{onchange:()=>alert('searching...'),value:'Search',placeholder:'Search',disabled:true}}
+     >Children</PageTemplate>
+</Playground>
+
+<WindowEditor codeString={`import { PageTemplate } from "dd360-ds"
+
+  <PageTemplate 
+  title={{label:'PageTemplate Component'}} 
+  search={{onchange:()=>alert('searching...'),
+  value:'Search',placeholder:'Search',disabled:true}}>
+  Children</PageTemplate>
+`} />
+
+<br />
+<br />
+
+##### <span name="floating-nav">Results</span>
+
+With the prop <TagDocs text='Results' />, you can pass an object with properties like `number` and `label` to display the number of results and a custom label within the `PageTemplate` component. This helps users quickly understand the amount of available data.
+
+<Playground>
+     <PageTemplate title={{label:'PageTemplate Component'}} 
+     search={{onchange:()=>alert('searching...'),value:'Search',placeholder:'Search',disabled:true}}
+     results={{number:4,label:'results'}}
+     >Children</PageTemplate>
+</Playground>
+
+<WindowEditor codeString={`import { PageTemplate } from "dd360-ds"
+
+  <PageTemplate 
+  title={{label:'PageTemplate Component'}} 
+  results={{number:4,label:'results'}}>
+  Children
+  </PageTemplate>
+`} />
+
+<br />
+<br />
+
+##### <span name="floating-nav">ViewToggle</span>
+
+With the prop <TagDocs text='ViewToggle' />, you can pass an object with properties like `onToggle`, `isActive`, `iconOff`, and `iconOn` to enable a toggle button within the `PageTemplate` component. This allows users to switch between different views, such as list or grid.
+
+<Playground>
+     <PageTemplate title={{label:'PageTemplate Component'}} 
+     search={{onchange:()=>alert('searching...'),value:'Search',placeholder:'Search',disabled:true}}
+     results={{number:4,label:'results'}}
+     viewToggle= {{
+     onToggle: () => alert('View toggled'),
+     isActive: false,
+     iconOff: <span>A</span>,
+     iconOn: <span>B</span>}
+  }
+     >Children</PageTemplate>
+</Playground>
+
+<WindowEditor codeString={`import { PageTemplate } from "dd360-ds"
+
+  <PageTemplate 
+  title={{label:'PageTemplate Component'}} 
+  results={{number:4,label:'results'}}
+  viewToggle= {{
+     onToggle: () => alert('View toggled'),
+     isActive: false,
+     iconOff: <span>A</span>,
+     iconOn: <span>B</span>}
+  }>
+  Children
+  </PageTemplate>
+`} />
+
+<br />
+<br />
+
+##### <span name="floating-nav">Filters</span>
+
+With the prop <TagDocs text='Filters' />, With the prop <TagDocs text='Filters' />, you can pass an object to define filtering options within the `PageTemplate` component. This allows you to add dropdown checkboxes with customizable options, labels, and callback functions for submission and closing.
+
+<Playground className='h-72'>
+     <PageTemplate title={{label:'PageTemplate Component'}} 
+     filters={{ dropdownCheckbox: [{ cancelText: 'Cancel',
+        confirmText: 'Confirm',
+        onSubmit: () => alert('Checkbox filter submitted'),
+        onClose: () => alert('Checkbox filter closed'),
+        title: 'Filter Options',
+        align: 'left',
+        options: [ { label: 'Option 1', value: 'option1' }, { label: 'Option 2', value: 'option2' },{ label: 'Option 3', value: 'option3' }
+        ],
+        allText: 'Select All',
+        initialValue: ['option1']
+      }
+     ]}}
+     >Children</PageTemplate>
+</Playground>
+
+<WindowEditor codeString={`import { PageTemplate } from "dd360-ds"
+
+  <PageTemplate 
+   title={{label:'PageTemplate Component'}} 
+   filters={{ dropdownCheckbox: [{ cancelText: 'Cancel',
+        confirmText: 'Confirm',
+        onSubmit: () => alert('Checkbox filter submitted'),
+        onClose: () => alert('Checkbox filter closed'),
+        title: 'Filter Options',
+        align: 'left',
+        options: [ 
+        { label: 'Option 1', value: 'option1' }, 
+        { label: 'Option 2', value: 'option2' },
+        { label: 'Option 3', value: 'option3' }
+        ],
+        allText: 'Select All',
+        initialValue: ['option1']
+      }
+     ]}}>
+  Children
+  </PageTemplate>
+`} />
+
+<br />
+<br />
+
+##### <span name="floating-nav">ClearFilters</span>
+
+With the prop <TagDocs text='ClearFilters' />, you can pass an object to define a button or action to reset the filters applied within the `PageTemplate` component. This allows you to customize the button label and define a callback function that executes when the button is clicked.
+
+<Playground className='h-72'>
+     <PageTemplate title={{label:'PageTemplate Component'}} 
+     filters={{ dropdownCheckbox: [{ cancelText: 'Cancel',
+        confirmText: 'Confirm',
+        onSubmit: () => alert('Checkbox filter submitted'),
+        onClose: () => alert('Checkbox filter closed'),
+        title: 'Filter Options',
+        align: 'left',
+        options: [ { label: 'Option 1', value: 'option1' }, { label: 'Option 2', value: 'option2' },{ label: 'Option 3', value: 'option3' }
+        ],
+        allText: 'Select All',
+        initialValue: ['option1']
+      }
+     ]}}
+    clearFilters={{
+    label: 'Restore',
+    onClick: () => alert('Filters have been reset')
+    }}
+     >Children</PageTemplate>
+</Playground>
+
+<WindowEditor codeString={`import { PageTemplate } from "dd360-ds"
+
+  <PageTemplate 
+   title={{label:'PageTemplate Component'}} 
+   filters={{ dropdownCheckbox: [{ cancelText: 'Cancel',
+        confirmText: 'Confirm',
+        onSubmit: () => alert('Checkbox filter submitted'),
+        onClose: () => alert('Checkbox filter closed'),
+        title: 'Filter Options',
+        align: 'left',
+        options: [ 
+        { label: 'Option 1', value: 'option1' }, 
+        { label: 'Option 2', value: 'option2' },
+        { label: 'Option 3', value: 'option3' }
+        ],
+        allText: 'Select All',
+        initialValue: ['option1']
+      }
+     ]}}
+    clearFilters={{
+    label: 'Restore',
+    onClick: () => alert('Filters have been reset')
+    }}>
+  Children
+  </PageTemplate>
+`} />
+
+<br />
+<br />
+
+##### <span name="floating-nav">CallToAction</span>
+
+With the prop <TagDocs text='CallToAction' />, you can pass an object to define a customizable button within the `PageTemplate` component. This allows you to specify a label, an icon, and an `onClick` event handler to define the action that will be executed when the button is clicked.
+
+<Playground className='h-72'>
+     <PageTemplate title={{label:'PageTemplate Component'}} 
+     filters={{ dropdownCheckbox: [{ cancelText: 'Cancel',
+        confirmText: 'Confirm',
+        onSubmit: () => alert('Checkbox filter submitted'),
+        onClose: () => alert('Checkbox filter closed'),
+        title: 'Filter Options',
+        align: 'left',
+        options: [ { label: 'Option 1', value: 'option1' }, { label: 'Option 2', value: 'option2' },{ label: 'Option 3', value: 'option3' }
+        ],
+        allText: 'Select All',
+        initialValue: ['option1']
+      }
+     ]}}
+     callToAction={{
+        onClick: () => alert('call to action clicked'),
+        label: 'Call to action',
+        icon: "CalendarIcon"  }}
+     >Children</PageTemplate>
+</Playground>
+
+<WindowEditor codeString={`import { PageTemplate } from "dd360-ds"
+
+  <PageTemplate 
+   title={{label:'PageTemplate Component'}} 
+   filters={{ dropdownCheckbox: [{ cancelText: 'Cancel',
+        confirmText: 'Confirm',
+        onSubmit: () => alert('Checkbox filter submitted'),
+        onClose: () => alert('Checkbox filter closed'),
+        title: 'Filter Options',
+        align: 'left',
+        options: [ 
+        { label: 'Option 1', value: 'option1' }, 
+        { label: 'Option 2', value: 'option2' },
+        { label: 'Option 3', value: 'option3' }
+        ],
+        allText: 'Select All',
+        initialValue: ['option1']
+      }
+     ]}}
+   callToAction={{
+        onClick: () => alert('call to action clicked'),
+        label: 'Call to action',
+        icon: "CalendarIcon"  }}>
+  Children
+  </PageTemplate>
+`} />
+
+<br />
+<br />
+
+##### <span name="floating-nav">ArrowSelector</span>
+
+With the prop <TagDocs text='ArrowSelector' />, you can pass an object to display left and right navigation buttons within the `PageTemplate` component. This allows you to define a label and set `onClickLeft` and `onClickRight` event handlers to execute custom actions when the user clicks the left or right buttons.
+
+<Playground >
+     <PageTemplate title={{label:'PageTemplate Component'}} 
+     results={{number:4,label:'results'}}
+     arrowSelector={ {
+    label: 'Action Move',
+    onClickLeft: () => alert('Navigated left'),
+    onClickRight: () => alert('Navigated right')
+    }}
+     >Children</PageTemplate>
+</Playground>
+
+<WindowEditor codeString={`import { PageTemplate } from "dd360-ds"
+
+  <PageTemplate 
+   title={{label:'PageTemplate Component'}} 
+    results={{number:4,label:'results'}}
+    arrowSelector={ {
+    label: 'Move to Month',
+    onClickLeft: () => alert('Navigated left'),
+    onClickRight: () => alert('Navigated right')
+    }}
+  Children
+  </PageTemplate>
+`} />
+
+<br />
+<br />
+
+##### <span name="floating-nav">API Reference</span>
+
+<CustomTableDocs
+    dataTable={[
+        { title: 'children', default: null, types: ['React.React.Node'] },
+        { title: 'footer', default: null, types: ['React.React.Node'],},
+        { title: 'search', default: null, types: ['FilterSearchProps'],},
+        { title: 'results', default: null, types: ['FilterLabelProps'],},
+        { title: 'viewToggle', default: null, types: ['ToggleButtonProps'],},
+        { title: 'filters', default: null, types: ['FiltersProps'],},
+        { title: 'clearFilters', default: null, types: ['ClearFiltersProps'],},
+        { title: 'callToAction', default: null, types: ['CallToActionProps'],},
+        { title: 'arrowSelector', default: null, types: ['ArrowSelectorProps'],},
+        { title: 'role', default: null, types: ['string'],},
+        { title: 'hiddenFilterBar', default: null, types: ['boolean'],},
+         // Note about additional props extending from TopPageProps
+        { title: '...otherProps', default: null, types: ['TopPageProps'], description: 'This component also accepts all props that extend from the TopPage component.' },
+    ]}
+/>
+
+<BackAndForwardController />
