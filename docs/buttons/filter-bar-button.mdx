@@ -1,0 +1,281 @@
+---
+product: dd360-ds
+title: React FilterBarButton component
+components: FilterBarButton
+---
+import { DynamicHeroIcon } from 'dd360-ds'
+
+
+<br id='top' />
+<br />
+
+<Label>Buttons</Label>
+
+# <HeaderDocCustom title="Filter Bar Button" pathUrl="buttons-filter-bar-button" />
+
+The FilterBarButton component allows you to create interactive filter buttons with a customizable popover, ideal for implementing filters and actions in web applications.
+
+<br />
+
+##### <span name="floating-nav">Imports</span>
+
+The first alternative is recommended as it can reduce the application bundle
+
+<WindowEditor codeString="import FilterBarButton from 'dd360-ds/FilterBarButton'" />
+<WindowEditor codeString="import { FilterBarButton } from 'dd360-ds'" />
+
+##### <span name="floating-nav">Usage</span>
+
+The FilterBarButton component requires at least the `label` and `valueBadge` properties. The popover will be displayed when clicking the button.
+
+<Playground>
+  <FilterBarButton
+    label="Filter"
+    valueBadge={3}
+  />
+</Playground>
+
+The following code snippet shows how to use the FilterBarButton component:
+
+<WindowEditor
+    codeString={`import { FilterBarButton } from 'dd360-ds'
+
+<FilterBarButton
+  label="Filter"
+  valueBadge={3}
+/>
+`}/>
+
+<br />
+
+##### <span name="floating-nav">IconLeft</span>
+
+The <TagDocs text='IconLeft' /> prop allows you to add an icon to the left side of the filter button.
+
+<Playground>
+  <FilterBarButton
+    label="Filter"
+    valueBadge={3}
+    iconLeft={<DynamicHeroIcon icon="ChevronDownIcon" className="w-4 h-4" />}
+  />
+</Playground>
+
+The following code snippet shows how to use the FilterBarButton component:
+
+<WindowEditor
+    codeString={`import { FilterBarButton } from 'dd360-ds'
+
+<FilterBarButton
+  label="Filter"
+  valueBadge={3}
+  iconLeft={<DynamicHeroIcon icon="ChevronDownIcon" className="w-4 h-4" />}
+/>
+`}/>
+
+<br />
+
+##### <span name="floating-nav">IconRight</span>
+
+The <TagDocs text='iconRight' /> prop allows you to add an icon to the right side of the filter button.
+
+<Playground>
+  <FilterBarButton
+    label="Filter"
+    valueBadge={3}
+    iconRight={<DynamicHeroIcon icon="ChevronDownIcon" className="w-4 h-4" />}
+  />
+</Playground>
+
+The following code snippet shows how to use the FilterBarButton component:
+
+<WindowEditor
+    codeString={`import { FilterBarButton } from 'dd360-ds'
+
+<FilterBarButton
+  label="Filter"
+  valueBadge={3}
+  iconRight={<DynamicHeroIcon icon="ChevronDownIcon" className="w-4 h-4" />}
+/>
+`}/>
+
+<br />
+
+##### <span name="floating-nav">TitlePopover</span>
+
+The <TagDocs text='titlePopover' /> prop allows you to customize the title displayed in the filter button's popover.
+
+<Playground>
+  <FilterBarButton
+    label="Filter"
+    valueBadge={3}
+    titlePopover='Title Popover'
+  />
+</Playground>
+
+The following code snippet shows how to use the FilterBarButton component:
+
+<WindowEditor
+    codeString={`import { FilterBarButton } from 'dd360-ds'
+
+<FilterBarButton
+  label="Filter"
+  valueBadge={3}
+  titlePopover='Title Popover'
+/>
+`}/>
+
+<br />
+
+##### <span name="floating-nav">ChildrenPopover</span>
+
+The <TagDocs text='childrenPopover' /> prop allows you to add custom content inside the filter button's popover.
+
+<Playground>
+  <FilterBarButton
+    label="Filter"
+    valueBadge={3}
+    childrenPopover={<div className='p-6'>Children Popover</div>}
+  />
+</Playground>
+
+The following code snippet shows how to use the FilterBarButton component:
+
+<WindowEditor
+    codeString={`import { FilterBarButton } from 'dd360-ds'
+
+<FilterBarButton
+  label="Filter"
+  valueBadge={3}
+  childrenPopover={<div className='p-6'>Children Popover</div>}
+/>
+`}/>
+
+<br />
+
+##### <span name="floating-nav">ClassNamePopover</span>
+
+The <TagDocs text='classNamePopover' /> prop allows you to apply custom CSS classes to the filter button's popover.
+
+<Playground>
+  <FilterBarButton
+    label="Filter"
+    valueBadge={3}
+    classNamePopover='text-blue-300'
+    childrenPopover={<div className='p-6'>Children Popover</div>}
+  />
+</Playground>
+
+The following code snippet shows how to use the FilterBarButton component:
+
+<WindowEditor
+    codeString={`import { FilterBarButton } from 'dd360-ds'
+
+<FilterBarButton
+  label="Filter"
+  valueBadge={3}
+  classNamePopover='text-blue-300'
+  childrenPopover={<div className='p-6'>Children Popover</div>}
+/>
+`}/>
+
+<br />
+
+##### <span name="floating-nav">SecondaryButton</span>
+
+The <TagDocs text='secondaryButton' /> prop allows you to configure a secondary button in the popover with its label and click handler.
+
+<Playground>
+  <FilterBarButton
+    label="Filter"
+    valueBadge={3}
+    secondaryButton={{label:'Cancel', onClick:()=>{alert('Cancel')}}}
+  />
+</Playground>
+
+The following code snippet shows how to use the FilterBarButton component:
+
+<WindowEditor
+    codeString={`import { FilterBarButton } from 'dd360-ds'
+
+<FilterBarButton
+  label="Filter"
+  valueBadge={3}
+  secondaryButton={{label:'Cancel', onClick:()=>{alert('Cancel')}}}
+/>
+`}/>
+
+<br />
+
+##### <span name="floating-nav">PrimaryButton</span>
+
+The <TagDocs text='primaryButton' /> prop allows you to configure a primary button in the popover with its label and click handler.
+
+<Playground>
+  <FilterBarButton
+    label="Filter"
+    valueBadge={3}
+    primaryButton={{label:'Submit', onClick:()=>{alert('Submit')}}}
+  />
+</Playground>
+
+The following code snippet shows how to use the FilterBarButton component:
+
+<WindowEditor
+    codeString={`import { FilterBarButton } from 'dd360-ds'
+
+<FilterBarButton
+  label="Filter"
+  valueBadge={3}
+  primaryButton={{label:'Submit', onClick:()=>{alert('Submit')}}}
+/>
+`}/>
+
+<br />
+
+##### <span name="floating-nav">PrincipalButton</span>
+
+The <TagDocs text='principalButton' /> prop allows you to configure the behavior of the main button that triggers the popover.
+
+<Playground>
+  <FilterBarButton
+    label="Filter"
+    valueBadge={3}
+    principalButton={{onClick:()=>{alert('Active Popover')}}}
+  />
+</Playground>
+
+The following code snippet shows how to use the FilterBarButton component:
+
+<WindowEditor
+    codeString={`import { FilterBarButton } from 'dd360-ds'
+
+<FilterBarButton
+  label="Filter"
+  valueBadge={3}
+  principalButton={{ onClick:()=>{alert('Active Popover')}}}
+/>
+`}/>
+
+<br />
+
+
+##### <span name="floating-nav">API Reference</span>
+
+<CustomTableDocs
+  dataTable={[
+    { title: 'label', default: null, types: ['string'], required: true },
+    { title: 'valueBadge', default: null, types: ['number'] ,required: true},
+    { title: 'iconLeft', default: null, types: ['ReactNode'] },
+    { title: 'iconRight', default: null, types: ['ReactNode'] },
+    { title: 'titlePopover', default: 'Title', types: ['string'] },
+    { title: 'childrenPopover', default: null, types: ['ReactNode'] },
+    { title: 'classNamePopover', default: null, types: ['string'] },
+    { title: 'secondaryButton', default: null, types: ['IButtons'] },
+    { title: 'primaryButton', default: null, types: ['IButtons'] },
+    { title: 'principalButton', default: null, types: ['IButtons'] }
+  ]}
+/>
+
+Note: This documentation assumes that the user has basic knowledge of React and how to use components in React applications.
+
+<BackAndForwardController /> 

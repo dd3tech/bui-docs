@@ -94,6 +94,10 @@ export const components: ComponentObjectProps = {
       {
         label: 'Radio Group',
         pathname: 'button-radio-group'
+      },
+      {
+        label: 'Filter Bar Button',
+        pathname: 'filter-bar-button'
       }
     ]
   },
