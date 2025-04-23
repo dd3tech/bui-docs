@@ -1,0 +1,166 @@
+---
+product: dd360-ds
+title: React SingleSelect component
+components: SingleSelect
+---
+import { DynamicHeroIcon } from 'dd360-ds'
+
+<br id='top' />
+<br />
+
+<Label>Form</Label>
+
+# <HeaderDocCustom title="Single Select" pathUrl="form-single-select" />
+
+The SingleSelect component allows you to create a modern and functional option selector, ideal for forms and web applications that require option selection.
+
+<br />
+
+##### <span name="floating-nav">Imports</span>
+
+The first alternative is recommended as it can reduce the application bundle
+
+<WindowEditor codeString="import SingleSelect from 'dd360-ds/SingleSelect'" />
+<WindowEditor codeString="import { SingleSelect } from 'dd360-ds'" />
+
+##### <span name="floating-nav">Usage</span>
+
+The SingleSelect component requires at least the `optionsList` property that defines the available options for selection.
+
+<Playground className='h-60'>
+  <SingleSelect
+    optionsList={[
+      { value: '1', label: 'Option 1' },
+      { value: '2', label: 'Option 2' },
+      { value: '3', label: 'Option 3' }
+    ]}
+  />
+</Playground>
+
+The following code shows how to use the SingleSelect component:
+
+<WindowEditor
+    codeString={`import { SingleSelect } from 'dd360-ds'
+
+<SingleSelect
+  optionsList={[
+    { value: '1', label: 'Option 1' },
+    { value: '2', label: 'Option 2' },
+    { value: '3', label: 'Option 3' }
+  ]}
+/>
+`}/>
+
+<br />
+
+##### <span name="floating-nav">Label</span>
+
+The <TagDocs text='label' /> property allows you to add a descriptive label to the selector.
+
+<Playground className='h-60'>
+  <SingleSelect
+    label="Select an option"
+    optionsList={[
+      { value: '1', label: 'Option 1' },
+      { value: '2', label: 'Option 2' },
+      { value: '3', label: 'Option 3' }
+    ]}
+  />
+</Playground>
+
+<WindowEditor
+    codeString={`import { SingleSelect } from 'dd360-ds'
+
+<SingleSelect
+  label="Select an option"
+  optionsList={[
+    { value: '1', label: 'Option 1' },
+    { value: '2', label: 'Option 2' },
+    { value: '3', label: 'Option 3' }
+  ]}
+/>
+`}/>
+
+<br />
+
+##### <span name="floating-nav">Large</span>
+
+The <TagDocs text='large' /> property allows you to increase the size of the selector.
+
+<Playground className='h-60'>
+  <SingleSelect
+    large
+    optionsList={[
+      { value: '1', label: 'Option 1' },
+      { value: '2', label: 'Option 2' },
+      { value: '3', label: 'Option 3' }
+    ]}
+  />
+</Playground>
+
+<WindowEditor
+    codeString={`import { SingleSelect } from 'dd360-ds'
+
+<SingleSelect
+  large
+  optionsList={[
+    { value: '1', label: 'Option 1' },
+    { value: '2', label: 'Option 2' },
+    { value: '3', label: 'Option 3' }
+  ]}
+/>
+`}/>
+
+<br />
+
+##### <span name="floating-nav">Disabled</span>
+
+The <TagDocs text='isDisabled' /> property allows you to disable the selector.
+
+<Playground className='h-60'>
+  <SingleSelect
+    isDisabled
+    optionsList={[
+      { value: '1', label: 'Option 1' },
+      { value: '2', label: 'Option 2' },
+      { value: '3', label: 'Option 3' }
+    ]}
+  />
+</Playground>
+
+<WindowEditor
+    codeString={`import { SingleSelect } from 'dd360-ds'
+
+<SingleSelect
+  isDisabled
+  optionsList={[
+    { value: '1', label: 'Option 1' },
+    { value: '2', label: 'Option 2' },
+    { value: '3', label: 'Option 3' }
+  ]}
+/>
+`}/>
+
+<br />
+
+##### <span name="floating-nav">API Reference</span>
+
+<CustomTableDocs
+  dataTable={[
+    { title: 'optionsList', default: null, types: ['ISelectOption[]'], required: true },
+    { title: 'label', default: null, types: ['string'] },
+    { title: 'value', default: null, types: ['string | number'] },
+    { title: 'large', default: false, types: ['boolean'] },
+    { title: 'isDisabled', default: false, types: ['boolean'] },
+    { title: 'isRequired', default: false, types: ['boolean'] },
+    { title: 'className', default: null, types: ['string'] },
+    { title: 'classNameAdornment', default: null, types: ['string'] },
+    { title: 'classNameDropdown', default: null, types: ['string'] },
+    { title: 'styleDropdown', default: null, types: ['StyleObject'] },
+    { title: 'onChangeSelect', default: null, types: ['(option: ISelectOption) => void'] }
+  ]}
+/>
+
+Note: This documentation assumes that the user has basic knowledge of React and how to use components in React applications.
+
+<BackAndForwardController />
