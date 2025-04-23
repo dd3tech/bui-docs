@@ -97,7 +97,8 @@ export const components: ComponentObjectProps = {
       },
       {
         label: 'Filter Bar Button',
-        pathname: 'filter-bar-button'
+        pathname: 'filter-bar-button',
+        badge: BADGE_TYPES.new
       }
     ]
   },
@@ -192,6 +193,11 @@ export const components: ComponentObjectProps = {
       {
         label: 'Select',
         pathname: 'select'
+      },
+      {
+        label: 'Single Select',
+        pathname: 'single-select',
+        badge: BADGE_TYPES.new
       },
       {
         label: 'Text Area',
