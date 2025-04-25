@@ -316,6 +316,10 @@ export const components: ComponentObjectProps = {
         pathname: 'circle'
       },
       {
+        label: 'Chip',
+        pathname: 'chip'
+      },
+      {
         label: 'Confirm Dialog',
         pathname: 'confirm-dialog'
       },

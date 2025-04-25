@@ -1,0 +1,125 @@
+---
+product: dd360-ds
+title: React Chip component
+components: Chip
+---
+
+<br />
+<br />
+
+<Label>Components</Label>
+
+# <HeaderDocCustom title="Chip" pathUrl="components-chip--chip" />
+
+The Chip component in React provides a convenient way to display a small piece of information, such as a status, in a visually appealing and attention-grabbing manner.
+
+<br />
+
+##### <span name="floating-nav">Imports</span>
+
+<WindowEditor codeString="import { Chip } from 'dd360-ds'" />
+
+##### <span name="floating-nav">Usage</span>
+
+To use the Chip component, you could start by adding the properties text, classNameIcon and className.
+
+Use the Chip component as shown below:
+
+<Playground>
+  <Chip text="Hello world" classNameIcon='w-4' className='p-1' />
+</Playground>
+
+The code snippet below shows how to use the Chip component:
+
+<WindowEditor
+    codeString={`import { Chip } from 'dd360-ds'
+
+ <Chip text="Hello world"/>
+`}/>
+
+<br />
+
+##### <span name="floating-nav">Variant</span>
+
+With the prop variant you can customize the appearance of the Chip component. Available options are: warning, infoPrimary, infoSecondary, success, primary, secondary, and error. Default uses: "infoPrimary".
+
+<Playground className="flex flex-col gap-y-2">
+    <Chip text="Hello world" classNameIcon='w-4' className='p-1 text-gray-500' variant="warning"/>
+    <Chip text="Hello world" classNameIcon='w-4' className='p-1 text-gray-500' variant="infoPrimary"/>
+    <Chip text="Hello world" classNameIcon='w-4' className='p-1 text-gray-500' variant="infoSecondary"/>
+    <Chip text="Hello world" classNameIcon='w-4' className='p-1 text-gray-500' variant="success"/>
+    <Chip text="Hello world" classNameIcon='w-4' className='p-1 text-gray-500' variant="primary"/>
+    <Chip text="Hello world" classNameIcon='w-4' className='p-1 text-gray-500' variant="secondary"/>
+    <Chip text="Hello world" classNameIcon='w-4' className='p-1 text-gray-500' variant="error"/>
+</Playground>
+
+The code snippet below shows how to set a Chip component variant:
+
+<WindowEditor
+    codeString={`import { Chip } from 'dd360-ds'
+
+<Chip text="Hello world" classNameIcon='w-4' className='p-1 text-gray-500' variant="warning"/>
+<Chip text="Hello world" classNameIcon='w-4' className='p-1 text-gray-500' variant="infoPrimary"/>
+<Chip text="Hello world" classNameIcon='w-4' className='p-1 text-gray-500' variant="infoSecondary"/>
+<Chip text="Hello world" classNameIcon='w-4' className='p-1 text-gray-500' variant="success"/>
+<Chip text="Hello world" classNameIcon='w-4' className='p-1 text-gray-500' variant="primary"/>
+<Chip text="Hello world" classNameIcon='w-4' className='p-1 text-gray-500' variant="secondary"/>
+<Chip text="Hello world" classNameIcon='w-4' className='p-1 text-gray-500' variant="error"/>
+`}/>
+
+<br />
+
+##### <span name="floating-nav">Icon</span>
+
+With the prop icon you can customize the icon of the Chip component. Available options are: tag, clock, warning, check, success, exclamation, clipboard-copy, HomeIcon, RefreshIcon, and none. Default uses: "HomeIcon".
+
+<Playground className="flex flex-col gap-y-2">
+    <Chip text="tag" classNameIcon='w-4' className='p-1 text-gray-500' icon="tag"/>
+    <Chip text="clock" classNameIcon='w-4' className='p-1 text-gray-500' icon="clock"/>
+    <Chip text="warning" classNameIcon='w-4' className='p-1 text-gray-500' icon="warning"/>
+    <Chip text="check" classNameIcon='w-4' className='p-1 text-gray-500' icon="check"/>
+    <Chip text="success" classNameIcon='w-4' className='p-1 text-gray-500' icon="success"/>
+    <Chip text="exclamation" classNameIcon='w-4' className='p-1 text-gray-500' icon="exclamation"/>
+    <Chip text="clipboard-copy" classNameIcon='w-4' className='p-1 text-gray-500' icon="clipboard-copy"/>
+    <Chip text="HomeIcon" classNameIcon='w-4' className='p-1 text-gray-500' icon="HomeIcon"/>
+    <Chip text="RefreshIcon" classNameIcon='w-4' className='p-1 text-gray-500' icon="RefreshIcon"/>
+    <Chip text="none" classNameIcon='w-4' className='p-1 text-gray-500' icon="none"/>
+</Playground>
+
+The code snippet below shows how to set a Chip component icon:
+
+<WindowEditor
+    codeString={`import { Chip } from 'dd360-ds'
+
+<Chip text="tag" classNameIcon='w-4' className='p-1 text-gray-500' icon="tag"/>
+<Chip text="clock" classNameIcon='w-4' className='p-1 text-gray-500' icon="clock"/>
+<Chip text="warning" classNameIcon='w-4' className='p-1 text-gray-500' icon="warning"/>
+<Chip text="check" classNameIcon='w-4' className='p-1 text-gray-500' icon="check"/>
+<Chip text="success" classNameIcon='w-4' className='p-1 text-gray-500' icon="success"/>
+<Chip text="exclamation" classNameIcon='w-4' className='p-1 text-gray-500' icon="exclamation"/>
+<Chip text="clipboard-copy" classNameIcon='w-4' className='p-1 text-gray-500' icon="clipboard-copy"/>
+<Chip text="HomeIcon" classNameIcon='w-4' className='p-1 text-gray-500' icon="HomeIcon"/>
+<Chip text="RefreshIcon" classNameIcon='w-4' className='p-1 text-gray-500' icon="RefreshIcon"/>
+<Chip text="none" classNameIcon='w-4' className='p-1 text-gray-500' icon="none"/>
+`}/>
+
+<br />
+<br />
+
+##### <span name="floating-nav">API Reference</span>
+
+<CustomTableDocs
+  dataTable={[
+    { title: 'variant', default: 'infoPrimary', types: ['warning', 'infoPrimary', 'infoSecondary', 'success', 'primary', 'secondary', 'error'] },
+    { title: 'icon', default: 'HomeIcon', types: ['tag', 'clock', 'warning', 'check', 'success', 'exclamation', 'clipboard-copy', 'HomeIcon', 'RefreshIcon', 'none'] },
+    { title: 'text', default: 'Home Chip', types: ['string'] },
+    { title: 'classNameIcon', default: null, types: ['string'] },
+    { title: 'classNameText', default: null, types: ['string'] },
+    { title: 'className', default: null, types: ['string'] }
+  ]}
+/>
+
+Note: This documentation assumes that the audience has basic knowledge of React
+and how to use components in React applications.
+
+<BackAndForwardController />
