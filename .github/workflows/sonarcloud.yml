@@ -27,6 +27,13 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
+      - name: Verify SonarCloud Token
+        run: |
+          if [ -z "${{ secrets.SONAR_TOKEN }}" ]; then
+            echo "Error: SONAR_TOKEN is not set"
+            exit 1
+          fi
+
       - name: SonarCloud Scan
         uses: SonarSource/sonarqube-scan-action@v5.0.0
         env:
@@ -38,4 +45,4 @@ jobs:
             -Dsonar.organization=dd3tech-1
             -Dsonar.projectName=dd360-components-docs -Dsonar.projectVersion=1.0
             -Dsonar.sourceEncoding=UTF-8 -Dsonar.java.binaries=.
-            -Dsonar.java.jdkHome=$JAVA_HOME
+            -Dsonar.java.jdkHome=$JAVA_HOME -Dsonar.verbose=true
