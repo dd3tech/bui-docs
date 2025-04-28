@@ -46,3 +46,7 @@ jobs:
             -Dsonar.projectName=dd360-components-docs -Dsonar.projectVersion=1.0
             -Dsonar.sourceEncoding=UTF-8 -Dsonar.java.binaries=.
             -Dsonar.java.jdkHome=$JAVA_HOME -Dsonar.verbose=true
+            -Dsonar.scanner.skipSystemTruststore=true -Dsonar.sources=.
+            -Dsonar.exclusions=**/node_modules/**,**/dist/**,**/coverage/**
+            -Dsonar.coverage.exclusions=**/node_modules/**,**/dist/**,**/coverage/**
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
