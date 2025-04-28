@@ -37,4 +37,5 @@ jobs:
             -Dsonar.projectKey=dd3tech_dd360-components-docs
             -Dsonar.organization=dd3tech-1
             -Dsonar.projectName=dd360-components-docs -Dsonar.projectVersion=1.0
-            -Dsonar.sourceEncoding=UTF-8
+            -Dsonar.sourceEncoding=UTF-8 -Dsonar.java.binaries=.
+            -Dsonar.java.jdkHome=$JAVA_HOME
