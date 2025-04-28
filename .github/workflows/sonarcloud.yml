@@ -32,3 +32,4 @@ jobs:
           args:
             -Dsonar.projectKey=dd3tech_dd360-components-docs
             -Dsonar.organization=dd3tech-1 -Dsonar.sources=src
+            -Dsonar.branch.name=main
